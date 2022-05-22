@@ -1,0 +1,80 @@
+.public-office-card {
+    margin:0 auto;
+    border: none;
+    width: 18rem;
+}
+
+.gray-out {
+    opacity: 0.65;
+}
+
+.public-office-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.locationInput {
+    width:fit-content;
+}
+
+.flex-fill {
+    flex:1 1 auto;
+}
+
+.hidden {
+    display: none;
+}
+
+*, *:after, *:before {box-sizing: border-box;}
+
+input#check {
+	position: absolute;
+	opacity: 0;
+	
+	&:checked + label svg path {
+		stroke-dashoffset: 0;
+	}
+	
+	&:focus + label {
+		transform: scale(1.03);
+	}
+}
+
+#check + label {
+	display: block;
+	// border: 2px solid #111;
+	width: var(--d); height: var(--d);
+	// border-radius: 6px;
+	// cursor: pointer;
+	// transition: all .2s ease;
+	
+	&:active {
+		transform: scale(1.05);
+		border-radius: 30px;
+	}
+	
+	svg {
+		pointer-events: none;
+		rect {
+			width: var(--d); height: var(--d);
+			fill:none;
+			stroke-width: 2px;
+			stroke:#444;
+			cursor: pointer;
+			transition: all .2s ease;
+		}
+		path {			
+			fill: none;			
+			stroke: #333;
+			stroke-width: 5px;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			stroke-dasharray: 100;
+			stroke-dashoffset: 101;
+			transition: all 350ms cubic-bezier(1,0,.37,.91);
+			//#e6293f
+            filter: invert(10%) sepia(93%) saturate(1300%) hue-rotate(330deg) brightness(119%) contrast(119%);
+		}
+	}
+}
