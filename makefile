@@ -1,10 +1,26 @@
-######## HANDY FUCNTIONS #########
+# HANDY FUCNTIONS
 
 serve:
 	php artisan serve
 
+clean:
+	php artisan cache:clear
+	php artisan view:clear
+	php artisan route:clear
+	composer dump-autoload
+	
+
+## Quick-create classes
 test-class: # make test-class name=
-	php artisan make:test $(name) --pest
+	php artisan make:test $(name)
+
+## Testing
+
+feature-test:
+	php artisan test --testsuite=Feature --stop-on-failure
+
+unit-test:
+	php artisan test --testsuite=Unit --stop-on-failure
 
 test:
 	php artisan test
@@ -15,12 +31,7 @@ install:
 	composer install
 	php artisan key:generate
 
-clean:
-	php artisan cache:clear`
-	php artisan view:clear
-	composer dump-autoload
-
 db:
-	touch cmanager.sqlite
+	touch /tmp/cmanager.sqlite
 	php artisan migrate:fresh --seed
 	
