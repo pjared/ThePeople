@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::get('/profile', [PoliticianController::class, 'getPoliticianView']);
 
-Route::get('/ballot', [BallotController::class, 'getBallot']);
+Route::post('/ballot', [BallotController::class, 'getBallot']);
 
 Route::get('/edit/search', [PoliticianController::class, 'politician_edit_search']);
 

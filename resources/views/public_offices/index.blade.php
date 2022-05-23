@@ -1,4 +1,9 @@
-<form method="GET" action="/ballot">
+<form method="POST" action="/ballot">
+    @csrf
+    <input type="hidden" name="location_type" id="location_type" value="state">
+    <input type="hidden" name="location" id="location" value="Utah">
+    <input type="hidden" name="office" id="office" value="mayor">
+
     {{-- Mayor Card --}}
     <button type="submit" id="mayorButton" class="card public-office-card">
         <div class="card-body">
