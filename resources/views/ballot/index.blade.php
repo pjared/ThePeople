@@ -17,21 +17,21 @@
                         Plan your choice for the upcoming election
                     </div>
                     <div class="form-check mt-2">
-                        {{-- @foreach ($collection as $item) --}}
+                        @foreach ($candidates as $candidate)
                             <div class="row">
                                 <div class="col-10">
                                     <div class="card">
                                         <div class="card-body" style="padding-bottom: .25rem; padding-top: .75rem">
                                             <div class="row align-items-center">
                                                 <div class="col-2 text-center">
-                                                    <img src="...">
+                                                    <img style="height:100%;width:100%" src="{{ Storage::url('images/' . $candidate->image_id  . '.jpg') }}">
                                                 </div>
                                                 <div class="col-9 offset-1">
                                                     <div class="" style="font-family: 'Courier M', monospace; font-size:medium;">
-                                                        Jared Pacheco
+                                                        {{ $candidate->name }}
                                                     </div>
                                                     <div class="text-end" style="font-family: 'Courier M', monospace; font-size:small;">
-                                                        <a href="/profile">More about Jared</a>
+                                                        <a href="/profile">More about {{ $candidate->name }}</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -40,6 +40,7 @@
                                 </div>
                                 <div class="col-1 ms-4">
                                     <div class="mt-3">
+                                        {{-- TODO: checkbox is only working on first one {{ $candidate->name }} --}}
                                         <input type="checkbox" id="check">
                                         <label for="check" style="--d: 75%;">
                                             <svg viewBox="0, 0, 50, 50">
@@ -50,7 +51,7 @@
                                     </div>
                                 </div>
                             </div>
-                        {{-- @endforeach --}}
+                        @endforeach
                     </div>
                 </div>
             </div>
