@@ -29,12 +29,14 @@ class CandidateSeeder extends Seeder
         "age",
         */
         foreach ($this->names as $name) {
+            
             DB::table('candidates')->insert([
                 'name' => $name,
                 'age' => rand(20,55),
                 'year' => 2022,
                 'party_id' => rand(0,1),
                 'position_of_office_id' => rand(0,1),
+                'image_id' => strval(rand(0,2)), 
             ]);
         }
 

@@ -21,6 +21,7 @@ class Candidate extends Model
     protected $fillable = [
         "name",
         "age",
+        "image_id",
     ];
 
     use HasFactory;
