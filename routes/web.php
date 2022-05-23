@@ -20,9 +20,9 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/candidate/{id}', [CandidateController::class, 'getCandidateView']);
+Route::get('/profile/candidate/{id}', [CandidateController::class, 'getCandidateView']);
 
-Route::post('/ballot', [BallotController::class, 'getBallot']);
+Route::get('/ballot', [BallotController::class, 'getBallot']);
 
 Route::get('/edit/search', [PoliticianController::class, 'politician_edit_search']);
 
