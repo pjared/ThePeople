@@ -1,2 +1,28 @@
+# General Security
+- Need to find out how to store the images without every image being public to anyone
+
+# Submitting images
+- Need to make sure that images have 1:1 aspect ratios
+
+# Views
+
+## Home Page
+- When a user is hovering over the public office positions and they are disabled, blur out everything except for the location input
+- When a user inputs multiple locations, make sure to take the to take: zip > city > state
+- Implement a basic auto complete with state, and city to test data
+    - Make sure to implement test that will do it with all states
+- Make real implementation of autocomplete with a match functionality in case user types out the full thing on accident.
+    - https://www.js-tutorials.com/jquery-tutorials/simple-example-jquery-autocomplete/
+    - https://jqueryui.com/autocomplete/
+    - https://stackoverflow.com/questions/9656523/jquery-autocomplete-with-callback-ajax-json 
 - Add Breadcrumbs : https://getbootstrap.com/docs/3.4/components/#breadcrumbs
+- Make the entire thing part of a form, need to rename the stateInput to location type and fix in jquery
+
+## Ballot Page
+- Create stickers under a candidate in the ballot so people can see basic info. 
+
+# Before going live
 - Write Robots.txt file in public
+
+# Other programming stuff
+- Shortcut that will copy a line and paste it into current
