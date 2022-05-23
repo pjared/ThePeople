@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BallotController;
+use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\PoliticianController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +20,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/profile', [PoliticianController::class, 'getPoliticianView']);
+Route::get('/candidate/{id}', [CandidateController::class, 'getCandidateView']);
 
 Route::post('/ballot', [BallotController::class, 'getBallot']);
 
