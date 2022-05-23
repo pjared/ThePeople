@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('politicalparties', function (Blueprint $table) {
+        Schema::create('political_parties', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->text('other_info')->nullable();

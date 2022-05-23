@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('publicofficepositions', function (Blueprint $table) {
+        Schema::create('public_office_positions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->tinyInteger('years_per_term')->unsigned();
