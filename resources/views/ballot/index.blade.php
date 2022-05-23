@@ -31,7 +31,7 @@
                                                         {{ $candidate->name }}
                                                     </div>
                                                     <div class="text-end" style="font-family: 'Courier M', monospace; font-size:small;">
-                                                        <a href="/profile">More about {{ $candidate->name }}</a>
+                                                        <a href="/profile/candidate/{{$candidate->id}}">More about {{ $candidate->name }}</a>
                                                     </div>
                                                 </div>
                                             </div>

@@ -1,4 +1,4 @@
-<form method="POST" action="/ballot">
+<form method="GET" action="/ballot">
     @csrf
     <input type="hidden" name="location_type" id="location_type" value="state">
     <input type="hidden" name="location" id="location" value="Utah">
