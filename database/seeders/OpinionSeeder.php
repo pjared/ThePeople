@@ -31,8 +31,8 @@ class OpinionSeeder extends Seeder
         foreach ($this->names as $name) {
             DB::table('opinions')->insert([
                 'name' => $name,
-                'candidate_id' => rand(0,1),
-                'is_controversial' => rand(0,1)
+                'candidate_id' => rand(1,1),
+                'is_controversial' => rand(1,1)
             ]);
         }
     }

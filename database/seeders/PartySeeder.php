@@ -11,6 +11,7 @@ class PartySeeder extends Seeder
     private $names = [
         "Conservative",
         "Lib",
+        "Club Jared",
     ];
 
     /**
@@ -23,7 +24,7 @@ class PartySeeder extends Seeder
         // "name",
         // "other_info"
         foreach ($this->names as $name) {
-            DB::table('politicalparties')->insert([
+            DB::table('political_parties')->insert([
                 'name' => $name,
             ]);
         }

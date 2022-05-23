@@ -34,23 +34,23 @@ class LocationSeeder extends Seeder
         foreach ($this->state_names as $name) {
             DB::table('states')->insert([
                 'name' => $name,
-                'population' => rand(0, 10000),
+                'population' => rand(1, 10000),
             ]);
         }
 
         foreach ($this->county_names as $name) {
             DB::table('counties')->insert([
                 'name' => $name,
-                'population' => rand(0, 10000),
-                'state_id' => rand(0,1)
+                'population' => rand(1, 10000),
+                'state_id' => rand(1,1)
             ]);
         }
         
         foreach ($this->city_names as $name) {
             DB::table('cities')->insert([
                 'name' => $name,
-                'population' => rand(0, 10000),
-                'county_id' => rand(0,1)
+                'population' => rand(1, 10000),
+                'county_id' => rand(1,1)
             ]);
         }
     }

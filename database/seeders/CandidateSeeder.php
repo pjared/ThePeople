@@ -34,9 +34,9 @@ class CandidateSeeder extends Seeder
                 'name' => $name,
                 'age' => rand(20,55),
                 'year' => 2022,
-                'party_id' => rand(0,1),
-                'position_of_office_id' => rand(0,1),
-                'image_id' => strval(rand(0,2)), 
+                'party_id' => rand(1,1),
+                'position_of_office_id' => rand(1,1),
+                'image_id' => strval(rand(1,2)), 
             ]);
         }
 

@@ -19,10 +19,10 @@ class PublicOfficeSeeder extends Seeder
         // "years_per_term",
         // "limit_terms",
         foreach ($this->names as $name) {
-            DB::table('publicofficepositions')->insert([
+            DB::table('public_office_positions')->insert([
                 'name' => $name,
-                'years_per_term' => rand(0,4),
-                'limit_terms' => rand(0,4),
+                'years_per_term' => rand(1,4),
+                'limit_terms' => rand(1,4),
             ]);
         }
     }
