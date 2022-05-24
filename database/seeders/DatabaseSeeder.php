@@ -19,10 +19,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             LocationSeeder::class,
             CandidateSeeder::class,
-            OpinionSeeder::class,
             PartySeeder::class,
             PublicOfficeSeeder::class,
-            CandidateSeeder::class,
+            CandidateInfoSeeder::class,
+            PrevPoliticianInfoSeeder::class,
+            LawsSeeder::class
         ]);
     }
 }

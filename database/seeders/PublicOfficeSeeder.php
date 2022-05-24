@@ -10,9 +10,14 @@ class PublicOfficeSeeder extends Seeder
 {
     private $names = [
         "Mayor",
-        "President",
+        "Presidente",
+        "El Jefe",
+        "Plebian",
     ];
 
+    /**
+     * Seeds Public office positions
+     */
     public function run()
     {
         // "name",

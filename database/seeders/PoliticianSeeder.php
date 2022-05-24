@@ -6,12 +6,13 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class OpinionSeeder extends Seeder
+class PoliticianSeeder extends Seeder
 {
     private $names = [
-        "Pro Jared",
-        "Anti Jared",
-        "Anti Remote",
+        "Jared Pacheco",
+        "Gandalf",
+        "Ivan Fyodorvich",
+        "Cthulhu"
     ];
 
     /**
@@ -21,18 +22,17 @@ class OpinionSeeder extends Seeder
      */
     public function run()
     {
-        /* 
-            "name",
-            "candidate_id",
-            "politician_id",
-            "article_link",
-            "is_controversial",
+        /*
+        Schema::create('politicians', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->text('other_info');
+            $table->integer('home_city_id')
+        });
         */
         foreach ($this->names as $name) {
-            DB::table('opinions')->insert([
+            DB::table('politicians')->insert([
                 'name' => $name,
-                'candidate_id' => rand(1,1),
-                'is_controversial' => rand(1,1)
             ]);
         }
     }
