@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('candidate_id')->unsigned();
             $table->integer('politician_id')->unsigned()->nullable();
             $table->boolean('is_controversial')->default(false);
-            $table->string('article_link')->nullable();
+            $table->string('link')->nullable();
         });
     }
 

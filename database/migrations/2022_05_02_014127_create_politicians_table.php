@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('politicians', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('other_info');
+            $table->text('other_info')->nullable();
             $table->integer('home_city_id')->nullable();
         });
     }

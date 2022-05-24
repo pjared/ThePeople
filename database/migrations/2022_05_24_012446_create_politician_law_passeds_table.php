@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('politiciansdonors', function (Blueprint $table) {
+        Schema::create('politician_law_passeds', function (Blueprint $table) {
             $table->integer('politician_id');
-            $table->integer('donor_id');
+            $table->integer('law_id');
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('politiciansdonors');
+        Schema::dropIfExists('politician_law_passeds');
     }
 };

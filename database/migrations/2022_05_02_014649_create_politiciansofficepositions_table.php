@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('politiciansofficepositions', function (Blueprint $table) {
+        Schema::create('politician_office_positions', function (Blueprint $table) {
             $table->integer('politician_id');
             $table->integer('public_office_id');
             $table->integer('location_id');
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('politiciansofficepositions');
+        Schema::dropIfExists('politician_office_positions');
     }
 };

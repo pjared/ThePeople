@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('politicialofficepositions');
+        Schema::dropIfExists('public_office_positions');
     }
 };

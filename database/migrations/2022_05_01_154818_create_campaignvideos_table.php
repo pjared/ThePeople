@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('campaignvideos', function (Blueprint $table) {
-            $table->id();
+        Schema::create('campaign_videos', function (Blueprint $table) {
+            $table->integer('candidate_id');
             $table->string('link');
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('campaignvideos');
+        Schema::dropIfExists('campaign_videos');
     }
 };
