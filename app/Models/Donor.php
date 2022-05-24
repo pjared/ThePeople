@@ -15,6 +15,7 @@ class Donor extends Model
 
     protected $fillable = [
         "website",
+        "amount",
     ];
     use HasFactory;
 }

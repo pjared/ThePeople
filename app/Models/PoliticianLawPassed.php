@@ -5,16 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Opinion extends Model
+class PoliticianLawPassed extends Model
 {
-    public $timestamps = false;
-    
-    protected $fillable = [
-        "name",
-        "candidate_id",
-        "politician_id",
-        "link",
-        "is_controversial",
-    ];
     use HasFactory;
+
+    public $timestamps = false;
+
+    protected $primaryKey = 'politician_id';
+    public $incrementing = false;
+
+    protected $guarded = [
+        "politician_id",
+        "law_id",
+    ];
 }
