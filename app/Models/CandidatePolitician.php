@@ -3,15 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
 /**
  * A politician is a candidate multiple times.
  */
-class PoliticalCandidacies extends Model
+class CandidatePolitician extends Pivot
 {
+    use HasFactory;
+    
     public $timestamps = false;
-
     protected $primaryKey = 'politician_id';
     public $incrementing = false;
 
@@ -19,5 +20,4 @@ class PoliticalCandidacies extends Model
         "politician_id",
         "candidate_id",
     ];
-    use HasFactory;
 }
