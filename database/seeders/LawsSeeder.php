@@ -44,8 +44,9 @@ class LawsSeeder extends Seeder
         });
         */
         foreach ($this->law_names as $name) {
-            DB::table('politician_law_passeds')->insert([
+            DB::table('law_making_pivots')->insert([
                 'politician_id' => rand(1, 4),
+                'candidate_id' => rand(1, 7),
                 'law_id' => rand(1, count($this->law_names)),
             ]);
         }
