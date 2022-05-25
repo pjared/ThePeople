@@ -41,7 +41,7 @@ class PrevPoliticianInfoSeeder extends Seeder
         });
         */
         for ($i = 1; $i <= $num_politicians; $i++) {
-            DB::table('political_candidacies')->insert([
+            DB::table('candidate_politician')->insert([
                 'politician_id' => $i,
                 'candidate_id' => $i,
             ]);

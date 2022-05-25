@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('law_making_pivots', function (Blueprint $table) {
-            $table->integer('politician_id');
-            $table->integer('candidate_id');
-            $table->integer('law_id');
+        Schema::create('controversial_opinions', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
         });
     }
 
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('politician_law_passeds');
+        Schema::dropIfExists('controversial_opinions');
     }
 };
