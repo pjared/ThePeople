@@ -12,12 +12,8 @@
           </li>
           <li class="nav-item"> 
             {{-- TODO: Finsh this --}}
-            <a class="nav-link active" href="/edit/search">About Us</a>
+            <a class="nav-link active" href="/">About Us</a>
           </li>
-          {{-- <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">A site by Jared Pacheco</a>
-          </li> --}}
-          {{-- Login/Profile --}}
         </ul>
 
         <ul class="navbar-nav ms-auto">

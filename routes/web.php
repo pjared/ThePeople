@@ -23,7 +23,3 @@ Route::get('/', function () {
 Route::get('/profile/candidate/{id}', [CandidateController::class, 'getCandidateView']);
 
 Route::get('/ballot', [BallotController::class, 'getBallot']);
-
-Route::get('/edit/search', [PoliticianController::class, 'politician_edit_search']);
-
-Route::get('/edit/profile', [PoliticianController::class, 'politician_edit_page']);
