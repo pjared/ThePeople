@@ -8,7 +8,13 @@
             </div>
         </div>
         <div class="row justify-content-center mt-5 pt-3">
-            @include('location.index')
+            <div class="col-5 offset-md-2 justify-content-center text-center" style="font-family: 'Roboto'; font-size:xxx-large;">
+                @include('components.publicOfficeList')
+            </div>
+            <div class="col-5 mt-4 text-left" style="font-family: 'Roboto'; font-size:x-large;">
+                @include('components.locationInput')
+            </div>
+            {{-- @include('location.index') --}}
         </div>
     </div>
 @endsection
