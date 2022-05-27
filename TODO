@@ -1,11 +1,6 @@
 # MVP
-- Fix checkboxes
-    - Might need to do some research for custom checkboxes
-- 
-
-
-# General Security
-- Need to find out how to store the images without every image being public to anyone
+- Add disabling with ballot page, pass data from home to ballot
+- Do Home Page TODO
 
 # Submitting images
 - Need to make sure that images have 1:1 aspect ratios
@@ -15,6 +10,7 @@
 ## Home Page
 - When a user is hovering over the public office positions and they are disabled, blur out everything except for the location input
 - When a user inputs multiple locations, make sure to take the to take: zip > city > state
+    - Controller will determine this
 - Implement a basic auto complete with state, and city to test data
     - Make sure to implement test that will do it with all states
 - Make real implementation of autocomplete with a match functionality in case user types out the full thing on accident.
@@ -27,11 +23,14 @@
 ## Ballot Page
 - Create stickers under a candidate in the ballot so people can see basic info. 
 
+# Admin Page
+- Look into pyscript to see if I should use matplotlib to display graphs for politician side
+
+# General Security
+- Need to find out how to store the images without every image being public to anyone
+
 # Before going live
 - Write Robots.txt file in public
 
-# Other programming stuff
+# Other programming stuff to look up
 - Shortcut that will copy a line and paste it into current
-
-# Admin Page
-- Look into pyscript to see if I should use matplotlib to display graphs for politician side
