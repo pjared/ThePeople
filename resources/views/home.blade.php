@@ -8,51 +8,15 @@
             </div>
         </div>
         <div class="row justify-content-center mt-5 pt-3">
-            <div class="col-5 offset-md-2 justify-content-center text-center" style="font-family: 'Roboto'; font-size:xxx-large;">
+            <div class="col-5 col-offset-3 justify-content-center text-center" style="font-family: 'Roboto'; font-size:xxx-large;">
                 @include('components.publicOfficeList')
             </div>
-            <div class="col-5 mt-4 text-left" style="font-family: 'Roboto'; font-size:x-large;">
-                @include('components.locationInput')
+            <div class="col-3 mt-4 text-left" style="font-family: 'Roboto'; font-size:x-large;">
+                <div class='width:30%'>
+                    @include('components.locationInput')
+                </div>                
             </div>
             {{-- @include('location.index') --}}
         </div>
     </div>
-@endsection
-
-@section('scripts')
-    <script>
-        $(document).ready(function() {
-            $('#mayorButton').prop("disabled",true)
-            $('#govenorButton').prop("disabled",true)
-            $('#houseButton').prop("disabled",true)
-            $('#senateButton').prop("disabled",true)
-
-            $('#stateInput').keyup(function() {
-                affectedList = [$('#govenorButton'), $('#houseButton'),  $('#senateButton')];
-                stateHandle($('#stateInput'), affectedList);
-            });
-
-            // zipAndCityAffectedList = 
-            $('#zipInput').keyup(function() {
-                affectedList = [$('#mayorButton'), $('#govenorButton'), $('#houseButton'),  $('#senateButton')];
-                stateHandle($('#zipInput'), affectedList);
-            });
-            $('#cityInput').keyup(function() {
-                affectedList = [$('#mayorButton'), $('#govenorButton'), $('#houseButton'),  $('#senateButton')];
-                stateHandle($('#cityInput'), affectedList);
-            });
-
-            function stateHandle(stateObj, affectedList) {
-                if (stateObj.val() === "") {
-                    affectedList.forEach(element => {
-                        element.prop("disabled",true)
-                    });
-                } else {
-                    affectedList.forEach(element => {
-                        element.prop("disabled",false)
-                    });
-                }
-            }
-        });
-    </script>
 @endsection
