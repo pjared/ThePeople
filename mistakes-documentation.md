@@ -31,7 +31,7 @@ What I tried:
 - I gave all of the SVG's unique IDS
 - I gave the x, y, and d values within <rect> and <path> unique values, made them dissapear
 
-Fix: 
+Fix: Needed just change the CSS since it was set to ID's. I added a class and made CSS work with that
 
 Occurences:
 1. Patient 0: I was trying to do the checkboxes for the ballot view (ballot.page), SVG kept breaking
