@@ -52,11 +52,11 @@
                                     <div class="col-1 ms-4">
                                         <div class="mt-3">
                                             {{-- TODO: Fix this checkbox error --}}
-                                            <input id="checkbox_{{$candidate->id}}" type="checkbox" >
-                                            <label for="checkbox_{{$candidate->id}}" id="label_{{$candidate->id}}" style="--d: 75%;">
-                                                <svg id="svg_{{$candidate->id}}" viewBox="0, 0, 50, 50">                                                    
+                                            <input type="checkbox" id="check">
+                                            <label for="check" style="--d: 75%;">
+                                                <svg viewBox="0, 0, 50, 50">
                                                     <rect x="10%" y="10%"/>
-                                                    <path d="M5 30 L 20 40 L 55 -15" />
+                                                    <path d="M5 30 L 20 40 L 55 -15"></path>
                                                 </svg>
                                             </label>
                                         </div>
