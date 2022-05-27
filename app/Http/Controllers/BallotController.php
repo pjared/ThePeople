@@ -29,6 +29,7 @@ class BallotController extends Controller
         $location = $request->location;
         $office = $request->office;
 
+        //Logic for determining what region to use
         switch ($location_type) {
             case 'state':
                 break;
