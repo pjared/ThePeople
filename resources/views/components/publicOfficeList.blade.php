@@ -8,7 +8,7 @@
     <button type="submit" id="mayorButton" class="card public-office-card">
         <div class="card-body">
             Mayor
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" viewBox="0 0 419.48 419.48" style="enable-background:new 0 0 419.48 419.48;" xml:space="preserve" height="50px">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" viewBox="0 0 419.48 419.48" style="enable-background:new 0 0 419.48 419.48;" xml:space="preserve" height="50px">
                 <g transform="translate(0,400)">
                 <g transform="scale(1,-1)"> 
                 <g>
@@ -46,3 +46,70 @@
         </div>
     </button>
 </form>
+
+@push('scripts')
+    <script>
+        $(document).ready(function() {            
+            //TODO: Figure out how to disable all
+            
+            function disableAll() {
+                $('#mayorButton').prop("disabled",true)
+                $('#govenorButton').prop("disabled",true)
+                $('#houseButton').prop("disabled",true)
+                $('#senateButton').prop("disabled",true)
+                
+                setMayorIcon();
+                setGovenorIcon();
+            }
+
+            disableAll();
+
+            $('#stateInput').keyup(function() {
+                affectedList = [$('#govenorButton'), $('#houseButton'),  $('#senateButton')];
+                stateHandle($('#stateInput'), affectedList);
+            });
+
+            $('#zipInput').keyup(function() {
+                affectedList = [$('#mayorButton'), $('#govenorButton'), $('#houseButton'),  $('#senateButton')];
+                stateHandle($('#zipInput'), affectedList);
+            });
+
+            $('#cityInput').keyup(function() {
+                affectedList = [$('#mayorButton'), $('#govenorButton'), $('#houseButton'),  $('#senateButton')];
+                stateHandle($('#cityInput'), affectedList);
+            });
+
+            function setMayorIcon() {
+                if($('#mayorButton').prop('disabled') == true) {
+                    $('#mayorButton').css("fill", "grey")
+                } else {
+                    $('#mayorButton').css("fill", "black")
+                }
+            }
+
+            function setGovenorIcon() {
+                if($('#govenorButton').prop('disabled') == true) {
+                    $('#govenorButton').css("fill", "grey")
+                } else {
+                    $('#govenorButton').css("fill", "black")
+                }
+            }
+
+            function stateHandle(stateObj, affectedList) {
+                if (stateObj.val() === "") {
+                    affectedList.forEach(element => {
+                        element.prop("disabled",true)                        
+                    });
+                    setMayorIcon();
+                    setGovenorIcon();
+                } else {
+                    affectedList.forEach(element => {
+                        element.prop("disabled",false)
+                    });
+                    setMayorIcon();
+                    setGovenorIcon();
+                }
+            }
+        });
+    </script>
+@endpush
