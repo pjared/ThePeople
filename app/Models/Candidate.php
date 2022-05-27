@@ -35,6 +35,22 @@ class Candidate extends Model
     }
     
     public function donors() {
-        return $this->belongsToMany(Donor::class)->using(CandidateDonor::class);
+        return $this->belongsToMany(Donor::class)->using(CandidateDonors::class);
+    }
+
+    public function politician() {
+        return $this->hasOneThrough(Politician::class, CandidatePolitician::class, 'candidate_id','name');
+    }
+
+    public function videos() {
+        return $this->hasMany(CampaignVideo::class);
+    }
+
+    public function controversial_opinions() {
+        return $this->hasMany(Opinion::class);
+    }
+
+    public function law_involvement() {
+        return $this->belongsToMany(Law::class)->using(CandidateLaw::class);
     }
 }

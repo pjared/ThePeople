@@ -3,6 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row gx-0 justify-content-center">
+            {{-- LEFT COLUMN --}}
             <div class="col-6 p-5">
                 <div class="p-2">
                     <div class="row">
@@ -59,10 +60,19 @@
                         </button>
                         <div class="collapse multi-collapse" id="campaignDonorCollapse">
                             <div style="width:95%" class="card card-body no-border">
-                                Add the code for campaign data here
+                                {{-- {{dd( count($candidate->donors), count($candidate->donors) == 0 )}} --}}
+                                @if(count($candidate->donors) >= 1) 
+                                    @foreach ($candidate->donors as $donor)
+                                        Name:  {{$donor->name}}
+                                        <br>
+                                    @endforeach
+                                @else
+                                    No donor data as of yet.
+                                @endif
                             </div>
                         </div>
                     </div>
+                    {{-- {{dd($candidate->politician)}} --}}
                     <div id="previousPoisitonsInfo" class="mt-4">
                         <button style="width:95%" class="card card-body" type="button" data-bs-toggle="collapse" data-bs-target="#prevPositionsInfoCollapse" aria-expanded="false" aria-controls="multiCollapseExample2">
                             <div class="row">
@@ -77,14 +87,20 @@
                         </button>
                         <div class="collapse multi-collapse" id="prevPositionsInfoCollapse">
                             <div style="width:95%" class="card card-body no-border">
-                                Add the code for prev positions data here
+                                @if($candidate->politician)
+                                    {{-- TODO: Get each held office --}}
+                                @else
+                                    This Candidate has not held office before
+                                @endif
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            {{-- RIGHT COLUMN --}}
             <div class="col-6 p-5">
                 <div class="p-2">
+                    {{-- CAMPAIGN VIDEOS --}}
                     <div id="campaignInfo">
                         <button style="width:95%" class="card card-body" type="button" data-bs-toggle="collapse" data-bs-target="#campaignInfoCollapse" aria-expanded="false" aria-controls="multiCollapseExample2">
                             <div class="row">
@@ -99,10 +115,18 @@
                         </button>
                         <div class="collapse multi-collapse" id="campaignInfoCollapse">
                             <div style="width:95%" class="card card-body no-border">
-                                Add the code for campaign videos here
+                                @if(count($candidate->videos) >= 1) 
+                                    @foreach ($candidate->videos as $video)
+                                        Link:  {{$video->link}}
+                                        <br>
+                                    @endforeach
+                                @else
+                                    No campaign videos as of yet
+                                @endif
                             </div>
                         </div>
                     </div>
+                    {{-- CONTROVERSIAL OPINIONS --}}
                     <div class="mt-4" id="opinionsInfo">
                         <button style="width:95%" class="card card-body" type="button" data-bs-toggle="collapse" data-bs-target="#contraOpinionsCollapse" aria-expanded="false" aria-controls="multiCollapseExample2">
                             <div class="row">
@@ -119,10 +143,22 @@
                         </button>
                         <div class="collapse multi-collapse" id="contraOpinionsCollapse">
                             <div style="width:95%" class="card card-body no-border">
-                                Add the opinions code here
+                                @if(count($candidate->controversial_opinions) >= 1) 
+                                    @foreach ($candidate->controversial_opinions as $opinion)
+                                        {{-- TODO: Fix this when opinions are refactored  --}}
+                                        @if($opinion->is_controversial)
+                                            {{$opinion->name}}
+                                            {{-- TODO: add a little icon to explain what opinion is --}}
+                                            <br>
+                                        @endif
+                                    @endforeach
+                                @else
+                                    We're still searching for the controversial opinons!
+                                @endif
                             </div>
                         </div>
                     </div>
+                    {{-- OTHER OPINIONS --}}
                     <div class="mt-4" id="opinionsInfo">
                         <button style="width:95%" class="card card-body" type="button" data-bs-toggle="collapse" data-bs-target="#opinionsInfoCollapse" aria-expanded="false" aria-controls="multiCollapseExample2">
                             <div class="row">
@@ -137,10 +173,22 @@
                         </button>
                         <div class="collapse multi-collapse" id="opinionsInfoCollapse">
                             <div style="width:95%" class="card card-body no-border">
-                                Add the code for opions data here
+                                @if(count($candidate->controversial_opinions) >= 1) 
+                                    @foreach ($candidate->controversial_opinions as $opinion)
+                                        {{-- TODO: Fix this when opinions are refactored  --}}
+                                        @if(!$opinion->is_controversial)
+                                            {{$opinion->name}}
+                                            {{-- TODO: add a little icon to explain what opinion is --}}
+                                            <br>
+                                        @endif
+                                    @endforeach
+                                @else
+                                    We're still searching for opinons!
+                                @endif
                             </div>
                         </div>
-                    </div>
+                    </div>     
+                    {{-- LAW MAKING INVOLVEMENT  --}}
                     <div class="mt-4" id="lawsPassedInfo">
                         <button style="width:95%" class="card card-body" type="button" data-bs-toggle="collapse" data-bs-target="#lawsPassedInfoCollapse" aria-expanded="false" aria-controls="multiCollapseExample2">
                             <div class="row">
@@ -155,7 +203,14 @@
                         </button>
                         <div class="collapse multi-collapse" id="lawsPassedInfoCollapse">
                             <div style="width:95%" class="card card-body no-border">
-                                Add the code for laws passed data here
+                                @if(count($candidate->law_involvement) >= 1) 
+                                    @foreach ($candidate->law_involvement as $law)
+                                        {{-- TODO: Fix this when opinions are refactored  --}}
+                                        Name : {{ $law->name }}
+                                    @endforeach
+                                @else
+                                   No involvment in laws has been found
+                                @endif
                             </div>
                         </div>
                     </div>
