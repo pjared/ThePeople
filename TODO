@@ -1,3 +1,9 @@
+# MVP
+- Fix checkboxes
+    - Might need to do some research for custom checkboxes
+- 
+
+
 # General Security
 - Need to find out how to store the images without every image being public to anyone
 
@@ -26,3 +32,6 @@
 
 # Other programming stuff
 - Shortcut that will copy a line and paste it into current
+
+# Admin Page
+- Look into pyscript to see if I should use matplotlib to display graphs for politician side
