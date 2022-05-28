@@ -3,6 +3,7 @@
 use App\Http\Controllers\BallotController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\PoliticianController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,7 @@ Route::get('/', function () {
 Route::get('/profile/candidate/{id}', [CandidateController::class, 'getCandidateView']);
 
 Route::get('/ballot', [BallotController::class, 'getBallot']);
+
+Route::group(['namespace' => 'autocomplete', 'prefix' => 'autocomplete'], function() {
+    Route::get('/state', [SearchController::class, 'autocompleteState'])->name('state');
+});
