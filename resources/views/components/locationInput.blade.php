@@ -29,8 +29,7 @@
     <script>        
         $(document).ready(function() {   
             var statePath = "{{ route('state') }}";
-            $("#stateInput").typeahead({
-                
+            $("#stateInput").typeahead({                
                 source:  function (query, process) {
                     return $.get(statePath, { query: query }, function (data) {
                             return process(data);
