@@ -1,4 +1,4 @@
-<form method="GET" action="/ballot">
+<form method="GET" action="/ballot" class="officeList">
     @csrf
     <input type="hidden" name="location_type" id="location_type" value="state">
     <input type="hidden" name="location" id="location" value="Utah">
@@ -38,11 +38,13 @@
     </button>
     {{-- Senate Card --}}
     <button type="submit" id="senateButton" class="card public-office-card">
-        <div class="card-body">
+        <div class="card-body d-flex align-items-center">
             Senate
-            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
-                <path d="M8 .95 14.61 4h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.379l.5 2A.5.5 0 0 1 15.5 17H.5a.5.5 0 0 1-.485-.621l.5-2A.5.5 0 0 1 1 14V7H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 4h.89L8 .95zM3.776 4h8.447L8 2.05 3.776 4zM2 7v7h1V7H2zm2 0v7h2.5V7H4zm3.5 0v7h1V7h-1zm2 0v7H12V7H9.5zM13 7v7h1V7h-1zm2-1V5H1v1h14zm-.39 9H1.39l-.25 1h13.72l-.25-1z"/>
-            </svg>
+            <div class="pe-4 me-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 18">
+                    <path d="M8 .95 14.61 4h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.379l.5 2A.5.5 0 0 1 15.5 17H.5a.5.5 0 0 1-.485-.621l.5-2A.5.5 0 0 1 1 14V7H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 4h.89L8 .95zM3.776 4h8.447L8 2.05 3.776 4zM2 7v7h1V7H2zm2 0v7h2.5V7H4zm3.5 0v7h1V7h-1zm2 0v7H12V7H9.5zM13 7v7h1V7h-1zm2-1V5H1v1h14zm-.39 9H1.39l-.25 1h13.72l-.25-1z"/>
+                </svg>
+            </div>            
         </div>
     </button>
 </form>
@@ -50,7 +52,73 @@
 @push('scripts')
     <script>
         $(document).ready(function() {            
-            //TODO: Figure out how to disable all
+            /*  --- HOVERING --- */
+            
+            function addHoverEffect(officeButton, affectedList) {
+                officeButton.css("background", "lightgray");
+
+                affectedList.forEach(element => {
+                    element.css('border-color', '#86b7fe');                      
+                    element.css('outline', '0');                     
+                    element.css('box-shadow', '0 0 0 0.25rem rgba(13, 110, 253, 0.25)');                
+                });
+            }
+
+            function removeHoverEffect(officeButton, affectedList) {
+                officeButton.css("background", "white")
+
+                affectedList.forEach(element => {
+                    element.css('border-color', '#ced4da');
+                    element.css('outline', '0');
+                    element.css('box-shadow', 'none');           
+                });                
+            }
+
+            $('#mayorButton').hover(
+                function() {
+                    affectedList = [$('#cityInput'), $('#zipInput')];
+                    addHoverEffect($(this), affectedList);
+                    
+                }, function() {
+                    affectedList = [$('#cityInput'), $('#zipInput')];
+                    removeHoverEffect($(this), affectedList);
+                }
+            );
+
+            $('#houseButton').hover(
+                function() {
+                    affectedList = [$('#cityInput'), $('#zipInput'), $('#stateInput')];
+                    addHoverEffect($(this), affectedList);
+                    
+                }, function() {
+                    affectedList = [$('#cityInput'), $('#zipInput'), $('#stateInput')];
+                    removeHoverEffect($(this), affectedList);
+                }
+            );
+            
+            $('#govenorButton').hover(
+                function() {
+                    affectedList = [$('#cityInput'), $('#zipInput'), $('#stateInput')];
+                    addHoverEffect($(this), affectedList);
+                    
+                }, function() {
+                    affectedList = [$('#cityInput'), $('#zipInput'), $('#stateInput')];
+                    removeHoverEffect($(this), affectedList);
+                }
+            );
+
+            $('#senateButton').hover(
+                function() {
+                    affectedList = [$('#cityInput'), $('#zipInput'), $('#stateInput')];
+                    addHoverEffect($(this), affectedList);
+                    
+                }, function() {
+                    affectedList = [$('#cityInput'), $('#zipInput'), $('#stateInput')];
+                    removeHoverEffect($(this), affectedList);
+                }
+            );
+
+            /*  --- INPUT CRONTROL --- */
             
             function disableAll() {
                 $('#mayorButton').prop("disabled",true)
@@ -110,6 +178,8 @@
                     setGovenorIcon();
                 }
             }
+
+            
         });
     </script>
 @endpush
