@@ -9,16 +9,27 @@
                 </div>                
             </div>
         </div>
-        <div class="row justify-content-center mt-5 pt-3">
-            <div class="col-5 col-offset-3 justify-content-center text-center" style="font-family: 'Roboto'; font-size:xxx-large;">
-                @include('components.publicOfficeList')
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
-            <div class="col-3 mt-4 text-left" style="font-family: 'Roboto'; font-size:x-large;">
-                <div class='width:30%'>
-                    @include('components.locationInput')
-                </div>                
+        @endif
+        <form method="GET" action="/ballot" class="officeList">   
+            @csrf    
+            <div class="row justify-content-center mt-5 pt-3">                    
+                <div class="col-5 col-offset-3 justify-content-center text-center" style="font-family: 'Roboto'; font-size:xxx-large;">
+                    @include('components.publicOfficeList')
+                </div>
+                <div class="col-3 mt-4 text-left" style="font-family: 'Roboto'; font-size:x-large;">
+                    <div class='width:30%'>
+                        @include('components.locationInput')
+                    </div>
+                </div>
             </div>
-            {{-- @include('location.index') --}}
-        </div>
+        </form>
     </div>
 @endsection
