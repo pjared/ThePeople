@@ -1,3 +1,53 @@
+.type-out {
+	width: 25ch;
+	animation: typing 2s steps(22), blink .5s step-end 9 alternate;
+	white-space: nowrap;
+	overflow: hidden;
+	font-family: 'Roboto Mono', monospace; 
+	font-size:xx-large;
+}
+
+@keyframes typing {
+	0% {
+		width: 0
+	}
+}
+	
+@keyframes blink {
+	0% {
+		border-right: 3px solid;
+	}
+	50% {
+		border-color: transparent
+	}
+	100% {
+		border-right: 3px solid;
+	}
+}
+
+/*	TYPEAHEAD	*/
+// .ui-helper-hidden-accessible { display:none; }
+
+// // .ui-menu-item {
+// // 	border: 1px solid;
+// // }
+// .ui-autocomplete {
+// 	z-index: 2;
+// 	background-color: white;
+// 	border: 1px solid;
+// 	.element {
+// 		border-color: '#86b7fe';
+// 		box-shadow: '0 0 0 0.25rem rgba(13, 110, 253, 0.25)';
+// 	}
+// 	list-style: none;
+// }
+
+// .ui-menu-item {
+// 	font-family: 'Courier New', Courier, monospace;
+// 	//NOTE: ACTIVE, FOCUS, AND HOVER DO NOT WORK WITH AUTOCOMPLETE
+// 	//Use this tho //background: #656565 & box-shadow: 0 0 30px black
+// }
+
 .public-office-card {
     margin:0 auto;
     border: none;

@@ -3,8 +3,10 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="main-text pt-5 mt-5 text-center" style="font-family: 'Roboto Mono', monospace; font-size:xx-large;">
-                See Who's Running For
+            <div class="pt-5 mt-5 d-flex justify-content-center">
+                <div class="ms-5 text-center type-out">
+                    See Who's Running For ...
+                </div>                
             </div>
         </div>
         <div class="row justify-content-center mt-5 pt-3">
