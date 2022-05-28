@@ -1,11 +1,7 @@
-<form method="GET" action="/ballot" class="officeList">
-    @csrf
-    <input type="hidden" name="location_type" id="location_type" value="state">
-    <input type="hidden" name="location" id="location" value="Utah">
-    <input type="hidden" name="office" id="office" value="mayor">
-
+<div>
     {{-- Mayor Card --}}
     <button type="submit" id="mayorButton" class="card public-office-card">
+        <input type="hidden" name="office" id="office" value="mayor">
         <div class="card-body">
             Mayor
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" viewBox="0 0 419.48 419.48" style="enable-background:new 0 0 419.48 419.48;" xml:space="preserve" height="50px">
@@ -19,6 +15,7 @@
     </button>
     {{-- Govenor Card --}}
     <button type="submit" id="govenorButton" class="card public-office-card">
+        <input type="hidden" name="office" id="office" value="governor">
         <div class="card-body">
             Governor
             <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -28,6 +25,7 @@
     </button>
     {{-- House Card --}}
     <button type="submit" id="houseButton" class="card public-office-card">
+        <input type="hidden" name="office" id="office" value="house">
         <div class="card-body">
             House
             <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
@@ -38,6 +36,7 @@
     </button>
     {{-- Senate Card --}}
     <button type="submit" id="senateButton" class="card public-office-card">
+        <input type="hidden" name="office" id="office" value="senate">
         <div class="card-body">
             {{-- <div class="col-8 ps-2">
                 
@@ -51,8 +50,7 @@
             </svg>       
         </div>
     </button>
-</form>
-
+</div>
 @push('scripts')
     <script>
         $(document).ready(function() {            
