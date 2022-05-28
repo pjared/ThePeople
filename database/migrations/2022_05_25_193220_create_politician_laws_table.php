@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Law;
 use App\Models\Politician;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
