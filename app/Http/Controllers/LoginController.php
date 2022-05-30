@@ -19,15 +19,27 @@ class LoginController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
- 
-        if (Auth::attempt($credentials)) {
+        
+        if($request->rememberCheck == "on") {
+            $remember = true;
+        } else {
+            $remember = false;
+        }
+        
+
+        if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
  
-            return redirect()->intended('dashboard');
+            return redirect()->intended('/');
         }
  
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
+    }
+
+    public function logout() {
+        Auth::logout();
+        return redirect()->intended('/');
     }
 }
