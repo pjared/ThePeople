@@ -1,7 +1,6 @@
 <div>
     {{-- Mayor Card --}}
-    <button type="submit" id="mayorButton" class="card public-office-card">
-        <input type="hidden" name="office" id="office" value="mayor">
+    <button type="submit" id="mayorButton" name="office" value="Mayor" class="card public-office-card">
         <div class="card-body">
             Mayor
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" viewBox="0 0 419.48 419.48" style="enable-background:new 0 0 419.48 419.48;" xml:space="preserve" height="50px">
@@ -14,8 +13,7 @@
         </div>
     </button>
     {{-- Govenor Card --}}
-    <button type="submit" id="govenorButton" class="card public-office-card">
-        <input type="hidden" name="office" id="office" value="governor">
+    <button type="submit" id="govenorButton" name="office" value="Governor" class="card public-office-card">
         <div class="card-body">
             Governor
             <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -24,8 +22,7 @@
         </div>
     </button>
     {{-- House Card --}}
-    <button type="submit" id="houseButton" class="card public-office-card">
-        <input type="hidden" name="office" id="office" value="house">
+    <button type="submit" id="houseButton" name="office" value="House" class="card public-office-card">
         <div class="card-body">
             House
             <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
@@ -35,15 +32,14 @@
         </div>
     </button>
     {{-- Senate Card --}}
-    <button type="submit" id="senateButton" class="card public-office-card">
-        <input type="hidden" name="office" id="office" value="senate">
+    <button type="submit" id="senateButton" name="office" value="Senate" class="card public-office-card">
         <div class="card-body">
-            {{-- <div class="col-8 ps-2">
-                
+            {{-- Keeping this here just in case
+            <div class="col-8 ps-2">
             </div>
             <div class="col-4 text-start">
-                
-            </div>   --}}
+            </div> 
+            --}}
             Senate
             <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-bank text-center" viewBox="0 0 16 18">
                 <path d="M8 .95 14.61 4h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.379l.5 2A.5.5 0 0 1 15.5 17H.5a.5.5 0 0 1-.485-.621l.5-2A.5.5 0 0 1 1 14V7H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 4h.89L8 .95zM3.776 4h8.447L8 2.05 3.776 4zM2 7v7h1V7H2zm2 0v7h2.5V7H4zm3.5 0v7h1V7h-1zm2 0v7H12V7H9.5zM13 7v7h1V7h-1zm2-1V5H1v1h14zm-.39 9H1.39l-.25 1h13.72l-.25-1z"/>
