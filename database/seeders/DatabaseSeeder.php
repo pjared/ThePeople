@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             LawsSeeder::class,
 
             UserSeeder::class,
+            RunningCandidatesSeeder::class,
         ]);
     }
 }

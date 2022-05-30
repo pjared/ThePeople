@@ -10,9 +10,9 @@ class PublicOfficeSeeder extends Seeder
 {
     private $names = [
         "Mayor",
-        "Presidente",
-        "El Jefe",
-        "Plebian",
+        "Governor",
+        "House",
+        "Senate",
     ];
 
     /**
