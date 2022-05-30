@@ -1,36 +1,89 @@
-# MVP
-- Add disabling with ballot page, pass data from home to ballot
-- Do Home Page TODO
+# TODAY
+- Seed politicians for geographic location and get them after entering Utah
+    - Make sure this works by inputting another state
+- Save the checkmark for the planned vote
 
-# Submitting images
-- Need to make sure that images have 1:1 aspect ratios
+# MVP
+- Implement flagging politician page - after login implementation
+- Get proper candidates by location - Seed more/make first real test
+- Decide if controversial opinions is a definite list
+- State input on ballot page needs to fit text, so does ZIP and City
+
+# User Login Capability
+- Add ability to register to ComnRep
+- Add login throttling
+    - https://laravel.com/docs/9.x/authentication#redirecting-unauthenticated-users
+- Implement some kind of authentication system
+    - https://github.com/robsontenorio/laravel-keycloak-guard?ref=madewithlaravel.com
+    - https://github.com/ory/hydra - seems to be open source but not for enterprise
+## Prompts to sign up
+- Add sign up prompts for the following (https://laravel.com/docs/9.x/authentication#redirecting-unauthenticated-users)
+    - Checking on ballot
+    - Flagging
+
+# Choosing a level of office
+- Also need to add in city council?
+- City input doesn't seem to work for some reason
+
+# Adding Politicians
+- Configure API tokens for them
+    - https://laravel.com/docs/9.x/authentication#redirecting-unauthenticated-users
+
+# User Creation
+## Users
+- Make users implement state, if state is ever changed need to delete their votes and flags 
+    - Users can't transfer abuse
+## Politicians
+- Need some kind of method for confirmation of the person. 
 
 # Views
 
+## My Profile Page
+
+### Personal Information
+- Allow the user to put in their zip, city, or state
+    - Autofill this for them on the page? Or just make the buttons clickable
 ## Home Page
-- When a user is hovering over the public office positions and they are disabled, blur out everything except for the location input
-- When a user inputs multiple locations, make sure to take the to take: zip > city > state
-    - Controller will determine this
-- Implement a basic auto complete with state, and city to test data
-    - Make sure to implement test that will do it with all states
-- Make real implementation of autocomplete with a match functionality in case user types out the full thing on accident.
-    - https://www.js-tutorials.com/jquery-tutorials/simple-example-jquery-autocomplete/
-    - https://jqueryui.com/autocomplete/
-    - https://stackoverflow.com/questions/9656523/jquery-autocomplete-with-callback-ajax-json 
-- Add Breadcrumbs : https://getbootstrap.com/docs/3.4/components/#breadcrumbs
-- Make the entire thing part of a form, need to rename the stateInput to location type and fix in jquery
+
+### Jump back into
+- Have a right side tab that will allow the user to go back to their study instead of manually doing the input
+    - Use a login cookie so the data can be grabbed
+    
+### Later Things
+- Finish autocomplete for ZIP and cities
 
 ## Ballot Page
 - Create stickers under a candidate in the ballot so people can see basic info. 
+
+# Politican Page
+- Dip toes in water with service injection to display politician metrics
+    - https://laravel.com/docs/9.x/container
+## Submitting images
+- Need to make sure that images have 1:1 aspect ratios
 
 # Admin Page
 - Look into pyscript to see if I should use matplotlib to display graphs for politician side
 
 # General Security
 - Need to find out how to store the images without every image being public to anyone
+- Need an analysis on all HTTP requests to make sure I use post when necessary
 
 # Before going live
+- Find out which login service is cheap, and will allow most connection for user data to sell
+- Add validation errors for everything
+    - https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors
+- Need to get down with service injection. 
+    - https://laravel.com/docs/9.x/container
 - Write Robots.txt file in public
+- Add Breadcrumbs : https://getbootstrap.com/docs/3.4/components/#breadcrumbs
+
+# Future things
+- Implement ability to flag. Have a flag comparison page
+    - Find out how to save these flags by politician
+- Check out livewire for dynamic components
+    - https://laravel-livewire.com/docs/2.x/quickstart
+        - A pretty good starting guide https://www.sitepoint.com/laravel-livewire-getting-started/ 
+        - Another one https://dev.to/osejudith/lntroduction-to-laravel-livewire-aif
 
 # Other programming stuff to look up
 - Shortcut that will copy a line and paste it into current
