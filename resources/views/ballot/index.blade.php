@@ -30,7 +30,7 @@
                             Plan your choice for the upcoming election
                         </div>                        
                         <div class="form-check mt-2">
-                            @foreach ($candidates as $candidate)
+                            @foreach ($running_candidates as $running_candidate)
                                 <div class="row pt-2 h-100">
                                     {{-- CANDIDATE NAME, PICTURE, AND PAGE LINK --}}
                                     <div class="col-10">
@@ -38,14 +38,14 @@
                                             <div class="card-body" style="padding-bottom: .25rem; padding-top: .25rem">
                                                 <div class="row align-items-center">
                                                     <div class="col-2 text-center">
-                                                        <img style="height:90px;width:100%;object-fit: cover;" src="{{ Storage::url('images/' . $candidate->image_id  . '.jpg') }}">
+                                                        <img style="height:90px;width:100%;object-fit: cover;" src="{{ Storage::url('images/' . $running_candidate->candidate->image_id  . '.jpg') }}">
                                                     </div>
                                                     <div class="col-9 offset-1">
                                                         <div class="" style="font-family: 'Courier M', monospace; font-size:medium;">
-                                                            {{ $candidate->name }}
+                                                            {{ $running_candidate->candidate->name }}
                                                         </div>
                                                         <div class="text-end" style="font-family: 'Courier M', monospace; font-size:small;">
-                                                            <a href="/profile/candidate/{{$candidate->id}}">More about {{ $candidate->name }}</a>
+                                                            <a href="/profile/candidate/{{$running_candidate->candidate_id}}">More about {{ $running_candidate->candidate->name }}</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -55,8 +55,8 @@
                                     {{-- CHECKBOX FOR CANDIDATE --}}
                                     <div class="col-1 ms-4 d-flex align-items-center">
                                         <div class="w-100">
-                                            <input type="checkbox" class="check" name="check{{$candidate->id}}" id="check{{$candidate->id}}">
-                                            <label for="check{{$candidate->id}}" style="--d: 75%;">
+                                            <input type="checkbox" class="check" name="check{{$running_candidate->candidate_id}}" id="check{{$running_candidate->candidate_id}}">
+                                            <label for="check{{$running_candidate->candidate_id}}" style="--d: 75%;">
                                                 <svg viewBox="0, 0, 50, 50">
                                                     <rect x="10%" y="10%"/>
                                                     <path d="M5 30 L 20 40 L 55 -15"></path>
@@ -79,5 +79,10 @@
         $('input.check').on('change', function() {
             $('input.check').not(this).prop('checked', false);  
         });
+
+        //If a user has a candidate checked, check it when page loads
+        $(document).ready(function() {            
+            
+        })
     </script>
 @endpush
