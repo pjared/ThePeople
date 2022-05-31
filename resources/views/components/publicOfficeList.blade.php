@@ -119,13 +119,24 @@
             /*  --- INPUT CRONTROL --- */
             
             function disableAll() {
-                $('#mayorButton').prop("disabled",true)
-                $('#govenorButton').prop("disabled",true)
-                $('#houseButton').prop("disabled",true)
-                $('#senateButton').prop("disabled",true)
-                
-                setMayorIcon();
-                setGovenorIcon();
+                //Check to see if any values are set
+
+                //City and zip unlock all
+                if($('#zipInput').val() != "" || $('#cityInput').val() != "") {
+                    return;
+                } else if($('#stateInput').val() != "") {
+                    //State only locks mayor
+                    $('#mayorButton').prop("disabled",true)
+                    setMayorIcon();
+                } else {
+                    //Nothing is filled in, disable all
+                    $('#mayorButton').prop("disabled",true)
+                    $('#govenorButton').prop("disabled",true)
+                    $('#houseButton').prop("disabled",true)
+                    $('#senateButton').prop("disabled",true)
+                    setMayorIcon();
+                    setGovenorIcon();
+                }
             }
 
             disableAll();
@@ -176,8 +187,6 @@
                     setGovenorIcon();
                 }
             }
-
-            
         });
     </script>
 @endpush
