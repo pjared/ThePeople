@@ -17,7 +17,7 @@
                                 Name: {{ $candidate->name }}
                             </div>
                             <div>
-                                Party: {{ $candidate->party->name }}
+                                {{-- Party: {{ $candidate->party->name }} --}}
                             </div>
                             <div>
                                 Running For: {{ $candidate->position->name }}
