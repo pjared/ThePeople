@@ -13,15 +13,12 @@ class RunningCandidates extends Model
 
     protected $guarded = [
         "candidate_id",
-        "public_office_id",
-        "location_id",
-        "location_type",
+        "ballot_id",
     ];
 
     protected $fillable = [
         "entered_race_date",
         "ended_race_date",
-        "race_is_over",
     ];
 
     public function candidate() {

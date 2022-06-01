@@ -20,7 +20,7 @@
                                 {{-- Party: {{ $candidate->party->name }} --}}
                             </div>
                             <div>
-                                Running For: {{ $candidate->position->name }}
+                                {{-- Running For: {{ $candidate->position->name }} --}}
                             </div>
                             <div>
                                 Email Candiate:  

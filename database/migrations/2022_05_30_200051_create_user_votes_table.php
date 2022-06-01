@@ -1,5 +1,8 @@
-}<?php
+<?php
 
+use App\Models\Ballot;
+use App\Models\RunningCandidates;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,11 +16,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cities', function (Blueprint $table) {
-            $table->id();
-            $table->smallInteger('county_id')->unsigned();
-            $table->string('name');
-            $table->integer('population')->unsigned();
+        Schema::create('user_votes', function (Blueprint $table) {
+            $table->foreignIdFor(User::class, 'user_id');
+            $table->foreignIdFor(Ballot::class, 'ballot_id');
+            $table->foreignIdFor(RunningCandidates::class, 'running_candidate_id');
         });
     }
 
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cities');
+        Schema::dropIfExists('user_votes');
     }
 };

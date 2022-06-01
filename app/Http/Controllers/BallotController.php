@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ballot;
 use App\Models\Candidate;
+use App\Models\Location;
 use App\Models\PublicOfficePosition;
 use App\Models\RunningCandidates;
 use Illuminate\Http\Request;
@@ -13,6 +15,7 @@ class BallotController extends Controller
 
     private function getOffice($office_name) {
         $position = PublicOfficePosition::firstWhere('name', $office_name);
+        //TODO: Do error handling for office name
         return $position->id;
     }
 
@@ -33,10 +36,10 @@ class BallotController extends Controller
         }
     }
 
-    private function getLocationId($office_name) {
-        //PROBLEM: If a user inputs a zip, it will not be the correct location for a governor. Going to have to get it through some list
-
-        return 43;
+    private function getLocationId($location_type, $location_name) {
+        $location = Location::where('name', $location_name)->where('location_type', $location_type)->first();
+        //TODO: Do error handling for location ID
+        return $location->id;
     }
 
     /**
@@ -52,38 +55,31 @@ class BallotController extends Controller
 
         //At lease one is filled out
         //I'm too stupid to figure out the validation. If you want to do it with laravel validate be my guest
-        if($request->cityInput && $request->zipInput && $request->stateInput) {
+        //Get the location. If the user inputs multiple, choose zip > state > city
+        if($request->zipInput) {
+            $location = $request->zipInput;
+        } else if ($request->cityInput) {
+            $location = $request->cityInput;
+        } else if ($request->stateInput) {
+            $location = $request->stateInput;
+        } else {
             return redirect('/')
             ->withErrors(array(
                 'Please fill at least one location field'
                 ))
             ->withInput();
         }
-        
+
         $this->validate($request,[
             'office' => 'required', //TODO: Check for "Mayor"|"House"|"Senate"|"Governer"
         ]);
 
-        // Get the location. If the user inputs multiple, choose zip > state > city
-        if($request->zipInput) {
-            // $location_type = "zip";
-            $location = $request->zipInput;
-        } else if ($request->cityInput) {
-            // $location_type = "city";
-            $location = $request->cityInput;
-        } else if ($request->stateInput) {
-            // $location_type = "state";
-            $location = $request->stateInput;
-        }
-
-        $location_id = $this->getLocationId($location);
         $office_id = $this->getOffice($request->office);
-        $location_type = $this->getLocationType($request->office); //TODO: Figure out the location aspect and re-implement
+        $location_type = $this->getLocationType($request->office);
+        $location_id = $this->getLocationId($location_type, $location);
 
-        $running_candidates = RunningCandidates::where('public_office_id', $office_id)
-                                            ->where('location_type', $location_type)
-                                            ->where('location_id', $location_id)
-                                            ->get();
+        $ballot = Ballot::where('location_id', $location_id)->where('public_office_id', $office_id)->first();
+        $running_candidates = RunningCandidates::where('ballot_id', $ballot->id)->get();
 
         //TODO: If a user is signed in, pass in their vote also
         return view('ballot.index')

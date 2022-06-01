@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Location;
+use App\Models\PublicOfficePosition;
+use App\Models\RunningCandidates;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,11 +16,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('counties', function (Blueprint $table) {
+        Schema::create('ballots', function (Blueprint $table) {
             $table->id();
-            $table->smallInteger('state_id')->unsigned();
-            $table->string('name');
-            $table->integer('population')->unsigned();
+            $table->foreignIdFor(Location::class, 'location_id');
+            $table->foreignIdFor(PublicOfficePosition::class, 'public_office_id');
+            $table->date('voting_date');
         });
     }
 
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('counties');
+        Schema::dropIfExists('ballots');
     }
 };

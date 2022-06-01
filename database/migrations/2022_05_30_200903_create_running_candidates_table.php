@@ -1,7 +1,7 @@
 <?php
 
+use App\Models\Ballot;
 use App\Models\Candidate;
-use App\Models\PublicOfficePosition;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,10 +18,7 @@ return new class extends Migration
         Schema::create('running_candidates', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Candidate::class, 'candidate_id');
-            $table->foreignIdFor(PublicOfficePosition::class, 'public_office_id');
-            $table->integer('location_id')->unsigned();
-            $table->string('location_type', 50);
-            $table->boolean('race_is_over');
+            $table->foreignIdFor(Ballot::class, 'ballot_id');
             $table->date('entered_race_date')->nullable();
             $table->date('ended_race_date')->nullable();
         });

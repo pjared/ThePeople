@@ -7,25 +7,27 @@
         <div class="row">
             {{-- LEFT SIDE - LOCATION AND OFFICES LIST --}}
             <div class="col-3 mt-5 pt-5">
-                {{-- LOCATION INPUT --}}
-                <div class="row">
-                    {{-- TODO: Center this fkin div in it's component --}}
-                    <div class="d-flex mx-auto" style="width: 60%">
-                        @include('components.locationInput')
+                <form method="GET" action="/ballot" class="officeList">   
+                    {{-- LOCATION INPUT --}}
+                    <div class="row">
+                        {{-- TODO: Center this fkin div in it's component --}}
+                        <div class="d-flex mx-auto" style="width: 60%">
+                            @include('components.locationInput')
+                        </div>  
+                    </div>    
+                    {{-- PUBLIC OFFICES --}}
+                    <div class="row">
+                        <div class="mt-5">
+                            @include('components.publicOfficeList')
+                        </div>  
                     </div>  
-                </div>    
-                {{-- PUBLIC OFFICES --}}
-                <div class="row">
-                    <div class="mt-5">
-                        @include('components.publicOfficeList')
-                    </div>  
-                </div>  
+                </form>
             </div>
             {{-- RIGHT SIDE - BALLOT BOX --}}
             <div class="col-9 mt-4 pt-4">
                 <div class="card" style="width:75%;">
                     {{-- CANDIDATE LIST --}}
-                    <div class="card-body">
+                    <div class="card-body" style="box-shadow:2px 3px 20px black, 0 0 125px #E0C9A6 inset;">
                         <div class="text-center" style="font-family: 'Courier M', monospace; font-size:large;">
                             Plan your choice for the upcoming election
                         </div>                        

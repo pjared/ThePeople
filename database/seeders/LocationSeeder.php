@@ -81,26 +81,38 @@ class LocationSeeder extends Seeder
     {
         //TODO: Might need to read a file for the county and city names
         //TODO: Need to make the file with a wikipedia parser 
+
+        DB::table('locations')->insert([
+            'name' => 'Utah',
+            'location_type' => 'state',
+            'population' => rand(1, 10000),
+        ]);
+        DB::table('locations')->insert([
+            'name' => 'Provo',
+            'location_type' => 'city',
+            'population' => rand(1, 10000),
+        ]);
         foreach ($this->state_names as $name) {
-            DB::table('states')->insert([
+            DB::table('locations')->insert([
                 'name' => $name,
+                'location_type' => 'state',
                 'population' => rand(1, 10000),
             ]);
         }
 
         foreach ($this->county_names as $name) {
-            DB::table('counties')->insert([
+            DB::table('locations')->insert([
                 'name' => $name,
+                'location_type' => 'county',
                 'population' => rand(1, 10000),
-                'state_id' => rand(1,1)
             ]);
         }
         
         foreach ($this->city_names as $name) {
-            DB::table('cities')->insert([
+            DB::table('locations')->insert([
                 'name' => $name,
+                'location_type' => 'city',
                 'population' => rand(1, 10000),
-                'county_id' => rand(1,1)
             ]);
         }
     }

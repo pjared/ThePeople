@@ -14,7 +14,6 @@ class Candidate extends Model
 
     protected $guarded = [
         "party_id",
-        "position_of_office_id", //The position they are running for
         "year",
     ];
 
