@@ -26,7 +26,7 @@
 </div>
 
 @push('scripts')
-    <script>        
+    <script>
         $(document).ready(function() {   
             // AUTOCOMPLETE FOR STATE
             var statePath = "{{ route('state') }}";
@@ -37,7 +37,6 @@
                         });
                     }
             });
-
 
             // PASS LOCATION FROM BALLOT
             @isset($location_type)
