@@ -49,26 +49,22 @@ class BallotController extends Controller
      */
     public function getBallot(Request $request) {
         //Validate the incoming data
-        // dd($request->all()); TODO: Cannot validate if just city or zip
-        $validator = Validator::make($request->all(),[
-                'cityInput' => 'required_without_all:stateInput, zipInput',
-                'stateInput' => 'required_without_all:cityInput, zipInput',
-                'zipInput' => 'required_without_all:stateInput, cityInput',
-            ]);
-        
-        //Return with any errors
-        if ($validator->fails()) {
+
+        //At lease one is filled out
+        //I'm too stupid to figure out the validation. If you want to do it with laravel validate be my guest
+        if($request->cityInput && $request->zipInput && $request->stateInput) {
             return redirect('/')
             ->withErrors(array(
                 'Please fill at least one location field'
                 ))
-                ->withInput();
+            ->withInput();
         }
+        
         $this->validate($request,[
             'office' => 'required', //TODO: Check for "Mayor"|"House"|"Senate"|"Governer"
         ]);
 
-        // Get the location. If the user input multiple, choose zip > state > city
+        // Get the location. If the user inputs multiple, choose zip > state > city
         if($request->zipInput) {
             // $location_type = "zip";
             $location = $request->zipInput;
@@ -83,7 +79,6 @@ class BallotController extends Controller
         $location_id = $this->getLocationId($location);
         $office_id = $this->getOffice($request->office);
         $location_type = $this->getLocationType($request->office); //TODO: Figure out the location aspect and re-implement
-        //TODO: The office is always the last hiddenn element, so it's always getting the senator
 
         $running_candidates = RunningCandidates::where('public_office_id', $office_id)
                                             ->where('location_type', $location_type)
