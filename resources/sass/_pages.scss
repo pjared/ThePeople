@@ -25,28 +25,11 @@
 	}
 }
 
-/*	TYPEAHEAD	*/
-// .ui-helper-hidden-accessible { display:none; }
-
-// // .ui-menu-item {
-// // 	border: 1px solid;
-// // }
-// .ui-autocomplete {
-// 	z-index: 2;
-// 	background-color: white;
-// 	border: 1px solid;
-// 	.element {
-// 		border-color: '#86b7fe';
-// 		box-shadow: '0 0 0 0.25rem rgba(13, 110, 253, 0.25)';
-// 	}
-// 	list-style: none;
-// }
-
-// .ui-menu-item {
-// 	font-family: 'Courier New', Courier, monospace;
-// 	//NOTE: ACTIVE, FOCUS, AND HOVER DO NOT WORK WITH AUTOCOMPLETE
-// 	//Use this tho //background: #656565 & box-shadow: 0 0 30px black
-// }
+.candidate-card:hover {
+	transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 10;
+}
 
 .public-office-card {
     margin:0 auto;

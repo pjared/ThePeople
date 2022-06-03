@@ -27,7 +27,7 @@
             <div class="col-9 mt-4 pt-4">
                 <div class="card" style="width:75%;">
                     {{-- CANDIDATE LIST --}}
-                    <div class="card-body" style="box-shadow:2px 3px 20px black, 0 0 125px #E0C9A6 inset;">
+                    <div class="card-body" style="box-shadow:1px 1px 5px black, 0 0 125px #e7e7e7 inset;">
                         <div class="text-center" style="font-family: 'Courier M', monospace; font-size:large;">
                             Plan your choice for the upcoming election
                         </div>                        
@@ -36,7 +36,7 @@
                                 <div class="row pt-2 h-100">
                                     {{-- CANDIDATE NAME, PICTURE, AND PAGE LINK --}}
                                     <div class="col-10">
-                                        <div class="card">
+                                        <div class="card candidate-card">
                                             <div class="card-body" style="padding-bottom: .25rem; padding-top: .25rem">
                                                 <div class="row align-items-center">
                                                     <div class="col-2 text-center">
@@ -46,8 +46,8 @@
                                                         <div class="" style="font-family: 'Courier M', monospace; font-size:medium;">
                                                             {{ $running_candidate->candidate->name }}
                                                         </div>
-                                                        <div class="text-end" style="font-family: 'Courier M', monospace; font-size:small;">
-                                                            <a href="/profile/candidate/{{$running_candidate->candidate_id}}">More about {{ $running_candidate->candidate->name }}</a>
+                                                        <div class="text-end pt-4" style="font-family: 'Courier M', monospace; font-size:small;">
+                                                            <a class="stretched-link" href="/profile/candidate/{{$running_candidate->candidate_id}}">More about {{ $running_candidate->candidate->name }}</a>
                                                         </div>
                                                     </div>
                                                 </div>
