@@ -1,13 +1,21 @@
 # TODAY
-- Seed politicians for geographic location and get them after entering Utah
-    - Make sure this works by inputting another state
 - Save the checkmark for the planned vote
+- Put location on ballot page
+- Ballot page look like textured paper
+- Candidate running for and location needs to be retrieved
+- Candidate profile picture needs to be sized
 
 # MVP
-- Implement flagging politician page - after login implementation
-- Get proper candidates by location - Seed more/make first real test
-- Decide if controversial opinions is a definite list
 - State input on ballot page needs to fit text, so does ZIP and City
+
+# User Pivots
+- Implement badges that appear during candidate hover & a key
+    - Badges should also be on profile
+    - Badges should only appear after verifcation, so politicians feel encouraged to join
+    - Each badge needs to be it's own color
+- Hovering over a law gives a summary, might need to find another site that does this
+- Remove dropdown for controversial opinions and list first
+- Redo appearance of candidate details (name, email, etc.)
 
 # User Login Capability
 - Add ability to register to ComnRep
@@ -53,7 +61,10 @@
 - Finish autocomplete for ZIP and cities
 
 ## Ballot Page
-- Create stickers under a candidate in the ballot so people can see basic info. 
+- When hovering a person
+    - Create stickers under a candidate in the ballot so people can see basic info. 
+    - Able to click to go to the candidate's page
+    - 
 
 # Politican Page
 - Dip toes in water with service injection to display politician metrics
@@ -84,6 +95,15 @@
     - https://laravel-livewire.com/docs/2.x/quickstart
         - A pretty good starting guide https://www.sitepoint.com/laravel-livewire-getting-started/ 
         - Another one https://dev.to/osejudith/lntroduction-to-laravel-livewire-aif
+- All "location_type" are pretty much just enums ("state", "city", or "county"), make their table entry only the length of the longest string
+- Share buttons for social media
+    - Interactive filters for social media, such as the head tilts
+    - Can also use this to skim more data and give better recommendations, "We think you will like this candidate more"
 
+# Database Redesign
+- Might need to just make one table for geographic locations, then get that ID. It will have a location id itself and a location_type
+    - Won't have to include both fields on the any other table, just the ID for that one
+
+- Make the seeder.md table
 # Other programming stuff to look up
 - Shortcut that will copy a line and paste it into current
