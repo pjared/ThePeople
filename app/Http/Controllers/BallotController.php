@@ -79,12 +79,18 @@ class BallotController extends Controller
         $location_id = $this->getLocationId($location_type, $location);
 
         $ballot = Ballot::where('location_id', $location_id)->where('public_office_id', $office_id)->first();
-        $running_candidates = RunningCandidates::where('ballot_id', $ballot->id)->get();
+        if($ballot) {
+            $running_candidates = RunningCandidates::where('ballot_id', $ballot->id)->get();
+        } else {
+            $running_candidates = [];
+        }
+       
 
         //TODO: If a user is signed in, pass in their vote also
         return view('ballot.index')
                     ->with('running_candidates', $running_candidates)
                     ->with('location_type',$location_type)
-                    ->with('location',$location);
+                    ->with('location',$location)
+                    ->with('position', $request->office);
     }
 }
