@@ -1,12 +1,22 @@
 # TODAY
-- Save the checkmark for the planned vote
-- Put location on ballot page
+- Finish Controversial opinions
+    - Controversial opions, candidateStance
+- Candidate Page
+    - Candidate running for and location needs to be retrieved (candidate page)
+    - Link thumbnails in Youtube
+- Make about us page
+- Need to do "like search for location
+
 - Ballot page look like textured paper
-- Candidate running for and location needs to be retrieved
-- Candidate profile picture needs to be sized
+- Save the checkmark for the planned vote
+
 
 # MVP
 - State input on ballot page needs to fit text, so does ZIP and City
+- When highlighting needed location inputs, don't highlight if one is filled out
+- If someone inputs a city/zip but clicks on a state level role, need to get the state for location
+    - Might need to make this as another database
+- Implement a handler for when the ballot has not been initialized
 
 # User Pivots
 - Implement badges that appear during candidate hover & a key
@@ -46,12 +56,23 @@
 
 # Views
 
+## Home Page
+
+## Candidate Page
+- Find a proper video embedding package for composer
+- Implement a carosel for the videos
+
+## Ballot Page
+- When hovering a person
+    - Create stickers under a candidate in the ballot so people can see basic info. 
+    - Able to click to go to the candidate's page
+
 ## My Profile Page
 
 ### Personal Information
 - Allow the user to put in their zip, city, or state
     - Autofill this for them on the page? Or just make the buttons clickable
-## Home Page
+
 
 ### Jump back into
 - Have a right side tab that will allow the user to go back to their study instead of manually doing the input
@@ -60,11 +81,7 @@
 ### Later Things
 - Finish autocomplete for ZIP and cities
 
-## Ballot Page
-- When hovering a person
-    - Create stickers under a candidate in the ballot so people can see basic info. 
-    - Able to click to go to the candidate's page
-    - 
+
 
 # Politican Page
 - Dip toes in water with service injection to display politician metrics
