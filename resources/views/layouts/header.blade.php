@@ -16,7 +16,7 @@
           </li>
         </ul>
 
-        <ul class="navbar-nav ms-auto">
+        {{-- <ul class="navbar-nav ms-auto">
           @if(Auth::check())
             <li class="nav-item"> 
               <a class="nav-link active" href="#" tabindex="-1">My Profile</a>
@@ -32,15 +32,15 @@
               <a class="nav-link active" href="/login-page" tabindex="-1">Login</a>
             </li>
           @endif
-        </ul>
+        </ul> --}}
 
         
         
         {{-- Search Bar --}}
-        <form class="d-flex">
+        {{-- <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        </form> --}}
       </div>
     </div>
   </nav>
