@@ -24,13 +24,16 @@
                 </form>
             </div>
             {{-- RIGHT SIDE - BALLOT BOX --}}
-            <div class="col-9 mt-4 pt-4">
-                <div class="card" style="width:75%;">
+            <div class="col-8 mt-4 pt-4">
+                <div class="card" style="width:90%;">
                     {{-- CANDIDATE LIST --}}
-                    <div class="card-body" style="box-shadow:1px 1px 5px black, 0 0 125px #e7e7e7 inset;">
+                    <div class="card-body" style="box-shadow:1px 1px 3px black, 0 0 125px #e7e7e7 inset;">
                         <div class="text-center" style="font-family: 'Courier M', monospace; font-size:large;">
-                            Plan your choice for the upcoming election
-                        </div>                        
+                            Plan your choice for the upcoming election                            
+                        </div>
+                        <div class="text-center text-uppercase mt-2" style="font-size:small;">
+                            {{ $location }} - {{ $position }}
+                        </div>          
                         <div class="form-check mt-2">
                             @foreach ($running_candidates as $running_candidate)
                                 <div class="row pt-2 h-100">

@@ -52,6 +52,9 @@
         $(document).ready(function() {            
             /*  --- HOVERING --- */
             
+            /*
+                Adds highlight effect to list of location inputs
+            */
             function addHoverEffect(officeButton, affectedList) {
                 officeButton.css("background", "lightgray");
 
@@ -62,6 +65,9 @@
                 });
             }
 
+            /*
+                Removes highlight effect to list of location inputs
+            */
             function removeHoverEffect(officeButton, affectedList) {
                 officeButton.css("background", "white")
 
@@ -72,6 +78,9 @@
                 });                
             }
 
+            /*
+                Functionality to highlight what locations need to be filled to view office level
+            */
             $('#mayorButton').hover(
                 function() {
                     affectedList = [$('#cityInput'), $('#zipInput')];
@@ -141,6 +150,9 @@
 
             disableAll();
 
+            /*
+                Functions to catch when a change has been made to location inputs    
+            */
             $('#stateInput').keyup(function() {
                 affectedList = [$('#govenorButton'), $('#houseButton'),  $('#senateButton')];
                 stateHandle($('#stateInput'), affectedList);
@@ -156,6 +168,9 @@
                 stateHandle($('#cityInput'), affectedList);
             });
 
+            /*
+                Manually "disables" the mayor icon
+            */
             function setMayorIcon() {
                 if($('#mayorButton').prop('disabled') == true) {
                     $('#mayorButton').css("fill", "grey")
@@ -164,6 +179,9 @@
                 }
             }
 
+            /*
+                Manually "disables" the governor icon
+            */
             function setGovenorIcon() {
                 if($('#govenorButton').prop('disabled') == true) {
                     $('#govenorButton').css("fill", "grey")
@@ -172,7 +190,32 @@
                 }
             }
 
+            /*
+                Checks all location inputs to determine if any are filled
+
+                If any are filled, return true
+                else false
+            */
+            function checkAll() { //TODO: Finish this function to apply to specifics
+                if($('#cityInput').val() != "") {
+                    return true;
+                }
+                if($('#statenput').val() != "") {
+                    return true;
+                }
+                if($('#zipInput').val() != "") {
+                    return true;
+                }
+                return false;                
+            }
+
+            /*
+                Handles when any keychange has been made on the location inputs    
+            */
             function stateHandle(stateObj, affectedList) {
+                // if(checkAll()) {
+                //     return;
+                // }
                 if (stateObj.val() === "") {
                     affectedList.forEach(element => {
                         element.prop("disabled",true)                        
