@@ -45,7 +45,11 @@ class Candidate extends Model
         return $this->hasMany(CampaignVideo::class);
     }
 
-    public function controversial_opinions() {
+    public function stances() {
+        return $this->hasMany(CandidateStance::class);
+    }
+
+    public function opinions() {
         return $this->hasMany(Opinion::class);
     }
 

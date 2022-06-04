@@ -97,18 +97,15 @@
                                     </svg>
                                 </div>
                             </div>
-                            @if(count($candidate->controversial_opinions) >= 1) 
-                                @foreach ($candidate->controversial_opinions as $opinion)
-                                    {{-- TODO: Fix this when opinions are refactored  --}}
-                                    @if($opinion->is_controversial)
-                                        {{$opinion->name}}
-                                        {{-- TODO: add a little icon to explain what opinion is --}}
-                                        <br>
+                            @foreach ($candidate->stances as $candidate_stance)
+                                    {{$candidate_stance->opinion->name}} : 
+                                    @if(is_null($candidate_stance->stance->name))
+                                        We're still searching for the stance, sorry!                                        
+                                    @else
+                                        {{$candidate_stance->stance->name}}
                                     @endif
-                                @endforeach
-                            @else
-                                We're still searching for the controversial opinons!
-                            @endif
+                                    <br>
+                            @endforeach
                         </button>
                     </div>
                     
@@ -127,14 +124,10 @@
                         </button>
                         <div class="collapse multi-collapse" id="opinionsInfoCollapse">
                             <div style="width:95%" class="card card-body no-border">
-                                @if(count($candidate->controversial_opinions) >= 1) 
-                                    @foreach ($candidate->controversial_opinions as $opinion)
-                                        {{-- TODO: Fix this when opinions are refactored  --}}
-                                        @if(!$opinion->is_controversial)
-                                            {{$opinion->name}}
-                                            {{-- TODO: add a little icon to explain what opinion is --}}
-                                            <br>
-                                        @endif
+                                @if(count($candidate->opinions) >= 1) 
+                                    @foreach ($candidate->opinions as $opinion)
+                                        {{$opinion->name}}
+                                        <br>
                                     @endforeach
                                 @else
                                     We're still searching for opinons!
@@ -158,7 +151,6 @@
                         </button>
                         <div class="collapse multi-collapse" id="campaignInfoCollapse">
                             <div style="width:95%" class="card card-body no-border">
-                                
                                 @if(count($candidate->videos) >= 1) 
                                     @foreach ($candidate->videos as $video)
                                         <iframe width="100" height="100" src="{{$video->link}}">

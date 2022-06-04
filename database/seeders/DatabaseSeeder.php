@@ -28,6 +28,9 @@ class DatabaseSeeder extends Seeder
             RunningCandidatesSeeder::class, 
             BallotSeeder::class,
             OpinionsSeeder::class,
+
+            ControversialOpinionsSeeder::class,
+            CandidateStanceSeeder::class,
         ]);
     }
 }

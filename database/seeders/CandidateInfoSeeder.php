@@ -13,6 +13,12 @@ class CandidateInfoSeeder extends Seeder
         'https://www.youtube.com/watch?v=gs-11No8JJ0'
     ];
 
+    private $donor_names = [
+        'Big Jared',
+        'Standard Roblox',
+        ''
+    ];
+
     /**
      * Run the database seeds.
      *
@@ -34,17 +40,7 @@ class CandidateInfoSeeder extends Seeder
         /* 
             "name" | "candidate_id" | "politician_id" | "link_found" | "is_controversial"
             "candidate_id" | "name" | "stance" | "link"
-        */
-        for($i = 0; $i < count($this->opinion_names); ++$i) {
-            for($j = 0; $j < $num_candidates; ++$j) {
-                DB::table('opinions')->insert([
-                    'name' => $this->opinion_names[$i],
-                    'candidate_id' => $j,
-                    'link' => "www.google.com",
-                    'stance' => $this->opinion_stances[$i],
-                ]);
-            }
-        }
+        *
         
 
         /* 

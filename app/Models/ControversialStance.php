@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ControversialOpinion extends Model
+class ControversialStance extends Model
 {
     use HasFactory;
 
@@ -13,6 +13,11 @@ class ControversialOpinion extends Model
 
     protected $fillable = [
         'name',
-        'description', // A description of what it means
+        'controversial_opinion_id',
+        'description',
     ];
+
+    public function opinion() {
+        return $this->belongsTo(ControversialOpinion::class, 'controversial_opinion_id');
+    }
 }
