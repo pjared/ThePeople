@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Candidate;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,10 +16,9 @@ return new class extends Migration
     {
         Schema::create('opinions', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(Candidate::class, 'candidate_id');
             $table->string('name');
-            $table->integer('candidate_id')->unsigned();
-            $table->integer('politician_id')->unsigned()->nullable();
-            $table->boolean('is_controversial')->default(false);
+            $table->string('stance');
             $table->string('link')->nullable();
         });
     }

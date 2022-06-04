@@ -8,21 +8,6 @@ use Illuminate\Support\Facades\DB;
 
 class CandidateInfoSeeder extends Seeder
 {
-    private $donor_names = [
-        "Big Jared",
-        "Standard Music",
-    ];
-
-    private $opinion_names = [
-        "Pro Jared",
-        "Anti Jared",
-        "Anti Remote",
-        "Roblox > Minecraft",
-        "Programming==Coding",
-        "JS is a real language",
-        "Variables should be in HTML"
-    ];
-
     private $video_names = [
         'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         'https://www.youtube.com/watch?v=gs-11No8JJ0'
@@ -45,22 +30,22 @@ class CandidateInfoSeeder extends Seeder
         }
 
         //  candidate_id | donor_id
-        $num_candidates = 4;
-
+        $num_candidates = 7;
         /* 
             "name" | "candidate_id" | "politician_id" | "link_found" | "is_controversial"
+            "candidate_id" | "name" | "stance" | "link"
         */
-        foreach ($this->opinion_names as $name) {
-            $controversial = rand(0,1);
-            for($i = 0; $i < $num_candidates; ++$i) {
+        for($i = 0; $i < count($this->opinion_names); ++$i) {
+            for($j = 0; $j < $num_candidates; ++$j) {
                 DB::table('opinions')->insert([
-                    'name' => $name,
-                    'candidate_id' => $i,
+                    'name' => $this->opinion_names[$i],
+                    'candidate_id' => $j,
                     'link' => "www.google.com",
-                    'is_controversial' => $controversial
+                    'stance' => $this->opinion_stances[$i],
                 ]);
             }
         }
+        
 
         /* 
         Schema::create('campaign_videos', function (Blueprint $table) {

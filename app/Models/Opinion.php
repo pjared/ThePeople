@@ -10,11 +10,10 @@ class Opinion extends Model
     public $timestamps = false;
     
     protected $fillable = [
-        "name",
         "candidate_id",
-        "politician_id",
+        "name",
+        "stance",
         "link",
-        "is_controversial",
     ];
     use HasFactory;
 }
