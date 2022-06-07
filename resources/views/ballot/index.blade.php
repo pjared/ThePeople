@@ -32,10 +32,10 @@
                             Plan your choice for the upcoming election                            
                         </div>
                         <div class="text-center text-uppercase mt-2" style="font-size:small;">
-                            {{ $location }} - {{ $position }}
+                            {{ $location }} {{ $position }}, VOTING DATE: {{$ballot->voting_date}}
                         </div>          
                         <div class="form-check mt-2">
-                            @foreach ($running_candidates as $running_candidate)
+                            @foreach ($ballot->candidates as $running_candidate)
                                 <div class="row pt-2 h-100">
                                     {{-- CANDIDATE NAME, PICTURE, AND PAGE LINK --}}
                                     <div class="col-10">
