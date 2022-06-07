@@ -25,14 +25,14 @@ class BallotSeeder extends Seeder
         DB::table('ballots')->insert([
             'location_id' => 1,
             'public_office_id' => 1,
-            'voting_date' => $today->addWeeks(rand(1, 52))->format('Y-m-d H:i:s')
+            'voting_date' => $today->addWeeks(rand(1, 52))->format('Y-m-d')
         ]);   
 
         for($i = 2; $i <= 4; $i++) {
             DB::table('ballots')->insert([
                 'location_id' => 2,
                 'public_office_id' => $i,
-                'voting_date' => $today->addWeeks(rand(1, 52))->format('Y-m-d H:i:s')
+                'voting_date' => $today->addWeeks(rand(1, 52))->format('Y-m-d')
             ]);
         }       
     }
