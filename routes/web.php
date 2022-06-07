@@ -3,7 +3,6 @@
 use App\Http\Controllers\BallotController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PoliticianController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
