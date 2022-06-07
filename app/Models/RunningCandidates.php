@@ -24,4 +24,8 @@ class RunningCandidates extends Model
     public function candidate() {
         return $this->belongsTo(Candidate::class, 'candidate_id');
     }
+
+    public function ballot() {
+        return $this->belongsTo(Ballot::class, 'ballot_id');
+    }
 }

@@ -34,7 +34,11 @@ class Candidate extends Model
         return $this->belongsToMany(Donor::class)->using(CandidateDonors::class);
     }
 
-    public function positions() {
+    public function ballot() {
+        return $this->hasOneThrough(Ballot::class, RunningCandidates::class, 'candidate_id', 'id', 'id');
+    }
+
+    public function previous_positions() {
         return $this->hasMany(CandidateOfficePositions::class, 'candidate_id');
     }
 
