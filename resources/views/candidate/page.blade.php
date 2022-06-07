@@ -44,10 +44,10 @@
                                 {{-- Party: {{ $candidate->party->name }} --}}
                             </div>
                             <div>
-                                {{-- Running For: {{ $candidate->position->name }} --}}
+                                Running For: {{ $candidate->ballot->location->name }} {{ $candidate->ballot->office->name }} 
                             </div>
                             <div>
-                                Email Candiate:  
+                                Email Candiate:
                             </div>
                         </div>
                     </div>
@@ -96,8 +96,8 @@
                         </button>
                         <div class="collapse multi-collapse" id="prevPositionsInfoCollapse">
                             <div style="width:95%" class="card card-body no-border">
-                                @if($candidate->positions)
-                                    @foreach($candidate->positions as $position)
+                                @if($candidate->previous_positions)
+                                    @foreach($candidate->previous_positions as $position)
                                         <b>{{ $position->office->name }}</b>
                                         <br> 
                                         {{ $position->year_start }} - {{ $position->year_end }}
