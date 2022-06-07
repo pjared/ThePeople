@@ -83,13 +83,14 @@ class LocationSeeder extends Seeder
         //TODO: Need to make the file with a wikipedia parser 
 
         DB::table('locations')->insert([
-            'name' => 'Utah',
-            'location_type' => 'state',
-            'population' => rand(1, 10000),
-        ]);
-        DB::table('locations')->insert([
             'name' => 'Provo',
             'location_type' => 'city',
+            'population' => rand(1, 10000),
+        ]);
+
+        DB::table('locations')->insert([
+            'name' => 'Utah',
+            'location_type' => 'state',
             'population' => rand(1, 10000),
         ]);
         foreach ($this->state_names as $name) {

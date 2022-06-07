@@ -21,14 +21,19 @@ class BallotSeeder extends Seeder
         // $random_office_id[3] = rand(2,5) - 1;
         // $random_office_id[4] = rand(-2,2) + 2;
         $today = Carbon::now();
-        for($j = 1; $j <= 2; $j++) {
-            for($i = 1; $i <= 4; $i++) {
-                DB::table('ballots')->insert([
-                    'location_id' => $j,
-                    'public_office_id' => $i,
-                    'voting_date' => $today->addWeeks(rand(1, 52))->format('Y-m-d H:i:s')
-                ]);
-            }
-        }        
+
+        DB::table('ballots')->insert([
+            'location_id' => 1,
+            'public_office_id' => 1,
+            'voting_date' => $today->addWeeks(rand(1, 52))->format('Y-m-d H:i:s')
+        ]);   
+
+        for($i = 2; $i <= 4; $i++) {
+            DB::table('ballots')->insert([
+                'location_id' => 2,
+                'public_office_id' => $i,
+                'voting_date' => $today->addWeeks(rand(1, 52))->format('Y-m-d H:i:s')
+            ]);
+        }       
     }
 }

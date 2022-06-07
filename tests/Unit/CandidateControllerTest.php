@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class PoliticianControllerTest extends TestCase
+class CandidateControllerTest extends TestCase
 {
     /**
      * A test to make sure that the get politician method gets correct view and data.
@@ -16,7 +16,7 @@ class PoliticianControllerTest extends TestCase
     public function test_get_ballot_method()
     {
         echo('Testing politican get method');
-        $response = $this->call('GET', '/candidate/0');
+        $response = $this->call('GET', '/candidate/1');
         $response->assertStatus(200);
 
         printf("\n\t" . 'Checking for correct view');

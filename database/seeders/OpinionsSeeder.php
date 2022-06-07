@@ -26,7 +26,6 @@ class OpinionsSeeder extends Seeder
 
     private $opinion_names = [
         "Thoughts on Jared",
-        "Thoughts on Jared",
         "Remote Work",
         "Clash of the titans",
         "Developing Software",

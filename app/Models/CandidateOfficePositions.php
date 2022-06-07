@@ -3,18 +3,19 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Database\Eloquent\Model;
 
-class PoliticanOfficePositions extends Pivot
+class CandidateOfficePositions extends Model
 {
+    use HasFactory;
     public $timestamps = false;
 
-    protected $primaryKey = 'politician_id';
+    protected $primaryKey = 'candidate_id';
     public $incrementing = false;
 
     protected $guarded = [
-        "politician_id",
-        "public_office_id",
+        "candidate_id",
+        "office_id",
         "location_id",
         "location_type",
     ];
@@ -24,5 +25,7 @@ class PoliticanOfficePositions extends Pivot
         "year_end",
     ];
 
-    use HasFactory;
+    public function office() {
+        return $this->belongsTo(PublicOfficePosition::class, 'office_id');
+    }
 }

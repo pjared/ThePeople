@@ -13,14 +13,15 @@ class Candidate extends Model
     public $timestamps = false;
 
     protected $guarded = [
-        "party_id",
-        "year",
+        "signup_date",
     ];
 
     protected $fillable = [
+        "party_id",
         "name",
         "age",
         "image_id",
+        "info"
     ];
 
     use HasFactory;
@@ -28,17 +29,13 @@ class Candidate extends Model
     public function party() {
         return $this->belongsTo(PoliticalParty::class, "party_id");
     }
-
-    public function position() {
-        return $this->belongsTo(PublicOfficePosition::class, "position_of_office_id");
-    }
     
     public function donors() {
         return $this->belongsToMany(Donor::class)->using(CandidateDonors::class);
     }
 
-    public function politician() {
-        return $this->hasOneThrough(Politician::class, CandidatePolitician::class, 'candidate_id','name');
+    public function positions() {
+        return $this->hasMany(CandidateOfficePositions::class, 'candidate_id');
     }
 
     public function videos() {

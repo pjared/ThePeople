@@ -40,14 +40,7 @@ class CandidateInfoSeeder extends Seeder
         /* 
             "name" | "candidate_id" | "politician_id" | "link_found" | "is_controversial"
             "candidate_id" | "name" | "stance" | "link"
-        *
-        
 
-        /* 
-        Schema::create('campaign_videos', function (Blueprint $table) {
-            $table->integer('candidate_id');
-            $table->string('link');
-        });
         */
         for($i = 0; $i < $num_candidates * 3; ++$i) {
             DB::table('campaign_videos')->insert([

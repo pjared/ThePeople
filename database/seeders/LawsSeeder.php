@@ -37,31 +37,9 @@ class LawsSeeder extends Seeder
             ]);
         }
 
-        /*
-        Schema::create('politician_law_passeds', function (Blueprint $table) {
-            $table->integer('politician_id');
-            $table->integer('candidate_id');
-            $table->interger('law_id');
-        });
-        */
-        // foreach ($this->law_names as $name) {
-        //     DB::table('law_making_pivot')->insert([
-        //         'politician_id' => rand(1, 4),
-        //         'candidate_id' => rand(1, 7),
-        //         'law_id' => rand(1, count($this->law_names)),
-        //     ]);
-        // }
-
         foreach ($this->law_names as $name) {
             DB::table('candidate_law')->insert([
                 'candidate_id' => rand(1, 7),
-                'law_id' => rand(1, count($this->law_names)),
-            ]);
-        }
-
-        foreach ($this->law_names as $name) {
-            DB::table('politician_law')->insert([
-                'politician_id' => rand(1, 4),
                 'law_id' => rand(1, count($this->law_names)),
             ]);
         }

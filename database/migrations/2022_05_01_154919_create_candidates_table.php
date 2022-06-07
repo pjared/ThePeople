@@ -19,8 +19,8 @@ return new class extends Migration
             $table->tinyInteger('age')->unsigned();
             $table->smallInteger('party_id')->unsigned();
             $table->smallInteger('image_id')->unsigned();
-            // $table->smallInteger('position_of_office_id')->unsigned();
-            $table->year('year');
+            $table->date('signup_date');
+            $table->text('info')->default("");
         });
     }
 

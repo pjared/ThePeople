@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -26,9 +27,8 @@ class CandidateSeeder extends Seeder
             DB::table('candidates')->insert([
                 'name' => $name,
                 'age' => rand(20,55),
-                'year' => 2022,
+                'signup_date' => Carbon::today()->subDays(rand(0, 365)),
                 'party_id' => rand(1,3),
-                // 'position_of_office_id' => rand(1,4),
                 'image_id' => strval(rand(1,3)), 
             ]);
         }

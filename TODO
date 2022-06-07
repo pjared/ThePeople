@@ -1,14 +1,21 @@
 # TODAY
-- Finish Controversial opinions
-    - Controversial opions, candidateStance
 - Candidate Page
     - Candidate running for and location needs to be retrieved (candidate page)
     - Link thumbnails in Youtube
+    - Turn Campaign donors into pie graph
+- Finish Controversial opinions list
+    - Controversial opions, candidateStance
 - Make about us page
-- Need to do "like search for location
+- Need to do "like" search for location inputs & Error handling
+- Make query builders for government websites for:
+    - Positions in office
+    - Laws voted on in office
+- Make another branch to convert everything to tailwind
 
+- Whenever a candidate is made, make sure to generate a list of opinions with null stances
 - Ballot page look like textured paper
 - Save the checkmark for the planned vote
+- Add icons to explain the opinion
 
 
 # MVP
