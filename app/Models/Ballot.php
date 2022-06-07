@@ -24,4 +24,8 @@ class Ballot extends Model
     public function location() {
         return $this->belongsTo(Location::class, 'location_id');
     }
+
+    public function candidates() {
+        return $this->hasMany(RunningCandidates::class, 'ballot_id');
+    }
 }
