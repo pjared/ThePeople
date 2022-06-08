@@ -15,16 +15,12 @@ class CandidateStance extends Model
     protected $primaryKey = 'candidate_id';
 
     protected $fillable = [
-        'candidate_id', // A description of what it means
-        'controversial_stance_id',
+        'candidate_id',
+        'value', // The value for the range
         'controversial_opinion_id',
         'info', //Why this stance was picked
-        'link', //link to article
+        'link', //link to article (if they didn't fill themselves)
     ];
-
-    public function stance() {
-        return $this->belongsTo(ControversialStance::class, 'controversial_stance_id');
-    }
 
     public function opinion() {
         return $this->belongsTo(ControversialOpinion::class, 'controversial_opinion_id');

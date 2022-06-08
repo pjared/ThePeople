@@ -16,7 +16,6 @@ class CandidateInfoSeeder extends Seeder
     private $donor_names = [
         'Big Jared',
         'Standard Roblox',
-        ''
     ];
 
     /**

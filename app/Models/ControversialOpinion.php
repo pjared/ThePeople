@@ -14,5 +14,7 @@ class ControversialOpinion extends Model
     protected $fillable = [
         'name',
         'description', // A description of what it means
+        'first_side',
+        'second_side'
     ];
 }

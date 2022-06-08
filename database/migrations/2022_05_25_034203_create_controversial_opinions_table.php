@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description'); //TODO: might have to change this to text
+            $table->string('first_side');
+            $table->string('second_side');
         });
     }
 

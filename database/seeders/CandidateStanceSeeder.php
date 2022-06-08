@@ -18,20 +18,13 @@ class CandidateStanceSeeder extends Seeder
         //'candidate_id' | 'controversial_stance_id' | 'info' | 'link'
         //candidate_stances
         $num_candidates = 7;
-        $num_cont_opins = 2;
+        $num_cont_opins = 5;
 
         for($j = 1; $j <= $num_cont_opins; ++$j) {
             for($i = 1; $i <= $num_candidates; ++$i) {
-                if($j == 1) {
-                    $rand_min = 1;
-                    $rand_max = 3;
-                } else if ($j == 2) {
-                    $rand_min = 4;
-                    $rand_max = 7;
-                }
                 DB::table('candidate_stances')->insert([
                     'candidate_id' => $i,
-                    'controversial_stance_id' => rand($rand_min, $rand_max),
+                    'value' => rand(0, 100),
                     'controversial_opinion_id' => $j,
                     'link' => "www.google.com",
                 ]);

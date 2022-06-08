@@ -18,10 +18,10 @@ return new class extends Migration
     {
         Schema::create('candidate_stances', function (Blueprint $table) {
             $table->foreignIdFor(Candidate::class, 'candidate_id');
-            $table->foreignIdFor(ControversialStance::class, 'controversial_stance_id');
+            $table->integer('value');
             $table->foreignIdFor(ControversialOpinion::class, 'controversial_opinion_id');
             $table->string('info')->nullable();
-            $table->string('link'); //TODO: might have to change this to text
+            $table->string('link')->nullable(); //TODO: might have to change this to text
         });
     }
 

@@ -9,40 +9,58 @@ use Illuminate\Support\Facades\DB;
 class ControversialOpinionsSeeder extends Seeder
 {
 
-    private $opinion_stances_war = [
+    // private $opinion_stances_war = [
+        // "Only for defense",
+        // "Viable Option",
+    // ];
+
+    // private $opinion_stances_abortion = [
+    //     "Pro Choice",
+    //     "Pro Life",
+    // ];
+
+    // private $opinion_stances_gun_control = [
+    //     "Strict Gun regulation",
+    //     "Laxed Gun regulation",
+    // ];
+
+    // private $opinion_stances_immigration = [
+    //     "Laxed Standards",
+    //     "Strict Standards",
+    // ];
+
+    // private $opinion_stances_FoS = [
+    //     "Strict Standards",
+    //     "Laxed Standards",       
+    // ];
+
+    private $opinion_stances = [
+        "Only for defense",
         "Viable Option",
-        "Last Option",
-        "Only for defense"
-    ];
-
-    private $opinion_stances_war_desc = [
-        "War is an option for dealing when dealing with foreign affairs",
-        "War should only be used in when completely necessary",
-        "War should only be used as a means of defense, another side must strike first",
-    ];
-
-    private $opinion_stances_abortion = [
         "Pro Choice",
-        "Pro Choice - Up to a development stage",
         "Pro Life",
-        "Pro Life - With Border Cases",
-    ];
-
-    private $opinion_stances_abortion_desc = [
-        "It is a women's choice to deicide upon for abortion",
-        "At any time before a certain stage is reached in pregnancy a women can decide for an abortion",
-        "Abortion should not be used for any point in a women's pregnancy, except when it threatens the mothers life",
-        "Abortion should only be allowed for cases such as rape or incest",
+        "Strict Gun regulation",
+        "Laxed Gun regulation",
+        "Laxed Standards",
+        "Strict Standards",
+        "Strict Standards",
+        "Laxed Standards",  
     ];
 
     private $opinion_names = [
         "War",
         "Abortion",
+        "Gun Control",
+        "Immigration",
+        "Freedom Of speech"
     ];
 
     private $opinion_desc = [
-        "War is when two nations fight through means to acheive some obscure goal",
-        "Abortion is whether or not a women can or cannot abort her pregnancy"
+        "War is when two nations engage in conflict",
+        "Abortion is whether or not a women can or cannot abort her pregnancy",
+        "Gun Control is the debate over how much control should be exerted over the 2nd amendment",
+        "Immigration is the debate over how to let citizens of other nations enter into the United States",
+        "Freedom of Speech is the debate of what speech the first amendment applies to",
     ];
 
     /**
@@ -54,30 +72,14 @@ class ControversialOpinionsSeeder extends Seeder
     {
         //'name' | 'description', // A description of what it means
         // controversial_opinions
+        $counter = 0;
         for($i = 0; $i < count($this->opinion_names); ++$i) {
             DB::table('controversial_opinions')->insert([
                 'name' => $this->opinion_names[$i],
                 'description' => $this->opinion_desc[$i],
+                'first_side' => $this->opinion_stances[$counter++],
+                'second_side' => $this->opinion_stances[$counter++],
             ]);
         }
-
-        //'name' | 'controversial_opionion_id' | 'description',
-        //controversial_stances 
-        for($i = 0; $i < count($this->opinion_stances_war); ++$i) {
-            DB::table('controversial_stances')->insert([
-                'name' => $this->opinion_stances_war[$i],
-                'controversial_opinion_id' => 1,
-                'description' => $this->opinion_stances_war_desc[$i],
-            ]);
-        }
-
-        for($i = 0; $i < count($this->opinion_stances_abortion); ++$i) {
-            DB::table('controversial_stances')->insert([
-                'name' => $this->opinion_stances_abortion[$i],
-                'controversial_opinion_id' => 2,
-                'description' => $this->opinion_stances_abortion_desc[$i],
-            ]);
-        }
-
     }
 }
