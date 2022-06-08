@@ -1,15 +1,19 @@
 # TODAY
+- Finish Controversial opinions list
+- Make about us page
+
+- Need to get ballot and search as minimal function as possible
+- Real focus needs to be on the profile page, since candidates will be able to QR code a link to just that
+
+- Add Local or state elections to LH side of the page
 - Candidate Page
     - Link thumbnails in Youtube
-    - Turn Campaign donors into pie graph
-- Finish Controversial opinions list
-    - Controversial opions, candidateStance
-- Make about us page
 - Need to do "like" search for location inputs & Error handling
 - Make query builders for government websites for:
     - Positions in office
     - Laws voted on in office
-- Make another branch to convert everything to tailwind
+    - Campaign Donations
+- Remove timestamps from voting date
 
 - Whenever a candidate is made, make sure to generate a list of opinions with null stances
 - Ballot page look like textured paper
@@ -32,6 +36,9 @@
 - Hovering over a law gives a summary, might need to find another site that does this
 - Remove dropdown for controversial opinions and list first
 - Redo appearance of candidate details (name, email, etc.)
+- Hovering of a position on home page should:
+    - If there is a valid input, make an async request
+        - Get the voting date, this will also load ballot faster
 
 # User Login Capability
 - Add ability to register to ComnRep
@@ -86,7 +93,7 @@
     
 ### Later Things
 - Finish autocomplete for ZIP and cities
-
+- Make another branch to convert everything to tailwind
 
 
 # Politican Page
@@ -112,6 +119,7 @@
 - Add Breadcrumbs : https://getbootstrap.com/docs/3.4/components/#breadcrumbs
 
 # Future things
+- Turn Campaign donors into pie graph
 - Implement ability to flag. Have a flag comparison page
     - Find out how to save these flags by politician
 - Check out livewire for dynamic components
