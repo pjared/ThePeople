@@ -12,13 +12,6 @@ use Illuminate\Support\Facades\Validator;
 
 class BallotController extends Controller
 {
-
-    private function getOffice($office_name) {
-        $position = PublicOfficePosition::firstWhere('name', $office_name);
-        //TODO: Do error handling for office name
-        return $position->id;
-    }
-
     private function getLocationType($office_name) {
         switch ($office_name) {
             case 'Mayor':
@@ -39,7 +32,19 @@ class BallotController extends Controller
     private function getLocationId($location_type, $location_name) {
         $location = Location::where('name', $location_name)->where('location_type', $location_type)->first();
         //TODO: Do error handling for location ID
+        if(!$location) {
+            return null;   
+        }
         return $location->id;
+    }
+
+    private function getOffice($office_name) {
+        $position = PublicOfficePosition::firstWhere('name', $office_name);
+        //TODO: Do error handling for office name
+        if(!$position) {
+            return null;   
+        }
+        return $position->id;
     }
 
     /**
@@ -78,16 +83,20 @@ class BallotController extends Controller
         $location_type = $this->getLocationType($request->office);
         $location_id = $this->getLocationId($location_type, $location);
 
+        if(!$office_id) {
+            return back()->withErrors([
+                'office' => 'Could not find this level of public office',
+            ]);
+        }
+        if(!$location_id) {
+            return back()->withErrors([
+                'location' => 'Could not find this location',
+            ]);
+        }
+
         $ballot = Ballot::where('location_id', $location_id)->where('public_office_id', $office_id)->first();
         
-        // if($ballot) {
-        //     $running_candidates = RunningCandidates::where('ballot_id', $ballot->id)->get();
-        // } else {
-        //     $running_candidates = [];
-        // }
-       
-
-        //TODO: If a user is signed in, pass in their vote also
+        //TODO: If a user is signed in, pass in their vote also? Or get in view?
         return view('ballot.index')
                     ->with('ballot', $ballot)
                     ->with('location_type',$location_type)
