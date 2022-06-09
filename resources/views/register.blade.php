@@ -14,7 +14,7 @@
     <div class="row">
       <div class="col"></div>
       <div class="col mt-5 pt-5">
-        <form method="POST" action="/login" class="">
+        <form method="POST" action="/register" class="">
           @csrf
           <!-- Email input -->
           <div class="form-outline mb-4">
@@ -31,25 +31,27 @@
           <!-- 2 column grid layout for inline styling -->
           <div class="row mb-4">
             <div class="col d-flex justify-content-center">
-              <!-- Checkbox -->
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="rememberCheck" name="rememberCheck" checked/>
-                <label class="form-check-label" for="rememberCheck"> Remember me </label>
-              </div>
+                <!-- Checkbox -->
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="rememberCheck" name="rememberCheck" checked/>
+                    <label class="form-check-label" for="rememberCheck">Remember me</label>
+                </div>
+
+                
             </div>
-        
-            <div class="col">
-              <!-- Simple link -->
-              <a href="#!">Forgot password?</a>
+
+            <div class="col d-flex justify-content-center">
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
             </div>
+            
           </div>
         
-          <!-- Submit button -->
-          <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+          
         
           <!-- Register buttons -->
           <div class="text-center">
-            <p>Not a member? <a href="/register">Register</a></p>
+            <p>Or sign in with:</p>
             {{-- TODO: Implement sign up with other --}}
             {{-- <p>or sign up with:</p> --}}
             <button type="button" class="btn btn-link btn-floating mx-1">

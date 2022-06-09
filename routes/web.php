@@ -4,6 +4,7 @@ use App\Http\Controllers\BallotController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,13 +24,27 @@ Route::get('/', function () {
 });
 
 /* -----AUTHENTICATION------ */
-Route::get('/login-page', function() {
+Route::get('/login', function() {
     return view('login');
 });
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/logout', [LoginController::class, 'logout']);
+
+// Route::post('/candite-login', [LoginController::class, 'authenticate']);
+
+Route::get('/register', function() {
+    return view('register');
+});
+
+Route::post('/register', [LoginController::class, 'logout']);
+
+Route::post('/candite-register', [LoginController::class, 'logout']);
+
+/* -----PROFILE------ */
+
+Route::get('/profile', [UserController::class, 'getProfile']);
 
 /* -----CANDIDATE------ */
 Route::get('/profile/candidate/{id}', [CandidateController::class, 'getCandidateView']);
