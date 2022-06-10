@@ -1,5 +1,9 @@
 # TODAY
-- Finish Controversial opinions list
+- Finish the candidate creation page
+    - No need for auth
+- Switch to Laravel Jetstream and livewire, re-write the app for the framework
+- Then wire up all of the authentication and call up customers
+
 - Make about us page
 
 - Need to get ballot and search as minimal function as possible
