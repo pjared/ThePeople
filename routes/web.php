@@ -40,7 +40,9 @@ Route::get('/register', function() {
 
 Route::post('/register', [LoginController::class, 'logout']);
 
-Route::post('/candite-register', [LoginController::class, 'logout']);
+Route::get('/candidate-register', function() {
+    return view('candidate.create');
+});
 
 /* -----PROFILE------ */
 

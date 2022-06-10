@@ -16,23 +16,23 @@
           </li>
         </ul>
 
-        {{-- <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto">
           @if(Auth::check())
             <li class="nav-item"> 
-              <a class="nav-link active" href="#" tabindex="-1">My Profile</a>
+              <a class="nav-link active" href="/profile" tabindex="-1">My Profile</a>
             </li>
             <li class="nav-item"> 
               <a class="nav-link active" href="/logout" tabindex="-1">Sign Out</a>
             </li>
           @else
             <li class="nav-item"> 
-              <a class="nav-link active" href="#" tabindex="-1">Sign Up</a>
+              <a class="nav-link active" href="/register" tabindex="-1">Sign Up</a>
             </li>
             <li class="nav-item"> 
-              <a class="nav-link active" href="/login-page" tabindex="-1">Login</a>
+              <a class="nav-link active" href="/login" tabindex="-1">Login</a>
             </li>
           @endif
-        </ul> --}}
+        </ul>
 
         
         
