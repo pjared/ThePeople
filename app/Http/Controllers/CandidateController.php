@@ -12,7 +12,7 @@ class CandidateController extends Controller
      */
     public function getCandidateView(Request $request, $id) {
         $candidate = Candidate::find(intval($id));
-        return view('candidate.page')
+        return view('candidate.show')
                     ->with('candidate', $candidate);
     }
 }
