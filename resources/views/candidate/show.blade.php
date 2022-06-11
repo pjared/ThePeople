@@ -14,11 +14,7 @@
                             </div>
                         </div>
                         <div class="col-6">
-                            @if($candidate->info != "")
-                                <div>
-                                    {{-- TODO: make this information look nice --}}
-                                </div>
-                            @endif
+                            
                             <div>
                                 Name: {{ $candidate->name }}
                             </div>
@@ -36,6 +32,11 @@
                 </div>
                 {{-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS --}}
                 <div class="p-2">
+                    @if($candidate->info != "")
+                        <div>
+                            {{-- TODO: make this information look nice --}}
+                        </div>
+                    @endif
                     {{-- DONORS --}}
                     <div id="donorsInfo">
                         <button style="width:95%" class="card card-body" type="button" data-bs-toggle="collapse" data-bs-target="#campaignDonorCollapse" aria-expanded="false" aria-controls="multiCollapseExample2">
