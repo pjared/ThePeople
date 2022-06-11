@@ -1,4 +1,17 @@
 # TODAY
+## Currently working on:
+- Rewrite the CSS with tailwind
+- Rewrite the pages with livewire
+- Make tests for the entire site with laravel dusk
+
+- Write code in new file, but then copy over and push as a branch
+- Livewire -> Tailwind, test for each page
+
+
+
+# MAIN TODO
+- Define a group of political leanings, but allow for candidates to add them in
+    - Can get this list from the cooks report
 - Finish the candidate creation page
     - No need for auth
 - Switch to Laravel Jetstream and livewire, re-write the app for the framework
