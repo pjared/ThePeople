@@ -4,9 +4,9 @@
         <form action="/ballot/{{$ballot->id}}" method="GET" class="min-w-fit w-1/4 hover:scale-110">
             <button type="submit" class="card w-full h-full">
                 {{-- {{$ballot->location->name}} {{$ballot->office->name}} --}}
-                <a class="underline text-sky-600 visited:text-purple-600">{{$ballot->location->name}} {{$ballot->office->name}}</a>
+                <a class="underline text-sky-600 visited:text-purple-600" href="/ballot/{{$ballot->id}}">{{$ballot->location->name}} {{$ballot->office->name}}</a>
             </button>
         </form>
-        
     @endforeach 
 </div>
+
