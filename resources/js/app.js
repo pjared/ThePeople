@@ -1,5 +1,9 @@
-require('./bootstrap');
+import './bootstrap';
 
 require('./page.js');
 
-require('./typeahead.js');
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+
+Alpine.start();

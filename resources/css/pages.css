@@ -1,0 +1,73 @@
+/*****TYPE OUT *******/
+.type-out {
+	animation: typing 2s steps(22), blink .5s step-end 9 alternate;
+	white-space: nowrap;
+	width: 25ch;
+	overflow: hidden;
+}
+
+@keyframes typing {
+	0% {
+		width: 0
+	}
+}
+	
+@keyframes blink {
+	0% {
+		border-right: 3px solid;
+	}
+	50% {
+		border-color: transparent
+	}
+	100% {
+		border-right: 3px solid;
+	}
+}
+
+/*****CHECK BOX*******/
+.check {
+	position: absolute;
+	opacity: 0;
+	
+	&:checked + label svg path {
+		stroke-dashoffset: 0;
+	}
+	
+	&:focus + label {
+		transform: scale(1.03);
+	}
+}
+
+.check + label {
+	/* display: block; */
+	width: var(--d); height: var(--d);
+	
+	&:active {
+		transform: scale(1.05);
+		border-radius: 30px;
+	}
+	
+	svg {
+		pointer-events: none;
+		rect {
+			width: var(--d); height: var(--d);
+			fill:none;
+			stroke-width: 2px;
+			stroke:#444;
+			cursor: pointer;
+			transition: all .2s ease;
+		}
+		path {			
+			fill: none;			
+			stroke: #333;
+			stroke-width: 5px;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			stroke-dasharray: 100;
+			stroke-dashoffset: 101;
+			transition: all 350ms cubic-bezier(1,0,.37,.91);
+			filter: invert(10%) sepia(93%) saturate(1300%) hue-rotate(330deg) brightness(119%) contrast(119%);
+		}
+	}
+}
+

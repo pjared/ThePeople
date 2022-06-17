@@ -14,6 +14,9 @@ clean:
 test-class: # make test-class name=
 	php artisan make:test $(name)
 
+test-dusk: # make test-dusk name=
+	php artisan dusk:make $(name)
+
 ## Testing
 
 feature-test:
@@ -34,4 +37,3 @@ install:
 db:
 	touch /tmp/cmanager.sqlite
 	php artisan migrate:fresh --seed
-	

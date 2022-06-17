@@ -26,7 +26,7 @@ class CandidateSeeder extends Seeder
         foreach ($this->names as $name) {
             DB::table('candidates')->insert([
                 'name' => $name,
-                'age' => rand(20,55),
+                'dob' => Carbon::today()->subYear(rand(25, 55)),
                 'signup_date' => Carbon::today()->subDays(rand(0, 365)),
                 'party_id' => rand(1,3),
                 'image_id' => strval(rand(1,3)), 

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('location_type', 10);
+            $table->string('type', 10);
             $table->integer('population')->nullable();
         });
     }

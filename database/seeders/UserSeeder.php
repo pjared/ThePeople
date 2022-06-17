@@ -21,10 +21,10 @@ class UserSeeder extends Seeder
         //     'email' => Str::random(10).'@gmail.com',
         //     'password' => Hash::make('password'),
         // ]);
-        DB::table('users')->insert([
-            'name' => "Jared Pacheco",
-            'email' => 'pjared870@gmail.com',
-            'password' => Hash::make('password'),
-        ]);
+        // DB::table('users')->insert([
+        //     'name' => "Jared Pacheco",
+        //     'email' => 'pjared870@gmail.com',
+        //     'password' => Hash::make('password'),
+        // ]);
     }
 }

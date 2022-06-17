@@ -13,15 +13,17 @@ class Candidate extends Model
     public $timestamps = false;
 
     protected $guarded = [
-        "signup_date",
+        
     ];
 
     protected $fillable = [
-        "party_id",
         "name",
-        "age",
+        "dob",
+        "user_id",
         "image_id",
-        "info"
+        "party_id",
+        "info",
+        "signup_date",
     ];
 
     use HasFactory;

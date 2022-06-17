@@ -1,0 +1,14 @@
+# Edit the logo
+https://jetstream.laravel.com/2.x/installation.html#livewire
+
+# Navigation Menu
+- If a user has the correct role, show them the teams
+
+# Alpine or JQuery?
+- Figure out if I want to use one library or another
+
+# Find Ballot component
+- When in the ballot page, make the text size for find ballot 3xl
+
+# Candidate Creation
+- If not logged in, give the chance to create a profile

@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Ramsey\Uuid\Type\Integer;
 
 class LocationSeeder extends Seeder
 {
@@ -53,7 +52,7 @@ class LocationSeeder extends Seeder
         "South Dakota",
         "Tennessee",
         "Texas",
-        "Utah",
+        // "Utah",
         "Vermont",
         "Virginia",
         "Washington",
@@ -84,19 +83,19 @@ class LocationSeeder extends Seeder
 
         DB::table('locations')->insert([
             'name' => 'Provo',
-            'location_type' => 'city',
+            'type' => 'city',
             'population' => rand(1, 10000),
         ]);
 
         DB::table('locations')->insert([
             'name' => 'Utah',
-            'location_type' => 'state',
+            'type' => 'state',
             'population' => rand(1, 10000),
         ]);
         foreach ($this->state_names as $name) {
             DB::table('locations')->insert([
                 'name' => $name,
-                'location_type' => 'state',
+                'type' => 'state',
                 'population' => rand(1, 10000),
             ]);
         }
@@ -104,7 +103,7 @@ class LocationSeeder extends Seeder
         foreach ($this->county_names as $name) {
             DB::table('locations')->insert([
                 'name' => $name,
-                'location_type' => 'county',
+                'type' => 'county',
                 'population' => rand(1, 10000),
             ]);
         }
@@ -112,7 +111,7 @@ class LocationSeeder extends Seeder
         foreach ($this->city_names as $name) {
             DB::table('locations')->insert([
                 'name' => $name,
-                'location_type' => 'city',
+                'type' => 'city',
                 'population' => rand(1, 10000),
             ]);
         }
