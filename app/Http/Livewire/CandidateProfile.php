@@ -49,11 +49,14 @@ class CandidateProfile extends Component
             //Set values to what the user has already input
             $this->dob = $candidate->dob;
             //TODO: ADD EMAIL AND NUMBER TO CANDIDATE
-            // $this->email = $candidate->email;
+            if($candidate->email) {
+                $this->email = $candidate->email;
+            }
             $this->name = $candidate->name;
             $this->political_party_id = $candidate->party_id;
             $this->bio = $candidate->info;
 
+            //TODO: ADD POLITICAL LEANING
             $this->pol_leaning = 'moderate';
             $this->sub_pol_leaning = 'moderate';
            
@@ -97,6 +100,7 @@ class CandidateProfile extends Component
                 'party_id' => $this->political_party_id,
                 'image_id' => $photo_id,
                 'signup_date' => Carbon::now()->format('d/m/Y'),
+                'email' => $this->email,
             ]
         );
 

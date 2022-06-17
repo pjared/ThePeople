@@ -24,6 +24,8 @@ class Candidate extends Model
         "party_id",
         "info",
         "signup_date",
+        "email",
+        "phone_number",
     ];
 
     use HasFactory;

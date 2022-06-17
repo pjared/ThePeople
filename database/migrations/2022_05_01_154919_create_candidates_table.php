@@ -24,6 +24,8 @@ return new class extends Migration
             $table->smallInteger('image_id')->unsigned();
             $table->date('signup_date');
             $table->text('info')->default("");
+            $table->string('email')->nullable();
+            $table->string('phone_number')->nullable();
         });
     }
 
