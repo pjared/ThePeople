@@ -6,16 +6,10 @@
             </div>
         </div>
 
-        <div class="grid grow grid-cols-4 grid-flow-col gap-6 mt-12">
-            {{-- Left Column: Offices --}}
-            <div class="col-start-2 col-span-1">
-                <livewire:level-office /> 
-            </div>
-    
-            {{-- Right Column: Location Input --}}
-            <div class="col-start-3 col-span-1 text-xl grow">
-                <livewire:location-input /> 
-            </div>
+        {{-- TODO: Keep this for expansion --}}
+        <div class="flex flex-row flex-wrap justify-center gap-6 mt-12">
+            {{-- <livewire:find-ballot class="flex flex-row gap-6 mt-12"/> --}}
+            <livewire:ballot-list />
         </div>
     </div>
 </x-app-layout>
