@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BallotController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SearchController;
@@ -34,9 +35,7 @@ Route::middleware([
 });
 
 /* -----BALLOT------ */
-Route::get('/ballot/{id}', function ($id) {
-    return view('ballot')->with('id', $id);
-})->name('ballot');
+Route::get('/ballot/{id}', [BallotController::class, 'getBallotView'])->name('ballot');
 
 /* -----CANDIDATE------ */
 Route::get('/profile/candidate/{id}', [CandidateController::class, 'getCandidateView']);
