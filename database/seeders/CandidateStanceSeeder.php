@@ -17,7 +17,7 @@ class CandidateStanceSeeder extends Seeder
     {
         //'candidate_id' | 'controversial_stance_id' | 'info' | 'link'
         //candidate_stances
-        $num_candidates = 7;
+        $num_candidates = 4;
         $num_cont_opins = 5;
 
         for($j = 1; $j <= $num_cont_opins; ++$j) {
