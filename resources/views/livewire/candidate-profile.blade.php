@@ -27,7 +27,7 @@
                         </div>
                         <div class="flex flex-col">
                             <label>Date Of Birth</label>
-                            <input class="text-input w-1/2" type="date" placeholder="" value="" wire:model="dob">
+                            <input class="text-input w-1/2" type="date" wire:model="dob">
                         </div>
                         
                         {{-- POLITICAL LEANING --}}
@@ -68,6 +68,8 @@
                             <label>Office Level</label>
                             <select class="select-input" wire:model="office_level">
                                 <option value="local" selected>Local</option>
+                                <option value="district">District</option>
+                                <option value="county">County</option>
                                 <option value="state">State</option>
                             </select>
                         </div>

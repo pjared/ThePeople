@@ -96,24 +96,20 @@
                             </div>
                             <div class="mt-4">
                                 @foreach ($candidate->stances as $candidate_stance)
-                                    @if(is_null($candidate_stance->value))
-                                        We're still waiting for the stance, sorry!                                        
-                                    @else
-                                        <label for="{{$candidate_stance->opinion->name}}-range" class="form-label">{{$candidate_stance->opinion->name}}</label>
-                                        <div class="flex flex-row">
-                                            <div class="w-1/4 text-start">
-                                                {{$candidate_stance->opinion->first_side}}
-                                            </div>
-                                            <div class="w-1/2 flex justify-center">
-                                                {{-- TODO: Make each side look the same. --}}
-                                                <input type="range" value="{{$candidate_stance->value}}" class="" id="{{$candidate_stance->opinion->name}}-range" disabled>
-                                                {{--  appearance-none --}}
-                                            </div>
-                                            <div class="w-1/4 text-start">
-                                                {{$candidate_stance->opinion->second_side}}
-                                            </div>    
-                                        </div>                                                                    
-                                    @endif
+                                    <label for="{{$candidate_stance->opinion->name}}-range" class="form-label">{{$candidate_stance->opinion->name}}</label>
+                                    <div class="flex flex-row">
+                                        <div class="w-1/4 text-start">
+                                            {{$candidate_stance->opinion->first_side}}
+                                        </div>
+                                        <div class="w-1/2 flex justify-center">
+                                            {{-- TODO: Make each side look the same. --}}
+                                            <input type="range" value="{{$candidate_stance->value}}" class="" id="{{$candidate_stance->opinion->name}}-range" disabled>
+                                            {{--  appearance-none --}}
+                                        </div>
+                                        <div class="w-1/4 text-start">
+                                            {{$candidate_stance->opinion->second_side}}
+                                        </div>    
+                                    </div>   
                                     <br>
                                 @endforeach
                             </div>
