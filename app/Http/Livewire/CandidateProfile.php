@@ -2,11 +2,15 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Ballot;
 use App\Models\Candidate;
+use App\Models\CandidateStance;
 use App\Models\ControversialOpinion;
+use App\Models\Location;
+use App\Models\PublicOfficePosition;
+use App\Models\RunningCandidates;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -91,7 +95,7 @@ class CandidateProfile extends Component
         $photo_id = $this->name;
 
         //Find the candidate, if not return a new one
-        $candiate = Candidate::updateOrCreate(
+        $candidate = Candidate::updateOrCreate(
             ['user_id' => Auth::user()->id],
             [
                 'name' => Auth::user()->name,
@@ -104,13 +108,58 @@ class CandidateProfile extends Component
             ]
         );
 
-        //TODO: Create the running candidate and add to ballot withh location and office name
-        //TODO: Create the candidate stances with the values from controversial opinions.
-        $this->photo->store('photos');
+        // Create the candidate Stances
+        //TODO: Allow the candidate to put in info
+        $index = 0;
+        // dd($this->opinion_vals);
+        foreach($this->controversial_opinions as $controversial_opinion) {
+            CandidateStance::updateOrCreate(
+                [
+                    'candidate_id' => $candidate->id,
+                    'controversial_opinion_id' => $controversial_opinion->id,
+                ],
+                [
+                    'value' => $this->opinion_vals[$index],                    
+                    'info' => '',
+                    'link' => '',
+                ]
+            );
+            $index++;
+        }
+
+        // Make sure the location is valid
+        $location = Location::where('name', $this->location)->where('type', $this->office_level)->first();
+        if(!$location) {
+            return;
+        }
+
+        // Make sure the office is valid
+        $public_office = PublicOfficePosition::where('name', $this->office_name)->first();
+        if(!$public_office) {
+            return; //TODO: add a message here
+        }
+
+        //Get the ballot
+        $ballot = Ballot::where('location_id', $location->id)->where('public_office_id', $public_office->id)->first();
+        // Update/Create the running candidate pivot
+        RunningCandidates::updateOrCreate(
+            [
+                'ballot_id' => $ballot->id,
+                'candidate_id' => $candidate->id,
+            ],
+            [
+                'entered_race_date' => Carbon::today()->format('d/m/Y'),
+                'ended_race_date' => Carbon::today()->format('d/m/Y'),
+            ]
+        );
+
+        //Try to find the image first, and then if not store it.
+        $this->photo->store('photo');
     }
 
     public function render()
     {
+        //TODO: Get the location depending on if the candidate has chosen local, county, district, or state
         return view('livewire.candidate-profile');
     }
 }
