@@ -1,13 +1,15 @@
 # TODAY
 ## Currently working on:
-- Rewrite the CSS with tailwind
-- Rewrite the pages with livewire
+- Save everything when the candidate hits save in their profile page
+- Decide how to add political leaning for the site
+
 - Make tests for the entire site with laravel dusk
+- Restructure Controversial opinions to account for the different positions (school district, etc)
 
-- Write code in new file, but then copy over and push as a branch
-- Livewire -> Tailwind, test for each page
-
-
+### Candidate Profile Wire
+- Upload the photo name as unique
+- Return error messages when location/office cannot be found\
+- Allow the candidates to put an info for why they have a stance about an opinion
 
 # MAIN TODO
 - Define a group of political leanings, but allow for candidates to add them in
