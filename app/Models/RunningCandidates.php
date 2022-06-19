@@ -11,12 +11,9 @@ class RunningCandidates extends Model
 
     public $timestamps = false;
 
-    protected $guarded = [
+    protected $fillable = [
         "candidate_id",
         "ballot_id",
-    ];
-
-    protected $fillable = [
         "entered_race_date",
         "ended_race_date",
     ];
