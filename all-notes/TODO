@@ -1,52 +1,42 @@
-# TODAY
-## Currently working on:
+# Currently working on:
+- Show voting date on home page for ballot list
+
 - Give all new users a team
 
 - Decide how to add political leaning for the site
-
-- Make tests for the entire site with laravel dusk
 - Restructure Controversial opinions to account for the different positions (school district, etc)
+- Figure out how to generate permanent links for candidates
 
-### Candidate Profile Wire
+- After getting a ballot for a location, show them ballots that pertain to that location first
+
+## Candidate Profile Wire
 - Upload the photo name as unique
 - Return error messages when location/office cannot be found
 - Allow the candidates to put an info for why they have a stance about an opinion
 
+# Teams
+- Finish logic for whether or not someone can create a team in [Team Policy :: create](app/Policies/TeamPolicy.php)
+    - Candidates can create ONE team
+- 
+
+# Tests
+- Make tests for the entire site with laravel dusk
+## After fininshing team & role implementation
+- Make sure that basic users cannot access the following pages
+    - Create a candidate
+
+
 # MAIN TODO
 - Define a group of political leanings, but allow for candidates to add them in
     - Can get this list from the cooks report
-- Finish the candidate creation page
-    - No need for auth
-- Switch to Laravel Jetstream and livewire, re-write the app for the framework
-- Then wire up all of the authentication and call up customers
 
 - Make about us page
-
-- Need to get ballot and search as minimal function as possible
-- Real focus needs to be on the profile page, since candidates will be able to QR code a link to just that
-
-- Add Local or state elections to LH side of the page
-- Candidate Page
-    - Link thumbnails in Youtube
-- Need to do "like" search for location inputs & Error handling
 - Make query builders for government websites for:
     - Positions in office
     - Laws voted on in office
     - Campaign Donations
-- Remove timestamps from voting date
 
-- Whenever a candidate is made, make sure to generate a list of opinions with null stances
-- Ballot page look like textured paper
 - Save the checkmark for the planned vote
-- Add icons to explain the opinion
-
-
-# MVP
-- State input on ballot page needs to fit text, so does ZIP and City
-- When highlighting needed location inputs, don't highlight if one is filled out
-- If someone inputs a city/zip but clicks on a state level role, need to get the state for location
-    - Might need to make this as another database
-- Implement a handler for when the ballot has not been initialized
 
 # User Pivots
 - Implement badges that appear during candidate hover & a key
@@ -54,83 +44,50 @@
     - Badges should only appear after verifcation, so politicians feel encouraged to join
     - Each badge needs to be it's own color
 - Hovering over a law gives a summary, might need to find another site that does this
-- Remove dropdown for controversial opinions and list first
-- Redo appearance of candidate details (name, email, etc.)
-- Hovering of a position on home page should:
-    - If there is a valid input, make an async request
-        - Get the voting date, this will also load ballot faster
 
-# User Login Capability
-- Add ability to register to ComnRep
-- Add login throttling
-    - https://laravel.com/docs/9.x/authentication#redirecting-unauthenticated-users
-- Implement some kind of authentication system
-    - https://github.com/robsontenorio/laravel-keycloak-guard?ref=madewithlaravel.com
-    - https://github.com/ory/hydra - seems to be open source but not for enterprise
-## Prompts to sign up
+# Prompts to encourage registration
 - Add sign up prompts for the following (https://laravel.com/docs/9.x/authentication#redirecting-unauthenticated-users)
     - Checking on ballot
     - Flagging
-
-# Choosing a level of office
-- Also need to add in city council?
-- City input doesn't seem to work for some reason
-
-# Adding Politicians
-- Configure API tokens for them
-    - https://laravel.com/docs/9.x/authentication#redirecting-unauthenticated-users
-
-# User Creation
-## Users
-- Make users implement state, if state is ever changed need to delete their votes and flags 
-    - Users can't transfer abuse
-## Politicians
-- Need some kind of method for confirmation of the person. 
 
 # Views
 
 ## Home Page
 
 ## Candidate Page
-- Find a proper video embedding package for composer
+- Polish up the candidate campaign videos
 - Implement a carosel for the videos
+- Add icons to explain the opinions
 
 ## Ballot Page
 - When hovering a person
     - Create stickers under a candidate in the ballot so people can see basic info. 
     - Able to click to go to the candidate's page
+- Make this look like textured paper
 
 ## My Profile Page
 
 ### Personal Information
 - Allow the user to put in their zip, city, or state
+    - if state is ever changed need to delete their votes and flags 
     - Autofill this for them on the page? Or just make the buttons clickable
-
 
 ### Jump back into
 - Have a right side tab that will allow the user to go back to their study instead of manually doing the input
     - Use a login cookie so the data can be grabbed
     
-### Later Things
-- Finish autocomplete for ZIP and cities
-- Make another branch to convert everything to tailwind
-
 
 # Politican Page
 - Dip toes in water with service injection to display politician metrics
     - https://laravel.com/docs/9.x/container
+    - Look into pyscript to see if I should use matplotlib to display graphs for politician side
 ## Submitting images
 - Need to make sure that images have 1:1 aspect ratios
 
-# Admin Page
-- Look into pyscript to see if I should use matplotlib to display graphs for politician side
-
 # General Security
-- Need to find out how to store the images without every image being public to anyone
 - Need an analysis on all HTTP requests to make sure I use post when necessary
 
 # Before going live
-- Find out which login service is cheap, and will allow most connection for user data to sell
 - Add validation errors for everything
     - https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors
 - Need to get down with service injection. 
@@ -142,19 +99,11 @@
 - Turn Campaign donors into pie graph
 - Implement ability to flag. Have a flag comparison page
     - Find out how to save these flags by politician
-- Check out livewire for dynamic components
-    - https://laravel-livewire.com/docs/2.x/quickstart
-        - A pretty good starting guide https://www.sitepoint.com/laravel-livewire-getting-started/ 
-        - Another one https://dev.to/osejudith/lntroduction-to-laravel-livewire-aif
-- All "location_type" are pretty much just enums ("state", "city", or "county"), make their table entry only the length of the longest string
 - Share buttons for social media
     - Interactive filters for social media, such as the head tilts
     - Can also use this to skim more data and give better recommendations, "We think you will like this candidate more"
 
-# Database Redesign
-- Might need to just make one table for geographic locations, then get that ID. It will have a location id itself and a location_type
-    - Won't have to include both fields on the any other table, just the ID for that one
-
 - Make the seeder.md table
+
 # Other programming stuff to look up
 - Shortcut that will copy a line and paste it into current
