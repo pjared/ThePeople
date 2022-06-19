@@ -22,21 +22,22 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
+            // UserSeeder::class,
+            // TeamsSeeder::class,
+
+            LawsSeeder::class,
             LocationSeeder::class,
-            CandidateSeeder::class,
             PartySeeder::class,
             PublicOfficeSeeder::class,
+            OpinionsSeeder::class,
+            ControversialOpinionsSeeder::class,
+
+            CandidateSeeder::class,
             CandidateInfoSeeder::class,
             CandidateOfficePositionsSeeder::class,
-            LawsSeeder::class,
-
-            UserSeeder::class,
-            RunningCandidatesSeeder::class, 
-            BallotSeeder::class,
-            OpinionsSeeder::class,
-
-            ControversialOpinionsSeeder::class,
             CandidateStanceSeeder::class,
+            RunningCandidatesSeeder::class, 
+            BallotSeeder::class,            
         ]);
     }
 }
