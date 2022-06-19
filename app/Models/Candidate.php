@@ -39,7 +39,7 @@ class Candidate extends Model
     }
 
     public function ballot() {
-        return $this->hasOneThrough(Ballot::class, RunningCandidates::class, 'candidate_id', 'id', 'id');
+        return $this->hasOneThrough(Ballot::class, RunningCandidates::class, 'candidate_id', 'id', 'id', 'ballot_id');
     }
 
     public function previous_positions() {
