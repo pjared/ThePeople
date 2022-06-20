@@ -34,5 +34,12 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('password'),
             ]);
         */
+
+        \App\Models\User::factory()->create([
+            'name' => "Jared Pacheco",
+            'email' => 'pjared870@gmail.com',
+            'password' => Hash::make('password'),
+        ]);
+
     }
 }
