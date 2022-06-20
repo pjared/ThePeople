@@ -11,7 +11,5 @@
             {{-- <livewire:find-ballot class="flex flex-row gap-6 mt-12"/> --}}
             <livewire:ballot-list />
         </div>
-        
-
     </div>
 </x-app-layout>
