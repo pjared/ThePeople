@@ -17,7 +17,7 @@ class TeamsSeeder extends Seeder
     {
         Team::create([
             'user_id' => 1,
-            'name' => "Users",
+            'name' => "Admin",
             'personal_team' => true,
         ]);
     }
