@@ -1,13 +1,15 @@
 # Currently working on:
 - Show voting date on home page for ballot list
-
-- Give all new users a team
+- Give all new users a default team (putting off for now)
 
 - Decide how to add political leaning for the site
 - Restructure Controversial opinions to account for the different positions (school district, etc)
 - Figure out how to generate permanent links for candidates
 
 - After getting a ballot for a location, show them ballots that pertain to that location first
+- Figure out how to only show profile picture for candidates
+    - Force them to use this in the photos
+- Still need to create an entire admin page to create everything
 
 ## Candidate Profile Wire
 - Upload the photo name as unique
@@ -15,16 +17,19 @@
 - Allow the candidates to put an info for why they have a stance about an opinion
 
 # Teams
+- Do this after site launch, make teams work, look at sites below for help
+    - https://npratley.net/disabling-personal-teams-in-laravel-8-and-jetstream-1fd083593e08/
+    - https://laracasts.com/discuss/channels/code-review/proper-way-to-disable-personal-teams-in-jetstream?page=1#reply=668759
+    - https://github.com/laravel/jetstream/issues/117
+    - Create a team for the user with https://laracasts.com/discuss/channels/code-review/jetstream-how-to-programmatically-create-a-user-and-team 
 - Finish logic for whether or not someone can create a team in [Team Policy :: create](app/Policies/TeamPolicy.php)
     - Candidates can create ONE team
-- 
 
 # Tests
 - Make tests for the entire site with laravel dusk
 ## After fininshing team & role implementation
 - Make sure that basic users cannot access the following pages
     - Create a candidate
-
 
 # MAIN TODO
 - Define a group of political leanings, but allow for candidates to add them in
@@ -64,6 +69,7 @@
     - Create stickers under a candidate in the ballot so people can see basic info. 
     - Able to click to go to the candidate's page
 - Make this look like textured paper
+- Send an async request when users choose their candidate
 
 ## My Profile Page
 

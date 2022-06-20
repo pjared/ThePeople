@@ -12,4 +12,7 @@ Logging in will automatically direct you to the dashboard, so here I can
 ## Teams
 JetStream teams docs are found at https://jetstream.laravel.com/2.x/features/teams.html#introduction
 
-An important file for me is the TeamPolicy.php, here is where the settings for jetstream is. This file puts restrictions/capabilities on teams.
+An important file for me is the [Team Policy File](/app/Policies/TeamPolicy.php) , here is where the settings for jetstream is. This file puts restrictions/capabilities on teams.
+
+## Roles
+The roles are defined in the [Service Provider File](app/Providers/JetstreamServiceProvider.php)
