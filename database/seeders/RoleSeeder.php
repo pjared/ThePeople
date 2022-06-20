@@ -17,21 +17,21 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
+        Permission::create(['name' => 'add candidates']);
+        Permission::create(['name' => 'remove candidates']);
+
         $admin_role = Role::create(['name' => 'admin']);
-        $admin_permissions = Permission::create([
-            'name' => 'Add Candidates', 
-            'name' => 'Remove Candidates',
-        ]);
-        $admin_permissions->assignRole($admin_role);
+        $admin_role->givePermissionTo('remove candidates');
+        $admin_role->givePermissionTo('add candidates');
+
+        Permission::create(['name' => 'edit candidate profile']);
+        Permission::create(['name' => 'create candidates']);
 
         $candidate_role = Role::create(['name' => 'candidate']);
-        $candidates_permissions = Permission::create([
-            'name' => 'Edit Candidate Profile',
-            'name' => 'Create Candidate Profile'
-        ]);
-        $candidates_permissions->assignRole($candidate_role);
+        $candidate_role->givePermissionTo('edit candidate profile');
+        $candidate_role->givePermissionTo('create candidates');
 
         $user = User::firstWhere('email', "pjared870@gmail.com");
-        $user->assignRole('admin');
+        $user->assignRole($admin_role);
     }
 }
