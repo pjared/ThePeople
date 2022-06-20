@@ -40,3 +40,13 @@ Route::get('/profile/candidate/{id}', [CandidateController::class, 'getCandidate
 Route::get('/candidate-create', function () {
     return view('candidate.profile');
 });
+
+Route::get('/candidate-apply', function () {
+    return view('candidate.apply');
+});
+
+Route::group(['namespace' => 'admin','middleware' => ['role:admin']], function() {
+    Route::get('/', function () {
+        return view('admin.show');
+    })->name('admin');
+});

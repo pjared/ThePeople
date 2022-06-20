@@ -43,7 +43,6 @@ class CandidateProfileTest extends TestCase
             ->set('opinion_vals', $opinion_vals)
             // ->set('location', 'Utah')
             ->call('save');
-        $component = Livewire::test(CandidateProfile::class);
 
         //Make sure we created the candidate
         $candidate = Candidate::firstWhere('user_id', $user->id);
