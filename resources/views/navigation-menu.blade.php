@@ -70,6 +70,12 @@
                     </div>
                 @endif
 
+                @role('admin')
+                    <x-jet-nav-link href="{{ route('admin') }}" :active="request()->routeIs('admin')">
+                        {{ __('Admin') }}
+                    </x-jet-nav-link>
+                @endrole
+
                 <!-- Settings Dropdown -->
                 <div class="ml-3 relative">
                     <x-jet-dropdown align="right" width="48">
