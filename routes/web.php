@@ -49,4 +49,10 @@ Route::group(['namespace' => 'admin','middleware' => ['role:admin']], function()
     Route::get('/', function () {
         return view('admin.show');
     })->name('admin');
+    Route::get('/candidate-approve', function () {
+        return view('admin.approve-candidates');
+    })->name('approve_candidates');
+    Route::get('/candidate-assignment', function () {
+        return view('admin.assign-candidates');
+    })->name('assign_candidates');
 });
