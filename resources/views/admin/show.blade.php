@@ -3,8 +3,9 @@
         {{-- TODO: Put in an admin navbar --}}
         @include('admin.admin-nav')
 
-        <div class="flex flex-row flex-wrap justify-center gap-6 mt-12">
-            <livewire:admin-page />
-        </div>
+        {{-- <div class="flex flex-row flex-wrap justify-center gap-6 mt-12">
+            <livewire:admin-approve-candidates />
+        </div> --}}
+        {{-- TODO: Write an admin home page --}}
     </div>
 </x-app-layout>
