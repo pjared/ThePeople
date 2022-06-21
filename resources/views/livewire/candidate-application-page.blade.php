@@ -45,6 +45,11 @@
                         </div>
                         @error('office_name') <span class="error">{{ $message }}</span> @enderror   
                         <div class="flex flex-col">
+                            <label>State</label>
+                            <input class="text-input w-max" type="text" placeholder="" wire:model="state">
+                        </div>
+                        @error('state') <span class="error">{{ $message }}</span> @enderror   
+                        <div class="flex flex-col">
                             <label>Location</label>
                             <input class="text-input w-max" type="text" placeholder="District, City, County, State" wire:model="location">
                         </div>

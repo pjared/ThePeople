@@ -18,6 +18,7 @@ class CandidateApplication extends Model
         "dob",
         "email",
         "office_name",
+        "state",
         "location",
         "status",
     ];

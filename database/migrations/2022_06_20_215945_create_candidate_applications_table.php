@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('dob');
             $table->string('email');
             $table->string('office_name');
+            $table->string('state');
             $table->string('location');
             $table->string('status', 15);
             $table->timestamps();

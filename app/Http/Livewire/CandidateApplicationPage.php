@@ -13,7 +13,7 @@ class CandidateApplicationPage extends Component
     public $name;
     public $email;
     public $dob;
-    // public $office_level;
+    public $state;
     public $location;
     public $office_name;
 
@@ -24,7 +24,7 @@ class CandidateApplicationPage extends Component
             'email' => 'required|email',
             'location' => 'required',
             'office_name' => 'required',
-            // 'office_level' => 'required',
+            'state' => 'required',
             'dob' => 'required|date',
         ]);
 
@@ -34,6 +34,7 @@ class CandidateApplicationPage extends Component
         $candidate_application->email = $this->email;
         $candidate_application->location = $this->location;
         $candidate_application->office_name = $this->office_name;
+        $candidate_application->state = $this->state;
         $candidate_application->dob = $this->dob;
         $candidate_application->status = "submitted";
 
