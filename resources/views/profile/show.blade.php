@@ -12,11 +12,13 @@
 
                 <div class="text-center mt-6">
                     {{-- TODO: Implement some basic information for the user to fill out here --}}
-                    @role('candidate')
-                        <a class="underline text-sky-600 visited:text-purple-600" href="/candidate-create">Edit Your Candidate Profile</a>
-                    @else
-                        <a class="underline text-sky-600 visited:text-purple-600" href="/candidate-apply">Are you a candidate? Click here to apply to get a profile.</a>
-                    @endrole
+                    <button class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-full">
+                        @role('candidate')
+                            <a href="/candidate-create">Edit Your Candidate Profile</a>
+                        @else                       
+                            <a href="/candidate-apply">Are you a candidate? Click here to apply to get a profile.</a>
+                        @endrole
+                    </button>
                 </div>
                 <x-jet-section-border />
             @endif
