@@ -17,7 +17,7 @@
                     <x-jet-nav-link href="{{ route('create-ballot') }}" :active="request()->routeIs('create-ballot')">
                         {{ __('Create a Ballot') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('create-ballot') }}" :active="request()->routeIs('create-ballot')">
+                    <x-jet-nav-link href="{{ route('candidate-links') }}" :active="request()->routeIs('candidate-links')">
                         {{ __('Candidate Permalinks') }}
                     </x-jet-nav-link>
                     {{-- 

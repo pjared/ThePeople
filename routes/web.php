@@ -55,4 +55,7 @@ Route::group(['prefix' =>'admin', 'namespace' => 'admin','middleware' => ['role:
     Route::get('/create-ballot', function () {
         return view('admin.create-ballot');
     })->name('create-ballot');
+    Route::get('/candidate-links', function () {
+        return view('admin.permalinks');
+    })->name('candidate-links');
 });
