@@ -3,7 +3,7 @@
         <div class="flex flex-col card w-3/4 items-center">
             <h1>List of Applications</h1>
             @foreach ($applications as $application)
-                <div class="flex flex-row card w-11/12 gap-10">
+                <div class="flex flex-row card outline outline-1 outline-black w-11/12 gap-10">
                     <div class="flex flex-col">
                         <div>
                             Name: {{$application->name}}
