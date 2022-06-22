@@ -16,10 +16,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ballots', function (Blueprint $table) {
+    Schema::create('ballots', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Location::class, 'location_id');
-            $table->foreignIdFor(PublicOfficePosition::class, 'public_office_id');
+            $table->foreignIdFor(PublicOfficePosition::class, 'office_id');
             $table->date('voting_date');
         });
     }

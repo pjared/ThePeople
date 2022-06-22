@@ -13,12 +13,12 @@ class Ballot extends Model
     
     protected $guarded = [
         "location_id",
-        "public_office_id",
+        "office_id",
         "voting_date"
     ];
 
     public function office() {
-        return $this->belongsTo(PublicOfficePosition::class, 'public_office_id');
+        return $this->belongsTo(PublicOfficePosition::class, 'office_id');
     }
 
     public function location() {

@@ -140,7 +140,7 @@ class CandidateProfile extends Component
         }
 
         //Get the ballot
-        $ballot = Ballot::where('location_id', $location->id)->where('public_office_id', $public_office->id)->first();
+        $ballot = Ballot::where('location_id', $location->id)->where('office_id', $public_office->id)->first();
         // Update/Create the running candidate pivot
         RunningCandidates::updateOrCreate(
             [

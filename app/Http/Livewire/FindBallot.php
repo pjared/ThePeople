@@ -97,7 +97,7 @@ class FindBallot extends Component
 
         // dd($office_id, $location_type, $location_id, PublicOfficePosition::all());
 
-        $ballot = Ballot::where('location_id', $location_id)->where('public_office_id', $office_id)->first();
+        $ballot = Ballot::where('location_id', $location_id)->where('office_id', $office_id)->first();
         
         // dd($ballot);
         return redirect()->route('ballot', ['id' => $ballot->id]);
