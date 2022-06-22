@@ -11,11 +11,11 @@
         - Find a way to add a ballot to this candidate
         - Decide how candidates are created after application approval
 
-- Add State to locations
-- Remove population from locations
+- Send email notifications to my gmail when a new candidate applies, etc.
 
-- On admin create ballot, add in list generation as the person attempts to create
+- On admin create ballot, add in list generation as the person attempts to create a new location
 
+- Need to include if a position is non partisan or not
 
 - Decide how to add political leaning for the site
 - Restructure Controversial opinions to account for the different positions (school district, etc)
