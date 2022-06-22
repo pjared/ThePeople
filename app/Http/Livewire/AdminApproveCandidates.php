@@ -30,17 +30,7 @@ class AdminApproveCandidates extends Component
         $candidate->state = $application->state;
         $candidate->save();
 
-        /*
-        'dob' => Carbon::today()->subYear(rand(25, 55)),
-                'signup_date' => Carbon::today()->subDays(rand(0, 365)),
-                'party_id' => rand(1,3),
-                'image_id' => strval(rand(1,3)), 
-                'state' => 'Utah',
-                 */
-
-
         //Change the status of the candidate
-        
         $application->status = "accepted";
         $application->candidate_id = $candidate->id;
         $application->save();
@@ -48,6 +38,7 @@ class AdminApproveCandidates extends Component
 
     public function rejectCandidate($user_id)
     {
+        //Find application, update status to 'rejected'  
         $application = CandidateApplication::firstWhere('user_id', $user_id);
         $application->status = "rejected";
         $application->save();
