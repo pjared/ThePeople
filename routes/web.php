@@ -3,8 +3,6 @@
 use App\Http\Controllers\BallotController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SearchController;
-use App\Http\Livewire\Ballot;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'getWelcomeView']);
-
 
 Route::middleware([
     'auth:sanctum',
@@ -45,7 +42,7 @@ Route::get('/candidate-apply', function () {
     return view('candidate.apply');
 });
 
-Route::group(['namespace' => 'admin','middleware' => ['role:admin']], function() {
+Route::group(['prefix' =>'admin', 'namespace' => 'admin','middleware' => ['role:admin']], function() {
     Route::get('/', function () {
         return view('admin.show');
     })->name('admin');
@@ -55,4 +52,7 @@ Route::group(['namespace' => 'admin','middleware' => ['role:admin']], function()
     Route::get('/candidate-assignment', function () {
         return view('admin.assign-candidates');
     })->name('assign_candidates');
+    Route::get('/create-ballot', function () {
+        return view('admin.create-ballot');
+    })->name('create-ballot');
 });
