@@ -67,7 +67,7 @@ class LocationSeeder extends Seeder
     ];
 
     private $city_names = [
-        "Provo",
+        // "Provo",
         "Whittier",
     ];
 
