@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             CandidateInfoSeeder::class,
             CandidateOfficePositionsSeeder::class,
             CandidateStanceSeeder::class,
+            CandidateApplicationSeeder::class,
             RunningCandidatesSeeder::class, 
             BallotSeeder::class,            
         ]);
