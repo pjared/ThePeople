@@ -1,7 +1,8 @@
 # Currently working on:
 - Admin Page for:
-    - Creating new public offices, locations, etc.
     - Configuring permanent links
+        - Create a new model with candidate_id & permalink ending
+        - If candidate has permalink, else allow for creation
 
 - Finish Candidate Ballot assignment
     - Test ballot creation
@@ -10,8 +11,10 @@
         - Find a way to add a ballot to this candidate
         - Decide how candidates are created after application approval
 
-
+- Add State to locations
 - Remove population from locations
+
+- On admin create ballot, add in list generation as the person attempts to create
 
 
 - Decide how to add political leaning for the site
