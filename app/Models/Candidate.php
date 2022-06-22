@@ -26,6 +26,7 @@ class Candidate extends Model
         "signup_date",
         "email",
         "phone_number",
+        'state'
     ];
 
     use HasFactory;
@@ -60,5 +61,9 @@ class Candidate extends Model
 
     public function law_involvement() {
         return $this->belongsToMany(Law::class)->using(CandidateLaw::class);
+    }
+
+    public function application() {
+        return $this->hasOne(CandidateApplication::class);
     }
 }

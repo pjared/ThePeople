@@ -30,6 +30,7 @@ class CandidateSeeder extends Seeder
                 'signup_date' => Carbon::today()->subDays(rand(0, 365)),
                 'party_id' => rand(1,3),
                 'image_id' => strval(rand(1,3)), 
+                'state' => 'Utah',
             ]);
         }
     }

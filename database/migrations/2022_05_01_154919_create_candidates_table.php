@@ -19,11 +19,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->date('dob');
-            $table->foreignIdFor(PoliticalParty::class, 'party_id');
-            $table->foreignIdFor(User::class, 'user_id')->nullable();
-            $table->smallInteger('image_id')->unsigned();
             $table->date('signup_date');
             $table->text('info')->default("");
+            $table->string('state', 20);
+            $table->foreignIdFor(PoliticalParty::class, 'party_id')->nullable();
+            $table->foreignIdFor(User::class, 'user_id')->nullable();
+            $table->smallInteger('image_id')->unsigned()->nullable();
             $table->string('email')->nullable();
             $table->string('phone_number')->nullable();
         });
