@@ -21,5 +21,6 @@ class CandidateApplication extends Model
         "state",
         "location",
         "status",
+        'candidate_id'
     ];
 }

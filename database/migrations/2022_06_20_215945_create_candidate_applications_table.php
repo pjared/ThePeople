@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Candidate;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->string('state');
             $table->string('location');
             $table->string('status', 15);
+            $table->foreignIdFor(Candidate::class, 'candidate_id')->nullable();
             $table->timestamps();
         });
     }
