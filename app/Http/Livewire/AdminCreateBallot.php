@@ -24,13 +24,13 @@ class AdminCreateBallot extends Component
     public function createLocation()
     {
         $this->validate([
-            'state' => 'required',
+            // 'state' => 'required',
             'location_name' => 'required',
             'location_type' => 'required',
         ]);
 
         $location = Location::firstOrCreate([
-            'state' => $this->state,
+            // 'state' => $this->state,
             'name' => $this->location_name,
             'type' => $this->location_type,
         ]);
