@@ -17,6 +17,7 @@ class CandidateApplication extends Model
         "name",
         "dob",
         "email",
+        'phone_number',
         "office_name",
         "state",
         "location",

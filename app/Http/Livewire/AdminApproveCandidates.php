@@ -28,6 +28,7 @@ class AdminApproveCandidates extends Component
         $candidate->dob = $application->dob;
         $candidate->signup_date = Carbon::now();
         $candidate->state = $application->state;
+        $candidate->phone_number = $application->phone_number;
         $candidate->save();
 
         //Change the status of the candidate

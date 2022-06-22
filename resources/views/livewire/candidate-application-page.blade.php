@@ -36,7 +36,12 @@
                             <label>Email</label>
                             <input class="text-input w-max" type="text" placeholder="Email" value="{{$email}}" wire:model="email">
                         </div> 
-                        @error('email') <span class="error">{{ $message }}</span> @enderror            
+                        @error('email') <span class="error">{{ $message }}</span> @enderror      
+                        <div class="flex grow flex-col">
+                            <label>Phone Number</label>
+                            <input class="text-input w-max" type="tel" wire:model="phone_number">
+                        </div> 
+                        @error('phone_number') <span class="error">{{ $message }}</span> @enderror            
                     </div>
                     <div class="flex flex-col gap-1 w-1/2">
                         <div class="flex flex-col">

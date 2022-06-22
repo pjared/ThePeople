@@ -12,6 +12,7 @@ class CandidateApplicationPage extends Component
 
     public $name;
     public $email;
+    public $phone_number;
     public $dob;
     public $state;
     public $location;
@@ -26,12 +27,14 @@ class CandidateApplicationPage extends Component
             'office_name' => 'required',
             'state' => 'required',
             'dob' => 'required|date',
+            'phone_number' => 'required|regex:/[0-9]{10}/'
         ]);
 
         $candidate_application = new CandidateApplication();
         $candidate_application->user_id = Auth::user()->id;
         $candidate_application->name = $this->name;
         $candidate_application->email = $this->email;
+        $candidate_application->phone_number = $this->phone_number;
         $candidate_application->location = $this->location;
         $candidate_application->office_name = $this->office_name;
         $candidate_application->state = $this->state;

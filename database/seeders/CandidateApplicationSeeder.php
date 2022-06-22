@@ -24,6 +24,7 @@ class CandidateApplicationSeeder extends Seeder
             $application->name = $user->name;
             $application->dob = Carbon::now()->subYear(rand(10,100));
             $application->email = 'pjared@gmail.com';
+            $application->phone_number = '1234567891';
             $application->office_name = 'Governer';
             $application->state = 'Utah';
             $application->location = 'District 12';
