@@ -5,10 +5,7 @@
                 See Who's Running For ...
             </div>
         </div>
-
-        {{-- TODO: Keep this for expansion --}}
         <div class="flex flex-row flex-wrap justify-center gap-6 mt-12">
-            {{-- <livewire:find-ballot class="flex flex-row gap-6 mt-12"/> --}}
             <livewire:ballot-list />
         </div>
     </div>
