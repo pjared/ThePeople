@@ -9,25 +9,26 @@
                         </h1>
                         <div class="flex card grow flex-col gap-1">
                             @foreach ($candidates as $candidate)
-                                <div class="flex flex-row card grow outline outline-1 outline-black gap-6 text-left">
-                                    <div class="flex flex-col">
-                                        <div>
-                                            Name: {{$candidate->name}}
+                                @if(!$candidate->ballot)
+                                    <div class="flex flex-row card grow outline outline-1 outline-black gap-6 text-left">
+                                        <div class="flex flex-col">
+                                            <div>
+                                                Name: {{$candidate->name}}
+                                            </div>
+                                            <div>
+                                                Email: {{$candidate->email}}
+                                            </div>
                                         </div>
-                                        <div>
-                                            Email: {{$candidate->email}}
+                                        <div class="flex flex-col">
+                                            <div>
+                                                State: {{$candidate->state}}
+                                            </div>
+                                            <div>
+                                                Office: {{$candidate->office_name}} {{$candidate->location}}
+                                            </div>   
                                         </div>
-                                    </div>
-                                    <div class="flex flex-col">
-                                        <div>
-                                            State: {{$candidate->state}}
-                                        </div>
-                                        <div>
-                                            Office: {{$candidate->office_name}} {{$candidate->location}}
-                                        </div>   
-                                    </div>
-                                </div>        
-                                
+                                    </div>        
+                                @endif
                             @endforeach
                         </div>
                     </div>                    
