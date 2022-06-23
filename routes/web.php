@@ -3,6 +3,7 @@
 use App\Http\Controllers\BallotController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PermaLinkController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'getWelcomeView']);
 
+/* -----LOGIN------ */
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -42,6 +44,7 @@ Route::get('/candidate-apply', function () {
     return view('candidate.apply');
 });
 
+/* -----ADMIN------ */
 Route::group(['prefix' =>'admin', 'namespace' => 'admin','middleware' => ['role:admin']], function() {
     Route::get('/', function () {
         return view('admin.show');
@@ -59,3 +62,6 @@ Route::group(['prefix' =>'admin', 'namespace' => 'admin','middleware' => ['role:
         return view('admin.permalinks');
     })->name('candidate-links');
 });
+
+/* -----PERMALINK------ */
+Route::get('/permalink/{permalink}', [PermaLinkController::class, 'directLink']);
