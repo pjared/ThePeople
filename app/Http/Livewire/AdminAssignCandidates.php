@@ -42,7 +42,7 @@ class AdminAssignCandidates extends Component
 
     public function render()
     {
-        $this->candidates = Candidate::all();
+        $this->candidates = Candidate::doesntHave('ballot')->get();
         return view('livewire.admin-assign-candidates');
     }
 }

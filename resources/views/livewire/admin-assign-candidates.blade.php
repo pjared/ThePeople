@@ -22,42 +22,40 @@
                         </h1>
                         <div class="flex card grow flex-col gap-1">
                             @foreach ($candidates as $candidate)
-                                @if(!$candidate->ballot)
-                                    <div class="flex flex-row card grow outline outline-1 outline-black gap-6 text-left">
-                                        <div class="flex grow flex-col">
-                                            <div>
-                                                Name: {{$candidate->name}}
-                                            </div>
-                                            <div>
-                                                Email: {{$candidate->email}}
-                                            </div>
-                                            <div>
-                                                Number: {{$candidate->phone_number}}
-                                            </div>
+                                <div class="flex flex-row card grow outline outline-1 outline-black gap-6 text-left">
+                                    <div class="flex grow flex-col">
+                                        <div>
+                                            Name: {{$candidate->name}}
                                         </div>
-                                        <div class="flex grow flex-col">
-                                            <div>
-                                                State: {{$candidate->state}}
-                                            </div>
-                                            <div>
-                                                Office: {{$candidate->application->office_name}} {{$candidate->application->location}}
-                                            </div>   
+                                        <div>
+                                            Email: {{$candidate->email}}
                                         </div>
+                                        <div>
+                                            Number: {{$candidate->phone_number}}
+                                        </div>
+                                    </div>
+                                    <div class="flex grow flex-col">
+                                        <div>
+                                            State: {{$candidate->state}}
+                                        </div>
+                                        <div>
+                                            Office: {{$candidate->application->office_name}} {{$candidate->application->location}}
+                                        </div>   
+                                    </div>
 
-                                        <!-- TODO: Finish up a form for assigning candidate to ballot-->
-                                        <form class="flex justify-end w-1/4" wire:keydown.enter="assignCandidate({{$candidate->id}})">
-                                            <div class="flex flex-col">
-                                                <label>Office ID</label>
-                                                <input class="text-input w-3/4" type="text" wire:model="office_id">
-                                            </div>
-                                            <div class="flex flex-col">
-                                                <label>Location ID</label>
-                                                <input class="text-input w-3/4" type="text" wire:model="location_id">
-                                            </div>
-                                        </form>
-                                        
-                                    </div>        
-                                @endif
+                                    <!-- TODO: Finish up a form for assigning candidate to ballot-->
+                                    <form class="flex justify-end w-1/4" wire:keydown.enter="assignCandidate({{$candidate->id}})">
+                                        <div class="flex flex-col">
+                                            <label>Office ID</label>
+                                            <input class="text-input w-3/4" type="text" wire:model="office_id">
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <label>Location ID</label>
+                                            <input class="text-input w-3/4" type="text" wire:model="location_id">
+                                        </div>
+                                    </form>
+                                    
+                                </div>
                             @endforeach
                         </div>
                     </div>                    
