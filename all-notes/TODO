@@ -1,8 +1,11 @@
 # Currently working on:
 - Admin Page for:
-    - Configuring permanent links
-        - Create a new model with candidate_id & permalink ending
-        - If candidate has permalink, else allow for creation
+    - Generate a QR code (Do this with official logo later, for now just use some random thing)
+- ALLOW USER TO SHARE CANDIDATE PERMALINK WITH A SHARE BUTTON
+
+- Add candidate Promises
+
+
 
 - Finish Candidate Ballot assignment
     - Test ballot creation
