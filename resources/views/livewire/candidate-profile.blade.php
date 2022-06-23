@@ -94,6 +94,16 @@
                         <label for="candidateBio"></label>
                         <textarea class="text-input flex grow" wire:model="bio" rows="3" placeholder="Candidate bio">{{$bio}}</textarea>
                     </div>
+                    <!-- CANDIDATE PROMISES -->
+                    <div class="flex flex-col card w-11/12 items-center">
+                        <div class="">
+                            Your promises for this term in office
+                            <i class="bi bi-bank"></i>
+                        </div>
+                        <div>
+                            TODO: Allow to put in promises
+                        </div>    
+                    </div>
                     <!-- PREVIOUS POSITIONS -->
                     <div class="flex flex-col card w-11/12 items-center">
                         <div class="">
@@ -108,7 +118,7 @@
             </div> 
             <!-- RIGHT COLUMN -->
             <div class="flex flex-col w-1/2 p-5 gap-6">
-                {{-- CONTROVERSIAL OPINIONS -->
+                <!-- CONTROVERSIAL OPINIONS -->
                 <div id="opinionsInfo" class="flex flex-col card w-11/12 items-center gap-4">
                     <div class="flex flex-row grow justify-center">
                             Controversial Opinions
