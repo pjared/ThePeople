@@ -1,9 +1,9 @@
 <x-app-layout>
     <div class="flex flex-1 items-center grow">
         <div class="flex grow justify-center">
-            {{-- LEFT COLUMN --}}
+            <!-- LEFT COLUMN -->
             <div class="flex flex-col w-1/2 p-5 items-center">
-                {{-- CANDIDATE PERSONAL INFO --}}
+                <!-- CANDIDATE PERSONAL INFO -->
                 <div class="p-2 w-11/12">
                     <div class="flex flex-row gap-6 justify-center">
                         <div class="flex">
@@ -26,14 +26,14 @@
                         </div>
                     </div>
                 </div>
-                {{-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS --}}
+                <!-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS -->
                 <div class="flex flex-col p-2 w-11/12 items-center">
                     @if($candidate->info != "")
                         <div>
                             {{-- TODO: make this information look nice --}}
                         </div>
                     @endif
-                    {{-- DONORS --}}
+                    <!-- DONORS -->
                     <div id="donorsInfo" class="flex flex-col w-11/12 items-center" x-data="{openDonors: false}">
                         <button class="flex-row card w-11/12" type="button" x-on:click="openDonors = ! openDonors" :class="{ 'rounded-b-none': openDonors }">
                             <div class="col-8 text-start">
@@ -55,7 +55,7 @@
                             @endif
                         </div>
                     </div>
-                    {{-- PREVIOUS POSITIONS --}}
+                    <!-- PREVIOUS POSITIONS -->
                     <div class="mt-4 flex flex-col w-11/12 items-center" x-data="{openPositions: false}">
                         <button class="card w-11/12" type="button" x-on:click="openPositions = ! openPositions" :class="{ 'rounded-b-none': openPositions }">
                             <div class="row">
@@ -82,10 +82,10 @@
                     </div>
                 </div>
             </div>
-            {{-- RIGHT COLUMN --}}
+            <!-- RIGHT COLUMN -->
             <div class="flex flex-col w-1/2 p-5">
                 <div class="p-2">
-                    {{-- CONTROVERSIAL OPINIONS --}}
+                    <!-- CONTROVERSIAL OPINIONS -->
                     <div id="opinionsInfo" class="flex flex-col w-11/12 items-center">
                         <button class="card w-11/12" type="button">
                             <div class="flex flex-row grow justify-center">
@@ -117,7 +117,7 @@
                         </button>
                     </div>
                     
-                    {{-- OTHER OPINIONS --}}
+                    <!-- OTHER OPINIONS -->
                     <div class="mt-4 flex flex-col w-11/12 items-center" x-data="{openOpinions: false}">
                         <button class="card w-11/12" type="button" x-on:click="openOpinions = ! openOpinions" :class="{ 'rounded-b-none': openOpinions }">
                             <div class="flex flex-row">
@@ -142,7 +142,7 @@
                         </div>
                     </div>     
 
-                    {{-- CAMPAIGN VIDEOS --}}
+                    <!-- CAMPAIGN VIDEOS -->
                     {{-- <div class="mt-4" id="campaignInfo">
                         <button style="width:95%" class="card card-body" type="button" data-bs-toggle="collapse" data-bs-target="#campaignInfoCollapse" aria-expanded="false" aria-controls="multiCollapseExample2">
                             <div class="row">
@@ -170,7 +170,7 @@
                         </div>
                     </div> --}}
 
-                    {{-- LAW MAKING INVOLVEMENT  --}}
+                    <!-- LAW MAKING INVOLVEMENT  -->
                     <div class="mt-4 flex flex-col w-11/12 items-center" x-data="{openOpinions: false}">
                         <button class="card w-11/12" type="button" x-on:click="openOpinions = ! openOpinions" :class="{ 'rounded-b-none': openOpinions }">
                             <div class="row">

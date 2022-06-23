@@ -1,6 +1,6 @@
 <div>
     <div class="grid gap-4 place-content-center font-roboto text-5xl">
-        {{-- Mayor Card --}}
+        <!-- Mayor Card -->
         <button wire:click="$emitUp('officeClicked', 'Mayor')" id="mayorButton" name="office" value="Mayor" class="w-80 p-2 disabled:opacity-50 rounded-md hover:bg-gray-200 hover:scale-110">
             <div class="grid grid-flow-col items-center justify-center">
                 <div>Mayor</div>
@@ -16,7 +16,7 @@
             </div>
         </button>
     
-        {{-- Governor Card --}}
+        <!-- Governor Card -->
         <button wire:click="$emitUp('officeClicked', 'Governor')" type="submit" id="govenorButton" name="office" value="Governor" class="w-80 p-2 disabled:opacity-50 rounded-md hover:bg-gray-200 hover:scale-110">
             <div class="grid grid-flow-col items-center justify-center">
                 <div class="flex gap-1">
@@ -30,7 +30,7 @@
             </div>
         </button>
 
-        {{-- House Card --}}
+        <!-- House Card -->
         <button wire:click="$emitUp('officeClicked', 'House')" type="submit" id="houseButton" name="office" value="House" class="w-80 disabled:opacity-50 p-2 rounded-md hover:bg-gray-200 hover:scale-110">
             <div class="grid grid-flow-col items-center justify-center">
                 <div class="flex gap-1">
@@ -45,7 +45,7 @@
             </div>
         </button>
 
-        {{-- Senate Card --}}
+        <!-- Senate Card -->
         <button wire:click="$emitUp('officeClicked', 'Senate')" type="submit" id="senateButton" name="office" value="Senate" class="w-80 p-2 disabled:opacity-50 rounded-md hover:bg-gray-200 hover:scale-110">
             <div class="grid grid-flow-col items-center justify-center">
                 <div class="flex gap-1">

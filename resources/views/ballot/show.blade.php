@@ -16,7 +16,7 @@
                 <div class="flex flex-wrap grow w-11/12 mt-2">
                     @foreach ($ballot->candidates as $running_candidate)
                         <div class="flex grow flex-row min-w-fit pt-2 w-11/12 h-100">
-                            {{-- CANDIDATE NAME, PICTURE, AND PAGE LINK --}}
+                            <!-- CANDIDATE NAME, PICTURE, AND PAGE LINK -->
                             <form action="/profile/candidate/{{$running_candidate->candidate_id}}" method="GET" class="w-11/12 hover:scale-110">
                                 <button type="submit" class="card flex grow flex-cols w-full">
                                     <div class="text-center">
@@ -32,7 +32,7 @@
                                     </div>
                                 </button>
                             </form>
-                            {{-- CHECKBOX FOR CANDIDATE --}}
+                            <!-- CHECKBOX FOR CANDIDATE -->
                             <div class="flex grow items-center pl-4">
                                 <input type="checkbox" class="check flex" name="check{{$running_candidate->candidate_id}}" id="check{{$running_candidate->candidate_id}}" onclick="unselectAll({{$running_candidate->candidate_id}})">
                                 <label class="flex grow items-center" for="check{{$running_candidate->candidate_id}}" style="--d: 60%;">
