@@ -1,36 +1,72 @@
-<div class="flex grow justify-center">
+<div class="flex grow justify-center gap-8">
     @role('admin')
-        <div class="flex flex-col card w-3/4 items-center">
-            <h1>List of Applications</h1>
-            @foreach ($candidates as $application)
-                <div class="flex flex-row card w-11/12 gap-10">
-                    <div class="flex flex-col">
-                        <div>
-                            Name: {{$application->name}}
+        <div class="flex flex-col card w-2/5 items-center outline outline-1 outline-black">
+            <h1>Linked Candidates</h1>
+            @foreach ($candidates_linked as $candidate)-
+                <div class="flex flex-col card w-11/12 gap-2 outline outline-1 outline-black">
+                    <div class="flex flex-row gap-6">
+                        <div class="flex flex-col">
+                            <div>
+                                Name: {{$candidate->name}}
+                            </div>
+                            <div>
+                                State: {{$candidate->state}}
+                            </div>
+                            
+                        </div>        
+                        <div class="flex flex-col">
+                            <div>
+                                Office: {{$candidate->office_name}} {{$candidate->location}}
+                            </div>              
                         </div>
-                        <div>
-                            Email: {{$application->email}}
-                        </div>
-                    </div>        
-                    <div class="flex flex-col">
-                        <div>
-                            State: {{$application->state}}
-                        </div>
-                        <div>
-                            Office: {{$application->office_name}} {{$application->location}}
-                        </div>                    
-                    </div>        
-                    <div>
-                        Status: {{$application->status}}
                     </div>
-                    {{-- <div class="flex grow justify-end gap-5">
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" wire:click="acceptCandidate({{ $application->user_id }})">
-                            Accept
-                        </button>
-                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full" wire:click="rejectCandidate({{ $application->user_id }})">
-                            Reject
-                        </button>
-                    </div>                 --}}
+                    
+                    <!-- TODO: Finish up a form for assigning candidate to ballot-->
+                    <form class="flex grow flex-row justify-center" wire:keydown.enter="update({{$candidate->id}})">
+                        <div class="flex flex-col">
+                            <label>Permalink</label>
+                            <input class="text-input w-3/4" type="text" wire:model="perma_link.{{$candidate->id}}" value="{{$candidate->permalink->perma_link}}">
+                        </div>
+                        <div class="flex flex-col">
+                            <label>Link to direct to</label>
+                            <input class="text-input w-3/4" type="text" wire:model="candidate_link.{{$candidate->id}}" value="{{$candidate->permalink->candidate_link}}">
+                        </div>
+                    </form>
+                </div>
+            @endforeach  
+        </div>
+        <div class="flex flex-col card w-2/5 items-center outline outline-1 outline-black">
+            <h1>Unlinked Candidates</h1>
+            @foreach ($candidates as $candidate)
+                <div class="flex flex-col card w-11/12 gap-2 outline outline-1 outline-black">
+                    <div class="flex flex-row gap-6">
+                        <div class="flex flex-col">
+                            <div>
+                                Name: {{$candidate->name}}
+                            </div>
+                            <div>
+                                State: {{$candidate->state}}
+                            </div>
+                              
+                        </div>        
+                        <div class="flex flex-col">
+                            <div>
+                                Office: {{$candidate->office_name}} {{$candidate->location}}
+                            </div>              
+                        </div>
+                    </div>
+                    
+                    <!-- TODO: Finish up a form for assigning candidate to ballot-->
+                    <form class="flex grow flex-row justify-center" wire:keydown.enter="save({{$candidate->id}})">
+                        <div class="flex flex-col">
+                            <label>Permalink</label>
+                            <input class="text-input w-3/4" type="text" wire:model="perma_link.{{$candidate->id}}">
+                        </div>
+                        <div class="flex flex-col">
+                            <label>Link to direct to</label>
+                            <input class="text-input w-3/4" type="text" wire:model="candidate_link.{{$candidate->id}}">
+                        </div>
+                    </form>
                 </div>
             @endforeach
         </div>

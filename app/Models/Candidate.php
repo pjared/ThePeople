@@ -66,4 +66,8 @@ class Candidate extends Model
     public function application() {
         return $this->hasOne(CandidateApplication::class);
     }
+
+    public function permalink() {
+        return $this->hasOne(CandidatePermaLink::class, 'candidate_id');
+    }
 }
