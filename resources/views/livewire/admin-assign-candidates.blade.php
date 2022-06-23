@@ -1,17 +1,18 @@
 <div class="flex flex-col grow items-center">
-    <div class="flex w-screen justify-center">
-        @if (session()->has('message'))
-            <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800 w-2/5" role="alert">
-                {{ session('message') }}
-            </div>
-        @endif
-        @if (session()->has('error'))
-            <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-2/5" role="alert">
-                {{ session('error') }}
-            </div>
-        @endif
-    </div>
     @role('admin')
+        <div class="flex w-screen justify-center">
+            @if (session()->has('message'))
+                <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800 w-2/5" role="alert">
+                    {{ session('message') }}
+                </div>
+            @endif
+            @if (session()->has('error'))
+                <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-2/5" role="alert">
+                    {{ session('error') }}
+                </div>
+            @endif
+        </div>
+    
         <div class="w-11/12">
             <div class="flex grow flex-row gap-6">
                 <div class="w-3/5 text-center">
