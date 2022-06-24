@@ -17,7 +17,7 @@ class CandidateApplicationSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 2; $i < 7; $i++) {
+        for($i = 1; $i < 7; $i++) {
             $user = User::find($i);
             $application = new CandidateApplication();
             $application->user_id = $i;

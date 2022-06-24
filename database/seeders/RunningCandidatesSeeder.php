@@ -45,7 +45,7 @@ class RunningCandidatesSeeder extends Seeder
         for($i = 1; $i <= 4; $i++) {
             //Get a random # of candidates to participate in a race
             $num_candidates = $random_candidates_num[$i];
-            for($j = 0; $j < $num_candidates; $j++) {
+            for($j = 0; $j < 4; $j++) {
                 DB::table('running_candidates')->insert([
                     'ballot_id' => $i, // only 1-4, since 4 offices
                     'candidate_id' => 1 + $j,
