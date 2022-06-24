@@ -1,38 +1,47 @@
+# Branch - Candidate Rework
+- Need to include if a position is non partisan or not
+
+- Candidate decides to show themselves on the ballot
+
+- Decide how to add political leaning for the site
+- Restructure Controversial opinions to account for the different positions (school district, etc)
+
+- Need to finish photo upload
+    - Determine if:
+        - I can configure jetstream profile pictures to only be for candidates
+        - Set their profile picture on the candidate profile p
+
+
+- Allow the candidates to put an info for why they have a stance about an opinion
+
+- Tell the candidate what ballot they've been assigned to.
+    - Allow them to request a change (Later on)
+
+- Candidates need a contact email and public email, contact phone and public phone
+
+- Figure out how political leanings work so I can implement them with the candidate
+
+# Branch - View Rework
+- Use Daisy UI https://daisyui.com/ to convert the components
+- Remove all unnecessary comments, etc
+
+# Branch - User Rework 
+- Save the checkmark for the planned vote
+- Implement "flagging" ability and comparison page
+
 # Currently working on:
+- Send email notifications to my gmail when a new candidate applies, etc.
+
+## Admin Page - Future additions
 - Admin Page for:
     - Generate a QR code (Do this with official logo later, for now just use some random thing)
 - ALLOW USER TO SHARE CANDIDATE PERMALINK WITH A SHARE BUTTON
 
-- Add candidate Promises
-
-
-
+- On admin create ballot, add in list generation as the person attempts to 
+    - create a new location, ballot, or office
 - Finish Candidate Ballot assignment
-    - Test ballot creation
     - Ballot search bar
-    - Find a way to get candidates that don't have a ballot
-        - Find a way to add a ballot to this candidate
-        - Decide how candidates are created after application approval
 
-- Send email notifications to my gmail when a new candidate applies, etc.
-
-- On admin create ballot, add in list generation as the person attempts to create a new location
-
-- Need to include if a position is non partisan or not
-
-- Decide how to add political leaning for the site
-- Restructure Controversial opinions to account for the different positions (school district, etc)
-- Figure out how to generate permanent links for candidates
-
-- After getting a ballot for a location, show them ballots that pertain to that location first
-- Figure out how to only show profile picture for candidates
-    - Force them to use this in the photos
-- Still need to create an entire admin page to create everything
-
-## Candidate Profile Wire
-- Upload the photo name as unique
-- Return error messages when location/office cannot be found
-- Allow the candidates to put an info for why they have a stance about an opinion
 
 # Teams
 - Do this after site launch, make teams work, look at sites below for help
@@ -45,6 +54,7 @@
 
 # Tests
 - Make tests for the entire site with laravel dusk
+
 ## After fininshing team & role implementation
 - Make sure that basic users cannot access the following pages
     - Create a candidate
@@ -54,12 +64,12 @@
     - Can get this list from the cooks report
 
 - Make about us page
+
 - Make query builders for government websites for:
-    - Positions in office
     - Laws voted on in office
     - Campaign Donations
 
-- Save the checkmark for the planned vote
+
 
 # User Pivots
 - Implement badges that appear during candidate hover & a key
