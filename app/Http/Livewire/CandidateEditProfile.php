@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use App\Models\Ballot;
 use App\Models\Candidate;
+use App\Models\CandidateOfficePositions;
+use App\Models\CandidatePromise;
 use App\Models\CandidateStance;
 use App\Models\ControversialOpinion;
 use App\Models\Location;
@@ -19,6 +21,8 @@ class CandidateEditProfile extends Component
     use WithFileUploads;
 
     public $controversial_opinions;
+    public $candidate;
+    // public $promises;
 
     //Form Elements
     public $photo;
@@ -37,6 +41,13 @@ class CandidateEditProfile extends Component
 
     public $opinion_vals;
 
+    public $new_promise;
+    public $promise_plan;
+    public $new_position;
+    public $start_year;
+    public $end_year;
+    public $position_text;
+
     public function mount()
     {
         //Get the list of controversial opinions
@@ -50,13 +61,11 @@ class CandidateEditProfile extends Component
            //TODO: Return and error and say they need to contact customer support
            return;
         }
+
+        $this->candidate = $candidate;
         
         //Load their stances on controversial opinons
         if($candidate->stances->isNotEmpty()) {
-            //In order to account for new opinions, need to find their values for it.
-            for($i = 0; $i < count($this->controversial_opinions); $i++) {
-                $this->opinion_vals[] = "50";
-            }
             foreach($candidate->stances as $stance) {
                 $this->opinion_vals[] = $stance->value;
             }
@@ -133,6 +142,39 @@ class CandidateEditProfile extends Component
 
         //Try to find the image first, and then if not store it.
         $this->photo->store('photo');
+    }
+
+    public function add_promise() {
+        $this->validate([
+            'new_promise' => 'required',
+            'promise_plan' => 'required',
+        ]);
+
+        // dd($this->new_promise, $this->promise_text);
+        $promise = new CandidatePromise();
+        $promise->candidate_id = $this->candidate->id;
+        $promise->promise = $this->new_promise;
+        $promise->plan = $this->promise_plan;
+        $promise->order = 1;
+        $promise->save();
+    }
+
+    public function add_position() {
+        $this->validate([
+            'new_position' => 'required',
+            'start_year' => 'required',
+            'end_year' => 'required',
+            'position_text' => 'required',
+        ]);
+
+        // dd($this->candidate->id, $this->new_position, $this->start_year, $this->end_year,$this->position_text);
+        $position = new CandidateOfficePositions();
+        $position->candidate_id = $this->candidate->id;
+        $position->position_name = $this->new_position;
+        $position->year_start = $this->start_year;
+        $position->year_end = $this->end_year;
+        $position->description = $this->position_text;
+        $position->save();
     }
 
     public function render()

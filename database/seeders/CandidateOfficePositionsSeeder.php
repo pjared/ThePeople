@@ -14,6 +14,12 @@ class CandidateOfficePositionsSeeder extends Seeder
         'City',
         'County',
     ];
+
+    private $position_names = [
+        'Mayor',
+        'President',
+        'Senator',
+    ];
     
     /**
      * Run the database seeds.
@@ -26,9 +32,11 @@ class CandidateOfficePositionsSeeder extends Seeder
         for($i = 1; $i <= $num_politicians; ++$i) {
             DB::table('candidate_office_positions')->insert([
                 'candidate_id' => rand(1,2),
-                'office_id' => rand(1,4),
-                'location_id' => rand(1,2),
-                'location_type' => $this->location_names[rand(0,2)],
+                // 'office_id' => rand(1,4),
+                // 'location_id' => rand(1,2),
+                // 'location_type' => $this->location_names[rand(0,2)],
+                'position_name' => $this->location_names[rand(0,2)],
+                'description' => "A description",
                 'year_start' => Carbon::today()->subYear(rand(25, 55)),
                 'year_end' => Carbon::today()->subYear(rand(25, 55))
             ]);

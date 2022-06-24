@@ -18,9 +18,10 @@ return new class extends Migration
     {
         Schema::create('candidate_office_positions', function (Blueprint $table) {
             $table->foreignIdFor(Candidate::class, 'candidate_id');
-            $table->foreignIdFor(PublicOfficePosition::class, 'office_id');
-            $table->foreignIdFor(Location::class, 'location_id');
-            $table->string('location_type');
+            // $table->foreignIdFor(PublicOfficePosition::class, 'office_id');
+            // $table->foreignIdFor(Location::class, 'location_id');
+            $table->string('position_name');
+            $table->text('description');
             $table->year('year_start');
             $table->year('year_end');
         });

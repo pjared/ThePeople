@@ -15,14 +15,13 @@ class CandidateOfficePositions extends Model
 
     protected $guarded = [
         "candidate_id",
-        "office_id",
-        "location_id",
-        "location_type",
+        "position_name"
     ];
 
     protected $fillable = [
         "year_start",
         "year_end",
+        "description",
     ];
 
     public function office() {

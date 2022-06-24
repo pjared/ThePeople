@@ -17,6 +17,7 @@ class CandidatePromise extends Model
     protected $fillable = [
         'candidate_id',
         'promise',
+        'plan',
         'order',
     ];
 }

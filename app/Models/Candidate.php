@@ -72,6 +72,6 @@ class Candidate extends Model
     }
 
     public function promises() {
-        return $this->hasMany(CandidatePromise::class)
+        return $this->hasMany(CandidatePromise::class);
     }
 }
