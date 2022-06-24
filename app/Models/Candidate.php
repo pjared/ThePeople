@@ -70,4 +70,8 @@ class Candidate extends Model
     public function permalink() {
         return $this->hasOne(CandidatePermaLink::class, 'candidate_id');
     }
+
+    public function promises() {
+        return $this->hasMany(CandidatePromise::class)
+    }
 }
