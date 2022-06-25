@@ -22,39 +22,42 @@
                         </h1>
                         <div class="flex card grow flex-col gap-1">
                             @foreach ($candidates as $candidate)
-                                <div class="flex flex-row card grow outline outline-1 outline-black gap-6 text-left">
-                                    <div class="flex grow flex-col">
-                                        <div>
-                                            Name: {{$candidate->name}}
-                                        </div>
-                                        <div>
-                                            Email: {{$candidate->email}}
-                                        </div>
-                                        <div>
-                                            Number: {{$candidate->phone_number}}
+                                <div class="grid grid-cols-3 card outline outline-1 outline-black gap-6 text-left">
+                                    <div class="col-span-1">
+                                        <div class="flex grow flex-col">
+                                            <div>
+                                                Name: {{$candidate->name}}
+                                            </div>
+                                            <div>
+                                                Email: {{$candidate->email}}
+                                            </div>
+                                            <div>
+                                                Number: {{$candidate->phone_number}}
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="flex grow flex-col">
-                                        <div>
-                                            State: {{$candidate->state}}
+                                    <div class="col-span-1">
+                                        <div class="flex grow flex-col">
+                                            <div>
+                                                State: {{$candidate->state}}
+                                            </div>
+                                            <div>
+                                                Office: {{$candidate->application->office_name}} {{$candidate->application->location}}
+                                            </div>   
                                         </div>
-                                        <div>
-                                            Office: {{$candidate->application->office_name}} {{$candidate->application->location}}
-                                        </div>   
                                     </div>
-
-                                    <!-- TODO: Finish up a form for assigning candidate to ballot-->
-                                    <form class="flex justify-end w-1/4" wire:keydown.enter="assignCandidate({{$candidate->id}})">
-                                        <div class="flex flex-col">
-                                            <label>Office ID</label>
-                                            <input class="text-input w-3/4" type="text" wire:model="office_id">
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <label>Location ID</label>
-                                            <input class="text-input w-3/4" type="text" wire:model="location_id">
-                                        </div>
-                                    </form>
-                                    
+                                    <div class="col-span-1">
+                                        <form class="flex flex-row" wire:keydown.enter="assignCandidate({{$candidate->id}})">
+                                            <div class="flex flex-col">
+                                                <label>Office ID</label>
+                                                <input class="text-input w-3/4" type="text" wire:model="office_id">
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <label>Location ID</label>
+                                                <input class="text-input w-3/4" type="text" wire:model="location_id">
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             @endforeach
                         </div>
@@ -67,19 +70,21 @@
                         </h1>
                         <div class="flex card grow flex-col gap-1">
                             @foreach ($ballots as $ballot)
-                                <div class="flex flex-row card grow outline outline-1 outline-black gap-6 text-left">
-                                    <div class="flex flex-col">
-                                        <div>
-                                            Office Name: {{$ballot->office->name}}
+                                <div class="grid grid-cols-2 card outline outline-1 outline-black gap-6 text-center">
+                                    <div class="col-span-1">
+                                        <div class="flex flex-col">
+                                            <div>
+                                                Office Name: {{$ballot->office->name}}
+                                            </div>
+                                            <div>
+                                                Location: {{$ballot->location->name}}
+                                            </div>                       
                                         </div>
-                                        <div>
-                                            Location: {{$ballot->location->name}}
-                                        </div>
-                                        <div>
-                                            ID: {{$ballot->id}}
-                                        </div>                                   
-                                    </div>
-                                </div>                               
+                                    </div>                                    
+                                    <div class="col-span-1">
+                                        ID: {{$ballot->id}}
+                                    </div>   
+                                </div>                         
                             @endforeach
                         </div>
                     </div>     

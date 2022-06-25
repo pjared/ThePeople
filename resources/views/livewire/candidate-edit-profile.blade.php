@@ -1,13 +1,13 @@
 <div class="flex grow">
     <form class="flex grow" wire:submit.prevent="save">
         <div class="flex grow justify-center">            
-            <!-- LEFT COLUMN -->
+            {{-- LEFT COLUMN --}}
             <div class="flex flex-col w-1/2 gap-2 p-4">
-                <!-- CANDIDATE PERSONAL INFO -->
+                {{-- CANDIDATE PERSONAL INFO --}}
                 <div class="flex flex-row gap-2 w-11/12 justify-center">
-                    <!-- PROFILE PIC, NAME, LEANING -->
+                    {{-- PROFILE PIC, NAME, LEANING --}}
                     <div class="flex flex-col gap-2">
-                        <!-- PROFILE PICTURE -->
+                        {{-- PROFILE PICTURE --}}
                         <div class="flex flex-col gap-2">
                             @if ($photo)
                                 Photo Preview:
@@ -18,9 +18,9 @@
                             @error('photo') <span class="error">{{ $message }}</span> @enderror
                         </div>                        
                     </div>
-                    <!-- OFFICE LEVEL, LOCATION, OFFICE, EMAIL -->
+                    {{-- OFFICE LEVEL, LOCATION, OFFICE, EMAIL --}}
                     {{-- <div class="flex flex-col gap-1">
-                        <!-- TODO: Make this an autofill -->
+                        {{-- TODO: Make this an autofill --}}
                         <div class="flex flex-col">
                             <label>Office Level</label>
                             <select class="select-input" wire:model="office_level">
@@ -42,13 +42,13 @@
                     </div> --}}
                 </div>        
 
-                <!-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS -->
+                {{-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS --}}
                 <div class="flex flex-col p-2 w-11/12 items-center gap-6">
                     <div class="flex grow form-group w-11/12">
                         <label for="candidateBio"></label>
                         <textarea class="text-input flex grow" wire:model="bio" rows="3" placeholder="Candidate bio">{{$bio}}</textarea>
                     </div>
-                    <!-- CANDIDATE PROMISES -->
+                    {{-- CANDIDATE PROMISES --}}
                     <div class="flex flex-col card w-11/12 items-center">
                         <div class="">
                             Your promises for this term in office
@@ -75,7 +75,7 @@
                             @endif
                         </div>    
                     </div>
-                    <!-- PREVIOUS POSITIONS -->
+                    {{-- PREVIOUS POSITIONS --}}
                     <div class="flex flex-col card w-11/12 items-center">
                         <div class="">
                             Previous Poisitons in Public Office
@@ -129,9 +129,9 @@
                     </div>
                 </div>
             </div> 
-            <!-- RIGHT COLUMN -->
+            {{-- RIGHT COLUMN --}}
             <div class="flex flex-col w-1/2 p-5 gap-6">
-                <!-- CONTROVERSIAL OPINIONS -->
+                {{-- CONTROVERSIAL OPINIONS --}}
                 <div id="opinionsInfo" class="flex flex-col card w-11/12 items-center gap-4">
                     <div class="flex flex-row grow justify-center">
                             Controversial Opinions
@@ -156,7 +156,7 @@
                     </div>
                 </div>
                 
-                <!-- OTHER OPINIONS -->
+                {{-- OTHER OPINIONS --}}
                 {{-- <div class="mt-4" id="opinionsInfo">
                     <div style="width:95%" class="card card-body" type="button" data-bs-toggle="collapse" data-bs-target="#opinionsInfoCollapse" aria-expanded="false" aria-controls="multiCollapseExample2">
                         <div class="row">
@@ -170,7 +170,7 @@
                 </div> --}}
 
                 <div class="flex flex-col card w-11/12 items-center gap-4">                  
-                    <!-- NAME, DOB, POLITICAL PARTY -->
+                    {{-- NAME, DOB, POLITICAL PARTY --}}
                     <div class="flex flex-row gap-5">
                         <div class="flex flex-col">
                             <label>Name</label>
@@ -190,7 +190,7 @@
                         </div>
                     </div>
 
-                    <!-- CONTACT EMAIL, PHONE, POLITICAL LEANING -->
+                    {{-- CONTACT EMAIL, PHONE, POLITICAL LEANING --}}
                     <div class="flex flex-row gap-5">
                         <div class="flex flex-col">
                             <label>Contact Email</label>
@@ -212,7 +212,7 @@
                         </div>
                     </div>
 
-                    <!-- PUBLIC EMAIL, PHONE, SUB-POLITICAL LEANING -->
+                    {{-- PUBLIC EMAIL, PHONE, SUB-POLITICAL LEANING --}}
                     <div class="flex flex-row gap-5">
                         <div class="flex flex-col">
                             <label>Public Email</label>

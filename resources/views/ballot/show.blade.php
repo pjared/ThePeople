@@ -1,22 +1,22 @@
 <x-app-layout>
-    <div class="flex flex-1 items-center grow pt-12">
-        <div class="w-1/5 flex flex-initial ml-6 col-span-2">
+    <div class="flex flex-1 items-center grow py-12">
+        <div class="w-1/5 ml-6">
             <livewire:ballot-list />
         </div>
         
         {{-- TODO: Might have to make this it's own scrollable div --}}
-        <div class="flex-1 w-4/5 ml-16">
+        <div class="flex flex-1 w-4/5 mr-8 justify-center">
             <div class="flex flex-col w-11/12 h-5/6 items-center card">
-                <p class="flex text-center font-courier text-xl">
+                <p class="text-center font-courier text-xl">
                     Plan your choice for the upcoming election                            
                 </p>
-                <p class="flex uppercase mt-2 text-sm">
+                <p class="uppercase mt-2 text-sm">
                     {{ $ballot->location->name }} {{ $ballot->office->name }} - VOTING DATE: {{$ballot->voting_date}}
                 </p>
                 <div class="flex flex-wrap grow w-11/12 mt-2">
                     @foreach ($ballot->candidates as $running_candidate)
-                        <div class="flex grow flex-row min-w-fit pt-2 w-11/12 h-100">
-                            <!-- CANDIDATE NAME, PICTURE, AND PAGE LINK -->
+                        <div class="flex grow flex-row pt-2 w-11/12">
+                            {{-- CANDIDATE NAME, PICTURE, AND PAGE LINK --}}
                             <form action="/profile/candidate/{{$running_candidate->candidate_id}}" method="GET" class="w-11/12 hover:scale-110">
                                 <button type="submit" class="card flex grow flex-cols w-full">
                                     <div class="text-center">
@@ -32,8 +32,9 @@
                                     </div>
                                 </button>
                             </form>
-                            <!-- CHECKBOX FOR CANDIDATE -->
+                            {{-- CHECKBOX FOR CANDIDATE --}}
                             <div class="flex grow items-center pl-4">
+                                {{-- This Checkbox is wack. Good luck to the future person who has to deal with this --}}
                                 <input type="checkbox" class="check flex" name="check{{$running_candidate->candidate_id}}" id="check{{$running_candidate->candidate_id}}" onclick="unselectAll({{$running_candidate->candidate_id}})">
                                 <label class="flex grow items-center" for="check{{$running_candidate->candidate_id}}" style="--d: 60%;">
                                     <svg class="h-12 w-12" viewBox="0, 0, 60, 60">
@@ -49,15 +50,18 @@
         </div>
     </div>
 
-    <script>
-        function unselectAll(candidate_id)
-        {
-            nodes = document.querySelectorAll('input.check');
-            nodes.forEach(element => {
-                element.checked = false;
-            });
-            document.getElementById('check' + candidate_id).checked = true;
-            //TODO: Properly hook up to backend
-        }
-    </script>
+    @push('scripts')
+        <script>
+            function unselectAll(candidate_id)
+            {
+                nodes = document.querySelectorAll('input.check');
+                nodes.forEach(element => {
+                    element.checked = false;
+                });
+                document.getElementById('check' + candidate_id).checked = true;
+                //TODO: Properly hook up to backend
+            }
+        </script>
+    @endpush
 </x-app-layout>
+

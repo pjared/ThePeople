@@ -18,7 +18,7 @@
             </p>
         </div>
     @else
-        <form class="flex card justify-center w-2/5" wire:submit.prevent="apply">
+        <form class="card w-2/5" wire:submit.prevent="apply">
             <div class="flex grow flex-col gap-6">
                 <div class="flex flex-row gap-6">
                     <div class="flex flex-col gap-1 w-1/2">
@@ -67,9 +67,9 @@
                 </div>
             </div>
             {{-- <div class="flex flex-col card gap-2 w-11/12 justify-center"> --}}
-                <!-- PROFILE PIC, NAME, LEANING -->
+                {{-- PROFILE PIC, NAME, LEANING --}}
                 {{-- <div class="flex  gap-2"> --}}
-                    {{-- TODO: ADD A PHOTO APPROVAL SYSTEM -->
+                    {{-- TODO: ADD A PHOTO APPROVAL SYSTEM?? --}}
                     {{-- <div class="flex flex-col gap-2">
                         @if ($photo)
                             Photo Preview:
@@ -79,11 +79,11 @@
                         <input type="file" wire:model="photo">
                         @error('photo') <span class="error">{{ $message }}</span> @enderror
                     </div> --}}
-                    <!-- NAME -->
+                    {{-- NAME --}}
                 
                 
                 {{-- </div> --}}
-                <!-- OFFICE LEVEL, LOCATION, OFFICE, EMAIL -->
+                {{-- OFFICE LEVEL, LOCATION, OFFICE, EMAIL --}}
                 
                 
             {{-- </div>  --}}

@@ -5,7 +5,7 @@
                 See Who's Running For ...
             </div>
         </div>
-        <div class="flex flex-row flex-wrap justify-center gap-6 mt-12">
+        <div>
             <livewire:ballot-list />
         </div>
     </div>

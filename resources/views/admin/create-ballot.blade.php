@@ -3,7 +3,7 @@
         {{-- TODO: Put in an admin navbar --}}
         @include('admin.admin-nav')
 
-        <div class="flex flex-row flex-wrap justify-center gap-6 mt-12">
+        <div class="mt-6">
             <livewire:admin-create-ballot />
         </div>
     </div>

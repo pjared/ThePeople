@@ -1,201 +1,169 @@
 <x-app-layout>
-    <div class="flex flex-1 items-center grow">
-        <div class="flex grow justify-center">
-            <!-- LEFT COLUMN -->
-            <div class="flex flex-col w-1/2 p-5 items-center">
-                <!-- CANDIDATE PERSONAL INFO -->
-                <div class="p-2 w-11/12">
-                    <div class="flex flex-row gap-6 justify-center">
-                        <div class="flex">
-                            <img class="h-44 w-44" style="" src="{{ Storage::url('images/' . $candidate->image_id  . '.jpg') }}">
-                        </div>
-                        <div class="flex flex-col">
-                            
-                            <div>
-                                Name: {{ $candidate->name }}
-                            </div>
-                            <div>
-                                {{-- Party: {{ $candidate->party->name }} --}}
-                            </div>
-                            <div>
-                                Running For: {{ $candidate->ballot->location->name }} {{ $candidate->ballot->office->name }} 
-                            </div>
-                            <div>
-                                Email Candiate:
-                            </div>
-                        </div>
+    <div class="grid grid-cols-2 p-8 justify-center">
+        {{-- LEFT COLUMN --}}
+        <div class="flex grow flex-col gap-6 items-center">
+            {{-- CANDIDATE PERSONAL INFO --}}
+            <div class="flex flex-row gap-6 w-11/12 justify-center">
+                <img class="h-44 w-44" style="" src="{{ Storage::url('images/' . $candidate->image_id  . '.jpg') }}">
+                <div class="flex flex-col">                            
+                    <div>
+                        Name: {{ $candidate->name }}
+                    </div>
+                    <div>
+                        {{-- Party: {{ $candidate->party->name }} --}}
+                    </div>
+                    <div>
+                        Running For: {{ $candidate->ballot->location->name }} {{ $candidate->ballot->office->name }} 
+                    </div>
+                    <div>
+                        Email Candiate:
                     </div>
                 </div>
-                <!-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS -->
-                <div class="flex flex-col p-2 w-11/12 items-center">
-                    @if($candidate->info != "")
-                        <div>
-                            {{-- TODO: make this information look nice --}}
+            </div>
+            {{-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS --}}
+            <div class="flex flex-col gap-6 w-11/12 items-center">
+                @if($candidate->info != "")
+                    <div class="flex grow flex-col">
+                        {{-- TODO: make this information look nice --}}
+                    </div>
+                @endif
+                {{-- DONORS --}}
+                <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
+                    <button class="flex card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
+                        <div class="text-start">
+                            Campaign Donors
                         </div>
-                    @endif
-                    <!-- DONORS -->
-                    <div id="donorsInfo" class="flex flex-col w-11/12 items-center" x-data="{openDonors: false}">
-                        <button class="flex-row card w-11/12" type="button" x-on:click="openDonors = ! openDonors" :class="{ 'rounded-b-none': openDonors }">
+                    </button>
+                    <div class="flex card rounded-t-none w-11/12" x-show="open" x-transition>
+                        @if(count($candidate->donors) >= 1) 
+                            @foreach ($candidate->donors as $donor)
+                                Name:  {{$donor->name}}
+                                <br>
+                            @endforeach
+                        @else
+                            No donor data as of yet.
+                        @endif
+                    </div>
+                </div>
+                {{-- PREVIOUS POSITIONS --}}
+                <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
+                    <button class="flex card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
+                        <div class="row">
                             <div class="col-8 text-start">
-                                Campaign Donors
-                                <i class="bi bi-cash-stack"></i>
+                                Previous Poisitons in Public Office
+                                <i class="bi bi-bank"></i>
                             </div>
                             <div class="col-2 offset-2 text-center">
                                 <i class="bi bi-caret-down-fill"></i>
                             </div>
-                        </button>
-                        <div class="card rounded-t-none w-11/12" x-show="openDonors" x-transition>
-                            @if(count($candidate->donors) >= 1) 
-                                @foreach ($candidate->donors as $donor)
-                                    Name:  {{$donor->name}}
-                                    <br>
-                                @endforeach
-                            @else
-                                No donor data as of yet.
-                            @endif
                         </div>
-                    </div>
-                    <!-- PREVIOUS POSITIONS -->
-                    <div class="mt-4 flex flex-col w-11/12 items-center" x-data="{openPositions: false}">
-                        <button class="card w-11/12" type="button" x-on:click="openPositions = ! openPositions" :class="{ 'rounded-b-none': openPositions }">
-                            <div class="row">
-                                <div class="col-8 text-start">
-                                    Previous Poisitons in Public Office
-                                    <i class="bi bi-bank"></i>
-                                </div>
-                                <div class="col-2 offset-2 text-center">
-                                    <i class="bi bi-caret-down-fill"></i>
-                                </div>
-                            </div>
-                        </button>
-                        <div class="w-11/12 card rounded-t-none" x-show="openPositions" x-transition>
-                            @if($candidate->previous_positions)
-                                @foreach($candidate->previous_positions as $position)
-                                    <b>{{ $position->office->name }}</b>
-                                    <br> 
-                                    {{ $position->year_start }} - {{ $position->year_end }}
-                                @endforeach
-                            @else
-                                This Candidate has not held office before
-                            @endif
-                        </div>
+                    </button>
+                    <div class="flex flex-col card rounded-t-none w-11/12" x-show="open" x-transition>
+                        @if($candidate->previous_positions)
+                            @foreach($candidate->previous_positions as $position)
+                                <b>{{ $position->position_name }}</b>
+                                <br> 
+                                {{ $position->year_start }} - {{ $position->year_end }}
+                            @endforeach
+                        @else
+                            This Candidate has not held office before
+                        @endif
                     </div>
                 </div>
             </div>
-            <!-- RIGHT COLUMN -->
-            <div class="flex flex-col w-1/2 p-5">
-                <div class="p-2">
-                    <!-- CONTROVERSIAL OPINIONS -->
-                    <div id="opinionsInfo" class="flex flex-col w-11/12 items-center">
-                        <button class="card w-11/12" type="button">
-                            <div class="flex flex-row grow justify-center">
-                                Controversial Opinions
-                                {{-- <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5067 1.50804C10.6884 1.29895 10.9706 1.20705 11.2406 1.26954C14.8494 2.09755 16.6735 6.05217 16.2445 9.5953C16.0778 10.9657 15.6658 12.0439 15.0592 12.9518C15.0555 12.9571 15.0517 12.9123 15.048 12.9175C15.1858 12.8498 15.3129 12.7767 15.4319 12.6995C16.0238 12.3153 16.4583 11.8083 17.0239 11.1481C17.0923 11.0683 17.1626 10.9863 17.2353 10.952C17.3987 10.7125 17.6459 10.6169 17.8942 10.6473C18.1426 10.6776 18.3595 10.8299 18.4725 11.0531C18.97 12.0363 19.25 13.1479 19.25 14.3226C19.25 18.3267 16.0041 21.5726 12 21.5726C7.99594 21.5726 4.75 18.3267 4.75 14.3226C4.75 11.7856 6.05371 9.5535 8.02431 8.25956L8.09187 8.19598C8.12658 8.15601 8.16464 8.12454 8.20552 8.09703C9.07138 7.5144 9.69312 7.03786 10.1117 6.47743C10.5071 5.94801 10.75 5.3022 10.75 4.32264C10.75 3.59736 10.6161 2.95512 10.3723 2.26809C10.2733 2.00936 10.3249 1.71713 10.5067 1.50804ZM12.1712 3.25081C12.2231 3.60079 12.25 3.95872 12.25 4.32264C12.25 5.59106 11.9223 6.55995 11.3135 7.37505C10.7417 8.14054 9.95028 8.72847 9.10466 9.2999L9.03236 9.37275C8.99362 9.41179 8.95071 9.44644 8.95439 9.4761C7.30648 10.4991 6.25 12.2877 6.25 14.3226C6.25 17.4983 8.82436 20.0726 12 20.0726C15.1756 20.0726 17.75 17.4983 17.75 14.3226C17.75 13.8028 17.6812 13.2997 17.5523 12.8217C17.1721 13.2334 16.7524 13.6307 16.2485 13.9577C15.3253 14.5569 14.1699 14.899 12.5 14.899C12.1577 14.899 11.8589 14.6673 11.7736 14.3358C11.6884 14.0044 11.8383 13.6572 12.1381 13.4921C12.8169 13.1181 13.3923 12.661 13.8345 12.0357C14.2757 11.4118 14.6137 10.5787 14.7555 9.40975C15.0623 6.879 14.0149 4.38107 12.1712 3.25081Z" fill="black"/>
-                                </svg> --}}
+        </div>
+        {{-- RIGHT COLUMN --}}
+        <div class="flex flex-col w-11/12 grow gap-6 items-center">
+            {{-- CONTROVERSIAL OPINIONS --}}
+            <div class="flex flex-col grow card w-11/12 items-center">
+                <div class="flex justify-center">
+                    Controversial Opinions
+                </div>
+                <div class="flex flex-col grow gap-2 text-center">
+                    @foreach ($candidate->stances as $candidate_stance)
+                        <label for="{{$candidate_stance->opinion->name}}-range" class="form-label">{{$candidate_stance->opinion->name}}</label>
+                        <div class="grid grid-cols-4">
+                            <div class="col-span-1 text-center">
+                                {{$candidate_stance->opinion->first_side}}
                             </div>
-                            <div class="mt-4">
-                                @foreach ($candidate->stances as $candidate_stance)
-                                    <label for="{{$candidate_stance->opinion->name}}-range" class="form-label">{{$candidate_stance->opinion->name}}</label>
-                                    <div class="flex flex-row">
-                                        <div class="w-1/4 text-start">
-                                            {{$candidate_stance->opinion->first_side}}
-                                        </div>
-                                        <div class="w-1/2 flex justify-center">
-                                            {{-- TODO: Make each side look the same. --}}
-                                            <input type="range" value="{{$candidate_stance->value}}" class="" id="{{$candidate_stance->opinion->name}}-range" disabled>
-                                            {{--  appearance-none --}}
-                                        </div>
-                                        <div class="w-1/4 text-start">
-                                            {{$candidate_stance->opinion->second_side}}
-                                        </div>    
-                                    </div>   
-                                    <br>
-                                @endforeach
+                            <div class="col-span-2 flex justify-center">
+                                <input type="range" value="{{$candidate_stance->value}}" class="" id="{{$candidate_stance->opinion->name}}-range" disabled>
                             </div>
-                            
-                        </button>
+                            <div class="col-span-1 text-center">
+                                {{$candidate_stance->opinion->second_side}}
+                            </div>    
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            
+            {{-- OTHER OPINIONS --}}
+            <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
+                <button class="card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
+                    <div class="flex flex-row">
+                        <div class="text-start">
+                            Other Opinions
+                        </div>
                     </div>
-                    
-                    <!-- OTHER OPINIONS -->
-                    <div class="mt-4 flex flex-col w-11/12 items-center" x-data="{openOpinions: false}">
-                        <button class="card w-11/12" type="button" x-on:click="openOpinions = ! openOpinions" :class="{ 'rounded-b-none': openOpinions }">
-                            <div class="flex flex-row">
-                                <div class="col-8 text-start">
-                                    Other Opinions
-                                    <i class="bi bi-lightning-charge"></i>
-                                </div>
-                                <div class="col-2 offset-2 text-center">
-                                    <i class="bi bi-caret-down-fill"></i>
-                                </div>
-                            </div>
-                        </button>
-                        <div class="w-11/12 card rounded-t-none" x-show="openOpinions" x-transition>
-                            @if(count($candidate->opinions) >= 1) 
-                                @foreach ($candidate->opinions as $opinion)
-                                    {{$opinion->name}}
-                                    <br>
-                                @endforeach
-                            @else
-                                We're still searching for opinons!
-                            @endif
-                        </div>
-                    </div>     
+                </button>
+                <div class="w-11/12 card rounded-t-none" x-show="open" x-transition>
+                    @if(count($candidate->opinions) >= 1) 
+                        @foreach ($candidate->opinions as $opinion)
+                            {{$opinion->name}}
+                            <br>
+                        @endforeach
+                    @else
+                        We're still searching for opinons!
+                    @endif
+                </div>
+            </div>     
 
-                    <!-- CAMPAIGN VIDEOS -->
-                    {{-- <div class="mt-4" id="campaignInfo">
-                        <button style="width:95%" class="card card-body" type="button" data-bs-toggle="collapse" data-bs-target="#campaignInfoCollapse" aria-expanded="false" aria-controls="multiCollapseExample2">
-                            <div class="row">
-                                <div class="col-8 text-start">
-                                    Campaign Videos
-                                    <i class="bi bi-display"></i>
-                                </div>
-                                <div class="col-2 offset-2 text-center">
-                                    <i class="bi bi-caret-down-fill"></i>
-                                </div>
-                            </div>
-                        </button>
-                        <div class="collapse multi-collapse" id="campaignInfoCollapse">
-                            <div style="width:95%" class="card card-body no-border">
-                                @if(count($candidate->videos) >= 1) 
-                                    @foreach ($candidate->videos as $video)
-                                        <iframe width="100" height="100" src="{{$video->link}}">
-                                        </iframe>
-                                        <a href="{{$video->link}} ">Link</a>
-                                    @endforeach
-                                @else
-                                    No campaign videos as of yet
-                                @endif
-                            </div>
+            {{-- CAMPAIGN VIDEOS --}}
+            {{-- <div class="mt-4" id="campaignInfo">
+                <button style="width:95%" class="card card-body" type="button" data-bs-toggle="collapse" data-bs-target="#campaignInfoCollapse" aria-expanded="false" aria-controls="multiCollapseExample2">
+                    <div class="row">
+                        <div class="col-8 text-start">
+                            Campaign Videos
+                            <i class="bi bi-display"></i>
                         </div>
-                    </div> --}}
+                        <div class="col-2 offset-2 text-center">
+                            <i class="bi bi-caret-down-fill"></i>
+                        </div>
+                    </div>
+                </button>
+                <div class="collapse multi-collapse" id="campaignInfoCollapse">
+                    <div style="width:95%" class="card card-body no-border">
+                        @if(count($candidate->videos) >= 1) 
+                            @foreach ($candidate->videos as $video)
+                                <iframe width="100" height="100" src="{{$video->link}}">
+                                </iframe>
+                                <a href="{{$video->link}} ">Link</a>
+                            @endforeach
+                        @else
+                            No campaign videos as of yet
+                        @endif
+                    </div>
+                </div>
+            </div> --}}
 
-                    <!-- LAW MAKING INVOLVEMENT  -->
-                    <div class="mt-4 flex flex-col w-11/12 items-center" x-data="{openOpinions: false}">
-                        <button class="card w-11/12" type="button" x-on:click="openOpinions = ! openOpinions" :class="{ 'rounded-b-none': openOpinions }">
-                            <div class="row">
-                                <div class="text-start">
-                                    Laws Passed in office
-                                    <i class="bi bi-book"></i>
-                                </div>
-                                <div class="col-2 offset-2 text-center">
-                                    <i class="bi bi-caret-down-fill"></i>
-                                </div>
-                            </div>
-                        </button>
-                        <div class="w-11/12 card rounded-t-none" x-show="openOpinions" x-transition>
-                            <div class="flex flex-col">
-                                @if(count($candidate->law_involvement) >= 1) 
-                                    @foreach ($candidate->law_involvement as $law)
-                                        <p>
-                                            Name : {{ $law->name }}
-                                        </p>                                                
-                                    @endforeach
-                                @else
-                                No involvment in laws has been found
-                                @endif
-                            </div>
-                        </div>
+            {{-- LAW MAKING INVOLVEMENT  --}}
+            <div class="flex flex-col w-11/12 items-center" x-data="{open: false}">
+                <button class="card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
+                    <div class="text-start">
+                        Laws Passed in office
+                    </div>
+                </button>
+                <div class="w-11/12 card rounded-t-none" x-show="open" x-transition>
+                    <div class="flex flex-col">
+                        @if(count($candidate->law_involvement) >= 1) 
+                            @foreach ($candidate->law_involvement as $law)
+                                <p>
+                                    Name : {{ $law->name }}
+                                </p>                                                
+                            @endforeach
+                        @else
+                            No involvment in laws has been found
+                        @endif
                     </div>
                 </div>
             </div>
