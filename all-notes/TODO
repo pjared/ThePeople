@@ -9,7 +9,8 @@
 - Need to finish photo upload
     - Determine if:
         - I can configure jetstream profile pictures to only be for candidates
-        - Set their profile picture on the candidate profile p
+        - Set their profile picture on the candidate profile
+        - Look at jetstream page on profile photos, might be able to just use roles
 
 
 - Allow the candidates to put an info for why they have a stance about an opinion
@@ -18,7 +19,8 @@
     - Allow them to request a change (Later on)
 
 - Candidates need a contact email and public email, contact phone and public phone
-
+    - Make sure to configure this in admin assign candidates
+    
 - Figure out how political leanings work so I can implement them with the candidate
 
 # Branch - View Rework
@@ -28,6 +30,9 @@
 # Branch - User Rework 
 - Save the checkmark for the planned vote
 - Implement "flagging" ability and comparison page
+
+# Branch - Mobile Update
+- Implement ability to handle mobile devices
 
 # Currently working on:
 - Send email notifications to my gmail when a new candidate applies, etc.

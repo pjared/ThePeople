@@ -6,24 +6,24 @@ This branch is to make sure:
 
 ## List of views
 - [X] Admin
-    - [X] Admin-nav  - Daisy
-    - [X] Approve-candidates  - Daisy
-    - [X] Assign Candidates  - Daisy
-    - [X] Create-Ballot  - Daisy
-    - [X] Permalinks  - Daisy
-    - [X] Show   - Daisy 
+    - [X] Admin-nav
+    - [X] Approve-candidates
+    - [X] Assign Candidates
+    - [X] Create-Ballot
+    - [X] Permalinks
+    - [X] Show
 - [X] Ballot
     - [X] Show
 - [] Candidate
     - [X] Apply
     - [X] Profile
-    - [X] Show - Daisy
+    - [X] Show
 - [] Livewire
-    - [X] admin-approve - Daisy: Reject and accept buttons
+    - [X] admin-approve
     - [X] admin-asssign
     - [X] admin-create
     - [X] admin-permalinks
     - [X] ballot-list
-    - [X] candidate-application - Needs Daisy UI
-    - [X] candidate-edit - Needs Daisy UI
+    - [X] candidate-application
+    - [X] candidate-edit
 - [X] Welcome
