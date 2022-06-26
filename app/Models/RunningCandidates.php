@@ -16,6 +16,7 @@ class RunningCandidates extends Model
         "ballot_id",
         "entered_race_date",
         "ended_race_date",
+        "show",
     ];
 
     public function candidate() {
