@@ -85,18 +85,21 @@ class LocationSeeder extends Seeder
             'name' => 'Provo',
             'type' => 'city',
             'population' => rand(1, 10000),
+            'opinion_type_id' => 1,
         ]);
 
         DB::table('locations')->insert([
             'name' => 'Utah',
             'type' => 'state',
             'population' => rand(1, 10000),
+            'opinion_type_id' => 1,
         ]);
         foreach ($this->state_names as $name) {
             DB::table('locations')->insert([
                 'name' => $name,
                 'type' => 'state',
                 'population' => rand(1, 10000),
+                'opinion_type_id' => 1,
             ]);
         }
 
@@ -105,6 +108,7 @@ class LocationSeeder extends Seeder
                 'name' => $name,
                 'type' => 'county',
                 'population' => rand(1, 10000),
+                'opinion_type_id' => 1,
             ]);
         }
         
@@ -113,6 +117,7 @@ class LocationSeeder extends Seeder
                 'name' => $name,
                 'type' => 'city',
                 'population' => rand(1, 10000),
+                'opinion_type_id' => 1,
             ]);
         }
     }

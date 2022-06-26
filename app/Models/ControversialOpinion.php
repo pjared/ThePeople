@@ -15,6 +15,8 @@ class ControversialOpinion extends Model
         'name',
         'description', // A description of what it means
         'first_side',
-        'second_side'
+        'second_side',
+        'votes',
+        'type_id',  
     ];
 }

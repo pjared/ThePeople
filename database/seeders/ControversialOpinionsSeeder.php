@@ -79,6 +79,8 @@ class ControversialOpinionsSeeder extends Seeder
                 'description' => $this->opinion_desc[$i],
                 'first_side' => $this->opinion_stances[$counter++],
                 'second_side' => $this->opinion_stances[$counter++],
+                'votes' => 10000,
+                'type_id' => 1,
             ]);
         }
     }

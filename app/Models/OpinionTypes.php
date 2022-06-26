@@ -5,19 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Location extends Model
+class OpinionTypes extends Model
 {
     use HasFactory;
-
+    
     public $timestamps = false;
-
-    protected $guarded = [
-        "name",
-        "type",
-    ];
-
-    protected $fillable = [
-        "population",
-        "opinion_type_id",
+    
+    public $fillable =[
+        'name',
+        'description'
     ];
 }
