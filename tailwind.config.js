@@ -23,5 +23,6 @@ module.exports = {
         require('@tailwindcss/forms'), 
         require('@tailwindcss/typography'),
         require('@tailwindcss/nesting'),
+        require("daisyui"),
     ],
 };

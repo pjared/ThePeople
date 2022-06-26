@@ -23,6 +23,7 @@
         "tailwindcss": "^3.1.2"
     },
     "dependencies": {
-        "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e"
+        "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+        "daisyui": "^2.17.0"
     }
 }
