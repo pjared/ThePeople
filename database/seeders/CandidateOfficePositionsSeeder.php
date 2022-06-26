@@ -37,8 +37,8 @@ class CandidateOfficePositionsSeeder extends Seeder
                 // 'location_type' => $this->location_names[rand(0,2)],
                 'position_name' => $this->location_names[rand(0,2)],
                 'description' => "A description",
-                'year_start' => Carbon::today()->subYear(rand(25, 55)),
-                'year_end' => Carbon::today()->subYear(rand(25, 55))
+                'year_start' => Carbon::today()->subYear(rand(25, 55))->format('Y'),
+                'year_end' => Carbon::today()->subYear(rand(25, 55))->format('Y'),
             ]);
         }
     }
