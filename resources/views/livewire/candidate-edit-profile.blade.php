@@ -238,13 +238,13 @@
                         
                     </div>
                     <div class="flex flex-col gap-5 text-center">
-                        <div class="form-control items-center">
-                            <label class="label cursor-pointer w-2/5">
-                              <span class="label-text">Show my profile on the ballot</span> 
-                              <input type="checkbox" wire:model="show" class="checkbox checkbox-primary" />
-                            </label>
-                        </div>
                         @if($candidate->ballot)
+                            <div class="form-control items-center">
+                                <label class="label cursor-pointer w-2/5">
+                                <span class="label-text">Show my profile on the ballot</span> 
+                                <input type="checkbox" wire:model="show" class="checkbox checkbox-primary" />
+                                </label>
+                            </div>
                             You will be placed on the {{$candidate->ballot->location->name}} {{$candidate->ballot->office->name}} ballot, in the state of {{$candidate->state}}. If this is incorrect, please contact customer support.
                         @else
                             We have not placed you on a ballot yet. You will be notified when we have done this
