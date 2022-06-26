@@ -32,6 +32,7 @@ class CandidateEditProfile extends Component
     // public $location;
     // public $office_name;
     public $email;
+    public $show;
 
     public $pol_leaning;
     public $sub_pol_leaning;
@@ -63,6 +64,13 @@ class CandidateEditProfile extends Component
         }
 
         $this->candidate = $candidate;
+
+        //Load whether or not to show the profile
+        if($candidate->running_candidate) {
+            $this->show = $candidate->running_candidate;
+        } else {
+            $this->show = false;
+        }
         
         //Load their stances on controversial opinons
         if($candidate->stances->isNotEmpty()) {
@@ -139,6 +147,12 @@ class CandidateEditProfile extends Component
             );
             $index++;
         }
+
+        RunningCandidates::where('candidate_id', $candidate->id,)->update(
+            [
+                'show' => $this->show
+            ]
+        );
 
         //Try to find the image first, and then if not store it.
         $this->photo->store('photo');
