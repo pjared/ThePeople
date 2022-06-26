@@ -21,12 +21,16 @@ return new class extends Migration
             $table->date('dob');
             $table->date('signup_date');
             $table->text('info')->default("");
+            $table->string('political_leaning', 15);
+            $table->string('sub_political_leaning', 15)->nullable();
             $table->string('state', 20);
+            $table->string('contact_email');
+            $table->string('contact_phone_number')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone_number')->nullable();
             $table->foreignIdFor(PoliticalParty::class, 'party_id')->nullable();
             $table->foreignIdFor(User::class, 'user_id')->nullable();
             $table->smallInteger('image_id')->unsigned()->nullable();
-            $table->string('email')->nullable();
-            $table->string('phone_number')->nullable();
         });
     }
 

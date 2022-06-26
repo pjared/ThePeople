@@ -19,14 +19,18 @@ class Candidate extends Model
     protected $fillable = [
         "name",
         "dob",
+        "info",
+        "contact_email",
+        "contact_phone_number",
+        "email",
+        "phone_number",
+        'state',
+        'political_leaning',
+        'sub_political_leaning',
+        "signup_date",
         "user_id",
         "image_id",
         "party_id",
-        "info",
-        "signup_date",
-        "email",
-        "phone_number",
-        'state'
     ];
 
     use HasFactory;

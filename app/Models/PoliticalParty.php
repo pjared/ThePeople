@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class PoliticalParty extends Model
 {
+    use HasFactory;
+    
     public $timestamps = false;
     
     protected $fillable = [
         "name",
-        "other_info" // an xml/json of other stuff
+        "other_info"
     ];
-    use HasFactory;
 }

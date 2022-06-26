@@ -31,6 +31,8 @@ class CandidateSeeder extends Seeder
                 'party_id' => rand(1,3),
                 'image_id' => strval(rand(1,3)), 
                 'state' => 'Utah',
+                'contact_email' => "pjared@gmail.com",
+                'political_leaning' => 'Centrist',
             ]);
         }
     }
