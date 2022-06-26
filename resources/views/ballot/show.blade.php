@@ -6,32 +6,38 @@
         
         {{-- TODO: Might have to make this it's own scrollable div --}}
         <div class="flex flex-1 w-4/5 mr-8 justify-center">
-            <div class="flex flex-col w-11/12 h-5/6 items-center card">
+            <div class="flex flex-col w-11/12 h-5/6 items-center background-card">
                 <p class="text-center font-courier text-xl">
                     Plan your choice for the upcoming election                            
                 </p>
                 <p class="uppercase mt-2 text-sm">
                     {{ $ballot->location->name }} {{ $ballot->office->name }} - VOTING DATE: {{$ballot->voting_date}}
                 </p>
-                <div class="flex flex-wrap grow w-11/12 mt-2">
+                <div class="flex flex-wrap grow w-11/12 mt-2">                    
                     @foreach ($ballot->candidates as $running_candidate)
+                        
                         <div class="flex grow flex-row pt-2 w-11/12">
                             {{-- CANDIDATE NAME, PICTURE, AND PAGE LINK --}}
                             <form action="/profile/candidate/{{$running_candidate->candidate_id}}" method="GET" class="w-11/12 hover:scale-110">
-                                <button type="submit" class="card flex grow flex-cols w-full">
-                                    <div class="text-center">
-                                        <img class="h-28 w-28" style="" src="{{ Storage::url('images/' . $running_candidate->candidate->image_id  . '.jpg') }}">
-                                    </div>
-                                    <div class="ml-4 flex grow">
-                                        <div class="flex font-courier">
-                                            {{ $running_candidate->candidate->name }}
+                                <button class="card flex grow lg:card-side bg-white shadow-xl w-full">
+                                    <figure><img class="h-28 w-28" style="" src="{{ Storage::url('images/' . $running_candidate->candidate->image_id  . '.jpg') }}"></figure>
+                                    <div class="card-body flex grow">
+                                        <div class="flex grow flex-row font-courier">
+                                            <div class="flex">
+                                                <h3 class="card-title font-normal">{{ $running_candidate->candidate->name }}</h3>
+                                            </div>                                        
+                                            <div class="flex grow justify-end">
+                                                <a class="underline text-sky-600 visited:text-purple-600" href="/profile/candidate/{{$running_candidate->candidate_id}}">More about {{ $running_candidate->candidate->name }}</a>
+                                            </div>
                                         </div>
-                                        <div class="flex grow place-content-end font-courier">
-                                            <a class="underline text-sky-600 visited:text-purple-600" href="/profile/candidate/{{$running_candidate->candidate_id}}">More about {{ $running_candidate->candidate->name }}</a>
+                                        {{-- TODO: Put the badges here --}}
+                                        <p></p>
+                                        <div class="card-actions justify-end">
                                         </div>
                                     </div>
                                 </button>
                             </form>
+
                             {{-- CHECKBOX FOR CANDIDATE --}}
                             <div class="flex grow items-center pl-4">
                                 {{-- This Checkbox is wack. Good luck to the future person who has to deal with this --}}
@@ -43,7 +49,7 @@
                                     </svg>
                                 </label>
                             </div>
-                        </div>
+                        </div>                        
                     @endforeach
                 </div>
             </div>

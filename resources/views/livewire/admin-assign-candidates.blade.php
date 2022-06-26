@@ -20,9 +20,9 @@
                         <h1 class="text-xl">
                             Candidates To Place
                         </h1>
-                        <div class="flex card grow flex-col gap-1">
+                        <div class="flex background-card grow flex-col gap-1">
                             @foreach ($candidates as $candidate)
-                                <div class="grid grid-cols-3 card outline outline-1 outline-black gap-6 text-left">
+                                <div class="grid grid-cols-3 background-card outline outline-1 outline-black gap-6 text-left">
                                     <div class="col-span-1">
                                         <div class="flex grow flex-col">
                                             <div>
@@ -48,13 +48,17 @@
                                     </div>
                                     <div class="col-span-1">
                                         <form class="flex flex-row" wire:keydown.enter="assignCandidate({{$candidate->id}})">
-                                            <div class="flex flex-col">
-                                                <label>Office ID</label>
-                                                <input class="text-input w-3/4" type="text" wire:model="office_id">
+                                            <div class="form-control w-full max-w-xs">
+                                                <label class="label">
+                                                  <span class="label-text">Office ID</span>
+                                                </label>
+                                                <input type="text" wire:model="office_id" class="input input-bordered w-3/4 max-w-xs" />
                                             </div>
-                                            <div class="flex flex-col">
-                                                <label>Location ID</label>
-                                                <input class="text-input w-3/4" type="text" wire:model="location_id">
+                                            <div class="form-control w-full max-w-xs">
+                                                <label class="label">
+                                                  <span class="label-text">Location ID</span>
+                                                </label>
+                                                <input type="text" wire:model="location_id" class="input input-bordered w-3/4 max-w-xs" />
                                             </div>
                                         </form>
                                     </div>
@@ -68,9 +72,9 @@
                         <h1 class="text-xl">
                             Ballots
                         </h1>
-                        <div class="flex card grow flex-col gap-1">
+                        <div class="flex background-card grow flex-col gap-1">
                             @foreach ($ballots as $ballot)
-                                <div class="grid grid-cols-2 card outline outline-1 outline-black gap-6 text-center">
+                                <div class="grid grid-cols-2 background-card outline outline-1 outline-black gap-6 text-center">
                                     <div class="col-span-1">
                                         <div class="flex flex-col">
                                             <div>

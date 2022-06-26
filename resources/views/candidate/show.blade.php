@@ -29,12 +29,12 @@
                 @endif
                 {{-- DONORS --}}
                 <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
-                    <button class="flex card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
+                    <button class="flex background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
                         <div class="text-start">
                             Campaign Donors
                         </div>
                     </button>
-                    <div class="flex card rounded-t-none w-11/12" x-show="open" x-transition>
+                    <div class="flex background-card rounded-t-none w-11/12" x-show="open" x-transition>
                         @if(count($candidate->donors) >= 1) 
                             @foreach ($candidate->donors as $donor)
                                 Name:  {{$donor->name}}
@@ -47,7 +47,7 @@
                 </div>
                 {{-- PREVIOUS POSITIONS --}}
                 <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
-                    <button class="flex card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
+                    <button class="flex background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
                         <div class="row">
                             <div class="col-8 text-start">
                                 Previous Poisitons in Public Office
@@ -58,7 +58,7 @@
                             </div>
                         </div>
                     </button>
-                    <div class="flex flex-col card rounded-t-none w-11/12" x-show="open" x-transition>
+                    <div class="flex flex-col background-card rounded-t-none w-11/12" x-show="open" x-transition>
                         @if($candidate->previous_positions)
                             @foreach($candidate->previous_positions as $position)
                                 <b>{{ $position->position_name }}</b>
@@ -75,7 +75,7 @@
         {{-- RIGHT COLUMN --}}
         <div class="flex flex-col w-11/12 grow gap-6 items-center">
             {{-- CONTROVERSIAL OPINIONS --}}
-            <div class="flex flex-col grow card w-11/12 items-center">
+            <div class="flex flex-col grow background-card w-11/12 items-center">
                 <div class="flex justify-center">
                     Controversial Opinions
                 </div>
@@ -87,7 +87,10 @@
                                 {{$candidate_stance->opinion->first_side}}
                             </div>
                             <div class="col-span-2 flex justify-center">
-                                <input type="range" value="{{$candidate_stance->value}}" class="" id="{{$candidate_stance->opinion->name}}-range" disabled>
+                                {{-- <input type="range" value="{{$candidate_stance->value}}" class="range range-sm w-11/12" min="0" max="100" disabled/> --}}
+                                <div class="flex items-center">
+                                    <input class="rs-range" type="range" value="{{$candidate_stance->value}}" min="0" max="100" disabled>
+                                </div>
                             </div>
                             <div class="col-span-1 text-center">
                                 {{$candidate_stance->opinion->second_side}}
@@ -99,14 +102,14 @@
             
             {{-- OTHER OPINIONS --}}
             <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
-                <button class="card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
+                <button class="background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
                     <div class="flex flex-row">
                         <div class="text-start">
                             Other Opinions
                         </div>
                     </div>
                 </button>
-                <div class="w-11/12 card rounded-t-none" x-show="open" x-transition>
+                <div class="w-11/12 background-card rounded-t-none" x-show="open" x-transition>
                     @if(count($candidate->opinions) >= 1) 
                         @foreach ($candidate->opinions as $opinion)
                             {{$opinion->name}}
@@ -120,7 +123,7 @@
 
             {{-- CAMPAIGN VIDEOS --}}
             {{-- <div class="mt-4" id="campaignInfo">
-                <button style="width:95%" class="card card-body" type="button" data-bs-toggle="collapse" data-bs-target="#campaignInfoCollapse" aria-expanded="false" aria-controls="multiCollapseExample2">
+                <button style="width:95%" class="background-card background-card-body" type="button" data-bs-toggle="collapse" data-bs-target="#campaignInfoCollapse" aria-expanded="false" aria-controls="multiCollapseExample2">
                     <div class="row">
                         <div class="col-8 text-start">
                             Campaign Videos
@@ -132,7 +135,7 @@
                     </div>
                 </button>
                 <div class="collapse multi-collapse" id="campaignInfoCollapse">
-                    <div style="width:95%" class="card card-body no-border">
+                    <div style="width:95%" class="background-card background-card-body no-border">
                         @if(count($candidate->videos) >= 1) 
                             @foreach ($candidate->videos as $video)
                                 <iframe width="100" height="100" src="{{$video->link}}">
@@ -148,12 +151,12 @@
 
             {{-- LAW MAKING INVOLVEMENT  --}}
             <div class="flex flex-col w-11/12 items-center" x-data="{open: false}">
-                <button class="card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
+                <button class="background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
                     <div class="text-start">
                         Laws Passed in office
                     </div>
                 </button>
-                <div class="w-11/12 card rounded-t-none" x-show="open" x-transition>
+                <div class="w-11/12 background-card rounded-t-none" x-show="open" x-transition>
                     <div class="flex flex-col">
                         @if(count($candidate->law_involvement) >= 1) 
                             @foreach ($candidate->law_involvement as $law)

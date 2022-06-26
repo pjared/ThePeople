@@ -18,75 +18,95 @@
             </p>
         </div>
     @else
-        <form class="card w-2/5" wire:submit.prevent="apply">
-            <div class="flex grow flex-col gap-6">
-                <div class="flex flex-row gap-6">
-                    <div class="flex flex-col gap-1 w-1/2">
-                        <div class="flex flex-col">
-                            <label>First and Last Name</label>
-                            <input class="text-input w-max" type="text" placeholder="Name" value="{{$name}}" wire:model="name">
+        <form class="flex flex-col background-card gap-2">
+            <div class="grid grid-cols-2 gap-12">
+                <div class="col-span-1 grid grid-rows-4 w-1/2">
+                    <div class="row-span-1">
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                              <span class="label-text">First and Last Name</span>
+                            </label>
+                            <input type="text" class="input input-bordered input-primary w-full max-w-xs" wire:model="name"/>
                         </div>
-                        @error('name') <span class="error">{{ $message }}</span> @enderror
-                        <div class="flex flex-col">
-                            <label>Date Of Birth</label>
-                            <input class="text-input w-max" type="date" wire:model="dob">
-                        </div>
-                        @error('dob') <span class="error">{{ $message }}</span> @enderror
-                        <div class="flex grow flex-col">
-                            <label>Email</label>
-                            <input class="text-input w-max" type="text" placeholder="Email" value="{{$email}}" wire:model="email">
-                        </div> 
-                        @error('email') <span class="error">{{ $message }}</span> @enderror      
-                        <div class="flex grow flex-col">
-                            <label>Phone Number</label>
-                            <input class="text-input w-max" type="tel" wire:model="phone_number">
-                        </div> 
-                        @error('phone_number') <span class="error">{{ $message }}</span> @enderror            
                     </div>
-                    <div class="flex flex-col gap-1 w-1/2">
-                        <div class="flex flex-col">
-                            <label>Name of office</label>
-                            <input class="text-input w-max" type="text" placeholder="Senate, School Board" wire:model="office_name">
+                    @error('name') <span class="error">{{ $message }}</span> @enderror
+                    <div class="row-span-1">
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                              <span class="label-text">Date Of Birth</span>
+                            </label>
+                            <input type="date" class="input input-bordered input-primary w-fit max-w-xs" wire:model="dob"/>
                         </div>
-                        @error('office_name') <span class="error">{{ $message }}</span> @enderror   
-                        <div class="flex flex-col">
-                            <label>State</label>
-                            <input class="text-input w-max" type="text" placeholder="" wire:model="state">
-                        </div>
-                        @error('state') <span class="error">{{ $message }}</span> @enderror   
-                        <div class="flex flex-col">
-                            <label>Location</label>
-                            <input class="text-input w-max" type="text" placeholder="District, City, County, State" wire:model="location">
-                        </div>
-                        @error('location') <span class="error">{{ $message }}</span> @enderror   
                     </div>
+                    @error('dob') <span class="error">{{ $message }}</span> @enderror
+                    <div class="row-span-1">
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                              <span class="label-text">Email</span>
+                            </label>
+                            <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model="email"/>
+                        </div>
+                    </div> 
+                    @error('email') <span class="error">{{ $message }}</span> @enderror      
+                    <div class="row-span-1">
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                              <span class="label-text">Phone Number</span>
+                            </label>
+                            <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model="phone_number"/>
+                        </div>
+                    </div> 
+                    @error('phone_number') <span class="error">{{ $message }}</span> @enderror            
                 </div>
-                
-                <div class="flex justify-center w-11/12">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="submit">Apply</button>
+                <div class="col-span-1 grid grid-rows-4 w-1/2">
+                    <div class="row-span-1">
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                              <span class="label-text">Name of office</span>
+                            </label>
+                            <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model="office_name"/>
+                        </div>
+                    </div>
+                    @error('office_name') <span class="error">{{ $message }}</span> @enderror   
+                    <div class="row-span-1">
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                              <span class="label-text">State</span>
+                            </label>
+                            <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model="state"/>
+                        </div>
+                    </div>
+                    @error('state') <span class="error">{{ $message }}</span> @enderror   
+                    <div class="row-span-1">
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                              <span class="label-text">Location</span>
+                            </label>
+                            <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model="location"/>
+                        </div>
+                    </div>
+                    @error('location') <span class="error">{{ $message }}</span> @enderror   
                 </div>
             </div>
-            {{-- <div class="flex flex-col card gap-2 w-11/12 justify-center"> --}}
-                {{-- PROFILE PIC, NAME, LEANING --}}
-                {{-- <div class="flex  gap-2"> --}}
-                    {{-- TODO: ADD A PHOTO APPROVAL SYSTEM?? --}}
-                    {{-- <div class="flex flex-col gap-2">
-                        @if ($photo)
-                            Photo Preview:
-                            <img class="h-44 w-44" src="{{ $photo->temporaryUrl() }}">
-                        @endif
-                        <label>Candidate Profile Picture</label>
-                        <input type="file" wire:model="photo">
-                        @error('photo') <span class="error">{{ $message }}</span> @enderror
-                    </div> --}}
-                    {{-- NAME --}}
-                
-                
-                {{-- </div> --}}
-                {{-- OFFICE LEVEL, LOCATION, OFFICE, EMAIL --}}
-                
-                
-            {{-- </div>  --}}
+            <div class="flex justify-center w-11/12">
+                <button class="btn btn-primary btn-blue" type="submit">Apply</button>
+            </div>
         </form>
     @endif
+
+    {{-- <div class="flex flex-col card gap-2 w-11/12 justify-center"> --}}
+        {{-- PROFILE PIC --}}
+        {{-- <div class="flex  gap-2"> --}}
+            {{-- TODO: ADD A PHOTO APPROVAL SYSTEM?? --}}
+            {{-- <div class="flex flex-col gap-2">
+                @if ($photo)
+                    Photo Preview:
+                    <img class="h-44 w-44" src="{{ $photo->temporaryUrl() }}">
+                @endif
+                <label>Candidate Profile Picture</label>
+                <input type="file" wire:model="photo">
+                @error('photo') <span class="error">{{ $message }}</span> @enderror
+            </div> --}}
+        {{-- </div> --}}
+    {{-- </div>  --}}
 </div>
