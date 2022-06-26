@@ -74,4 +74,8 @@ class Candidate extends Model
     public function promises() {
         return $this->hasMany(CandidatePromise::class);
     }
+
+    public function running_candidate() {
+        return $this->hasOne(RunningCandidates::class);
+    }
 }
