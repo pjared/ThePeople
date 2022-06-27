@@ -24,11 +24,11 @@ class AdminApproveCandidates extends Component
         //Create a candidate
         $candidate = new Candidate();
         $candidate->name = $application->name;
-        $candidate->email = $application->email;
+        $candidate->contact_email = $application->email;
         $candidate->dob = $application->dob;
         $candidate->signup_date = Carbon::now();
         $candidate->state = $application->state;
-        $candidate->phone_number = $application->phone_number;
+        $candidate->contact_phone_number = $application->phone_number;
         $candidate->user_id = $user_id;
         $candidate->save();
 
