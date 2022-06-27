@@ -19,7 +19,7 @@ class Candidate extends Model
     protected $fillable = [
         "name",
         "dob",
-        "info",
+        "bio",
         "contact_email",
         "contact_phone_number",
         "email",

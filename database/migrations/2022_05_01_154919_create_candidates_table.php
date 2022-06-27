@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('name');
             $table->date('dob');
             $table->date('signup_date');
-            $table->text('info')->default("");
-            $table->string('political_leaning', 15);
+            $table->text('bio')->default("");
+            $table->string('political_leaning', 15)->nullable();
             $table->string('sub_political_leaning', 15)->nullable();
             $table->string('state', 20);
             $table->string('contact_email');

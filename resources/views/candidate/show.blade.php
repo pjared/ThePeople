@@ -22,7 +22,7 @@
             </div>
             {{-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS --}}
             <div class="flex flex-col gap-6 w-11/12 items-center">
-                @if($candidate->info != "")
+                @if($candidate->bio != "")
                     <div class="flex grow flex-col">
                         {{-- TODO: make this information look nice --}}
                     </div>
