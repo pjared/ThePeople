@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
 
             LawsSeeder::class,
             LocationSeeder::class,
-            PartySeeder::class,
+            PoliticalPartySeeder::class,
             PublicOfficeSeeder::class,
             OpinionsSeeder::class,
             ControversialOpinionsSeeder::class,
