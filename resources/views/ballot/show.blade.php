@@ -18,7 +18,7 @@
                         
                         <div class="flex grow flex-row pt-2 w-11/12">
                             {{-- CANDIDATE NAME, PICTURE, AND PAGE LINK --}}
-                            <form action="/profile/candidate/{{$running_candidate->candidate_id}}" method="GET" class="w-11/12 hover:scale-110">
+                            <form action="/candidate/profile/{{$running_candidate->candidate_id}}" method="GET" class="w-11/12 hover:scale-110">
                                 <button class="card flex grow lg:card-side bg-white shadow-xl w-full">
                                     <figure><img class="h-28 w-28" style="" src="{{ Storage::url('images/' . $running_candidate->candidate->image_id  . '.jpg') }}"></figure>
                                     <div class="card-body flex grow">
@@ -27,7 +27,7 @@
                                                 <h3 class="card-title font-normal">{{ $running_candidate->candidate->name }}</h3>
                                             </div>                                        
                                             <div class="flex grow justify-end">
-                                                <a class="underline text-sky-600 visited:text-purple-600" href="/profile/candidate/{{$running_candidate->candidate_id}}">More about {{ $running_candidate->candidate->name }}</a>
+                                                <a class="underline text-sky-600 visited:text-purple-600" href="/candidate/profile/{{$running_candidate->candidate_id}}">More about {{ $running_candidate->candidate->name }}</a>
                                             </div>
                                         </div>
                                         {{-- TODO: Put the badges here --}}

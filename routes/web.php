@@ -34,14 +34,17 @@ Route::middleware([
 Route::get('/ballot/{id}', [BallotController::class, 'getBallotView'])->name('ballot');
 
 /* -----CANDIDATE------ */
-Route::get('/profile/candidate/{id}', [CandidateController::class, 'getCandidateView']);
 
-Route::get('/candidate-create', function () {
-    return view('candidate.profile');
-});
+Route::group(['prefix' =>'candidate', 'namespace' => 'candidate','middleware' => ['role:candidate']], function() {
+    Route::get('/profile/{id}', [CandidateController::class, 'getCandidateView']);
 
-Route::get('/candidate-apply', function () {
-    return view('candidate.apply');
+    Route::get('/edit', function () {
+        return view('candidate.profile');
+    })->name('candidate-edit-profile');
+
+    Route::get('/apply', function () {
+        return view('candidate.apply');
+    })->name('candidate-apply');
 });
 
 /* -----ADMIN------ */
