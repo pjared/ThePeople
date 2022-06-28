@@ -31,6 +31,11 @@ class CandidateEditProfile extends Component
     public $listeners = [
         'opinion-flash' => 'opinion_flash',
         'promise-flash' => 'promise_flash',
+        'position-flash' => 'position_flash',
+        'promise-update-flash' => 'promise_update_flash',
+        'promise-delete-flash' => 'promise_delete_flash',
+        'position-update-flash' => 'position_update_flash',
+        'position-delete-flash' => 'position_delete_flash',
     ];
 
     protected $rules = [
@@ -106,28 +111,44 @@ class CandidateEditProfile extends Component
         session()->flash('update-bio-success');
     }
 
-    public function add_promise() 
+    public function render()
     {
-
+        $this->candidate = Candidate::firstWhere('user_id', Auth::user()->id);
+        return view('livewire.candidate-edit-profile');
     }
 
-    public function add_position() 
-    {
-
-    }
-
+    /* EVENTS */
     public function promise_flash() {
-        session()->flash('update-promises-success');
+        $this->emit('refreshPromiseComponent');
+        session()->flash('update-promise-success', "Promise was added");
+    }
+
+    public function promise_update_flash() {
+        session()->flash('update-promise-success', "Promises updated");
+    }
+
+    public function promise_delete_flash() {
+        $this->emit('refreshPromiseComponent');
+        session()->flash('update-promise-failure', "Promise was deleted");
+    }
+
+    public function position_flash() 
+    {
+        $this->emit('refreshPositionComponent');
+        session()->flash('update-position-success', "Position was added");
+    }
+
+    public function position_update_flash() {
+        session()->flash('update-position-success', "Positions updated");
+    }
+
+    public function position_delete_flash() {
+        $this->emit('refreshPositionComponent');
+        session()->flash('update-position-failure', "Position was deleted");
     }
 
     public function opinion_flash() 
     {
         session()->flash('update-stances-success');
-    }
-
-    public function render()
-    {
-        $this->candidate = Candidate::firstWhere('user_id', Auth::user()->id);
-        return view('livewire.candidate-edit-profile');
     }
 }
