@@ -22,16 +22,17 @@ class CandidateApplicationPageTest extends TestCase
         $component = Livewire::test(CandidateApplicationPage::class)
                 ->set('name', 'Jared Pacheco')
                 ->set('dob', '11/14/1995')
-                ->set('location', 'Utah')
+                ->set('location', 'District 23')
                 ->set('office_name', 'Senate')
                 ->set('email', 'jared@gmail.com')
+                ->set('state', 'Utah')
                 ->call('apply');
 
         //Make sure we created the candidate application
-        $candidate_applicatoin = CandidateApplication::firstWhere('user_id', $user->id);
-        $this->assertTrue($candidate_applicatoin->exists());
-        $this->assertEquals($candidate_applicatoin->user_id, $user->id);
-        $this->assertEquals($candidate_applicatoin->office_level, 'state');
+        $candidate_application = CandidateApplication::firstWhere('user_id', $user->id);
+        $this->assertTrue($candidate_application->exists());
+        $this->assertEquals($candidate_application->user_id, $user->id);
+        $this->assertEquals($candidate_application->office_name, 'Senate');
 
         $component->assertStatus(200);
     }

@@ -27,7 +27,7 @@ class CandidateApplicationPage extends Component
             'office_name' => 'required',
             'state' => 'required',
             'dob' => 'required|date',
-            'phone_number' => 'required|regex:/[0-9]{10}/'
+            'phone_number' => 'nullable|regex:/[0-9]{10}/'
         ]);
 
         $candidate_application = new CandidateApplication();

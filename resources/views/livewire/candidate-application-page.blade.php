@@ -26,7 +26,7 @@
                             <label class="label">
                               <span class="label-text">First and Last Name</span>
                             </label>
-                            <input type="text" class="input input-bordered input-primary w-full max-w-xs" wire:model="name"/>
+                            <input type="text" class="input input-bordered input-primary w-full max-w-xs" wire:model.defer="name"/>
                         </div>
                     </div>
                     @error('name') <span class="error">{{ $message }}</span> @enderror
@@ -35,7 +35,7 @@
                             <label class="label">
                               <span class="label-text">Date Of Birth</span>
                             </label>
-                            <input type="date" class="input input-bordered input-primary w-fit max-w-xs" wire:model="dob"/>
+                            <input type="date" class="input input-bordered input-primary w-fit max-w-xs" wire:model.defer="dob"/>
                         </div>
                     </div>
                     @error('dob') <span class="error">{{ $message }}</span> @enderror
@@ -44,16 +44,16 @@
                             <label class="label">
                               <span class="label-text">Email</span>
                             </label>
-                            <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model="email"/>
+                            <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model.defer="email"/>
                         </div>
                     </div> 
                     @error('email') <span class="error">{{ $message }}</span> @enderror      
                     <div class="row-span-1">
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
-                              <span class="label-text">Phone Number</span>
+                              <span class="label-text">Phone Number (optional)</span>
                             </label>
-                            <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model="phone_number"/>
+                            <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model.defer="phone_number"/>
                         </div>
                     </div> 
                     @error('phone_number') <span class="error">{{ $message }}</span> @enderror            
@@ -64,7 +64,7 @@
                             <label class="label">
                               <span class="label-text">Name of office</span>
                             </label>
-                            <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model="office_name"/>
+                            <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model.defer="office_name"/>
                         </div>
                     </div>
                     @error('office_name') <span class="error">{{ $message }}</span> @enderror   
@@ -73,7 +73,7 @@
                             <label class="label">
                               <span class="label-text">State</span>
                             </label>
-                            <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model="state"/>
+                            <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model.defer="state"/>
                         </div>
                     </div>
                     @error('state') <span class="error">{{ $message }}</span> @enderror   
@@ -82,7 +82,7 @@
                             <label class="label">
                               <span class="label-text">Location</span>
                             </label>
-                            <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model="location"/>
+                            <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model.defer="location"/>
                         </div>
                     </div>
                     @error('location') <span class="error">{{ $message }}</span> @enderror   
@@ -93,20 +93,4 @@
             </div>
         </form>
     @endif
-
-    {{-- <div class="flex flex-col card gap-2 w-11/12 justify-center"> --}}
-        {{-- PROFILE PIC --}}
-        {{-- <div class="flex  gap-2"> --}}
-            {{-- TODO: ADD A PHOTO APPROVAL SYSTEM?? --}}
-            {{-- <div class="flex flex-col gap-2">
-                @if ($photo)
-                    Photo Preview:
-                    <img class="h-44 w-44" src="{{ $photo->temporaryUrl() }}">
-                @endif
-                <label>Candidate Profile Picture</label>
-                <input type="file" wire:model="photo">
-                @error('photo') <span class="error">{{ $message }}</span> @enderror
-            </div> --}}
-        {{-- </div> --}}
-    {{-- </div>  --}}
 </div>

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('name');
             $table->date('dob');
             $table->string('email');
-            $table->string('phone_number');
+            $table->string('phone_number')->nullable();
             $table->string('office_name');
             $table->string('state');
             $table->string('location');
