@@ -41,11 +41,11 @@ Route::group(['prefix' =>'candidate', 'namespace' => 'candidate','middleware' =>
     Route::get('/edit', function () {
         return view('candidate.profile');
     })->name('candidate-edit-profile');
-
-    Route::get('/apply', function () {
-        return view('candidate.apply');
-    })->name('candidate-apply');
 });
+
+Route::get('/apply', function () {
+    return view('candidate.apply');
+})->name('candidate-apply');
 
 /* -----ADMIN------ */
 Route::group(['prefix' =>'admin', 'namespace' => 'admin','middleware' => ['role:admin']], function() {
