@@ -17,26 +17,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        // DB::table('users')->insert([
-        //     'name' => "Basic User",
-        //     'email' => 'comnnrep@comnrep.com',
-        //     'password' => Hash::make('pas@#(sword)11'),
-        // ]);
-
-        /* Other seeders
-            DB::table('users')->insert([
-                'name' => Str::random(10),
-                'email' => Str::random(10).'@gmail.com',
-                'password' => Hash::make('password'),
-            ]);
-            DB::table('users')->insert([
-                'name' => "Jared Pacheco",
-                'email' => 'pjared870@gmail.com',
-                'password' => Hash::make('password'),
-            ]);
-        */
-
-        User::factory()->create([
+        User::create([
             'name' => "Jared Pacheco",
             'email' => 'pjared870@gmail.com',
             'password' => Hash::make('password'),

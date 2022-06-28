@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreignIdFor(Ballot::class, 'ballot_id');
             $table->date('entered_race_date')->nullable();
             $table->date('ended_race_date')->nullable();
-            $table->boolean('show')->default('false');
+            $table->boolean('show')->default(0);
         });
     }
 
