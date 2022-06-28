@@ -1,40 +1,27 @@
 # Branch - Candidate Rework
-- Need to include if a position is non partisan or not
+- Make "Edit your profile" It's own entire piece when a user has became a candiate
 
-- Candidate decides to show themselves on the ballot
+- Change ballot card to hero?
 
-- Decide how to add political leaning for the site
-- Restructure Controversial opinions to account for the different positions (school district, etc)
-
+## Profile Pictures
 - Need to finish photo upload
     - Determine if:
         - I can configure jetstream profile pictures to only be for candidates
         - Set their profile picture on the candidate profile
         - Look at jetstream page on profile photos, might be able to just use roles
 
-
-- Allow the candidates to put an info for why they have a stance about an opinion
-
-- Tell the candidate what ballot they've been assigned to.
-    - Allow them to request a change (Later on)
-
-- Candidates need a contact email and public email, contact phone and public phone
-    - Make sure to configure this in admin assign candidates
-    
-- Figure out how political leanings work so I can implement them with the candidate
-
-# Branch - View Rework
-- Use Daisy UI https://daisyui.com/ to convert the components
-- Remove all unnecessary comments, etc
-
-# Branch - User Rework 
-- Save the checkmark for the planned vote
-- Implement "flagging" ability and comparison page
+## Testing
+- Make sure that the show profile check is working
 
 # Branch - Mobile Update
 - Implement ability to handle mobile devices
 
-# Currently working on:
+# Branch - User Rework 
+- Save the checkmark for the planned vote
+- Implement "flagging" ability and comparison page
+- Print out/save list of planned votes
+
+# General Lists
 - Send email notifications to my gmail when a new candidate applies, etc.
 
 ## Admin Page - Future additions
@@ -46,6 +33,8 @@
     - create a new location, ballot, or office
 - Finish Candidate Ballot assignment
     - Ballot search bar
+- Admin page is going to need the ability to create controversial opinions, among other things. This way we can create a "type" for the opinion and sets opinions based off geography.
+- Approving a candidate should bring you to a new page only for assigning them a ballot.
 
 
 # Teams
@@ -74,7 +63,7 @@
     - Laws voted on in office
     - Campaign Donations
 
-
+- Flash error messages on failure to update info in candidate profile edit
 
 # User Pivots
 - Implement badges that appear during candidate hover & a key
@@ -135,6 +124,7 @@
 - Add Breadcrumbs : https://getbootstrap.com/docs/3.4/components/#breadcrumbs
 
 # Future things
+- Public office can also have an opinion type, so there are two sets of opinions. One by location (if set), and one by office
 - Turn Campaign donors into pie graph
 - Implement ability to flag. Have a flag comparison page
     - Find out how to save these flags by politician
@@ -143,6 +133,8 @@
     - Can also use this to skim more data and give better recommendations, "We think you will like this candidate more"
 
 - Make the seeder.md table
+
+- Allow Candidates to request a change of ballot
 
 # Other programming stuff to look up
 - Shortcut that will copy a line and paste it into current
