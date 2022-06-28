@@ -1,17 +1,14 @@
-# Branch - Candidate Rework
-- Make "Edit your profile" It's own entire piece when a user has became a candiate
+# Branch - Testing
+- End to end tests for the following
+    - User signs up, then applies to become a candidate
+    - User becomes a candidate, assigned to a ballot
+        - Appears on new ballot
+    - User edits their candidate profile, adds necessary info
+        - User does not hit show
+        - User does show his profile
 
-- Change ballot card to hero?
-
-## Profile Pictures
-- Need to finish photo upload
-    - Determine if:
-        - I can configure jetstream profile pictures to only be for candidates
-        - Set their profile picture on the candidate profile
-        - Look at jetstream page on profile photos, might be able to just use roles
-
-## Testing
-- Make sure that the show profile check is working
+# Post Live Part 1
+- Make videos to show the candidates how to create a profile.
 
 # Branch - Mobile Update
 - Implement ability to handle mobile devices
@@ -24,6 +21,15 @@
 # General Lists
 - Send email notifications to my gmail when a new candidate applies, etc.
 
+- When a candidate uploads a photo, make sure to set the link on their candidate model
+
+- Make "Edit your profile" It's own entire section on user profile when a user is a candiate
+
+- Change ballot card
+    - Daisy component "hero"
+    - Figure out the profile picture look
+
+- Make sure to actually block users from profile photos.
 ## Admin Page - Future additions
 - Admin Page for:
     - Generate a QR code (Do this with official logo later, for now just use some random thing)
