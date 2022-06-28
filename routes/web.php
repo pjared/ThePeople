@@ -41,7 +41,7 @@ Route::get('/apply', function () {
 })->name('candidate-apply');
 
 //The candidate profile route
-Route::get('/profile/{id}', [CandidateController::class, 'getCandidateView']);
+Route::get('candidate/profile/{id}', [CandidateController::class, 'getCandidateView']);
 
 Route::group(['prefix' =>'candidate', 'namespace' => 'candidate','middleware' => ['role:candidate']], function() {
     Route::get('/edit', function () {
