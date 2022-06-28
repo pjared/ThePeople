@@ -35,18 +35,19 @@ Route::get('/ballot/{id}', [BallotController::class, 'getBallotView'])->name('ba
 
 /* -----CANDIDATE------ */
 
-Route::group(['prefix' =>'candidate', 'namespace' => 'candidate','middleware' => ['role:candidate']], function() {
-    Route::get('/profile/{id}', [CandidateController::class, 'getCandidateView']);
-
-    Route::get('/edit', function () {
-        return view('candidate.profile');
-    })->name('candidate-edit-profile');
-});
-
+//Route for users to apply
 Route::get('/apply', function () {
     return view('candidate.apply');
 })->name('candidate-apply');
 
+//The candidate profile route
+Route::get('/profile/{id}', [CandidateController::class, 'getCandidateView']);
+
+Route::group(['prefix' =>'candidate', 'namespace' => 'candidate','middleware' => ['role:candidate']], function() {
+    Route::get('/edit', function () {
+        return view('candidate.profile');
+    })->name('candidate-edit-profile');
+});
 /* -----ADMIN------ */
 Route::group(['prefix' =>'admin', 'namespace' => 'admin','middleware' => ['role:admin']], function() {
     Route::get('/', function () {
