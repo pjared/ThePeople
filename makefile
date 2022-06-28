@@ -11,14 +11,18 @@ clean:
 	
 
 ## Quick-create classes
-test-class: # make test-class name=
+
+### Tests
+test-unit: # make test-class name=
+	php artisan make:test $(name) --unit
+
+test-feature: # make test-class name=
 	php artisan make:test $(name)
 
 test-dusk: # make test-dusk name=
 	php artisan dusk:make $(name)
 
 ## Testing
-
 feature-test:
 	php artisan test --testsuite=Feature --stop-on-failure
 
@@ -27,6 +31,9 @@ unit-test:
 
 test:
 	php artisan test
+
+test-one:
+	php artisan test --filter $(name)
 
 ######## COMPUTER SETUP #########
 install:
