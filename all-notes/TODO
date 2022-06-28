@@ -1,4 +1,10 @@
 # Branch - Testing
+
+## Currently Testing
+When I get home, finish the permissions test
+
+- Permissions
+    - Make sure users can only access by role
 - End to end tests for the following
     - User signs up, then applies to become a candidate
     - User becomes a candidate, assigned to a ballot
@@ -6,6 +12,17 @@
     - User edits their candidate profile, adds necessary info
         - User does not hit show
         - User does show his profile
+    - Admin
+        - Approve new candidate
+        - Candidate Ballot Assignment
+        - Create a ballot
+        - Permalinks
+
+# Dev - Dashboard
+- Need to remove the "Dashboard" Page for users, instead make it home
+
+# Branch - Model Rework
+- Make sure that all model properties are in correct places (guarded vs fillable)
 
 # Post Live Part 1
 - Make videos to show the candidates how to create a profile.
