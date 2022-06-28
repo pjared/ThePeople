@@ -2,7 +2,7 @@
     <div class="flex">
         Previous Poisitons in Public Office
     </div>
-    <div class="flex flex-col flex-grow w-11/12">
+    <div class="flex flex-col flex-grow w-11/12 gap-2">
         @foreach ($positions as $i => $position)
             <div class="flex grow flex-row gap-4">
                 <div class="form-control w-1/2 max-w-xs">
@@ -41,7 +41,15 @@
                 @error('positions.'.$i.'.year_end') {{ $message }} @enderror
                 @error('positions.'.$i.'.description') {{ $message }} @enderror
             </span>
+            <div class="flex grow flex-row justify-center">
+                <button class="btn btn-error" wire:click="delete_position({{$position->id}})">Delete Positions</button>
+            </div>
         @endforeach
+        @if(count($positions) >= 1)
+            <div class="flex grow justify-center">
+                <button class="btn btn-primary w-1/4" wire:click='update_positions'>Update Positions</button>
+            </div>                   
+        @endif
         @if(count($positions) < 5)
             <livewire:candidate-add-position :candidate_id="$candidate_id" wire:key="'candidate-add-position'.$candidate_id">
         @endif
