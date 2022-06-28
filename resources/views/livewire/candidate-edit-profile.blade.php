@@ -3,21 +3,6 @@
         {{-- LEFT COLUMN --}}
         <div class="flex flex-col w-1/2 gap-2 p-4">
             {{-- CANDIDATE PERSONAL INFO --}}
-            <div class="flex flex-row gap-2 w-11/12 justify-center">
-                {{-- PROFILE PIC --}}
-                <div class="flex flex-col gap-2">
-                    {{-- PROFILE PICTURE --}}
-                    <div class="flex flex-col gap-2">
-                        @if ($photo)
-                            Photo Preview:
-                            <img class="h-44 w-44" src="{{ $photo->temporaryUrl() }}">
-                        @endif
-                        <label>Candidate Profile Picture</label>
-                        <input type="file" wire:model="photo">
-                        @error('photo') <span class="error">{{ $message }}</span> @enderror
-                    </div>                        
-                </div>
-            </div>        
 
             {{-- BIO,PROMISES, PREVIOUS POSITIONS --}}
             <div class="flex flex-col p-2 w-11/12 items-center gap-6">

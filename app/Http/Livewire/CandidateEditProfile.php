@@ -15,18 +15,14 @@ class CandidateEditProfile extends Component
     use WithFileUploads;
 
     public Candidate $candidate;
-
-    public $photo;
-    public $new_position;
-    public $start_year;
-    public $end_year;
-    public $position_text;
-
+    public $show;
+    
+    // public $photo;
     public $political_leanings;
     public $sub_political_leanings;
     public $political_parties;
 
-    public $show;
+    
 
     public $listeners = [
         'opinion-flash' => 'opinion_flash',
