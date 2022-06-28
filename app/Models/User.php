@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Http\UploadedFile;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
@@ -61,4 +63,28 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    /**
+     * Overrides default implementation. Users are only able to update profile if they are a candidate
+     *
+     * @param  \Illuminate\Http\UploadedFile  $photo
+     * @return void
+     */
+    public function updateProfilePhoto(UploadedFile $photo)
+    {
+        if(auth()->user()->hasRole('candidate')) {
+            tap($this->profile_photo_path, function ($previous) use ($photo) {
+                $this->forceFill([
+                    'profile_photo_path' => $photo->storePublicly(
+                        'profile-photos', ['disk' => $this->profilePhotoDisk()]
+                    ),
+                ])->save();
+    
+                if ($previous) {
+                    Storage::disk($this->profilePhotoDisk())->delete($previous);
+                }
+            });
+            
+        }        
+    }
 }

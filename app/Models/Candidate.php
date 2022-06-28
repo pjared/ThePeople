@@ -82,4 +82,8 @@ class Candidate extends Model
     public function running_candidate() {
         return $this->hasOne(RunningCandidates::class);
     }
+
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

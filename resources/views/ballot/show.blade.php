@@ -20,7 +20,14 @@
                             {{-- CANDIDATE NAME, PICTURE, AND PAGE LINK --}}
                             <form action="/candidate/profile/{{$running_candidate->candidate_id}}" method="GET" class="w-11/12 hover:scale-110">
                                 <button class="card flex grow lg:card-side bg-white shadow-xl w-full">
-                                    <figure><img class="h-28 w-28" style="" src="{{ Storage::url('images/' . $running_candidate->candidate->image_id  . '.jpg') }}"></figure>
+                                    <figure>
+                                        @if ($running_candidate->candidate->image_id)
+                                            <img class="h-28 w-28" style="" src="{{ Storage::url('images/' . $running_candidate->candidate->image_id  . '.jpg') }}">    
+                                        @else
+                                            <img src="{{ $running_candidate->candidate->user->profile_photo_url }}" alt="{{ $running_candidate->candidate->name }}" class="h-28 w-28">
+                                            {{-- class="rounded-full object-cover" --}}
+                                        @endif
+                                    </figure>
                                     <div class="card-body flex grow">
                                         <div class="flex grow flex-row font-courier">
                                             <div class="flex">
