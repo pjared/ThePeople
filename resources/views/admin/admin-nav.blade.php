@@ -24,10 +24,11 @@
                 <x-jet-nav-link href="{{ route('candidate-links') }}" :active="request()->routeIs('candidate-links')">
                     {{ __('Candidate Permalinks') }}
                 </x-jet-nav-link>
-                {{-- 
+                
                 <x-jet-nav-link href="{{ route('admin') }}" :active="request()->routeIs('admin')">
-                    {{ __('Location Creation') }}
+                    {{ __('Create Controversial Opinions') }}
                 </x-jet-nav-link>
+                {{-- 
                 <x-jet-nav-link href="{{ route('admin') }}" :active="request()->routeIs('admin')">
                     {{ __('Public Office Position Creation') }}
                 </x-jet-nav-link> 
