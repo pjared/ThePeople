@@ -10,15 +10,13 @@ class CandidateOfficePositions extends Model
     use HasFactory;
     public $timestamps = false;
 
-    protected $primaryKey = 'candidate_id';
-    public $incrementing = false;
-
     protected $guarded = [
-        "candidate_id",
-        "position_name"
+        
     ];
 
     protected $fillable = [
+        "candidate_id",
+        "position_name",
         "year_start",
         "year_end",
         "description",
