@@ -2,16 +2,10 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Ballot;
 use App\Models\Candidate;
-use App\Models\CandidateOfficePositions;
-use App\Models\CandidatePromise;
 use App\Models\CandidateStance;
 use App\Models\ControversialOpinion;
-use App\Models\Location;
-use App\Models\PublicOfficePosition;
-use App\Models\RunningCandidates;
-use Carbon\Carbon;
+use App\Models\PoliticalParty;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -20,180 +14,120 @@ class CandidateEditProfile extends Component
 {
     use WithFileUploads;
 
-    public $controversial_opinions;
-    public $candidate;
-    // public $promises;
+    public Candidate $candidate;
 
-    //Form Elements
     public $photo;
-    public $name;
-    public $dob;
-    // public $office_level;
-    // public $location;
-    // public $office_name;
-    public $email;
-    public $show;
-
-    public $pol_leaning;
-    public $sub_pol_leaning;
-    public $political_party_id;
-
-    public $bio;
-
-    public $opinion_vals;
-
-    public $new_promise;
-    public $promise_plan;
     public $new_position;
     public $start_year;
     public $end_year;
     public $position_text;
 
+    public $political_leanings;
+    public $sub_political_leanings;
+    public $political_parties;
+
+    public $show;
+
+    public $listeners = [
+        'opinion-flash' => 'opinion_flash',
+        'promise-flash' => 'promise_flash',
+    ];
+
+    protected $rules = [
+        'candidate.bio' => 'required|string|max:500',
+        'candidate.party_id' => 'required|string|max:500',
+        'candidate.political_leaning' => 'required|string|max:500',
+        'candidate.sub_political_leaning' => 'required|string|max:500',
+        'candidate.contact_phone_number' => 'required|string|max:500',
+        'candidate.phone_number' => 'required|string|max:500',
+        'candidate.contact_email' => 'required|string|max:500',
+        'candidate.email' => 'required|string|max:500',
+        'candidate.party_id' => 'required',
+    ];
+
     public function mount()
     {
-        //Get the list of controversial opinions
-        $this->controversial_opinions = ControversialOpinion::all();
-        
-        //Find the candidate (Candidate created after they are approved)
-        $candidate = Candidate::firstWhere('user_id', Auth::user()->id);
+        $this->candidate = Candidate::firstWhere('user_id', Auth::user()->id);
 
-        // If we don't find the candidate, give them an error and prompt them to contact us
-        if(!$candidate) {
-           //TODO: Return and error and say they need to contact customer support
-           return;
-        }
-
-        $this->candidate = $candidate;
-
-        //Load whether or not to show the profile
-        if($candidate->running_candidate) {
-            $this->show = $candidate->running_candidate;
+        //Get the list of controversial opinions for that ballot
+        if($this->candidate->ballot) {
+            // Type is stored in location, so grab it
+            $opinion_type_id = $this->candidate->ballot->location->opinion_type_id;
+            $controversial_opinions = ControversialOpinion::where('type_id', $opinion_type_id)->get();
         } else {
-            $this->show = false;
+            //For now just give them the general controversial opinions
+            $controversial_opinions = ControversialOpinion::where('type_id', 1)->get();
         }
-        
-        //Load their stances on controversial opinons
-        if($candidate->stances->isNotEmpty()) {
-            foreach($candidate->stances as $stance) {
-                $this->opinion_vals[] = $stance->value;
+
+        //Create stance if it doesn't exist
+        $candidate_stances = $this->candidate->stances;
+        foreach($controversial_opinions as $opinion) {
+            $candidate_stance = $candidate_stances->firstWhere('controversial_opinion_id', $opinion->id);
+            if (is_null($candidate_stance)) {
+                $stance = new CandidateStance();
+                $stance->candidate_id = $this->candidate->id;
+                $stance->controversial_opinion_id = $opinion->id;
+                $stance->value = 50;
+                $stance->info = "";
+                $stance->link = '';
+                $stance->save();
             }
-        } else {
-            //Set a default (this is the first time they are editing)
-            for($i = 0; $i < count($this->controversial_opinions); $i++) {
-                $this->opinion_vals[] = "50";
-            }         
         }
-        
-        //Set values to what the user has already input during signup
-        $this->dob = $candidate->dob;
-        if($candidate->email) {
-            $this->email = $candidate->email;
-        }
-        $this->name = $candidate->name;
-        $this->bio = $candidate->info;
 
-        //TODO: Add political party correctly (for internal stats)
-        $this->political_party_id = $candidate->party_id;
-        //TODO: ADD POLITICAL LEANING
-        // $this->pol_leaning = 'moderate';
-        // $this->sub_pol_leaning = 'moderate';
-       
-        // $this->office_level = 'local';
+        $this->political_parties = PoliticalParty::all();
+        $this->political_leanings = ['Centrist', 'Authoritarian', 'Libertarian', 'Left', 'Right', 'Moderate'];
+        $this->sub_political_leanings = ['None', 'Centrist', 'Authoritarian', 'Libertarian', 'Left', 'Right'];
     }
 
-    public function save()
+    public function save_info() 
     {
         $this->validate([
-            'photo' => 'image|max:1024', // 1MB Max
-            'email' => 'required|email',
-            // 'location' => 'required',
-            // 'office_name' => 'required',
-            'dob' => 'required|date',
+            'candidate.contact_email' => 'required|email',
+            'candidate.political_leaning' => 'required',
+            'candidate.sub_political_leaning' => 'required',
+            'candidate.party_id' => 'required',
         ]);
 
-        // $photo_id = Hash::make($this->name . $this->photo->temporaryUrl());
-        $photo_id = $this->name;
-
-        
-        // dd($photo_id);
-        //Find the candidate, if not return a new one
-        $candidate = Candidate::updateOrCreate(
-            ['user_id' => Auth::user()->id],
-            [
-                'dob' => $this->dob,
-                'info' => $this->bio,
-                // 'party_id' => $this->political_party_id,
-                'image_id' => $photo_id,
-                'signup_date' => Carbon::now()->format('d/m/Y'),
-            ]
-        );
-        // dd($candidate);
-        
-
-        // Create the candidate Stances
-        //TODO: Allow the candidate to put in info
-        $index = 0;
-        foreach($this->controversial_opinions as $controversial_opinion) {
-            CandidateStance::updateOrCreate(
-                [
-                    'candidate_id' => $candidate->id,
-                    'controversial_opinion_id' => $controversial_opinion->id,
-                ],
-                [
-                    'value' => $this->opinion_vals[$index],                    
-                    'info' => '',
-                    'link' => '',
-                ]
-            );
-            $index++;
+        $this->candidate->save();
+        session()->flash('update-info-success');
+        if($this->candidate->running_candidate) {
+            $this->candidate->running_candidate->show = $this->show;
+            $this->candidate->running_candidate->save();
         }
-
-        RunningCandidates::where('candidate_id', $candidate->id,)->update(
-            [
-                'show' => $this->show
-            ]
-        );
-
-        //Try to find the image first, and then if not store it.
-        $this->photo->store('photo');
     }
 
-    public function add_promise() {
+    public function save_bio() 
+    {
         $this->validate([
-            'new_promise' => 'required',
-            'promise_plan' => 'required',
+            'candidate.bio' => 'required',
         ]);
 
-        // dd($this->new_promise, $this->promise_text);
-        $promise = new CandidatePromise();
-        $promise->candidate_id = $this->candidate->id;
-        $promise->promise = $this->new_promise;
-        $promise->plan = $this->promise_plan;
-        $promise->order = 1;
-        $promise->save();
+        $this->candidate->save();
+        session()->flash('update-bio-success');
     }
 
-    public function add_position() {
-        $this->validate([
-            'new_position' => 'required',
-            'start_year' => 'required',
-            'end_year' => 'required',
-            'position_text' => 'required',
-        ]);
+    public function add_promise() 
+    {
 
-        // dd($this->candidate->id, $this->new_position, $this->start_year, $this->end_year,$this->position_text);
-        $position = new CandidateOfficePositions();
-        $position->candidate_id = $this->candidate->id;
-        $position->position_name = $this->new_position;
-        $position->year_start = $this->start_year;
-        $position->year_end = $this->end_year;
-        $position->description = $this->position_text;
-        $position->save();
+    }
+
+    public function add_position() 
+    {
+
+    }
+
+    public function promise_flash() {
+        session()->flash('update-promises-success');
+    }
+
+    public function opinion_flash() 
+    {
+        session()->flash('update-stances-success');
     }
 
     public function render()
     {
-        //TODO: Get the location depending on if the candidate has chosen local, county, district, or state
+        $this->candidate = Candidate::firstWhere('user_id', Auth::user()->id);
         return view('livewire.candidate-edit-profile');
     }
 }

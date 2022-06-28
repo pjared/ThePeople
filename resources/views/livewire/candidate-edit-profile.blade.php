@@ -1,241 +1,232 @@
 <div class="flex grow">
-    <form class="flex grow" wire:submit.prevent="save">
-        <div class="flex grow justify-center">            
-            {{-- LEFT COLUMN --}}
-            <div class="flex flex-col w-1/2 gap-2 p-4">
-                {{-- CANDIDATE PERSONAL INFO --}}
-                <div class="flex flex-row gap-2 w-11/12 justify-center">
-                    {{-- PROFILE PIC, NAME, LEANING --}}
+    <div class="flex grow justify-center">            
+        {{-- LEFT COLUMN --}}
+        <div class="flex flex-col w-1/2 gap-2 p-4">
+            {{-- CANDIDATE PERSONAL INFO --}}
+            <div class="flex flex-row gap-2 w-11/12 justify-center">
+                {{-- PROFILE PIC --}}
+                <div class="flex flex-col gap-2">
+                    {{-- PROFILE PICTURE --}}
                     <div class="flex flex-col gap-2">
-                        {{-- PROFILE PICTURE --}}
-                        <div class="flex flex-col gap-2">
-                            @if ($photo)
-                                Photo Preview:
-                                <img class="h-44 w-44" src="{{ $photo->temporaryUrl() }}">
-                            @endif
-                            <label>Candidate Profile Picture</label>
-                            <input type="file" wire:model="photo">
-                            @error('photo') <span class="error">{{ $message }}</span> @enderror
-                        </div>                        
-                    </div>
-                </div>        
+                        @if ($photo)
+                            Photo Preview:
+                            <img class="h-44 w-44" src="{{ $photo->temporaryUrl() }}">
+                        @endif
+                        <label>Candidate Profile Picture</label>
+                        <input type="file" wire:model="photo">
+                        @error('photo') <span class="error">{{ $message }}</span> @enderror
+                    </div>                        
+                </div>
+            </div>        
 
-                {{-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS --}}
-                <div class="flex flex-col p-2 w-11/12 items-center gap-6">
-                    <div class="flex grow form-group w-11/12">
-                        <div class="form-control flex grow">
-                            <label class="label">
-                                <span class="label-text">Your bio</span>
-                            </label> 
-                            <textarea class="textarea textarea-bordered flex grow" wire:model="bio" rows="3" placeholder="">{{$bio}}</textarea>
+            {{-- BIO,PROMISES, PREVIOUS POSITIONS --}}
+            <div class="flex flex-col p-2 w-11/12 items-center gap-6">
+
+                {{-- BIO FLASH MESSAGE --}}
+                @if (session()->has('update-bio-success'))
+                    <div class="alert alert-success shadow-lg flex w-11/12">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <span>Your bio has been updated!</span>
                         </div>
                     </div>
-                    {{-- CANDIDATE PROMISES --}}
-                    <div class="flex flex-col background-card w-11/12 items-center">
+                @elseif(session()->has('update-bio-failure'))
+                    <div class="alert alert-error shadow-lg">
                         <div>
-                            Your promises for this term in office
+                            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <span>Error! Your bio did not updated. Please check your input and try again</span>
                         </div>
-                        <div>
-                            @foreach ($candidate->promises as $promise)
-                                {{-- TODO: Give candidates a way to edit their promise --}}
-                                <div class="flex grow flex-col items-center">
-                                    {{-- {{$promise}} --}}
-                                    {{$promise->promise}}, {{$promise->plan}}
-                                </div>
-                            @endforeach
-                            {{-- TODO: Make this a dropdown --}}
-                            @if(count($candidate->promises) < 5)
-                                <div class="flex grow flex-col items-center">
-                                    <div class="form-control w-full max-w-xs">
-                                        <label class="label">
-                                          <span class="label-text">Add a promise</span>
-                                        </label>
-                                        <input type="text" wire:model="new_promise" placeholder="Promise" class="input input-bordered w-full max-w-xs" />
-                                    </div>
-                                    @error('new_promise') <span class="error">{{ $message }}</span> @enderror
-                                    <label class="label">
-                                        <span class="label-text">Tell The People how you plan to implement that promise</span>
-                                    </label> 
-                                    <textarea class="textarea textarea-bordered flex grow w-11/12" wire:model="promise_plan" rows="3" placeholder="">{{$promise_plan}}</textarea>
-                                    @error('promise_plan') <span class="error">{{ $message }}</span> @enderror
-                                    <button wire:click='add_promise' class="btn btn-primary mt-2">Add Promise</button>
-                                </div>
-                            @endif
-                        </div>    
                     </div>
-                    {{-- PREVIOUS POSITIONS --}}
-                    <div class="flex flex-col background-card w-11/12 items-center">
-                        <div class="">
-                            Previous Poisitons in Public Office
-                        </div>
-                        <div>
-                            @foreach ($candidate->previous_positions as $position)
-                                <div class="flex grow flex-row">
-                                    <div class="flex flex-col w-1/2">
-                                        {{$position->position_name}}
-                                    </div>                                    
-                                    <div class="flex flex-col w-1/4">
-                                        {{$position->year_start}} {{$position->year_end}}
-                                    </div>
-                                    <div class="flex flex-col w-1/4">
-                                        {{$position->description}}
-                                    </div>  
-                                </div>
-                            @endforeach
-                            @if(count($candidate->previous_positions) < 5)
-                                <div class="flex grow flex-col items-center gap-2">
-                                    <label>Add a new position</label>
-                                    <div class="flex grow flex-row gap-4">
-                                        <div class="form-control w-1/2 max-w-xs">
-                                            <label class="label">
-                                              <span class="label-text">Position Name</span>
-                                            </label>
-                                            <input type="text" wire:model="new_position" class="input input-bordered w-full max-w-xs" />
-                                        </div>
-                                        @error('new_position') <span class="error">{{ $message }}</span> @enderror    
-                                        <div class="flex grow justify-end">
-                                            <div class="form-control w-full max-w-xs">
-                                                <label class="label">
-                                                  <span class="label-text">Year Start</span>
-                                                </label>
-                                                <input type="number" wire:model="start_year" class="input input-bordered w-3/4 max-w-xs" />
-                                            </div>         
-                                            @error('start_year') <span class="error">{{ $message }}</span> @enderror
-                                            <div class="form-control w-full max-w-xs">
-                                                <label class="label">
-                                                  <span class="label-text">Year End</span>
-                                                </label>
-                                                <input type="number" wire:model="end_year" class="input input-bordered  w-3/4 max-w-xs" />
-                                            </div>
-                                            @error('end_year') <span class="error">{{ $message }}</span> @enderror
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="form-control flex grow">
-                                        <label class="label">
-                                            <span class="label-text">Tell The People about your best accomplishments while in that office</span>
-                                        </label> 
-                                        <textarea class="textarea textarea-bordered flex grow" wire:model="position_text" rows="3">{{$position_text}}</textarea>
-                                    </div>
-                                    @error('position_text') <span class="error">{{ $message }}</span> @enderror
-                                    <button wire:click='add_position' class="btn btn-primary mt-2">Add Position</button>
-                                </div>             
-                                
-                            @endif
-                        </div>    
+                @endif
+                {{-- BIO --}}
+                <form class="flex background-card grow flex-col w-11/12 gap-2" wire:submit.prevent="save_bio">
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Your bio</span>
+                        </label> 
+                        <textarea class="textarea textarea-bordered flex grow" wire:model.defer="candidate.bio" rows="3" placeholder=""></textarea>
                     </div>
-                </div>
-            </div> 
-            {{-- RIGHT COLUMN --}}
-            <div class="flex flex-col w-1/2 p-5 gap-6">
-                {{-- CONTROVERSIAL OPINIONS --}}
-                <div id="opinionsInfo" class="flex flex-col background-card w-11/12 items-center gap-4">
-                    <div class="flex flex-row grow justify-center">
-                            Controversial Opinions
+                    <div class="flex justify-center">
+                        <button class="btn btn-primary" type="submit">Save Bio</button>
                     </div>
-                    <div class="flex flex-col text-center gap-8">
-                        @foreach ($controversial_opinions as $controversial_opinion)
-                            <div>
-                                <label for="{{$controversial_opinion->name}}-range" class="form-label">{{$controversial_opinion->name}}</label>
-                                <div class="flex flex-row">
-                                    <div class="w-1/4 text-start">
-                                        {{$controversial_opinion->first_side}}
-                                    </div>
-                                    <div class="w-1/2 flex justify-center">
-                                        <input type="range" step="10" value="50" class="range range-sm range-primary" wire:model="opinion_vals.{{$loop->index}}"/>
-                                    </div>
-                                    <div class="w-1/4 text-start">
-                                        {{$controversial_opinion->second_side}}
-                                    </div>    
-                                </div>  
-                            </div>       
-                        @endforeach
-                    </div>
-                </div>
+                </form>
                 
-                {{-- OTHER OPINIONS --}}
-                {{-- <div class="mt-4" id="opinionsInfo">
-                    <div style="width:95%" class="background-card background-card-body" type="button" data-bs-toggle="collapse" data-bs-target="#opinionsInfoCollapse" aria-expanded="false" aria-controls="multiCollapseExample2">
-                        <div class="row">
-                            <div class="col text-center">
-                                Other Opinions
-                                <i class="bi bi-lightning-charge"></i>
-                            </div>
+                {{-- PROMISE FLASH MESSAGE --}}
+                @if (session()->has('update-promise-success'))
+                    <div class="alert alert-success shadow-lg flex w-11/12">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <span>{{session('update-promise-success')}}</span>
                         </div>
-                        TODO: Allow to add for an other opinions
                     </div>
-                </div> --}}
+                @elseif(session()->has('update-promise-failure'))
+                    <div class="alert alert-error shadow-lg">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <span>{{session('update-promise-failure')}}</span>
+                        </div>
+                    </div>
+                @endif
+                {{-- CANDIDATE PROMISES --}}
+                <livewire:edit-candidate-promises :candidate_id="$candidate->id" :promises="$candidate->promises" :wire:key="'candidate-promises'.$candidate->id">
 
+                {{-- PREVIOUS POSITIONS FLASH MESSAGE --}}
+                @if (session()->has('update-position-success'))
+                    <div class="alert alert-success shadow-lg flex w-11/12">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <span>{{session('update-position-success')}}</span>
+                        </div>
+                    </div>
+                @elseif(session()->has('update-position-failure'))
+                    <div class="alert alert-error shadow-lg">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <span>{{session('update-position-failure')}}</span>
+                        </div>
+                    </div>
+                @endif
+                {{-- PREVIOUS POSITIONS --}}                
+                <livewire:edit-candidate-positions :candidate_id="$candidate->id" :positions="$candidate->previous_positions" :wire:key="'candidate-positions'.$candidate->id">
+            </div>
+        </div> 
+        {{-- RIGHT COLUMN --}}
+        <div class="flex flex-col w-1/2 p-5 gap-6">
+            {{-- CONTROVERSIAL OPINIONS --}}
+            @if (session()->has('update-stances-success'))
+                <div class="alert alert-success shadow-lg flex w-11/12">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span>Your stances have been updated!</span>
+                    </div>
+                </div>
+            @elseif(session()->has('update-stances-failure'))
+                <div class="alert alert-error shadow-lg">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span>Error! Your stances did not updated. Please check your input and try again</span>
+                    </div>
+                </div>
+            @endif
+            {{-- Future problem, need to do top 5 by votes. --}}
+            <livewire:edit-candidate-opinions :stances="$candidate->stances" :wire:key="'candidate-stances'.$candidate->id">
+            
+            
+            {{-- OTHER OPINIONS --}}
+            {{-- <div class="mt-4" id="opinionsInfo">
+                <div style="width:95%" class="background-card background-card-body" type="button" data-bs-toggle="collapse" data-bs-target="#opinionsInfoCollapse" aria-expanded="false" aria-controls="multiCollapseExample2">
+                    <div class="row">
+                        <div class="col text-center">
+                            Other Opinions
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                    </div>
+                    TODO: Allow to add for an other opinions
+                </div>
+            </div> --}}
+
+            {{-- CANDIDATE INFO FLASH MESSAGE --}}
+            @if (session()->has('update-info-success'))
+                <div class="alert alert-success shadow-lg flex w-11/12">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span>Your info has been updated!</span>
+                    </div>
+                </div>
+            @elseif(session()->has('update-info-failure'))
+                <div class="alert alert-error shadow-lg">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span>Error! Your info did not updated. Please check your input and try again</span>
+                    </div>
+                </div>
+            @endif
+            {{-- CANDIDATE INFO --}}
+            <form class="flex grow" wire:submit.prevent="save_info"> 
                 <div class="flex flex-col background-card w-11/12 items-center gap-4">                  
-                    {{-- NAME, DOB, POLITICAL PARTY --}}
+                    {{-- POLITICAL PARTY, POLITICAL LEANING, SUB POLITICAL LEANING --}}
                     <div class="flex flex-row gap-4">
+                        {{-- POLITICAL PARTY --}}
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
-                              <span class="label-text">Political Party</span>
+                                <span class="label-text">Political Party</span>
                             </label>
-                            <select class="select select-bordered" wire:model="political_party_id">
-                                <option value="0" selected>Republican</option>
-                                <option value="1">Democrat</option>
-                                <option value="2">Independant</option>
+                            <select class="select select-bordered" wire:model.lazy="candidate.party_id">
+                                @foreach($political_parties as $party)
+                                    @if($party->id == $candidate->party_id)
+                                        <option value="{{$party->id}}" selected>{{$party->name}}</option>
+                                    @else
+                                        <option value="{{$party->id}}">{{$party->name}}</option>
+                                    @endif
+                                @endforeach
                             </select>
                         </div>
+                        {{-- POLITICAL LEANING --}}
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
-                              <span class="label-text">Political Leaning</span>
+                                <span class="label-text">Political Leaning</span>
                             </label>
-                            <select class="select select-bordered" wire:model="pol_leaning">
-                                <option value="moderate" selected>Moderate</option>
-                                <option value="authoritarian">Authoritarian</option>
-                                <option value="libertarian">Libertarian</option>
-                                <option value="left">Left</option>
-                                <option value="right">Right</option>
+                            <select class="select select-bordered" wire:model.lazy="candidate.political_leaning">
+                                @foreach($political_leanings as $leaning)
+                                    @if($leaning == $candidate->political_leaning)
+                                        <option class="capitalize" value="{{$leaning}}" selected>
+                                            <span class="capitalize">{{$leaning}}</span>
+                                        </option>
+                                    @else
+                                        <option  value="{{$leaning}}">
+                                            <span class="capitalize">{{$leaning}}</span>
+                                        </option>
+                                    @endif
+                                @endforeach
                             </select>
                         </div>
+                        {{-- SUB POLITICAL LEANING --}}
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
-                              <span class="label-text">Sub-Political Leaning</span>
+                                <span class="label-text">Sub-Political Leaning</span>
                             </label>
-                            <select class="select select-bordered" wire:model="sub_pol_leaning">
-                                <option value="moderate" selected>Moderate</option>
-                                <option value="authoritarian">Authoritarian</option>
-                                <option value="libertarian">Libertarian</option>
-                                <option value="left">Left</option>
-                                <option value="right">Right</option>
+                            <select class="select select-bordered" wire:model.lazy="candidate.sub_political_leaning">
+                                @foreach($sub_political_leanings as $leaning)
+                                    @if($leaning == $candidate->sub_political_leaning)
+                                        <option class="capitalize" value="{{$leaning}}" selected>{{$leaning}}</option>
+                                    @else
+                                        <option value="{{$leaning}}">{{$leaning}}</option>
+                                    @endif
+                                @endforeach
                             </select>
                         </div>
                     </div>
 
-                    {{-- CONTACT EMAIL, PHONE, POLITICAL LEANING --}}
+                    {{-- CONTACT EMAIL, PHONE --}}
                     <div class="flex flex-row gap-5">
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
-                              <span class="label-text">Contact Email</span>
+                                <span class="label-text">Contact Email</span>
                             </label>
-                            <input type="text" value="{{$email}}" wire:model="email" class="input input-bordered w-full max-w-xs" />
+                            <input type="text" wire:model.defer="candidate.contact_email" class="input input-bordered w-full max-w-xs" />
                         </div>
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
-                              <span class="label-text">Contact Phone</span>
+                                <span class="label-text">Contact Phone</span>
                             </label>
-                            <input type="text" value="{{$email}}" wire:model="email" class="input input-bordered w-full max-w-xs" />
+                            <input type="text" wire:model.defer="candidate.contact_phone" class="input input-bordered w-full max-w-xs" />
                         </div>
                     </div>
 
-                    {{-- PUBLIC EMAIL, PHONE, SUB-POLITICAL LEANING --}}
+                    {{-- PUBLIC EMAIL, PHONE --}}
                     <div class="flex flex-row gap-5">
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
-                              <span class="label-text">Public Email</span>
+                                <span class="label-text">Public Email</span>
                             </label>
-                            <input type="text" value="{{$email}}" wire:model="email" class="input input-bordered w-full max-w-xs" />
+                            <input type="text" wire:model.lazy="candidate.email" class="input input-bordered w-full max-w-xs" />
                         </div>
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
-                              <span class="label-text">Public Phone</span>
+                                <span class="label-text">Public Phone</span>
                             </label>
-                            <input type="text" value="{{$email}}" wire:model="email" class="input input-bordered w-full max-w-xs" />
-                        </div>
-                        
+                            <input type="text" wire:model.lazy="candidate.phone" class="input input-bordered w-full max-w-xs" />
+                        </div>                        
                     </div>
                     <div class="flex flex-col gap-5 text-center">
                         @if($candidate->ballot)
@@ -250,12 +241,9 @@
                             We have not placed you on a ballot yet. You will be notified when we have done this
                         @endif
                     </div>
+                    <button class="btn btn-primary" type="submit">Save Info</button>
                 </div>
-                <div class="flex justify-center w-11/12">
-                    {{-- TODO: Put a checkmark here that they are ready for the ballot --}}
-                    <button class="btn btn-primary" type="submit">Save</button>
-                </div>
-            </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>
