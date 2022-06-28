@@ -11,9 +11,6 @@ class CandidatePromise extends Model
 
     public $timestamps = false;
 
-    public $incrementing = false;
-    protected $primaryKey = 'candidate_id';
-
     protected $fillable = [
         'candidate_id',
         'promise',
