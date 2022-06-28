@@ -21,6 +21,8 @@ class CandidateProfileTest extends TestCase
     /** @test */
     public function can_create_profile() 
     {
+        $this->markTestSkipped('REWORK NEEDED');
+
         $user = User::factory()->create();
         // dd($user);
         $this->actingAs($user); //THIS ERROR IS FAKE
