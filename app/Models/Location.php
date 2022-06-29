@@ -12,11 +12,13 @@ class Location extends Model
     public $timestamps = false;
 
     protected $guarded = [
-        "name",
-        "type",
+        
     ];
 
     protected $fillable = [
+        "name",
+        'state',
+        "type",
         "population",
         "opinion_type_id",
     ];
