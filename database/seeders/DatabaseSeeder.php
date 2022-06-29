@@ -15,27 +15,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
         $this->call([
-            UserSeeder::class,
-            // TeamsSeeder::class,
+            UserSeeder::class, //!PROD
             RoleSeeder::class,
 
-            LawsSeeder::class,
+            LawsSeeder::class, //!PROD
             LocationSeeder::class,
-            PoliticalPartySeeder::class,
-            PublicOfficeSeeder::class,
-            OpinionsSeeder::class,
+            PoliticalPartySeeder::class, 
+            PublicOfficeSeeder::class, //!PROD
+            OpinionsSeeder::class, //!PROD
             ControversialOpinionsSeeder::class,
 
-            CandidateSeeder::class,
-            CandidateInfoSeeder::class,
-            CandidateOfficePositionsSeeder::class,
-            CandidateStanceSeeder::class,
-            CandidateApplicationSeeder::class,
-            RunningCandidatesSeeder::class, 
-            BallotSeeder::class,            
+            CandidateSeeder::class, //!PROD
+            CandidateInfoSeeder::class, //!PROD
+            CandidateOfficePositionsSeeder::class, //!PROD
+            CandidateStanceSeeder::class, //!PROD
+            CandidateApplicationSeeder::class, //!PROD
+            RunningCandidatesSeeder::class,  //!PROD
+            BallotSeeder::class, //!PROD
         ]);
     }
 }

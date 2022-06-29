@@ -8,32 +8,6 @@ use Illuminate\Support\Facades\DB;
 
 class ControversialOpinionsSeeder extends Seeder
 {
-
-    // private $opinion_stances_war = [
-        // "Only for defense",
-        // "Viable Option",
-    // ];
-
-    // private $opinion_stances_abortion = [
-    //     "Pro Choice",
-    //     "Pro Life",
-    // ];
-
-    // private $opinion_stances_gun_control = [
-    //     "Strict Gun regulation",
-    //     "Laxed Gun regulation",
-    // ];
-
-    // private $opinion_stances_immigration = [
-    //     "Laxed Standards",
-    //     "Strict Standards",
-    // ];
-
-    // private $opinion_stances_FoS = [
-    //     "Strict Standards",
-    //     "Laxed Standards",       
-    // ];
-
     private $opinion_stances = [
         "Only for defense",
         "Viable Option",
