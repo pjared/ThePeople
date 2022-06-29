@@ -136,7 +136,7 @@
                             <label class="label">
                                 <span class="label-text">Political Party</span>
                             </label>
-                            <select class="select select-bordered" wire:model.lazy="candidate.party_id">
+                            <select class="select select-bordered" wire:model.defer="candidate.party_id">
                                 @foreach($political_parties as $party)
                                     @if($party->id == $candidate->party_id)
                                         <option value="{{$party->id}}" selected>{{$party->name}}</option>
@@ -145,13 +145,16 @@
                                     @endif
                                 @endforeach
                             </select>
+                            <span class="error">
+                                @error('candidate.party_id') {{ $message }} @enderror
+                            </span> 
                         </div>
                         {{-- POLITICAL LEANING --}}
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
                                 <span class="label-text">Political Leaning</span>
                             </label>
-                            <select class="select select-bordered" wire:model.lazy="candidate.political_leaning">
+                            <select class="select select-bordered" wire:model.defer="candidate.political_leaning">
                                 @foreach($political_leanings as $leaning)
                                     @if($leaning == $candidate->political_leaning)
                                         <option class="capitalize" value="{{$leaning}}" selected>
@@ -164,13 +167,16 @@
                                     @endif
                                 @endforeach
                             </select>
+                            <span class="error">
+                                @error('candidate.political_leaning') {{ $message }} @enderror
+                            </span>  
                         </div>
                         {{-- SUB POLITICAL LEANING --}}
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
                                 <span class="label-text">Sub-Political Leaning</span>
                             </label>
-                            <select class="select select-bordered" wire:model.lazy="candidate.sub_political_leaning">
+                            <select class="select select-bordered" wire:model.defer="candidate.sub_political_leaning">
                                 @foreach($sub_political_leanings as $leaning)
                                     @if($leaning == $candidate->sub_political_leaning)
                                         <option class="capitalize" value="{{$leaning}}" selected>{{$leaning}}</option>
@@ -179,6 +185,9 @@
                                     @endif
                                 @endforeach
                             </select>
+                            <span class="error">
+                                @error('candidate.sub_political_leaning') {{ $message }} @enderror
+                            </span>  
                         </div>
                     </div>
 
@@ -196,6 +205,10 @@
                             </label>
                             <input type="text" wire:model.defer="candidate.contact_phone" class="input input-bordered w-full max-w-xs" />
                         </div>
+                        <span class="error">
+                            @error('candidate.contact_email') {{ $message }} @enderror
+                            @error('candidate.contact_phone') {{ $message }} @enderror
+                        </span>  
                     </div>
 
                     {{-- PUBLIC EMAIL, PHONE --}}
@@ -204,21 +217,25 @@
                             <label class="label">
                                 <span class="label-text">Public Email</span>
                             </label>
-                            <input type="text" wire:model.lazy="candidate.email" class="input input-bordered w-full max-w-xs" />
+                            <input type="text" wire:model.defer="candidate.email" class="input input-bordered w-full max-w-xs" />
                         </div>
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
                                 <span class="label-text">Public Phone</span>
                             </label>
-                            <input type="text" wire:model.lazy="candidate.phone" class="input input-bordered w-full max-w-xs" />
-                        </div>                        
+                            <input type="text" wire:model.defer="candidate.phone" class="input input-bordered w-full max-w-xs" />
+                        </div>
+                        <span class="error">
+                            @error('candidate.email') {{ $message }} @enderror
+                            @error('candidate.phone') {{ $message }} @enderror
+                        </span>          
                     </div>
                     <div class="flex flex-col gap-5 text-center">
                         @if($candidate->ballot)
                             <div class="form-control items-center">
                                 <label class="label cursor-pointer w-2/5">
                                 <span class="label-text">Show my profile on the ballot</span> 
-                                <input type="checkbox" wire:model="show" class="checkbox checkbox-primary" />
+                                <input type="checkbox" wire:model.defer="show" class="checkbox checkbox-primary" />
                                 </label>
                             </div>
                             You will be placed on the {{$candidate->ballot->location->name}} {{$candidate->ballot->office->name}} ballot, in the state of {{$candidate->state}}. If this is incorrect, please contact customer support.

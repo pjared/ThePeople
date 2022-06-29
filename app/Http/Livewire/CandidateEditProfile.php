@@ -22,8 +22,6 @@ class CandidateEditProfile extends Component
     public $sub_political_leanings;
     public $political_parties;
 
-    
-
     public $listeners = [
         'opinion-flash' => 'opinion_flash',
         'promise-flash' => 'promise_flash',
@@ -89,12 +87,17 @@ class CandidateEditProfile extends Component
             'candidate.party_id' => 'required',
         ]);
 
+        // dd($this->show);
+
         $this->candidate->save();
-        session()->flash('update-info-success');
+
+        
         if($this->candidate->running_candidate) {
             $this->candidate->running_candidate->show = $this->show;
             $this->candidate->running_candidate->save();
         }
+
+        session()->flash('update-info-success');
     }
 
     public function save_bio() 
@@ -110,6 +113,9 @@ class CandidateEditProfile extends Component
     public function render()
     {
         $this->candidate = Candidate::firstWhere('user_id', Auth::user()->id);
+        if($this->candidate->running_candidate) {
+            $this->show = $this->candidate->running_candidate->show;
+        }
         return view('livewire.candidate-edit-profile');
     }
 
