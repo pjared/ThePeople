@@ -11,7 +11,7 @@
                     Plan your choice for the upcoming election                            
                 </p>
                 <p class="uppercase mt-2 text-sm">
-                    {{ $ballot->location->name }} {{ $ballot->office->name }} - VOTING DATE: {{$ballot->voting_date}}
+                    {{ $ballot->location->name }} {{ $ballot->office->name }} - VOTING DATE: {{ $ballot->voting_date->format('m/d/Y')}}
                 </p>
                 <div class="flex flex-wrap grow w-11/12 mt-2">                    
                     @foreach ($ballot->candidates as $running_candidate)

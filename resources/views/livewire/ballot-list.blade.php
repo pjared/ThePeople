@@ -9,7 +9,7 @@
                             <a class="underline text-sky-600 visited:text-purple-600" href="/ballot/{{$ballot->id}}"> {{$ballot->location->state}} {{$ballot->office->name}}, {{$ballot->location->name}} </a>
                         </h2>
                         <div x-show="show" class="uppercase mt-2 text-sm justify-center">
-                            VOTING DATE: {{$ballot->voting_date}}
+                            VOTING DATE: {{$ballot->voting_date->format('m/d/Y')}}
                         </div>
                     </div>
                 </button>
