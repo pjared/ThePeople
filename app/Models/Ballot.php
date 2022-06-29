@@ -11,7 +11,7 @@ class Ballot extends Model
 
     public $timestamps = false;
     
-    protected $guarded = [
+    public $fillable = [
         "location_id",
         "office_id",
         "voting_date"
