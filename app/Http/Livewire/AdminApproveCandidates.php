@@ -25,6 +25,7 @@ class AdminApproveCandidates extends Component
         $candidate = new Candidate();
         $candidate->name = $application->name;
         $candidate->contact_email = $application->email;
+        $candidate->bio = "";
         $candidate->dob = $application->dob;
         $candidate->signup_date = Carbon::now();
         $candidate->state = $application->state;
