@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->tinyInteger('years_per_term')->unsigned();
-            $table->tinyInteger('limit_terms')->unsigned();
+            $table->tinyInteger('limit_terms')->unsigned()->nullable();
         });
     }
 
