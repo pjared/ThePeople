@@ -1,7 +1,18 @@
-# Branch - Testing
+# Hotfix
+- Take out We're still searching for opinons! 
+- Candidate show blade
+    - Only show candidate info if it's been set
+- Add a button to go to profile page from profile
 
-## Currently Testing
-When I get home, finish the permissions test
+# Branch - Testing
+- Location needs a settable opinion type
+
+- Move candidate show to mount instead of render
+
+- The following pages need to have null checks
+    - Candidate edit page needs to have a check for when a person accesses the link without a candidate
+    - Admin/candidate-assignment
+
 
 - Permissions
     - Make sure users can only access by role
@@ -34,6 +45,7 @@ When I get home, finish the permissions test
 - Save the checkmark for the planned vote
 - Implement "flagging" ability and comparison page
 - Print out/save list of planned votes
+- Add a search bar for users
 
 # General Lists
 - Send email notifications to my gmail when a new candidate applies, etc.
