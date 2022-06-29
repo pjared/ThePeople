@@ -18,7 +18,7 @@
             </p>
         </div>
     @else
-        <form class="flex flex-col background-card gap-2">
+        <form class="flex flex-col background-card gap-2" wire:submit.prevent="apply">
             <div class="grid grid-cols-2 gap-12">
                 <div class="col-span-1 grid grid-rows-4 w-1/2">
                     <div class="row-span-1">
@@ -62,27 +62,29 @@
                     <div class="row-span-1">
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
-                              <span class="label-text">Name of office</span>
-                            </label>
-                            <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model.defer="office_name"/>
-                        </div>
-                    </div>
-                    @error('office_name') <span class="error">{{ $message }}</span> @enderror   
-                    <div class="row-span-1">
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
                               <span class="label-text">State</span>
                             </label>
                             <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model.defer="state"/>
                         </div>
                     </div>
-                    @error('state') <span class="error">{{ $message }}</span> @enderror   
+                    @error('state') <span class="error">{{ $message }}</span> @enderror  
+                    
+                    <div class="row-span-1">
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                              <span class="label-text">Name of office</span>
+                            </label>
+                            <input type="text" placeholder="Senate, School District, Congress" class="input input-bordered input-primary w-fit max-w-xs" wire:model.defer="office_name"/>
+                        </div>
+                    </div>
+                    @error('office_name') <span class="error">{{ $message }}</span> @enderror   
+                     
                     <div class="row-span-1">
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
                               <span class="label-text">Location</span>
                             </label>
-                            <input type="text" class="input input-bordered input-primary w-fit max-w-xs" wire:model.defer="location"/>
+                            <input type="text" placeholder="District, City, County" class="input input-bordered input-primary w-fit max-w-xs" wire:model.defer="location"/>
                         </div>
                     </div>
                     @error('location') <span class="error">{{ $message }}</span> @enderror   
