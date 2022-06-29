@@ -12,13 +12,15 @@ class AdminAssignCandidates extends Component
     public $candidates;
     public $ballots;
 
-    public $office_id;
-    public $location_id;
+    public $ballot_id;
+    // public $office_id;
+    // public $location_id;
 
     public function assignCandidate($candidate_id)
     {
         // Attempt to find the ballot
-        $ballot = Ballot::where('office_id', $this->office_id)->where('location_id', $this->location_id)->first();
+        // $ballot = Ballot::where('office_id', $this->office_id)->where('location_id', $this->location_id)->first();
+        $ballot = Ballot::find($this->ballot_id);
 
         //Return if we don't find a ballot
         if(!$ballot) {

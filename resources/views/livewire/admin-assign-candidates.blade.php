@@ -50,6 +50,12 @@
                                         <form class="flex flex-row" wire:keydown.enter="assignCandidate({{$candidate->id}})">
                                             <div class="form-control w-full max-w-xs">
                                                 <label class="label">
+                                                  <span class="label-text">Ballot ID</span>
+                                                </label>
+                                                <input type="text" wire:model="ballot_id" class="input input-bordered w-3/4 max-w-xs" />
+                                            </div>
+                                            {{-- <div class="form-control w-full max-w-xs">
+                                                <label class="label">
                                                   <span class="label-text">Office ID</span>
                                                 </label>
                                                 <input type="text" wire:model="office_id" class="input input-bordered w-3/4 max-w-xs" />
@@ -59,7 +65,7 @@
                                                   <span class="label-text">Location ID</span>
                                                 </label>
                                                 <input type="text" wire:model="location_id" class="input input-bordered w-3/4 max-w-xs" />
-                                            </div>
+                                            </div> --}}
                                         </form>
                                     </div>
                                 </div>
