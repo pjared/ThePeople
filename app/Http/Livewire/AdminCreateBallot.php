@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class AdminCreateBallot extends Component
 {
-    public $state;
+    public $location_state;
     public $location_name;
     public $location_type;
 
@@ -20,19 +20,26 @@ class AdminCreateBallot extends Component
     public $ballot_state;
     public $ballot_location;
     public $ballot_office;
+    public $ballot_date;
+
+    public function render()
+    {
+        return view('livewire.admin-create-ballot');
+    }
 
     public function createLocation()
     {
         $this->validate([
-            // 'state' => 'required',
+            'location_state' => 'nullable|string',
             'location_name' => 'required',
             'location_type' => 'required',
         ]);
 
         $location = Location::firstOrCreate([
-            // 'state' => $this->state,
+            'state' => $this->location_state,
             'name' => $this->location_name,
             'type' => $this->location_type,
+            'opinion_type_id' => 1,
         ]);
 
         session()->flash('message', 'Location Created');
@@ -43,7 +50,7 @@ class AdminCreateBallot extends Component
         $this->validate([
             'office_name' => 'required',
             'years_per_term' => 'required|numeric',
-            'term_limits' => 'required|numeric',
+            'term_limits' => 'nullable|numeric',
         ]);
 
         $location = PublicOfficePosition::firstOrCreate([
@@ -62,12 +69,11 @@ class AdminCreateBallot extends Component
             'ballot_location' => 'required',
             'ballot_state' => 'required',
             'ballot_office' => 'required',
+            'ballot_date' => 'required',
         ]);
 
-        $location = Location::where('name', $this->ballot_location)
-                                ->where('state', $this->ballot_state)
-                                ->first();
-
+        //TODO: Account for state here
+        $location = Location::firstWhere('name', $this->ballot_location);
         $office = PublicOfficePosition::firstWhere('name', $this->ballot_office);
 
         if(!$office) {
@@ -82,11 +88,8 @@ class AdminCreateBallot extends Component
         $ballot = Ballot::firstOrCreate([
             'office_id' => $office->id,
             'location_id' => $location->id,
+            'voting_date' => $this->ballot_date,
         ]);
-    }
-
-    public function render()
-    {
-        return view('livewire.admin-create-ballot');
+        session()->flash('message', 'Ballot Created');
     }
 }
