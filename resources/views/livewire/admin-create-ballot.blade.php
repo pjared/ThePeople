@@ -25,7 +25,7 @@
                                 <label class="label">
                                   <span class="label-text">State</span>
                                 </label>
-                                <input type="text" wire:model="state" class="input input-bordered w-3/4 max-w-xs" />
+                                <input type="text" wire:model="location_state" class="input input-bordered w-3/4 max-w-xs" />
                             </div>
                             @error('state') <span class="error">{{ $message }}</span> @enderror
                             <div class="form-control w-full max-w-xs">
@@ -111,7 +111,14 @@
                                 </label>
                                 <input type="text" wire:model="ballot_office" class="input input-bordered w-3/4 max-w-xs" />
                             </div>
-                            @error('ballot_office') <span class="error">{{ $message }}</span> @enderror     
+                            @error('ballot_office') <span class="error">{{ $message }}</span> @enderror   
+                            <div class="form-control w-full max-w-xs">
+                                <label class="label">
+                                  <span class="label-text">Voting Date</span>
+                                </label>
+                                <input type="date" wire:model="ballot_date" class="input input-bordered w-fit" />
+                            </div>
+                            @error('ballot_date') <span class="error">{{ $message }}</span> @enderror     
                         </div>
                         <div class="flex justify-center">
                             <button class="btn btn-primary" type="submit">Create</button>
