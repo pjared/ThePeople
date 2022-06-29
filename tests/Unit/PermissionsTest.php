@@ -65,7 +65,6 @@ class PermissionsTest extends TestCase
     public function test_admin_user_permissions()
     {
         $user = User::factory()->create();
-        // $candidate_role = Role::firstWhere('name', 'adm');
         $user->assignRole('admin');
 
         foreach($this->admin_links as $link) {
@@ -100,10 +99,18 @@ class PermissionsTest extends TestCase
             'political_leaning' => 'Centrist',
         ]);
 
+        //Make sure candidates can access their links
         foreach($this->candidate_links as $link) {
             $response = $this->actingAs($user)
                 ->get($link)
                 ->assertStatus(200);
+        }
+
+        //Candidates should not be able to access admin links
+        foreach($this->admin_links as $link) {
+            $response = $this->actingAs($user)
+                ->get($link)
+                ->assertStatus(403);
         }
 
         DB::table('candidates')->where('user_id', $user->id)->delete();
