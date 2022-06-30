@@ -11,6 +11,10 @@ class Ballot extends Model
 
     public $timestamps = false;
     
+    protected $casts = [
+        'voting_date' => 'datetime',
+    ];
+    
     public $fillable = [
         "location_id",
         "office_id",
