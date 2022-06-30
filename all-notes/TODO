@@ -1,8 +1,7 @@
 # Hotfix
-- Take out We're still searching for opinons! 
 - Candidate show blade
-    - Only show candidate info if it's been set
-- Add a button to go to profile page from profile
+    - Make candidate bio look good under profile picture
+- Add a button to go to profile page from profile (and edit page?)
 
 # Branch - Testing
 - Location needs a settable opinion type
