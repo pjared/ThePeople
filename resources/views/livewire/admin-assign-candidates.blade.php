@@ -1,4 +1,4 @@
-<div class="flex flex-col grow items-center">
+<div class="flex flex-col grow items-center pb-6">
     @role('admin')
         <div class="flex w-screen justify-center">
             @if (session()->has('message'))
@@ -16,7 +16,7 @@
         <div class="w-11/12">
             <div class="flex grow flex-row gap-6">
                 <div class="w-3/5 text-center">
-                    <div class="flex grow flex-col">
+                    <div class="flex grow flex-col gap-4">
                         <h1 class="text-xl">
                             Candidates To Place
                         </h1>
@@ -52,25 +52,56 @@
                                                 <label class="label">
                                                   <span class="label-text">Ballot ID</span>
                                                 </label>
-                                                <input type="text" wire:model="ballot_id" class="input input-bordered w-3/4 max-w-xs" />
+                                                <input type="text" wire:model="new_ballot_id" class="input input-bordered w-3/4 max-w-xs" />
                                             </div>
-                                            {{-- <div class="form-control w-full max-w-xs">
-                                                <label class="label">
-                                                  <span class="label-text">Office ID</span>
-                                                </label>
-                                                <input type="text" wire:model="office_id" class="input input-bordered w-3/4 max-w-xs" />
-                                            </div>
-                                            <div class="form-control w-full max-w-xs">
-                                                <label class="label">
-                                                  <span class="label-text">Location ID</span>
-                                                </label>
-                                                <input type="text" wire:model="location_id" class="input input-bordered w-3/4 max-w-xs" />
-                                            </div> --}}
                                         </form>
                                     </div>
                                 </div>
                             @endforeach
                         </div>
+                        {{-- <h1 class="text-xl">
+                            Candidates Placed
+                        </h1>
+                        <form class="flex grow flex-col background-card gap-1" wire:submit.prevent='updateBallotAssignment'>
+                            @foreach ($placed_candidates as $i => $candidate)
+                                <div wire:key="candidate-ballot-{{ $candidate->id }}" class="grid grid-cols-3 background-card outline outline-1 outline-black gap-6 text-left">
+                                    <div class="col-span-1">
+                                        <div class="flex grow flex-col">
+                                            <div>
+                                                Name: {{$candidate->name}}
+                                            </div>
+                                            <div>
+                                                Email: {{$candidate->email}}
+                                            </div>
+                                            <div>
+                                                Number: {{$candidate->phone_number}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-span-1">
+                                        <div class="flex grow flex-col">
+                                            <div>
+                                                State: {{$candidate->state}}
+                                            </div>
+                                            <div>
+                                                Office: {{$candidate->application->office_name}} {{$candidate->application->location}}
+                                            </div>   
+                                        </div>
+                                    </div>
+                                    <div class="col-span-1">
+                                        <div class="flex flex-row">
+                                            <div class="form-control w-full max-w-xs">
+                                                <label class="label">
+                                                  <span class="label-text">Ballot ID</span>
+                                                </label>                                                
+                                                <input type="text" wire:model="placed_candidates.{{$i}}.running_candidate.ballot_id" class="input input-bordered w-3/4 max-w-xs" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            <button class="btn btn-primary" type="submit">Save</button>
+                        </form> --}}
                     </div>                    
                 </div>
                 <div class="w-2/5">
