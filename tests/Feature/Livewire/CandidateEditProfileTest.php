@@ -24,8 +24,9 @@ class CandidateProfileTest extends TestCase
         $this->markTestSkipped('REWORK NEEDED');
 
         $user = User::factory()->create();
-        // dd($user);
+        $user->assignRole('candidate');
         $this->actingAs($user); //THIS ERROR IS FAKE
+        //TODO GIVE THE USER CANDIDATE PRIVELIDGE
 
         Storage::fake('avatars');
         $file = UploadedFile::fake()->image('avatar.png');
