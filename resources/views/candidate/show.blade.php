@@ -10,7 +10,6 @@
                     <img src="{{ $candidate->user->profile_photo_url }}" alt="{{ $candidate->name }}" class="h-44 w-44">
                     {{-- class="rounded-full object-cover" --}}
                 @endif
-                {{-- <img class="h-44 w-44" style="" src="{{ Storage::url('images/' . $candidate->image_id  . '.jpg') }}"> --}}
                 <div class="flex flex-col">                            
                     <div>
                         Name: {{ $candidate->name }}
@@ -19,38 +18,71 @@
                         {{-- Party: {{ $candidate->party->name }} --}}
                     </div>
                     <div>
-                        Running For: {{ $candidate->ballot->location->name }} {{ $candidate->ballot->office->name }} 
+                        Running For: {{ $candidate->ballot->location->state }}
+                        {{ $candidate->ballot->office->name }}, 
+                        {{ $candidate->ballot->location->name }} 
                     </div>
                     <div>
-                        Email Candiate:
+                        @if($candidate->public_email)
+                            Email Candiate: {{ $candidate->public_email }}
+                        @endif
                     </div>
                 </div>
             </div>
             {{-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS --}}
             <div class="flex flex-col gap-6 w-11/12 items-center">
                 @if($candidate->bio != "")
-                    <div class="flex grow flex-col">
+                    <div class="flex grow flex-col background-card">
                         {{-- TODO: make this information look nice --}}
+                        {{$candidate->bio}}
                     </div>
                 @endif
                 {{-- DONORS --}}
-                <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
-                    <button class="flex background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
-                        <div class="text-start">
-                            Campaign Donors
+                @if(count($candidate->donors) != 0) 
+                    <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
+                        <button class="flex background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
+                            <div class="text-start">
+                                Campaign Donors
+                            </div>
+                        </button>
+                        <div class="flex background-card rounded-t-none w-11/12" x-show="open" x-transition>
+                            @if(count($candidate->donors) >= 1) 
+                                @foreach ($candidate->donors as $donor)
+                                    Name:  {{$donor->name}}
+                                    <br>
+                                @endforeach
+                            @else
+                                No donor data as of yet.
+                            @endif
                         </div>
-                    </button>
-                    <div class="flex background-card rounded-t-none w-11/12" x-show="open" x-transition>
-                        @if(count($candidate->donors) >= 1) 
-                            @foreach ($candidate->donors as $donor)
-                                Name:  {{$donor->name}}
-                                <br>
-                            @endforeach
-                        @else
-                            No donor data as of yet.
-                        @endif
                     </div>
-                </div>
+                @endif
+                
+                {{-- Promises --}}
+                @if(count($candidate->promises) != 0)
+                    <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
+                        <button class="flex background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
+                            <div class="row">
+                                <div class="col-8 text-start">
+                                    Candidate's Promises
+                                </div>
+                                <div class="col-2 offset-2 text-center">
+                                    <i class="bi bi-caret-down-fill"></i>
+                                </div>
+                            </div>
+                        </button>
+                        <div class="flex flex-col background-card rounded-t-none w-11/12 justify-center" x-show="open" x-transition>
+                            @foreach($candidate->promises as $promise)
+                                <div class="flex flex-col items-center">
+                                    <span class="w-fit"><b>{{ $promise->promise }}</b></span>
+                                    <span class="w-fit">{{ $promise->plan }}</span>
+                                </div>                                
+                            @endforeach
+                        </div>
+                    </div>
+                @endif
+                
+
                 {{-- PREVIOUS POSITIONS --}}
                 <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
                     <button class="flex background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
@@ -65,7 +97,7 @@
                         </div>
                     </button>
                     <div class="flex flex-col background-card rounded-t-none w-11/12" x-show="open" x-transition>
-                        @if($candidate->previous_positions)
+                        @if(count($candidate->previous_positions) != 0)
                             @foreach($candidate->previous_positions as $position)
                                 <b>{{ $position->position_name }}</b>
                                 <br> 
@@ -81,9 +113,14 @@
         {{-- RIGHT COLUMN --}}
         <div class="flex flex-col w-11/12 grow gap-6 items-center">
             {{-- CONTROVERSIAL OPINIONS --}}
-            <div class="flex flex-col grow background-card w-11/12 items-center">
-                <div class="flex justify-center">
-                    Controversial Opinions
+            <div class="flex flex-col background-card w-11/12 items-center" x-data="{show: false}">
+                <div class="flex flex-col justify-center">
+                    <div class="flex justify-center">
+                        <span>Controversial Opinions</span>
+                    </div>
+                    <div class="flex">
+                        <button x-on:click="show = ! show">(show candidate reasoning)</button>
+                    </div>                    
                 </div>
                 <div class="flex flex-col grow gap-2 text-center">
                     @foreach ($candidate->stances as $candidate_stance)
@@ -93,39 +130,41 @@
                                 {{$candidate_stance->opinion->first_side}}
                             </div>
                             <div class="col-span-2 flex justify-center">
-                                {{-- <input type="range" value="{{$candidate_stance->value}}" class="range range-sm w-11/12" min="0" max="100" disabled/> --}}
                                 <div class="flex items-center">
-                                    <input class="rs-range" type="range" value="{{$candidate_stance->value}}" min="0" max="100" disabled>
+                                    <input class="rs-range pointer-events-none" type="range" value="{{$candidate_stance->value}}">
                                 </div>
                             </div>
                             <div class="col-span-1 text-center">
                                 {{$candidate_stance->opinion->second_side}}
                             </div>    
                         </div>
+                        <div x-show="show" x-transition>
+                            {{$candidate_stance->info}}
+                        </div>
                     @endforeach
                 </div>
             </div>
             
             {{-- OTHER OPINIONS --}}
-            <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
-                <button class="background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
-                    <div class="flex flex-row">
-                        <div class="text-start">
-                            Other Opinions
+            @if(count($candidate->opinions) != 0) 
+                <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
+                    <button class="background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
+                        <div class="flex flex-row">
+                            <div class="text-start">
+                                Other Opinions
+                            </div>
                         </div>
+                    </button>
+                    <div class="w-11/12 background-card rounded-t-none" x-show="open" x-transition>
+                        @if(count($candidate->opinions) >= 1) 
+                            @foreach ($candidate->opinions as $opinion)
+                                {{$opinion->name}}
+                                <br>
+                            @endforeach
+                        @endif
                     </div>
-                </button>
-                <div class="w-11/12 background-card rounded-t-none" x-show="open" x-transition>
-                    @if(count($candidate->opinions) >= 1) 
-                        @foreach ($candidate->opinions as $opinion)
-                            {{$opinion->name}}
-                            <br>
-                        @endforeach
-                    @else
-                        We're still searching for opinons!
-                    @endif
-                </div>
-            </div>     
+                </div>    
+            @endif 
 
             {{-- CAMPAIGN VIDEOS --}}
             {{-- <div class="mt-4" id="campaignInfo">
@@ -156,26 +195,26 @@
             </div> --}}
 
             {{-- LAW MAKING INVOLVEMENT  --}}
-            <div class="flex flex-col w-11/12 items-center" x-data="{open: false}">
-                <button class="background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
-                    <div class="text-start">
-                        Laws Passed in office
-                    </div>
-                </button>
-                <div class="w-11/12 background-card rounded-t-none" x-show="open" x-transition>
-                    <div class="flex flex-col">
-                        @if(count($candidate->law_involvement) >= 1) 
-                            @foreach ($candidate->law_involvement as $law)
-                                <p>
-                                    Name : {{ $law->name }}
-                                </p>                                                
-                            @endforeach
-                        @else
-                            No involvment in laws has been found
-                        @endif
+            @if(count($candidate->law_involvement) != 0) 
+                <div class="flex flex-col w-11/12 items-center" x-data="{open: false}">
+                    <button class="background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
+                        <div class="text-start">
+                            Laws Passed in office
+                        </div>
+                    </button>
+                    <div class="w-11/12 background-card rounded-t-none" x-show="open" x-transition>
+                        <div class="flex flex-col">
+                            @if(count($candidate->law_involvement) >= 1) 
+                                @foreach ($candidate->law_involvement as $law)
+                                    <p>
+                                        Name : {{ $law->name }}
+                                    </p>                                                
+                                @endforeach
+                            @endif
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endif
         </div>
     </div>
 </x-app-layout>
