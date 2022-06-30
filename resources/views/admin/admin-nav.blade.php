@@ -25,7 +25,7 @@
                     {{ __('Candidate Permalinks') }}
                 </x-jet-nav-link>
                 
-                <x-jet-nav-link href="{{ route('admin') }}" :active="request()->routeIs('admin')">
+                <x-jet-nav-link href="{{ route('create-opinions') }}" :active="request()->routeIs('create-opinions')">
                     {{ __('Create Controversial Opinions') }}
                 </x-jet-nav-link>
                 {{-- 
