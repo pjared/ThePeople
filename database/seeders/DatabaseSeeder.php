@@ -23,23 +23,23 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            // UserSeeder::class, //!PROD
+            UserSeeder::class, //!PROD
             RoleSeeder::class,
 
-            // LawsSeeder::class, //!PROD
+            LawsSeeder::class, //!PROD
             LocationSeeder::class,
             PoliticalPartySeeder::class, 
-            // PublicOfficeSeeder::class, //!PROD
-            // OpinionsSeeder::class, //!PROD
+            PublicOfficeSeeder::class, //!PROD
+            OpinionsSeeder::class, //!PROD
             ControversialOpinionsSeeder::class,
 
-            // CandidateSeeder::class, //!PROD
-            // CandidateInfoSeeder::class, //!PROD
-            // CandidateOfficePositionsSeeder::class, //!PROD
-            // CandidateStanceSeeder::class, //!PROD
-            // CandidateApplicationSeeder::class, //!PROD
-            // RunningCandidatesSeeder::class,  //!PROD
-            // BallotSeeder::class, //!PROD
+            CandidateSeeder::class, //!PROD
+            CandidateInfoSeeder::class, //!PROD
+            CandidateOfficePositionsSeeder::class, //!PROD
+            CandidateStanceSeeder::class, //!PROD
+            CandidateApplicationSeeder::class, //!PROD
+            RunningCandidatesSeeder::class,  //!PROD
+            BallotSeeder::class, //!PROD
         ]);
     }
 }

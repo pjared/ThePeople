@@ -1,21 +1,31 @@
-# Hotfix
-- Candidate show blade
-    - Make candidate bio look good under profile picture
-- Add a button to go to profile page from profile (and edit page?)
+# Branch - Admin Update (Finish Later)
+- Set Opinion votes amount
+- Decide how to handle rejected candidates
 
-# Branch - Testing
+- Finish list approved candidates so I can move them if needed.
+- Each admin page needs to be componetized so creation of each model is it's own wire
+
+- In create ballot:
+    - Show existing locations, office, and ballots as it's being typed
+    - Include editing a location to have an opinion type
+
 - Location needs a settable opinion type
-
-- Move candidate show to mount instead of render
 
 - The following pages need to have null checks
     - Candidate edit page needs to have a check for when a person accesses the link without a candidate
     - Admin/candidate-assignment
 
+# General
+- Fix the candidate political party and leaning
 
-- Permissions
-    - Make sure users can only access by role
-- End to end tests for the following
+- Move candidate show to mount instead of render (CandidateEditProfile)
+
+- Candidate show blade
+    - Make candidate bio look better
+- Add a button to go to profile page from profile and edit page
+
+# Branch - Testing
+- End to end tests (dusk) for the following
     - User signs up, then applies to become a candidate
     - User becomes a candidate, assigned to a ballot
         - Appears on new ballot
