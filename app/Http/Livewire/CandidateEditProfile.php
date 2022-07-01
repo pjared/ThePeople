@@ -73,9 +73,19 @@ class CandidateEditProfile extends Component
             }
         }
 
+        if($this->candidate->running_candidate) {
+            $this->show = $this->candidate->running_candidate->show;
+        }
+        
         $this->political_parties = PoliticalParty::all();
         $this->political_leanings = ['Centrist', 'Authoritarian', 'Libertarian', 'Left', 'Right', 'Moderate'];
         $this->sub_political_leanings = ['None', 'Centrist', 'Authoritarian', 'Libertarian', 'Left', 'Right'];
+    }
+
+    public function render()
+    {
+        $this->candidate = Candidate::firstWhere('user_id', Auth::user()->id);
+        return view('livewire.candidate-edit-profile');
     }
 
     public function save_info() 
@@ -83,7 +93,7 @@ class CandidateEditProfile extends Component
         $this->validate([
             'candidate.contact_email' => 'required|email',
             'candidate.political_leaning' => 'required',
-            'candidate.sub_political_leaning' => 'required',
+            'candidate.sub_political_leaning' => 'nullable',
             'candidate.party_id' => 'required',
         ]);
 
@@ -108,15 +118,6 @@ class CandidateEditProfile extends Component
 
         $this->candidate->save();
         session()->flash('update-bio-success');
-    }
-
-    public function render()
-    {
-        $this->candidate = Candidate::firstWhere('user_id', Auth::user()->id);
-        if($this->candidate->running_candidate) {
-            $this->show = $this->candidate->running_candidate->show;
-        }
-        return view('livewire.candidate-edit-profile');
     }
 
     /* EVENTS */
