@@ -96,11 +96,7 @@ class CandidateEditProfile extends Component
             'candidate.sub_political_leaning' => 'nullable',
             'candidate.party_id' => 'required',
         ]);
-
-        // dd($this->show);
-
         $this->candidate->save();
-
         
         if($this->candidate->running_candidate) {
             $this->candidate->running_candidate->show = $this->show;
@@ -121,18 +117,20 @@ class CandidateEditProfile extends Component
     }
 
     /* EVENTS */
+    /* EVENTS */
     public function promise_flash() {
-        $this->emit('refreshPromiseComponent');
         session()->flash('update-promise-success', "Promise was added");
+        $this->emit('refreshPromiseComponent');   
     }
 
     public function promise_update_flash() {
         session()->flash('update-promise-success', "Promises updated");
+        $this->emit('refreshPromiseComponent');   
     }
 
     public function promise_delete_flash() {
-        $this->emit('refreshPromiseComponent');
         session()->flash('update-promise-failure', "Promise was deleted");
+        $this->emit('refreshPromiseComponent');   
     }
 
     public function position_flash() 

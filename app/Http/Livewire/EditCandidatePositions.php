@@ -39,7 +39,6 @@ class EditCandidatePositions extends Component
         $this->emitUp('position-delete-flash');
     }
 
-
     public function render()
     {
         return view('livewire.edit-candidate-positions');
