@@ -119,7 +119,7 @@
                         <span>Controversial Opinions</span>
                     </div>
                     <div class="flex">
-                        <button x-on:click="show = ! show">(show candidate reasoning)</button>
+                        <button class='btn btn-info btn-xs' x-on:click="show = ! show">show candidate reasoning</button>
                     </div>                    
                 </div>
                 <div class="flex flex-col grow gap-2 text-center">
