@@ -29,8 +29,8 @@ class EditCandidatePromises extends Component
     public function update_promises()
     {
         $this->validate();
-        $this->emitUp('promise-update-flash');
         $this->promises->each->save();
+        $this->emitUp('promise-update-flash');
     }
 
     public function delete_promise($promise_id)

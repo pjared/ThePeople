@@ -73,9 +73,19 @@ class CandidateEditProfile extends Component
             }
         }
 
+        if($this->candidate->running_candidate) {
+            $this->show = $this->candidate->running_candidate->show;
+        }
+        
         $this->political_parties = PoliticalParty::all();
         $this->political_leanings = ['Centrist', 'Authoritarian', 'Libertarian', 'Left', 'Right', 'Moderate'];
         $this->sub_political_leanings = ['None', 'Centrist', 'Authoritarian', 'Libertarian', 'Left', 'Right'];
+    }
+
+    public function render()
+    {
+        $this->candidate = Candidate::firstWhere('user_id', Auth::user()->id);
+        return view('livewire.candidate-edit-profile');
     }
 
     public function save_info() 
@@ -83,14 +93,10 @@ class CandidateEditProfile extends Component
         $this->validate([
             'candidate.contact_email' => 'required|email',
             'candidate.political_leaning' => 'required',
-            'candidate.sub_political_leaning' => 'required',
+            'candidate.sub_political_leaning' => 'nullable',
             'candidate.party_id' => 'required',
         ]);
-
-        // dd($this->show);
-
         $this->candidate->save();
-
         
         if($this->candidate->running_candidate) {
             $this->candidate->running_candidate->show = $this->show;
@@ -110,28 +116,21 @@ class CandidateEditProfile extends Component
         session()->flash('update-bio-success');
     }
 
-    public function render()
-    {
-        $this->candidate = Candidate::firstWhere('user_id', Auth::user()->id);
-        if($this->candidate->running_candidate) {
-            $this->show = $this->candidate->running_candidate->show;
-        }
-        return view('livewire.candidate-edit-profile');
-    }
-
+    /* EVENTS */
     /* EVENTS */
     public function promise_flash() {
-        $this->emit('refreshPromiseComponent');
         session()->flash('update-promise-success', "Promise was added");
+        $this->emit('refreshPromiseComponent');   
     }
 
     public function promise_update_flash() {
         session()->flash('update-promise-success', "Promises updated");
+        $this->emit('refreshPromiseComponent');   
     }
 
     public function promise_delete_flash() {
-        $this->emit('refreshPromiseComponent');
         session()->flash('update-promise-failure', "Promise was deleted");
+        $this->emit('refreshPromiseComponent');   
     }
 
     public function position_flash() 

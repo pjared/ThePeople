@@ -24,7 +24,7 @@
                     @role('candidate')
                     @else
                     <button class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-full">
-                        <a href="{{Route('candidate-apply')}}">Are you a candidate? Click here to apply to get a profile.</a>
+                        <a href="{{Route('candidate-apply')}}">Are you a candidate? Click here to apply for a profile.</a>
                     </button>
                     @endrole
                 </div>

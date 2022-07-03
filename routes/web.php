@@ -25,9 +25,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/home', [HomeController::class, 'getWelcomeView'])->name('home');
 });
 
 /* -----BALLOT------ */
@@ -65,6 +63,9 @@ Route::group(['prefix' =>'admin', 'namespace' => 'admin','middleware' => ['role:
     Route::get('/candidate-links', function () {
         return view('admin.permalinks');
     })->name('candidate-links');
+    Route::get('/create-opinions', function () {
+        return view('admin.create-opinions');
+    })->name('create-opinions');
 });
 
 /* -----PERMALINK------ */

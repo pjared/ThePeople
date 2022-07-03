@@ -1,21 +1,48 @@
-# Hotfix
-- Candidate show blade
-    - Make candidate bio look good under profile picture
-- Add a button to go to profile page from profile (and edit page?)
+# General
+- Need to
+    - set primary button colors to a better scheme
+    - Set a daisyUI theme 
 
-# Branch - Testing
+# Branch - Admin Update (Finish Later)
+- Set Opinion votes amount
+- Decide how to handle rejected candidates
+
+- Finish list approved candidates so I can move them if needed.
+- Each admin page needs to be componetized so creation of each model is it's own wire
+
+- In create ballot:
+    - Show existing locations, office, and ballots as it's being typed
+    - Include editing a location to have an opinion type
+
 - Location needs a settable opinion type
-
-- Move candidate show to mount instead of render
 
 - The following pages need to have null checks
     - Candidate edit page needs to have a check for when a person accesses the link without a candidate
     - Admin/candidate-assignment
 
 
-- Permissions
-    - Make sure users can only access by role
-- End to end tests for the following
+
+# Branch - User Rework 
+- Save the checkmark for the planned vote
+    - Send an async request when users choose their candidate
+- Implement "flagging" ability and comparison page
+- Print out/save list of planned votes
+- Add a search bar for users
+
+- Mobile and large screen support
+
+- Add Breadcrumbs (daisy UI component)
+
+
+- Add sign up prompts for the following (https://laravel.com/docs/9.x/authentication#redirecting-unauthenticated-users)
+    - Checking on ballot
+    - Flagging
+
+# Post Live Part 1
+- Make better videos to show the candidates how to create a profile.
+
+# Branch - Testing
+- End to end tests (dusk) for the following
     - User signs up, then applies to become a candidate
     - User becomes a candidate, assigned to a ballot
         - Appears on new ballot
@@ -28,27 +55,22 @@
         - Create a ballot
         - Permalinks
 
-# Dev - Dashboard
-- Need to remove the "Dashboard" Page for users, instead make it home
-
 # Branch - Model Rework
 - Make sure that all model properties are in correct places (guarded vs fillable)
-
-# Post Live Part 1
-- Make videos to show the candidates how to create a profile.
-
-# Branch - Mobile Update
-- Implement ability to handle mobile devices
-
-# Branch - User Rework 
-- Save the checkmark for the planned vote
-- Implement "flagging" ability and comparison page
-- Print out/save list of planned votes
-- Add a search bar for users
+- Make sure that each model is being created correctly to reflect this
 
 # General Lists
+
+- CandidateEditProfile
+    - Promises should show up immediately (this is a tough one)
+
+- Candidate show blade
+    - Make candidate bio look better
+
 - Send email notifications to my gmail when a new candidate applies, etc.
 
+- Add a button to go to profile page from profile and edit page
+    
 - When a candidate uploads a photo, make sure to set the link on their candidate model
 
 - Make "Edit your profile" It's own entire section on user profile when a user is a candiate
@@ -58,20 +80,19 @@
     - Figure out the profile picture look
 
 - Make sure to actually block users from profile photos.
+
 ## Admin Page - Future additions
 - Admin Page for:
     - Generate a QR code (Do this with official logo later, for now just use some random thing)
-- ALLOW USER TO SHARE CANDIDATE PERMALINK WITH A SHARE BUTTON
+- ALLOW USER TO SHARE CANDIDATE PERMALINK WITH A SHARE BUTTON (should include flags?)
 
 - On admin create ballot, add in list generation as the person attempts to 
     - create a new location, ballot, or office
 - Finish Candidate Ballot assignment
     - Ballot search bar
-- Admin page is going to need the ability to create controversial opinions, among other things. This way we can create a "type" for the opinion and sets opinions based off geography.
 - Approving a candidate should bring you to a new page only for assigning them a ballot.
 
-
-# Teams
+# Candidate Teams
 - Do this after site launch, make teams work, look at sites below for help
     - https://npratley.net/disabling-personal-teams-in-laravel-8-and-jetstream-1fd083593e08/
     - https://laracasts.com/discuss/channels/code-review/proper-way-to-disable-personal-teams-in-jetstream?page=1#reply=668759
@@ -80,36 +101,24 @@
 - Finish logic for whether or not someone can create a team in [Team Policy :: create](app/Policies/TeamPolicy.php)
     - Candidates can create ONE team
 
-# Tests
-- Make tests for the entire site with laravel dusk
-
-## After fininshing team & role implementation
-- Make sure that basic users cannot access the following pages
-    - Create a candidate
-
 # MAIN TODO
-- Define a group of political leanings, but allow for candidates to add them in
-    - Can get this list from the cooks report
-
 - Make about us page
 
-- Make query builders for government websites for:
+- Programs for scraping/handling downloads off of gov't site
     - Laws voted on in office
     - Campaign Donations
 
 - Flash error messages on failure to update info in candidate profile edit
+
+- Allow for friends to share their flags
 
 # User Pivots
 - Implement badges that appear during candidate hover & a key
     - Badges should also be on profile
     - Badges should only appear after verifcation, so politicians feel encouraged to join
     - Each badge needs to be it's own color
+    - Badges should be only generated when a candidate changes a stance
 - Hovering over a law gives a summary, might need to find another site that does this
-
-# Prompts to encourage registration
-- Add sign up prompts for the following (https://laravel.com/docs/9.x/authentication#redirecting-unauthenticated-users)
-    - Checking on ballot
-    - Flagging
 
 # Views
 
@@ -118,33 +127,26 @@
 ## Candidate Page
 - Polish up the candidate campaign videos
 - Implement a carosel for the videos
-- Add icons to explain the opinions
+- Add icons to explain the opinions - these icons will match the badges on candidates
 
 ## Ballot Page
-- When hovering a person
-    - Create stickers under a candidate in the ballot so people can see basic info. 
-    - Able to click to go to the candidate's page
 - Make this look like textured paper
-- Send an async request when users choose their candidate
 
 ## My Profile Page
 
 ### Personal Information
 - Allow the user to put in their zip, city, or state
-    - if state is ever changed need to delete their votes and flags 
+    - if state is ever changed queue to delete their votes and flags 
     - Autofill this for them on the page? Or just make the buttons clickable
 
 ### Jump back into
 - Have a right side tab that will allow the user to go back to their study instead of manually doing the input
-    - Use a login cookie so the data can be grabbed
-    
+    - Use a cookie (don't store in db)
 
 # Politican Page
 - Dip toes in water with service injection to display politician metrics
     - https://laravel.com/docs/9.x/container
     - Look into pyscript to see if I should use matplotlib to display graphs for politician side
-## Submitting images
-- Need to make sure that images have 1:1 aspect ratios
 
 # General Security
 - Need an analysis on all HTTP requests to make sure I use post when necessary
@@ -152,16 +154,15 @@
 # Before going live
 - Add validation errors for everything
     - https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors
+
 - Need to get down with service injection. 
     - https://laravel.com/docs/9.x/container
-- Write Robots.txt file in public
-- Add Breadcrumbs : https://getbootstrap.com/docs/3.4/components/#breadcrumbs
+
+- Write Robots.txt file in public (don't allow anything, include an apology saying that this will be set up later)
 
 # Future things
-- Public office can also have an opinion type, so there are two sets of opinions. One by location (if set), and one by office
-- Turn Campaign donors into pie graph
-- Implement ability to flag. Have a flag comparison page
-    - Find out how to save these flags by politician
+- Turn Campaign donors into pie graph (just like opensecrets)
+
 - Share buttons for social media
     - Interactive filters for social media, such as the head tilts
     - Can also use this to skim more data and give better recommendations, "We think you will like this candidate more"

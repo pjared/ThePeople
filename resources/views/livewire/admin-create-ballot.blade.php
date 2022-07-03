@@ -14,13 +14,13 @@
         </div>
         <div class="grid grid-cols-3">
             {{-- LOCATION CREATION --}}
-            <div class="col-span-1">
+            <div class="col-span-1 flex grow flex-col gap-2">
                 <form class="flex grow flex-col gap-6 items-center" wire:submit.prevent="createLocation">
                     <div class="flex flex-col background-card w-11/12 items-center gap-2">
                         <div class="text-center">
                             Create a Location
                         </div>
-                        <div class="flex-row  w-11/12">                
+                        <div class="flex-row  w-11/12">
                             <div class="form-control w-full max-w-xs">
                                 <label class="label">
                                   <span class="label-text">State</span>
@@ -48,9 +48,24 @@
                         </div>
                     </div>
                 </form>
+                <div class="flex grow flex-col items-center">
+                    @foreach ($locations as $location)
+                        <div class="flex flex-col background-card w-11/12 items-center gap-2">
+                            <div class="text-center">
+                                <span>{{ $location->name }}</span>
+                            </div>
+                            <div class="text-center">
+                                <span>{{ $location->type }}</span>
+                            </div>
+                            <div class="text-center">
+                                <span>{{ $location->state }}</span>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
-            <div class="col-span-1">
-                <form class="flex grow flex-col gap-6 background-card items-center" wire:submit.prevent="createOffice">
+            <div class="col-span-1 flex grow flex-col gap-2">
+                <form class="flex flex-col gap-6 background-card items-center" wire:submit.prevent="createOffice">
                     <div class="text-center">
                         Create an office
                     </div>
@@ -83,9 +98,26 @@
                         <button class="btn btn-primary" type="submit">Create</button>
                     </div>
                 </form>
+                <div class="flex grow flex-col items-center">
+                    @foreach ($offices as $office)
+                        <div class="flex flex-col background-card w-11/12 items-center gap-2">
+                            <div class="text-center">
+                                <span>{{ $office->name }}</span>
+                            </div>
+                            <div class="flex flex-row gap-12">
+                                <div class="text-center">
+                                    <span>{{ $office->years_per_term }}</span>
+                                </div>
+                                <div class="text-center">
+                                    <span>{{ $office->limit_terms }}</span>
+                                </div>
+                            </div>                            
+                        </div>
+                    @endforeach
+                </div>
             </div>
-            <div class="col-span-1">
-                <form class="flex grow flex-col gap-6 items-center" wire:submit.prevent="createBallot">
+            <div class="col-span-1 flex grow flex-col gap-2">
+                <form class="flex flex-col gap-6 items-center" wire:submit.prevent="createBallot">
                     <div class="flex flex-col background-card w-11/12 gap-2">
                         <div class="text-center">
                             Create a Ballot
@@ -125,6 +157,18 @@
                         </div>
                     </div>        
                 </form>
+                <div class="flex grow flex-col items-center">
+                    @foreach ($ballots as $ballot)
+                        <div class="flex flex-col background-card w-11/12 items-center gap-2">
+                            <div class="text-center">
+                                <span>{{ $ballot->location->name }} - {{ $ballot->office->name }}</span>
+                            </div>
+                            <div class="text-center">
+                                <span>{{ $ballot->voting_date->format('m/d/Y') }}</span>
+                            </div>                         
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div> 
     @endrole

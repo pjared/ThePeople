@@ -22,8 +22,16 @@ class AdminCreateBallot extends Component
     public $ballot_office;
     public $ballot_date;
 
+    public $locations;
+    public $offices;
+    public $ballots;
+
     public function render()
     {
+        $this->locations = Location::all();
+        $this->offices = PublicOfficePosition::all();
+        $this->ballots = Ballot::all();
+        // dd($this->ballots);;
         return view('livewire.admin-create-ballot');
     }
 
