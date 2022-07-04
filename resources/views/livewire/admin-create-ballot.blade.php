@@ -15,17 +15,18 @@
         <div class="grid grid-cols-3">
             {{-- LOCATION CREATION --}}
             <div class="col-span-1 flex grow flex-col gap-2">
-                <form class="flex grow flex-col gap-6 items-center" wire:submit.prevent="createLocation">
+                <form class="flex flex-col gap-6 items-center" wire:submit.prevent="createLocation">
                     <div class="flex flex-col background-card w-11/12 items-center gap-2">
                         <div class="text-center">
                             Create a Location
                         </div>
-                        <div class="flex-row  w-11/12">
-                            <div class="form-control w-full max-w-xs">
+                        <div class="flex-row w-11/12">
+                            <div class="form-control w-1/2 max-w-xs">
                                 <label class="label">
                                   <span class="label-text">State</span>
+                                  <span class="label-text-alt">(optional)</span>
                                 </label>
-                                <input type="text" wire:model="location_state" class="input input-bordered w-3/4 max-w-xs" />
+                                <input type="text" wire:model="location_state" class="input input-bordered max-w-xs" />
                             </div>
                             @error('state') <span class="error">{{ $message }}</span> @enderror
                             <div class="form-control w-full max-w-xs">
@@ -48,17 +49,20 @@
                         </div>
                     </div>
                 </form>
+                {{-- LIST OF LOCATIONS --}}
                 <div class="flex grow flex-col items-center">
                     @foreach ($locations as $location)
                         <div class="flex flex-col background-card w-11/12 items-center gap-2">
                             <div class="text-center">
-                                <span>{{ $location->name }}</span>
+                                <span>
+                                    {{ $location->name }}
+                                    @if($location->state)
+                                    , {{ $location->state }}
+                                    @endif
+                                </span>
                             </div>
                             <div class="text-center">
                                 <span>{{ $location->type }}</span>
-                            </div>
-                            <div class="text-center">
-                                <span>{{ $location->state }}</span>
                             </div>
                         </div>
                     @endforeach
