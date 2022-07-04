@@ -13,7 +13,7 @@
                             {{$stance->opinion->first_side}}
                         </div>
                         <div class="w-1/2 flex justify-center">
-                            <input type="range" wire:key="range-input-{{ $i }}" wire:model.defer="stances.{{ $i }}.value" step="10" class="range range-sm range-primary"/>
+                            <input type="range" wire:key="range-input-{{ $i }}" wire:model.defer="stances.{{ $i }}.value" step="10" class="range range-sm range-secondary"/>
                         </div>
                         <div class="w-1/4 text-center">
                             {{$stance->opinion->second_side}}
