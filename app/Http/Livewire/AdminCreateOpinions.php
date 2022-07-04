@@ -33,8 +33,6 @@ class AdminCreateOpinions extends Component
 
     public function render()
     {
-        $this->opinions = ControversialOpinion::all();
-        $this->opinion_types = OpinionTypes::all();
         return view('livewire.admin-create-opinions');
     }
 

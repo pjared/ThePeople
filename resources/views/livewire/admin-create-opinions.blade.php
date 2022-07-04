@@ -53,17 +53,6 @@
                 <button wire:click='add_opinion' class="btn btn-primary mt-2">Add Opinion</button>
             </div>
         </div>
-        <h1>Opinions</h1>
-        @foreach ($opinions as $opinion)
-            <div class="flex flex-row gap-6">
-                <span>
-                    {{$opinion->name}}
-                </span>
-                <span>
-                    {{$opinion->type_id}}
-                </span>
-            </div>
-        @endforeach
     </div>
     <div class="flex flex-col w-1/2 items-center gap-6">
         {{-- OPINION TYPES --}}
@@ -87,15 +76,5 @@
                 <button wire:click='add_type' class="btn btn-primary mt-2">Add Opinion Type</button>
             </div>
         </div>
-        @foreach ($opinion_types as $type)
-            <div class="flex flex-row gap-6">
-                <span>
-                    {{$type->name}} - {{$type->id}}
-                </span>
-                <span>
-                    {{$type->description}}
-                </span>
-            </div>
-        @endforeach
     </div>
 </div>
