@@ -54,8 +54,7 @@
                                 </div>        
                                 <div class="flex flex-col">
                                     <div>
-                                        {{-- TODO: Get their location for this --}}
-                                        Office: {{$candidate->office_name}} {{$candidate->location}}
+                                        Office: {{$candidate->ballot->office->name}}, {{$candidate->ballot->location->name}}
                                     </div>              
                                 </div>
                             </div>
