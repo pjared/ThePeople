@@ -51,21 +51,30 @@ Route::group(['prefix' =>'admin', 'namespace' => 'admin','middleware' => ['role:
     Route::get('/', function () {
         return view('admin.show');
     })->name('admin');
-    Route::get('/candidate-approve', function () {
-        return view('admin.approve-candidates');
-    })->name('approve_candidates');
-    Route::get('/candidate-assignment', function () {
-        return view('admin.assign-candidates');
-    })->name('assign_candidates');
+    Route::group(['prefix' =>'candidate', 'namespace' => 'candidate'], function() {
+        Route::get('/approve', function () {
+            return view('admin.approve-candidates');
+        })->name('approve_candidates');
+        Route::get('/assign', function () {
+            return view('admin.assign-candidates');
+        })->name('assign_candidates');
+        Route::get('/links', function () {
+            return view('admin.permalinks');
+        })->name('candidate-links');
+    });
+    
     Route::get('/create-ballot', function () {
         return view('admin.create-ballot');
     })->name('create-ballot');
-    Route::get('/candidate-links', function () {
-        return view('admin.permalinks');
-    })->name('candidate-links');
-    Route::get('/create-opinions', function () {
-        return view('admin.create-opinions');
-    })->name('create-opinions');
+
+    Route::group(['prefix' =>'opinions', 'namespace' => 'opinions'], function() {
+        Route::get('/create', function () {
+            return view('admin.create-opinions');
+        })->name('create-opinions');
+        Route::get('/edit', function () {
+            return view('admin.edit-opinions');
+        })->name('edit-opinions');
+    });
 });
 
 /* -----PERMALINK------ */
