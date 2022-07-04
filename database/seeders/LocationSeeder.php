@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class LocationSeeder extends Seeder
 {
-    private $state_names = [
+    /* private $state_names = [
         "Alabama",
         "Alaska",
         "Arizona",
@@ -59,17 +59,17 @@ class LocationSeeder extends Seeder
         "West Virginia",
         "Wisconsin",
         "Wyoming"
-    ];
+    ]; */
 
-    private $county_names = [
+    /* private $county_names = [
         "Los Angeles",
         "Utah",
-    ];
+    ]; */
 
-    private $city_names = [
+    /* private $city_names = [
         // "Provo",
         "Whittier",
-    ];
+    ]; */
 
     /**
      * Run the database seeds.
@@ -84,6 +84,7 @@ class LocationSeeder extends Seeder
         DB::table('locations')->insert([
             'name' => 'Provo',
             'type' => 'city',
+            'state' => 'Utah',
             'population' => rand(1, 10000),
             'opinion_type_id' => 1,
         ]);
@@ -94,6 +95,7 @@ class LocationSeeder extends Seeder
             'population' => rand(1, 10000),
             'opinion_type_id' => 1,
         ]);
+        /* 
         foreach ($this->state_names as $name) {
             DB::table('locations')->insert([
                 'name' => $name,
@@ -119,6 +121,7 @@ class LocationSeeder extends Seeder
                 'population' => rand(1, 10000),
                 'opinion_type_id' => 1,
             ]);
-        }
+        } 
+        */
     }
 }

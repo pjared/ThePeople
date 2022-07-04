@@ -57,5 +57,10 @@ class ControversialOpinionsSeeder extends Seeder
                 'type_id' => 1,
             ]);
         }
+
+        DB::table('opinion_types')->insert([
+            'name' => "General",
+            'description' => "A general list of controversial opinions",
+        ]);
     }
 }
