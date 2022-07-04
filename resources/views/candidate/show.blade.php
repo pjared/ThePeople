@@ -4,12 +4,8 @@
         <div class="flex grow flex-col gap-6 items-center">
             {{-- CANDIDATE PERSONAL INFO --}}
             <div class="flex flex-row gap-6 w-11/12 justify-center">
-                @if ($candidate->image_id)
-                    <img class="h-44 w-44" style="" src="{{ Storage::url('images/' . $candidate->image_id  . '.jpg') }}">    
-                @else
-                    <img src="{{ $candidate->user->profile_photo_url }}" alt="{{ $candidate->name }}" class="h-44 w-44">
-                    {{-- class="rounded-full object-cover" --}}
-                @endif
+                <img src="{{ $candidate->user->profile_photo_url }}" alt="{{ $candidate->name }}" class="h-44 w-44">
+                {{-- class="rounded-full object-cover" --}}
                 <div class="flex flex-col">                            
                     <div>
                         Name: {{ $candidate->name }}

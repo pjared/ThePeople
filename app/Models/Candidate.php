@@ -29,7 +29,6 @@ class Candidate extends Model
         'sub_political_leaning',
         "signup_date",
         "user_id",
-        "image_id",
         "party_id",
     ];
 

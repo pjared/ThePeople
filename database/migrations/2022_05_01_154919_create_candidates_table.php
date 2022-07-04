@@ -30,7 +30,6 @@ return new class extends Migration
             $table->string('phone_number')->nullable();
             $table->foreignIdFor(PoliticalParty::class, 'party_id')->nullable();
             $table->foreignIdFor(User::class, 'user_id')->nullable();
-            $table->smallInteger('image_id')->unsigned()->nullable();
         });
     }
 
