@@ -25,6 +25,7 @@ class CandidateStanceSeeder extends Seeder
                 DB::table('candidate_stances')->insert([
                     'candidate_id' => $i,
                     'value' => rand(0, 100),
+                    'info' => "I think this because...",
                     'controversial_opinion_id' => $j,
                     'link' => "www.google.com",
                 ]);

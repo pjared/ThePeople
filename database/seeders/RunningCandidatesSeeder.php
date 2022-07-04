@@ -31,16 +31,6 @@ class RunningCandidatesSeeder extends Seeder
         $random_candidates_num[2] = rand(10,33) % 2 + 2;
         $random_candidates_num[3] = rand(3,5) - 1;
         $random_candidates_num[4] = rand(0,2) + 2;
-        // echo $random_candidates_num[1];
-        // echo $random_candidates_num[2];
-        // echo $random_candidates_num[3];
-        // echo $random_candidates_num[4];
-
-        // if($i == 1) {
-        //     $location_type = "city";
-        // } else {
-        //     $location_type = "state";
-        // }
 
         for($i = 1; $i <= 4; $i++) {
             //Get a random # of candidates to participate in a race
