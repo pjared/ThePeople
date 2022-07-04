@@ -41,7 +41,7 @@ class OpinionsSeeder extends Seeder
     public function run()
     {
         //  candidate_id | donor_id
-        $num_candidates = 7;
+        $num_candidates = 4;
         /* 
             "name" | "candidate_id" | "politician_id" | "link_found" | "is_controversial"
             "candidate_id" | "name" | "stance" | "link"
