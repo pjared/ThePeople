@@ -19,4 +19,8 @@ class ControversialOpinion extends Model
         'votes',
         'type_id',  
     ];
+
+    public function type() {
+        return $this->belongsTo(OpinionTypes::class, 'type_id');
+    }
 }
