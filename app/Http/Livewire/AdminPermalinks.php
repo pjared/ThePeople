@@ -33,14 +33,18 @@ class AdminPermalinks extends Component
         $permaLink->save();
     }
 
-    public function render()
+    public function mount()
     {
         $this->candidates_linked = Candidate::has('permalink')->get();
         foreach($this->candidates_linked as $candidate) {
             $this->perma_link[$candidate->id] = $candidate->permalink->perma_link;
             $this->candidate_link[$candidate->id] = $candidate->permalink->candidate_link;
         }
-        $this->candidates = Candidate::doesntHave('permalink')->get();
+        $this->candidates = Candidate::doesntHave('permalink')->has('ballot')->get();
+    }
+    
+    public function render()
+    {
         return view('livewire.admin-permalinks');
     }
 }
