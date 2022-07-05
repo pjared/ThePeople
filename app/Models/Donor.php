@@ -8,12 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Donor extends Model
 {
     public $timestamps = false;
-    
-    protected $guarded = [
-        "name",
-    ];
 
     protected $fillable = [
+        "name",
         "website",
         "amount",
     ];

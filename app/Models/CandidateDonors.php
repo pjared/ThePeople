@@ -11,9 +11,6 @@ class CandidateDonors extends Pivot
 
     public $timestamps = false;
 
-    protected $primaryKey = 'candidate_id';
-    public $incrementing = false;
-
     protected $guarded = [
         "candidate_id",
         "donor_id",

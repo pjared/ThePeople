@@ -9,17 +9,14 @@ class UserVotes extends Pivot
 {
     use HasFactory;
 
+    protected $table = 'user_votes';
+
     public $timestamps = false;
 
-    protected $primaryKey = 'user_id';
-    public $incrementing = false;
-
-    protected $guarded = [
+    protected $fillable = [
         "user_id",
         "ballot_id",
-    ];
-
-    protected $fillable = [
         "running_candidate_id",
+        "is_valid",
     ];
 }

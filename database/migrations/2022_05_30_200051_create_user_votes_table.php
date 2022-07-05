@@ -17,9 +17,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('user_votes', function (Blueprint $table) {
+            $table->id();
             $table->foreignIdFor(User::class, 'user_id');
             $table->foreignIdFor(Ballot::class, 'ballot_id');
             $table->foreignIdFor(RunningCandidates::class, 'running_candidate_id');
+            $table->boolean('is_valid')->default(0);
         });
     }
 

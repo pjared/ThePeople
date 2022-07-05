@@ -8,9 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class CampaignVideo extends Model
 {
     public $timestamps = false;
-
-    protected $primaryKey = 'candidate_id';
-    public $incrementing = false;
     
     protected $fillable = [
         "candidate_id",
