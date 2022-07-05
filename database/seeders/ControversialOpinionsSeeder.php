@@ -13,20 +13,21 @@ class ControversialOpinionsSeeder extends Seeder
         "Viable Option",
         "Pro Choice",
         "Pro Life",
-        "Strict Gun regulation",
-        "Laxed Gun regulation",
-        "Laxed Standards",
-        "Strict Standards",
-        "Strict Standards",
-        "Laxed Standards",  
+        "Strict Regulations",
+        "Relaxed Regulations",
+        "Relaxed Policy",
+        "Strict Policy",
+        "Restrictions of Speech",
+        "Freedom of Speech",
     ];
+    //Entitled to choose
 
     private $opinion_names = [
         "War",
         "Abortion",
         "Gun Control",
         "Immigration",
-        "Freedom Of speech"
+        "1st Amendment Rights",
     ];
 
     private $opinion_desc = [
@@ -34,7 +35,7 @@ class ControversialOpinionsSeeder extends Seeder
         "Abortion is whether or not a women can or cannot abort her pregnancy",
         "Gun Control is the debate over how much control should be exerted over the 2nd amendment",
         "Immigration is the debate over how to let citizens of other nations enter into the United States",
-        "Freedom of Speech is the debate of what speech the first amendment applies to",
+        "1st Amendment Rights is the debate of what speech the first amendment covers",
     ];
 
     /**
