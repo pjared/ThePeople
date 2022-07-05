@@ -85,4 +85,8 @@ class Candidate extends Model
     public function user() {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function badges() {
+        return $this->hasManyThrough(Badge::class, CandidateBadge::class, 'candidate_id');
+    }
 }

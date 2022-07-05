@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
             // BallotSeeder::class, //!PROD
 
             BadgeSeeder::class,
-            
+            // CandidateBadgeSeeder::class, //!PROD
         ]);
     }
 }
