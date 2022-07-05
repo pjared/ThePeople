@@ -40,6 +40,9 @@ class DatabaseSeeder extends Seeder
             // CandidateApplicationSeeder::class, //!PROD
             // RunningCandidatesSeeder::class,  //!PROD
             // BallotSeeder::class, //!PROD
+
+            BadgeSeeder::class,
+            
         ]);
     }
 }
