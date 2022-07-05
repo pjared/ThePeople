@@ -1,4 +1,11 @@
 <x-app-layout>
+    <div class="text-sm breadcrumbs p-4">
+        <ul>
+          <li><a href='/'>Home</a></li> 
+          <li><b>Ballot ({{ $ballot->location->name }} {{ $ballot->office->name }})</b></li>
+        </ul>
+    </div>
+
     <div class="flex flex-1 items-center grow py-12">
         <div class="w-1/5 ml-6">
             <livewire:ballot-list />
@@ -44,13 +51,23 @@
                             {{-- CHECKBOX FOR CANDIDATE --}}
                             <div class="flex grow items-center pl-4">
                                 {{-- This Checkbox is wack. Good luck to the future person who has to deal with this --}}
-                                <input type="checkbox" class="check flex" name="check{{$running_candidate->candidate_id}}" id="check{{$running_candidate->candidate_id}}" onclick="unselectAll({{$running_candidate->candidate_id}})">
-                                <label class="flex grow items-center" for="check{{$running_candidate->candidate_id}}" style="--d: 60%;">
-                                    <svg class="h-12 w-12" viewBox="0, 0, 60, 60">
-                                        <rect x="10%" y="10%"/>
-                                        <path d="M5 30 L 20 40 L 55 -15"></path>
-                                    </svg>
-                                </label>
+                                @auth
+                                    <input type="checkbox" class="check flex" name="check{{$running_candidate->candidate_id}}" id="check{{$running_candidate->candidate_id}}" onclick="unselectAll({{$running_candidate->candidate_id}})">
+                                    <label class="flex grow items-center" for="check{{$running_candidate->candidate_id}}" style="--d: 60%;">
+                                        <svg class="h-12 w-12" viewBox="0, 0, 60, 60">
+                                            <rect x="10%" y="10%"/>
+                                            <path d="M5 30 L 20 40 L 55 -15"></path>
+                                        </svg>
+                                    </label>
+                                @else
+                                    <input type="checkbox" class="check flex">
+                                    <label class="flex grow items-center" for="signup-modal" style="--d: 60%;">
+                                        <svg class="h-12 w-12" viewBox="0, 0, 60, 60">
+                                            <rect x="10%" y="10%"/>
+                                            <path d="M5 30 L 20 40 L 55 -15"></path>
+                                        </svg>
+                                    </label>
+                                @endauth                                
                             </div>
                         </div>                        
                     @endforeach
@@ -58,6 +75,20 @@
             </div>
         </div>
     </div>
+
+    {{-- SIGNUP PROMPT MODAL --}}
+    <input type="checkbox" id="signup-modal" class="modal-toggle" />
+    <label for="signup-modal" class="modal cursor-pointer">
+        <label class="modal-box relative" for="">
+            <label for="signup-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <h3 class="font-bold text-lg">This feature is for logged in users only!</h3>
+            <p class="py-4">Please log in or register if you'd like to save your vote for the candidate. You can print the list of candidates for your state from your profile.</p>
+            <div class="modal-action">
+                <a href="/login"><button for="signup-modal" class="btn btn-primary">Sign in</button></a>
+                <a href="/register"><button for="signup-modal" class="btn btn-primary">Register</button></a>
+            </div>
+        </label>
+    </label>
 
     @push('scripts')
         <script>

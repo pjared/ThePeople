@@ -1,4 +1,11 @@
 <x-app-layout>
+    <div class="text-sm breadcrumbs p-4">
+        <ul>
+          <li><a href='/'>Home</a></li> 
+          <li><a href="/ballot/{{$candidate->ballot->id}}">Ballot ({{ $candidate->ballot->location->name }} {{ $candidate->ballot->office->name }})</a></li>
+          <li><b>{{ $candidate->name }}</b></li>
+        </ul>
+    </div>
     <div class="grid grid-cols-2 p-8 justify-center">
         {{-- LEFT COLUMN --}}
         <div class="flex grow flex-col gap-6 items-center">
