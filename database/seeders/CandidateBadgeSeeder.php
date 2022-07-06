@@ -18,12 +18,16 @@ class CandidateBadgeSeeder extends Seeder
         //Loop through seeded candidates
         for($i = 1; $i <= 4; $i++) {
             //Loop through each opinion
+            $leftLimit = 1;
+            $rightLimit = 3;
             for($j = 0; $j < 5; $j++) {
                 DB::table('candidate_badges')->insert([
                     'candidate_id' => $i,
-                    'badge_id' => rand($j * 2 + 1, $j * 2 + 3),
+                    'badge_id' => rand($leftLimit, $rightLimit),
                     'opinion_id' => $j + 1,
-                ]);      
+                ]);
+                $leftLimit = $rightLimit + 1;
+                $rightLimit = $rightLimit + 3;
             }
         }
     }
