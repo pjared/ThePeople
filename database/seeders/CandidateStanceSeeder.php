@@ -24,7 +24,7 @@ class CandidateStanceSeeder extends Seeder
             for($i = 1; $i <= $num_candidates; ++$i) {
                 DB::table('candidate_stances')->insert([
                     'candidate_id' => $i,
-                    'value' => rand(0, 100),
+                    'value' => rand(0, 10) * 10,
                     'info' => "I think this because...",
                     'controversial_opinion_id' => $j,
                     'link' => "www.google.com",
