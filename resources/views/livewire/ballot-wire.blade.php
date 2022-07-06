@@ -24,7 +24,14 @@
                                     <a class="underline text-sky-600 visited:text-purple-600" href="/candidate/profile/{{$running_candidate->candidate_id}}">More about {{ $running_candidate->candidate->name }}</a>
                                 </div>
                             </div>
-                            {{-- TODO: Put the badges here --}}
+                            {{-- Badges --}}
+                            <div class="grid grid-cols-3">
+                                @foreach ($running_candidate->candidate->badges as $badge)
+                                    <div class="col-span-1">
+                                        {{ $badge->name }}
+                                    </div>
+                                @endforeach
+                            </div>
                             <p></p>
                             <div class="card-actions justify-end">
                             </div>

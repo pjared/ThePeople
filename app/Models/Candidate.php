@@ -87,6 +87,6 @@ class Candidate extends Model
     }
 
     public function badges() {
-        return $this->hasManyThrough(Badge::class, CandidateBadge::class, 'candidate_id');
+        return $this->hasManyThrough(Badge::class, CandidateBadge::class, 'candidate_id', 'id', 'id', 'badge_id');
     }
 }

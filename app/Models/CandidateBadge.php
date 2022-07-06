@@ -9,10 +9,11 @@ class CandidateBadge extends Pivot
 {
     use HasFactory;
 
+    protected $table = 'candidate_badges';
     public $timestamps = false;
 
     public $fillable = [
-        'candiate_id',
+        'candidate_id',
         'badge_id'
     ];
 }
