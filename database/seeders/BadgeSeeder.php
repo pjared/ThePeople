@@ -31,8 +31,8 @@ class BadgeSeeder extends Seeder
             array("Immigration - Nuetral", 'This candidate is neutral towards stances concerning immigration policies'),
         ],
         5 => [
-            array("Restrictions of Speech", 'This candidate leans towards Restrictions of Speech'),
-            array("Freedom of Speech", 'This candidate leans towards Freedom of Speech'),  
+            array("Limiting Protections", 'This candidate leans towards Restrictions of Speech'),
+            array("Limitless Protections", 'This candidate leans towards Freedom of Speech'),  
             array("1st Amendment Rights - Nuetral", 'This candidate is neutral towards stances concerning 1st Amendment Rights'),  
         ],
     ];

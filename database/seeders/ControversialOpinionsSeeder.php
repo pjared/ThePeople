@@ -17,8 +17,8 @@ class ControversialOpinionsSeeder extends Seeder
         "Relaxed Regulations",
         "Relaxed Policy",
         "Strict Policy",
-        "Restrictions of Speech",
-        "Freedom of Speech",
+        "Limiting Protections",
+        "Limitless Protections",
     ];
     //Entitled to choose
 
@@ -27,7 +27,7 @@ class ControversialOpinionsSeeder extends Seeder
         "Abortion",
         "Gun Control",
         "Immigration",
-        "1st Amendment Rights",
+        "1st Amendment Speech Rights",
     ];
 
     private $opinion_desc = [
