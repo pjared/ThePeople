@@ -17,6 +17,6 @@
         </div>
     </div>
 
-    @include('modals.signup')
+    @include('modals.signup', ['message' => "Please log in or register if you'd like to save your vote for the candidate. You can print the list of candidates for your state from your profile."])
 </x-app-layout>
 
