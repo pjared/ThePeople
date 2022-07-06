@@ -11,7 +11,7 @@ class Badge extends Model
 
     public $timestamps = false;
 
-    public $fillabe = [
+    public $fillable = [
         'name',
         'description',
         'opinion_id',

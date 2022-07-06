@@ -14,6 +14,7 @@ class CandidateBadge extends Pivot
 
     public $fillable = [
         'candidate_id',
-        'badge_id'
+        'badge_id',
+        'opinion_id',
     ];
 }
