@@ -16,4 +16,8 @@ class Badge extends Model
         'description',
         'opinion_id',
     ];
+    
+    public function opinion() {
+        return $this->belongsTo(ControversialOpinion::class, 'opinion_id');
+    }
 }

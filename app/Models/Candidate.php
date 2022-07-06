@@ -86,7 +86,24 @@ class Candidate extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    /**
+     * If they are on a ballot, but have filled out multiple opinion stances and have 
+     * multiple badges, need to only get their badges for that ballot and opinion type
+     */
     public function badges() {
-        return $this->hasManyThrough(Badge::class, CandidateBadge::class, 'candidate_id', 'id', 'id', 'badge_id');
+        //Get the ballot if it exists
+        if($this->ballot) {
+            //Get the opinion type from that ballot
+            $opinion_type_id = $this->ballot->location->opinion_type_id;
+        } else {
+            $opinion_type_id = 1;
+        }
+
+        //Get the ballot, filter by the opinion type
+        $badges = $this->hasManyThrough(Badge::class, CandidateBadge::class, 'candidate_id', 'id', 'id', 'badge_id')->whereHas('opinion', function($query) use ($opinion_type_id)
+        {
+            $query->where('type_id', $opinion_type_id);
+        });
+        return $badges;
     }
 }
