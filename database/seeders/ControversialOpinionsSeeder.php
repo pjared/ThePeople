@@ -35,7 +35,7 @@ class ControversialOpinionsSeeder extends Seeder
         "Abortion is whether or not a women can or cannot abort her pregnancy",
         "Gun Control is the debate over how much control should be exerted over the 2nd amendment",
         "Immigration is the debate over how to let citizens of other nations enter into the United States",
-        "1st Amendment Rights is the debate of what speech the first amendment covers",
+        "1st Amendment Rights is the debate of what speech the first amendment ",
     ];
 
     /**
