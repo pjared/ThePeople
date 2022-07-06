@@ -10,12 +10,14 @@
             <div class="flex grow flex-row pt-2 w-11/12">
                 {{-- CANDIDATE NAME, PICTURE, AND PAGE LINK --}}
                 <form action="/candidate/profile/{{$running_candidate->candidate_id}}" method="GET" class="w-11/12 hover:scale-110">
-                    <button class="card flex grow lg:card-side bg-white shadow-xl w-full">
+                    <button class="card flex grow lg:card-side bg-white shadow-xl w-full"
+                    x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
+                        {{-- :class="{ 'h-28 w-28': show }" --}}
                         <figure>
-                            <img src="{{ $running_candidate->candidate->user->profile_photo_url }}" alt="{{ $running_candidate->candidate->name }}" class="h-28 w-28">
+                            <img src="{{ $running_candidate->candidate->user->profile_photo_url }}" alt="{{ $running_candidate->candidate->name }}" class="h-28 w-28" :class="{ 'rounded-xl': show }">
                             {{-- class="rounded-full object-cover" --}}
                         </figure>
-                        <div class="card-body flex grow">
+                        <div class="card-body flex flex-row flex-wrap" :class="{ 'p-3': show }">
                             <div class="flex grow flex-row font-courier">
                                 <div class="flex">
                                     <h3 class="card-title font-normal">{{ $running_candidate->candidate->name }}</h3>
@@ -25,15 +27,13 @@
                                 </div>
                             </div>
                             {{-- Badges --}}
-                            <div class="grid grid-cols-3">
+                            {{--  --}}
+                            <div x-show="show" class="grid grid-cols-3 gap-2">
                                 @foreach ($running_candidate->candidate->badges as $badge)
                                     <div class="col-span-1">
                                         {{ $badge->name }}
                                     </div>
                                 @endforeach
-                            </div>
-                            <p></p>
-                            <div class="card-actions justify-end">
                             </div>
                         </div>
                     </button>
