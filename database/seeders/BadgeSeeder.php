@@ -13,22 +13,27 @@ class BadgeSeeder extends Seeder
         1 => [
             array('Pro Life','This candidate leans towards Pro Life'),
             array('Pro Choice', 'This candidate leans towards Pro Choice'),
+            array('Abortion - Nuetral', 'This candidate is neutral towards stances concerning abortion'),
         ],
         2 => [
-            array("War is only for defense",'This candidate leans towards war being only used in defense'),
-            array("War is a viable option",'This candidate leans towards war being an option in foreign affairs'),
+            array("Only for defense",'This candidate leans towards war being only used in defense'),
+            array("Viable Option",'This candidate leans towards war being an option in foreign affairs'),
+            array("War - Nuetral",'This candidate is neutral towards foreign policy in war'),
         ],
         3 => [
-            array("Strict Gun Regulations",'This candidate leans towards Strict Gun Regulations'),
-            array("Relaxed Gun Regulations",'This candidate leans towards Relaxed Gun Regulations'),
+            array("Strict Regulations",'This candidate leans towards Strict Gun Regulations'),
+            array("Relaxed Regulations",'This candidate leans towards Relaxed Gun Regulations'),
+            array("Gun Control - Nuetral",'This candidate is neutral on gun regulation'),
         ],
         4 => [
-            array("Relaxed Immigration Standards",'This candidate leans towards Relaxed Immigration Standards'),
-            array("Strict Immigration Standards",'This candidate leans towards Strict Immigration Standards'),
+            array("Relaxed Policy",'This candidate leans towards Relaxed Immigration Policies'),
+            array("Strict Policies", 'This candidate leans towards Strict Immigration Policies'),
+            array("Immigration - Nuetral", 'This candidate is neutral towards stances concerning immigration policies'),
         ],
         5 => [
-            array("Restrictions of Speech" ,'This candidate leans towards Restrictions of Speech'),
-            array("Freedom of Speech",'This candidate leans towards Freedom of Speech'),  
+            array("Restrictions of Speech", 'This candidate leans towards Restrictions of Speech'),
+            array("Freedom of Speech", 'This candidate leans towards Freedom of Speech'),  
+            array("1st Amendment Rights - Nuetral", 'This candidate is neutral towards stances concerning 1st Amendment Rights'),  
         ],
     ];
 
@@ -47,7 +52,7 @@ class BadgeSeeder extends Seeder
                     'description' => $badge[1],
                     'opinion_id' => $count,
                 ]);
-            }          
+            }
             $count++; 
         }
     }

@@ -21,7 +21,8 @@ class CandidateBadgeSeeder extends Seeder
             for($j = 0; $j < 5; $j++) {
                 DB::table('candidate_badges')->insert([
                     'candidate_id' => $i,
-                    'badge_id' => rand($j * 2 + 1, $j * 2 + 2),
+                    'badge_id' => rand($j * 2 + 1, $j * 2 + 3),
+                    'opinion_id' => $j + 1,
                 ]);      
             }
         }
