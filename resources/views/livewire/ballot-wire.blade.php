@@ -27,12 +27,13 @@
                                 </div>
                             </div>
                             {{-- Badges --}}
-                            {{--  --}}
                             <div x-show="show" class="grid grid-cols-3 gap-2">
                                 @foreach ($running_candidate->candidate->badges as $badge)
-                                    <div class="col-span-1">
-                                        {{ $badge->name }}
-                                    </div>
+                                    <div class="tooltip tooltip-info col-span-1" data-tip="{{$badge->description}}">
+                                        <div>
+                                            {{ $badge->name }}
+                                        </div>
+                                    </div>                                   
                                 @endforeach
                             </div>
                         </div>
