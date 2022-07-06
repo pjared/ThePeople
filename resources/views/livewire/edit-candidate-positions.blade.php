@@ -1,6 +1,6 @@
 <div class="flex flex-col background-card w-11/12 items-center">
     <div class="flex">
-        Previous Poisitons in Public Office
+        Previous Positions in Public Office
     </div>
     <div class="flex flex-col flex-grow w-11/12 gap-2">
         @foreach ($positions as $i => $position)

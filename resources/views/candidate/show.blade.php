@@ -91,7 +91,7 @@
                     <button class="flex background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
                         <div class="row">
                             <div class="col-8 text-start">
-                                Previous Poisitons in Public Office
+                                Previous Positions in Public Office
                                 <i class="bi bi-bank"></i>
                             </div>
                             <div class="col-2 offset-2 text-center">
@@ -129,16 +129,16 @@
                     @foreach ($candidate->stances as $candidate_stance)
                         <label for="{{$candidate_stance->opinion->name}}-range" class="form-label">{{$candidate_stance->opinion->name}}</label>
                         <div class="grid grid-cols-4">
-                            <div class="col-span-1 text-center">
-                                {{$candidate_stance->opinion->first_side}}
+                            <div class="col-span-1 flex items-center justify-center">
+                                <span>{{$candidate_stance->opinion->first_side}}</span>
                             </div>
                             <div class="col-span-2 flex justify-center">
                                 <div class="flex items-center">
                                     <input class="rs-range pointer-events-none" type="range" value="{{$candidate_stance->value}}">
                                 </div>
                             </div>
-                            <div class="col-span-1 text-center">
-                                {{$candidate_stance->opinion->second_side}}
+                            <div class="col-span-1 flex items-center justify-center">
+                                <span>{{$candidate_stance->opinion->second_side}}</span>
                             </div>    
                         </div>
                         <div x-show="show" x-transition>
