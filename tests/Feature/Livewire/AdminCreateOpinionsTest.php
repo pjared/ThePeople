@@ -14,6 +14,8 @@ class AdminCreateOpinionsTest extends TestCase
     /** @test */
     public function the_component_can_render()
     {
+        $this->markTestIncomplete('ADD NECESSARY DATA');
+
         $user = User::factory()->create();
         $user->assignRole('admin');
         $this->actingAs($user); //THIS ERROR IS FAKE

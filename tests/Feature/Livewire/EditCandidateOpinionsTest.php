@@ -13,7 +13,7 @@ class EditCandidateOpinionsTest extends TestCase
     /** @test */
     public function the_component_can_render()
     {
-        $this->markTestSkipped('REWORK NEEDED');
+        $this->markTestIncomplete('REWORK NEEDED');
         
         $component = Livewire::test(EditCandidateOpinions::class);
 

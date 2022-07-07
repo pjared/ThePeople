@@ -13,6 +13,7 @@ class FlagTest extends TestCase
     /** @test */
     public function the_component_can_render()
     {
+        $this->markTestIncomplete('ADD NECESSARY DATA');
         $component = Livewire::test(Flag::class);
 
         $component->assertStatus(200);

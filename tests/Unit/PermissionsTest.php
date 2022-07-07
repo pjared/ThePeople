@@ -12,10 +12,10 @@ class PermissionsTest extends TestCase
 {
     private $admin_links = [
         '/admin/',
-        '/admin/candidate-approve',
-        '/admin/candidate-assignment',
+        '/admin/candidate/approve',
+        '/admin/candidate/assign',
         '/admin/create-ballot',
-        '/admin/candidate-links',
+        '/admin/candidate/links',
         // '/admin/',
     ];
 
@@ -40,6 +40,8 @@ class PermissionsTest extends TestCase
      */
     public function test_default_user_permissions()
     {
+        $this->markTestSkipped('Make this E2E??');
+
         $user = User::factory()->create();
  
         foreach($this->admin_links as $link) {
@@ -64,11 +66,13 @@ class PermissionsTest extends TestCase
      */
     public function test_admin_user_permissions()
     {
+        $this->markTestSkipped('Make this E2E??');
+
         $user = User::factory()->create();
         $user->assignRole('admin');
 
         foreach($this->admin_links as $link) {
-            echo $link;
+            // echo $link;
             $response = $this->actingAs($user)
                 ->get($link)
                 ->assertStatus(200);
@@ -82,6 +86,8 @@ class PermissionsTest extends TestCase
      */
     public function test_candidate_user_permissions()
     {
+        $this->markTestSkipped('Make this E2E??');
+
         $user = User::factory()->create();
         // $candidate_role = Role::firstWhere('name', 'candidate');
         $user->assignRole('candidate');
