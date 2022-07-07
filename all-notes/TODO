@@ -1,74 +1,97 @@
-# Branch - Mailing
-- Mail candidates when application has been updated
-
-# Branch - Flag Comparison
-- Show users a page of flags for their ballots
+- Start to email all of the candidates
 
 # Branch - Testing
+- Make a single candidate that I can run all tests for viewing profile on
+
+- Admin
+    - User does show his profile
+    - Approve new candidate
+    - Candidate Ballot Assignment
+    - Create a ballotT
+    - Permalinks
 - End to end tests (dusk) for the following
-    - User signs up, then applies to become a candidate
-    - User becomes a candidate, assigned to a ballot
-        - Appears on new ballot
-    - User edits their candidate profile, adds necessary info
-        - User does not hit show
-        - User does show his profile
-    - Admin
-        - Approve new candidate
-        - Candidate Ballot Assignment
-        - Create a ballot
-        - Permalinks
+    - User registers, then applies to become a candidate
+        -> User is accepted
+            -> User becomes a candidate, Fills out some info
+        -> User edits their candidate profile, adds necessary info
+            -> User cannot show
+            -> User does not show on ballot
+        -> Admin assigns Candidate to a ballot
+        -> Candidate hits show
+            -> Candidate appears on the ballot
+            -> User can flag information from the candidate
+    
+
+# Branch - Mobile Screen Support
+- Add mobile support to the following pages
+    - Home
+    - Ballot show
+    - candidate show
+
+# Branch - Code Red, candidates don't sign up
+- Need to make an admin page to create the candidates profile if none of them decide to sign up
+
+# Branch - Mailing
+- Just google laravel mailing with queues
+- Need to get doug to set up a mail server, or hook up to my own
+- look into queues https://laravel.com/docs/9.x/queues
+- Mail when:
+    - candidates when application has been updated
+    - to myself when a candidate has submitted an application
 
 # Branch - Model Rework
 - Make sure that all model properties are in correct places (guarded vs fillable)
 - Make sure that each model is being created correctly to reflect this
-- Make sure that all attributes are correctly hidden like email, etc.’
+- Make sure that all attributes are correctly hidden like email, etc.
+- Do some research into what attributes are necessary to hide
 
-# Branch - Admin Update (Finish Later)
-- In create ballot:
+# Branch - Flag Comparison
+- Show users a page of flags for their ballots
+
+# Branch - Admin Update
+
+# Branch - High web traffic
+- In create ballot (Don't need this until large use of site):
     - Show existing locations, office, and ballots as it's being typed
-- Decide how to handle rejected candidates
-    - Have a search bar to unreject
-- Each admin page needs to be componetized so creation of each model is it's own wire
-- The following pages need to have null checks
-    - Candidate edit page needs to have a check for when a person accesses the link without a candidate
-    - Admin/candidate-assignment
+- User flag works, but needs major optimization
+    - Should batch all changes and then submit as one when user hovers out of card
+
+# Branch - Large Screen Support
+- Add large screen support to the following pages
 
 # General Lists
+- Write Robots.txt file in public (don't allow anything, include an apology saying that this will be set up later)
+
+- Signing in should take back to most recent page
+
+- Fix javascript page loads https://alpinejs.dev/directives/cloak
+
 - Add a search bar for users to find candidates
     - Look into caching to implement this
 
 - Print out/save list of planned votes
 
-- Add a comparison page that pulls the users flags
+- As candidate profile gets more detailed (graphs, nicer displays, etc.), componetize each section
 
-- As candidate profile gets more detailed, componetize each section
-
-- Mobile and large screen support
-
-- Show flag count under candidate in ballot
-
-- User flag works, but needs major optimization
-    - Should batch all changes and then submit as one when user hovers out of card
-- Signing in takes to home page
-- Find out how to ensure that a user's input state ties to their votes, etc.
+- Show flag count under candidate in ballot for signed in users
 
 - tooltip hover to see the description of opinions
 
 - Give badges actual icons
+    - Add icons next to opinions, act as tooltips - these icons will match the badges on candidates
 
 - Need to make info tags for everything on the site
 
 - Make better videos to show the candidates how to create a profile.
 
 - Make admin home page into a grid
+
 - Allow users to choose a profile photo?
 
 - Set Opinion votes amount (hardcoded for now)
 
 - Candidate show blade
     - Make candidate bio look better
-
-- Send email notifications to my gmail when a new candidate applies, etc.
 
 - Add a button to go to profile page from profile and edit page
 
@@ -82,13 +105,22 @@
 - CandidateEditProfile
     - Promises should show up immediately (this is a tough one)
 
-## Admin Page - Future additions
+# Admin Page - Future additions
+- Decide how to handle rejected candidates
+    - Have a search bar to unreject
+- Each admin page needs to be componetized so creation of models is it's own wire
+- The following pages need to have null checks
+    - Candidate edit page needs to have a check for when a person accesses the link without a candidate
+    - Admin/candidate-assignment
+
+- Pagination for all model lists
 - Admin Page for:
     - Generate a QR code (Do this with official logo later, for now just use some random thing)
 - ALLOW USER TO SHARE CANDIDATE PERMALINK WITH A SHARE BUTTON (should include flags?)
 
 - On admin create ballot, add in list generation as the person attempts to 
     - create a new location, ballot, or office
+
 - Finish Candidate Ballot assignment
     - Ballot search bar
 - Approving a candidate should bring you to a new page only for assigning them a ballot.
@@ -114,11 +146,8 @@
 - Allow for friends to share their flags
 
 # User Pivots
-- Implement badges that appear during candidate hover & a key
-    - Badges should also be on profile
-    - Badges should only appear after verifcation, so politicians feel encouraged to join
-    - Each badge needs to be it's own color
-    - Badges should be only generated when a candidate changes a stance
+- Badges should also be on profile??
+- Each badge needs to be it's own color
 - Hovering over a law gives a summary, might need to find another site that does this
 
 # Views
@@ -128,7 +157,6 @@
 ## Candidate Page
 - Polish up the candidate campaign videos
 - Implement a carosel for the videos
-- Add icons to explain the opinions - these icons will match the badges on candidates
 
 ## Ballot Page
 - Make this look like textured paper
@@ -137,8 +165,8 @@
 
 ### Personal Information
 - Allow the user to put in their zip, city, or state
-    - if state is ever changed queue to delete their votes and flags 
     - Autofill this for them on the page? Or just make the buttons clickable
+- Need to track amount of time a user spends on a page for candidate stats
 
 ### Jump back into
 - Have a right side tab that will allow the user to go back to their study instead of manually doing the input
@@ -153,13 +181,8 @@
 - Need an analysis on all HTTP requests to make sure I use post when necessary
 
 # Before going live
-- Add validation errors for everything
-    - https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors
-
 - Need to get down with service injection. 
     - https://laravel.com/docs/9.x/container
-
-- Write Robots.txt file in public (don't allow anything, include an apology saying that this will be set up later)
 
 # Future things
 - Turn Campaign donors into pie graph (just like opensecrets)
