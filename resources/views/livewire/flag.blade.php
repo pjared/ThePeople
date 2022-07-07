@@ -1,4 +1,4 @@
-<div x-data="nextFlag()">
+<div class='flex items-center' x-data="nextFlag()">
     {{-- Lord forgive me for this monstrosity I am creating. I know not what I have done. Amen --}}
     @if ($set_flag == "nuetral")
         <div x-data="{ 
