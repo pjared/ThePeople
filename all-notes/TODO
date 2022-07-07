@@ -1,45 +1,8 @@
-# General
-- Need to
-    - set primary button colors to a better scheme
-    - Set a daisyUI theme 
+# Branch - Mailing
+- Mail candidates when application has been updated
 
-# Branch - Admin Update (Finish Later)
-- Set Opinion votes amount
-- Decide how to handle rejected candidates
-
-- Finish list approved candidates so I can move them if needed.
-- Each admin page needs to be componetized so creation of each model is it's own wire
-
-- In create ballot:
-    - Show existing locations, office, and ballots as it's being typed
-    - Include editing a location to have an opinion type
-
-- Location needs a settable opinion type
-
-- The following pages need to have null checks
-    - Candidate edit page needs to have a check for when a person accesses the link without a candidate
-    - Admin/candidate-assignment
-
-
-
-# Branch - User Rework 
-- Save the checkmark for the planned vote
-    - Send an async request when users choose their candidate
-- Implement "flagging" ability and comparison page
-- Print out/save list of planned votes
-- Add a search bar for users
-
-- Mobile and large screen support
-
-- Add Breadcrumbs (daisy UI component)
-
-
-- Add sign up prompts for the following (https://laravel.com/docs/9.x/authentication#redirecting-unauthenticated-users)
-    - Checking on ballot
-    - Flagging
-
-# Post Live Part 1
-- Make better videos to show the candidates how to create a profile.
+# Branch - Flag Comparison
+- Show users a page of flags for their ballots
 
 # Branch - Testing
 - End to end tests (dusk) for the following
@@ -58,11 +21,49 @@
 # Branch - Model Rework
 - Make sure that all model properties are in correct places (guarded vs fillable)
 - Make sure that each model is being created correctly to reflect this
+- Make sure that all attributes are correctly hidden like email, etc.’
+
+# Branch - Admin Update (Finish Later)
+- In create ballot:
+    - Show existing locations, office, and ballots as it's being typed
+- Decide how to handle rejected candidates
+    - Have a search bar to unreject
+- Each admin page needs to be componetized so creation of each model is it's own wire
+- The following pages need to have null checks
+    - Candidate edit page needs to have a check for when a person accesses the link without a candidate
+    - Admin/candidate-assignment
 
 # General Lists
+- Add a search bar for users to find candidates
+    - Look into caching to implement this
 
-- CandidateEditProfile
-    - Promises should show up immediately (this is a tough one)
+- Print out/save list of planned votes
+
+- Add a comparison page that pulls the users flags
+
+- As candidate profile gets more detailed, componetize each section
+
+- Mobile and large screen support
+
+- Show flag count under candidate in ballot
+
+- User flag works, but needs major optimization
+    - Should batch all changes and then submit as one when user hovers out of card
+- Signing in takes to home page
+- Find out how to ensure that a user's input state ties to their votes, etc.
+
+- tooltip hover to see the description of opinions
+
+- Give badges actual icons
+
+- Need to make info tags for everything on the site
+
+- Make better videos to show the candidates how to create a profile.
+
+- Make admin home page into a grid
+- Allow users to choose a profile photo?
+
+- Set Opinion votes amount (hardcoded for now)
 
 - Candidate show blade
     - Make candidate bio look better
@@ -70,16 +71,16 @@
 - Send email notifications to my gmail when a new candidate applies, etc.
 
 - Add a button to go to profile page from profile and edit page
-    
-- When a candidate uploads a photo, make sure to set the link on their candidate model
-
-- Make "Edit your profile" It's own entire section on user profile when a user is a candiate
 
 - Change ballot card
     - Daisy component "hero"
     - Figure out the profile picture look
 
 - Make sure to actually block users from profile photos.
+
+## Hard
+- CandidateEditProfile
+    - Promises should show up immediately (this is a tough one)
 
 ## Admin Page - Future additions
 - Admin Page for:
@@ -98,7 +99,7 @@
     - https://laracasts.com/discuss/channels/code-review/proper-way-to-disable-personal-teams-in-jetstream?page=1#reply=668759
     - https://github.com/laravel/jetstream/issues/117
     - Create a team for the user with https://laracasts.com/discuss/channels/code-review/jetstream-how-to-programmatically-create-a-user-and-team 
-- Finish logic for whether or not someone can create a team in [Team Policy :: create](app/Policies/TeamPolicy.php)
+- Finish logic for whether or not someone can create a team in [Team Policy::create](app/Policies/TeamPolicy.php)
     - Candidates can create ONE team
 
 # MAIN TODO
