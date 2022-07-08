@@ -112,7 +112,7 @@
                 <button class="flex background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
                     <div class="row">
                         <div class="col-8 text-start">
-                            Previous Positions in Public Office
+                            Previous Political Positions
                             <i class="bi bi-bank"></i>
                         </div>
                         <div class="col-2 offset-2 text-center">

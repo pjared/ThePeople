@@ -23,10 +23,10 @@ class LoggedInUserTest extends DuskTestCase
                     //Close the donors bar
                     ->pressAndWaitFor('Campaign Donors')
                     //Press the Previous Positions
-                    ->pressAndWaitFor('Previous Positions in Public Office', .5)
+                    ->pressAndWaitFor('Previous Political Positions', .5)
                     ->assertSee('Mayor')
                     //Close the dropdown
-                    ->pressAndWaitFor('Previous Positions in Public Office')
+                    ->pressAndWaitFor('Previous Political Positions')
                     //Press the Other Opinions
                     ->pressAndWaitFor('Other Opinions', .5)
                     ->assertSee('Jared')
