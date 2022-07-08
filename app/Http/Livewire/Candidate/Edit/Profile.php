@@ -36,7 +36,7 @@ class Profile extends Component
         'candidate.phone_number' => 'required|string|max:500',
         'candidate.contact_email' => 'required|string|max:500',
         'candidate.email' => 'required|string|max:500',
-        'candidate.party_id' => 'required',
+        'candidate.site_link' => 'nullable',
     ];
 
     public function mount()
@@ -86,6 +86,7 @@ class Profile extends Component
         $this->validate([
             'candidate.contact_email' => 'required|email',
             'candidate.party_id' => 'required',
+            'candidate.site_link' => 'nullable',
         ]);
         $this->candidate->save();
         

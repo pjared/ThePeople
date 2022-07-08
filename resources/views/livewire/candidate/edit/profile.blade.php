@@ -129,7 +129,7 @@
             {{-- CANDIDATE INFO --}}
             <form class="flex grow" wire:submit.prevent="save_info"> 
                 <div class="flex flex-col background-card w-11/12 items-center gap-4">                  
-                    {{-- POLITICAL PARTY, POLITICAL LEANING, SUB POLITICAL LEANING --}}
+                    {{-- POLITICAL PARTY, CANDIDATE PERSONAL SITE --}}
                     <div class="flex flex-row gap-4">
                         {{-- POLITICAL PARTY --}}
                         <div class="form-control w-full max-w-xs">
@@ -147,6 +147,17 @@
                             </select>
                             <span class="error">
                                 @error('candidate.party_id') {{ $message }} @enderror
+                            </span> 
+                        </div>
+                        {{-- SITE LINK --}}
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                                <span class="label-text">Your Website Link</span>
+                                <span class="label-text-alt">(optional)</span>
+                            </label>
+                            <input type="text" wire:model.defer="candidate.site_link" class="input input-bordered w-full max-w-xs" />
+                            <span class="error">
+                                @error('candidate.site_link') {{ $message }} @enderror
                             </span> 
                         </div>
                     </div>
