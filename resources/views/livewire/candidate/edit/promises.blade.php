@@ -31,7 +31,7 @@
             </div>                   
         @endif        
         @if(count($promises) < 5)
-            <livewire:edit.add-promise :candidate_id="$candidate_id" :wire:key="'add-promise'.$candidate_id">                        
+            <livewire:candidate-edit.add-promise :candidate_id="$candidate_id" :wire:key="'add-promise'.$candidate_id">                        
         @endif
     </div>
 </div>
