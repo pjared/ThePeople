@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Candidate\Edit;
 
 use App\Models\Candidate;
 use App\Models\CandidateStance;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-class CandidateEditProfile extends Component
+class Profile extends Component
 {
     use WithFileUploads;
 
@@ -85,7 +85,7 @@ class CandidateEditProfile extends Component
     public function render()
     {
         $this->candidate = Candidate::firstWhere('user_id', Auth::user()->id);
-        return view('livewire.candidate-edit-profile');
+        return view('livewire.candidate.edit.profile');
     }
 
     public function save_info() 

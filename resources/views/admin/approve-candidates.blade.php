@@ -3,7 +3,7 @@
         @include('admin.admin-nav')
 
         <div class="mt-8">
-            <livewire:admin-approve-candidates />
+            <livewire:admin.approve-candidates />
         </div>
     </div>
 </x-app-layout>

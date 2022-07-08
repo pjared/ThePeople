@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Candidate\Edit;
 
 use App\Models\Badge;
 use App\Models\CandidateBadge;
 use App\Models\ControversialOpinion;
 use Livewire\Component;
 
-class EditCandidateOpinions extends Component
+class Opinions extends Component
 {
     public $stances;
 
@@ -60,6 +60,6 @@ class EditCandidateOpinions extends Component
 
     public function render()
     {
-        return view('livewire.edit-candidate-opinions');
+        return view('livewire.candidate.edit.opinions');
     }
 }

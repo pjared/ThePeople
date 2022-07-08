@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Candidate\Edit;
 
 use Livewire\Component;
 
-class EditCandidatePositions extends Component
+class Positions extends Component
 {
     public $positions;
     public $candidate_id;
@@ -41,6 +41,6 @@ class EditCandidatePositions extends Component
 
     public function render()
     {
-        return view('livewire.edit-candidate-positions');
+        return view('livewire.candidate.edit.positions');
     }
 }

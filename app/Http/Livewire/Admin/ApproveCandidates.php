@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Admin;
 
 use App\Models\Candidate;
 use App\Models\CandidateApplication;
@@ -8,7 +8,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Livewire\Component;
 
-class AdminApproveCandidates extends Component
+class ApproveCandidates extends Component
 {
     public $applications;
 
@@ -58,6 +58,6 @@ class AdminApproveCandidates extends Component
     {
         $this->applications = CandidateApplication::where('status', 'submitted')->get();
 
-        return view('livewire.admin-approve-candidates');
+        return view('livewire.admin.approve-candidates');
     }
 }

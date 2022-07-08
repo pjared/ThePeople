@@ -51,7 +51,7 @@
             </div>                   
         @endif
         @if(count($positions) < 5)
-            <livewire:candidate-add-position :candidate_id="$candidate_id" wire:key="'candidate-add-position'.$candidate_id">
+            <livewire:candidate-edit.add-position :candidate_id="$candidate_id" wire:key="'candidate-add-position'.$candidate_id">
         @endif
     </div>    
 </div>

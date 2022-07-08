@@ -6,6 +6,6 @@
           <li><b>{{ $candidate->name }}</b></li>
         </ul>
     </div>
-    <livewire:candidate-profile :candidate="$candidate">
+    <livewire:candidate.profile :candidate="$candidate">
     @include('modals.signup', ['message' => "Please log in or register if you'd like to save information about the candidate. A candiate comparison page will be implemented soon!"])    
 </x-app-layout>

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Admin;
 
 use App\Models\ControversialOpinion;
 use App\Models\OpinionTypes;
 use Livewire\Component;
 
-class AdminCreateOpinions extends Component
+class CreateOpinions extends Component
 {
 
     public ControversialOpinion $new_opinion;
@@ -33,7 +33,7 @@ class AdminCreateOpinions extends Component
 
     public function render()
     {
-        return view('livewire.admin-create-opinions');
+        return view('livewire.admin.create-opinions');
     }
 
     public function add_opinion() {

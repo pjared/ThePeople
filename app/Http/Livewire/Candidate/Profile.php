@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Candidate;
 
 use App\Models\Candidate;
 use App\Models\UserFlag;
 use Livewire\Component;
 
-class CandidateProfile extends Component
+class Profile extends Component
 {
     public Candidate $candidate;
 
@@ -17,7 +17,7 @@ class CandidateProfile extends Component
 
     public function render()
     {
-        return view('livewire.candidate-profile');
+        return view('livewire.candidate.profile');
     }
 
     //Probably shouldn't submit these until the user hovers out of the area

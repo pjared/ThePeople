@@ -53,7 +53,7 @@
                     </div>
                 @endif
                 {{-- CANDIDATE PROMISES --}}
-                <livewire:edit-candidate-promises :candidate_id="$candidate->id" :promises="$candidate->promises" :wire:key="'candidate-promises'.$candidate->id">
+                <livewire:candidate.edit.promises :candidate_id="$candidate->id" :promises="$candidate->promises" :wire:key="'candidate-promises'.$candidate->id">
 
                 {{-- PREVIOUS POSITIONS FLASH MESSAGE --}}
                 @if (session()->has('update-position-success'))
@@ -72,7 +72,7 @@
                     </div>
                 @endif
                 {{-- PREVIOUS POSITIONS --}}                
-                <livewire:edit-candidate-positions :candidate_id="$candidate->id" :positions="$candidate->previous_positions" :wire:key="'candidate-positions'.$candidate->id">
+                <livewire:candidate.edit.positions :candidate_id="$candidate->id" :positions="$candidate->previous_positions" :wire:key="'candidate-positions'.$candidate->id">
             </div>
         </div> 
         {{-- RIGHT COLUMN --}}
@@ -94,7 +94,7 @@
                 </div>
             @endif
             {{-- Future problem, need to do top 5 by votes. --}}
-            <livewire:edit-candidate-opinions :stances="$candidate->stances" :wire:key="'candidate-stances'.$candidate->id">
+            <livewire:candidate.edit.opinions :stances="$candidate->stances" :wire:key="'candidate-stances'.$candidate->id">
             
             
             {{-- OTHER OPINIONS --}}

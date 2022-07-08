@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\CandidateEdit;
 
 use App\Models\CandidatePromise;
 use Livewire\Component;
 
-class CandidateAddPromise extends Component
+class AddPromise extends Component
 {
     public CandidatePromise $promise;
 
@@ -35,6 +35,6 @@ class CandidateAddPromise extends Component
 
     public function render()
     {
-        return view('livewire.candidate-add-promise');
+        return view('livewire.candidate-edit.add-promise');
     }
 }

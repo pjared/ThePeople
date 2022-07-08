@@ -4,7 +4,7 @@
         @include('admin.admin-nav')
 
         <div class="mt-6">
-            <livewire:admin-create-ballot />
+            <livewire:admin.create-ballot />
         </div>
     </div>
 </x-app-layout>

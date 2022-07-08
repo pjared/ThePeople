@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Candidate\Edit;
 
 use App\Models\CandidatePromise;
 use Livewire\Component;
 
-class EditCandidatePromises extends Component
+class Promises extends Component
 {
     public $candidate_id;
 
@@ -41,6 +41,6 @@ class EditCandidatePromises extends Component
 
     public function render()
     {
-        return view('livewire.edit-candidate-promises');
+        return view('livewire.candidate.edit.promises');
     }
 }

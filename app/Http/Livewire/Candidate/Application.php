@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Candidate;
 
 use App\Models\CandidateApplication;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
-class CandidateApplicationPage extends Component
+class Application extends Component
 {
     public $previous_application;
 
@@ -53,6 +53,6 @@ class CandidateApplicationPage extends Component
 
     public function render()
     {
-        return view('livewire.candidate-application-page');
+        return view('livewire.candidate.application');
     }
 }

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Admin;
 
 use App\Models\ControversialOpinion;
 use App\Models\Location;
 use App\Models\OpinionTypes;
 use Livewire\Component;
 
-class AdminEditOpinions extends Component
+class EditOpinions extends Component
 {
     public $opinions;
     public $opinion_types;
@@ -41,6 +41,6 @@ class AdminEditOpinions extends Component
 
     public function render()
     {   
-        return view('livewire.admin-edit-opinions');
+        return view('livewire.admin.edit-opinions');
     }
 }

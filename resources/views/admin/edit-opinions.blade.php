@@ -3,7 +3,7 @@
         @include('admin.admin-nav')
 
         <div class="my-6">
-            <livewire:admin-edit-opinions />
+            <livewire:admin.edit-opinions />
         </div>
 </div>
 </x-app-layout>

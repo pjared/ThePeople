@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Admin;
 
 use App\Models\Candidate;
 use App\Models\CandidatePermaLink;
 use Livewire\Component;
 
-class AdminPermalinks extends Component
+class EditPermalinks extends Component
 {
     public $candidates;
     public $candidates_linked;
@@ -45,6 +45,6 @@ class AdminPermalinks extends Component
     
     public function render()
     {
-        return view('livewire.admin-permalinks');
+        return view('livewire.admin.edit-permalinks');
     }
 }

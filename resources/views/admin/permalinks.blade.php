@@ -3,7 +3,7 @@
         @include('admin.admin-nav')
 
         <div class="my-6">
-            <livewire:admin-permalinks />
+            <livewire:admin.edit-permalinks />
         </div>
     </div>
 </x-app-layout>

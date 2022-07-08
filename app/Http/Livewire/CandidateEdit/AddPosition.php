@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\CandidateEdit;
 
 use App\Models\CandidateOfficePositions;
 use Livewire\Component;
 
-class CandidateAddPosition extends Component
+class AddPosition extends Component
 {
     public CandidateOfficePositions $position;
     public $candiate_id;
@@ -35,6 +35,6 @@ class CandidateAddPosition extends Component
 
     public function render()
     {
-        return view('livewire.candidate-add-position');
+        return view('livewire.candidate-edit.add-position');
     }
 }

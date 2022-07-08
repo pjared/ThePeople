@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Admin;
 
 use App\Models\Ballot;
 use App\Models\Location;
 use App\Models\PublicOfficePosition;
 use Livewire\Component;
 
-class AdminCreateBallot extends Component
+class CreateBallot extends Component
 {
     public $location_state;
     public $location_name;
@@ -32,7 +32,7 @@ class AdminCreateBallot extends Component
         $this->offices = PublicOfficePosition::all();
         $this->ballots = Ballot::all();
         // dd($this->ballots);;
-        return view('livewire.admin-create-ballot');
+        return view('livewire.admin.create-ballot');
     }
 
     public function createLocation()

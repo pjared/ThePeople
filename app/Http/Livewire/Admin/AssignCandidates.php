@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Admin;
 
 use App\Models\Ballot;
 use App\Models\Candidate;
 use App\Models\RunningCandidates;
 use Livewire\Component;
 
-class AdminAssignCandidates extends Component
+class AssignCandidates extends Component
 {
     public $candidates;
     public $placed_candidates;
@@ -59,6 +59,6 @@ class AdminAssignCandidates extends Component
 
     public function render()
     {
-        return view('livewire.admin-assign-candidates');
+        return view('livewire.admin.assign-candidates');
     }
 }

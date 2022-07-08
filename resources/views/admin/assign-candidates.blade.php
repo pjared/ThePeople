@@ -4,7 +4,7 @@
         @include('admin.admin-nav')
 
         <div class="mt-6">
-            <livewire:admin-assign-candidates />
+            <livewire:admin.assign-candidates />
         </div>
     </div>
 </x-app-layout>
