@@ -45,6 +45,7 @@
                 <button class="btn btn-error" wire:click="delete_position({{$position->id}})">Delete Positions</button>
             </div>
         @endforeach
+        {{-- ADD A POSITION --}}
         @if(count($positions) >= 1)
             <div class="flex grow justify-center">
                 <button class="btn btn-primary w-1/4" wire:click='update_positions'>Update Positions</button>

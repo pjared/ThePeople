@@ -149,46 +149,6 @@
                                 @error('candidate.party_id') {{ $message }} @enderror
                             </span> 
                         </div>
-                        {{-- POLITICAL LEANING --}}
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Political Leaning</span>
-                            </label>
-                            <select class="select select-bordered" wire:model.defer="candidate.political_leaning">
-                                @foreach($political_leanings as $leaning)
-                                    @if($leaning == $candidate->political_leaning)
-                                        <option class="capitalize" value="{{$leaning}}" selected>
-                                            <span class="capitalize">{{$leaning}}</span>
-                                        </option>
-                                    @else
-                                        <option  value="{{$leaning}}">
-                                            <span class="capitalize">{{$leaning}}</span>
-                                        </option>
-                                    @endif
-                                @endforeach
-                            </select>
-                            <span class="error">
-                                @error('candidate.political_leaning') {{ $message }} @enderror
-                            </span>  
-                        </div>
-                        {{-- SUB POLITICAL LEANING --}}
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Sub-Political Leaning</span>
-                            </label>
-                            <select class="select select-bordered" wire:model.defer="candidate.sub_political_leaning">
-                                @foreach($sub_political_leanings as $leaning)
-                                    @if($leaning == $candidate->sub_political_leaning)
-                                        <option class="capitalize" value="{{$leaning}}" selected>{{$leaning}}</option>
-                                    @else
-                                        <option value="{{$leaning}}">{{$leaning}}</option>
-                                    @endif
-                                @endforeach
-                            </select>
-                            <span class="error">
-                                @error('candidate.sub_political_leaning') {{ $message }} @enderror
-                            </span>  
-                        </div>
                     </div>
 
                     {{-- CONTACT EMAIL, PHONE --}}

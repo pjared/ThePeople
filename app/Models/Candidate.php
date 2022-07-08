@@ -25,8 +25,6 @@ class Candidate extends Model
         "email",
         "phone_number",
         'state',
-        'political_leaning',
-        'sub_political_leaning',
         "signup_date",
         "user_id",
         "party_id",

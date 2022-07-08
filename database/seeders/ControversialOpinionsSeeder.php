@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\DB;
 class ControversialOpinionsSeeder extends Seeder
 {
     private $opinion_stances = [
-        "Only for defense",
-        "Viable Option",
+        "In Favor of U.S. Involvement",
+        "Not in Favor of U.S. Involvement",
         "Pro Choice",
         "Pro Life",
         "Strict Regulations",
@@ -23,7 +23,7 @@ class ControversialOpinionsSeeder extends Seeder
     //Entitled to choose
 
     private $opinion_names = [
-        "War",
+        "The War in Ukraine",
         "Abortion",
         "Gun Control",
         "Immigration",

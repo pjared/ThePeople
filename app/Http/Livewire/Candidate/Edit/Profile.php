@@ -16,10 +16,7 @@ class Profile extends Component
 
     public Candidate $candidate;
     public $show;
-    
-    // public $photo;
-    public $political_leanings;
-    public $sub_political_leanings;
+
     public $political_parties;
 
     public $listeners = [
@@ -35,8 +32,6 @@ class Profile extends Component
     protected $rules = [
         'candidate.bio' => 'required|string|max:500',
         'candidate.party_id' => 'required|string|max:500',
-        'candidate.political_leaning' => 'required|string|max:500',
-        'candidate.sub_political_leaning' => 'required|string|max:500',
         'candidate.contact_phone_number' => 'required|string|max:500',
         'candidate.phone_number' => 'required|string|max:500',
         'candidate.contact_email' => 'required|string|max:500',
@@ -78,8 +73,6 @@ class Profile extends Component
         }
         
         $this->political_parties = PoliticalParty::all();
-        $this->political_leanings = ['Centrist', 'Authoritarian', 'Libertarian', 'Left', 'Right', 'Moderate'];
-        $this->sub_political_leanings = ['None', 'Centrist', 'Authoritarian', 'Libertarian', 'Left', 'Right'];
     }
 
     public function render()
@@ -92,8 +85,6 @@ class Profile extends Component
     {
         $this->validate([
             'candidate.contact_email' => 'required|email',
-            'candidate.political_leaning' => 'required',
-            'candidate.sub_political_leaning' => 'nullable',
             'candidate.party_id' => 'required',
         ]);
         $this->candidate->save();

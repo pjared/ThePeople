@@ -102,7 +102,6 @@ class PermissionsTest extends TestCase
             'image_id' => strval(rand(1,3)), 
             'state' => 'Utah',
             'contact_email' => "pjared@gmail.com",
-            'political_leaning' => 'Centrist',
         ]);
 
         //Make sure candidates can access their links

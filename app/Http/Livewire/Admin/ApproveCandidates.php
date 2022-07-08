@@ -32,7 +32,6 @@ class ApproveCandidates extends Component
         $candidate->contact_phone_number = $application->phone_number;
         $candidate->user_id = $user_id;
         $candidate->party_id = 3;
-        $candidate->political_leaning = 'Centrist';
         $candidate->save();
 
         //Change the status of the candidate
