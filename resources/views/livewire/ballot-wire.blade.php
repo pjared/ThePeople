@@ -27,7 +27,7 @@
                                 </div>
                             </div>
                             {{-- Badges --}}
-                            <div x-show="show" class="grid grid-cols-3 gap-2">
+                            {{-- <div x-show="show" class="grid grid-cols-3 gap-2">
                                 @foreach ($running_candidate->candidate->badges as $badge)
                                     <div class="tooltip tooltip-info col-span-1" data-tip="{{$badge->description}}">
                                         <div>
@@ -35,7 +35,7 @@
                                         </div>
                                     </div>                                   
                                 @endforeach
-                            </div>
+                            </div> --}}
                         </div>
                     </button>
                 </form>

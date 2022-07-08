@@ -16,7 +16,7 @@ class EditCandidateOpinions extends Component
         'stances.*.info' => 'nullable'
     ];
 
-    public function update_badges() 
+    /*public function update_badges() 
     {
         foreach($this->stances as $stance) {
             // If the stance is at 50, it's considered neutral
@@ -42,7 +42,7 @@ class EditCandidateOpinions extends Component
                 ]
             );
         }
-    }
+    }*/
 
     public function mount($stances)
     {
@@ -54,7 +54,7 @@ class EditCandidateOpinions extends Component
         $this->validate();
         
         $this->stances->each->save();
-        $this->update_badges();
+        // $this->update_badges();
         $this->emitUp('opinion-flash');
     }
 
