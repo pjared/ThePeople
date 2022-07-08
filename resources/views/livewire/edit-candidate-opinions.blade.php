@@ -2,13 +2,13 @@
     <div class="flex flex-row grow justify-center">
             Controversial Opinions
     </div>
-    <div class="flex flex-col text-center gap-8">
+    <div class="flex flex-col text-center w-11/12 gap-8">
         {{-- Future problem, need to do top 5 by votes. --}}
         @foreach ($stances as $i => $stance)
             <div class="flex grow flex-col items-center" wire:key="stance-field-{{ $i }}">
                 <div class="flex flex-col grow gap-2 w-11/12">
                     <label class="form-label flex grow justify-center">{{$stance->opinion->name}}</label>
-                    <div class="flex grow flex-row gap-4">
+                    {{-- <div class="flex grow flex-row gap-4">
                         <div class="w-1/4 text-center">
                             {{$stance->opinion->first_side}}
                         </div>
@@ -18,13 +18,13 @@
                         <div class="w-1/4 text-center">
                             {{$stance->opinion->second_side}}
                         </div>
-                    </div>  
+                    </div>   --}}
                 </div>
                 <div class="form-control flex grow w-11/12">
                     <label class="label flex grow justify-center">
-                        <span class="label-text">Tell The People why you have this stance</span>
+                        <span class="label-text">Tell The People about your opinions on this stance</span>
                     </label> 
-                    <textarea class="textarea textarea-bordered flex grow" wire:model.defer="stances.{{ $i }}.info" rows="3" ></textarea>
+                    <textarea class="textarea textarea-bordered flex grow w-11/12" wire:model.defer="stances.{{ $i }}.info" rows="3" ></textarea>
                 </div>
 
                 <span class="error">

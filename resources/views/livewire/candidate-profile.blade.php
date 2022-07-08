@@ -170,7 +170,7 @@
                 @foreach ($candidate->stances as $candidate_stance)
                     <label for="{{$candidate_stance->opinion->name}}-range" class="form-label">{{$candidate_stance->opinion->name}}</label>
                     <div class="grid grid-cols-4">
-                        <div class="col-span-1 flex items-center justify-center">
+                        {{-- <div class="col-span-1 flex items-center justify-center">
                             <span>{{$candidate_stance->opinion->first_side}}</span>
                         </div>
                         <div class="col-span-2 flex justify-center">
@@ -180,7 +180,7 @@
                         </div>
                         <div class="col-span-1 flex items-center justify-center">
                             <span>{{$candidate_stance->opinion->second_side}}</span>
-                        </div>    
+                        </div>     --}}
                     </div>
                     <div x-show="show" x-transition>
                         {{$candidate_stance->info}}
