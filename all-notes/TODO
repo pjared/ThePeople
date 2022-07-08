@@ -1,4 +1,14 @@
-- Start to email all of the candidates
+- Add candidate site_link to Model, final fresh for site
+
+- Candidate ballot assignment on prod is 500, need to error check for no ballots
+
+- Need to write an SQL script that will be able to refresh tables and save candidates and new user ID's
+
+# Branch - Opinions Rework
+- Opinions cannot be so broad. For now, take out the sliders and only allow for candidates to put in notes about their stance.
+
+# Branch - Mailing
+- Mail candidates when application has been updated
 
 # Branch - Testing
 - Make a single candidate that I can run all tests for viewing profile on
