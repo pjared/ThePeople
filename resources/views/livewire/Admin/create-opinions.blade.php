@@ -21,34 +21,18 @@
                 <div class="flex flex-row gap-2">
                     <div class="form-control w-full max-w-xs">
                         <label class="label">
-                            <span class="label-text">First Side (Left)</span>
-                        </label>
-                        <input type="text" wire:model.defer="new_opinion.first_side" class="input input-bordered w-full max-w-xs" />
-                    </div>
-                    @error('new_opinion.first_side') <span class="error">{{ $message }}</span> @enderror
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text">Second Side (Right)</span>
-                        </label>
-                        <input type="text" wire:model.defer="new_opinion.second_side" class="input input-bordered w-full max-w-xs" />
-                    </div>
-                    @error('new_opinion.second_side') <span class="error">{{ $message }}</span> @enderror
-                </div>                
-                <div class="flex flex-row gap-2">
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label">
                             <span class="label-text">Votes</span>
                         </label>
                         <input type="number" wire:model.defer="new_opinion.votes" class="input input-bordered w-full max-w-xs" />
                     </div>
                     @error('new_opinion.votes') <span class="error">{{ $message }}</span> @enderror
-                    <div class="form-control w-full max-w-xs">
+                    {{-- <div class="form-control w-full max-w-xs">
                         <label class="label">
                             <span class="label-text">type_id</span>
                         </label>
                         <input type="number" wire:model.defer="new_opinion.type_id" class="input input-bordered w-full max-w-xs" />
                     </div>
-                    @error('new_opinion.type_id') <span class="error">{{ $message }}</span> @enderror
+                    @error('new_opinion.type_id') <span class="error">{{ $message }}</span> @enderror --}}
                 </div>
                 <button wire:click='add_opinion' class="btn btn-primary mt-2">Add Opinion</button>
             </div>

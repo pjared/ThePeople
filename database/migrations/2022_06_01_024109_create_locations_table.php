@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('state', 15)->nullable();
             $table->string('type', 10);
             $table->integer('population')->nullable();
-            $table->foreignIdFor(OpinionTypes::class ,'opinion_type_id');
+            // $table->foreignIdFor(OpinionTypes::class ,'opinion_type_id');
         });
     }
 

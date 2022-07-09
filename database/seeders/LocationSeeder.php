@@ -86,14 +86,14 @@ class LocationSeeder extends Seeder
             'type' => 'city',
             'state' => 'Utah',
             'population' => rand(1, 10000),
-            'opinion_type_id' => 1,
+            // 'opinion_type_id' => 1,
         ]);
 
         DB::table('locations')->insert([
             'name' => 'Utah',
             'type' => 'state',
             'population' => rand(1, 10000),
-            'opinion_type_id' => 1,
+            // 'opinion_type_id' => 1,
         ]);
         /* 
         foreach ($this->state_names as $name) {

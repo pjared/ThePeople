@@ -44,14 +44,16 @@ class Profile extends Component
         $this->candidate = Candidate::firstWhere('user_id', Auth::user()->id);
 
         //Get the list of controversial opinions for that ballot
-        if($this->candidate->ballot) {
-            // Type is stored in location, so grab it
-            $opinion_type_id = $this->candidate->ballot->location->opinion_type_id;
-            $controversial_opinions = ControversialOpinion::where('type_id', $opinion_type_id)->get();
-        } else {
-            //For now just give them the general controversial opinions
-            $controversial_opinions = ControversialOpinion::where('type_id', 1)->get();
-        }
+        // if($this->candidate->ballot) {
+        //     // Type is stored in location, so grab it
+        //     $opinion_type_id = $this->candidate->ballot->location->opinion_type_id;
+        //     $controversial_opinions = ControversialOpinion::where('type_id', $opinion_type_id)->get();
+        // } else {
+        //     //For now just give them the general controversial opinions
+        //     $controversial_opinions = ControversialOpinion::where('type_id', 1)->get();
+        // }
+
+        $controversial_opinions = ControversialOpinion::all();
 
         //Create stance if it doesn't exist
         $candidate_stances = $this->candidate->stances;

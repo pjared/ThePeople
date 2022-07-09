@@ -14,8 +14,8 @@ class EditOpinions extends Component
     public $locations;
 
     protected $rules = [
-        "opinions.*.type_id" => 'required|numeric',
-        "locations.*.opinion_type_id" => 'required|numeric',
+        // "opinions.*.type_id" => 'required|numeric',
+        // "locations.*.opinion_type_id" => 'required|numeric',
     ];
 
     public function save_opinions()
@@ -34,7 +34,8 @@ class EditOpinions extends Component
 
     public function mount()
     {
-        $this->opinions = ControversialOpinion::orderBy('type_id')->get();
+        // $this->opinions = ControversialOpinion::orderBy('type_id')->get();
+        $this->opinions = ControversialOpinion::all();
         $this->opinion_types = OpinionTypes::all();
         $this->locations = Location::all();
     }

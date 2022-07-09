@@ -32,13 +32,13 @@
                             </span>
                         </div>
                         
-                        <div class="col-span-1 flex flex-col items-center form-control">
+                        {{-- <div class="col-span-1 flex flex-col items-center form-control">
                             <label class="label">
                                 <span class="label-text">type_id</span>
                             </label>
                             <input type="number" wire:model.defer="opinions.{{$i}}.type_id" class="input input-bordered w-2/5" />
                         </div>
-                        @error("opinions.{{$i}}.type_id") <span class="error">{{ $message }}</span> @enderror
+                        @error("opinions.{{$i}}.type_id") <span class="error">{{ $message }}</span> @enderror --}}
                     </div>
                 @endforeach
             </form>
@@ -73,13 +73,13 @@
                         </span>
                     </div>
                     
-                    <div class="col-span-1 flex flex-col form-control items-center">
+                    {{-- <div class="col-span-1 flex flex-col form-control items-center">
                         <label class="label">
                             <span class="label-text">type_id</span>
                         </label>
                         <input type="number" wire:model.defer="locations.{{$i}}.opinion_type_id" class="input input-bordered w-2/5" />
                     </div>
-                    @error("locations.{{$i}}.opinion_type_id") <span class="error">{{ $message }}</span> @enderror
+                    @error("locations.{{$i}}.opinion_type_id") <span class="error">{{ $message }}</span> @enderror --}}
                 </div>
             @endforeach
         </form>

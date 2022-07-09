@@ -18,10 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->string('first_side');
-            $table->string('second_side');
             $table->integer('votes')->unsigned();
-            $table->foreignIdFor(OpinionTypes::class ,'type_id');
         });
     }
 

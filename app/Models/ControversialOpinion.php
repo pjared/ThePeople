@@ -14,13 +14,6 @@ class ControversialOpinion extends Model
     protected $fillable = [
         'name',
         'description', // A description of what it means
-        'first_side',
-        'second_side',
-        'votes',
-        'type_id',  
+        'votes', 
     ];
-
-    public function type() {
-        return $this->belongsTo(OpinionTypes::class, 'type_id');
-    }
 }

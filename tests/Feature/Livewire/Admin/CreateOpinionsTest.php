@@ -23,10 +23,7 @@ class AdminCreateOpinionsTest extends TestCase
         $component = Livewire::test(AdminCreateOpinions::class)
                         ->set('new_opinion.name', 'New Opinion')
                         ->set('new_opinion.description', 'A description')
-                        ->set('new_opinion.first_side', 'First Side')
-                        ->set('new_opinion.second_side', 'Second Side')
                         ->set('new_opinion.votes', 10000)
-                        ->set('new_opinion.type_id', '1')
                         ->call('add_opinion');
 
         $component->assertStatus(200);

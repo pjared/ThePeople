@@ -18,10 +18,7 @@ class CreateOpinions extends Component
     protected $rules = [
         'new_opinion.name' => 'required',
         'new_opinion.description' => 'required',
-        'new_opinion.first_side' => 'required',
-        'new_opinion.second_side' => 'required',
         'new_opinion.votes' => 'required|numeric',
-        'new_opinion.type_id' => 'required|numeric',
         'new_type.name' => 'required',
         'new_type.description' => 'required',
     ];

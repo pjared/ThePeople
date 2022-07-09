@@ -8,22 +8,8 @@ use Illuminate\Support\Facades\DB;
 
 class ControversialOpinionsSeeder extends Seeder
 {
-    private $opinion_stances = [
-        "In Favor of U.S. Involvement",
-        "Not in Favor of U.S. Involvement",
-        "Pro Choice",
-        "Pro Life",
-        "Strict Regulations",
-        "Relaxed Regulations",
-        "Relaxed Policy",
-        "Strict Policy",
-        "Limiting Protections",
-        "Limitless Protections",
-    ];
-    //Entitled to choose
-
     private $opinion_names = [
-        "The War in Ukraine",
+        "Climate Change",
         "Abortion",
         "Gun Control",
         "Immigration",
@@ -52,16 +38,16 @@ class ControversialOpinionsSeeder extends Seeder
             DB::table('controversial_opinions')->insert([
                 'name' => $this->opinion_names[$i],
                 'description' => $this->opinion_desc[$i],
-                'first_side' => $this->opinion_stances[$counter++],
-                'second_side' => $this->opinion_stances[$counter++],
+                // 'first_side' => $this->opinion_stances[$counter++],
+                // 'second_side' => $this->opinion_stances[$counter++],
                 'votes' => 10000,
-                'type_id' => 1,
+                // 'type_id' => 1,
             ]);
         }
 
-        DB::table('opinion_types')->insert([
-            'name' => "General",
-            'description' => "A general list of controversial opinions",
-        ]);
+        // DB::table('opinion_types')->insert([
+        //     'name' => "General",
+        //     'description' => "A general list of controversial opinions",
+        // ]);
     }
 }

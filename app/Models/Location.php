@@ -20,6 +20,5 @@ class Location extends Model
         'state',
         "type",
         "population",
-        "opinion_type_id",
     ];
 }

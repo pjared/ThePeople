@@ -47,7 +47,6 @@ class CreateBallot extends Component
             'state' => $this->location_state,
             'name' => $this->location_name,
             'type' => $this->location_type,
-            'opinion_type_id' => 1,
         ]);
 
         session()->flash('message', 'Location Created');
