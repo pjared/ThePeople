@@ -24,10 +24,10 @@ class CandidateStanceSeeder extends Seeder
             for($i = 1; $i <= $num_candidates; ++$i) {
                 DB::table('candidate_stances')->insert([
                     'candidate_id' => $i,
-                    'value' => rand(0, 10) * 10,
-                    'info' => "I think this because...",
                     'controversial_opinion_id' => $j,
-                    'link' => "www.google.com",
+                    'stance_label' => "Club Jared",
+                    'stance_info' => "The Most Exclusive Club in the World",
+                    'stance_link' => "www.google.com",
                 ]);
             }
         }

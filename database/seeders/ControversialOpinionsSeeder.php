@@ -33,15 +33,11 @@ class ControversialOpinionsSeeder extends Seeder
     {
         //'name' | 'description', // A description of what it means
         // controversial_opinions
-        $counter = 0;
         for($i = 0; $i < count($this->opinion_names); ++$i) {
             DB::table('controversial_opinions')->insert([
                 'name' => $this->opinion_names[$i],
                 'description' => $this->opinion_desc[$i],
-                // 'first_side' => $this->opinion_stances[$counter++],
-                // 'second_side' => $this->opinion_stances[$counter++],
                 'votes' => 10000,
-                // 'type_id' => 1,
             ]);
         }
     }
