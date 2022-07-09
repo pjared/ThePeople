@@ -21,24 +21,9 @@
                     <div class="grid grid-cols-2 gap-6 items-center justify-center">
                         <div class="col-span-1 flex flex-col">
                             <span class="text-xl">
-                                {{$opinion->name}}
-                            </span>
-                            <span>
-                                @if($opinion->type)
-                                    {{$opinion->type->name}}
-                                @else
-                                    (No Opinion Type)
-                                @endif
+                                {{$opinion->name}} - {{$opinion->id}}
                             </span>
                         </div>
-                        
-                        {{-- <div class="col-span-1 flex flex-col items-center form-control">
-                            <label class="label">
-                                <span class="label-text">type_id</span>
-                            </label>
-                            <input type="number" wire:model.defer="opinions.{{$i}}.type_id" class="input input-bordered w-2/5" />
-                        </div>
-                        @error("opinions.{{$i}}.type_id") <span class="error">{{ $message }}</span> @enderror --}}
                     </div>
                 @endforeach
             </form>
@@ -46,42 +31,49 @@
     
         {{-- OPINION TYPE LIST --}}
         <div class="col-span-1 flex flex-col text-center gap-4">
-            <span class="text-2xl">Opinion Types</span>
-            @foreach ($opinion_types as $type)
-                <div class="flex flex-col">
-                    <span class="text-xl">
-                        {{$type->name}} ({{$type->id}})
-                    </span>
-                    <span>
-                        {{$type->description}}
-                    </span>
+            {{-- ADD OPINION TO BALLOT --}}
+            <div class="flex flex-col background-card items-center rounded-t-none w-11/12" x-show="show" x-transition>
+                <h1>Add Opinion to Ballot</h1>
+                <div class="flex flex-col grow ">
+                    <div class="form-control w-full max-w-xs">
+                        <label class="label">
+                            <span class="label-text">Opinion ID</span>
+                        </label>
+                        <input type="number" wire:model.defer="new_ballot_opinion.opinion_id" class="input input-bordered w-full max-w-xs" />
+                    </div>
+                    @error('new_ballot_opinion.opinion_id') <span class="error">{{ $message }}</span> @enderror
+                    <div class="form-control w-full max-w-xs">
+                        <label class="label">
+                            <span class="label-text">Ballot ID</span>
+                        </label>
+                        <input type="number" wire:model.defer="new_ballot_opinion.ballot_id" class="input input-bordered w-full max-w-xs" />
+                    </div>
+                    @error('new_ballot_opinion.ballot_id') <span class="error">{{ $message }}</span> @enderror
+                    <button wire:click='add_ballot_opinion' class="btn btn-primary mt-2">Add Opinion Type</button>
                 </div>
-            @endforeach
+            </div>
         </div>
 
-        {{-- LOCATION LIST --}}
-        <form class="col-span-1 flex flex-col items-center" wire:keydown.enter="save_locations">
-            <span class="text-2xl">Location & Types</span>
-            @foreach ($locations as $i => $location)
-                <div class="grid grid-cols-2 gap-6 items-center justify-center">
-                    <div class="col-span-1 flex flex-col items-center">
-                        <span class="text-xl">
-                            {{$location->name}}, {{$location->state}}
-                        </span>
-                        <span>
-                            {{$location->type}}
-                        </span>
+        {{-- BALLOT LIST --}}
+        <div class="col-span-1 flex grow flex-col gap-2">
+            <div class="flex grow flex-col items-center">
+                @foreach ($ballots as $ballot)
+                    <div class="flex flex-col background-card w-11/12 items-center gap-2">
+                        <div class="text-center">
+                            <span>{{ $ballot->location->name }} {{ $ballot->office->name }} - {{$ballot->id}}</span>
+                        </div>
+                        <div class="text-center">
+                            <span>{{ $ballot->voting_date->format('m/d/Y') }}</span>
+                        </div>     
+                        <div class="flex-row">
+                            {{-- {{dd($ballot->opinions)}} --}}
+                            @foreach ($ballot->opinions as $opinion)
+                                {{$opinion->name}} ({{$opinion->id}})
+                            @endforeach
+                        </div>                    
                     </div>
-                    
-                    {{-- <div class="col-span-1 flex flex-col form-control items-center">
-                        <label class="label">
-                            <span class="label-text">type_id</span>
-                        </label>
-                        <input type="number" wire:model.defer="locations.{{$i}}.opinion_type_id" class="input input-bordered w-2/5" />
-                    </div>
-                    @error("locations.{{$i}}.opinion_type_id") <span class="error">{{ $message }}</span> @enderror --}}
-                </div>
-            @endforeach
-        </form>
+                @endforeach
+            </div>
+        </div>
     </div>    
 </div>

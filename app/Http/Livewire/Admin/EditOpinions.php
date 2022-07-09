@@ -2,42 +2,33 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\Ballot;
+use App\Models\BallotOpinions;
 use App\Models\ControversialOpinion;
 use App\Models\Location;
-use App\Models\OpinionTypes;
 use Livewire\Component;
 
 class EditOpinions extends Component
 {
     public $opinions;
-    public $opinion_types;
-    public $locations;
+    public $ballots;
+    public BallotOpinions $new_ballot_opinion;
 
     protected $rules = [
-        // "opinions.*.type_id" => 'required|numeric',
-        // "locations.*.opinion_type_id" => 'required|numeric',
+        'new_ballot_opinion.opinion_id' => 'required',
+        'new_ballot_opinion.ballot_id' => 'required',
     ];
 
-    public function save_opinions()
-    {
+    public function add_ballot_opinion() {
         $this->validate();
-        $this->opinions->each->save();
-        session()->flash('message', 'Opinion IDs have been updated');
-    }
-
-    public function save_locations() 
-    {
-        $this->validate();
-        $this->locations->each->save();
-        session()->flash('message', 'Locations have been updated');
+        $this->new_ballot_opinion->save();
     }
 
     public function mount()
     {
-        // $this->opinions = ControversialOpinion::orderBy('type_id')->get();
         $this->opinions = ControversialOpinion::all();
-        $this->opinion_types = OpinionTypes::all();
-        $this->locations = Location::all();
+        $this->ballots = Ballot::all();
+        $this->new_ballot_opinion = new BallotOpinions();
     }
 
     public function render()
