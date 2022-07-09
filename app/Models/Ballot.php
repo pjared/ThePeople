@@ -30,10 +30,15 @@ class Ballot extends Model
     }
 
     public function candidates() {
-        return $this->hasMany(RunningCandidates::class, 'ballot_id')->where('show', true);;
+        return $this->hasMany(RunningCandidates::class, 'ballot_id')->where('show', true);
     }
     
     public function all_candidates() {
         return $this->hasMany(RunningCandidates::class, 'ballot_id');
+    }
+
+    public function opinions() {
+        // return $this->belongsToMany(ControversialOpinion::class, 'ballot_opinion');
+        return $this->belongsToMany(ControversialOpinion::class);
     }
 }
