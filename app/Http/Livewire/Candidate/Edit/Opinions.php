@@ -9,12 +9,7 @@ use Livewire\Component;
 
 class Opinions extends Component
 {
-    public $stances;
-
-    protected $rules = [
-        'stances.*.value' => 'required|numeric',
-        'stances.*.info' => 'nullable'
-    ];
+    public $opinions;
 
     /*public function update_badges() 
     {
@@ -44,19 +39,19 @@ class Opinions extends Component
         }
     }*/
 
-    public function mount($stances)
+    public function mount($opinions)
     {
-        $this->stances = $stances;
+        $this->opinions = $opinions;
     }
 
-    public function save_stances()
-    {
-        $this->validate();
+    // public function save_stances()
+    // {
+    //     $this->validate();
         
-        $this->stances->each->save();
-        // $this->update_badges();
-        $this->emitUp('opinion-flash');
-    }
+    //     $this->stances->each->save();
+    //     // $this->update_badges();
+    //     $this->emitUp('opinion-flash');
+    // }
 
     public function render()
     {

@@ -94,7 +94,14 @@
                 </div>
             @endif
             {{-- Future problem, need to do top 5 by votes. --}}
-            <livewire:candidate.edit.opinions :stances="$candidate->stances" :wire:key="'candidate-stances'.$candidate->id">
+            @if ($this->candidate->ballot)
+                <livewire:candidate.edit.opinions :opinions="$this->candidate->ballot->opinions" :wire:key="'candidate-opinions-'.$candidate->id">
+            @else 
+                <div>
+                    <span>We have not placed you on a ballot yet. You will be notified when we have done this so you can fill out your controversial opinons</span>
+                </div>
+            @endif
+            
             
             
             {{-- OTHER OPINIONS --}}
@@ -127,7 +134,7 @@
                 </div>
             @endif
             {{-- CANDIDATE INFO --}}
-            <form class="flex grow" wire:submit.prevent="save_info"> 
+            <form class="flex" wire:submit.prevent="save_info"> 
                 <div class="flex flex-col background-card w-11/12 items-center gap-4">                  
                     {{-- POLITICAL PARTY, CANDIDATE PERSONAL SITE --}}
                     <div class="flex flex-row gap-4">

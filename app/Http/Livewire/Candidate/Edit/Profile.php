@@ -43,32 +43,19 @@ class Profile extends Component
     {
         $this->candidate = Candidate::firstWhere('user_id', Auth::user()->id);
 
-        //Get the list of controversial opinions for that ballot
-        // if($this->candidate->ballot) {
-        //     // Type is stored in location, so grab it
-        //     $opinion_type_id = $this->candidate->ballot->location->opinion_type_id;
-        //     $controversial_opinions = ControversialOpinion::where('type_id', $opinion_type_id)->get();
-        // } else {
-        //     //For now just give them the general controversial opinions
-        //     $controversial_opinions = ControversialOpinion::where('type_id', 1)->get();
+        // $candidate_stances = $this->candidate->stances;
+        // foreach($controversial_opinions as $opinion) {
+        //     $candidate_stance = $candidate_stances->firstWhere('controversial_opinion_id', $opinion->id);
+        //     if (is_null($candidate_stance)) {
+        //         $stance = new CandidateStance();
+        //         $stance->candidate_id = $this->candidate->id;
+        //         $stance->controversial_opinion_id = $opinion->id;
+        //         $stance->stance_label = "";
+        //         $stance->stance_reasoning = "";
+        //         $stance->stance_link = '';
+        //         $stance->save();
+        //     }
         // }
-
-        $controversial_opinions = ControversialOpinion::all();
-
-        //Create stance if it doesn't exist
-        $candidate_stances = $this->candidate->stances;
-        foreach($controversial_opinions as $opinion) {
-            $candidate_stance = $candidate_stances->firstWhere('controversial_opinion_id', $opinion->id);
-            if (is_null($candidate_stance)) {
-                $stance = new CandidateStance();
-                $stance->candidate_id = $this->candidate->id;
-                $stance->controversial_opinion_id = $opinion->id;
-                $stance->value = 50;
-                $stance->info = "";
-                $stance->link = '';
-                $stance->save();
-            }
-        }
 
         if($this->candidate->running_candidate) {
             $this->show = $this->candidate->running_candidate->show;
