@@ -18,7 +18,7 @@ return new class extends Migration
         Schema::create('ballot_opinion', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Ballot::class, 'ballot_id');
-            $table->foreignIdFor(ControversialOpinion::class, 'opinion_id');
+            $table->foreignIdFor(ControversialOpinion::class, 'controversial_opinion_id');
         });
     }
 

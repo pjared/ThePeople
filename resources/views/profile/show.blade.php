@@ -10,9 +10,9 @@
             @role('candidate')
                 <div class="text-center mt-6">
                     {{-- TODO: Implement some basic information for the user to fill out here --}}
-                    <button class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-full">
-                        <a href="{{Route('candidate-edit-profile')}}">Edit Your Candidate Profile</a>
-                    </button>
+                    <a href="{{Route('candidate-edit-profile')}}"><button class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-full">
+                        Edit Your Candidate Profile
+                    </button></a>
                 </div>
                 <x-jet-section-border />
             @endrole

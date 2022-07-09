@@ -19,7 +19,7 @@ class BallotOpinionsSeeder extends Seeder
             for($j = 1; $j <= 5; ++$j) {
                 DB::table('ballot_opinion')->insert([
                     'ballot_id' => $i,
-                    'opinion_id' => $j,
+                    'controversial_opinion_id' => $j,
                 ]);
             }
         }

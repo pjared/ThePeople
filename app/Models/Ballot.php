@@ -38,7 +38,6 @@ class Ballot extends Model
     }
 
     public function opinions() {
-        // return $this->belongsToMany(ControversialOpinion::class, 'ballot_opinion');
-        return $this->belongsToMany(ControversialOpinion::class);
+        return $this->belongsToMany(ControversialOpinion::class, 'ballot_opinion');
     }
 }

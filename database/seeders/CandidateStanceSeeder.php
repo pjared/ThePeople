@@ -26,7 +26,7 @@ class CandidateStanceSeeder extends Seeder
                     'candidate_id' => $i,
                     'controversial_opinion_id' => $j,
                     'stance_label' => "Club Jared",
-                    'stance_info' => "The Most Exclusive Club in the World",
+                    'stance_reasoning' => "The Most Exclusive Club in the World",
                     'stance_link' => "www.google.com",
                 ]);
             }

@@ -10,6 +10,6 @@ class BallotOpinions extends Pivot
 
     public $fillable = [
         'ballot_id',
-        'opinion_id',
+        'controversial_opinion_id',
     ]; 
 }

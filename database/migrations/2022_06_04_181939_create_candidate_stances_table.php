@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreignIdFor(Candidate::class, 'candidate_id');
             $table->foreignIdFor(ControversialOpinion::class, 'controversial_opinion_id');
             $table->string('stance_label');
-            $table->text('stance_info')->nullable();
+            $table->text('stance_reasoning')->nullable();
             $table->string('stance_link')->nullable(); //TODO: might have to change this to text
         });
     }
