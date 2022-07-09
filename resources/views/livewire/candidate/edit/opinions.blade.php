@@ -8,29 +8,38 @@
             <div class="flex grow flex-col items-center" wire:key="stance-field-{{ $i }}">
                 <div class="flex flex-col grow gap-2 w-11/12">
                     <label class="form-label flex grow justify-center">{{$stance->opinion->name}}</label>
-                    {{-- <div class="flex grow flex-row gap-4">
-                        <div class="w-1/4 text-center">
-                            {{$stance->opinion->first_side}}
-                        </div>
-                        <div class="w-1/2 flex justify-center">
-                            <input type="range" wire:key="range-input-{{ $i }}" wire:model.defer="stances.{{ $i }}.value" step="10" class="range range-sm range-secondary"/>
-                        </div>
-                        <div class="w-1/4 text-center">
-                            {{$stance->opinion->second_side}}
-                        </div>
-                    </div>   --}}
                 </div>
                 <div class="form-control flex grow w-11/12">
+                    <div class="form-control w-full">
+                        <label class="label">
+                          <span class="label-text">Stance Label</span>
+                        </label>
+                        <input type="text" 
+                        class="input input-bordered input-primary w-full" 
+                        wire:model.defer="stances.{{ $i }}.stance_label" placeholder="Ex: Pro-Choice, Responsible Gun Ownership, Government Responsibility"/>
+                    </div>
+                    @error('stances.{{ $i }}.stance_label') <span class="error">{{ $message }}</span> @enderror  
                     <label class="label flex grow justify-center">
-                        <span class="label-text">Tell The People about your opinions on this stance</span>
+                        <span class="label-text">Reasoning behind stance.</span>
                     </label> 
-                    <textarea class="textarea textarea-bordered flex grow w-11/12" wire:model.defer="stances.{{ $i }}.info" rows="3" ></textarea>
+                    <textarea class="textarea textarea-bordered flex grow w-full" wire:model.defer="stances.{{ $i }}.stance_info" rows="3"></textarea>
                 </div>
 
                 <span class="error">
-                    @error('stances.'.$i.'.value') {{ $message }} @enderror
-                    @error('stances.'.$i.'.info') {{ $message }} @enderror
+                    @error('stances.'.$i.'.stance_info') {{ $message }} @enderror
                 </span>
+
+                {{-- ADD THE CAROUSEL FUNCTIONALITY HERE --}}
+                <div class="carousel w-full">
+                    <div id="item1" class="carousel-item w-full">
+
+                    </div>
+                </div>
+                <div class="flex justify-center w-full py-2 gap-2">
+                    <a href="#item1" class="btn btn-xs">1</a>
+                </div>
+
+                <button class="btn btn-primary mt-2">Add Another Stance</button>
             </div>
         @endforeach
     </div>
