@@ -9,8 +9,7 @@
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             @role('candidate')
                 <div class="text-center mt-6">
-                    {{-- TODO: Implement some basic information for the user to fill out here --}}
-                    <a href="{{Route('candidate-edit-profile')}}"><button class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-full">
+                    <a href="{{Route('candidate-edit-profile')}}"><button class="btn btn-primary">
                         Edit Your Candidate Profile
                     </button></a>
                 </div>
@@ -23,7 +22,7 @@
                     {{-- TODO: Major smell here --}}
                     @role('candidate')
                     @else
-                    <button class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-full">
+                    <button class="btn btn-primary">
                         <a href="{{Route('candidate-apply')}}">Are you a candidate? Click here to apply for a profile.</a>
                     </button>
                     @endrole
