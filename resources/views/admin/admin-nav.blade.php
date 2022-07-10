@@ -18,7 +18,7 @@
                 </x-jet-nav-link>
                 
                 <x-jet-nav-link href="{{ route('create-opinions') }}" :active="request()->routeIs('create-opinions')">
-                    {{ __('Create Opinions & Types') }}
+                    {{ __('Create Opinions') }}
                 </x-jet-nav-link>
 
                 <x-jet-nav-link href="{{ route('edit-opinions') }}" :active="request()->routeIs('edit-opinions')">
