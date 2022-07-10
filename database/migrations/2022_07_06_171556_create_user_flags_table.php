@@ -22,7 +22,7 @@ return new class extends Migration
             $table->foreignIdFor(Candidate::class, 'candidate_id');
             $table->foreignIdFor(Ballot::class, 'ballot_id');
             $table->string('type', 25);
-            // $table->integer('type_id');
+            $table->integer('type_id');
             $table->string('flag_type', 10);
         });
     }
