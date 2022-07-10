@@ -157,33 +157,30 @@
     {{-- RIGHT COLUMN --}}
     <div class="flex flex-col w-11/12 grow gap-6 items-center">
         {{-- CONTROVERSIAL OPINIONS --}}
-        <div class="flex flex-col background-card w-11/12 items-center" x-data="{show: false}">
+        <div class="flex flex-col background-card w-11/12 items-cente gap-2">
             <div class="flex flex-col justify-center">
                 <div class="flex justify-center">
                     <span>Controversial Opinions</span>
                 </div>
-                <div class="flex">
-                    <button class='btn btn-info btn-xs' x-on:click="show = ! show">show candidate reasoning</button>
-                </div>                    
             </div>
             <div class="flex flex-col grow gap-2 text-center">
-                @foreach ($candidate->stances as $candidate_stance)
-                    <label for="{{$candidate_stance->opinion->name}}-range" class="form-label">{{$candidate_stance->opinion->name}}</label>
-                    <div class="grid grid-cols-4">
-                        {{-- <div class="col-span-1 flex items-center justify-center">
-                            <span>{{$candidate_stance->opinion->first_side}}</span>
-                        </div>
-                        <div class="col-span-2 flex justify-center">
-                            <div class="flex items-center">
-                                <input class="rs-range pointer-events-none" type="range" value="{{$candidate_stance->value}}">
+                @foreach($opinions as $opinion)
+                    <span>{{$opinion->name}}</span>
+                    <div class="carousel w-full">
+                        @foreach ($candidate->opinion_stances($opinion->id) as $i => $candidate_stance)
+                            <div id="{{$opinion->name}}-item-{{$i}}" class="carousel-item w-full">
+                                <div class="flex flex-col">
+                                    <span><b>{{$candidate_stance->stance_label}}
+                                        </b></span>
+                                    <span>{{$candidate_stance->stance_reasoning}}</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-span-1 flex items-center justify-center">
-                            <span>{{$candidate_stance->opinion->second_side}}</span>
-                        </div>     --}}
+                        @endforeach
                     </div>
-                    <div x-show="show" x-transition>
-                        {{$candidate_stance->info}}
+                    <div class="flex justify-center w-full py-2 gap-2">
+                        @for ($i = 0; $i < count($candidate->opinion_stances($opinion->id)); $i++)
+                            <a href="#{{$opinion->name}}-item-{{$i}}" class="btn btn-info btn-xs">{{$i}}</a>
+                        @endfor
                     </div>
                 @endforeach
             </div>

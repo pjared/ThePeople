@@ -3,16 +3,20 @@
 namespace App\Http\Livewire\Candidate;
 
 use App\Models\Candidate;
+use App\Models\ControversialOpinion;
 use App\Models\UserFlag;
 use Livewire\Component;
 
 class Profile extends Component
 {
     public Candidate $candidate;
+    public $opinions;
 
     public function mount($candidate) {
-
         $this->candidate = $candidate;
+        if ($candidate->ballot) {
+            $this->opinions = $candidate->ballot->opinions;
+        }
     }
 
     public function render()
