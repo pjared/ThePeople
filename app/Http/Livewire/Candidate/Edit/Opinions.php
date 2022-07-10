@@ -44,14 +44,13 @@ class Opinions extends Component
         $this->opinions = $opinions;
     }
 
-    // public function save_stances()
-    // {
-    //     $this->validate();
-        
-    //     $this->stances->each->save();
-    //     // $this->update_badges();
-    //     $this->emitUp('opinion-flash');
-    // }
+    public function save_stances()
+    {
+        // $this->emit('save-stances');
+        // foreach($this->opinions as $opinion) {
+        //     $this->emitTo('opinion-' . $opinion->id, 'save-stances');
+        // }
+    }
 
     public function render()
     {

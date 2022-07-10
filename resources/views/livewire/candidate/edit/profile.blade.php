@@ -93,7 +93,6 @@
                     </div>
                 </div>
             @endif
-            {{-- Future problem, need to do top 5 by votes. --}}
             @if ($this->candidate->ballot)
                 <livewire:candidate.edit.opinions :opinions="$this->candidate->ballot->opinions" :wire:key="'candidate-opinions-'.$candidate->id">
             @else 

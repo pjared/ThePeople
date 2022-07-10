@@ -14,11 +14,15 @@ class Stances extends Component
     public $stances;
     public CandidateStance $stance;
 
+    protected $listeners = [
+        'save-stances' => 'save_stances',
+    ];
+
     protected $rules = [
         'stances.*.stance_label' => 'required|numeric',
         'stances.*.stance_reasoning' => 'nullable',
-        'stance.stance_label' => 'required',
-        'stance.stance_reasoning' => 'required',
+        'stance.stance_label' => 'nullable',
+        'stance.stance_reasoning' => 'nullable',
     ];
 
     public function mount($opinion) 
@@ -27,10 +31,9 @@ class Stances extends Component
         if(!$candidate) {
             return;
         }
-        $this->stances = CandidateStance::where('controversial_opinion_id', $opinion->id)
-                                            ->where('candidate_id', $candidate->id)
+        $this->stances = CandidateStance::where('candidate_id', $candidate->id)
+                                            ->where('controversial_opinion_id', $opinion->id)
                                             ->get();
-        // dd($this->stances);
         if(count($this->stances) < 3) {
             $this->stance = new CandidateStance();
         }
@@ -59,5 +62,14 @@ class Stances extends Component
         $this->stances->find($stance_id)->delete();
         //TODO: FINISH WHERE TO IMPLEMENT DELTION FLASH
         // $this->emitUp('promise-delete-flash');
+    }
+
+    public function save_stances()
+    {
+        $this->validate();
+        if($this->opinion->id == 1) {
+            dd($this->stances, $this->opinion->name);
+        }
+        $this->stances->each->save();
     }
 }

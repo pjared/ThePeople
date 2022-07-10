@@ -10,7 +10,7 @@
                 </div>
                 <div class="form-control flex grow w-11/12">
                     <livewire:candidate.edit.stances :opinion="$opinion" wire:key='opinion-{{$opinion->id}}'/>
-                </div>                
+                </div>
             </div>
         @endforeach 
     </div>
