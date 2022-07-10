@@ -97,8 +97,8 @@
             @if ($this->candidate->ballot)
                 <livewire:candidate.edit.opinions :opinions="$this->candidate->ballot->opinions" :wire:key="'candidate-opinions-'.$candidate->id">
             @else 
-                <div>
-                    <span>We have not placed you on a ballot yet. You will be notified when we have done this so you can fill out your controversial opinons</span>
+                <div class="flex">
+                    <span class="text-center justify-center">We have not placed you on a ballot yet. You will be notified when we have done this so you can fill out your controversial opinons</span>
                 </div>
             @endif
             
@@ -180,6 +180,7 @@
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
                                 <span class="label-text">Contact Phone</span>
+                                <span class="label-text-alt">(optional)</span>
                             </label>
                             <input type="text" wire:model.defer="candidate.contact_phone" class="input input-bordered w-full max-w-xs" />
                         </div>
@@ -194,12 +195,14 @@
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
                                 <span class="label-text">Public Email</span>
+                                <span class="label-text-alt">(optional)</span>
                             </label>
                             <input type="text" wire:model.defer="candidate.email" class="input input-bordered w-full max-w-xs" />
                         </div>
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
                                 <span class="label-text">Public Phone</span>
+                                <span class="label-text-alt">(optional)</span>
                             </label>
                             <input type="text" wire:model.defer="candidate.phone" class="input input-bordered w-full max-w-xs" />
                         </div>
