@@ -42,23 +42,19 @@
                     </button>
                     <div class="flex flex-col background-card rounded-t-none w-11/12 gap-4" x-show="open" x-transition>
                         @if(count($candidate->donors) >= 1)
-                            @auth
-                                @foreach ($candidate->donors as $donor)
-                                    <div class="flex flex-row items-center justify-center" >
-                                        <span>Name:  {{$donor->name}}</span>
-                                        <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-'.$donor->id">
-                                    </div>          
-                                @endforeach
-                            @else
-                                @foreach ($candidate->donors as $donor)
-                                    <div class="flex flex-row items-center justify-center gap-4" >
-                                        <span>Name: {{$donor->name}}</span>
+                            @foreach ($candidate->donors as $donor)
+                                <div class="flex flex-row items-center justify-center gap-2">
+                                    <span>Name:  {{$donor->name}}</span>
+                                    @auth   
+                                        <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-'.$donor->id">  
+                                    @else
                                         <label class="fill-transparent" for="signup-modal">
                                             @include('icons.flag')
-                                        </label>
-                                    </div>
-                                @endforeach
-                            @endauth
+                                        </label>  
+                                    @endauth
+                                    
+                                </div>          
+                            @endforeach
                         @else
                             No donor data as of yet.
                         @endif
@@ -80,29 +76,22 @@
                         </div>
                     </button>
                     <div class="flex flex-col background-card rounded-t-none w-11/12 justify-center" x-show="open" x-transition>
-                        @auth
-                            @foreach($candidate->promises as $promise)
-                                <div class="flex flex-row justify-center gap-4">
-                                    <div class="flex flex-col items-center">
-                                        <span class="w-fit"><b>{{ $promise->promise }}</b></span>
-                                        <span class="w-fit">{{ $promise->plan }}</span>
-                                    </div>    
-                                    <livewire:flag :type="'promise'" :type_id="$promise->id" :wire:key="$promise->id">       
-                                </div>
-                            @endforeach
-                        @else
-                            @foreach($candidate->promises as $promise)
-                                    <div class="flex flex-row justify-center gap-4">
-                                        <div class="flex flex-col items-center">
-                                            <span class="w-fit"><b>{{ $promise->promise }}</b></span>
-                                            <span class="w-fit">{{ $promise->plan }}</span>
-                                        </div>    
-                                        <label class="fill-transparent" for="signup-modal">
-                                            @include('icons.flag')
-                                        </label>         
-                                    </div>
-                            @endforeach
-                        @endauth
+                        @foreach($candidate->promises as $promise)
+                            <div class="flex flex-row justify-center gap-4">
+                                <div class="flex flex-col items-center">
+                                    <span class="w-fit"><b>{{ $promise->promise }}</b></span>
+                                    <span class="w-fit">{{ $promise->plan }}</span>
+                                </div>    
+                                @auth   
+                                    <livewire:flag :type="'promise'" :type_id="$promise->id" :wire:key="$promise->id">
+                                @else
+                                    <label class="fill-transparent" for="signup-modal">
+                                        @include('icons.flag')
+                                    </label>  
+                                @endauth
+                                        
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             @endif
@@ -123,29 +112,21 @@
                 <div class="flex flex-col background-card rounded-t-none w-11/12" x-show="open" x-transition>
                     @if(count($candidate->previous_positions) != 0)
                         <div class="flex flex-col gap-4">
-                            @auth
-                                @foreach($candidate->previous_positions as $position)
-                                    <div class="flex flex-row justify-center gap-4">
-                                        <div class="flex flex-col items-center gap-4">
-                                            <span><b>{{ $position->position_name }}</b></span>
-                                            <span>{{ $position->year_start }} - {{ $position->year_end }}</span>
-                                        </div>
-                                        <livewire:flag :type="'position'" :type_id="$position->id" :wire:key="'position-'.$position->id">       
-                                    </div>  
-                                @endforeach
-                            @else
-                                @foreach($candidate->previous_positions as $position)
-                                    <div class="flex flex-row justify-center gap-4">
-                                        <div class="flex flex-col items-center gap-4">
-                                            <span><b>{{ $position->position_name }}</b></span>
-                                            <span>{{ $position->year_start }} - {{ $position->year_end }}</span>
-                                        </div>
+                            @foreach($candidate->previous_positions as $position)
+                                <div class="flex flex-row justify-center gap-4">
+                                    <div class="flex flex-col items-center gap-4">
+                                        <span><b>{{ $position->position_name }}</b></span>
+                                        <span>{{ $position->year_start }} - {{ $position->year_end }}</span>
+                                    </div>
+                                    @auth   
+                                        <livewire:flag :type="'position'" :type_id="$position->id" :wire:key="'position-'.$position->id">   
+                                    @else
                                         <label class="fill-transparent" for="signup-modal">
                                             @include('icons.flag')
-                                        </label>      
-                                    </div>  
-                                @endforeach
-                            @endauth                            
+                                        </label>  
+                                    @endauth
+                                </div>  
+                            @endforeach                        
                         </div>
                     @else
                         This Candidate has not held office before
@@ -169,18 +150,31 @@
                     <div class="carousel w-full">
                         @foreach ($candidate->opinion_stances($opinion->id) as $i => $candidate_stance)
                             <div id="{{$opinion->name}}-item-{{$i}}" class="carousel-item w-full">
-                                <div class="flex flex-col">
-                                    <span><b>{{$candidate_stance->stance_label}}
-                                        </b></span>
-                                    <span>{{$candidate_stance->stance_reasoning}}</span>
+                                <div class="flex flex-row gap-2">
+                                    <div class="flex grow flex-col">
+                                        <span class="text-left"><b>{{$candidate_stance->stance_label}}
+                                            </b></span>
+                                        <span>{{$candidate_stance->stance_reasoning}}</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        @auth
+                                            <livewire:flag :type="'controversial-stance'" :type_id="$candidate_stance->id" :wire:key="'stance-'.$candidate_stance->id"> 
+                                        @else
+                                            <label class="fill-transparent" for="signup-modal">
+                                                @include('icons.flag')
+                                            </label>  
+                                        @endauth
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
                     </div>
                     <div class="flex justify-center w-full py-2 gap-2">
-                        @for ($i = 0; $i < count($candidate->opinion_stances($opinion->id)); $i++)
-                            <a href="#{{$opinion->name}}-item-{{$i}}" class="btn btn-info btn-xs">{{$i}}</a>
-                        @endfor
+                        @if (count($candidate->opinion_stances($opinion->id)) > 1)
+                            @for ($i = 1; $i <= count($candidate->opinion_stances($opinion->id)); $i++)
+                                <a href="#{{$opinion->name}}-item-{{$i}}" class="btn btn-info btn-xs">{{$i}}</a>
+                            @endfor
+                        @endif
                     </div>
                 @endforeach
             </div>
@@ -198,23 +192,18 @@
                 </button>
                 <div class="w-11/12 background-card rounded-t-none" x-show="open" x-transition>
                     <div class="flex flex-col gap-4">
-                        @auth
-                            @foreach ($candidate->opinions as $opinion)
-                                <div class="flex flex-row justify-center gap-4">
-                                    <span>{{$opinion->name}}</span>
+                        @foreach ($candidate->opinions as $opinion)
+                            <div class="flex flex-row justify-center gap-4">
+                                <span>{{$opinion->name}}</span>
+                                @auth
                                     <livewire:flag :type="'opinion'" :type_id="$opinion->id" :wire:key="'opinion-'.$opinion->id">       
-                                </div>
-                            @endforeach
-                        @else
-                            @foreach ($candidate->opinions as $opinion)
-                                <div class="flex flex-row justify-center gap-4">
-                                    <span>{{$opinion->name}}</span>
+                                @else
                                     <label class="fill-transparent" for="signup-modal">
                                         @include('icons.flag')
-                                    </label>      
-                                </div>  
-                            @endforeach
-                        @endauth      
+                                    </label>  
+                                @endauth
+                            </div>
+                        @endforeach
                     </div>                    
                 </div>
             </div>    
@@ -258,23 +247,19 @@
                 </button>
                 <div class="w-11/12 background-card rounded-t-none" x-show="open" x-transition>
                     <div class="flex flex-col gap-4">
-                        @auth
-                            @foreach ($candidate->law_involvement as $law)
-                                <div class="flex flex-row justify-center gap-4">
-                                    <span>Name : {{ $law->name }}</span>
-                                    <livewire:flag :type="'law'" :type_id="$law->id" :wire:key="'law-'.$law->id">       
-                                </div>       
-                            @endforeach
-                        @else
-                            @foreach ($candidate->law_involvement as $law)
-                                <div class="flex flex-row justify-center gap-4">
-                                    <span>Name : {{ $law->name }}</span>
+                        @foreach ($candidate->law_involvement as $law)
+                            <div class="flex flex-row justify-center gap-4">
+                                <span>Name : {{ $law->name }}</span>
+                                @auth
+                                    <livewire:flag :type="'law'" :type_id="$law->id" :wire:key="'law-'.$law->id">         
+                                @else
                                     <label class="fill-transparent" for="signup-modal">
                                         @include('icons.flag')
-                                    </label>       
-                                </div>       
-                            @endforeach
-                        @endauth                        
+                                    </label>  
+                                @endauth
+                                    
+                            </div>       
+                        @endforeach                 
                     </div>
                 </div>
             </div>
@@ -282,7 +267,7 @@
     </div>
 
     @push('scripts')
-        <script>    
+        <script>
             document.addEventListener('alpine:init', () => {
                 Alpine.data('nextFlag', () => ({       
                     flag: {
