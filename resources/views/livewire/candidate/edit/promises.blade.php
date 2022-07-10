@@ -1,6 +1,6 @@
 <div class="flex flex-col background-card w-11/12 items-center justify-center">
     <div class="flex">
-        Your promises for this term in office
+        Your promises for reform/promises of personal values
     </div>
     <div x-data="{show:false}" class="flex grow flex-col w-11/12 gap-2">
         @foreach ($promises as $i => $promise)

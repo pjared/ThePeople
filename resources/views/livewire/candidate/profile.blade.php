@@ -75,7 +75,10 @@
                             </div>
                         </div>
                     </button>
-                    <div class="flex flex-col background-card rounded-t-none w-11/12 justify-center" x-show="open" x-transition>
+                    <div class="flex flex-col background-card rounded-t-none w-11/12 justify-center gap-2" x-show="open" x-transition>
+                        <div class="text-center">
+                            This candidate promises to make the reforms or stand for the values listed below.
+                        </div>
                         @foreach($candidate->promises as $promise)
                             <div class="flex flex-row justify-center gap-4">
                                 <div class="flex flex-col items-center">
