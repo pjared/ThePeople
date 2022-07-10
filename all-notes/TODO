@@ -1,23 +1,65 @@
-- Add candidate site_link to Model, final fresh for site
-
 - Candidate ballot assignment on prod is 500, need to error check for no ballots
+    - Do this by seeding like production and fix error
 
-- Need to write an SQL script that will be able to refresh tables and save candidates and new user ID's
+- Fix Candidate Poistions and promises, "add" can be in the same wire and should pop a modal
 
-# Branch - Opinions Rework
-- Opinions cannot be so broad. For now, take out the sliders and only allow for candidates to put in notes about their stance.
+# Branch (Urgent) - Opinions Rework
+- Test the following:
+    - Candidate creating their stances
+    
+- Finish ability to edit candidate stances
+    - Make a "delete stance" button
 
-# Branch - Mailing
-- Mail candidates when application has been updated
+- Candidate profile page should only show the opinion if they have created a stance for it
+
+# Bugs
+- Flagging profile details on the candidate page will only save as one flag
+- Need to put a "max content, read more" on the opinions reasoning and the bio
+- Hitting "save stance" from the modal needs to close it
+- Carousel focus should not refocus the page
+
+# Branch (Urgent) - Admin Create/Edit Opinions Rework
+- Need to be able to remove an opinion from a ballot
+
+- Make edit opinions assign opinion ballots (admin side)
+- Make create opinions create & edit on admin side
+
+- Test the following:
+    - Creating an opinion
+    - Assigning the opinion to a ballot
+
+# Branch (Urgent) - Promises Rework
+- Need to reword the promises for now so that promises can be both promises for change or a promise to stand for a value. Add info tags to say that a promise might be about a promise to uphold a value or a promise for legislation change
+
+# Branch (Urgent) - Candidate Profile Page Rework
+- Need to do a "show more" on the candidates bio. I expect the candidates to have large bios. Should put a note that most people will not read extremely long bios.
+
+- Need to add campaign videos, especially now that candidates will be making tik toks
+
+# Branch (High) - Manual Candidate Creation
+- Need to make an admin page to create the candidates profile if none of them decide to sign up
+
+# Branch (High) - Model Rework
+- Make sure that all model properties are in correct places (guarded vs fillable)
+- Make sure that each model is being created correctly to reflect this
+- Make sure that all attributes are correctly hidden like email, etc.
+- Do some research into what attributes are necessary to hide
+
+# Branch (High) - Information Rework
+- Ballots should have an information type. This will be a list of information that appears on the ballot
+- When a candidate runs for a certain position, different wording/information needs to appear
+    - Controversial Opinions depend on the ballot, not the location
+    - "Promises" should be "Promises to stand for the following beliefs" when dealing with congress
+        - Might work around this by saying "This candidate promises to accomplish something in office, or promises to stand for the following beliefs"
 
 # Branch - Testing
 - Make a single candidate that I can run all tests for viewing profile on
 
-- Admin
+- Admin Livewire Tests
     - User does show his profile
     - Approve new candidate
     - Candidate Ballot Assignment
-    - Create a ballotT
+    - Create a ballot
     - Permalinks
 - End to end tests (dusk) for the following
     - User registers, then applies to become a candidate
@@ -38,10 +80,12 @@
     - Ballot show
     - candidate show
 
-# Branch - Code Red, candidates don't sign up
-- Need to make an admin page to create the candidates profile if none of them decide to sign up
+
+# Branch - Large Screen Support
+- Add large screen support to the following pages
 
 # Branch - Mailing
+- Sign up with mailing provider sendgrid
 - Just google laravel mailing with queues
 - Need to get doug to set up a mail server, or hook up to my own
 - look into queues https://laravel.com/docs/9.x/queues
@@ -49,11 +93,6 @@
     - candidates when application has been updated
     - to myself when a candidate has submitted an application
 
-# Branch - Model Rework
-- Make sure that all model properties are in correct places (guarded vs fillable)
-- Make sure that each model is being created correctly to reflect this
-- Make sure that all attributes are correctly hidden like email, etc.
-- Do some research into what attributes are necessary to hide
 
 # Branch - Flag Comparison
 - Show users a page of flags for their ballots
@@ -66,10 +105,14 @@
 - User flag works, but needs major optimization
     - Should batch all changes and then submit as one when user hovers out of card
 
-# Branch - Large Screen Support
-- Add large screen support to the following pages
 
 # General Lists
+- Need to write an SQL script that will be able to refresh tables and save candidates and new user ID's in case of bad migration
+
+- Find another way to generate badges for the candidate
+
+- Need to make a sitemap for google, should use spatie
+
 - Write Robots.txt file in public (don't allow anything, include an apology saying that this will be set up later)
 
 - Signing in should take back to most recent page
@@ -114,6 +157,9 @@
 ## Hard
 - CandidateEditProfile
     - Promises should show up immediately (this is a tough one)
+
+- Need to get down with service injection. 
+    - https://laravel.com/docs/9.x/container
 
 # Admin Page - Future additions
 - Decide how to handle rejected candidates
@@ -187,14 +233,10 @@
     - https://laravel.com/docs/9.x/container
     - Look into pyscript to see if I should use matplotlib to display graphs for politician side
 
-# General Security
-- Need an analysis on all HTTP requests to make sure I use post when necessary
-
-# Before going live
-- Need to get down with service injection. 
-    - https://laravel.com/docs/9.x/container
 
 # Future things
+- Make a javascriptless site
+
 - Turn Campaign donors into pie graph (just like opensecrets)
 
 - Share buttons for social media
