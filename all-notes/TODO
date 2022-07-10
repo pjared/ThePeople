@@ -1,22 +1,33 @@
 - Candidate ballot assignment on prod is 500, need to error check for no ballots
     - Do this by seeding like production and fix error
 
-- Fix Candidate Poistions and promises, "add" can be in the same wire and should pop a modal
-
 # Branch (Urgent) - Opinions Rework
 - Test the following:
     - Candidate creating their stances
     
-- Finish ability to edit candidate stances
-    - Make a "delete stance" button
-
-- Candidate profile page should only show the opinion if they have created a stance for it
+- Finish ability to save stance edits
+    - Need to figure out correct "emit" button
 
 # Bugs
 - Flagging profile details on the candidate page will only save as one flag
 - Need to put a "max content, read more" on the opinions reasoning and the bio
 - Hitting "save stance" from the modal needs to close it
 - Carousel focus should not refocus the page
+- User Vote doesn't load on refresh
+- Make sure "permalink" is unique in table
+
+# Branch (Urgent) - Promises Rework
+- Need to reword the promises for now so that promises can be both promises for change or a promise to stand for a value. Add info tags to say that a promise might be about a promise to uphold a value or a promise for legislation change
+
+
+# Branch - Reducing Wires
+- Need to go through the wires that just display data, and then turn it into a blade component instead of loading it through a wire
+- Fix Candidate Poistions and promises, "add" can be in the same wire and should pop a modal
+
+# Quick QoL
+- Placements for where flash messages appear for editing a candidate profile
+- Make promises and political positions a carousel?
+- Search bar for "Candidates Placed"
 
 # Branch (Urgent) - Admin Create/Edit Opinions Rework
 - Need to be able to remove an opinion from a ballot
@@ -27,9 +38,6 @@
 - Test the following:
     - Creating an opinion
     - Assigning the opinion to a ballot
-
-# Branch (Urgent) - Promises Rework
-- Need to reword the promises for now so that promises can be both promises for change or a promise to stand for a value. Add info tags to say that a promise might be about a promise to uphold a value or a promise for legislation change
 
 # Branch (Urgent) - Candidate Profile Page Rework
 - Need to do a "show more" on the candidates bio. I expect the candidates to have large bios. Should put a note that most people will not read extremely long bios.
