@@ -1,7 +1,7 @@
 <div x-data="{show: false}">
     <div class="carousel w-full">
         @foreach ($stances as $i => $stance)
-            <div id="item{{$i}}" class="carousel-item w-full">
+            <div id="{{$opinion->name}}-item-{{$i}}" class="carousel-item w-full">
                 {{-- STANCE LABEL --}}
                 <div class="flex flex-col w-full">
                     <div class="form-control w-full">
@@ -23,16 +23,17 @@
                         @error('stances.'.$i.'.stance_reasoning') {{ $message }} @enderror
                     </span>
                 </div>
-                
             </div>
-
             {{-- NEED TO MAKE A DELETE STANCE BUTTON --}}
         @endforeach   
     </div>
     <div class="flex justify-center w-full py-2 gap-2">
-        @for ($i = 0; $i < count($stances); $i++)
+        @foreach ($stances as $i => $stance)
+            <a href="#{{$opinion->name}}-item-{{$i}}" class="btn btn-xs">{{$i}}</a>
+        @endforeach
+        {{-- @for ($i = 0; $i < count($stances); $i++)
             <a href="#item{{$i}}" class="btn btn-xs">{{$i}}</a>
-        @endfor
+        @endfor --}}
     </div>
 
     @if (count($stances) < 3)
