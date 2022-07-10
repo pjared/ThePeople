@@ -3,7 +3,7 @@
         @foreach ($stances as $i => $stance)
             <div id="{{$opinion->name}}-item-{{$i}}" class="carousel-item w-full">
                 {{-- STANCE LABEL --}}
-                <div class="flex flex-col w-full">
+                <div class="flex flex-col w-full items-center">
                     <div class="form-control w-full">
                         <label class="label">
                             <span class="label-text">Stance Label</span>
@@ -22,9 +22,9 @@
                     <span class="error">
                         @error('stances.'.$i.'.stance_reasoning') {{ $message }} @enderror
                     </span>
+                    <button class="btn btn-error w-2/5" wire:click="delete_stance({{$stance->id}})">Delete Stance</button>
                 </div>
             </div>
-            {{-- NEED TO MAKE A DELETE STANCE BUTTON --}}
         @endforeach   
     </div>
     <div class="flex justify-center w-full py-2 gap-2">

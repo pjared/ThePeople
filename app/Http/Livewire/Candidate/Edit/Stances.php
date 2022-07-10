@@ -53,4 +53,11 @@ class Stances extends Component
         $this->stance->controversial_opinion_id = $this->opinion->id;
         $this->stance->save();
     }
+
+    public function delete_stance($stance_id) 
+    {
+        $this->stances->find($stance_id)->delete();
+        //TODO: FINISH WHERE TO IMPLEMENT DELTION FLASH
+        // $this->emitUp('promise-delete-flash');
+    }
 }
