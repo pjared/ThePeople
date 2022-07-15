@@ -19,8 +19,8 @@ class Stances extends Component
     ];
 
     protected $rules = [
-        'stances.*.stance_label' => 'required|numeric',
-        'stances.*.stance_reasoning' => 'nullable',
+        'stances.*.stance_label' => 'required',
+        'stances.*.stance_reasoning' => 'required',
         'stance.stance_label' => 'nullable',
         'stance.stance_reasoning' => 'nullable',
     ];
@@ -68,9 +68,6 @@ class Stances extends Component
     public function save_stances()
     {
         $this->validate();
-        if($this->opinion->id == 1) {
-            dd($this->stances, $this->opinion->name);
-        }
         $this->stances->each->save();
         $this->emit('opinion-flash');
     }

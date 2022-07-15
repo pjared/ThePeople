@@ -3,7 +3,7 @@
         @foreach ($stances as $i => $stance)
             <div id="{{$opinion->name}}-item-{{$i}}" class="carousel-item w-full">
                 {{-- STANCE LABEL --}}
-                <div class="flex flex-col w-full items-center">
+                <div class="flex flex-col w-full items-center gap-2">
                     <div class="form-control w-full">
                         <label class="label">
                             <span class="label-text">Stance Label</span>
@@ -31,13 +31,13 @@
         @foreach ($stances as $i => $stance)
             <a href="#{{$opinion->name}}-item-{{$i}}" class="btn btn-xs">{{$i}}</a>
         @endforeach
-        {{-- @for ($i = 0; $i < count($stances); $i++)
-            <a href="#item{{$i}}" class="btn btn-xs">{{$i}}</a>
-        @endfor --}}
     </div>
 
     @if (count($stances) < 3)
-        <label class="btn btn-primary mt-2" for="new-stance-modal-{{$opinion->id}}">Add Another Stance</label>
+        <div class="flex flex-row justify-center gap-2">
+            <label class="btn btn-primary" for="new-stance-modal-{{$opinion->id}}">Add Another Stance</label>
+            <button class="btn btn-info" wire:click='save_stances'>Save Stances</button>
+        </div>
         @include('modals.new-stance', ['id' => $opinion->id])
         {{-- x-on:click="show = ! show" --}}
     @endif

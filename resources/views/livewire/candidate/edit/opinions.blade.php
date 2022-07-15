@@ -14,7 +14,4 @@
             </div>
         @endforeach 
     </div>
-    <div class="flex justify-center">
-        <button class="btn btn-primary" wire:click='save_stances'>Save Stances</button>
-    </div>
 </div>

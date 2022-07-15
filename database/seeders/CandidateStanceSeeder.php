@@ -29,6 +29,13 @@ class CandidateStanceSeeder extends Seeder
                     'stance_reasoning' => "The Most Exclusive Club in the World",
                     'stance_link' => "www.google.com",
                 ]);
+                DB::table('candidate_stances')->insert([
+                    'candidate_id' => $i,
+                    'controversial_opinion_id' => $j,
+                    'stance_label' => "Roblox > Minecraft",
+                    'stance_reasoning' => "Cause I said so",
+                    'stance_link' => "www.google.com",
+                ]);
             }
         }
     }
