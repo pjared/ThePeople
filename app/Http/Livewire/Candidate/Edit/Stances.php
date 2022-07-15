@@ -55,6 +55,7 @@ class Stances extends Component
         $this->stance->candidate_id = $candidate->id;
         $this->stance->controversial_opinion_id = $this->opinion->id;
         $this->stance->save();
+        $this->emit('opinion-flash');
     }
 
     public function delete_stance($stance_id) 
@@ -71,5 +72,6 @@ class Stances extends Component
             dd($this->stances, $this->opinion->name);
         }
         $this->stances->each->save();
+        $this->emit('opinion-flash');
     }
 }
