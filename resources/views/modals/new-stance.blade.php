@@ -22,7 +22,7 @@
             @error('stance.stance_reasoning') {{ $message }} @enderror
         </span>
         <div class="modal-action">
-            <button for="new-stance-modal-{{$id}}" class="btn btn-primary" wire:click='add_stance'>Save Stance</button>
+            <label for="new-stance-modal-{{$id}}" class="btn btn-primary" wire:click='add_stance'>Save Stance</label>
         </div>
     </label>
 </label>
