@@ -35,7 +35,7 @@ class CandidateInfoSeeder extends Seeder
         }
 
         //  candidate_id | donor_id
-        $num_candidates = 7;
+        $num_candidates = 4;
         /* 
             "name" | "candidate_id" | "politician_id" | "link_found" | "is_controversial"
             "candidate_id" | "name" | "stance" | "link"
@@ -43,7 +43,7 @@ class CandidateInfoSeeder extends Seeder
         */
         for($i = 0; $i < $num_candidates * 3; ++$i) {
             DB::table('campaign_videos')->insert([
-                'candidate_id' => rand(1,7),
+                'candidate_id' => rand(1,$num_candidates),
                 'link' => $this->video_names[rand(0,1)],
             ]);
         }
