@@ -25,7 +25,6 @@ class AssignCandidates extends Component
             'new_ballot_id' => 'required|numeric',
         ]);
         // Attempt to find the ballot
-        // $ballot = Ballot::where('office_id', $this->office_id)->where('location_id', $this->location_id)->first();
         $ballot = Ballot::find($this->new_ballot_id);
 
         //Return if we don't find a ballot

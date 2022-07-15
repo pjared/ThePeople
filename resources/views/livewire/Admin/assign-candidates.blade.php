@@ -21,6 +21,9 @@
                         <h1 class="text-xl">
                             Candidates To Place
                         </h1>
+                        <h1 class="text-sm">
+                            (Type in Ballot id and hit enter 1 at a time)
+                        </h1>
                         <div class="flex background-card grow flex-col gap-1">
                             @foreach ($candidates as $candidate)
                                 <div class="grid grid-cols-3 background-card outline outline-1 outline-black gap-6 text-left">
@@ -53,10 +56,9 @@
                                                 <label class="label">
                                                   <span class="label-text">Ballot ID</span>
                                                 </label>
-                                                <input type="text" wire:model="new_ballot_id" class="input input-bordered w-3/4 max-w-xs" />
+                                                <input type="text" wire:model.defer="new_ballot_id" class="input input-bordered w-3/4 max-w-xs" />
                                             </div>
                                             @error('new_ballot_id') <span class="error">{{ $message }}</span> @enderror
-
                                         </form>
                                     </div>
                                 </div>
