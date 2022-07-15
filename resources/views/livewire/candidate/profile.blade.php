@@ -157,8 +157,9 @@
                                 <div id="{{$opinion->name}}-item-{{$i}}" class="carousel-item w-full">
                                     <div class="flex flex-row gap-2">
                                         <div class="flex grow flex-col">
-                                            <span class="text-left"><b>{{$candidate_stance->stance_label}}
-                                                </b></span>
+                                            <span class="text-left">
+                                                <b>{{$candidate_stance->stance_label}}</b>
+                                            </span>
                                             <span>{{$candidate_stance->stance_reasoning}}</span>
                                         </div>
                                         <div class="flex items-center">
@@ -176,7 +177,7 @@
                         </div>
                         <div class="flex justify-center w-full py-2 gap-2">
                             @if (count($candidate->opinion_stances($opinion->id)) > 1)
-                                @for ($i = 1; $i <= count($candidate->opinion_stances($opinion->id)); $i++)
+                                @for ($i = 0; $i < count($candidate->opinion_stances($opinion->id)); $i++)
                                     <a href="#{{$opinion->name}}-item-{{$i}}" class="btn btn-info btn-xs">{{$i}}</a>
                                 @endfor
                             @endif
