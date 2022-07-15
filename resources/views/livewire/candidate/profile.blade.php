@@ -138,49 +138,30 @@
             </div>
         </div>
     </div>
-    {{-- RIGHT COLUMN --}}
+        {{-- RIGHT COLUMN --}}
     <div class="flex flex-col w-11/12 grow gap-6 items-center">
         {{-- CONTROVERSIAL OPINIONS --}}
-        <div class="flex flex-col background-card w-11/12 items-cente gap-2">
-            <div class="flex flex-col justify-center">
-                <div class="flex justify-center">
-                    <span>Controversial Opinions</span>
-                </div>
+        <div class="flex flex-col background-card w-11/12 items-center gap-2">
+            <div class="flex justify-center">
+                <span class="text-xl font-medium">Controversial Opinions</span>
             </div>
-            <div class="flex flex-col grow gap-2 text-center">
+            <div class="flex flex-col grow gap-2 text-center w-full">
                 @foreach($opinions as $opinion)
                     {{-- Make sure stances exist --}}
                     @if(count($candidate->opinion_stances($opinion->id)) >= 1)
-                        <span>{{$opinion->name}}</span>
-                        <div class="carousel w-full">
+                        <span class="text-lg font-medium">{{$opinion->name}}</span>
+                        <div class="flex flex-col items-start justify-items-start">
                             @foreach ($candidate->opinion_stances($opinion->id) as $i => $candidate_stance)
-                                <div id="{{$opinion->name}}-item-{{$i}}" class="carousel-item w-full">
-                                    <div class="flex flex-row gap-2">
-                                        <div class="flex grow flex-col">
-                                            <span class="text-left">
-                                                <b>{{$candidate_stance->stance_label}}</b>
-                                            </span>
-                                            <span>{{$candidate_stance->stance_reasoning}}</span>
-                                        </div>
-                                        <div class="flex items-center">
-                                            @auth
-                                                <livewire:flag :type="'controversial-stance'" :type_id="$candidate_stance->id" :wire:key="'stance-'.$candidate_stance->id"> 
-                                            @else
-                                                <label class="fill-transparent" for="signup-modal">
-                                                    @include('icons.flag')
-                                                </label>  
-                                            @endauth
-                                        </div>
+                                <div class="collapse collapse-arrow w-full">
+                                    <input type="checkbox" /> 
+                                    <div class="collapse-title text-md font-medium text-left">
+                                        <b>{{$candidate_stance->stance_label}}</b>
+                                    </div>
+                                    <div class="collapse-content"> 
+                                        <p>{{$candidate_stance->stance_reasoning}}</p>
                                     </div>
                                 </div>
                             @endforeach
-                        </div>
-                        <div class="flex justify-center w-full py-2 gap-2">
-                            @if (count($candidate->opinion_stances($opinion->id)) > 1)
-                                @for ($i = 0; $i < count($candidate->opinion_stances($opinion->id)); $i++)
-                                    <a href="#{{$opinion->name}}-item-{{$i}}" class="btn btn-info btn-xs">{{$i}}</a>
-                                @endfor
-                            @endif
                         </div>
                     @endif
                 @endforeach
