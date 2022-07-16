@@ -31,7 +31,10 @@
             </div>                   
         @endif        
         @if(count($promises) < 5)
-            <livewire:candidate-edit.add-promise :candidate_id="$candidate_id" :wire:key="'add-promise'.$candidate_id">                        
+            <label class="btn btn-primary" for="new-promise">Add A Promise</label>
+
+            @include('modals.new-promise')
+            {{-- <livewire:candidate-edit.add-promise :candidate_id="$candidate_id" :wire:key="'add-promise'.$candidate_id">                         --}}
         @endif
     </div>
 </div>
