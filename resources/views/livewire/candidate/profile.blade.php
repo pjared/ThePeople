@@ -92,7 +92,6 @@
                                         @include('icons.flag')
                                     </label>  
                                 @endauth
-                                        
                             </div>
                         @endforeach
                     </div>
@@ -152,13 +151,26 @@
                         <span class="text-lg font-medium">{{$opinion->name}}</span>
                         <div class="flex flex-col items-start justify-items-start">
                             @foreach ($candidate->opinion_stances($opinion->id) as $i => $candidate_stance)
-                                <div class="collapse collapse-arrow w-full">
-                                    <input type="checkbox" /> 
-                                    <div class="collapse-title text-md font-medium text-left">
-                                        <b>{{$candidate_stance->stance_label}}</b>
+                                <div class="grid grid-cols-8 gap-2 w-full items-center">
+                                    <div class="col-span-7">
+                                        <div class="collapse collapse-arrow">
+                                            <input type="checkbox" /> 
+                                            <div class="collapse-title text-md font-medium text-left">
+                                                <b>{{$candidate_stance->stance_label}}</b>
+                                            </div>
+                                            <div class="collapse-content"> 
+                                                <p>{{$candidate_stance->stance_reasoning}}</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="collapse-content"> 
-                                        <p>{{$candidate_stance->stance_reasoning}}</p>
+                                    <div class="col-span-1 items-center">
+                                        @auth
+                                            <livewire:flag :type="'controversial-stance'" :type_id="$candidate_stance->id" :wire:key="'stance-'.$candidate_stance->id"> 
+                                        @else
+                                            <label class="fill-transparent" for="signup-modal">
+                                                @include('icons.flag')
+                                            </label>  
+                                        @endauth
                                     </div>
                                 </div>
                             @endforeach
