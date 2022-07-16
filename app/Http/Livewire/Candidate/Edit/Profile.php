@@ -30,12 +30,12 @@ class Profile extends Component
     ];
 
     protected $rules = [
-        'candidate.bio' => 'required|string|max:500',
-        'candidate.party_id' => 'required|string|max:500',
-        'candidate.contact_phone_number' => 'required|string|max:500',
-        'candidate.phone_number' => 'required|string|max:500',
-        'candidate.contact_email' => 'required|string|max:500',
-        'candidate.email' => 'required|string|max:500',
+        'candidate.bio' => 'nullable|string',
+        'candidate.party_id' => 'required|string',
+        'candidate.contact_phone_number' => 'required|string',
+        'candidate.phone_number' => 'required|string',
+        'candidate.contact_email' => 'required|string',
+        'candidate.email' => 'required|string',
         'candidate.site_link' => 'nullable',
     ];
 
