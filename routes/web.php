@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'getWelcomeView']);
+Route::get('/', function()  {
+    return view('welcome');
+});
 
 /* -----LOGIN------ */
 Route::middleware([
@@ -25,7 +27,10 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/home', [HomeController::class, 'getWelcomeView'])->name('home');
+    Route::get('/home', function()  {
+        //Keeping this it's own view because with user information we're going to load them a customized page
+        return view('welcome');
+    })->name('home');
 });
 
 /* -----BALLOT------ */
@@ -33,19 +38,21 @@ Route::get('/ballot/{id}', [BallotController::class, 'getBallotView'])->name('ba
 
 /* -----CANDIDATE------ */
 
-//Route for users to apply
+//APPLICATION
 Route::get('/apply', function () {
     return view('candidate.apply');
 })->name('candidate-apply');
 
-//The candidate profile route
+//PROFILE VIEW
 Route::get('candidate/profile/{id}', [CandidateController::class, 'getCandidateView']);
 
+//PROFILE EDITING
 Route::group(['prefix' =>'candidate', 'namespace' => 'candidate','middleware' => ['role:candidate']], function() {
     Route::get('/edit', function () {
         return view('candidate.profile');
     })->name('candidate-edit-profile');
 });
+
 /* -----ADMIN------ */
 Route::group(['prefix' =>'admin', 'namespace' => 'admin','middleware' => ['role:admin']], function() {
     Route::get('/', function () {
