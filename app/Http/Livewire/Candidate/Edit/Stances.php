@@ -71,4 +71,32 @@ class Stances extends Component
         $this->stances->each->save();
         $this->emit('opinion-flash');
     }
+
+    /*public function update_badges() 
+    {
+        foreach($this->stances as $stance) {
+            // If the stance is at 50, it's considered neutral
+            if($stance->value == 50) {
+                $badge_name = $stance->opinion->name . ' - Nuetral';
+                $badge = Badge::firstWhere('name', $badge_name);
+            } else if ($stance->value < 50) {
+                // < 50, get the first side of the opinion
+                $badge = Badge::firstWhere('name', $stance->opinion->first_side);
+            } else {
+                // > 50, get the second ("right")side of the opinion
+                $badge = Badge::firstWhere('name', $stance->opinion->second_side);
+            }
+            
+            //Update the candidate badge if it exists, or create one if it doesn't
+            CandidateBadge::updateOrCreate(
+                [
+                    'candidate_id' => $stance->candidate_id,
+                    'opinion_id' => $stance->controversial_opinion_id
+                ],
+                [
+                    'badge_id' => $badge->id,
+                ]
+            );
+        }
+    }*/
 }
