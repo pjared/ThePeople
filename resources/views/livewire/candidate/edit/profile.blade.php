@@ -2,9 +2,7 @@
     <div class="flex grow justify-center">            
         {{-- LEFT COLUMN --}}
         <div class="flex flex-col w-1/2 gap-2 p-4">
-            {{-- CANDIDATE PERSONAL INFO --}}
-
-            {{-- BIO,PROMISES, PREVIOUS POSITIONS --}}
+            {{-- BIO,PROMISES, PREVIOUS POSITIONS, INFO --}}
             <div class="flex flex-col p-2 w-11/12 items-center gap-6">
 
                 {{-- BIO FLASH MESSAGE --}}
@@ -73,68 +71,25 @@
                 @endif
                 {{-- PREVIOUS POSITIONS --}}                
                 <livewire:candidate.edit.positions :candidate_id="$candidate->id" :positions="$candidate->previous_positions" :wire:key="'candidate-positions'.$candidate->id">
-            </div>
-        </div> 
-        {{-- RIGHT COLUMN --}}
-        <div class="flex flex-col w-1/2 p-5 gap-6">
-            {{-- CONTROVERSIAL OPINIONS --}}
-            @if (session()->has('update-stances-success'))
-                <div class="alert alert-success shadow-lg flex w-11/12">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        <span>Your stances have been updated!</span>
-                    </div>
-                </div>
-            @elseif(session()->has('update-stances-failure'))
-                <div class="alert alert-error shadow-lg">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        <span>Error! Your stances did not updated. Please check your input and try again</span>
-                    </div>
-                </div>
-            @endif
-            @if ($this->candidate->ballot)
-                <livewire:candidate.edit.opinions :opinions="$this->candidate->ballot->opinions" :wire:key="'candidate-opinions-'.$candidate->id">
-            @else 
-                <div class="flex">
-                    <span class="text-center justify-center">We have not placed you on a ballot yet. You will be notified when we have done this so you can fill out your controversial opinons</span>
-                </div>
-            @endif
-            
-            
-            
-            {{-- OTHER OPINIONS --}}
-            {{-- <div class="mt-4" id="opinionsInfo">
-                <div style="width:95%" class="background-card background-card-body" type="button" data-bs-toggle="collapse" data-bs-target="#opinionsInfoCollapse" aria-expanded="false" aria-controls="multiCollapseExample2">
-                    <div class="row">
-                        <div class="col text-center">
-                            Other Opinions
-                            <i class="bi bi-lightning-charge"></i>
+
+                {{-- CANDIDATE INFO FLASH MESSAGE --}}
+                @if (session()->has('update-info-success'))
+                    <div class="alert alert-success shadow-lg flex w-11/12">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <span>Your info has been updated!</span>
                         </div>
                     </div>
-                    TODO: Allow to add for an other opinions
-                </div>
-            </div> --}}
-
-            {{-- CANDIDATE INFO FLASH MESSAGE --}}
-            @if (session()->has('update-info-success'))
-                <div class="alert alert-success shadow-lg flex w-11/12">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        <span>Your info has been updated!</span>
+                @elseif(session()->has('update-info-failure'))
+                    <div class="alert alert-error shadow-lg">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <span>Error! Your info did not updated. Please check your input and try again</span>
+                        </div>
                     </div>
-                </div>
-            @elseif(session()->has('update-info-failure'))
-                <div class="alert alert-error shadow-lg">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        <span>Error! Your info did not updated. Please check your input and try again</span>
-                    </div>
-                </div>
-            @endif
-            {{-- CANDIDATE INFO --}}
-            <form class="flex" wire:submit.prevent="save_info"> 
-                <div class="flex flex-col background-card w-11/12 items-center gap-4">                  
+                @endif
+                {{-- CANDIDATE INFO --}}
+                <form class="flex flex-col background-card w-11/12 items-center gap-4" wire:submit.prevent="save_info">                  
                     {{-- POLITICAL PARTY, CANDIDATE PERSONAL SITE --}}
                     <div class="flex flex-row gap-4">
                         {{-- POLITICAL PARTY --}}
@@ -224,8 +179,50 @@
                         @endif
                     </div>
                     <button class="btn btn-primary" type="submit">Save Info</button>
+                </form>
+            </div>
+        </div> 
+        {{-- RIGHT COLUMN --}}
+        <div class="flex flex-col w-1/2 p-5 gap-6">
+            {{-- CONTROVERSIAL OPINIONS --}}
+            @if (session()->has('update-stances-success'))
+                <div class="alert alert-success shadow-lg flex w-11/12">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span>Your stances have been updated!</span>
+                    </div>
                 </div>
-            </form>
+            @elseif(session()->has('update-stances-failure'))
+                <div class="alert alert-error shadow-lg">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span>Error! Your stances did not updated. Please check your input and try again</span>
+                    </div>
+                </div>
+            @endif
+            @if ($this->candidate->ballot)
+                @include('candidate.edit.opinions', ['opinions' => $candidate->ballot->opinions])
+                {{-- <livewire:candidate.edit.opinions :opinions="$this->candidate->ballot->opinions" :wire:key="'candidate-opinions-'.$candidate->id"> --}}
+            @else 
+                <div class="flex">
+                    <span class="text-center justify-center">We have not placed you on a ballot yet. You will be notified when we have done this so you can fill out your controversial opinons</span>
+                </div>
+            @endif
+            
+            
+            
+            {{-- OTHER OPINIONS --}}
+            {{-- <div class="mt-4" id="opinionsInfo">
+                <div style="width:95%" class="background-card background-card-body" type="button" data-bs-toggle="collapse" data-bs-target="#opinionsInfoCollapse" aria-expanded="false" aria-controls="multiCollapseExample2">
+                    <div class="row">
+                        <div class="col text-center">
+                            Other Opinions
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                    </div>
+                    TODO: Allow to add for an other opinions
+                </div>
+            </div> --}}
         </div>
     </div>
 </div>
