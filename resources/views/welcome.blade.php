@@ -6,7 +6,7 @@
             </div>
         </div>
         <div>
-            <livewire:ballot-list />
+            <livewire:ballot.ballot-list />
         </div>
     </div>
 </x-app-layout>

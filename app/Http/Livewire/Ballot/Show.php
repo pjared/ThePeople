@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Ballot;
 
 use App\Models\Ballot;
 use App\Models\UserVotes;
 use Livewire\Component;
 
-class BallotWire extends Component
+class Show extends Component
 {
     public Ballot $ballot;
 
@@ -17,6 +17,7 @@ class BallotWire extends Component
 
     public function change_user_vote($candidate_id)
     {
+        //TODO: auth check needed or already handled in the view?
         UserVotes::updateOrCreate(
             [
                 'user_id' => auth()->id(),
@@ -31,6 +32,6 @@ class BallotWire extends Component
 
     public function render()
     {
-        return view('livewire.ballot-wire');
+        return view('livewire.ballot.show');
     }
 }

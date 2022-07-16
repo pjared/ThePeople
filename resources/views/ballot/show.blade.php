@@ -8,15 +8,14 @@
 
     <div class="flex flex-1 items-center grow py-12">
         <div class="w-1/5 ml-6">
-            <livewire:ballot-list />
+            <livewire:ballot.ballot-list />
         </div>
         
         {{-- TODO: Might have to make this it's own scrollable div --}}
         <div class="flex flex-1 w-4/5 mr-8 justify-center">
-            <livewire:ballot-wire :ballot="$ballot">
+            <livewire:ballot.show :ballot="$ballot">
         </div>
     </div>
 
     @include('modals.signup', ['message' => "Please log in or register if you'd like to save your vote for the candidate. You can print the list of candidates for your state from your profile."])
 </x-app-layout>
-

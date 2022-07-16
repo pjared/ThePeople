@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Ballot;
 
 use App\Models\Ballot;
 use Livewire\Component;
@@ -16,6 +16,6 @@ class BallotList extends Component
 
     public function render()
     {
-        return view('livewire.ballot-list');
+        return view('livewire.ballot.ballot-list');
     }
 }
