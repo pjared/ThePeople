@@ -27,8 +27,4 @@ class CandidateController extends Controller
         return view('candidate.create')
                 ->with('controversial_opinions', $controversial_opinions);
     }
-
-    public function createCandidate(Request $request) {
-
-    }
 }
