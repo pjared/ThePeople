@@ -33,6 +33,32 @@
     </div>
     <div class="flex flex-col w-1/2 items-center gap-6">
         {{-- BALLOT OPINIONS --}}
-        
+        {{-- TODO: Create a place to edit controversial opinions --}}
+        <div class="flex flex-col text-center w-full gap-4">
+            <span class="text-2xl">Opinions</span>
+            <form class="flex flex-col gap-2" wire:submit.prevent="save_opinions">
+                <button class="btn btn-primary" type='submit'>Save Opinions</button>
+                @foreach ($opinions as $i => $opinion)
+                    <div class="flex flex-col w-full gap-2 items-center justify-center">
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                                <span class="label-text">Change Opinion Name</span>
+                            </label>
+                            <input type="text" wire:model.defer="opinions.{{$i}}.name" class="input input-bordered w-full max-w-xs" />
+                        </div>
+                        {{-- <span class="text-xl">
+                            
+                        </span> --}}
+                        <div class="form-control w-full">
+                            <label class="label">
+                              <span class="label-text">Change Opinion Description</span>
+                            </label> 
+                            {{-- {{$opinion->description}} --}}
+                            <textarea class="textarea textarea-bordered h-24 w-full" wire:model.defer="opinions.{{$i}}.description"></textarea>
+                        </div>
+                    </div>
+                @endforeach
+            </form>
+        </div>
     </div>
 </div>

@@ -14,12 +14,16 @@ class CreateOpinions extends Component
     public $opinions;
 
     protected $rules = [
-        'new_opinion.name' => 'required',
-        'new_opinion.description' => 'required',
-        'new_opinion.votes' => 'required|numeric',
+        'new_opinion.name' => 'nullable|string',
+        'new_opinion.description' => 'nullable|string',
+        'new_opinion.votes' => 'nullable|numeric',
+
+        'opinions.*.name' => 'required|string',
+        'opinions.*.description' => 'required|string',
     ];
 
     public function mount() {
+        $this->opinions = ControversialOpinion::all();
         $this->new_opinion = new ControversialOpinion();
     }
 
@@ -28,8 +32,17 @@ class CreateOpinions extends Component
         return view('livewire.admin.create-opinions');
     }
 
-    public function add_opinion() {
+    public function save_opinions() {
         $this->validate();
+        $this->opinions->each->save();
+    }
+
+    public function add_opinion() {
+        $this->validate([
+            'new_opinion.name' => 'required|string',
+            'new_opinion.description' => 'required|string',
+            'new_opinion.votes' => 'required|numeric',
+        ]);
         $this->new_opinion->save();
     }
 }
