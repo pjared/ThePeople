@@ -11,27 +11,22 @@
         </div>
     @endif
     
-    <div class="grid grid-cols-3 justify-center gap-8">
+    <div class="grid grid-cols-3 justify-center w-full gap-2">
         {{-- OPINION LIST --}}
         <div class="col-span-1 flex flex-col text-center gap-4">
             <span class="text-2xl">Opinions</span>
         
-            <form class="flex flex-col items-center" wire:keydown.enter="save_opinions">
+            <div class="flex flex-col items-center gap-2">
                 @foreach ($opinions as $i => $opinion)
-                    <div class="grid grid-cols-2 gap-6 items-center justify-center">
-                        <div class="col-span-1 flex flex-col">
-                            <span class="text-xl">
-                                {{$opinion->name}} - {{$opinion->id}}
-                            </span>
-                        </div>
-                    </div>
+                    <span class="text-xl">
+                        {{$opinion->name}} ({{$opinion->id}})
+                    </span>
                 @endforeach
-            </form>
+            </div>
         </div>
     
-        {{-- OPINION TYPE LIST --}}
+        {{-- ADD OPINION TO BALLOT --}}
         <div class="col-span-1 flex flex-col text-center gap-4">
-            {{-- ADD OPINION TO BALLOT --}}
             <div class="flex flex-col background-card items-center rounded-t-none w-11/12" x-show="show" x-transition>
                 <h1>Add Opinion to Ballot</h1>
                 <div class="flex flex-col grow ">
@@ -39,7 +34,7 @@
                         <label class="label">
                             <span class="label-text">Opinion ID</span>
                         </label>
-                        <input type="number" wire:model.defer="new_ballot_opinion.opinion_id" class="input input-bordered w-full max-w-xs" />
+                        <input type="number" wire:model.defer="new_ballot_opinion.controversial_opinion_id" class="input input-bordered w-full max-w-xs" />
                     </div>
                     @error('new_ballot_opinion.opinion_id') <span class="error">{{ $message }}</span> @enderror
                     <div class="form-control w-full max-w-xs">
@@ -65,10 +60,13 @@
                         <div class="text-center">
                             <span>{{ $ballot->voting_date->format('m/d/Y') }}</span>
                         </div>     
-                        <div class="flex-row">
+                        <div class="flex flex-col">
                             {{-- {{dd($ballot->opinions)}} --}}
                             @foreach ($ballot->opinions as $opinion)
-                                {{$opinion->name}} ({{$opinion->id}})
+                                <div class="grid grid-cols-4">
+                                    <span class='col-span-3'>{{$opinion->name}}</span>
+                                    <button wire:click='remove_ballot_opinion({{$ballot->id}},{{$opinion->id}})' class="btn btn-sm btn-error">Delete</button>
+                                </div>
                             @endforeach
                         </div>                    
                     </div>
