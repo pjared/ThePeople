@@ -202,14 +202,11 @@
             @endif
             @if ($this->candidate->ballot)
                 @include('candidate.edit.opinions', ['opinions' => $candidate->ballot->opinions])
-                {{-- <livewire:candidate.edit.opinions :opinions="$this->candidate->ballot->opinions" :wire:key="'candidate-opinions-'.$candidate->id"> --}}
             @else 
                 <div class="flex">
                     <span class="text-center justify-center">We have not placed you on a ballot yet. You will be notified when we have done this so you can fill out your controversial opinons</span>
                 </div>
             @endif
-            
-            
             
             {{-- OTHER OPINIONS --}}
             {{-- <div class="mt-4" id="opinionsInfo">
