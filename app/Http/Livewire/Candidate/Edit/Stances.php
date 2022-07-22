@@ -55,21 +55,20 @@ class Stances extends Component
         $this->stance->candidate_id = $candidate->id;
         $this->stance->controversial_opinion_id = $this->opinion->id;
         $this->stance->save();
-        $this->emit('opinion-flash');
+        session()->flash('update-stance-success-' . $this->opinion->name);
     }
 
     public function delete_stance($stance_id) 
     {
         $this->stances->find($stance_id)->delete();
-        //TODO: FINISH WHERE TO IMPLEMENT DELTION FLASH
-        // $this->emitUp('promise-delete-flash');
+        session()->flash('delete-stance-' . $this->opinion->name);
     }
 
     public function save_stances()
     {
         $this->validate();
         $this->stances->each->save();
-        $this->emit('opinion-flash');
+        session()->flash('update-stance-success-' . $this->opinion->name);
     }
 
     /*public function update_badges() 
