@@ -39,7 +39,7 @@ class LawsSeeder extends Seeder
 
         foreach ($this->law_names as $name) {
             DB::table('candidate_law')->insert([
-                'candidate_id' => rand(1, 7),
+                'candidate_id' => rand(1, 4),
                 'law_id' => rand(1, count($this->law_names)),
             ]);
         }
