@@ -4,14 +4,23 @@ namespace App\Http\Livewire\Ballot;
 
 use App\Models\Ballot;
 use App\Models\UserVotes;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Show extends Component
 {
     public Ballot $ballot;
 
+    public $candidate_vote;
+
     public function mount($ballot)
     {
+        if(Auth::user()) {
+            $user_vote = UserVotes::where('ballot_id', $ballot->id)->where('user_id', Auth::id())->first();
+            if($user_vote) {
+                $this->candidate_vote = $user_vote->running_candidate_id;
+            }            
+        }
         $this->ballot = $ballot;
     }
 
