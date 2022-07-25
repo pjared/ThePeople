@@ -29,16 +29,6 @@ class Profile extends Component
         'position-delete-flash' => 'position_delete_flash',
     ];
 
-    protected $rules = [
-        'candidate.bio' => 'nullable|string',
-        'candidate.party_name' => 'required|string',
-        'candidate.contact_phone_number' => 'nullable',
-        'candidate.phone_number' => 'nullable',
-        'candidate.contact_email' => 'required|string',
-        'candidate.email' => 'nullable',
-        'candidate.site_link' => 'nullable',
-    ];
-
     public function mount()
     {
         $this->candidate = Candidate::firstWhere('user_id', Auth::user()->id);
@@ -47,7 +37,7 @@ class Profile extends Component
             $this->show = $this->candidate->running_candidate->show;
         }
         
-        $this->political_parties = PoliticalParty::all();
+        // $this->political_parties = PoliticalParty::all();
     }
 
     public function render()
@@ -56,32 +46,7 @@ class Profile extends Component
         return view('livewire.candidate.edit.profile');
     }
 
-    public function save_info() 
-    {
-        $this->validate([
-            'candidate.contact_email' => 'required|email',
-            'candidate.party_name' => 'required|string',
-            'candidate.site_link' => 'nullable',
-        ]);
-        $this->candidate->save();
-        
-        if($this->candidate->running_candidate) {
-            $this->candidate->running_candidate->show = $this->show;
-            $this->candidate->running_candidate->save();
-        }
 
-        session()->flash('update-info-success');
-    }
-
-    public function save_bio() 
-    {
-        $this->validate([
-            'candidate.bio' => 'required',
-        ]);
-
-        $this->candidate->save();
-        session()->flash('update-bio-success');
-    }
 
     /* EVENTS */
     /* EVENTS */
