@@ -17,14 +17,9 @@ class CandidateController extends Controller
                     ->with('candidate', $candidate);
     }
 
-    /**
-     * Get the page ready for the candidate to sign up
-     */
-    public function getCandidateCreatePage() {
-        //Get the list of controversial opinions for the candidate to input
-        $controversial_opinions = ControversialOpinion::all();
-
-        return view('candidate.create')
-                ->with('controversial_opinions', $controversial_opinions);
+    public function getCandidatePreview($id) {
+        $candidate = Candidate::find(intval($id));
+        return view('candidate.preview')
+                    ->with('candidate', $candidate);
     }
 }
