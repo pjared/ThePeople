@@ -1,4 +1,4 @@
-<div class="flex grow flex-col items-center">
+<div class="flex grow flex-col items-center pt-4">
     <div class="w-2/5">
         @if (session()->has('message'))
             <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert"">

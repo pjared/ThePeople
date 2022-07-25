@@ -1,5 +1,6 @@
-<div class="flex grow justify-center">
+<div class="flex flex-col pb-6 justify-center items-center">
     @role('admin')
+        @include('admin.admin-nav')
         <div class="grid grid-cols-2 gap-12">
             <div class="col-span-1">
                 <div class="flex flex-col background-card items-center outline outline-1 outline-black">

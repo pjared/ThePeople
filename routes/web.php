@@ -3,6 +3,13 @@
 use App\Http\Controllers\BallotController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\PermaLinkController;
+use App\Http\Livewire\Admin\ApproveCandidates;
+use App\Http\Livewire\Admin\AssignCandidates;
+use App\Http\Livewire\Admin\CreateBallot;
+use App\Http\Livewire\Admin\CreateOpinions;
+use App\Http\Livewire\Admin\EditOpinions;
+use App\Http\Livewire\Admin\EditPermalinks;
+use App\Http\Livewire\Candidate\Application;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,9 +45,8 @@ Route::get('/ballot/{id}', [BallotController::class, 'getBallotView'])->name('ba
 /* -----CANDIDATE------ */
 
 //APPLICATION
-Route::get('/apply', function () {
-    return view('candidate.apply');
-})->name('candidate-apply');
+Route::get('/apply', Application::class)->name('candidate-apply');
+
 
 //PROFILE VIEW
 Route::get('candidate/profile/{id}', [CandidateController::class, 'getCandidateView']);
@@ -60,33 +66,22 @@ Route::group(['prefix' =>'candidate','middleware' => ['role:candidate']], functi
 });
 
 /* -----ADMIN------ */
-Route::group(['prefix' =>'admin', 'namespace' => 'admin','middleware' => ['role:admin']], function() {
+Route::group(['prefix' =>'admin','middleware' => ['role:admin']], function() {
     Route::get('/', function () {
         return view('admin.show');
     })->name('admin');
-    Route::group(['prefix' =>'candidate', 'namespace' => 'candidate'], function() {
-        Route::get('/approve', function () {
-            return view('admin.approve-candidates');
-        })->name('approve_candidates');
-        Route::get('/assign', function () {
-            return view('admin.assign-candidates');
-        })->name('assign_candidates');
-        Route::get('/links', function () {
-            return view('admin.permalinks');
-        })->name('candidate-links');
+    Route::group(['prefix' =>'candidate'], function() {
+        Route::get('/approve', ApproveCandidates::class)->name('approve_candidates');
+        Route::get('/assign', AssignCandidates::class)->name('assign_candidates');
+        Route::get('/links', EditPermalinks::class)->name('candidate-links');
     });
     
-    Route::get('/create-ballot', function () {
-        return view('admin.create-ballot');
-    })->name('create-ballot');
+    Route::get('/create-ballot', CreateBallot::class)->name('create-ballot');
 
-    Route::group(['prefix' =>'opinions', 'namespace' => 'opinions'], function() {
-        Route::get('/create', function () {
-            return view('admin.create-opinions');
-        })->name('create-opinions');
-        Route::get('/edit', function () {
-            return view('admin.edit-opinions');
-        })->name('edit-opinions');
+    Route::group(['prefix' =>'opinions'], function() {
+        Route::get('/create', CreateOpinions::class)->name('create-opinions');
+
+        Route::get('/edit', EditOpinions::class)->name('edit-opinions');
     });
 });
 

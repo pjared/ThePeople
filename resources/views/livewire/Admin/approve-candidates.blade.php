@@ -1,5 +1,6 @@
-<div class="flex grow justify-center pb-6">
+<div class="flex flex-col pb-6 justify-center items-center">
     @role('admin')
+        @include('admin.admin-nav')
         <div class="flex flex-col background-card w-3/4 items-center">
             <h1>List of Applications</h1>
             @foreach ($applications as $application)

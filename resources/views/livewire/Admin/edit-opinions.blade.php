@@ -1,4 +1,5 @@
-<div class="flex flex-col justify-center items-center gap-12">
+<div class="flex flex-col pb-6 justify-center items-center">
+    @include('admin.admin-nav')
     {{-- OPINIONS LIST --}}
     @if (session()->has('message'))
         <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800 w-3/4" role="alert">
