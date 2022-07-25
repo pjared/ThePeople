@@ -48,7 +48,7 @@ Route::get('candidate/profile/{id}', [CandidateController::class, 'getCandidateV
 //PROFILE EDITING
 Route::group(['prefix' =>'candidate','middleware' => ['role:candidate']], function() {
     Route::get('/dashboard', [CandidateController::class, 'getCandidateDashboard'])->name('candidate-dashboard');
-    Route::get('/preview', [CandidateController::class, 'getCandidatePreview'])->name('candidate-preview');
+    Route::get('/preview', \App\Http\Livewire\Candidate\Preview::class)->name('candidate-preview');
     Route::group(['prefix' =>'edit'], function() {
         Route::get('/info', \App\Http\Livewire\Candidate\Edit\EditInfo::class);
         Route::get('/bio', \App\Http\Livewire\Candidate\Edit\EditBio::class);
