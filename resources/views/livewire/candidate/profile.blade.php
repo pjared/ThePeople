@@ -29,35 +29,8 @@
             {{-- BIO COMPONENT --}}
             @include('candidate.component.bio', ['bio' => $candidate->bio])
 
-            {{-- DONORS --}}
-            @if(count($candidate->donors) != 0) 
-                <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
-                    <button class="flex background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
-                        <div class="text-start">
-                            Campaign Donors
-                        </div>
-                    </button>
-                    <div class="flex flex-col background-card rounded-t-none w-11/12 gap-4" x-show="open" x-transition>
-                        @if(count($candidate->donors) >= 1)
-                            @foreach ($candidate->donors as $donor)
-                                <div class="flex flex-row items-center justify-center gap-2">
-                                    <span>Name:  {{$donor->name}}</span>
-                                    @auth   
-                                        <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-'.$donor->id">  
-                                    @else
-                                        <label class="fill-transparent" for="signup-modal">
-                                            @include('icons.flag')
-                                        </label>  
-                                    @endauth
-                                    
-                                </div>          
-                            @endforeach
-                        @else
-                            No donor data as of yet.
-                        @endif
-                    </div>
-                </div>
-            @endif
+            {{-- CAMPAIGN VIDEOS COMPONENT --}}
+            @include('candidate.component.videos', ['videos' => $candidate->videos])
             
             {{-- PROMISES COMPONENT --}}
             @include('candidate.component.promises', ['promises' => $candidate->promises])
@@ -99,8 +72,35 @@
             </div>    
         @endif 
 
-        {{-- CAMPAIGN VIDEOS COMPONENT --}}
-        @include('candidate.component.videos', ['videos' => $candidate->videos])
+        {{-- DONORS --}}
+        @if(count($candidate->donors) != 0) 
+            <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
+                <button class="flex background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
+                    <div class="text-start">
+                        Campaign Donors
+                    </div>
+                </button>
+                <div class="flex flex-col background-card rounded-t-none w-11/12 gap-4" x-show="open" x-transition>
+                    @if(count($candidate->donors) >= 1)
+                        @foreach ($candidate->donors as $donor)
+                            <div class="flex flex-row items-center justify-center gap-2">
+                                <span>Name:  {{$donor->name}}</span>
+                                @auth   
+                                    <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-'.$donor->id">  
+                                @else
+                                    <label class="fill-transparent" for="signup-modal">
+                                        @include('icons.flag')
+                                    </label>  
+                                @endauth
+                                
+                            </div>          
+                        @endforeach
+                    @else
+                        No donor data as of yet.
+                    @endif
+                </div>
+            </div>
+        @endif
 
         {{-- LAW MAKING INVOLVEMENT  --}}
         @if(count($candidate->law_involvement) != 0) 
