@@ -37,8 +37,8 @@
             type_id: {{$type_id}}
             }">
     @endif
-            <div x-bind="flag" class="flex justify-center" :class="{ 'fill-transparent': transparent, 'fill-green-600': green,'fill-red-600': red ,'fill-black': black }">
-                @include('icons.flag')
+        <div x-bind="flag" class="flex justify-center" :class="{ 'fill-transparent': transparent, 'fill-green-600': green,'fill-red-600': red ,'fill-black': black }">
+            @include('icons.flag')
         </div>
     </div>
 </div>
