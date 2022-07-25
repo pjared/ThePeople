@@ -1,4 +1,4 @@
-<div class="grid grid-cols-2 p-8 justify-center">
+<div class="grid grid-cols-2 p-8 justify-center w-full">
     {{-- LEFT COLUMN --}}
     <div class="flex grow flex-col gap-6 items-center">
         {{-- CANDIDATE PERSONAL INFO --}}
