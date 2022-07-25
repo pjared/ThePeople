@@ -37,7 +37,10 @@
                             </div>
                             <div class="col-span-1 items-center">
                                 @auth
-                                    <livewire:flag :type="'controversial-stance'" :type_id="$candidate_stance->id" :wire:key="'stance-'.$candidate_stance->id"> 
+                                    <livewire:flag 
+                                        :type="'controversial-stance'" 
+                                        :type_id="$candidate_stance->id" 
+                                        :wire:key="'stance-flag-'.$candidate_stance->id"> 
                                 @else
                                     <label class="fill-transparent" for="signup-modal">
                                         @include('icons.flag')

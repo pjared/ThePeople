@@ -5,7 +5,7 @@
         <div class="flex flex-row gap-6 w-11/12 justify-center">
             <img src="{{ $candidate->user->profile_photo_url }}" alt="{{ $candidate->name }}" class="h-44 w-44">
             {{-- class="rounded-full object-cover" --}}
-            <div class="flex flex-col">                            
+            <div class="flex flex-col">
                 <div>
                     Name: {{ $candidate->name }}
                 </div>
@@ -39,7 +39,7 @@
             @include('candidate.component.positions', ['previous_positions' => $candidate->previous_positions])
         </div>
     </div>
-        {{-- RIGHT COLUMN --}}
+    {{-- RIGHT COLUMN --}}
     <div class="flex flex-col w-11/12 grow gap-6 items-center">
         @include('candidate.component.stances', ['opinions' => $opinions, 'candidate' => $candidate])
         
@@ -86,7 +86,7 @@
                             <div class="flex flex-row items-center justify-center gap-2">
                                 <span>Name:  {{$donor->name}}</span>
                                 @auth   
-                                    <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-'.$donor->id">  
+                                    <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-flag-'.$donor->id">  
                                 @else
                                     <label class="fill-transparent" for="signup-modal">
                                         @include('icons.flag')
@@ -116,13 +116,12 @@
                             <div class="flex flex-row justify-center gap-4">
                                 <span>Name : {{ $law->name }}</span>
                                 @auth
-                                    <livewire:flag :type="'law'" :type_id="$law->id" :wire:key="'law-'.$law->id">         
+                                    <livewire:flag :type="'law'" :type_id="$law->id" :wire:key="'law-flag-'.$law->id">         
                                 @else
                                     <label class="fill-transparent" for="signup-modal">
                                         @include('icons.flag')
                                     </label>  
-                                @endauth
-                                    
+                                @endauth                                    
                             </div>       
                         @endforeach                 
                     </div>
@@ -137,6 +136,8 @@
                 Alpine.data('nextFlag', () => ({       
                     flag: {
                         ['@click']() {
+                            console.log('clicked');
+                            console.log(this.transparent, this.black, this.green, this.red);
                             if(this.transparent) {
                                 this.transparent = false;
                                 this.black = true;

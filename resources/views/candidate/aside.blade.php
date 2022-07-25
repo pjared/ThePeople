@@ -154,7 +154,7 @@
             {{-- USER FLAGGING INFO --}}
             <li class="relative px-6 py-3">
                 <a
-                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800"
+                class="inline-flex items-center fill-transparent w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800"
                 >
                     @include('icons.flag')
                     <span class="ml-4">What's Flagged the Most (Upcoming Feature)</span>
