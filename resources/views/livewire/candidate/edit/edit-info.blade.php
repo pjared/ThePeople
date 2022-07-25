@@ -30,20 +30,8 @@
                     </label>
                     <input type="text" wire:model.defer="candidate.party_name" class="input input-bordered w-full max-w-xs" />
                     @error('video_link') {{ $message }} @enderror
-                    {{-- <label class="label">
-                        <span class="label-text">Political Party</span>
-                    </label>
-                    <select class="select select-bordered" wire:model.defer="candidate.party_id">
-                        @foreach($political_parties as $party)
-                            @if($party->id == $candidate->party_id)
-                                <option value="{{$party->id}}" selected>{{$party->name}}</option>
-                            @else
-                                <option value="{{$party->id}}">{{$party->name}}</option>
-                            @endif
-                        @endforeach
-                    </select> --}}
                     <span class="error">
-                        @error('candidate.party_id') {{ $message }} @enderror
+                        @error('candidate.party_name') {{ $message }} @enderror
                     </span> 
                 </div>
                 {{-- SITE LINK --}}

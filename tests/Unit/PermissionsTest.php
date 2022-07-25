@@ -98,7 +98,7 @@ class PermissionsTest extends TestCase
             'dob' => Carbon::today()->subYear(rand(25, 55)),
             'signup_date' => Carbon::today()->subDays(rand(0, 365)),
             'bio' => "", 
-            'party_id' => rand(1,3),
+            'party_name' => "Dem",
             'image_id' => strval(rand(1,3)), 
             'state' => 'Utah',
             'contact_email' => "pjared@gmail.com",

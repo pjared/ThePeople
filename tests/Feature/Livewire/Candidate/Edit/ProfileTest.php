@@ -38,7 +38,7 @@ class CandidateProfileTest extends TestCase
             ->set('dob', '11/14/1995')
             ->set('pol_leaning', 'moderate')
             ->set('sub_pol_leaning', 'libertarian')
-            ->set('political_party_id', '2')
+            // ->set('political_party_id', '2')
             ->set('office_level', 'state')
             ->set('location', 'Utah')
             ->set('office_name', 'Senate')

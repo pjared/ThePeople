@@ -32,10 +32,6 @@ class Candidate extends Model
     ];
 
     use HasFactory;
-
-    public function party() {
-        return $this->belongsTo(PoliticalParty::class, "party_id");
-    }
     
     public function donors() {
         return $this->belongsToMany(Donor::class)->using(CandidateDonors::class);

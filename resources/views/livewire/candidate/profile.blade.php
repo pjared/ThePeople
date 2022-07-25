@@ -10,7 +10,7 @@
                     Name: {{ $candidate->name }}
                 </div>
                 <div>
-                    {{-- Party: {{ $candidate->party->name }} --}}
+                    {{-- Party: {{ $candidate->party_name }} --}}
                 </div>
                 <div>
                     Running For: {{ $candidate->ballot->location->state }}
