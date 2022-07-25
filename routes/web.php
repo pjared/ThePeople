@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\BallotController;
 use App\Http\Controllers\CandidateController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermaLinkController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,15 +46,16 @@ Route::get('/apply', function () {
 Route::get('candidate/profile/{id}', [CandidateController::class, 'getCandidateView']);
 
 //PROFILE EDITING
-Route::group(['prefix' =>'candidate', 'namespace' => 'candidate','middleware' => ['role:candidate']], function() {
-    Route::get('/dashboard', function () {
-        return view('candidate.dashboard');
-    })->name('candidate-dashboard');
-    Route::get('/preview/{id}', [CandidateController::class, 'getCandidatePreview'])->name('candidate-preview');
-    Route::group(['prefix' =>'edit', 'namespace' => 'edit'], function() {
-        Route::get('/info', function () {
-            return view('candidate.profile');
-        })->name('candidate-edit-profile');
+Route::group(['prefix' =>'candidate','middleware' => ['role:candidate']], function() {
+    Route::get('/dashboard', [CandidateController::class, 'getCandidateDashboard'])->name('candidate-dashboard');
+    Route::get('/preview', [CandidateController::class, 'getCandidatePreview'])->name('candidate-preview');
+    Route::group(['prefix' =>'edit'], function() {
+        Route::get('/info', \App\Http\Livewire\Candidate\Edit\EditInfo::class);
+        Route::get('/bio', \App\Http\Livewire\Candidate\Edit\EditBio::class);
+        Route::get('/stances', \App\Http\Livewire\Candidate\Edit\EditStances::class);
+        Route::get('/promises', \App\Http\Livewire\Candidate\Edit\EditPromises::class);
+        Route::get('/videos', \App\Http\Livewire\Candidate\Edit\EditVideos::class);
+        Route::get('/positions', \App\Http\Livewire\Candidate\Edit\EditPositions::class);
     });    
 });
 
