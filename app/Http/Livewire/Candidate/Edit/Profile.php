@@ -3,17 +3,10 @@
 namespace App\Http\Livewire\Candidate\Edit;
 
 use App\Models\Candidate;
-use App\Models\CandidateStance;
-use App\Models\ControversialOpinion;
-use App\Models\PoliticalParty;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
-use Livewire\WithFileUploads;
-
 class Profile extends Component
 {
-    use WithFileUploads;
-
     public Candidate $candidate;
     public $show;
 

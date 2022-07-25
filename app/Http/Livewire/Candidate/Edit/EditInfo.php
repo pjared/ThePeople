@@ -5,10 +5,14 @@ namespace App\Http\Livewire\Candidate\Edit;
 use App\Models\Candidate;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class EditInfo extends Component
 {
+    use WithFileUploads;
+
     public Candidate $candidate;
+    public $photo;
 
     protected $rules = [
         'candidate.party_name' => 'nullable|string',
@@ -27,6 +31,23 @@ class EditInfo extends Component
     public function render()
     {
         return view('livewire.candidate.edit.edit-info');
+    }
+
+    public function update_photo()
+    {
+        // dd('hi');
+        $this->validate([
+            'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
+        ]);
+        // dd('hi 1');
+        if (isset($this->photo)) {
+            // dd('hi');
+            Auth::user()->updateProfilePhoto($this->photo);
+        }
+    }
+
+    public function deleteProfilePhoto() {
+        Auth::user()->deleteProfilePhoto($this->photo);
     }
 
     public function save_info() 
