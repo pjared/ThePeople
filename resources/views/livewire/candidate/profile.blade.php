@@ -26,22 +26,9 @@
         </div>
         {{-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS --}}
         <div class="flex flex-col gap-6 w-11/12 items-center">
-            @if($candidate->bio != "")
-                <div class="flex grow flex-col background-card">
-                    <p
-                    x-data="{ isCollapsed: false, maxLength: 215, originalContent: '', content: '' }"
-                    x-init="originalContent = $el.firstElementChild.textContent.trim(); content = originalContent.slice(0, maxLength) + '...'"
-                    >
-                        <span x-text="isCollapsed ? originalContent : content">{{$candidate->bio}}</span>
-                        <button
-                        @click="isCollapsed = !isCollapsed"
-                        x-show="originalContent.length > maxLength"
-                        x-text="isCollapsed ? 'Show less' : 'Show more'"
-                        class="link"
-                        ></button>
-                    </p>             
-                </div>
-            @endif
+            {{-- BIO COMPONENT --}}
+            @include('candidate.component.bio', ['bio' => $candidate->bio])
+
             {{-- DONORS --}}
             @if(count($candidate->donors) != 0) 
                 <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
@@ -72,138 +59,16 @@
                 </div>
             @endif
             
-            {{-- Promises --}}
-            @if(count($candidate->promises) != 0)
-                <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
-                    <button class="flex background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
-                        <div class="row">
-                            <div class="col-8 text-start">
-                                Candidate's Promises
-                            </div>
-                            <div class="col-2 offset-2 text-center">
-                                <i class="bi bi-caret-down-fill"></i>
-                            </div>
-                        </div>
-                    </button>
-                    <div class="flex flex-col background-card rounded-t-none w-11/12 justify-center gap-2" x-show="open" x-transition>
-                        <div class="text-center">
-                            This candidate promises to make the reforms or stand for the values listed below.
-                        </div>
-                        @foreach($candidate->promises as $promise)
-                            <div class="flex flex-row justify-center gap-4">
-                                <div class="flex flex-col items-center">
-                                    <span class="w-fit"><b>{{ $promise->promise }}</b></span>
-                                    <span class="w-fit">{{ $promise->plan }}</span>
-                                </div>    
-                                @auth   
-                                    <livewire:flag :type="'promise'" :type_id="$promise->id" :wire:key="$promise->id">
-                                @else
-                                    <label class="fill-transparent" for="signup-modal">
-                                        @include('icons.flag')
-                                    </label>  
-                                @endauth
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            @endif
+            {{-- PROMISES COMPONENT --}}
+            @include('candidate.component.promises', ['promises' => $candidate->promises])
 
-            {{-- PREVIOUS POSITIONS --}}
-            <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
-                <button class="flex background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
-                    <div class="row">
-                        <div class="col-8 text-start">
-                            Previous Political Positions
-                            <i class="bi bi-bank"></i>
-                        </div>
-                        <div class="col-2 offset-2 text-center">
-                            <i class="bi bi-caret-down-fill"></i>
-                        </div>
-                    </div>
-                </button>
-                <div class="flex flex-col background-card rounded-t-none w-11/12" x-show="open" x-transition>
-                    @if(count($candidate->previous_positions) != 0)
-                        <div class="flex flex-col gap-4">
-                            @foreach($candidate->previous_positions as $position)
-                                <div class="flex flex-row justify-center gap-4">
-                                    <div class="flex flex-col items-center gap-4">
-                                        <span><b>{{ $position->position_name }}</b></span>
-                                        <span>{{ $position->year_start }} - {{ $position->year_end }}</span>
-                                    </div>
-                                    @auth   
-                                        <livewire:flag :type="'position'" :type_id="$position->id" :wire:key="'position-'.$position->id">   
-                                    @else
-                                        <label class="fill-transparent" for="signup-modal">
-                                            @include('icons.flag')
-                                        </label>  
-                                    @endauth
-                                </div>  
-                            @endforeach                        
-                        </div>
-                    @else
-                        This Candidate has not held office before
-                    @endif
-                </div>
-            </div>
+            {{-- PREVIOUS POSITIONS COMPONENT --}}
+            @include('candidate.component.positions', ['previous_positions' => $candidate->previous_positions])
         </div>
     </div>
         {{-- RIGHT COLUMN --}}
     <div class="flex flex-col w-11/12 grow gap-6 items-center">
-        {{-- CONTROVERSIAL OPINIONS --}}
-        <div class="flex flex-col background-card w-11/12 items-center gap-2">
-            <div class="flex justify-center">
-                <span class="text-xl font-medium">Controversial Opinions</span>
-            </div>
-            <div class="flex flex-col grow gap-2 text-center w-full">
-                @foreach($opinions as $opinion)
-                    {{-- Make sure stances exist --}}
-                    @if(count($candidate->opinion_stances($opinion->id)) >= 1)
-                        <span class="text-lg font-medium">{{$opinion->name}}</span>
-                        <div class="flex flex-col items-start justify-items-start">
-                            @foreach ($candidate->opinion_stances($opinion->id) as $i => $candidate_stance)
-                                <div class="grid grid-cols-8 gap-2 w-full items-center">
-                                    <div class="col-span-7">
-                                        <div class="collapse collapse-arrow">
-                                            <input type="checkbox" /> 
-                                            <div class="collapse-title text-md font-medium text-left">
-                                                <b>{{$candidate_stance->stance_label}}</b>
-                                            </div>
-                                            <div class="collapse-content"> 
-                                                {{-- TODO: READ MORE HERE --}}
-                                                {{-- 
-                                                <p
-                                                x-data="{ isCollapsed: false, maxLength: 215, originalContent: '', content: '' }"
-                                                x-init="originalContent = $el.firstElementChild.textContent.trim(); content = originalContent.slice(0, maxLength) + '...'"
-                                                >
-                                                    <span x-text="isCollapsed ? originalContent : content">{{$candidate->bio}}</span>
-                                                    <button
-                                                    @click="isCollapsed = !isCollapsed"
-                                                    x-show="originalContent.length > maxLength"
-                                                    x-text="isCollapsed ? 'Show less' : 'Show more'"
-                                                    class="link"
-                                                    ></button>
-                                                </p> 
-                                                --}}
-                                                <p>{{$candidate_stance->stance_reasoning}}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-span-1 items-center">
-                                        @auth
-                                            <livewire:flag :type="'controversial-stance'" :type_id="$candidate_stance->id" :wire:key="'stance-'.$candidate_stance->id"> 
-                                        @else
-                                            <label class="fill-transparent" for="signup-modal">
-                                                @include('icons.flag')
-                                            </label>  
-                                        @endauth
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    @endif
-                @endforeach
-            </div>
-        </div>
+        @include('candidate.component.stances', ['opinions' => $opinions, 'candidate' => $candidate])
         
         {{-- OTHER OPINIONS --}}
         @if(count($candidate->opinions) != 0) 
