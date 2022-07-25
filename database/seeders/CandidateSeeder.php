@@ -49,12 +49,13 @@ class CandidateSeeder extends Seeder
             $application->status = 'accepted';
             $application->save();
 
+            $parties = ['Democrat', 'Republican', 'Bull Moose'];
             DB::table('candidates')->insert([
                 'name' => $name,
                 'dob' => Carbon::today()->subYear(rand(25, 55)),
                 'signup_date' => Carbon::today()->subDays(rand(0, 365)),
                 'bio' => "", 
-                'party_id' => rand(1,3),
+                'party_name' => $parties[rand(0,2)],
                 'user_id' => $user->id, 
                 'state' => 'Utah',
                 'contact_email' => "pjared@gmail.com",

@@ -26,7 +26,8 @@ return new class extends Migration
             $table->string('contact_phone_number')->nullable();
             $table->string('email')->nullable();
             $table->string('phone_number')->nullable();
-            $table->foreignIdFor(PoliticalParty::class, 'party_id')->nullable();
+            $table->string('party_name')->nullable();
+            // $table->foreignIdFor(PoliticalParty::class, 'party_id')->nullable();
             $table->foreignIdFor(User::class, 'user_id')->nullable();
             $table->string('site_link')->nullable();
         });

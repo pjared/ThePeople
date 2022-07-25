@@ -27,7 +27,7 @@ class Candidate extends Model
         'state',
         "signup_date",
         "user_id",
-        "party_id",
+        "party_name",
         'site_link',
     ];
 
