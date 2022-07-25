@@ -99,33 +99,8 @@
             </div>    
         @endif 
 
-        {{-- CAMPAIGN VIDEOS --}}
-        {{-- <div class="mt-4" id="campaignInfo">
-            <button style="width:95%" class="background-card background-card-body" type="button" data-bs-toggle="collapse" data-bs-target="#campaignInfoCollapse" aria-expanded="false" aria-controls="multiCollapseExample2">
-                <div class="row">
-                    <div class="col-8 text-start">
-                        Campaign Videos
-                        <i class="bi bi-display"></i>
-                    </div>
-                    <div class="col-2 offset-2 text-center">
-                        <i class="bi bi-caret-down-fill"></i>
-                    </div>
-                </div>
-            </button>
-            <div class="collapse multi-collapse" id="campaignInfoCollapse">
-                <div style="width:95%" class="background-card background-card-body no-border">
-                    @if(count($candidate->videos) >= 1) 
-                        @foreach ($candidate->videos as $video)
-                            <iframe width="100" height="100" src="{{$video->link}}">
-                            </iframe>
-                            <a href="{{$video->link}} ">Link</a>
-                        @endforeach
-                    @else
-                        No campaign videos as of yet
-                    @endif
-                </div>
-            </div>
-        </div> --}}
+        {{-- CAMPAIGN VIDEOS COMPONENT --}}
+        @include('candidate.component.videos', ['videos' => $candidate->videos])
 
         {{-- LAW MAKING INVOLVEMENT  --}}
         @if(count($candidate->law_involvement) != 0) 
