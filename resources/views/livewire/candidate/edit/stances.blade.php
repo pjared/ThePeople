@@ -1,27 +1,6 @@
 <div x-data="{show: false}">
     {{-- {{dd("'update-stance-success-$opinion->id'")}} --}}
-    @if (session()->has('update-stance-success-' . $opinion->name))
-        <div class="alert alert-success shadow-lg flex w-11/12">
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                <span>Your stances have been updated!</span>
-            </div>
-        </div>
-    @elseif(session()->has('update-stance-failure-' . $opinion->name))
-        <div class="alert alert-error shadow-lg">
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                <span>Error! Your stances did not updated. Please check your input and try again</span>
-            </div>
-        </div>
-    @elseif(session()->has('delete-stance-' . $opinion->name))
-        <div class="alert alert-error shadow-lg">
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                <span>Stance deleted</span>
-            </div>
-        </div>
-    @endif
+    @include('components.flash', ['name' => $opinion->name])
     <div class="carousel w-full">
         @foreach ($stances as $i => $stance)
             <div id="{{$opinion->name}}-item-{{$i}}" class="carousel-item w-full">
