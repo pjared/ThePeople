@@ -48,9 +48,15 @@ Route::get('candidate/profile/{id}', [CandidateController::class, 'getCandidateV
 
 //PROFILE EDITING
 Route::group(['prefix' =>'candidate', 'namespace' => 'candidate','middleware' => ['role:candidate']], function() {
-    Route::get('/edit', function () {
-        return view('candidate.profile');
-    })->name('candidate-edit-profile');
+    Route::get('/dashboard', function () {
+        return view('candidate.dashboard');
+    })->name('candidate-dashboard');
+    Route::get('/preview/{id}', [CandidateController::class, 'getCandidatePreview'])->name('candidate-preview');
+    Route::group(['prefix' =>'edit', 'namespace' => 'edit'], function() {
+        Route::get('/info', function () {
+            return view('candidate.profile');
+        })->name('candidate-edit-profile');
+    });    
 });
 
 /* -----ADMIN------ */
