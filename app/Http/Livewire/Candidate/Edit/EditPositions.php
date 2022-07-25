@@ -64,6 +64,6 @@ class EditPositions extends Component
         $this->position->candidate_id = $this->candidate_id;
         $this->position->save();
 
-        $this->emitUp('update-positions-success');
+        $this->emitUp('update-positions-success', 'Position deleted');
     }
 }

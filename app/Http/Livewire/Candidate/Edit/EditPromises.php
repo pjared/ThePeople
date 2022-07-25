@@ -57,6 +57,6 @@ class EditPromises extends Component
     public function delete_promise($promise_id)
     {
         $this->promises->find($promise_id)->delete();
-        session()->flash('update-promises-failure', 'Promise was deleted');
+        session()->flash('update-promises-failure', 'Promise deleted');
     }
 }
