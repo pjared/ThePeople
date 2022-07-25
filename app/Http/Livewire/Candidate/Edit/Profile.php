@@ -31,11 +31,11 @@ class Profile extends Component
 
     protected $rules = [
         'candidate.bio' => 'nullable|string',
-        'candidate.party_id' => 'required|string',
-        'candidate.contact_phone_number' => 'required|string',
-        'candidate.phone_number' => 'required|string',
+        'candidate.party_name' => 'required|string',
+        'candidate.contact_phone_number' => 'nullable',
+        'candidate.phone_number' => 'nullable',
         'candidate.contact_email' => 'required|string',
-        'candidate.email' => 'required|string',
+        'candidate.email' => 'nullable',
         'candidate.site_link' => 'nullable',
     ];
 
@@ -60,7 +60,7 @@ class Profile extends Component
     {
         $this->validate([
             'candidate.contact_email' => 'required|email',
-            'candidate.party_id' => 'required',
+            'candidate.party_name' => 'required|string',
             'candidate.site_link' => 'nullable',
         ]);
         $this->candidate->save();
