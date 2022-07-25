@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             @role('candidate')
                 <div class="text-center mt-6">
-                    <a href="{{Route('candidate-dashboard')}}"><button class="btn btn-primary">
+                    <a href="{{Route('candidate-preview')}}"><button class="btn btn-primary">
                         Go To Candidate Dashboard
                     </button></a>
                 </div>
