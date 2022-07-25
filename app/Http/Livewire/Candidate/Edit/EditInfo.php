@@ -54,7 +54,6 @@ class EditInfo extends Component
     {
         $this->validate();
         $this->candidate->save();
-
         session()->flash('update-info-success');
     }
 }
