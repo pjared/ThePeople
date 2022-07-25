@@ -101,21 +101,6 @@
                     @error('candidate.phone') {{ $message }} @enderror
                 </span>          
             </div>
-            {{-- <div class="flex flex-col w-2/5  gap-5 text-center items">
-                @if($candidate->ballot)
-                    <div class="form-control items-center">
-                        <label class="label cursor-pointer w-2/5">
-                        <span class="label-text">Show my profile on the ballot</span> 
-                        <input type="checkbox" wire:model.defer="show" class="checkbox checkbox-primary" />
-                        </label>
-                    </div>
-                    <span>You will be placed on the {{$candidate->ballot->location->name}} {{$candidate->ballot->office->name}} ballot, in the state of {{$candidate->state}}. If this is incorrect, please contact customer support.</span>
-                @else
-                <span>
-                    We have not placed you on a ballot yet. You will be notified when we have done this
-                </span>
-                @endif
-            </div> --}}
             <button class="btn btn-primary" type="submit">Save Info</button>
         </form>
     </div>

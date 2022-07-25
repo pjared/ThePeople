@@ -33,11 +33,6 @@ class EditInfo extends Component
     {
         $this->validate();
         $this->candidate->save();
-        
-        // if($this->candidate->running_candidate) {
-        //     $this->candidate->running_candidate->show = $this->show;
-        //     $this->candidate->running_candidate->save();
-        // }
 
         session()->flash('update-info-success');
     }

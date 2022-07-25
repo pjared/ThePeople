@@ -32,10 +32,6 @@ class Profile extends Component
     public function mount()
     {
         $this->candidate = Candidate::firstWhere('user_id', Auth::user()->id);
-
-        if($this->candidate->running_candidate) {
-            $this->show = $this->candidate->running_candidate->show;
-        }
         
         // $this->political_parties = PoliticalParty::all();
     }
