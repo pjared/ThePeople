@@ -3,27 +3,62 @@
     
     <div class="flex flex-col w-full h-inherit items-center justify-center">
         {{-- PROMISE FLASH MESSAGE --}}
-        @if (session()->has('update-promise-success'))
-            <div class="alert alert-success shadow-lg flex w-11/12">
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    <span>{{session('update-promise-success')}}</span>
-                </div>
-            </div>
-        @elseif(session()->has('update-promise-failure'))
-            <div class="alert alert-error shadow-lg">
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    <span>{{session('update-promise-failure')}}</span>
-                </div>
-            </div>
-        @endif
+        @include('components.flash', ['name' => 'promises'])
+        
         <div class="flex flex-row w-full justify-between">
             {{-- LEFT COLUMN (Edit) --}}
             <div class="flex flex-col w-1/2 gap-2 p-4 items-center">
                 <h1 class="text-xl">Add your Promises</h1>
                 {{-- CANDIDATE PROMISES --}}
-                <livewire:candidate.edit.promises :candidate_id="$candidate->id" :promises="$candidate->promises" :wire:key="'candidate-promises'.$candidate->id">
+                <div class="flex flex-col background-card w-11/12 items-center justify-center">
+                    <div class="flex">
+                        Your promises for reform/promises of personal values
+                    </div>
+                    <div x-data="{show:false}" class="flex grow flex-col w-11/12 gap-2">
+                        <div class="carousel w-full">
+                            @foreach ($promises as $i => $promise)
+                                <div id="promise-{{$i}}" class="carousel-item w-full">
+                                    <div class="flex grow flex-col items-center">
+                                        <div class="form-control w-full max-w-xs">
+                                            <label class="label">
+                                            <span class="label-text">Promise</span>
+                                            </label>
+                                            <input type="text" wire:model.defer="promises.{{ $i }}.promise" class="input input-bordered w-3/4 max-w-xs" />
+                                            <label class="label">
+                                                <span class="label-text">Plan</span>
+                                            </label>
+                                            <textarea class="textarea textarea-bordered flex grow" wire:model.defer="promises.{{ $i }}.plan"></textarea>
+                                        </div>
+                                        {{-- TODO: ADD DELETE AND UPDATE BUTTONS --}}
+                                        <span class="error">
+                                            @error('promises.'.$i.'.promise') {{ $message }} @enderror
+                                            @error('promises.'.$i.'.plan') {{ $message }} @enderror
+                                        </span>
+                                        <div class="flex grow flex-row justify-center">
+                                            <button class="btn btn-error" wire:click="delete_promise({{$promise->id}})">Delete Promise</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach            
+                        </div>
+                        <div class="flex justify-center w-full py-2 gap-2">
+                            @foreach ($promises as $i => $promise)
+                                <a href="#promise-{{$i}}" class="btn btn-xs">{{$i + 1}}</a>
+                            @endforeach
+                        </div>
+                        
+                        @if(count($promises) >= 1)
+                            <div class="flex grow justify-center">
+                                <button class="btn btn-primary w-1/4" wire:click='update_promises'>Update Promises</button>
+                            </div>                   
+                        @endif        
+                        @if(count($promises) < 5)
+                            <label class="btn btn-primary" for="new-promise">Add A Promise</label>
+                
+                            @include('modals.new-promise')
+                        @endif
+                    </div>
+                </div>
             </div> 
             {{-- RIGHT COLUMN (Preview) --}}
             <div class="flex flex-col w-1/2 p-4 gap-6 items-center">
@@ -31,6 +66,35 @@
                 @include('candidate.component.promises', ['promises' => $candidate->promises])
             </div>
         </div>
-        
     </div>
+
+    @push('scripts')
+        <script>
+            document.addEventListener('alpine:init', () => {
+                Alpine.data('nextFlag', () => ({       
+                    flag: {
+                        ['@click']() {
+                            if(this.transparent) {
+                                this.transparent = false;
+                                this.black = true;
+                                @this.change_flag(this.type, this.type_id, 'nuetral')
+                            } else if (this.black) {
+                                this.black = false;
+                                this.green = true;
+                                @this.change_flag(this.type, this.type_id, 'green')
+                            } else if (this.green) {
+                                this.green = false;
+                                this.red = true;
+                                @this.change_flag(this.type, this.type_id, 'red')
+                            } else {
+                                this.red = false;
+                                this.transparent = true;
+                                @this.delete_flag(this.type, this.type_id)
+                            }
+                        },
+                    },
+                }))
+            });
+        </script>
+    @endpush
 </div>
