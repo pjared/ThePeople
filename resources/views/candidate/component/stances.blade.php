@@ -19,21 +19,19 @@
                                     </div>
                                     <div class="collapse-content"> 
                                         {{-- TODO: READ MORE HERE --}}
-                                        {{-- 
+                                        
                                         <p
                                         x-data="{ isCollapsed: false, maxLength: 215, originalContent: '', content: '' }"
                                         x-init="originalContent = $el.firstElementChild.textContent.trim(); content = originalContent.slice(0, maxLength) + '...'"
                                         >
-                                            <span x-text="isCollapsed ? originalContent : content">{{$candidate->bio}}</span>
+                                            <span x-text="isCollapsed ? originalContent : content">{{$candidate_stance->stance_reasoning}}</span>
                                             <button
                                             @click="isCollapsed = !isCollapsed"
                                             x-show="originalContent.length > maxLength"
                                             x-text="isCollapsed ? 'Show less' : 'Show more'"
                                             class="link"
                                             ></button>
-                                        </p> 
-                                        --}}
-                                        <p>{{$candidate_stance->stance_reasoning}}</p>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
