@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Livewire;
 
+use App\Http\Livewire\Candidate\Application;
 use App\Http\Livewire\CandidateApplicationPage;
 use App\Models\CandidateApplication;
 use App\Models\User;
@@ -10,7 +11,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Livewire\Livewire;
 use Tests\TestCase;
 
-class CandidateApplicationPageTest extends TestCase
+class ApplicationTest extends TestCase
 {
     /** @test */
     public function can_make_application() 
@@ -19,7 +20,7 @@ class CandidateApplicationPageTest extends TestCase
         // $user = User::find(1);
         $this->actingAs($user); //THIS ERROR IS FAKE
 
-        $component = Livewire::test(CandidateApplicationPage::class)
+        $component = Livewire::test(Application::class)
                 ->set('name', 'Jared Pacheco')
                 ->set('dob', '11/14/1995')
                 ->set('location', 'District 23')
