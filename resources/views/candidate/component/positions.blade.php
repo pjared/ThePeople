@@ -11,7 +11,7 @@
             </div>
         </div>
     </button>
-    <div class="flex flex-col background-card rounded-t-none w-11/12" x-show="open" x-transition>
+    <div x-cloak class="flex flex-col background-card rounded-t-none w-11/12" x-show="open" x-transition>
         @if(count($previous_positions) != 0)
             <div class="flex flex-col gap-4">
                 @foreach($previous_positions as $position)

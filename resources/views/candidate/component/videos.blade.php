@@ -11,7 +11,7 @@
                 </div>
             </div>
         </button>
-        <div class="flex flex-col background-card rounded-t-none w-11/12 items-center gap-2" x-show="open" x-transition>
+        <div x-cloak class="flex flex-col background-card rounded-t-none w-11/12 items-center gap-2" x-show="open" x-transition>
             <div class="carousel w-11/12">
                 @foreach ($videos as $i => $video)
                     <div id="video-{{$i}}" class="carousel-item w-full">

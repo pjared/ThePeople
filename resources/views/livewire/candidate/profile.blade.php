@@ -40,7 +40,7 @@
         </div>
     </div>
     {{-- RIGHT COLUMN --}}
-    <div class="flex flex-col w-11/12 grow gap-6 items-center">
+    <div class="flex flex-col w-11/12 grow gap-6 items-center ">
         @include('candidate.component.stances', ['opinions' => $opinions, 'candidate' => $candidate])
         
         {{-- OTHER OPINIONS --}}
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                 </button>
-                <div class="w-11/12 background-card rounded-t-none" x-show="open" x-transition>
+                <div x-cloak class="w-11/12 background-card rounded-t-none" x-show="open" x-transition>
                     <div class="flex flex-col gap-4">
                         @foreach ($candidate->opinions as $opinion)
                             <div class="flex flex-row justify-center gap-4">
@@ -80,7 +80,7 @@
                         Campaign Donors
                     </div>
                 </button>
-                <div class="flex flex-col background-card rounded-t-none w-11/12 gap-4" x-show="open" x-transition>
+                <div x-cloak  class="flex flex-col background-card rounded-t-none w-11/12 gap-4" x-show="open" x-transition>
                     @if(count($candidate->donors) >= 1)
                         @foreach ($candidate->donors as $donor)
                             <div class="flex flex-row items-center justify-center gap-2">
@@ -110,7 +110,7 @@
                         Laws Passed in office
                     </div>
                 </button>
-                <div class="w-11/12 background-card rounded-t-none" x-show="open" x-transition>
+                <div x-cloak class="w-11/12 background-card rounded-t-none" x-show="open" x-transition>
                     <div class="flex flex-col gap-4">
                         @foreach ($candidate->law_involvement as $law)
                             <div class="flex flex-row justify-center gap-4">

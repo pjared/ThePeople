@@ -11,7 +11,7 @@
                 </div>
             </div>
         </button>
-        <div class="flex flex-col background-card rounded-t-none w-11/12 justify-center gap-2" x-show="open" x-transition>
+        <div x-cloak class="flex flex-col background-card rounded-t-none w-11/12 justify-center gap-2" x-show="open" x-transition>
             <div class="text-center">
                 This candidate promises to make the reforms or stand for the values listed below.
             </div>
