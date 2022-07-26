@@ -2,8 +2,10 @@
 
 namespace App\Http\Livewire\Candidate;
 
+use App\Mail\ApplicationSubmitted;
 use App\Models\CandidateApplication;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class Application extends Component
@@ -44,6 +46,8 @@ class Application extends Component
         $candidate_application->save();
         $this->previous_application = $candidate_application;
         session()->flash('message', 'You have submitted an application, we will email you updates as we process it.');
+
+        Mail::to('thepeople@whatsinyourballot.com')->send(new ApplicationSubmitted());
     }
 
     public function mount()

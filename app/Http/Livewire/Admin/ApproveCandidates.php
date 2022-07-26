@@ -2,10 +2,12 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Mail\CandidateApproved;
 use App\Models\Candidate;
 use App\Models\CandidateApplication;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class ApproveCandidates extends Component
@@ -38,6 +40,7 @@ class ApproveCandidates extends Component
         $application->status = "accepted";
         $application->candidate_id = $candidate->id;
         $application->save();
+        Mail::to($user)->send(new CandidateApproved());
     }
 
     public function rejectCandidate($user_id)
