@@ -1,74 +1,25 @@
-- Candidate ballot assignment on prod is 500, need to error check for no ballots
-    - Do this by seeding like production and fix error
+# Branch (Final Urgent) - Testing
+- Set up a sail repo to run tests
 
-# Branch (Urgent) - Opinions Rework
+- Candidate application might be broken due to party update
+
+- Migrate production DB and make sure admin sites are working
+
+- Need to do testing on the candidate side, but can wait for the admin side for later
+
 - Test the following:
     - Candidate creating their stances
-    
-- Finish ability to save stance edits
-    - Need to figure out correct "emit" button
 
-# Bugs
-- Flagging profile details on the candidate page will only save as one flag
-- Need to put a "max content, read more" on the opinions reasoning and the bio
-- Hitting "save stance" from the modal needs to close it
-- Carousel focus should not refocus the page
-- User Vote doesn't load on refresh
-- Make sure "permalink" is unique in table
+- Error handling for permalink unique
+    - Need to error handle check for error handling in all wires with tests
 
-# Branch (Urgent) - Promises Rework
-- Need to reword the promises for now so that promises can be both promises for change or a promise to stand for a value. Add info tags to say that a promise might be about a promise to uphold a value or a promise for legislation change
+- Need to make a production test
+    - Candidate ballot assignment on prod is 500, need to error check for no ballots
 
-
-# Branch - Reducing Wires
-- Need to go through the wires that just display data, and then turn it into a blade component instead of loading it through a wire
-- Fix Candidate Poistions and promises, "add" can be in the same wire and should pop a modal
-
-# Quick QoL
-- Placements for where flash messages appear for editing a candidate profile
-- Make promises and political positions a carousel?
-- Search bar for "Candidates Placed"
-
-# Branch (Urgent) - Admin Create/Edit Opinions Rework
-- Need to be able to remove an opinion from a ballot
-
-- Make edit opinions assign opinion ballots (admin side)
-- Make create opinions create & edit on admin side
-
-- Test the following:
-    - Creating an opinion
-    - Assigning the opinion to a ballot
-
-# Branch (Urgent) - Candidate Profile Page Rework
-- Need to do a "show more" on the candidates bio. I expect the candidates to have large bios. Should put a note that most people will not read extremely long bios.
-
-- Need to add campaign videos, especially now that candidates will be making tik toks
-
-# Branch (High) - Manual Candidate Creation
-- Need to make an admin page to create the candidates profile if none of them decide to sign up
-
-# Branch (High) - Model Rework
-- Make sure that all model properties are in correct places (guarded vs fillable)
-- Make sure that each model is being created correctly to reflect this
-- Make sure that all attributes are correctly hidden like email, etc.
-- Do some research into what attributes are necessary to hide
-
-# Branch (High) - Information Rework
-- Ballots should have an information type. This will be a list of information that appears on the ballot
-- When a candidate runs for a certain position, different wording/information needs to appear
-    - Controversial Opinions depend on the ballot, not the location
-    - "Promises" should be "Promises to stand for the following beliefs" when dealing with congress
-        - Might work around this by saying "This candidate promises to accomplish something in office, or promises to stand for the following beliefs"
-
-# Branch - Testing
 - Make a single candidate that I can run all tests for viewing profile on
 
-- Admin Livewire Tests
-    - User does show his profile
-    - Approve new candidate
-    - Candidate Ballot Assignment
-    - Create a ballot
-    - Permalinks
+- Make sure that user can save their votes for a ballot
+
 - End to end tests (dusk) for the following
     - User registers, then applies to become a candidate
         -> User is accepted
@@ -82,50 +33,123 @@
             -> User can flag information from the candidate
     
 
-# Branch - Mobile Screen Support
+# Quick QoL
+- Put info button after candidate promises to explain how certain offices cannot promise immediate reform, but stand as a voice
+
+# Branch (Urgent) - Production
+- Need to make a sitemap for google, should use spatie
+    - https://github.com/spatie/laravel-sitemap
+
+- Make sure database is empty and push all changes
+- Run lighthouse (on chrome) for site optimizations
+
+- Optimize images, can use imageoptim.
+- Make a favicon for the browser
+- Make sure it works on multiple broswers
+- Make sure to set up analytics for marketing
+- Use laravel forge for now, but then move to vapor
+- Can use laravel envoyer for 0 downtime updates
+- uptime monitoring for notifying when site is down (uptimeRobot)
+
+- Switch to forge to work with queues
+
+# Branch (High) - Model Safety
+- Make sure that all model properties are in correct places (guarded vs fillable)
+- Make sure that each model is being created correctly to reflect this
+- Make sure that all attributes are correctly hidden like email, etc.
+- Do some research into what attributes are necessary to hide
+
+# Branch (High) - Mobile Screen Support
 - Add mobile support to the following pages
     - Home
     - Ballot show
     - candidate show
 
-
-# Branch - Large Screen Support
+# Branch (High) - Large Screen Support
 - Add large screen support to the following pages
 
-# Branch - Mailing
-- Sign up with mailing provider sendgrid
-- Just google laravel mailing with queues
-- Need to get doug to set up a mail server, or hook up to my own
-- look into queues https://laravel.com/docs/9.x/queues
-- Mail when:
-    - candidates when application has been updated
-    - to myself when a candidate has submitted an application
+# Branch (Urgent) - Socialite
+- Allow users to sign in with their gmail accounts
+
+# Branch (High) - Manual Candidate Creation
+- Need to make an admin page to create the candidates profile if none of them decide to sign up
+- After signing up, you can assign candidates to their existing ID to replace their profile with the correct information
+
+# Branch (Low) - Information Rework
+- Ballots should have an information type. This will be a list of information that appears on the ballot
+- When a candidate runs for a certain position, different wording/information needs to appear
+    - Controversial Opinions depend on the ballot, not the location
+    - "Promises" should be "Promises to stand for the following beliefs" when dealing with congress
+        - Might work around this by saying "This candidate promises to accomplish something in office, or promises to stand for the following beliefs"
 
 
-# Branch - Flag Comparison
+
+# Branch - Candidate Flags
+- A proper library for commenting/liking
+    - https://github.com/beyondcode/laravel-comments.git
+- Put flag comparison page on candidate profile page???
+    - Should do an above hover to choose color
+    - Look for a library that does that same thing as kindle/apple book note (or scripture)
+
 - Show users a page of flags for their ballots
 
-# Branch - Admin Update
+- On hover, add the number of red/green/nuetral flags
+ 
+# Branch - Admin Pages Rework
+- Consider getting a real admin panel (Free)
+    - https://litstack.io/
+    - https://www.creative-tim.com/product/soft-ui-dashboard-laravel-livewire/?ref=sudl-readme
+- Need to make an admin & candiate layout
+
+- Search bar for Admin pages
+    - "Candidates Placed"
+
+- Need to add banners to admin pages
+- Edit opinions needs to be renamed to ballot opinions
+
+- Create tests for all admin pages
+
+- Admin Livewire Tests
+    - User does show his profile
+    - Approve new candidate
+    - Candidate Ballot Assignment
+    - Create a ballot
+    - Permalinks
+
 
 # Branch - High web traffic
 - In create ballot (Don't need this until large use of site):
     - Show existing locations, office, and ballots as it's being typed
-- User flag works, but needs major optimization
-    - Should batch all changes and then submit as one when user hovers out of card
+- Look into laravel Octane and swoole
 
+# Branch - Sharing
+- set up open graph meta tags when I implement share buttons
 
 # General Lists
+- Make a "show more" component
+    - Use in stances, bio, and promises
+
+- User Votes needs an isValid? Or do I just want to check the state that the user has included
+
+- Make a setting to change whether or not the dropdown indicators appear
+    - The dropdowns on the opinions make the page a lot less intuitive
+- Candidates show support for certain bills (The company creates)
+- Can message the candidate from the site, but then we can use the message data to see what people feel about the candidate
+
+- Put a link to state government
+
+
+- Need to either paginate the candidates or make the elements scrollabe
+    - This includes the ballot list
+- "See who's running for" is slightly too fast at the end (Only on first time)
+
+- Carousel focus should not refocus the page
+
 - Need to write an SQL script that will be able to refresh tables and save candidates and new user ID's in case of bad migration
 
 - Find another way to generate badges for the candidate
 
-- Need to make a sitemap for google, should use spatie
-
-- Write Robots.txt file in public (don't allow anything, include an apology saying that this will be set up later)
-
 - Signing in should take back to most recent page
-
-- Fix javascript page loads https://alpinejs.dev/directives/cloak
 
 - Add a search bar for users to find candidates
     - Look into caching to implement this
