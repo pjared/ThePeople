@@ -14,17 +14,17 @@
 
 ## Ballot
 I could probably change this view up so that if a user is not logged in, they will not see the wire.
-[Ballot](../resources/views/ballot/show.blade.php)
+[Ballot Main View](../resources/views/ballot/show.blade.php)
 |
-|__[Ballot List](../app/Http/Livewire/BallotList.php)
+|__[Ballot List (Wire)](../app/Http/Livewire/BallotList.php)
 |
-|__[Ballot (Wire)](../resources/views/livewire/ballot/show.blade.php)
+|__[Ballot (Wire View)](../resources/views/livewire/ballot/show.blade.php)
     - Where user votes is handled
 
 ### Associated Files
 [Ballot Controller](../app/Http/Controllers/BallotController.php)
 [Ballot List Wire](../app/Http/Livewire/Ballot/BallotList.php)
-[Ballot Show Wire](../app/Http/Livewire/Ballot/Show.php)P
+[Ballot Show Wire](../app/Http/Livewire/Ballot/Show.php)
 
 ## Candidate Profile (Viewing)
 [Profile](../resources/views/livewire/candidate/profile.blade.php)
@@ -38,34 +38,61 @@ I could probably change this view up so that if a user is not logged in, they wi
 [Flag - Wire](../app/Http/Livewire/Flag.php)
 
 
-## Candidate Profile (Editing)
+## Candidate Dashboard
 In order to get to this page:
 1. You must have the candidate role
-2. Navigate to your profile and click edit profile button
+2. Navigate to your profile and click candidate dashboard
 
-[Profile](../resources/views/livewire/candidate/edit/profile.blade.php)
-|   - Bio and info are updated on this page
+All of these files use the [Candidate Aside](../resources/views/candidate/aside.blade.php)
+
+[Preview](../resources/views/livewire/candidate/preview.blade.php)
 |
-|__[Promises Edit](../resources/views/livewire/candidate/edit/promises.blade.php)
-|   |
-|   |__[Add Promise Modal](../resources/views/modals/new-promise.blade.php)
+|__[Profile Page](../resources/views/livewire/candidate/profile.blade.php)
+
+[Basic Information](../resources/views/livewire/candidate/edit/edit-info.blade.php)
+
+[Bio](../app/Http/Livewire/Candidate/Edit/EditBio.php)
 |
-|
-|__[Positions Edit](../resources/views/livewire/candidate/edit/positions.blade.php)
-|   |
-|   |_[Add Position Modal](../resources/views/modals/new-position.blade.php)
-|
+|__[Bio Component](../resources/views/candidate/component/bio.blade.php)
+
+[Stances](../resources/views/livewire/candidate/edit/edit-stances.blade.php)
 |
 |__[Opinions Blade](../resources/views/candidate/edit/opinions.blade.php)
-    |
-    |__[Stances Edit](../resources/views/livewire/candidate/edit/stances.blade.php)
-        |
-        |__[New Stance Modal](../resources/views/modals/new-stance.blade.php)
+|    |
+|    |__[Stances Edit](../resources/views/livewire/candidate/edit/stances.blade.php)
+|        |
+|        |__[New Stance Modal](../resources/views/modals/new-stance.blade.php)
+|
+|__[Stances Component](../resources/views/candidate/component/stances.blade.php)
+
+[Promises](../resources/views/livewire/candidate/edit/edit-promises.blade.php)
+|
+|__[Promises Component](../resources/views/candidate/component/promises.blade.php)
+
+[Videos](../resources/views/livewire/candidate/edit/edit-videos.blade.php)
+|
+|__[Video Component](../resources/views/candidate/component/videos.blade.php)
+
+[Positions](../resources/views/livewire/candidate/edit/edit-positions.blade.php)
+|
+|__[Positions Component](../resources/views/candidate/component/positions.blade.php)
+
 ### Additional files
+[Preview Wire](../app/Http/Livewire/Candidate/Preview.php)
 [Profile Wire](../app/Http/Livewire/Candidate/Edit/Profile.php)
-[Promises Wire](../app/Http/Livewire/Candidate/Edit/Promises.php)
-[Positions Wire](../app/Http/Livewire/Candidate/Edit/Positions.php)
+
+[Info Wire](../app/Http/Livewire/Candidate/Edit/EditInfo.php)
+
+[Bio Wire](../app/Http/Livewire/Candidate/Edit/EditBio.php)
+
+[Edit Stances Wire](../app/Http/Livewire/Candidate/Edit/EditStances.php)
 [Stances Wire](../app/Http/Livewire/Candidate/Edit/Stances.php)
+
+[Promises Wire](../app/Http/Livewire/Candidate/Edit/EditPromises.php)
+
+[Videos Wire](../app/Http/Livewire/Candidate/Edit/EditVideos.php)
+
+[Positions Wire](../app/Http/Livewire/Candidate/Edit/EditPositions.php)
 
 ## Create Ballot (Admin)
 [Create Ballot View](../resources/views/admin/create-ballot.blade.php)
