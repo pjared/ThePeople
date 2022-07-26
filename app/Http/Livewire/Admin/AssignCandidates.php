@@ -2,9 +2,11 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Mail\CandidateBallotAssigned;
 use App\Models\Ballot;
 use App\Models\Candidate;
 use App\Models\RunningCandidates;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class AssignCandidates extends Component
@@ -40,6 +42,8 @@ class AssignCandidates extends Component
         $running_candidate->save();
 
         session()->flash('message', 'Candidate has been added to ballot');
+
+        Mail::to($running_candidate->candidate->user)->send(new CandidateBallotAssigned($ballot->office->name . ', ' . $ballot->location->name));
     }
 
     public function updateBallotAssignment()
