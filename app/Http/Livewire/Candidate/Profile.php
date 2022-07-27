@@ -16,6 +16,8 @@ class Profile extends Component
         $this->candidate = $candidate;
         if ($candidate->ballot) {
             $this->opinions = $candidate->ballot->opinions;
+        } else {
+            $this->opinions = [];
         }
     }
 

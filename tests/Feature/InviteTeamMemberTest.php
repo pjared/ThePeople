@@ -17,8 +17,6 @@ class InviteTeamMemberTest extends TestCase
 
     public function test_team_members_can_be_invited_to_team()
     {
-        $this->markTestSkipped('TEAM TEST');
-
         if (! Features::sendsTeamInvitations()) {
             return $this->markTestSkipped('Team invitations not enabled.');
         }
