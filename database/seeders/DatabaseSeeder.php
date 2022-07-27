@@ -22,28 +22,34 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'),
         ]);
 
+        //Seed for production & local
         $this->call([
-            UserSeeder::class, //!PROD
             RoleSeeder::class,
-
-            LawsSeeder::class, //!PROD
             LocationSeeder::class,
             PoliticalPartySeeder::class, 
-            PublicOfficeSeeder::class, //!PROD
-            OpinionsSeeder::class, //!PROD
             ControversialOpinionsSeeder::class,
-            BallotOpinionsSeeder::class, //!PROD
-
-            CandidateSeeder::class, //!PROD
-            CandidateInfoSeeder::class, //!PROD
-            CandidateOfficePositionsSeeder::class, //!PROD
-            CandidateStanceSeeder::class, //!PROD
-            CandidateApplicationSeeder::class, //!PROD
-            RunningCandidatesSeeder::class,  //!PROD
-            BallotSeeder::class, //!PROD
-
             BadgeSeeder::class,
-            CandidateBadgeSeeder::class, //!PROD
         ]);
+
+        //Seed for only local
+        if(env('APP_ENV') == 'local') {
+            $this->call([
+                UserSeeder::class, //!PROD
+                LawsSeeder::class, //!PROD
+                PublicOfficeSeeder::class, //!PROD
+                OpinionsSeeder::class, //!PROD
+                BallotOpinionsSeeder::class, //!PROD
+    
+                CandidateSeeder::class, //!PROD
+                CandidateInfoSeeder::class, //!PROD
+                CandidateOfficePositionsSeeder::class, //!PROD
+                CandidateStanceSeeder::class, //!PROD
+                CandidateApplicationSeeder::class, //!PROD
+                RunningCandidatesSeeder::class,  //!PROD
+                BallotSeeder::class, //!PROD
+    
+                CandidateBadgeSeeder::class, //!PROD
+            ]);
+        }   
     }
 }

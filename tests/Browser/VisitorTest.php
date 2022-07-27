@@ -2,13 +2,14 @@
 
 namespace Tests\Browser;
 
-use App\Models\Ballot;
-use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class LoggedInUserTest extends DuskTestCase
+/**
+ * These are the same tests as the loggedInUser, but just without the user part
+ */
+class VisitorTest extends DuskTestCase
 {
     use DatabaseMigrations;
 
@@ -19,15 +20,12 @@ class LoggedInUserTest extends DuskTestCase
         }
         $this->artisan('db:seed');
 
-        $user = User::factory()->create();
-        $this->browse(function (Browser $browser) use ($user)  {
-            $browser->loginAs($user)
-                    //Press the candidate opinion reasoing
-                    ->visit('/candidate/profile/2')
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/candidate/profile/2')
                     ->assertSee('Club Jared')
                     // ->pressAndWaitFor('Club Jared', .5)
                     // ->assertSee('The Most Exclusive')
-                    //Press the campaign donors
+                    //Press the campaign donors (Commented out since not all have them)
                     // ->pressAndWaitFor('Campaign Donors', .5)
                     // ->assertSee('Name:')
                     //Close the donors bar
@@ -52,11 +50,8 @@ class LoggedInUserTest extends DuskTestCase
         }
         $this->artisan('db:seed');
 
-        $user = User::factory()->create();
-        $this->browse(function (Browser $browser) use ($user) {
-            $browser->loginAs($user)
-                    //Visit the home link
-                    ->visit('/')
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
                     ->assertSee('ThePeople')
                     ->assertSee('Governor, Utah')
                     //Click on the Utah Governor Ballot

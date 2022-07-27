@@ -1,0 +1,13 @@
+User Feedback 2:
+Want more color
+
+Flag from https://www.svgrepo.com/svg/363603/flag-duotone
+
+Utah ballot initiatives:
+https://www.securevoteutah.org/
+
+Pivoted the controversial opinions from the slider after talking to a canidate
+
+If jetstream profile photos aren't working, might wanna check the .env file so the site is set correctly
+
+Make sure in the .env.dusk.{} file you set the db_database to 'testing'

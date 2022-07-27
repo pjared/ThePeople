@@ -1,8 +1,4 @@
 # HANDY FUCNTIONS
-
-serve:
-	php artisan serve
-
 clean:
 	php artisan cache:clear
 	php artisan view:clear
@@ -42,5 +38,4 @@ install:
 	php artisan key:generate
 
 db:
-	touch /tmp/cmanager.sqlite
-	php artisan migrate:fresh --seed
+	sail php artisan migrate:fresh --seed

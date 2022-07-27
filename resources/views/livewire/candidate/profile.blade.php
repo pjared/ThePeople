@@ -13,9 +13,11 @@
                     {{-- Party: {{ $candidate->party_name }} --}}
                 </div>
                 <div>
-                    Running For: {{ $candidate->ballot->location->state }}
-                    {{ $candidate->ballot->office->name }}, 
-                    {{ $candidate->ballot->location->name }} 
+                    @if($candidate->ballot)
+                        Running For: {{ $candidate->ballot->location->state }}
+                        {{ $candidate->ballot->office->name }}, 
+                        {{ $candidate->ballot->location->name }} 
+                    @endif
                 </div>
                 <div>                        
                     @if($candidate->public_email)

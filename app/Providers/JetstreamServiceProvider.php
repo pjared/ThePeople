@@ -58,6 +58,7 @@ class JetstreamServiceProvider extends ServiceProvider
             'delete',
         ])->description('Administrator users can perform any action.');
 
+        //TODO: Finish Teams implementations for social media team
         Jetstream::role('candidate', 'Candidate', [
             'read',
             'create',

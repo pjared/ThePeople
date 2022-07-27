@@ -1,12 +1,4 @@
 # Branch (Final Urgent) - Testing
-- Set up a sail repo to run tests
-
-- Candidate application might be broken due to party update
-
-- Migrate production DB and make sure admin sites are working
-
-- Need to do testing on the candidate side, but can wait for the admin side for later
-
 - Test the following:
     - Candidate creating their stances
 
@@ -31,12 +23,15 @@
         -> Candidate hits show
             -> Candidate appears on the ballot
             -> User can flag information from the candidate
-    
+
+- Merge sail branch after finishing    
 
 # Quick QoL
 - Put info button after candidate promises to explain how certain offices cannot promise immediate reform, but stand as a voice
 
 # Branch (Urgent) - Production
+- Users should only be able to apply if they have set up 2FA and verified their email
+
 - Need to make a sitemap for google, should use spatie
     - https://github.com/spatie/laravel-sitemap
 
