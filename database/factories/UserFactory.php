@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\CandidateApplication;
 use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -64,6 +65,19 @@ class UserFactory extends Factory
                     return ['name' => $user->name.'\'s Team', 'user_id' => $user->id, 'personal_team' => true];
                 }),
             'ownedTeams'
+        );
+    }
+
+    /**
+     * Indicate the user should have a candidate application
+     */
+    public function withCandidateApplication()
+    {
+        return $this->has(
+            CandidateApplication::factory()
+                ->state(function (array $attributes, User $user) {
+                    return ['name' => $user->name, 'user_id' => $user->id, 'email' => $user->email];
+                }),
         );
     }
 }
