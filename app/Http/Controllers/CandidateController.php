@@ -18,12 +18,6 @@ class CandidateController extends Controller
                     ->with('candidate', $candidate);
     }
 
-    public function getCandidatePreview() {
-        $candidate = Candidate::firstWhere('user_id', Auth::id());
-        return view('candidate.preview')
-                    ->with('candidate', $candidate);
-    }
-
     public function getCandidateDashBoard() {
         $candidate = Candidate::firstWhere('user_id', Auth::id());
         return view('candidate.dashboard')
