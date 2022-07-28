@@ -11,3 +11,9 @@ Pivoted the controversial opinions from the slider after talking to a canidate
 If jetstream profile photos aren't working, might wanna check the .env file so the site is set correctly
 
 Make sure in the .env.dusk.{} file you set the db_database to 'testing'
+
+When creating factories, make sure to implement the relationship method in the model
+
+The sail dusk tests weren't working, the problem was that I had to update my ubuntu version from 20 -> 22 for php 8. This fucked up my docker container
+-> Correct that. When using two browsers, make sure to log out between each session or the table will completely donk itself
+    - To fix this, sail down && sail build && sail up -d
