@@ -15,7 +15,7 @@
                                     <div>
                                         Email: {{$application->email}}
                                     </div>
-                                </div>   
+                                </div>
                             </div>
                             <div class="col-span-4">
                                 <div>
@@ -23,14 +23,17 @@
                                 </div>
                                 <div>
                                     Office: {{$application->office_name}}, {{$application->location}}
-                                </div>   
+                                </div>
                             </div>
                             <div class="col-span-1">
                                 Status: {{$application->status}}
                             </div>
                             <div class="col-span-3 flex grow items-center">
                                 <div class="card-actions flex grow flex-row justify-end">
-                                    <button class="btn btn-primary" wire:click="acceptCandidate({{ $application->user_id }})">
+                                    <button
+                                        class="btn btn-primary"
+                                        wire:click="acceptCandidate({{ $application->user_id }})"
+                                        name="Accept-{{ $application->user_id }}">
                                         Accept
                                     </button>
                                     <button class="btn btn-error" wire:click="rejectCandidate({{ $application->user_id }})">
@@ -39,7 +42,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             @endforeach
