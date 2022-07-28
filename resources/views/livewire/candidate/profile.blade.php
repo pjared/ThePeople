@@ -15,11 +15,11 @@
                 <div>
                     @if($candidate->ballot)
                         Running For: {{ $candidate->ballot->location->state }}
-                        {{ $candidate->ballot->office->name }}, 
-                        {{ $candidate->ballot->location->name }} 
+                        {{ $candidate->ballot->office->name }},
+                        {{ $candidate->ballot->location->name }}
                     @endif
                 </div>
-                <div>                        
+                <div>
                     @if($candidate->public_email)
                         Email Candiate: {{ $candidate->public_email }}
                     @endif
@@ -33,7 +33,7 @@
 
             {{-- CAMPAIGN VIDEOS COMPONENT --}}
             @include('candidate.component.videos', ['videos' => $candidate->videos])
-            
+
             {{-- PROMISES COMPONENT --}}
             @include('candidate.component.promises', ['promises' => $candidate->promises])
 
@@ -44,9 +44,9 @@
     {{-- RIGHT COLUMN --}}
     <div class="flex flex-col w-11/12 grow gap-6 items-center ">
         @include('candidate.component.stances', ['opinions' => $opinions, 'candidate' => $candidate])
-        
+
         {{-- OTHER OPINIONS --}}
-        @if(count($candidate->opinions) != 0) 
+        @if(count($candidate->opinions) != 0)
             <div class="flex flex-col w-11/12 items-center" x-data="{open: false}">
                 <button class="background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
                     <div class="flex flex-row">
@@ -61,21 +61,21 @@
                             <div class="flex flex-row justify-center gap-4">
                                 <span>{{$opinion->name}}</span>
                                 @auth
-                                    <livewire:flag :type="'opinion'" :type_id="$opinion->id" :wire:key="'opinion-'.$opinion->id">       
+                                    <livewire:flag :type="'opinion'" :type_id="$opinion->id" :wire:key="'opinion-'.$opinion->id">
                                 @else
                                     <label class="fill-transparent" for="signup-modal">
                                         @include('icons.flag')
-                                    </label>  
+                                    </label>
                                 @endauth
                             </div>
                         @endforeach
-                    </div>                    
+                    </div>
                 </div>
-            </div>    
-        @endif 
+            </div>
+        @endif
 
         {{-- DONORS --}}
-        @if(count($candidate->donors) != 0) 
+        @if(count($candidate->donors) != 0)
             <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
                 <button class="flex background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
                     <div class="text-start">
@@ -87,15 +87,15 @@
                         @foreach ($candidate->donors as $donor)
                             <div class="flex flex-row items-center justify-center gap-2">
                                 <span>Name:  {{$donor->name}}</span>
-                                @auth   
-                                    <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-flag-'.$donor->id">  
+                                @auth
+                                    <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-flag-'.$donor->id">
                                 @else
                                     <label class="fill-transparent" for="signup-modal">
                                         @include('icons.flag')
-                                    </label>  
+                                    </label>
                                 @endauth
-                                
-                            </div>          
+
+                            </div>
                         @endforeach
                     @else
                         No donor data as of yet.
@@ -105,7 +105,7 @@
         @endif
 
         {{-- LAW MAKING INVOLVEMENT  --}}
-        @if(count($candidate->law_involvement) != 0) 
+        @if(count($candidate->law_involvement) != 0)
             <div class="flex flex-col w-11/12 items-center" x-data="{open: false}">
                 <button class="background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
                     <div class="text-start">
@@ -118,49 +118,17 @@
                             <div class="flex flex-row justify-center gap-4">
                                 <span>Name : {{ $law->name }}</span>
                                 @auth
-                                    <livewire:flag :type="'law'" :type_id="$law->id" :wire:key="'law-flag-'.$law->id">         
+                                    <livewire:flag :type="'law'" :type_id="$law->id" :wire:key="'law-flag-'.$law->id">
                                 @else
                                     <label class="fill-transparent" for="signup-modal">
                                         @include('icons.flag')
-                                    </label>  
-                                @endauth                                    
-                            </div>       
-                        @endforeach                 
+                                    </label>
+                                @endauth
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         @endif
     </div>
-
-    @push('scripts')
-        <script>
-            document.addEventListener('alpine:init', () => {
-                Alpine.data('nextFlag', () => ({       
-                    flag: {
-                        ['@click']() {
-                            console.log('clicked');
-                            console.log(this.transparent, this.black, this.green, this.red);
-                            if(this.transparent) {
-                                this.transparent = false;
-                                this.black = true;
-                                @this.change_flag(this.type, this.type_id, 'nuetral')
-                            } else if (this.black) {
-                                this.black = false;
-                                this.green = true;
-                                @this.change_flag(this.type, this.type_id, 'green')
-                            } else if (this.green) {
-                                this.green = false;
-                                this.red = true;
-                                @this.change_flag(this.type, this.type_id, 'red')
-                            } else {
-                                this.red = false;
-                                this.transparent = true;
-                                @this.delete_flag(this.type, this.type_id)
-                            }
-                        },
-                    },
-                }))
-            });
-        </script>
-    @endpush
 </div>
