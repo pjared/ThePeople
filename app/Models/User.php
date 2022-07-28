@@ -24,7 +24,7 @@ class User extends Authenticatable
     use TwoFactorAuthenticatable;
 
     use HasRoles;
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -66,7 +66,7 @@ class User extends Authenticatable
 
     /**
      * Overrides default implementation. Users are only able to update profile if they are a candidate
-     *
+    *
      * @param  \Illuminate\Http\UploadedFile  $photo
      * @return void
      */
@@ -79,11 +79,15 @@ class User extends Authenticatable
                         'profile-photos', ['disk' => $this->profilePhotoDisk()]
                     ),
                 ])->save();
-    
+
                 if ($previous) {
                     Storage::disk($this->profilePhotoDisk())->delete($previous);
                 }
             });
-        }        
+        }
+    }
+
+    public function candidateApplication() {
+        return $this->hasOne(CandidateApplication::class, 'user_id', 'id');
     }
 }
