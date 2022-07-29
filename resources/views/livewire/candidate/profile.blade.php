@@ -131,4 +131,36 @@
             </div>
         @endif
     </div>
+
+    @push('scripts')
+        <script>
+            document.addEventListener('alpine:init', () => {
+                Alpine.data('nextFlag', () => ({
+                    flag: {
+                        ['@click']() {
+                            console.log('clicked');
+                            console.log(this.transparent, this.black, this.green, this.red);
+                            if(this.transparent) {
+                                this.transparent = false;
+                                this.black = true;
+                                @this.change_flag(this.type, this.type_id, 'nuetral')
+                            } else if (this.black) {
+                                this.black = false;
+                                this.green = true;
+                                @this.change_flag(this.type, this.type_id, 'green')
+                            } else if (this.green) {
+                                this.green = false;
+                                this.red = true;
+                                @this.change_flag(this.type, this.type_id, 'red')
+                            } else {
+                                this.red = false;
+                                this.transparent = true;
+                                @this.delete_flag(this.type, this.type_id)
+                            }
+                        },
+                    },
+                }))
+            });
+        </script>
+    @endpush
 </div>

@@ -23,32 +23,4 @@
 
         <livewire:candidate.profile :candidate="$candidate">
     </div>
-
-    @push('scripts')
-        <script>
-            document.addEventListener('alpine:init', () => {
-                Alpine.data('nextFlag', () => ({
-                    flag: {
-                        ['@click']() {
-                            console.log('clicked');
-                            console.log(this.transparent, this.black, this.green, this.red);
-                            if(this.transparent) {
-                                this.transparent = false;
-                                this.black = true;
-                            } else if (this.black) {
-                                this.black = false;
-                                this.green = true;
-                            } else if (this.green) {
-                                this.green = false;
-                                this.red = true;
-                            } else {
-                                this.red = false;
-                                this.transparent = true;
-                            }
-                        },
-                    },
-                }))
-            });
-        </script>
-    @endpush
 </div>
