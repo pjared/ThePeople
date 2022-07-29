@@ -9,7 +9,8 @@
 
     <x-slot name="form">
         <!-- Profile Photo -->
-        @role('candidate')
+        {{-- This has been moved to EditInfo Wire
+            @role('candidate')
             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                 <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 sm:col-span-4">
                     <!-- Profile Photo File Input -->
@@ -51,7 +52,7 @@
                     <x-jet-input-error for="photo" class="mt-2" />
                 </div>
             @endif
-        @endrole
+        @endrole --}}
 
         <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
