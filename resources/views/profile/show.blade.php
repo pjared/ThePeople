@@ -18,15 +18,34 @@
             @if (Laravel\Fortify\Features::canUpdateProfileInformation())
                 @livewire('profile.update-profile-information-form')
 
-                <div class="text-center mt-6">
-                    {{-- TODO: Major smell here --}}
-                    @role('candidate')
-                    @else
-                    <button class="btn btn-primary">
-                        <a href="{{Route('candidate-apply')}}">Are you a candidate? Click here to apply for a profile.</a>
-                    </button>
-                    @endrole
-                </div>
+                @if(Auth::user()->hasVerifiedEmail() && Auth::user()->hasEnabledTwoFactorAuthentication())
+                    <div class="text-center mt-6">
+                        @unlessrole('candidate')
+                            <button class="btn btn-primary">
+                                <a href="{{Route('candidate-apply')}}">Are you a candidate? Click here to apply for a profile.</a>
+                            </button>
+                        @endrole
+                    </div>
+                @else
+                    <div class="flex flex-col items-center justify-center mt-6">
+                        <span>Are you a candidate? In order to apply, please:</span>
+                        <ul class='list-disc'>
+                            @if(!Auth::user()->hasVerifiedEmail())
+                                <li>
+                                    <span>Verify your email</span>
+                                </li>
+                            @endif
+                            @if(!Auth::user()->hasEnabledTwoFactorAuthentication())
+                                <li>
+                                    <span>Enable two factor authentication</span>
+                                </li>
+                            @endif
+                        </ul>
+                        <span>Once you're done, refresh this page</span>
+                    </div>
+                @endif
+
+
                 <x-jet-section-border />
             @endif
 

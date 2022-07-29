@@ -31,7 +31,7 @@ Route::get('/', function()  {
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified'
+    // 'verified'
 ])->group(function () {
     Route::get('/home', function()  {
         //Keeping this it's own view because with user information we're going to load them a customized page
@@ -45,8 +45,7 @@ Route::get('/ballot/{id}', [BallotController::class, 'getBallotView'])->name('ba
 /* -----CANDIDATE------ */
 
 //APPLICATION
-Route::get('/apply', Application::class)->name('candidate-apply');
-
+Route::get('/apply', Application::class)->name('candidate-apply')->middleware(['verified', 'has2FAEnabled']);
 
 //PROFILE VIEW
 Route::get('candidate/profile/{id}', [CandidateController::class, 'getCandidateView']);
@@ -62,7 +61,7 @@ Route::group(['prefix' =>'candidate','middleware' => ['role:candidate']], functi
         Route::get('/promises', \App\Http\Livewire\Candidate\Edit\EditPromises::class);
         Route::get('/videos', \App\Http\Livewire\Candidate\Edit\EditVideos::class);
         Route::get('/positions', \App\Http\Livewire\Candidate\Edit\EditPositions::class);
-    });    
+    });
 });
 
 /* -----ADMIN------ */
@@ -75,7 +74,7 @@ Route::group(['prefix' =>'admin','middleware' => ['role:admin']], function() {
         Route::get('/assign', AssignCandidates::class)->name('assign_candidates');
         Route::get('/links', EditPermalinks::class)->name('candidate-links');
     });
-    
+
     Route::get('/create-ballot', CreateBallot::class)->name('create-ballot');
 
     Route::group(['prefix' =>'opinions'], function() {
