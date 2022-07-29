@@ -22,22 +22,9 @@ class EditInfoTest extends TestCase
         $candidate->assignRole('candidate');
         $this->actingAs($candidate);
 
-
-        /*
-        candidate.party_name' => 'nullable|string',
-        'candidate.contact_phone_number' => 'nullable',
-        'candidate.phone_number' => 'nullable',
-        'candidate.contact_email' => 'required|string',
-        'candidate.email' => 'nullable',
-        'candidate.site_link' => 'nullable',
-         */
         $component = Livewire::test(EditInfo::class)
                         ->set('candidate.party_name', 'Repub')
                         ->set('candidate.contact_email', 'pjared@gmail.com')
-                        // ->set('candidate.party_name')
-                        // ->set('candidate.party_name')
-                        // ->set('candidate.party_name')
-                        // ->set('candidate.party_name')
                         ->call('save_info')
                         ;
 

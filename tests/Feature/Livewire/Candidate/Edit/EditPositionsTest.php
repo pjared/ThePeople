@@ -16,6 +16,7 @@ class EditPositionsTest extends TestCase
     /** @test */
     public function the_component_can_render()
     {
+        $this->markTestIncomplete('Finish this one');
         $this->artisan('db:seed');
 
         $candidate = User::factory()->withCandidate()->create();
