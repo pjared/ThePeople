@@ -90,4 +90,8 @@ class User extends Authenticatable
     public function candidateApplication() {
         return $this->hasOne(CandidateApplication::class, 'user_id', 'id');
     }
+
+    public function candidate() {
+        return $this->hasMany(Candidate::class, 'user_id', 'id');
+    }
 }

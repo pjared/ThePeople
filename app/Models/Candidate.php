@@ -10,10 +10,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Candidate extends Model
 {
+    use HasFactory;
+
     public $timestamps = false;
 
     protected $guarded = [
-        
+
     ];
 
     protected $fillable = [
@@ -32,7 +34,7 @@ class Candidate extends Model
     ];
 
     use HasFactory;
-    
+
     public function donors() {
         return $this->belongsToMany(Donor::class)->using(CandidateDonors::class);
     }
@@ -86,7 +88,7 @@ class Candidate extends Model
     }
 
     /**
-     * If they are on a ballot, but have filled out multiple opinion stances and have 
+     * If they are on a ballot, but have filled out multiple opinion stances and have
      * multiple badges, need to only get their badges for that ballot and opinion type
      */
     public function badges() {

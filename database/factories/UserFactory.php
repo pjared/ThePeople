@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Candidate;
 use App\Models\CandidateApplication;
 use App\Models\Team;
 use App\Models\User;
@@ -77,6 +78,19 @@ class UserFactory extends Factory
             CandidateApplication::factory()
                 ->state(function (array $attributes, User $user) {
                     return ['name' => $user->name, 'user_id' => $user->id, 'email' => $user->email];
+                }),
+        );
+    }
+
+    /**
+     * Indicate the user shouls have a candidate model
+     */
+    public function withCandidate()
+    {
+        return $this->has(
+            Candidate::factory()
+                ->state(function (array $attributes, User $user) {
+                    return ['name' => $user->name, 'user_id' => $user->id, 'contact_email' => $user->email];
                 }),
         );
     }
