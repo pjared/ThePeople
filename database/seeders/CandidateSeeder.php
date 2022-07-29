@@ -27,13 +27,13 @@ class CandidateSeeder extends Seeder
      * @return void
      */
     public function run()
-    {   
-        foreach ($this->names as $name) {            
+    {
+        foreach ($this->names as $i => $name) {
             $user = User::create([
                 'name' => $name,
                 'email' => $name . '@gmail.com',
                 'password' => Hash::make('password'),
-                'profile_photo_path' => 'profile-photos/' . rand(1,3)  . '.jpg',
+                'profile_photo_path' => 'profile-photos/' . $i + 1  . '.jpg',
             ]);
             //Assign them to the candidate role
             $user->assignRole('candidate');
@@ -54,9 +54,9 @@ class CandidateSeeder extends Seeder
                 'name' => $name,
                 'dob' => Carbon::today()->subYear(rand(25, 55)),
                 'signup_date' => Carbon::today()->subDays(rand(0, 365)),
-                'bio' => "", 
+                'bio' => "",
                 'party_name' => $parties[rand(0,2)],
-                'user_id' => $user->id, 
+                'user_id' => $user->id,
                 'state' => 'Utah',
                 'contact_email' => "pjared@gmail.com",
             ]);
