@@ -27,22 +27,24 @@
                         @endrole
                     </div>
                 @else
-                    <div class="flex flex-col items-center justify-center mt-6">
-                        <span>Are you a candidate? In order to apply, please:</span>
-                        <ul class='list-disc'>
-                            @if(!Auth::user()->hasVerifiedEmail())
-                                <li>
-                                    <span>Verify your email</span>
-                                </li>
-                            @endif
-                            @if(!Auth::user()->hasEnabledTwoFactorAuthentication())
-                                <li>
-                                    <span>Enable two factor authentication</span>
-                                </li>
-                            @endif
-                        </ul>
-                        <span>Once you're done, refresh this page</span>
-                    </div>
+                    @unlessrole('candidate')
+                        <div class="flex flex-col items-center justify-center mt-6">
+                            <span>Are you a candidate? In order to apply, please:</span>
+                            <ul class='list-disc'>
+                                @if(!Auth::user()->hasVerifiedEmail())
+                                    <li>
+                                        <span>Verify your email</span>
+                                    </li>
+                                @endif
+                                @if(!Auth::user()->hasEnabledTwoFactorAuthentication())
+                                    <li>
+                                        <span>Enable two factor authentication</span>
+                                    </li>
+                                @endif
+                            </ul>
+                            <span>Once you're done, refresh this page</span>
+                        </div>
+                    @endrole
                 @endif
 
 
