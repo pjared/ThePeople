@@ -25,8 +25,6 @@ class Profile extends Component
     public function mount()
     {
         $this->candidate = Candidate::firstWhere('user_id', Auth::user()->id);
-        
-        // $this->political_parties = PoliticalParty::all();
     }
 
     public function render()
@@ -41,20 +39,20 @@ class Profile extends Component
     /* EVENTS */
     public function promise_flash() {
         session()->flash('update-promise-success', "Promise was added");
-        $this->emit('refreshPromiseComponent');   
+        $this->emit('refreshPromiseComponent');
     }
 
     public function promise_update_flash() {
         session()->flash('update-promise-success', "Promises updated");
-        $this->emit('refreshPromiseComponent');   
+        $this->emit('refreshPromiseComponent');
     }
 
     public function promise_delete_flash() {
         session()->flash('update-promise-failure', "Promise was deleted");
-        $this->emit('refreshPromiseComponent');   
+        $this->emit('refreshPromiseComponent');
     }
 
-    public function position_flash() 
+    public function position_flash()
     {
         $this->emit('refreshPositionComponent');
         session()->flash('update-position-success', "Position was added");
@@ -69,7 +67,7 @@ class Profile extends Component
         session()->flash('update-position-failure', "Position was deleted");
     }
 
-    public function opinion_flash() 
+    public function opinion_flash()
     {
         session()->flash('update-stances-success');
     }

@@ -47,43 +47,40 @@
 
         {{-- OTHER OPINIONS --}}
         @if(count($candidate->opinions) != 0)
-            <div class="flex flex-col w-11/12 items-center" x-data="{open: false}">
-                <button class="background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
-                    <div class="flex flex-row">
-                        <div class="text-start">
-                            Other Opinions
+            <div class="flex grow flex-col w-11/12 items-center">
+                <x-dropdown-card>
+                    <x-slot:title>
+                        Other Opinions
+                    </x-slot>
+                    <x-slot:content>
+                        <div class="flex flex-col gap-4">
+                            @foreach ($candidate->opinions as $opinion)
+                                <div class="flex flex-row justify-center gap-4">
+                                    <span>{{$opinion->name}}</span>
+                                    @auth
+                                        <livewire:flag :type="'opinion'" :type_id="$opinion->id" :wire:key="'opinion-'.$opinion->id">
+                                    @else
+                                        <label class="fill-transparent" for="signup-modal">
+                                            @include('icons.flag')
+                                        </label>
+                                    @endauth
+                                </div>
+                            @endforeach
                         </div>
-                    </div>
-                </button>
-                <div x-cloak class="w-11/12 background-card rounded-t-none" x-show="open" x-transition>
-                    <div class="flex flex-col gap-4">
-                        @foreach ($candidate->opinions as $opinion)
-                            <div class="flex flex-row justify-center gap-4">
-                                <span>{{$opinion->name}}</span>
-                                @auth
-                                    <livewire:flag :type="'opinion'" :type_id="$opinion->id" :wire:key="'opinion-'.$opinion->id">
-                                @else
-                                    <label class="fill-transparent" for="signup-modal">
-                                        @include('icons.flag')
-                                    </label>
-                                @endauth
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
+                    </x-slot>
+                </x-dropdown-card>
             </div>
         @endif
 
         {{-- DONORS --}}
         @if(count($candidate->donors) != 0)
-            <div class="flex grow flex-col w-11/12 items-center" x-data="{open: false}">
-                <button class="flex background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
-                    <div class="text-start">
+            <div class="flex grow flex-col w-11/12 items-center">
+                <x-dropdown-card>
+                    <x-slot:title>
                         Campaign Donors
-                    </div>
-                </button>
-                <div x-cloak  class="flex flex-col background-card rounded-t-none w-11/12 gap-4" x-show="open" x-transition>
-                    @if(count($candidate->donors) >= 1)
+                    </x-slot>
+                    <x-slot:content>
+                        @if(count($candidate->donors) >= 1)
                         @foreach ($candidate->donors as $donor)
                             <div class="flex flex-row items-center justify-center gap-2">
                                 <span>Name:  {{$donor->name}}</span>
@@ -97,37 +94,38 @@
 
                             </div>
                         @endforeach
-                    @else
-                        No donor data as of yet.
-                    @endif
-                </div>
+                        @else
+                            No donor data as of yet.
+                        @endif
+                    </x-slot>
+                </x-dropdown-card>
             </div>
         @endif
 
         {{-- LAW MAKING INVOLVEMENT  --}}
         @if(count($candidate->law_involvement) != 0)
-            <div class="flex flex-col w-11/12 items-center" x-data="{open: false}">
-                <button class="background-card w-11/12" type="button" x-on:click="open = ! open" :class="{ 'rounded-b-none': open }">
-                    <div class="text-start">
+            <div class="flex flex-col w-11/12 items-center">
+                <x-dropdown-card>
+                    <x-slot:title>
                         Laws Passed in office
-                    </div>
-                </button>
-                <div x-cloak class="w-11/12 background-card rounded-t-none" x-show="open" x-transition>
-                    <div class="flex flex-col gap-4">
-                        @foreach ($candidate->law_involvement as $law)
-                            <div class="flex flex-row justify-center gap-4">
-                                <span>Name : {{ $law->name }}</span>
-                                @auth
-                                    <livewire:flag :type="'law'" :type_id="$law->id" :wire:key="'law-flag-'.$law->id">
-                                @else
-                                    <label class="fill-transparent" for="signup-modal">
-                                        @include('icons.flag')
-                                    </label>
-                                @endauth
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
+                    </x-slot>
+                    <x-slot:content>
+                        <div class="flex flex-col gap-4">
+                            @foreach ($candidate->law_involvement as $law)
+                                <div class="flex flex-row justify-center gap-4">
+                                    <span>Name : {{ $law->name }}</span>
+                                    @auth
+                                        <livewire:flag :type="'law'" :type_id="$law->id" :wire:key="'law-flag-'.$law->id">
+                                    @else
+                                        <label class="fill-transparent" for="signup-modal">
+                                            @include('icons.flag')
+                                        </label>
+                                    @endauth
+                                </div>
+                            @endforeach
+                        </div>
+                    </x-slot>
+                </x-dropdown-card>
             </div>
         @endif
     </div>
