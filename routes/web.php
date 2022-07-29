@@ -11,6 +11,7 @@ use App\Http\Livewire\Admin\EditOpinions;
 use App\Http\Livewire\Admin\EditPermalinks;
 use App\Http\Livewire\Candidate\Application;
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\SitemapGenerator;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function()  {
     return view('welcome');
 });
+
+/* -----Site Map------ */
+// Route::get('generate-sitemap', function () {
+//     SitemapGenerator::create('http://localhost')
+//         ->writeToFile(public_path('sitemap.xml'));
+// });
 
 /* -----LOGIN------ */
 Route::middleware([
