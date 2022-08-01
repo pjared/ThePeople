@@ -29,7 +29,7 @@ Route::get('/', function()  {
     return view('welcome');
 });
 
-Route::get('/', [HomeController::class, 'getAboutUsView'])->name('about-us');
+Route::get('/about-us', [HomeController::class, 'getAboutUsView'])->name('about-us');
 
 /* -----Site Map------ */
 // Route::get('generate-sitemap', function () {
