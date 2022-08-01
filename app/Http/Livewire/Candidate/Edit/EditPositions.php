@@ -46,7 +46,7 @@ class EditPositions extends Component
             'positions.*.year_end' => 'required|numeric',
             'positions.*.description' => 'required'
         ]);
-        
+
         session()->flash('update-positions-success');
         $this->positions->each->save();
     }
@@ -54,16 +54,16 @@ class EditPositions extends Component
     public function delete_position($position_id)
     {
         $this->positions->find($position_id)->delete();
-        $this->emitUp('update-positions-failure');
+        session()->flash('update-positions-failure');
     }
 
     public function add_position()
     {
         $this->validate();
-        
-        $this->position->candidate_id = $this->candidate_id;
+
+        $this->position->candidate_id = $this->candidate->id;
         $this->position->save();
 
-        $this->emitUp('update-positions-success', 'Position deleted');
+        session()->flash('update-positions-success');
     }
 }
