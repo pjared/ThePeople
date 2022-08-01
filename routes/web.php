@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BallotController;
 use App\Http\Controllers\CandidateController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermaLinkController;
 use App\Http\Livewire\Admin\ApproveCandidates;
 use App\Http\Livewire\Admin\AssignCandidates;
@@ -27,6 +28,8 @@ use Spatie\Sitemap\SitemapGenerator;
 Route::get('/', function()  {
     return view('welcome');
 });
+
+Route::get('/', [HomeController::class, 'getAboutUsView'])->name('about-us');
 
 /* -----Site Map------ */
 // Route::get('generate-sitemap', function () {
