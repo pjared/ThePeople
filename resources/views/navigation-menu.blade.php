@@ -16,6 +16,12 @@
                         {{ __('Home') }}
                     </x-jet-nav-link>
                 </div>
+
+                {{-- <div class="hidden space-x-2 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('about-us') }}" :active="request()->routeIs('about-us')">
+                        {{ __('About Us') }}
+                    </x-jet-nav-link>
+                </div> --}}
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -107,11 +113,11 @@
                                 {{ __('Profile') }}
                             </x-jet-dropdown-link>
 
-                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                            {{-- @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
                                     {{ __('API Tokens') }}
                                 </x-jet-dropdown-link>
-                            @endif
+                            @endif --}}
 
                             <div class="border-t border-gray-100"></div>
 
