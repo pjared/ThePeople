@@ -14,10 +14,6 @@ class Candidate extends Model
 
     public $timestamps = false;
 
-    protected $guarded = [
-
-    ];
-
     protected $fillable = [
         "name",
         "dob",
@@ -33,7 +29,13 @@ class Candidate extends Model
         'site_link',
     ];
 
-    use HasFactory;
+    protected $hidden = [
+        "contact_email",
+        "contact_phone_number",
+        "signup_date",
+        "user_id",
+        "party_name",
+    ];
 
     public function donors() {
         return $this->belongsToMany(Donor::class)->using(CandidateDonors::class);
