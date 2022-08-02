@@ -29,7 +29,8 @@ class CreateOpinions extends Component
 
     public function render()
     {
-        return view('livewire.admin.create-opinions');
+        return view('livewire.admin.create-opinions')
+                    ->layout('layouts.admin');
     }
 
     public function save_opinions() {

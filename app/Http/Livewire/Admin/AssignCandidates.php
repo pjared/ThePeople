@@ -62,6 +62,7 @@ class AssignCandidates extends Component
 
     public function render()
     {
-        return view('livewire.admin.assign-candidates');
+        return view('livewire.admin.assign-candidates')
+                    ->layout('layouts.admin');
     }
 }

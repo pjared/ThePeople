@@ -45,7 +45,7 @@ class ApproveCandidates extends Component
 
     public function rejectCandidate($user_id)
     {
-        //Find application, update status to 'rejected'  
+        //Find application, update status to 'rejected'
         $application = CandidateApplication::firstWhere('user_id', $user_id);
         $application->status = "rejected";
         $application->save();
@@ -60,6 +60,7 @@ class ApproveCandidates extends Component
     {
         $this->applications = CandidateApplication::where('status', 'submitted')->get();
 
-        return view('livewire.admin.approve-candidates');
+        return view('livewire.admin.approve-candidates')
+                    ->layout('layouts.admin');
     }
 }

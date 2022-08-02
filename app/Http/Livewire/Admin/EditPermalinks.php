@@ -11,7 +11,7 @@ class EditPermalinks extends Component
     public $candidates;
     public $candidates_linked;
 
-    //TODO: Make sure that these are  
+    //TODO: Make sure that these are
     public $perma_link;
     public $candidate_link;
 
@@ -25,7 +25,7 @@ class EditPermalinks extends Component
         $permaLink->save();
     }
 
-    public function update($candidate_id) 
+    public function update($candidate_id)
     {
         $permaLink = CandidatePermaLink::firstWhere('candidate_id', $candidate_id);
         // $permaLink->perma_link = $this->perma_link[$candidate_id]; Cannot change this
@@ -42,9 +42,10 @@ class EditPermalinks extends Component
         }
         $this->candidates = Candidate::doesntHave('permalink')->has('ballot')->get();
     }
-    
+
     public function render()
     {
-        return view('livewire.admin.edit-permalinks');
+        return view('livewire.admin.edit-permalinks')
+                    ->layout('layouts.admin');
     }
 }

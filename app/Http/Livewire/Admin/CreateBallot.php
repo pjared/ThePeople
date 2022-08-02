@@ -25,7 +25,7 @@ class CreateBallot extends Component
         'new_position.name' => 'nullable',
         'new_position.years_per_term' => 'nullable',
         'new_position.limit_terms' => 'nullable',
-        
+
         'new_location.type' => 'nullable',
         'new_location.name' => 'nullable',
         'new_location.state' => 'nullable',
@@ -43,7 +43,8 @@ class CreateBallot extends Component
         $this->locations = Location::all();
         $this->offices = PublicOfficePosition::all();
         $this->ballots = Ballot::all();
-        return view('livewire.admin.create-ballot');
+        return view('livewire.admin.create-ballot')
+                    ->layout('layouts.admin');
     }
 
     public function createLocation()

@@ -32,8 +32,9 @@ class EditOpinions extends Component
     }
 
     public function render()
-    {   
-        return view('livewire.admin.edit-opinions');
+    {
+        return view('livewire.admin.edit-opinions')
+                    ->layout('layouts.admin');
     }
 
     public function remove_ballot_opinion($ballot_id, $opinion_id)
