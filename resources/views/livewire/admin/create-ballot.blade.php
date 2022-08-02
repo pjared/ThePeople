@@ -12,85 +12,71 @@
                 </div>
             @endif
         </div>
-        {{-- LOCATION, OFFICE, BALLOT` --}}
-        <div class="grid grid-cols-3">
-            {{-- LOCATION CREATION --}}
-            <div class="col-span-1 flex grow flex-col gap-2">
-                <form class="flex gap-6 items-center" wire:submit.prevent="createLocation">
-                    <div class="flex flex-col background-card w-11/12 items-center gap-2">
-                        <div class="text-center">
-                            Create a Location
-                        </div>
-                        <div class="flex-row w-11/12">
-                            <div class="form-control w-1/2 max-w-xs">
-                                <label class="label">
-                                  <span class="label-text">State</span>
-                                  <span class="label-text-alt">(optional)</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    wire:model="new_location.state"
-                                    name='new_location_state'
-                                    class="input input-bordered max-w-xs" />
-                            </div>
-                            @error('new_location.state') <span class="error">{{ $message }}</span> @enderror
-                            <div class="form-control w-full max-w-xs">
-                                <label class="label">
-                                  <span class="label-text">Location Name</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    wire:model="new_location.name"
-                                    name='new_location_name'
-                                    class="input input-bordered w-3/4 max-w-xs" />
-                            </div>
-                            @error('new_location.name') <span class="error">{{ $message }}</span> @enderror
-                            <div class="form-control w-full max-w-xs">
-                                <label class="label">
-                                  <span class="label-text">Location Type</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    wire:model="new_location.type"
-                                    name='new_location_type'
-                                    class="input input-bordered w-3/4 max-w-xs" />
-                            </div>
-                            @error('new_location.type') <span class="error">{{ $message }}</span> @enderror
-                        </div>
-                        <div class="flex justify-center w-11/12">
-                            <button
-                                class="btn btn-primary"
-                                type="submit"
-                                name='create_location'>
-                                Create
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                {{-- LIST OF LOCATIONS --}}
-                <div class="flex grow flex-col items-center">
-                    @foreach ($locations as $location)
+        <div class="grid grid-rows-3 w-1/2">
+            <div class="row-span-1">
+                {{-- LOCATION TABLE --}}
+                <livewire:tables.locations-table />
+                {{-- LOCATION CREATION --}}
+                {{-- <div class="col-span-1 flex flex-col gap-2">
+                    <form class="flex gap-6 items-center" wire:submit.prevent="createLocation">
                         <div class="flex flex-col background-card w-11/12 items-center gap-2">
                             <div class="text-center">
-                                <span>
-                                    {{ $location->name }}
-                                    @if($location->state)
-                                    , {{ $location->state }}
-                                    @endif
-                                    - ({{$location->id}})
-                                </span>
+                                Create a Location
                             </div>
-                            <div class="text-center">
-                                <span>{{ $location->type }}</span>
+                            <div class="flex-row w-11/12">
+                                <div class="form-control w-1/2 max-w-xs">
+                                    <label class="label">
+                                    <span class="label-text">State</span>
+                                    <span class="label-text-alt">(optional)</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        wire:model="new_location.state"
+                                        name='new_location_state'
+                                        class="input input-bordered max-w-xs" />
+                                </div>
+                                @error('new_location.state') <span class="error">{{ $message }}</span> @enderror
+                                <div class="form-control w-full max-w-xs">
+                                    <label class="label">
+                                    <span class="label-text">Location Name</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        wire:model="new_location.name"
+                                        name='new_location_name'
+                                        class="input input-bordered w-3/4 max-w-xs" />
+                                </div>
+                                @error('new_location.name') <span class="error">{{ $message }}</span> @enderror
+                                <div class="form-control w-full max-w-xs">
+                                    <label class="label">
+                                    <span class="label-text">Location Type</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        wire:model="new_location.type"
+                                        name='new_location_type'
+                                        class="input input-bordered w-3/4 max-w-xs" />
+                                </div>
+                                @error('new_location.type') <span class="error">{{ $message }}</span> @enderror
+                            </div>
+                            <div class="flex justify-center w-11/12">
+                                <button
+                                    class="btn btn-primary"
+                                    type="submit"
+                                    name='create_location'>
+                                    Create
+                                </button>
                             </div>
                         </div>
-                    @endforeach
-                </div>
+                    </form>
+                </div> --}}
             </div>
-            {{-- OFFICE --}}
-            <div class="col-span-1 flex grow flex-col gap-2">
+
+            <div class="row-span-1">
+                {{-- OFFICE TABLE --}}
+                <livewire:tables.office-positions-table />
                 {{-- CREATE OFFICE --}}
-                <form class="flex flex-col gap-6 background-card items-center" wire:submit.prevent="createOffice">
+                {{-- <form class="flex flex-col gap-6 background-card items-center" wire:submit.prevent="createOffice">
                     <div class="text-center">
                         Create an office
                     </div>
@@ -139,30 +125,14 @@
                             Create
                         </button>
                     </div>
-                </form>
-                {{-- OFFICE LIST --}}
-                <div class="flex grow flex-col items-center">
-                    @foreach ($offices as $office)
-                        <div class="flex flex-col background-card w-11/12 items-center gap-2">
-                            <div class="text-center">
-                                <span>{{ $office->name }} - ({{$office->id}})</span>
-                            </div>
-                            <div class="flex flex-row gap-12">
-                                <div class="text-center">
-                                    <span>{{ $office->years_per_term }}</span>
-                                </div>
-                                <div class="text-center">
-                                    <span>{{ $office->limit_terms }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
+                </form> --}}
             </div>
-            {{-- BALLOT --}}
-            <div class="col-span-1 flex grow flex-col gap-2">
+
+            <div class="row-span-1">
+                {{-- BALLOT TABLE --}}
+                <livewire:tables.ballots-table />
                 {{-- CREATE BALLOT --}}
-                <form class="flex flex-col gap-6 items-center" wire:submit.prevent="createBallot">
+                {{-- <form class="flex flex-col gap-6 items-center" wire:submit.prevent="createBallot">
                     <div class="flex flex-col background-card w-11/12 gap-2">
                         <div class="text-center">
                             Create a Ballot
@@ -213,12 +183,9 @@
                             </button>
                         </div>
                     </div>
-                </form>
-                {{-- BALLOT LIST --}}
-                <div class="flex grow flex-col items-center">
-                    @include('admin.components.ballot-list')
-                </div>
+                </form> --}}
             </div>
         </div>
+
     @endrole
 </div>
