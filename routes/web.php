@@ -4,6 +4,7 @@ use App\Http\Controllers\BallotController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermaLinkController;
+use App\Http\Controllers\SocialiteController;
 use App\Http\Livewire\Admin\ApproveCandidates;
 use App\Http\Livewire\Admin\AssignCandidates;
 use App\Http\Livewire\Admin\CreateBallot;
@@ -12,6 +13,7 @@ use App\Http\Livewire\Admin\EditOpinions;
 use App\Http\Livewire\Admin\EditPermalinks;
 use App\Http\Livewire\Candidate\Application;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 use Spatie\Sitemap\SitemapGenerator;
 
 /*
@@ -96,3 +98,26 @@ Route::group(['prefix' =>'admin','middleware' => ['role:admin']], function() {
 
 /* -----PERMALINK------ */
 Route::get('/permalink/{permalink}', [PermaLinkController::class, 'directLink']);
+
+/* -----SOCIALITE------ */
+
+//GOOGLE
+Route::get('/auth/google/redirect', function () {
+    return Socialite::driver('google')->redirect();
+});
+
+Route::get('/auth/google/callback',[SocialiteController::class, 'handleGoogleCallback']);
+
+//TWITTER
+Route::get('/auth/twitter/redirect', function () {
+    return Socialite::driver('twitter-oauth-2')->redirect();
+});
+
+Route::get('/auth/twitter/callback', [SocialiteController::class, 'handleTwitterCallback']);
+
+//FACEBOOK
+Route::get('/auth/facebook/redirect', function () {
+    return Socialite::driver('facebook')->redirect();
+});
+
+Route::get('/auth/facebook/callback', [SocialiteController::class, 'handleTwitterCallback']);
