@@ -1,7 +1,5 @@
 <x-app-layout>
     <div class="grid grid-flow-row bg-gray-100 gap-4">
-        @include('admin.admin-nav')
-
         <div class="grid grid-cols-3">
             <div class="col-span-1">
                 <div class="grid grid-rows-2">

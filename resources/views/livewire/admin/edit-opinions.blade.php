@@ -1,5 +1,4 @@
 <div class="flex flex-col pb-6 justify-center items-center">
-    @include('admin.admin-nav')
     {{-- OPINIONS LIST --}}
     @if (session()->has('message'))
         <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800 w-3/4" role="alert">
@@ -11,12 +10,12 @@
             {{ session('error') }}
         </div>
     @endif
-    
+
     <div class="grid grid-cols-3 justify-center w-full gap-2">
         {{-- OPINION LIST --}}
         <div class="col-span-1 flex flex-col text-center gap-4">
             <span class="text-2xl">Opinions</span>
-        
+
             <div class="flex flex-col items-center gap-2">
                 @foreach ($opinions as $i => $opinion)
                     <span class="text-xl">
@@ -25,7 +24,7 @@
                 @endforeach
             </div>
         </div>
-    
+
         {{-- ADD OPINION TO BALLOT --}}
         <div class="col-span-1 flex flex-col text-center gap-4">
             <div class="flex flex-col background-card items-center rounded-t-none w-11/12" x-show="show" x-transition>
@@ -60,7 +59,7 @@
                         </div>
                         <div class="text-center">
                             <span>{{ $ballot->voting_date->format('m/d/Y') }}</span>
-                        </div>     
+                        </div>
                         <div class="flex flex-col">
                             {{-- {{dd($ballot->opinions)}} --}}
                             @foreach ($ballot->opinions as $opinion)
@@ -69,10 +68,10 @@
                                     <button wire:click='remove_ballot_opinion({{$ballot->id}},{{$opinion->id}})' class="btn btn-sm btn-error">Delete</button>
                                 </div>
                             @endforeach
-                        </div>                    
+                        </div>
                     </div>
                 @endforeach
             </div>
         </div>
-    </div>    
+    </div>
 </div>

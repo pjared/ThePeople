@@ -1,6 +1,5 @@
 <div class="flex flex-col pb-6 justify-center items-center">
     @role('admin')
-        @include('admin.admin-nav')
         <div class="flex w-screen justify-center">
             @if (session()->has('message'))
                 <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800 w-2/5" role="alert">
@@ -28,9 +27,9 @@
                                   <span class="label-text">State</span>
                                   <span class="label-text-alt">(optional)</span>
                                 </label>
-                                <input 
-                                    type="text" 
-                                    wire:model="new_location.state" 
+                                <input
+                                    type="text"
+                                    wire:model="new_location.state"
                                     name='new_location_state'
                                     class="input input-bordered max-w-xs" />
                             </div>
@@ -39,9 +38,9 @@
                                 <label class="label">
                                   <span class="label-text">Location Name</span>
                                 </label>
-                                <input 
-                                    type="text" 
-                                    wire:model="new_location.name" 
+                                <input
+                                    type="text"
+                                    wire:model="new_location.name"
                                     name='new_location_name'
                                     class="input input-bordered w-3/4 max-w-xs" />
                             </div>
@@ -50,16 +49,16 @@
                                 <label class="label">
                                   <span class="label-text">Location Type</span>
                                 </label>
-                                <input 
-                                    type="text" 
-                                    wire:model="new_location.type" 
+                                <input
+                                    type="text"
+                                    wire:model="new_location.type"
                                     name='new_location_type'
                                     class="input input-bordered w-3/4 max-w-xs" />
                             </div>
                             @error('new_location.type') <span class="error">{{ $message }}</span> @enderror
                         </div>
                         <div class="flex justify-center w-11/12">
-                            <button 
+                            <button
                                 class="btn btn-primary"
                                 type="submit"
                                 name='create_location'>
@@ -95,14 +94,14 @@
                     <div class="text-center">
                         Create an office
                     </div>
-                    <div class="flex-row">                
+                    <div class="flex-row">
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
                               <span class="label-text">Office Name</span>
                             </label>
-                            <input 
-                                type="text" 
-                                wire:model.defer="new_position.name" 
+                            <input
+                                type="text"
+                                wire:model.defer="new_position.name"
                                 name='new_position_name'
                                 class="input input-bordered w-3/4 max-w-xs" />
                         </div>
@@ -112,9 +111,9 @@
                                 <label class="label">
                                   <span class="label-text">Years Per Term</span>
                                 </label>
-                                <input 
-                                    type="number" 
-                                    wire:model.defer="new_position.years_per_term" 
+                                <input
+                                    type="number"
+                                    wire:model.defer="new_position.years_per_term"
                                     name='new_position_years'
                                     class="input input-bordered w-1/2 max-w-xs" />
                             </div>
@@ -123,18 +122,18 @@
                                 <label class="label">
                                   <span class="label-text">Term Limits</span>
                                 </label>
-                                <input 
-                                    type="number" 
-                                    wire:model.defer="new_position.limit_terms" 
+                                <input
+                                    type="number"
+                                    wire:model.defer="new_position.limit_terms"
                                     name='new_position_limit'
                                     class="input input-bordered w-1/2 max-w-xs" />
                             </div>
                             @error('new_position.limit_terms') <span class="error">{{ $message }}</span> @enderror
-                        </div>  
+                        </div>
                     </div>
                     <div class="flex justify-center">
-                        <button 
-                            class="btn btn-primary" 
+                        <button
+                            class="btn btn-primary"
                             name='create_office'
                             type="submit">
                             Create
@@ -155,7 +154,7 @@
                                 <div class="text-center">
                                     <span>{{ $office->limit_terms }}</span>
                                 </div>
-                            </div>                            
+                            </div>
                         </div>
                     @endforeach
                 </div>
@@ -174,9 +173,9 @@
                                     <label class="label">
                                       <span class="label-text">Location ID</span>
                                     </label>
-                                    <input 
-                                        type="number" 
-                                        wire:model.defer="new_ballot.location_id" 
+                                    <input
+                                        type="number"
+                                        wire:model.defer="new_ballot.location_id"
                                         name='new_ballot_location'
                                         class="input input-bordered w-11/12 max-w-xs" />
                                 </div>
@@ -185,41 +184,41 @@
                                     <label class="label">
                                       <span class="label-text">Office ID</span>
                                     </label>
-                                    <input 
-                                        type="number" 
-                                        wire:model.defer="new_ballot.office_id" 
+                                    <input
+                                        type="number"
+                                        wire:model.defer="new_ballot.office_id"
                                         name='new_ballot_office'
                                         class="input input-bordered w-11/12 max-w-xs" />
                                 </div>
                                 @error('new_ballot.office_id') <span class="error">{{ $message }}</span> @enderror
-                            </div>  
+                            </div>
                             <div class="form-control w-full max-w-xs">
                                 <label class="label">
                                   <span class="label-text">Voting Date</span>
                                 </label>
-                                <input 
-                                    type="date" 
-                                    wire:model.defer="new_ballot.voting_date" 
+                                <input
+                                    type="date"
+                                    wire:model.defer="new_ballot.voting_date"
                                     name='new_ballot_date'
                                     class="input input-bordered w-fit" />
                             </div>
-                            @error('new_ballot.voting_date') <span class="error">{{ $message }}</span> @enderror     
+                            @error('new_ballot.voting_date') <span class="error">{{ $message }}</span> @enderror
                         </div>
                         <div class="flex justify-center">
-                            <button 
-                                class="btn btn-primary" 
+                            <button
+                                class="btn btn-primary"
                                 name='create_ballot'
                                 type="submit">
                                 Create
                             </button>
                         </div>
-                    </div>        
+                    </div>
                 </form>
                 {{-- BALLOT LIST --}}
                 <div class="flex grow flex-col items-center">
                     @include('admin.components.ballot-list')
                 </div>
             </div>
-        </div> 
+        </div>
     @endrole
 </div>

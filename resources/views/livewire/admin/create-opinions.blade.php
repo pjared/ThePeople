@@ -1,5 +1,4 @@
 <div class="flex flex-col pb-6 justify-center items-center">
-    @include('admin.admin-nav')
     <div class="flex flex-row w-full">
         <div class="flex flex-col w-1/2 items-center gap-6r">
             {{-- OPINION CREATION --}}
@@ -10,9 +9,9 @@
                         <label class="label">
                             <span class="label-text">Name</span>
                         </label>
-                        <input 
-                            type="text" 
-                            wire:model.defer="new_opinion.name" 
+                        <input
+                            type="text"
+                            wire:model.defer="new_opinion.name"
                             name='new_opinion_name'
                             class="input input-bordered w-full max-w-xs" />
                     </div>
@@ -21,9 +20,9 @@
                         <label class="label">
                             <span class="label-text">description</span>
                         </label>
-                        <input 
-                            type="text" 
-                            wire:model.defer="new_opinion.description" 
+                        <input
+                            type="text"
+                            wire:model.defer="new_opinion.description"
                             name='new_opinion_description'
                             class="input input-bordered w-full max-w-xs" />
                     </div>
@@ -33,16 +32,16 @@
                             <label class="label">
                                 <span class="label-text">Votes</span>
                             </label>
-                            <input 
-                                type="number" 
-                                wire:model.defer="new_opinion.votes" 
+                            <input
+                                type="number"
+                                wire:model.defer="new_opinion.votes"
                                 name='new_opinion_votes'
                                 class="input input-bordered w-full max-w-xs" />
                         </div>
                         @error('new_opinion.votes') <span class="error">{{ $message }}</span> @enderror
                     </div>
-                    <button 
-                        wire:click='add_opinion' 
+                    <button
+                        wire:click='add_opinion'
                         name='add_opinion'
                         class="btn btn-primary mt-2">
                         Add Opinion
@@ -66,12 +65,12 @@
                                 <input type="text" wire:model.defer="opinions.{{$i}}.name" class="input input-bordered w-full max-w-xs" />
                             </div>
                             {{-- <span class="text-xl">
-                                
+
                             </span> --}}
                             <div class="form-control w-full">
                                 <label class="label">
                                   <span class="label-text">Change Opinion Description</span>
-                                </label> 
+                                </label>
                                 {{-- {{$opinion->description}} --}}
                                 <textarea class="textarea textarea-bordered h-24 w-full" wire:model.defer="opinions.{{$i}}.description"></textarea>
                             </div>

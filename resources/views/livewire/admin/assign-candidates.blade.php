@@ -1,6 +1,5 @@
 <div class="flex flex-col pb-6 justify-center items-center">
     @role('admin')
-        @include('admin.admin-nav')
         <div class="flex w-screen justify-center">
             @if (session()->has('message'))
                 <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800 w-2/5" role="alert">
@@ -13,7 +12,7 @@
                 </div>
             @endif
         </div>
-    
+
         <div class="w-11/12">
             <div class="flex grow flex-row gap-6">
                 <div class="w-3/5 text-center">
@@ -48,7 +47,7 @@
                                             </div>
                                             <div>
                                                 Office: {{$candidate->application->office_name}} {{$candidate->application->location}}
-                                            </div>   
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-span-1">
@@ -92,7 +91,7 @@
                                             </div>
                                             <div>
                                                 {{-- Office: {{$placed_candidate->candidate->ballot->office->name}} {{$placed_candidate->candidate->ballot->location->name}} --}}
-                                            </div>   
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-span-1">
@@ -100,7 +99,7 @@
                                             <div class="form-control w-full max-w-xs">
                                                 <label class="label">
                                                   <span class="label-text">Ballot ID</span>
-                                                </label>                                                
+                                                </label>
                                                 <input type="text" wire:model="placed_candidates.{{$i}}.ballot_id" class="input input-bordered w-3/4 max-w-xs" />
                                             </div>
                                             @error('placed_candidates.{{$i}}.ballot_id') <span class="error">{{ $message }}</span> @enderror
@@ -110,12 +109,12 @@
                             @endforeach
                             <button class="btn btn-primary" type="submit">Save</button>
                         </form>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="w-2/5">
                     @include('admin.components.ballot-list')
                 </div>
             </div>
-        </div>            
+        </div>
     @endrole
 </div>

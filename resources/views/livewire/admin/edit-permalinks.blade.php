@@ -1,6 +1,5 @@
 <div class="flex flex-col pb-6 justify-center items-center">
     @role('admin')
-        @include('admin.admin-nav')
         <div class="grid grid-cols-2 gap-12">
             <div class="col-span-1">
                 <div class="flex flex-col background-card items-center outline outline-1 outline-black">
@@ -15,15 +14,15 @@
                                     <div>
                                         State: {{$candidate->state}}
                                     </div>
-                                    
-                                </div>        
+
+                                </div>
                                 <div class="flex flex-col">
                                     <div>
                                         Office: {{$candidate->office_name}} {{$candidate->location}}
-                                    </div>              
+                                    </div>
                                 </div>
                             </div>
-                            
+
                             <form class="flex grow flex-row justify-center" wire:keydown.enter="update({{$candidate->id}})">
                                 <div class="flex flex-col">
                                     <label>Permalink</label>
@@ -35,7 +34,7 @@
                                 </div>
                             </form>
                         </div>
-                    @endforeach  
+                    @endforeach
                 </div>
             </div>
             <div class="col-span-1">
@@ -51,15 +50,15 @@
                                     <div>
                                         State: {{$candidate->state}}
                                     </div>
-                                      
-                                </div>        
+
+                                </div>
                                 <div class="flex flex-col">
                                     <div>
                                         Office: {{$candidate->ballot->office->name}}, {{$candidate->ballot->location->name}}
-                                    </div>              
+                                    </div>
                                 </div>
                             </div>
-                            
+
                             <!-- TODO: Finish up a form for assigning candidate to ballot-->
                             <form class="flex grow flex-row justify-center" wire:keydown.enter="save({{$candidate->id}})">
                                 <div class="form-control w-full max-w-xs">
