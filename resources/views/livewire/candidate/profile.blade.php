@@ -1,8 +1,8 @@
-<div class="grid grid-cols-2 p-8 justify-center w-full">
+<div class="flex flex-col md:grid md:grid-cols-2 p-8 gap-2 justify-center w-full">
     {{-- LEFT COLUMN --}}
-    <div class="flex grow flex-col gap-6 items-center">
+    <div class="flex flex-col grow gap-6 items-center">
         {{-- CANDIDATE PERSONAL INFO --}}
-        <div class="flex flex-row gap-6 w-11/12 justify-center">
+        <div class="flex flex-col md:flex-row gap-6 w-11/12 justify-center">
             <img src="{{ $candidate->user->profile_photo_url }}" alt="{{ $candidate->name }}" class="h-44 w-44">
             {{-- class="rounded-full object-cover" --}}
             <div class="flex flex-col">
@@ -27,7 +27,7 @@
             </div>
         </div>
         {{-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS --}}
-        <div class="flex flex-col gap-6 w-11/12 items-center">
+        <div class="flex flex-col gap-6 md:w-11/12 items-center">
             {{-- BIO COMPONENT --}}
             @include('candidate.component.bio', ['bio' => $candidate->bio])
 
@@ -42,7 +42,7 @@
         </div>
     </div>
     {{-- RIGHT COLUMN --}}
-    <div class="flex flex-col w-11/12 grow gap-6 items-center ">
+    <div class="flex flex-col md:w-11/12 grow gap-6 items-center">
         @include('candidate.component.stances', ['opinions' => $opinions, 'candidate' => $candidate])
 
         {{-- OTHER OPINIONS --}}
