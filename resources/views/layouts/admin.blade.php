@@ -20,18 +20,7 @@
         <x-jet-banner />
 
         <div class="min-h-screen bg-gray-100">
-            @auth
-                @livewire('navigation-menu')
-            @else
-                <div class="flex px-6 py-4 bg-white w-100">
-                    <x-jet-application-logo class="block h-12 w-auto" />
-                    <div class="text-right ml-auto">
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                    </div>
-                </div>
-            @endauth
+            @livewire('navigation-menu')
 
             <!-- Page Heading -->
             @if (isset($header))
@@ -46,7 +35,7 @@
             <main>
                 <div class="drawer drawer-mobile">
                     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-                    <div class="drawer-content flex flex-col items-center justify-center">
+                    <div class="drawer-content flex flex-col items-center">
                         <!-- Page content here -->
                         {{ $slot }}
                         <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
@@ -54,12 +43,6 @@
                     <div class="drawer-side">
                       <label for="my-drawer-2" class="drawer-overlay"></label>
                       <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
-                        <!-- Sidebar content here -->
-                        {{-- <li>
-                            <x-jet-nav-link href="{{ route('admin') }}" :active="request()->routeIs('admin')">
-                            {{ __('Admin Home') }}
-                            </x-jet-nav-link>
-                        </li> --}}
                         <li>
                             <x-jet-nav-link href="{{ route('create-ballot') }}" :active="request()->routeIs('create-ballot')">
                             {{ __('Create a Location, Office, and Ballot') }}
