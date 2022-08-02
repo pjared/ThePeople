@@ -1,6 +1,11 @@
-<div class="flex flex-col pb-6 justify-center items-center">
+<div class="flex flex-col w-full h-fit align-top items-center" x-data="{ tab: 'ballots' }">
     @role('admin')
-        <div class="flex w-screen justify-center">
+        <div class="tabs">
+            <a class="tab tab-bordered" :class="tab === 'ballots' && 'tab-active'" x-on:click.prevent="tab = 'ballots'" href="#">Ballots</a>
+            <a class="tab tab-bordered" :class="tab === 'locations' && 'tab-active'" x-on:click.prevent="tab = 'locations'" href="#">Locations</a>
+            <a class="tab tab-bordered" :class="tab === 'offices' && 'tab-active'" x-on:click.prevent="tab = 'offices'" href="#">Offices</a>
+        </div>
+        <div class="flex justify-center">
             @if (session()->has('message'))
                 <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800 w-2/5" role="alert">
                     {{ session('message') }}
@@ -12,180 +17,179 @@
                 </div>
             @endif
         </div>
-        <div class="grid grid-rows-3 w-1/2">
-            <div class="row-span-1">
-                {{-- LOCATION TABLE --}}
-                <livewire:tables.locations-table />
-                {{-- LOCATION CREATION --}}
-                {{-- <div class="col-span-1 flex flex-col gap-2">
-                    <form class="flex gap-6 items-center" wire:submit.prevent="createLocation">
-                        <div class="flex flex-col background-card w-11/12 items-center gap-2">
-                            <div class="text-center">
-                                Create a Location
-                            </div>
-                            <div class="flex-row w-11/12">
-                                <div class="form-control w-1/2 max-w-xs">
-                                    <label class="label">
-                                    <span class="label-text">State</span>
-                                    <span class="label-text-alt">(optional)</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        wire:model="new_location.state"
-                                        name='new_location_state'
-                                        class="input input-bordered max-w-xs" />
-                                </div>
-                                @error('new_location.state') <span class="error">{{ $message }}</span> @enderror
-                                <div class="form-control w-full max-w-xs">
-                                    <label class="label">
-                                    <span class="label-text">Location Name</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        wire:model="new_location.name"
-                                        name='new_location_name'
-                                        class="input input-bordered w-3/4 max-w-xs" />
-                                </div>
-                                @error('new_location.name') <span class="error">{{ $message }}</span> @enderror
-                                <div class="form-control w-full max-w-xs">
-                                    <label class="label">
-                                    <span class="label-text">Location Type</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        wire:model="new_location.type"
-                                        name='new_location_type'
-                                        class="input input-bordered w-3/4 max-w-xs" />
-                                </div>
-                                @error('new_location.type') <span class="error">{{ $message }}</span> @enderror
-                            </div>
-                            <div class="flex justify-center w-11/12">
-                                <button
-                                    class="btn btn-primary"
-                                    type="submit"
-                                    name='create_location'>
-                                    Create
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div> --}}
-            </div>
+        {{-- <div>
 
-            <div class="row-span-1">
-                {{-- OFFICE TABLE --}}
-                <livewire:tables.office-positions-table />
-                {{-- CREATE OFFICE --}}
-                {{-- <form class="flex flex-col gap-6 background-card items-center" wire:submit.prevent="createOffice">
-                    <div class="text-center">
-                        Create an office
-                    </div>
-                    <div class="flex-row">
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                              <span class="label-text">Office Name</span>
-                            </label>
-                            <input
-                                type="text"
-                                wire:model.defer="new_position.name"
-                                name='new_position_name'
-                                class="input input-bordered w-3/4 max-w-xs" />
-                        </div>
-                        @error('new_position.name') <span class="error">{{ $message }}</span> @enderror
-                        <div class="flex flex-row">
-                            <div class="form-control w-full max-w-xs">
-                                <label class="label">
-                                  <span class="label-text">Years Per Term</span>
-                                </label>
-                                <input
-                                    type="number"
-                                    wire:model.defer="new_position.years_per_term"
-                                    name='new_position_years'
-                                    class="input input-bordered w-1/2 max-w-xs" />
-                            </div>
-                            @error('new_position.years_per_term') <span class="error">{{ $message }}</span> @enderror
-                            <div class="form-control w-full max-w-xs">
-                                <label class="label">
-                                  <span class="label-text">Term Limits</span>
-                                </label>
-                                <input
-                                    type="number"
-                                    wire:model.defer="new_position.limit_terms"
-                                    name='new_position_limit'
-                                    class="input input-bordered w-1/2 max-w-xs" />
-                            </div>
-                            @error('new_position.limit_terms') <span class="error">{{ $message }}</span> @enderror
-                        </div>
-                    </div>
-                    <div class="flex justify-center">
-                        <button
-                            class="btn btn-primary"
-                            name='create_office'
-                            type="submit">
-                            Create
-                        </button>
-                    </div>
-                </form> --}}
-            </div>
+        </div> --}}
+        {{-- LOCATION TABLE --}}
 
-            <div class="row-span-1">
-                {{-- BALLOT TABLE --}}
-                <livewire:tables.ballots-table />
-                {{-- CREATE BALLOT --}}
-                {{-- <form class="flex flex-col gap-6 items-center" wire:submit.prevent="createBallot">
-                    <div class="flex flex-col background-card w-11/12 gap-2">
+        <div class="flex flex-col gap-4 w-11/12" x-show="tab === 'ballots'">
+            <livewire:tables.locations-table />
+            {{-- LOCATION CREATION --}}
+            <div class="col-span-1 flex flex-col gap-2">
+                <form class="flex gap-6 items-center" wire:submit.prevent="createLocation">
+                    <div class="flex flex-col background-card w-11/12 items-center gap-2">
                         <div class="text-center">
-                            Create a Ballot
+                            Create a Location
                         </div>
-                        <div class="flex-row w-11/12">
-                            <div class="flex flex-row">
-                                <div class="form-control w-full max-w-xs">
-                                    <label class="label">
-                                      <span class="label-text">Location ID</span>
-                                    </label>
-                                    <input
-                                        type="number"
-                                        wire:model.defer="new_ballot.location_id"
-                                        name='new_ballot_location'
-                                        class="input input-bordered w-11/12 max-w-xs" />
-                                </div>
-                                @error('new_ballot.location_id') <span class="error">{{ $message }}</span> @enderror
-                                <div class="form-control w-full max-w-xs">
-                                    <label class="label">
-                                      <span class="label-text">Office ID</span>
-                                    </label>
-                                    <input
-                                        type="number"
-                                        wire:model.defer="new_ballot.office_id"
-                                        name='new_ballot_office'
-                                        class="input input-bordered w-11/12 max-w-xs" />
-                                </div>
-                                @error('new_ballot.office_id') <span class="error">{{ $message }}</span> @enderror
-                            </div>
-                            <div class="form-control w-full max-w-xs">
+                        <div class="flex flex-row gap-4 w-11/12">
+                            <div class="form-control w-1/2 max-w-xs">
                                 <label class="label">
-                                  <span class="label-text">Voting Date</span>
+                                <span class="label-text">State</span>
+                                <span class="label-text-alt">(optional)</span>
                                 </label>
                                 <input
-                                    type="date"
-                                    wire:model.defer="new_ballot.voting_date"
-                                    name='new_ballot_date'
-                                    class="input input-bordered w-fit" />
+                                    type="text"
+                                    wire:model="new_location.state"
+                                    name='new_location_state'
+                                    class="input input-bordered max-w-xs" />
                             </div>
-                            @error('new_ballot.voting_date') <span class="error">{{ $message }}</span> @enderror
+                            @error('new_location.state') <span class="error">{{ $message }}</span> @enderror
+                            <div class="form-control w-full max-w-xs">
+                                <label class="label">
+                                <span class="label-text">Location Name</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    wire:model="new_location.name"
+                                    name='new_location_name'
+                                    class="input input-bordered w-3/4 max-w-xs" />
+                            </div>
+                            @error('new_location.name') <span class="error">{{ $message }}</span> @enderror
+                            <div class="form-control w-full max-w-xs">
+                                <label class="label">
+                                <span class="label-text">Location Type</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    wire:model="new_location.type"
+                                    name='new_location_type'
+                                    class="input input-bordered w-3/4 max-w-xs" />
+                            </div>
+                            @error('new_location.type') <span class="error">{{ $message }}</span> @enderror
                         </div>
-                        <div class="flex justify-center">
+                        <div class="flex justify-center w-11/12">
                             <button
                                 class="btn btn-primary"
-                                name='create_ballot'
-                                type="submit">
+                                type="submit"
+                                name='create_location'>
                                 Create
                             </button>
                         </div>
                     </div>
-                </form> --}}
+                </form>
             </div>
         </div>
-
+        {{-- OFFICE TABLE --}}
+        <div class="flex flex-col gap-4 w-11/12" x-show="tab === 'locations'">
+            <livewire:tables.office-positions-table />
+            {{-- CREATE OFFICE --}}
+            <form class="flex flex-col gap-6 background-card items-center" wire:submit.prevent="createOffice">
+                <div class="text-center">
+                    Create an office
+                </div>
+                <div class="flex flex-row">
+                    <div class="form-control w-full max-w-xs">
+                        <label class="label">
+                            <span class="label-text">Office Name</span>
+                        </label>
+                        <input
+                            type="text"
+                            wire:model.defer="new_position.name"
+                            name='new_position_name'
+                            class="input input-bordered w-3/4 max-w-xs" />
+                    </div>
+                    @error('new_position.name') <span class="error">{{ $message }}</span> @enderror
+                    <div class="flex flex-row">
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                                <span class="label-text">Years Per Term</span>
+                            </label>
+                            <input
+                                type="number"
+                                wire:model.defer="new_position.years_per_term"
+                                name='new_position_years'
+                                class="input input-bordered w-1/2 max-w-xs" />
+                        </div>
+                        @error('new_position.years_per_term') <span class="error">{{ $message }}</span> @enderror
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                                <span class="label-text">Term Limits</span>
+                            </label>
+                            <input
+                                type="number"
+                                wire:model.defer="new_position.limit_terms"
+                                name='new_position_limit'
+                                class="input input-bordered w-1/2 max-w-xs" />
+                        </div>
+                        @error('new_position.limit_terms') <span class="error">{{ $message }}</span> @enderror
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <button
+                        class="btn btn-primary"
+                        name='create_office'
+                        type="submit">
+                        Create
+                    </button>
+                </div>
+            </form>
+        </div>
+        {{-- BALLOT TABLE --}}
+        <div class="flex flex-col gap-4 w-11/12" x-show="tab === 'offices'">
+            <livewire:tables.ballots-table />
+            {{-- CREATE BALLOT --}}
+            <form class="flex flex-col gap-6 items-center" wire:submit.prevent="createBallot">
+                <div class="flex flex-col background-card w-11/12 gap-2">
+                    <div class="text-center">
+                        Create a Ballot
+                    </div>
+                    <div class="flex flex-row w-11/12">
+                        <div class="flex flex-row">
+                            <div class="form-control w-full max-w-xs">
+                                <label class="label">
+                                    <span class="label-text">Location ID</span>
+                                </label>
+                                <input
+                                    type="number"
+                                    wire:model.defer="new_ballot.location_id"
+                                    name='new_ballot_location'
+                                    class="input input-bordered w-11/12 max-w-xs" />
+                            </div>
+                            @error('new_ballot.location_id') <span class="error">{{ $message }}</span> @enderror
+                            <div class="form-control w-full max-w-xs">
+                                <label class="label">
+                                    <span class="label-text">Office ID</span>
+                                </label>
+                                <input
+                                    type="number"
+                                    wire:model.defer="new_ballot.office_id"
+                                    name='new_ballot_office'
+                                    class="input input-bordered w-11/12 max-w-xs" />
+                            </div>
+                            @error('new_ballot.office_id') <span class="error">{{ $message }}</span> @enderror
+                        </div>
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                                <span class="label-text">Voting Date</span>
+                            </label>
+                            <input
+                                type="date"
+                                wire:model.defer="new_ballot.voting_date"
+                                name='new_ballot_date'
+                                class="input input-bordered w-fit" />
+                        </div>
+                        @error('new_ballot.voting_date') <span class="error">{{ $message }}</span> @enderror
+                    </div>
+                    <div class="flex justify-center">
+                        <button
+                            class="btn btn-primary"
+                            name='create_ballot'
+                            type="submit">
+                            Create
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     @endrole
 </div>

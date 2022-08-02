@@ -5,7 +5,9 @@ namespace App\Http\Livewire\Tables;
 use App\Models\Ballot;
 use Mediconesystems\LivewireDatatables\DateColumn;
 use Mediconesystems\LivewireDatatables\Http\Livewire\LivewireDatatable;
+use Mediconesystems\LivewireDatatables\LabelColumn;
 use Mediconesystems\LivewireDatatables\NumberColumn;
+use Mediconesystems\LivewireDatatables\Traits\CanPinRecords;
 
 class BallotsTable extends LivewireDatatable
 {
@@ -21,9 +23,11 @@ class BallotsTable extends LivewireDatatable
                 ->editable(),
             NumberColumn::name('office_id')
                 ->label('Office ID')
+                ->searchable()
                 ->editable(),
             NumberColumn::name('location_id')
                 ->label('Location ID')
+                ->searchable()
                 ->editable(),
         ];
     }
