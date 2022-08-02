@@ -11,5 +11,10 @@ class BallotOpinions extends Pivot
     public $fillable = [
         'ballot_id',
         'controversial_opinion_id',
-    ]; 
+    ];
+
+    public function controversial_opinion()
+    {
+        return $this->belongsTo(ControversialOpinion::class, 'controversial_opinion_id');
+    }
 }
