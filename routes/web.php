@@ -10,6 +10,7 @@ use App\Http\Livewire\Admin\AssignCandidates;
 use App\Http\Livewire\Admin\CreateBallot;
 use App\Http\Livewire\Admin\CreateCandidate;
 use App\Http\Livewire\Admin\CreateOpinions;
+use App\Http\Livewire\Admin\EditCandidate;
 use App\Http\Livewire\Admin\EditOpinions;
 use App\Http\Livewire\Admin\EditPermalinks;
 use App\Http\Livewire\Candidate\Application;
@@ -87,7 +88,7 @@ Route::group(['prefix' =>'admin','middleware' => ['role:admin']], function() {
         Route::get('/assign', AssignCandidates::class)->name('assign_candidates');
         Route::get('/links', EditPermalinks::class)->name('candidate-links');
         Route::get('/create', CreateCandidate::class)->name('create-candidate');
-
+        Route::get('/edit', EditCandidate::class)->name('edit-candidate');
     });
 
     Route::get('/create-ballot', CreateBallot::class)->name('create-ballot');

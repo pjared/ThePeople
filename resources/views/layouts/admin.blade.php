@@ -74,6 +74,11 @@
                             </x-jet-nav-link>
                         </li>
                         <li>
+                            <x-jet-nav-link href="{{ route('edit-candidate') }}" :active="request()->routeIs('edit-candidate')">
+                            {{ __('Edit Candidates Info') }}
+                            </x-jet-nav-link>
+                        </li>
+                        <li>
                             <x-jet-nav-link href="{{ route('create-candidate') }}" :active="request()->routeIs('create-candidate')">
                             {{ __('Quick Create Candidates') }}
                             </x-jet-nav-link>
