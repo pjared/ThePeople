@@ -22,6 +22,7 @@ class EditOpinions extends Component
     public function add_ballot_opinion() {
         $this->validate();
         $this->new_ballot_opinion->save();
+        $this->emit('refreshLivewireDatatable');
     }
 
     public function mount()

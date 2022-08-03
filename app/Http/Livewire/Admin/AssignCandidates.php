@@ -42,7 +42,7 @@ class AssignCandidates extends Component
         $running_candidate->save();
 
         session()->flash('message', 'Candidate has been added to ballot');
-
+        $this->emit('refreshLivewireDatatable');
         Mail::to($running_candidate->candidate->user)->send(new CandidateBallotAssigned($ballot->office->name . ', ' . $ballot->location->name));
     }
 

@@ -20,6 +20,7 @@ class EditPermalinks extends Component
         $permaLink->perma_link = $this->perma_link[$candidate_id];
         $permaLink->candidate_link = $this->candidate_link[$candidate_id];
         $permaLink->save();
+        $this->emit('refreshLivewireDatatable');
     }
 
     public function render()
