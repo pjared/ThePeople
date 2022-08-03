@@ -56,12 +56,12 @@ class AssignCandidates extends Component
 
     public function mount() {
         $this->ballots = Ballot::all();
-        $this->candidates = Candidate::doesntHave('ballot')->get();
-        $this->placed_candidates = RunningCandidates::orderBy('ballot_id')->get();
     }
 
     public function render()
     {
+        $this->candidates = Candidate::doesntHave('ballot')->get();
+        $this->placed_candidates = RunningCandidates::orderBy('ballot_id')->get();
         return view('livewire.admin.assign-candidates')
                     ->layout('layouts.admin');
     }
