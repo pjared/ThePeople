@@ -15,11 +15,9 @@ class CandidatePermalinksTable extends LivewireDatatable
     {
         return [
             Column::name('candidate.name')
-                ->label('Candidate Name')
-                ->editable(),
+                ->label('Candidate Name'),
             NumberColumn::name('candidate_id')
-                ->label('Candidate ID')
-                ->editable(),
+                ->label('Candidate ID'),
             Column::name('candidate_link')
                 ->label('Candidate\'s Link')
                 ->editable(),

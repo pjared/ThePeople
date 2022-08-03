@@ -20,7 +20,7 @@ class LocationsTable extends LivewireDatatable
                 ->label('name')
                 ->editable(),
             Column::name('state')
-                ->label('Years Per Term')
+                ->label('State')
                 ->editable(),
             Column::name('type')
                 ->label('Type')
