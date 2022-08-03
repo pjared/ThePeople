@@ -21,12 +21,12 @@ class BallotsTable extends LivewireDatatable
             DateColumn::name('voting_date')
                 ->label('Voting Date')
                 ->editable(),
-            NumberColumn::name('office_id')
-                ->label('Office ID')
+            NumberColumn::name('office.name')
+                ->label('Office Name')
                 ->searchable()
                 ->editable(),
-            NumberColumn::name('location_id')
-                ->label('Location ID')
+            NumberColumn::name('location.name')
+                ->label('Location Name')
                 ->searchable()
                 ->editable(),
         ];

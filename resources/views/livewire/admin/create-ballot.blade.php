@@ -22,7 +22,7 @@
         </div> --}}
         {{-- LOCATION TABLE --}}
 
-        <div class="flex flex-col gap-4 w-11/12" x-show="tab === 'ballots'">
+        <div class="flex flex-col gap-4 w-11/12" x-show="tab === 'locations'">
             <livewire:tables.locations-table />
             {{-- LOCATION CREATION --}}
             <div class="col-span-1 flex flex-col gap-2">
@@ -80,7 +80,7 @@
             </div>
         </div>
         {{-- OFFICE TABLE --}}
-        <div class="flex flex-col gap-4 w-11/12" x-show="tab === 'locations'">
+        <div class="flex flex-col gap-4 w-11/12" x-show="tab === 'offices'">
             <livewire:tables.office-positions-table />
             {{-- CREATE OFFICE --}}
             <form class="flex flex-col gap-6 background-card items-center" wire:submit.prevent="createOffice">
@@ -135,7 +135,7 @@
             </form>
         </div>
         {{-- BALLOT TABLE --}}
-        <div class="flex flex-col gap-4 w-11/12" x-show="tab === 'offices'">
+        <div class="flex flex-col gap-4 w-11/12" x-show="tab === 'ballots'">
             <livewire:tables.ballots-table />
             {{-- CREATE BALLOT --}}
             <form class="flex flex-col gap-6 items-center" wire:submit.prevent="createBallot">
