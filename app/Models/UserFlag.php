@@ -11,7 +11,7 @@ class UserFlag extends Model
     use HasFactory;
 
     public $timestamps = false;
-    
+
     public $fillable = [
         'user_id',
         'candidate_id',
@@ -19,5 +19,6 @@ class UserFlag extends Model
         'type', // Promise, Donor, etc.
         'type_id', // The id of the promise, donor, etc.
         'flag_type', //Red, Green, Nuetral
+        'note', //The note the user includes
     ];
 }
