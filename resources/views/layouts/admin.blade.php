@@ -73,6 +73,11 @@
                             {{ __('Candidate Permalinks') }}
                             </x-jet-nav-link>
                         </li>
+                        <li>
+                            <x-jet-nav-link href="{{ route('create-candidate ') }}" :active="request()->routeIs('create-candidate')">
+                            {{ __('Quick Create Candidates') }}
+                            </x-jet-nav-link>
+                        </li>
                         {{-- <li><a>Sidebar Item 2</a></li> --}}
                         <!-- Admin Home Nav Link -->
 
