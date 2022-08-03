@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('type', 25);
             $table->integer('type_id');
             $table->string('flag_type', 10);
+            $table->string('note', 300)->nullable();
         });
     }
 

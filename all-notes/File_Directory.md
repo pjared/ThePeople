@@ -129,8 +129,8 @@ All of these files use the [Candidate Aside](../resources/views/candidate/aside.
 |__[Edit Opinions Wire View](../resources/views/livewire/Admin/edit-opinions.blade.php)
 
 ### Additional Files
-[Edit Opinions Wire](../app/Http/Livewire/Admin/EditOpinions.php)
-|__[Test](../tests/Feature/Livewire/Admin/EditOpinionsTest.php)
+[Edit Opinions Wire](../app/Http/Livewire/Admin/EditBallotOpinions.php)
+|__[Test](../tests/Feature/Livewire/Admin/EditBallotOpinionsTest.php)
 
 ## Approve Candidates (Admin)
 [Approve Candidates View](../resources/views/admin/approve-candidates.blade.php)
@@ -157,7 +157,7 @@ All of these files use the [Candidate Aside](../resources/views/candidate/aside.
 
 - [Profile](../app/Http/Livewire/Candidate/Edit/Profile.php)
 - [Candidate Model](../app/Models/Candidate.php)
-- [Edit Opinions Wire](../app/Http/Livewire/Admin/EditOpinions.php)
+- [Edit Opinions Wire](../app/Http/Livewire/Admin/EditBallotOpinions.php)
 - [Seeder](../database/seeders/ControversialOpinionsSeeder.php)
 
 - [Candidate Stance](../app/Models/CandidateStance.php)

@@ -45,5 +45,6 @@ class CreateOpinions extends Component
             'new_opinion.votes' => 'required|numeric',
         ]);
         $this->new_opinion->save();
+        $this->emit('refreshLivewireDatatable');
     }
 }

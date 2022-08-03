@@ -8,7 +8,7 @@ use App\Models\ControversialOpinion;
 use App\Models\Location;
 use Livewire\Component;
 
-class EditOpinions extends Component
+class EditBallotOpinions extends Component
 {
     public $opinions;
     public $ballots;
@@ -22,6 +22,7 @@ class EditOpinions extends Component
     public function add_ballot_opinion() {
         $this->validate();
         $this->new_ballot_opinion->save();
+        $this->emit('refreshLivewireDatatable');
     }
 
     public function mount()
@@ -33,7 +34,7 @@ class EditOpinions extends Component
 
     public function render()
     {
-        return view('livewire.admin.edit-opinions')
+        return view('livewire.admin.edit-ballot-opinions')
                     ->layout('layouts.admin');
     }
 

@@ -56,6 +56,7 @@ class CreateBallot extends Component
         ]);
 
         $this->new_location->save();
+        $this->emit('refreshLivewireDatatable');
         session()->flash('message', 'Location Created');
     }
 
@@ -68,7 +69,7 @@ class CreateBallot extends Component
         ]);
 
         $this->new_position->save();
-
+        $this->emit('refreshLivewireDatatable');
         session()->flash('message', 'Created a new office');
     }
 
@@ -81,7 +82,7 @@ class CreateBallot extends Component
         ]);
 
         $this->new_ballot->save();
-
+        $this->emit('refreshLivewireDatatable');
         session()->flash('message', 'Ballot Created');
     }
 }

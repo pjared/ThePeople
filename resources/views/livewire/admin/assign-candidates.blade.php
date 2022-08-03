@@ -22,7 +22,7 @@
                             Candidates To Place
                         </h1>
                         <h1 class="text-sm">
-                            (Type in Ballot id and hit enter 1 at a time)
+                            (Type in Ballot id and hit enter, 1 at a time)
                         </h1>
                         <div class="flex background-card grow flex-col gap-1">
                             @foreach ($candidates as $candidate)
@@ -68,7 +68,8 @@
                         <h1 class="text-xl">
                             Candidates Placed
                         </h1>
-                        <form class="flex grow flex-col background-card gap-1" wire:submit.prevent='updateBallotAssignment'>
+                        <livewire:tables.running-candidates-table />
+                        {{-- <form class="flex grow flex-col background-card gap-1" wire:submit.prevent='updateBallotAssignment'>
                             @foreach ($placed_candidates as $i => $placed_candidate)
                                 <div wire:key="candidate-ballot-{{ $placed_candidate->candidate->id }}" class="grid grid-cols-3 background-card outline outline-1 outline-black gap-6 text-left">
                                     <div class="col-span-1">
@@ -90,7 +91,6 @@
                                                 State: {{$placed_candidate->candidate->state}}
                                             </div>
                                             <div>
-                                                {{-- Office: {{$placed_candidate->candidate->ballot->office->name}} {{$placed_candidate->candidate->ballot->location->name}} --}}
                                             </div>
                                         </div>
                                     </div>
@@ -108,7 +108,7 @@
                                 </div>
                             @endforeach
                             <button class="btn btn-primary" type="submit">Save</button>
-                        </form>
+                        </form> --}}
                     </div>
                 </div>
                 <div class="w-2/5">

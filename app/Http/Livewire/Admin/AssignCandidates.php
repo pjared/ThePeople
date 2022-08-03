@@ -42,7 +42,7 @@ class AssignCandidates extends Component
         $running_candidate->save();
 
         session()->flash('message', 'Candidate has been added to ballot');
-
+        $this->emit('refreshLivewireDatatable');
         Mail::to($running_candidate->candidate->user)->send(new CandidateBallotAssigned($ballot->office->name . ', ' . $ballot->location->name));
     }
 
@@ -56,12 +56,12 @@ class AssignCandidates extends Component
 
     public function mount() {
         $this->ballots = Ballot::all();
-        $this->candidates = Candidate::doesntHave('ballot')->get();
-        $this->placed_candidates = RunningCandidates::orderBy('ballot_id')->get();
     }
 
     public function render()
     {
+        $this->candidates = Candidate::doesntHave('ballot')->get();
+        $this->placed_candidates = RunningCandidates::orderBy('ballot_id')->get();
         return view('livewire.admin.assign-candidates')
                     ->layout('layouts.admin');
     }

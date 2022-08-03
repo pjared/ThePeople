@@ -8,8 +8,10 @@ use App\Http\Controllers\SocialiteController;
 use App\Http\Livewire\Admin\ApproveCandidates;
 use App\Http\Livewire\Admin\AssignCandidates;
 use App\Http\Livewire\Admin\CreateBallot;
+use App\Http\Livewire\Admin\CreateCandidate;
 use App\Http\Livewire\Admin\CreateOpinions;
-use App\Http\Livewire\Admin\EditOpinions;
+use App\Http\Livewire\Admin\EditBallotOpinions;
+use App\Http\Livewire\Admin\EditCandidate;
 use App\Http\Livewire\Admin\EditPermalinks;
 use App\Http\Livewire\Candidate\Application;
 use Illuminate\Support\Facades\Route;
@@ -85,6 +87,8 @@ Route::group(['prefix' =>'admin','middleware' => ['role:admin']], function() {
         Route::get('/approve', ApproveCandidates::class)->name('approve_candidates');
         Route::get('/assign', AssignCandidates::class)->name('assign_candidates');
         Route::get('/links', EditPermalinks::class)->name('candidate-links');
+        Route::get('/create', CreateCandidate::class)->name('create-candidate');
+        Route::get('/edit', EditCandidate::class)->name('edit-candidate');
     });
 
     Route::get('/create-ballot', CreateBallot::class)->name('create-ballot');
@@ -92,7 +96,7 @@ Route::group(['prefix' =>'admin','middleware' => ['role:admin']], function() {
     Route::group(['prefix' =>'opinions'], function() {
         Route::get('/create', CreateOpinions::class)->name('create-opinions');
 
-        Route::get('/edit', EditOpinions::class)->name('edit-opinions');
+        Route::get('/edit', EditBallotOpinions::class)->name('edit-opinions');
     });
 });
 
