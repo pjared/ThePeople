@@ -1,83 +1,17 @@
-# Branch (Final Urgent) - Testing
-- Test the following:
-    - Candidate creating their stances
-
-- Error handling for permalink unique
-    - Need to error handle check for error handling in all wires with tests
-
-- Need to make a production test
-    - Candidate ballot assignment on prod is 500, need to error check for no ballots
-
-- Make a single candidate that I can run all tests for viewing profile on
-
-- Make sure that user can save their votes for a ballot
-
-- End to end tests (dusk) for the following
-    - User registers, then applies to become a candidate
-        -> User is accepted
-            -> User becomes a candidate, Fills out some info
-        -> User edits their candidate profile, adds necessary info
-            -> User cannot show
-            -> User does not show on ballot
-        -> Admin assigns Candidate to a ballot
-        -> Candidate hits show
-            -> Candidate appears on the ballot
-            -> User can flag information from the candidate
-
-- Merge sail branch after finishing    
-
-# Quick QoL
-- Put info button after candidate promises to explain how certain offices cannot promise immediate reform, but stand as a voice
-
 # Branch (Urgent) - Production
-- Users should only be able to apply if they have set up 2FA and verified their email
+- Make videos to show people how to apply for candidate (2FA and email validation)
 
-- Need to make a sitemap for google, should use spatie
-    - https://github.com/spatie/laravel-sitemap
+- Switch to forge to work with queues (mailing)
 
-- Make sure database is empty and push all changes
-- Run lighthouse (on chrome) for site optimizations
+- Push everything to production, make sure that its working. Then move on.
+    - Need to make sure that 2fa and email middleware works for candidate application on production
+        - Make videos to show people how to do this
 
-- Optimize images, can use imageoptim.
-- Make a favicon for the browser
-- Make sure it works on multiple broswers
-- Make sure to set up analytics for marketing
-- Use laravel forge for now, but then move to vapor
-- Can use laravel envoyer for 0 downtime updates
-- uptime monitoring for notifying when site is down (uptimeRobot)
+- 403 needs to redirect to sign in pagee
+- Make sure socialite works and creates the users correctly
 
-- Switch to forge to work with queues
-
-# Branch (High) - Model Safety
-- Make sure that all model properties are in correct places (guarded vs fillable)
-- Make sure that each model is being created correctly to reflect this
-- Make sure that all attributes are correctly hidden like email, etc.
-- Do some research into what attributes are necessary to hide
-
-# Branch (High) - Mobile Screen Support
-- Add mobile support to the following pages
-    - Home
-    - Ballot show
-    - candidate show
-
-# Branch (High) - Large Screen Support
-- Add large screen support to the following pages
-
-# Branch (Urgent) - Socialite
-- Allow users to sign in with their gmail accounts
-
-# Branch (High) - Manual Candidate Creation
-- Need to make an admin page to create the candidates profile if none of them decide to sign up
-- After signing up, you can assign candidates to their existing ID to replace their profile with the correct information
-
-# Branch (Low) - Information Rework
-- Ballots should have an information type. This will be a list of information that appears on the ballot
-- When a candidate runs for a certain position, different wording/information needs to appear
-    - Controversial Opinions depend on the ballot, not the location
-    - "Promises" should be "Promises to stand for the following beliefs" when dealing with congress
-        - Might work around this by saying "This candidate promises to accomplish something in office, or promises to stand for the following beliefs"
-
-
+- Need to make a candiate layout
+- Fix Candidate aside
 
 # Branch - Candidate Flags
 - A proper library for commenting/liking
@@ -89,20 +23,48 @@
 - Show users a page of flags for their ballots
 
 - On hover, add the number of red/green/nuetral flags
- 
-# Branch - Admin Pages Rework
-- Consider getting a real admin panel (Free)
-    - https://litstack.io/
-    - https://www.creative-tim.com/product/soft-ui-dashboard-laravel-livewire/?ref=sudl-readme
-- Need to make an admin & candiate layout
 
-- Search bar for Admin pages
-    - "Candidates Placed"
+# Branch (High) - Manual Candidate Creation
+- Need to make an admin page to create the candidates profile if none of them decide to sign up
+- After signing up, you can assign candidates to their existing ID to replace their profile with the correct information
 
-- Need to add banners to admin pages
-- Edit opinions needs to be renamed to ballot opinions
 
-- Create tests for all admin pages
+
+# Branch - Policies
+- Need to look into politcies for better authorization of actions https://laravel.com/docs/9.x/authorization
+
+# Branch - Page loads
+- Need to turn the ballot and profile into a wire so I can defer load them
+- Implement lazy loading for images
+    - https://laravel-livewire.com/docs/2.x/defer-loading
+
+# Branch - High web traffic
+- Look into laravel Octane and swoole/roadrunner
+
+# Branch - Sharing
+- Create share buttons to share the candidates you like
+- Create a share button to share you voting list
+- Set up open graph meta tags when I implement share buttons
+
+# Branch - Testing
+- Need to also run dusk tests as prod
+
+- End to end tests for the following
+    -> User edits their candidate profile, adds necessary info
+        -> Candidate hits show
+            -> Candidate appears on the ballot
+            -> User can flag information from the candidate
+
+- Make sure that user can save their votes for a ballot
+    -> User votes for a candidate
+    -> User refreshes pagesa
+        ->Vote should still be there
+
+- Make sure flags are saved
+    -> User clicks on a flag
+    -> User refreshes page
+        -> Flag should still be there
+
 
 - Admin Livewire Tests
     - User does show his profile
@@ -111,43 +73,62 @@
     - Create a ballot
     - Permalinks
 
+- In the candidate preview script, uncomment the addFlag call so it only changes the color
 
-# Branch - High web traffic
-- In create ballot (Don't need this until large use of site):
-    - Show existing locations, office, and ballots as it's being typed
-- Look into laravel Octane and swoole
 
-# Branch - Sharing
-- set up open graph meta tags when I implement share buttons
+# Branch - Sitemap
+- Wasn't entirely sure how to do this, so i'm going to wait until I get a handful of candidates to sign up
+- [Sitemap File](../config/sitemap.php)
+- https://github.com/spatie/laravel-sitemap
+- Need to regenerate the site map every time a candidate hits "show"
+
+# Branch (Low) - Information Rework
+- Ballots should have an information type. This will be a list of information that appears on the ballot
+    - If there is a school union board, the candidates will have different information to fill out
+    - When a candidate runs for a certain position, different wording/information needs to appear
+        - Controversial Opinions depend on the ballot, not the location
+        - "Promises" should be "Promises to stand for the following beliefs" when dealing with congress
+            - Might work around this by saying "This candidate promises to accomplish something in office, or promises to stand for the following beliefs"
+
+# Branch - Security
+- https://github.com/bepsvpt/secure-headers
+    - Not sure if this is for the php 7 header problem
 
 # General Lists
-- Make a "show more" component
-    - Use in stances, bio, and promises
+- Run lighthouse on live site for optimizations
+
+- Find out how to turn off email and set up 2FA for local
+
+- Carousel focus should not refocus the page
+
+- Add a search bar for users to find candidates or ballots
+    - Look into caching to implement this
+
+- Get ready to move to vapor to scale
+- Can use laravel envoyer for 0 downtime updates
+- uptime monitoring for notifying when site is down (uptimeRobot)
 
 - User Votes needs an isValid? Or do I just want to check the state that the user has included
 
 - Make a setting to change whether or not the dropdown indicators appear
     - The dropdowns on the opinions make the page a lot less intuitive
+
+
 - Candidates show support for certain bills (The company creates)
 - Can message the candidate from the site, but then we can use the message data to see what people feel about the candidate
 
 - Put a link to state government
 
-
-- Need to either paginate the candidates or make the elements scrollabe
+- Need to either paginate the candidates or make the elements scrollabe (when the list of candidates is long)
     - This includes the ballot list
-- "See who's running for" is slightly too fast at the end (Only on first time)
 
-- Carousel focus should not refocus the page
+- "See who's running for" is slightly too fast at the end (Only on first time)
 
 - Need to write an SQL script that will be able to refresh tables and save candidates and new user ID's in case of bad migration
 
 - Find another way to generate badges for the candidate
 
 - Signing in should take back to most recent page
-
-- Add a search bar for users to find candidates
-    - Look into caching to implement this
 
 - Print out/save list of planned votes
 
@@ -181,43 +162,9 @@
 
 - Make sure to actually block users from profile photos.
 
-## Hard
-- CandidateEditProfile
-    - Promises should show up immediately (this is a tough one)
+- Send Spatie a postcard with hometown and what packages i'm using
+    - Our address is: Spatie, Kruikstraat 22, 2018 Antwerp, Belgium.
 
-- Need to get down with service injection. 
-    - https://laravel.com/docs/9.x/container
-
-# Admin Page - Future additions
-- Decide how to handle rejected candidates
-    - Have a search bar to unreject
-- Each admin page needs to be componetized so creation of models is it's own wire
-- The following pages need to have null checks
-    - Candidate edit page needs to have a check for when a person accesses the link without a candidate
-    - Admin/candidate-assignment
-
-- Pagination for all model lists
-- Admin Page for:
-    - Generate a QR code (Do this with official logo later, for now just use some random thing)
-- ALLOW USER TO SHARE CANDIDATE PERMALINK WITH A SHARE BUTTON (should include flags?)
-
-- On admin create ballot, add in list generation as the person attempts to 
-    - create a new location, ballot, or office
-
-- Finish Candidate Ballot assignment
-    - Ballot search bar
-- Approving a candidate should bring you to a new page only for assigning them a ballot.
-
-# Candidate Teams
-- Do this after site launch, make teams work, look at sites below for help
-    - https://npratley.net/disabling-personal-teams-in-laravel-8-and-jetstream-1fd083593e08/
-    - https://laracasts.com/discuss/channels/code-review/proper-way-to-disable-personal-teams-in-jetstream?page=1#reply=668759
-    - https://github.com/laravel/jetstream/issues/117
-    - Create a team for the user with https://laracasts.com/discuss/channels/code-review/jetstream-how-to-programmatically-create-a-user-and-team 
-- Finish logic for whether or not someone can create a team in [Team Policy::create](app/Policies/TeamPolicy.php)
-    - Candidates can create ONE team
-
-# MAIN TODO
 - Make about us page
 
 - Programs for scraping/handling downloads off of gov't site
@@ -228,18 +175,64 @@
 
 - Allow for friends to share their flags
 
-# User Pivots
+## Hard
+- CandidateEditProfile
+    - Promises should show up immediately (this is a tough one)
+
+- Need to get down with service injection.
+    - https://laravel.com/docs/9.x/container
+
+# Branch - Socialite
+- Not entirely sure if socialite is going to mess with my 2FA and verification
+- Need to look into how i'm going to store the socialite tokens and user IDs
+
+- Allow users to sign in with their twitter, fb, and gmail accounts
+    - https://serversideup.net/installing-configuring-laravel-socialite/
+
+- Google sign-in Notes
+    - https://developers.google.com/identity/sign-in/web/sign-in
+- Facebook sign in notes
+    - https://developers.facebook.com/apps/428065152683086/fb-login/quickstart/
+
+- Socialite buttons copied from: https://github.com/joelbutcher/socialstream/blob/3.x/stubs/livewire/resources/views/components/
+
+
+# Admin Page, Future additions
+- A lot of these below will be handled with a proper admin panel
+    - Decide how to handle rejected candidates
+        - Have a search bar to unreject
+    - Each admin page needs to be componetized so creation of models is it's own wire
+    - The following pages need to have null checks
+        - Candidate edit page needs to have a check for when a person accesses the link without a candidate
+        - Admin/candidate-assignment
+
+    - Pagination for all model lists
+    - Admin Page for:
+        - Generate a QR code (Do this with official logo later, for now just use some random thing)
+    - ALLOW USER TO SHARE CANDIDATE PERMALINK WITH A SHARE BUTTON (should include flags?)
+
+    - On admin create ballot, add in list generation as the person attempts to
+        - create a new location, ballot, or office
+
+    - Finish Candidate Ballot assignment
+        - Ballot search bar
+    - Approving a candidate should bring you to a new page only for assigning them a ballot.
+
+# Branch (Post Generals) - Candidate Media Teams
+- Do this after site launch, make teams work, look at sites below for help
+    - https://npratley.net/disabling-personal-teams-in-laravel-8-and-jetstream-1fd083593e08/
+    - https://laracasts.com/discuss/channels/code-review/proper-way-to-disable-personal-teams-in-jetstream?page=1#reply=668759
+    - https://github.com/laravel/jetstream/issues/117
+    - Create a team for the user with https://laracasts.com/discuss/channels/code-review/jetstream-how-to-programmatically-create-a-user-and-team
+- Finish logic for whether or not someone can create a team in [Team Policy::create](app/Policies/TeamPolicy.php)
+    - Candidates can create ONE team
+
+# User Pivots that need to be implemented
 - Badges should also be on profile??
 - Each badge needs to be it's own color
 - Hovering over a law gives a summary, might need to find another site that does this
 
-# Views
-
-## Home Page
-
-## Candidate Page
-- Polish up the candidate campaign videos
-- Implement a carosel for the videos
+# View modifications that need to be split into feature branches
 
 ## Ballot Page
 - Make this look like textured paper
@@ -260,7 +253,6 @@
     - https://laravel.com/docs/9.x/container
     - Look into pyscript to see if I should use matplotlib to display graphs for politician side
 
-
 # Future things
 - Make a javascriptless site
 
@@ -274,5 +266,25 @@
 
 - Allow Candidates to request a change of ballot
 
+# Branch - Additional laravel tools
+- https://github.com/barryvdh/laravel-ide-helper
+- https://github.com/itsgoingd/clockwork
+- https://github.com/barryvdh/laravel-debugbar
+- https://laravel-auditing.com/+
+
 # Other programming stuff to look up
 - Shortcut that will copy a line and paste it into current
+
+# Branches with basic implementation, not finished
+
+## Branch - Screen Support
+- I've already added the most basic support so that it works on mobile
+- This definitely needs to be polished up for everything tho
+
+## Branch - Model Safety
+- Need to talk to someone knowledgeble in laravel cybersecurity about the following
+    - What to hide in my models
+    - How to keep the uservotes and userflags tables safe from being accessed
+    - Overall site health from attacks
+- If hiding data (in the candidate model) interferes with other things, here is th docs to fix it up
+    - https://laravel.com/docs/9.x/eloquent-serialization#temporarily-modifying-attribute-visibility
