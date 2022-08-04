@@ -124,4 +124,4 @@ Route::get('/auth/facebook/redirect', function () {
     return Socialite::driver('facebook')->redirect();
 });
 
-Route::get('/auth/facebook/callback', [SocialiteController::class, 'handleTwitterCallback']);
+Route::get('/auth/facebook/callback', [SocialiteController::class, 'handleFacebookCallback']);
