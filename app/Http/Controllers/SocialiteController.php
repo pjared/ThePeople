@@ -29,7 +29,7 @@ class SocialiteController extends Controller
 
     public function handleTwitterCallback()
     {
-        $twitterUser = Socialite::driver('twitter-oauth-2')->user();
+        $twitterUser = Socialite::driver('twitter')->user();
 
         $user = User::updateOrCreate([
             'twitter_id' => $twitterUser->id,
