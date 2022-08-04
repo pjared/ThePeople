@@ -37,7 +37,7 @@ return [
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
         'redirect' => 'https://whatsinyourballot.com/auth/facebook/callback',
     ],
-    'twitter-oauth-2' => [
+    'twitter' => [
         'client_id' => env('TWITTER_CLIENT_ID'),
         'client_secret' => env('TWITTER_CLIENT_SECRET'),
         'redirect' => 'https://whatsinyourballot.com/auth/twitter/callback',
