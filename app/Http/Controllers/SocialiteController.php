@@ -18,8 +18,8 @@ class SocialiteController extends Controller
         ], [
             'name' => $facebookUser->name,
             'email' => $facebookUser->email,
-            'facebook_token' => $facebookUser->token,
-            'facebook_refresh_token' => $facebookUser->refreshToken,
+            'socialite_token' => $facebookUser->token,
+            'socialite_refresh_token' => $facebookUser->refreshToken,
         ]);
 
         Auth::login($user);
@@ -36,8 +36,8 @@ class SocialiteController extends Controller
         ], [
             'name' => $twitterUser->name,
             'email' => $twitterUser->email,
-            'twitter_token' => $twitterUser->token,
-            'twitter_refresh_token' => $twitterUser->refreshToken,
+            'socialite_token' => $twitterUser->token,
+            'socialite_refresh_token' => $twitterUser->refreshToken,
         ]);
 
 
@@ -55,8 +55,8 @@ class SocialiteController extends Controller
         ], [
             'name' => $googleUser->name,
             'email' => $googleUser->email,
-            'google_token' => $googleUser->token,
-            'google_refresh_token' => $googleUser->refreshToken,
+            'socialite_token' => $googleUser->token,
+            'socialite_refresh_token' => $googleUser->refreshToken,
         ]);
 
 
