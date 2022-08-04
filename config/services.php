@@ -41,12 +41,11 @@ return [
         'client_id' => env('TWITTER_CLIENT_ID'),
         'client_secret' => env('TWITTER_CLIENT_SECRET'),
         'redirect' => 'https://whatsinyourballot.com/auth/twitter/callback',
-        'oauth' => 2
+        'oauth' => 2,
     ],
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
         'redirect' => 'https://whatsinyourballot.com/auth/google/callback',
     ],
-
 ];

@@ -114,7 +114,7 @@ Route::get('/auth/google/callback',[SocialiteController::class, 'handleGoogleCal
 
 //TWITTER
 Route::get('/auth/twitter/redirect', function () {
-    return Socialite::driver('twitter-oauth-2')->redirect();
+    return Socialite::driver('twitter')->redirect();
 });
 
 Route::get('/auth/twitter/callback', [SocialiteController::class, 'handleTwitterCallback']);
