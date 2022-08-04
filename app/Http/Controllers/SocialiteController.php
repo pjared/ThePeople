@@ -37,7 +37,7 @@ class SocialiteController extends Controller
             'name' => $twitterUser->name,
             'email' => $twitterUser->email,
             'socialite_token' => $twitterUser->token,
-            'socialite_refresh_token' => $twitterUser->refreshToken,
+            // 'socialite_refresh_token' => $twitterUser->tokenSecret,
         ]);
 
 
