@@ -35,17 +35,17 @@ return [
     'facebook' => [
         'client_id' => env('FACEBOOK_CLIENT_ID'),
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
-        'redirect' => 'http://whatsinyourballot.com/auth/facebook/callback',
+        'redirect' => 'https://whatsinyourballot.com/auth/facebook/callback',
     ],
     'twitter' => [
         'client_id' => env('TWITTER_CLIENT_ID'),
         'client_secret' => env('TWITTER_CLIENT_SECRET'),
-        'redirect' => 'http://whatsinyourballot.com/auth/twitter/callback',
+        'redirect' => 'https://whatsinyourballot.com/auth/twitter/callback',
     ],
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => 'http://whatsinyourballot.com/auth/google/callback',
+        'redirect' => 'https://whatsinyourballot.com/auth/google/callback',
     ],
 
 ];
