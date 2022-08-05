@@ -71,6 +71,7 @@ Route::group(['prefix' =>'candidate','middleware' => ['role:candidate']], functi
     Route::group(['prefix' =>'edit'], function() {
         Route::get('/info', \App\Http\Livewire\Candidate\Edit\EditInfo::class);
         Route::get('/bio', \App\Http\Livewire\Candidate\Edit\EditBio::class);
+        Route::get('/required/stances', \App\Http\Livewire\Candidate\Edit\EditRequiredStances::class);
         Route::get('/stances', \App\Http\Livewire\Candidate\Edit\EditStances::class);
         Route::get('/promises', \App\Http\Livewire\Candidate\Edit\EditPromises::class);
         Route::get('/videos', \App\Http\Livewire\Candidate\Edit\EditVideos::class);

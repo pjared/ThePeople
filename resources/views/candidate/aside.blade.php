@@ -3,11 +3,11 @@
     >
     <div class="py-2 text-gray-500 ">
         <ul>
-            
+
             {{-- PREVIEW PROFILE --}}
             <li class="relative px-6 py-3">
-                <span                
-                class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg 
+                <span
+                class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg
                 {{ request()->routeIs('candidate-preview') ? 'bg-purple-600' : ''}}"
                 ></span>
                 <a
@@ -90,6 +90,13 @@
                         </li>
                         <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800">
                             <a class="w-full
+                            {{ request()->is('candidate/edit/required/stances') ? 'text-gray-800 underline' : ''}}"
+                             href="/candidate/edit/required/stances"
+                             >Required Controversial Stances
+                            </a>
+                        </li>
+                        <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800">
+                            <a class="w-full
                             {{ request()->is('candidate/edit/stances') ? 'text-gray-800 underline' : ''}}"
                              href="/candidate/edit/stances"
                              >Controversial Stances
@@ -116,21 +123,21 @@
                              >
                                 Previous Political Positions
                             </a>
-                        </li>                            
+                        </li>
                     </ul>
                     </div>
             </li>
 
             {{-- DASHBOARD --}}
             <li class="relative px-6 py-3">
-                <span                
-                class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg 
+                <span
+                class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg
                 {{ request()->routeIs('candidate-dashboard') ? 'bg-purple-600' : ''}}"
                 ></span>
                 <a
                 class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800
                 {{ request()->routeIs('candidate-dashboard') ? ' text-gray-800' : ''}}"
-                
+
                 >
                 {{-- /candidate/dashboard --}}
                 <svg
@@ -160,7 +167,7 @@
                     <span class="ml-4">What's Flagged the Most (Upcoming Feature)</span>
                 </a>
             </li>
-            
+
             {{-- DEMOGRAPHIC APPEAL --}}
             <li class="relative px-6 py-3">
                 <a
@@ -170,7 +177,7 @@
                 <span class="ml-4">Your Demographic Appeal (Upcoming Feature)</span>
                 </a>
             </li>
-            
+
             {{-- CANDIDATE COMPARISON --}}
             <li class="relative px-6 py-3">
                 <a
