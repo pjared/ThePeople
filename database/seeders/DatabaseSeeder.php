@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -20,13 +21,18 @@ class DatabaseSeeder extends Seeder
             'name' => "Jared Pacheco",
             'email' => 'pjared870@gmail.com',
             'password' => Hash::make('password'),
+            // Un-comment to test candidate application
+            // 'email_verified_at' => now(),
+            // 'two_factor_confirmed_at' => now(),
+            // 'two_factor_secret' => 'secret',
+            // 'two_factor_recovery_codes' => encrypt(json_encode(Collection::make(['secret'])->all()))
         ]);
 
         //Seed for production & local
         $this->call([
             RoleSeeder::class,
             LocationSeeder::class,
-            PoliticalPartySeeder::class, 
+            PoliticalPartySeeder::class,
             ControversialOpinionsSeeder::class,
             BadgeSeeder::class,
         ]);
@@ -39,7 +45,7 @@ class DatabaseSeeder extends Seeder
                 PublicOfficeSeeder::class, //!PROD
                 OpinionsSeeder::class, //!PROD
                 BallotOpinionsSeeder::class, //!PROD
-    
+
                 CandidateSeeder::class, //!PROD
                 CandidateInfoSeeder::class, //!PROD
                 CandidateOfficePositionsSeeder::class, //!PROD
@@ -47,9 +53,9 @@ class DatabaseSeeder extends Seeder
                 CandidateApplicationSeeder::class, //!PROD
                 RunningCandidatesSeeder::class,  //!PROD
                 BallotSeeder::class, //!PROD
-    
+
                 CandidateBadgeSeeder::class, //!PROD
             ]);
-        }   
+        }
     }
 }
