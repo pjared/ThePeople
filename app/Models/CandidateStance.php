@@ -16,7 +16,6 @@ class CandidateStance extends Model
         'controversial_opinion_id',
         'stance_label', // The name for their stance
         'stance_reasoning', // Their reasoning behind it
-        'stance_link', //link to article (if they didn't fill themselves)
     ];
 
     public function opinion() {
