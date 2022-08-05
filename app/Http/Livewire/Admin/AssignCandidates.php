@@ -46,14 +46,6 @@ class AssignCandidates extends Component
         Mail::to($running_candidate->candidate->user)->send(new CandidateBallotAssigned($ballot->office->name . ', ' . $ballot->location->name));
     }
 
-    public function updateBallotAssignment()
-    {
-        $this->validate();
-        //TODO: Make sure that it is a valid ballot ID
-        $this->placed_candidates->each->save();
-        session()->flash('message', 'Candidate has been updated');
-    }
-
     public function mount() {
         $this->ballots = Ballot::all();
     }
@@ -61,7 +53,7 @@ class AssignCandidates extends Component
     public function render()
     {
         $this->candidates = Candidate::doesntHave('ballot')->get();
-        $this->placed_candidates = RunningCandidates::orderBy('ballot_id')->get();
+        // $this->placed_candidates = RunningCandidates::orderBy('ballot_id')->get();
         return view('livewire.admin.assign-candidates')
                     ->layout('layouts.admin');
     }

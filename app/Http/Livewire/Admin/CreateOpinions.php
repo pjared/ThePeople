@@ -33,11 +33,6 @@ class CreateOpinions extends Component
                     ->layout('layouts.admin');
     }
 
-    public function save_opinions() {
-        $this->validate();
-        $this->opinions->each->save();
-    }
-
     public function add_opinion() {
         $this->validate([
             'new_opinion.name' => 'required|string',

@@ -69,46 +69,6 @@
                             Candidates Placed
                         </h1>
                         <livewire:tables.running-candidates-table />
-                        {{-- <form class="flex grow flex-col background-card gap-1" wire:submit.prevent='updateBallotAssignment'>
-                            @foreach ($placed_candidates as $i => $placed_candidate)
-                                <div wire:key="candidate-ballot-{{ $placed_candidate->candidate->id }}" class="grid grid-cols-3 background-card outline outline-1 outline-black gap-6 text-left">
-                                    <div class="col-span-1">
-                                        <div class="flex grow flex-col">
-                                            <div>
-                                                Name: {{$placed_candidate->candidate->name}}
-                                            </div>
-                                            <div>
-                                                Email: {{$placed_candidate->candidate->contact_email}}
-                                            </div>
-                                            <div>
-                                                Number: {{$placed_candidate->candidate->phone_number}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-span-1">
-                                        <div class="flex grow flex-col">
-                                            <div>
-                                                State: {{$placed_candidate->candidate->state}}
-                                            </div>
-                                            <div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-span-1">
-                                        <div class="flex flex-row">
-                                            <div class="form-control w-full max-w-xs">
-                                                <label class="label">
-                                                  <span class="label-text">Ballot ID</span>
-                                                </label>
-                                                <input type="text" wire:model="placed_candidates.{{$i}}.ballot_id" class="input input-bordered w-3/4 max-w-xs" />
-                                            </div>
-                                            @error('placed_candidates.{{$i}}.ballot_id') <span class="error">{{ $message }}</span> @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                            <button class="btn btn-primary" type="submit">Save</button>
-                        </form> --}}
                     </div>
                 </div>
                 <div class="w-2/5">
