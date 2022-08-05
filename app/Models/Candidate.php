@@ -57,6 +57,10 @@ class Candidate extends Model
         return $this->hasMany(CandidateStance::class);
     }
 
+    public function required_stances() {
+        return $this->hasMany(CandidateRequiredStance::class);
+    }
+
     public function opinion_stances($opinion_id) {
         return $this->hasMany(CandidateStance::class)->where('controversial_opinion_id', $opinion_id)->get();
     }
