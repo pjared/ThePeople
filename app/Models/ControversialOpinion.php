@@ -14,6 +14,10 @@ class ControversialOpinion extends Model
     protected $fillable = [
         'name',
         'description', // A description of what it means
-        'votes', 
+        'votes',
     ];
+
+    public function required_stances() {
+        return $this->hasMany(RequiredStance::class, 'controversial_opinion_id');
+    }
 }
