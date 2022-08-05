@@ -9,9 +9,15 @@ class CandidateRequiredStance extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public $fillable = [
         'required_stance_id',
         'candidate_id',
         'candidate_reasoning',
     ];
+
+    public function required_stance() {
+        return $this->belongsTo(RequiredStance::class, 'required_stance_id');
+    }
 }
