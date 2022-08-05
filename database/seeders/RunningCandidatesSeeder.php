@@ -23,7 +23,7 @@ class RunningCandidatesSeeder extends Seeder
     public function run()
     {
         /*
-            Currently there are 4 default candidates & 4 offices in the seeded data. 
+            Currently there are 4 default candidates & 4 offices in the seeded data.
             This will seed a random # between 2-4 of candidates for each office
         */
         $random_candidates_num = [];
@@ -43,5 +43,11 @@ class RunningCandidatesSeeder extends Seeder
                 ]);
             }
         }
+
+        DB::table('running_candidates')->insert([
+            'ballot_id' => 4, // only 1-4, since 4 offices
+            'candidate_id' => 5,
+            'show' => false,
+        ]);
     }
 }

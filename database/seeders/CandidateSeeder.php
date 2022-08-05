@@ -61,5 +61,17 @@ class CandidateSeeder extends Seeder
                 'contact_email' => "pjared@gmail.com",
             ]);
         }
+
+        DB::table('candidates')->insert([
+            'name' => "Jared Pacheco",
+            'dob' => Carbon::today()->subYear(rand(25, 55)),
+            'signup_date' => Carbon::today()->subDays(rand(0, 365)),
+            'bio' => "",
+            'party_name' => 'Club Jared',
+            'user_id' => 1,
+            'state' => 'Utah',
+            'contact_email' => "pjared@gmail.com",
+        ]);
+        User::find(1)->assignRole('candidate');
     }
 }

@@ -30,7 +30,11 @@ class CandidateApplicationSeeder extends Seeder
             $application->office_name = 'Governer';
             $application->state = 'Utah';
             $application->location = 'District 12';
-            $application->status = 'submitted';
+            if($i == 1) {
+                $application->status = 'accepted';
+            } else {
+                $application->status = 'submitted';
+            }
             $application->save();
         }
     }
