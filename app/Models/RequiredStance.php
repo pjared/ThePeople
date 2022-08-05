@@ -9,9 +9,15 @@ class RequiredStance extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public $fillable = [
         'controversial_opinion_id',
         'label',
         'description',
     ];
+
+    public function controversial_opinion() {
+        return $this->belongsTo(ControversialOpinion::class);
+    }
 }
