@@ -19,7 +19,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(RequiredStance::class, 'required_stance_id');
             $table->foreignIdFor(Candidate::class, 'candidate_id');
-            $table->text('candidate_reasoning');
+            $table->text('candidate_reasoning')->nullable();
         });
     }
 
