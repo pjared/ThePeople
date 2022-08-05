@@ -55,6 +55,8 @@ class DatabaseSeeder extends Seeder
                 BallotSeeder::class, //!PROD
 
                 CandidateBadgeSeeder::class, //!PROD
+
+                RequiredStanceSeeder::class, //!PROD
             ]);
         }
     }
