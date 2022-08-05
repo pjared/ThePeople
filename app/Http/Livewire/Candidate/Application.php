@@ -12,7 +12,8 @@ class Application extends Component
 {
     public $previous_application;
 
-    public $name;
+    public $first_name;
+    public $last_name;
     public $email;
     public $phone_number;
     public $dob;
@@ -23,7 +24,8 @@ class Application extends Component
     public function apply()
     {
         $this->validate([
-            'name' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
             'email' => 'required|email',
             'location' => 'required',
             'office_name' => 'required',
@@ -34,7 +36,7 @@ class Application extends Component
 
         $candidate_application = new CandidateApplication();
         $candidate_application->user_id = Auth::user()->id;
-        $candidate_application->name = $this->name;
+        $candidate_application->name = $this->first_name . ' ' . $this->last_name;
         $candidate_application->email = $this->email;
         $candidate_application->phone_number = $this->phone_number;
         $candidate_application->location = $this->location;
