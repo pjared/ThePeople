@@ -8,6 +8,7 @@ use App\Models\Candidate;
 use App\Models\CandidatePermaLink;
 use App\Models\ControversialOpinion;
 use App\Models\Location;
+use App\Models\PublicOfficePosition;
 use App\Models\RequiredStance;
 use App\Models\Team;
 use App\Policies\BallotOpinionsPolicy;
@@ -16,6 +17,7 @@ use App\Policies\CandidatePermaLinkPolicy;
 use App\Policies\CandidatePolicy;
 use App\Policies\ControversialOpinionsPolicy;
 use App\Policies\LocationPolicy;
+use App\Policies\PublicOfficePositionPolicy;
 use App\Policies\TeamPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -35,6 +37,7 @@ class AuthServiceProvider extends ServiceProvider
         Candidate::class => CandidatePolicy::class,
         Location::class => LocationPolicy::class,
         RequiredStance::class => RequiredStance::class,
+        PublicOfficePosition::class => PublicOfficePositionPolicy::class,
 
     ];
 
