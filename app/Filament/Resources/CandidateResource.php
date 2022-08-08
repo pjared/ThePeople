@@ -18,6 +18,8 @@ class CandidateResource extends Resource
     protected static ?string $model = Candidate::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Candidate';
+    protected static ?string $navigationLabel = 'Candidates';
 
     public static function form(Form $form): Form
     {
@@ -86,14 +88,14 @@ class CandidateResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -101,5 +103,5 @@ class CandidateResource extends Resource
             'create' => Pages\CreateCandidate::route('/create'),
             'edit' => Pages\EditCandidate::route('/{record}/edit'),
         ];
-    }    
+    }
 }
