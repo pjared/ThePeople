@@ -38,7 +38,7 @@ class RunningCandidatesResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('candidate_id'),
+                Tables\Columns\TextColumn::make('candidate.name'),
                 Tables\Columns\TextColumn::make('ballot_id'),
                 Tables\Columns\TextColumn::make('entered_race_date')
                     ->date(),
@@ -57,11 +57,11 @@ class RunningCandidatesResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ManageRunningCandidates::route('/'),
         ];
-    }    
+    }
 }
