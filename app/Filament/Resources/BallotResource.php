@@ -38,10 +38,14 @@ class BallotResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('location.name'),
-                Tables\Columns\TextColumn::make('office.name'),
+                Tables\Columns\TextColumn::make('id'),
+                Tables\Columns\TextColumn::make('location.name')
+                                                    ->searchable(),
+                Tables\Columns\TextColumn::make('office.name')
+                                                    ->searchable(),
                 Tables\Columns\TextColumn::make('voting_date')
-                    ->date(),
+                                                    ->date()
+                                                    ->sortable(),
             ])
             ->filters([
                 //

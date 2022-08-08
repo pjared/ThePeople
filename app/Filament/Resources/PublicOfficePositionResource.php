@@ -38,7 +38,9 @@ class PublicOfficePositionResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('id'),
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('years_per_term'),
                 Tables\Columns\TextColumn::make('limit_terms'),
             ])

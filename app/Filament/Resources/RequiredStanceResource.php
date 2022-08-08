@@ -39,7 +39,11 @@ class RequiredStanceResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('controversial_opinion_id'),
+                Tables\Columns\TextColumn::make('controversial_opinion_id')
+                    ->searchable()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('controversial_opinion.name')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('label'),
                 Tables\Columns\TextColumn::make('description'),
             ])

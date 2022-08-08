@@ -37,6 +37,9 @@ class BallotOpinionsResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('ballot_id')
                                                 ->sortable(),
+                Tables\Columns\TextColumn::make('controversial_opinion_id')
+                                                ->searchable()
+                                                ->sortable(),
                 Tables\Columns\TextColumn::make('controversial_opinion.name')
                                                 ->searchable()
                                                 ->sortable(),
