@@ -68,7 +68,7 @@ class BallotOpinionsPolicy
         return $user->hasRole('admin');
     }
 
-    public function deleteAny(User $user, BallotOpinions $ballotOpinions)
+    public function deleteAny(User $user)
     {
         return $user->hasRole('admin');
     }

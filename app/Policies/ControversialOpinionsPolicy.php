@@ -80,7 +80,7 @@ class ControversialOpinionsPolicy
         return $user->hasRole('admin');
     }
 
-    public function deleteAny(User $user, ControversialOpinion $controversialOpinion)
+    public function deleteAny(User $user)
     {
         return $user->hasRole('admin');
     }
