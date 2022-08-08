@@ -80,26 +80,26 @@ Route::group(['prefix' =>'candidate','middleware' => ['role:candidate']], functi
 });
 
 /* -----ADMIN------ */
-Route::group(['prefix' =>'admin','middleware' => ['role:admin']], function() {
-    Route::get('/', function () {
-        return view('admin.show');
-    })->name('admin');
-    Route::group(['prefix' =>'candidate'], function() {
-        Route::get('/approve', ApproveCandidates::class)->name('approve_candidates');
-        Route::get('/assign', AssignCandidates::class)->name('assign_candidates');
-        Route::get('/links', EditPermalinks::class)->name('candidate-links');
-        Route::get('/create', CreateCandidate::class)->name('create-candidate');
-        Route::get('/edit', EditCandidate::class)->name('edit-candidate');
-    });
+// Route::group(['prefix' =>'admin','middleware' => ['role:admin']], function() {
+//     Route::get('/', function () {
+//         return view('admin.show');
+//     })->name('admin');
+//     Route::group(['prefix' =>'candidate'], function() {
+//         Route::get('/approve', ApproveCandidates::class)->name('approve_candidates');
+//         Route::get('/assign', AssignCandidates::class)->name('assign_candidates');
+//         Route::get('/links', EditPermalinks::class)->name('candidate-links');
+//         Route::get('/create', CreateCandidate::class)->name('create-candidate');
+//         Route::get('/edit', EditCandidate::class)->name('edit-candidate');
+//     });
 
-    Route::get('/create-ballot', CreateBallot::class)->name('create-ballot');
+//     Route::get('/create-ballot', CreateBallot::class)->name('create-ballot');
 
-    Route::group(['prefix' =>'opinions'], function() {
-        Route::get('/create', CreateOpinions::class)->name('create-opinions');
+//     Route::group(['prefix' =>'opinions'], function() {
+//         Route::get('/create', CreateOpinions::class)->name('create-opinions');
 
-        Route::get('/edit', EditBallotOpinions::class)->name('edit-opinions');
-    });
-});
+//         Route::get('/edit', EditBallotOpinions::class)->name('edit-opinions');
+//     });
+// });
 
 /* -----PERMALINK------ */
 Route::get('/permalink/{permalink}', [PermaLinkController::class, 'directLink']);

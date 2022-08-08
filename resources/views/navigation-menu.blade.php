@@ -77,7 +77,7 @@
                 @endif --}}
 
                 @role('admin')
-                    <x-jet-nav-link href="{{ route('approve_candidates') }}" :active="request()->routeIs('approve_candidates')">
+                    <x-jet-nav-link href="/admin" :active="request()->is('admin/*')">
                         {{ __('Admin') }}
                     </x-jet-nav-link>
                 @endrole
