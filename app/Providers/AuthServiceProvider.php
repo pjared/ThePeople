@@ -8,6 +8,7 @@ use App\Models\Candidate;
 use App\Models\CandidatePermaLink;
 use App\Models\ControversialOpinion;
 use App\Models\Location;
+use App\Models\RequiredStance;
 use App\Models\Team;
 use App\Policies\BallotOpinionsPolicy;
 use App\Policies\BallotPolicy;
@@ -33,6 +34,7 @@ class AuthServiceProvider extends ServiceProvider
         CandidatePermaLink::class => CandidatePermaLinkPolicy::class,
         Candidate::class => CandidatePolicy::class,
         Location::class => LocationPolicy::class,
+        RequiredStance::class => RequiredStance::class,
 
     ];
 
