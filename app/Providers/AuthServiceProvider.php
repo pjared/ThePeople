@@ -10,6 +10,7 @@ use App\Models\ControversialOpinion;
 use App\Models\Location;
 use App\Models\PublicOfficePosition;
 use App\Models\RequiredStance;
+use App\Models\RunningCandidates;
 use App\Models\Team;
 use App\Policies\BallotOpinionsPolicy;
 use App\Policies\BallotPolicy;
@@ -18,6 +19,7 @@ use App\Policies\CandidatePolicy;
 use App\Policies\ControversialOpinionsPolicy;
 use App\Policies\LocationPolicy;
 use App\Policies\PublicOfficePositionPolicy;
+use App\Policies\RunningCandidatesPolicy;
 use App\Policies\TeamPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -38,7 +40,7 @@ class AuthServiceProvider extends ServiceProvider
         Location::class => LocationPolicy::class,
         RequiredStance::class => RequiredStance::class,
         PublicOfficePosition::class => PublicOfficePositionPolicy::class,
-
+        RunningCandidates::class => RunningCandidatesPolicy::class,
     ];
 
     /**
