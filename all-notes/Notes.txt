@@ -1,10 +1,14 @@
 User Feedback 2:
 Want more color
 
+Would laravel tenant be a good solution to the site? https://tenancyforlaravel.com/docs/v3/introduction
+
 Flag from https://www.svgrepo.com/svg/363603/flag-duotone
 
 Utah ballot initiatives:
 https://www.securevoteutah.org/
+
+https://www.letutahvote.org/where-to-vote.html - A list of all locations to vote
 
 Pivoted the controversial opinions from the slider after talking to a canidate
 
@@ -17,3 +21,7 @@ When creating factories, make sure to implement the relationship method in the m
 The sail dusk tests weren't working, the problem was that I had to update my ubuntu version from 20 -> 22 for php 8. This fucked up my docker container
 -> Correct that. When using two browsers, make sure to log out between each session or the table will completely donk itself
     - To fix this, sail down && sail build && sail up -d
+
+
+- Tell smaller candidates that it's in their best interest to use the QR code, since they will have access to what users will flag
+    - Also gives researching voters clues about their running mates
