@@ -19,6 +19,7 @@ use App\Policies\CandidatePolicy;
 use App\Policies\ControversialOpinionsPolicy;
 use App\Policies\LocationPolicy;
 use App\Policies\PublicOfficePositionPolicy;
+use App\Policies\RequiredStancePolicy;
 use App\Policies\RunningCandidatesPolicy;
 use App\Policies\TeamPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -38,7 +39,7 @@ class AuthServiceProvider extends ServiceProvider
         CandidatePermaLink::class => CandidatePermaLinkPolicy::class,
         Candidate::class => CandidatePolicy::class,
         Location::class => LocationPolicy::class,
-        RequiredStance::class => RequiredStance::class,
+        RequiredStance::class => RequiredStancePolicy::class,
         PublicOfficePosition::class => PublicOfficePositionPolicy::class,
         RunningCandidates::class => RunningCandidatesPolicy::class,
     ];
