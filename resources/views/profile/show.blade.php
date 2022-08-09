@@ -7,14 +7,6 @@
 
     <div>
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-            @role('candidate')
-                <div class="text-center mt-6">
-                    <a href="{{Route('candidate-preview')}}"><button class="btn btn-primary">
-                        Go To Candidate Dashboard
-                    </button></a>
-                </div>
-                <x-jet-section-border />
-            @endrole
             @if (Laravel\Fortify\Features::canUpdateProfileInformation())
                 @livewire('profile.update-profile-information-form')
 

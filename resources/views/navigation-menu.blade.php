@@ -81,6 +81,11 @@
                         {{ __('Admin') }}
                     </x-jet-nav-link>
                 @endrole
+                @role('candidate')
+                    <x-jet-nav-link href="/admin" :active="request()->is('admin/*')">
+                        {{ __('Candidate Dashboard') }}
+                    </x-jet-nav-link>
+                @endrole
 
                 <!-- Settings Dropdown -->
                 <div class="ml-3 relative">
