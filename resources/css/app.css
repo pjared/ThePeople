@@ -13,13 +13,14 @@
       box-shadow: theme('boxShadow.xl');
     }
 
-    .drawer-toggle ~ .drawer-content {
+    [x-cloak] { display: none !important; }
+    /* .drawer-toggle ~ .drawer-content {
         @apply overflow-y-visible;
     }
 
     .drawer {
         @apply h-auto;
-    }
+    } */
 
     /*
     This is the CSS for my old slider
@@ -76,7 +77,6 @@
       }
     } */
 
-    [x-cloak] { display: none !important; }
     /*
       .text-input {
         @apply w-40 mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
