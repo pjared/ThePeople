@@ -22,11 +22,14 @@ class CandidateStanceResource extends Resource
 
     public static function form(Form $form): Form
     {
+        $candidate = auth()->user()->candidate;
+        $opinions = $candidate->ballot ? $candidate->ballot->opinions : [];
         return $form
             ->schema([
-                Forms\Components\TextInput::make('candidate_id')
-                    ->required(),
-                Forms\Components\TextInput::make('controversial_opinion_id')
+                Forms\Components\Hidden::make('candidate_id')
+                    ->default($candidate->id),
+                Forms\Components\Select::make('controversial_opinion_id')
+                    ->options($opinions->pluck('name', 'id'))
                     ->required(),
                 Forms\Components\TextInput::make('stance_label')
                     ->required()
@@ -40,8 +43,7 @@ class CandidateStanceResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('candidate_id'),
-                Tables\Columns\TextColumn::make('controversial_opinion_id'),
+                Tables\Columns\TextColumn::make('opinion.name'),
                 Tables\Columns\TextColumn::make('stance_label'),
                 Tables\Columns\TextColumn::make('stance_reasoning'),
             ])
