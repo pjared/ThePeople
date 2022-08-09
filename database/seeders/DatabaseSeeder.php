@@ -22,10 +22,10 @@ class DatabaseSeeder extends Seeder
             'email' => 'pjared870@gmail.com',
             'password' => Hash::make('password'),
             // Un-comment for local
-            'email_verified_at' => now(),
-            'two_factor_confirmed_at' => now(),
-            'two_factor_secret' => 'secret',
-            'two_factor_recovery_codes' => encrypt(json_encode(Collection::make(['secret'])->all()))
+            // 'email_verified_at' => now(),
+            // 'two_factor_confirmed_at' => now(),
+            // 'two_factor_secret' => 'secret',
+            // 'two_factor_recovery_codes' => encrypt(json_encode(Collection::make(['secret'])->all()))
         ]);
 
         //Seed for production & local
