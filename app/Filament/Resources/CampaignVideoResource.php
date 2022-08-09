@@ -37,7 +37,6 @@ class CampaignVideoResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('candidate_id')->hidden(),
                 Tables\Columns\TextColumn::make('link'),
             ])
             ->filters([
