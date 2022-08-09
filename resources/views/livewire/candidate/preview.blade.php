@@ -1,6 +1,4 @@
 <div class="flex flex-row">
-    @include('candidate.aside')
-
     <div class="flex flex-col w-full">
         <div class="flex flex-col w-full gap-5 text-center items">
             @if($candidate->ballot)
