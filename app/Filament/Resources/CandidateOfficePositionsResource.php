@@ -72,6 +72,6 @@ class CandidateOfficePositionsResource extends Resource
 
     public static function getEloquentQuery(): Builder
     {
-        return parent::getEloquentQuery()->where('candidate_id', auth()->user()->candidate->first()->id);
+        return parent::getEloquentQuery()->where('candidate_id', auth()->user()->candidate->id);
     }
 }

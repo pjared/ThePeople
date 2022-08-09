@@ -14,7 +14,7 @@ class StanceOverview extends Widget
 
     public function mount()
     {
-        $this->candidate = auth()->user()->candidate->first();
+        $this->candidate = auth()->user()->candidate;
         $this->opinions = $this->candidate->ballot ? $this->candidate->ballot->opinions : [];
     }
 }
