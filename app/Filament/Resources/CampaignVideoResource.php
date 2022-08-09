@@ -18,6 +18,7 @@ class CampaignVideoResource extends Resource
     protected static ?string $model = CampaignVideo::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Edit Your Profile';
 
     public static function form(Form $form): Form
     {
@@ -49,11 +50,16 @@ class CampaignVideoResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ManageCampaignVideos::route('/'),
         ];
-    }    
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->where('candidate_id', auth()->user()->candidate->first()->id);
+    }
 }

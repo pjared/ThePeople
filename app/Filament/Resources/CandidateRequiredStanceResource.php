@@ -18,6 +18,7 @@ class CandidateRequiredStanceResource extends Resource
     protected static ?string $model = CandidateRequiredStance::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Edit Your Profile';
 
     public static function form(Form $form): Form
     {
@@ -51,11 +52,16 @@ class CandidateRequiredStanceResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ManageCandidateRequiredStances::route('/'),
         ];
-    }    
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->where('candidate_id', auth()->user()->candidate->first()->id);
+    }
 }
