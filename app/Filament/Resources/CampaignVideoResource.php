@@ -24,10 +24,11 @@ class CampaignVideoResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('candidate_id')
-                    ->required(),
+                Forms\Components\Hidden::make('candidate_id')
+                    ->default(auth()->user()->candidate->id),
                 Forms\Components\TextInput::make('link')
                     ->required()
+                    ->url()
                     ->maxLength(255),
             ]);
     }
@@ -36,7 +37,7 @@ class CampaignVideoResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('candidate_id'),
+                Tables\Columns\TextColumn::make('candidate_id')->hidden(),
                 Tables\Columns\TextColumn::make('link'),
             ])
             ->filters([
@@ -60,6 +61,6 @@ class CampaignVideoResource extends Resource
 
     public static function getEloquentQuery(): Builder
     {
-        return parent::getEloquentQuery()->where('candidate_id', auth()->user()->candidate->first()->id);
+        return parent::getEloquentQuery()->where('candidate_id', auth()->user()->candidate->id);
     }
 }
