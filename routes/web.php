@@ -5,14 +5,6 @@ use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermaLinkController;
 use App\Http\Controllers\SocialiteController;
-use App\Http\Livewire\Admin\ApproveCandidates;
-use App\Http\Livewire\Admin\AssignCandidates;
-use App\Http\Livewire\Admin\CreateBallot;
-use App\Http\Livewire\Admin\CreateCandidate;
-use App\Http\Livewire\Admin\CreateOpinions;
-use App\Http\Livewire\Admin\EditBallotOpinions;
-use App\Http\Livewire\Admin\EditCandidate;
-use App\Http\Livewire\Admin\EditPermalinks;
 use App\Http\Livewire\Candidate\Application;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
@@ -64,20 +56,6 @@ Route::get('/apply', Application::class)->name('candidate-apply')->middleware(['
 //PROFILE VIEW
 Route::get('candidate/profile/{id}', [CandidateController::class, 'getCandidateView']);
 
-//PROFILE EDITING
-Route::group(['prefix' =>'candidate','middleware' => ['role:candidate']], function() {
-    Route::get('/dashboard', [CandidateController::class, 'getCandidateDashboard'])->name('candidate-dashboard');
-    Route::get('/preview', \App\Http\Livewire\Candidate\Preview::class)->name('candidate-preview');
-    Route::group(['prefix' =>'edit'], function() {
-        Route::get('/info', \App\Http\Livewire\Candidate\Edit\EditInfo::class);
-        Route::get('/bio', \App\Http\Livewire\Candidate\Edit\EditBio::class);
-        Route::get('/required/stances', \App\Http\Livewire\Candidate\Edit\EditRequiredStances::class);
-        Route::get('/stances', \App\Http\Livewire\Candidate\Edit\EditStances::class);
-        Route::get('/promises', \App\Http\Livewire\Candidate\Edit\EditPromises::class);
-        Route::get('/videos', \App\Http\Livewire\Candidate\Edit\EditVideos::class);
-        Route::get('/positions', \App\Http\Livewire\Candidate\Edit\EditPositions::class);
-    });
-});
 
 /* -----ADMIN------ */
 
