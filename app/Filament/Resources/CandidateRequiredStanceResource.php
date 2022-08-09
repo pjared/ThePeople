@@ -24,10 +24,6 @@ class CandidateRequiredStanceResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('required_stance_id')
-                    ->required(),
-                Forms\Components\TextInput::make('candidate_id')
-                    ->required(),
                 Forms\Components\Textarea::make('candidate_reasoning')
                     ->maxLength(65535),
             ]);
@@ -37,9 +33,10 @@ class CandidateRequiredStanceResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('required_stance_id'),
-                Tables\Columns\TextColumn::make('candidate_id'),
-                Tables\Columns\TextColumn::make('candidate_reasoning'),
+                Tables\Columns\TextColumn::make('required_stance.label'),
+                // Tables\Columns\TextColumn::make('candidate_id'),
+                Tables\Columns\TextColumn::make('candidate_reasoning')
+                    ->label('Your stance on this topic'),
             ])
             ->filters([
                 //
