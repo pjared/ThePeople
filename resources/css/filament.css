@@ -1,8 +1,16 @@
 @import '../../vendor/filament/filament/resources/css/app.css';
 
-/* .filament-sidebar-item > a {
-} */
-
 .filament-tables-row:nth-child(odd){
     @apply bg-gray-50
 }
+
+@layer components {
+    .background-card {
+      background-color: theme('colors.white');
+      border-radius: theme('borderRadius.lg');
+      padding: theme('spacing.6');
+      box-shadow: theme('boxShadow.xl');
+    }
+}
+
+
