@@ -17,7 +17,7 @@ class CandidateStanceResource extends Resource
 {
     protected static ?string $model = CandidateStance::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-scale';
     protected static ?string $navigationGroup = 'Edit Your Profile';
 
     public static function form(Form $form): Form

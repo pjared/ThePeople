@@ -17,7 +17,7 @@ class CandidatePromiseResource extends Resource
 {
     protected static ?string $model = CandidatePromise::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-globe';
     protected static ?string $navigationGroup = 'Edit Your Profile';
 
     public static function form(Form $form): Form

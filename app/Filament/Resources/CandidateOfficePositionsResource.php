@@ -17,7 +17,7 @@ class CandidateOfficePositionsResource extends Resource
 {
     protected static ?string $model = CandidateOfficePositions::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-library';
     protected static ?string $navigationGroup = 'Edit Your Profile';
 
     public static function form(Form $form): Form

@@ -17,7 +17,7 @@ class CampaignVideoResource extends Resource
 {
     protected static ?string $model = CampaignVideo::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-video-camera';
     protected static ?string $navigationGroup = 'Edit Your Profile';
 
     public static function form(Form $form): Form
