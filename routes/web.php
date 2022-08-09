@@ -59,7 +59,8 @@ Route::get('candidate/profile/{id}', [CandidateController::class, 'getCandidateV
 
 /* -----ADMIN------ */
 
-/* -----PERMALINK------ */
+
+/* -----PERMALINK REDIRECTING------ */
 Route::get('/permalink/{permalink}', [PermaLinkController::class, 'directLink']);
 
 /* -----SOCIALITE------ */
