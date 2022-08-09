@@ -2,6 +2,7 @@
 
 namespace App\Filament\Pages;
 
+use App\Filament\Widgets\EditBio;
 use App\Filament\Widgets\EditPersonalInfo;
 use App\Filament\Widgets\EditProfileImage;
 use Filament\Pages\Page;
@@ -29,8 +30,10 @@ class CandidatePersonalInfo extends Page
     protected function getHeaderWidgets(): array
     {
         return [
+            EditBio::class,
             EditPersonalInfo::class,
             EditProfileImage::class,
+
         ];
     }
 
