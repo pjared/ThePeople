@@ -24,8 +24,8 @@ class CandidatePromiseResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('candidate_id')
-                    ->required(),
+                Forms\Components\Hidden::make('candidate_id')
+                    ->default(auth()->user()->candidate->id),
                 Forms\Components\TextInput::make('promise')
                     ->required()
                     ->maxLength(255),
@@ -44,7 +44,7 @@ class CandidatePromiseResource extends Resource
                 Tables\Columns\TextColumn::make('candidate_id'),
                 Tables\Columns\TextColumn::make('promise'),
                 Tables\Columns\TextColumn::make('plan'),
-                Tables\Columns\BooleanColumn::make('order'),
+                // Tables\Columns\BooleanColumn::make('order'),
             ])
             ->filters([
                 //
