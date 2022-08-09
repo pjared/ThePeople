@@ -24,18 +24,20 @@ class CandidateOfficePositionsResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('candidate_id')
-                    ->required(),
+                Forms\Components\Hidden::make('candidate_id')
+                    ->default(auth()->user()->candidate->id),
                 Forms\Components\TextInput::make('position_name')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Textarea::make('description')
                     ->required()
                     ->maxLength(65535),
-                Forms\Components\DatePicker::make('year_start')
-                    ->required(),
-                Forms\Components\DatePicker::make('year_end')
-                    ->required(),
+                Forms\Components\TextInput::make('year_start')
+                    ->required()
+                    ->maxLength(65535),
+                Forms\Components\TextInput::make('year_end')
+                    ->required()
+                    ->maxLength(65535),
             ]);
     }
 
@@ -43,13 +45,10 @@ class CandidateOfficePositionsResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('candidate_id'),
                 Tables\Columns\TextColumn::make('position_name'),
                 Tables\Columns\TextColumn::make('description'),
-                Tables\Columns\TextColumn::make('year_start')
-                    ->date(),
-                Tables\Columns\TextColumn::make('year_end')
-                    ->date(),
+                Tables\Columns\TextColumn::make('year_start'),
+                Tables\Columns\TextColumn::make('year_end'),
             ])
             ->filters([
                 //
