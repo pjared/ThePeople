@@ -50,7 +50,7 @@ class CandidatePromisePolicy
      */
     public function viewAny(User $user)
     {
-        if($user->hasRole('admin') || $user->hasRole('candidate')) {
+        if($user->hasRole('candidate')) {
             return true;
         }
         return false;
