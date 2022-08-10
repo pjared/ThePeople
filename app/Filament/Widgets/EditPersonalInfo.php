@@ -31,6 +31,14 @@ class EditPersonalInfo extends Widget implements HasForms
         'site_link' => 'nullable',
     ];
 
+    public static function canView(): bool
+    {
+        if(auth()->user()->candidate) {
+            return true;
+        }
+        return false;
+    }
+
     public function mount(): void
     {
         $this->candidate = Candidate::firstWhere('user_id', auth()->id());

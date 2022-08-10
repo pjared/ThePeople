@@ -14,6 +14,15 @@ class EditProfileImage extends Widget
 
     public $photo;
 
+
+    public static function canView(): bool
+    {
+        if(auth()->user()->candidate) {
+            return true;
+        }
+        return false;
+    }
+
     /**
      * Candidates are going to upload a photo.
      * The catch is, they don't know how to even use a computer. I would be surprised if a candidate

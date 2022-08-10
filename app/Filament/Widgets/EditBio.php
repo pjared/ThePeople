@@ -18,8 +18,17 @@ class EditBio extends Widget implements HasForms
 
     public $bio;
 
+    public static function canView(): bool
+    {
+        if(auth()->user()->candidate) {
+            return true;
+        }
+        return false;
+    }
+
     public function mount(): void
     {
+        // dd(Candidate::firstWhere('user_id', auth()->id()), auth()->id());
         $this->candidate = Candidate::firstWhere('user_id', auth()->id());
 
         $this->form->fill([
