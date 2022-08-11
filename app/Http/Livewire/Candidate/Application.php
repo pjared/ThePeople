@@ -10,43 +10,39 @@ use Livewire\Component;
 
 class Application extends Component
 {
+    public CandidateApplication $application;
     public $previous_application;
 
     public $first_name;
     public $last_name;
-    public $email;
-    public $phone_number;
-    public $dob;
-    public $state;
-    public $location;
-    public $office_name;
+
+    protected $rules = [
+        'first_name' => 'required|string',
+        'last_name' => 'required|string',
+        'application.email' => 'required|email',
+        'application.location' => 'required',
+        'application.office_name' => 'required',
+        'application.state' => 'required',
+        'application.dob' => 'required|date',
+        'application.phone_number' => 'nullable|regex:/[0-9]{10}/',
+        'application.entered_race_date' => 'nullable|date',
+    ];
 
     public function apply()
     {
-        $this->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required|email',
-            'location' => 'required',
-            'office_name' => 'required',
-            'state' => 'required',
-            'dob' => 'required|date',
-            'phone_number' => 'nullable|regex:/[0-9]{10}/'
-        ]);
+        $this->validate();
 
-        $candidate_application = new CandidateApplication();
-        $candidate_application->user_id = Auth::user()->id;
-        $candidate_application->name = $this->first_name . ' ' . $this->last_name;
-        $candidate_application->email = $this->email;
-        $candidate_application->phone_number = $this->phone_number;
-        $candidate_application->location = $this->location;
-        $candidate_application->office_name = $this->office_name;
-        $candidate_application->state = $this->state;
-        $candidate_application->dob = $this->dob;
-        $candidate_application->status = "submitted";
+        //Make sure that someone doesn't submit a request if they have an application
+        if(!is_null($this->previous_application)) {
+            return;
+        }
 
-        $candidate_application->save();
-        $this->previous_application = $candidate_application;
+        $this->application->name = $this->first_name . ' ' . $this->last_name;
+        $this->application->status = "submitted";
+        $this->application->user_id = Auth::user()->id;
+        $this->application->save();
+
+        $this->previous_application = $this->application;
         session()->flash('message', 'You have submitted an application, we will email you updates as we process it.');
 
         Mail::to('thepeople@whatsinyourballot.com')->send(new ApplicationSubmitted());
@@ -55,6 +51,7 @@ class Application extends Component
     public function mount()
     {
         $this->previous_application = CandidateApplication::firstWhere('user_id', Auth::user()->id);
+        $this->application = new CandidateApplication();
     }
 
     public function render()
