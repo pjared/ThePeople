@@ -76,7 +76,8 @@ class CandidateRequiredStancePolicy
      */
     public function create(User $user)
     {
-        if($user->hasRole('admin') || $user->hasRole('candidate')) {
+        //Only admins can create the required stances
+        if($user->hasRole('admin')) {
             return true;
         }
         return false;
@@ -103,7 +104,11 @@ class CandidateRequiredStancePolicy
      */
     public function delete(User $user, CandidateRequiredStance $candidateRequiredStance)
     {
-        return $this->checkAdminAndCandidate($user, $candidateRequiredStance->candidate_id);
+        //Only admins can delete required stances
+        if($user->hasRole('admin')) {
+            return true;
+        }
+        return false;
     }
 
     /**
