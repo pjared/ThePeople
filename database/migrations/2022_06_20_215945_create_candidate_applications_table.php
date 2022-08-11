@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('state');
             $table->string('location');
             $table->string('status', 15);
+            $table->date('entered_race_date')->nullable();
             $table->foreignIdFor(Candidate::class, 'candidate_id')->nullable();
             $table->timestamps();
         });

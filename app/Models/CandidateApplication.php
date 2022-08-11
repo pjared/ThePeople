@@ -22,6 +22,7 @@ class CandidateApplication extends Model
         "state",
         "location",
         "status",
-        'candidate_id'
+        'candidate_id',
+        'entered_race_date'
     ];
 }
