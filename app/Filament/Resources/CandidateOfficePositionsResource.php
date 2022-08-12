@@ -30,6 +30,7 @@ class CandidateOfficePositionsResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Textarea::make('description')
+                    ->label('Your best accomplishments in office')
                     ->required()
                     ->maxLength(65535),
                 Forms\Components\TextInput::make('year_start')
