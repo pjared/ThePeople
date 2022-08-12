@@ -20,7 +20,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Candidate::class, 'candidate_id');
             $table->string('position_name');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->year('year_start');
             $table->year('year_end');
         });
