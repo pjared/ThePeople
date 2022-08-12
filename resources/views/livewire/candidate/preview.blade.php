@@ -6,10 +6,12 @@
                 <div class="form-control items-center">
                     <label class="label cursor-pointer">
                         <span class="label-text">Show my profile on the ballot</span>
-                        <input type="checkbox" wire:model.defer="show" class="checkbox checkbox-primary" />
+                        <input type="checkbox" wire:click="update_show_candidate" wire:model.defer="show" class="checkbox checkbox-primary" />
                     </label>
-                    <button class='btn btn-primary w-fit' wire:click="update_show_candidate">Update</button>
                 </div>
+                @if($show)
+                    <span>You are now showing on the <a class='link' href="/ballot/{{$candidate->ballot->id}}">{{$candidate->ballot->location->name}} {{$candidate->ballot->office->name}}</a> ballot</span>
+                @endif
             @else
             <span>
                 We have not placed you on a ballot yet. You will be notified when we have done this
