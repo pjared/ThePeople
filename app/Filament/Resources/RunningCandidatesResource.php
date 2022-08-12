@@ -18,8 +18,8 @@ class RunningCandidatesResource extends Resource
     protected static ?string $model = RunningCandidates::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
-    protected static ?string $navigationGroup = 'Candidate';
-    protected static ?string $navigationLabel = 'Approve Candidates';
+    protected static ?string $navigationGroup = 'Assign and Place Candidates';
+    protected static ?string $navigationLabel = 'Place Candidates';
 
     public static function form(Form $form): Form
     {
