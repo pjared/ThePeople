@@ -18,8 +18,8 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Candidate::class, 'candidate_id');
             $table->string('promise');
-            $table->text('plan');
-            $table->unsignedTinyInteger('order');
+            $table->text('plan')->nullable();
+            $table->unsignedTinyInteger('order')->nullable();
         });
     }
 

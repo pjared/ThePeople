@@ -30,10 +30,10 @@ class CandidatePromiseResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Textarea::make('plan')
-                    ->required()
+                    // ->required()
                     ->maxLength(65535),
-                Forms\Components\Toggle::make('order')
-                    ->required(),
+                // Forms\Components\Toggle::make('order')
+                //     ->required(),
             ]);
     }
 
