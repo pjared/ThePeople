@@ -21,7 +21,7 @@
                                             <div class="collapse-content">
                                                 <p
                                                 x-data="{ isCollapsed: false, maxLength: 215, originalContent: '', content: '' }"
-                                                x-init="originalContent = $el.firstElementChild.textContent.trim(); content = originalContent.slice(0, maxLength) + '...'"
+                                                x-init="originalContent = $el.firstElementChild.textContent.trim(); content = originalContent.slice(0, maxLength)"
                                                 >
                                                     <span x-text="isCollapsed ? originalContent : content">{{$candidate_stance->candidate_reasoning}}</span>
                                                     <button
@@ -62,7 +62,7 @@
                                     <div class="collapse-content">
                                         <p
                                         x-data="{ isCollapsed: false, maxLength: 215, originalContent: '', content: '' }"
-                                        x-init="originalContent = $el.firstElementChild.textContent.trim(); content = originalContent.slice(0, maxLength) + '...'"
+                                        x-init="originalContent = $el.firstElementChild.textContent.trim(); content = originalContent.slice(0, maxLength)"
                                         >
                                             <span x-text="isCollapsed ? originalContent : content">{{$candidate_stance->stance_reasoning}}</span>
                                             <button
