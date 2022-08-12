@@ -47,7 +47,8 @@ class CandidateStanceResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('opinion.name'),
                 Tables\Columns\TextColumn::make('stance_label'),
-                Tables\Columns\TextColumn::make('stance_reasoning'),
+                Tables\Columns\TextColumn::make('stance_reasoning')
+                    ->limit(80),
             ])
             ->filters([
                 //

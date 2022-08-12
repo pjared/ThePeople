@@ -42,7 +42,8 @@ class CandidatePromiseResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('promise'),
-                Tables\Columns\TextColumn::make('plan'),
+                Tables\Columns\TextColumn::make('plan')
+                    ->limit(80),
                 // Tables\Columns\BooleanColumn::make('order'),
             ])
             ->filters([

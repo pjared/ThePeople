@@ -47,7 +47,8 @@ class CandidateOfficePositionsResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('position_name'),
-                Tables\Columns\TextColumn::make('description'),
+                Tables\Columns\TextColumn::make('description')
+                    ->limit(80),
                 Tables\Columns\TextColumn::make('year_start'),
                 Tables\Columns\TextColumn::make('year_end'),
             ])
