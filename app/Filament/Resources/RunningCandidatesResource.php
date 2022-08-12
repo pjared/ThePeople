@@ -40,11 +40,8 @@ class RunningCandidatesResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('candidate.name')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('ballot_id')
-                    ->sortable()
-                    ->searchable(),
+                Tables\Columns\TextColumn::make('candidate_id'),
+                Tables\Columns\TextColumn::make('ballot_id'),
                 Tables\Columns\TextColumn::make('entered_race_date')
                     ->date(),
                 Tables\Columns\TextColumn::make('ended_race_date')
@@ -56,17 +53,25 @@ class RunningCandidatesResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageRunningCandidates::route('/'),
+            'index' => Pages\ListRunningCandidates::route('/'),
+            'create' => Pages\CreateRunningCandidates::route('/create'),
+            'edit' => Pages\EditRunningCandidates::route('/{record}/edit'),
         ];
     }
 }
