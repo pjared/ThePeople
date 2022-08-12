@@ -23,6 +23,7 @@ class CandidateStanceResource extends Resource
     public static function form(Form $form): Form
     {
         $candidate = auth()->user()->candidate;
+        // Get the opinions if the candidate has a ballot
         $opinions = $candidate->ballot ? $candidate->ballot->opinions : [];
         return $form
             ->schema([
@@ -32,6 +33,7 @@ class CandidateStanceResource extends Resource
                     ->options($opinions->pluck('name', 'id'))
                     ->required(),
                 Forms\Components\TextInput::make('stance_label')
+                    ->label('Stance title')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Textarea::make('stance_reasoning')
