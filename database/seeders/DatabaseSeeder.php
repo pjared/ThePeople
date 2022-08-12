@@ -35,6 +35,10 @@ class DatabaseSeeder extends Seeder
             PoliticalPartySeeder::class,
             ControversialOpinionsSeeder::class,
             BadgeSeeder::class,
+
+            // YoutubeVidSeeder::class,
+            // RequiredStanceSeeder::class,
+            // CandidateRequiredStanceSeeder::class,
         ]);
 
         //Seed for only local
