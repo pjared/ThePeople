@@ -41,7 +41,6 @@ class CandidatePromiseResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('candidate_id'),
                 Tables\Columns\TextColumn::make('promise'),
                 Tables\Columns\TextColumn::make('plan'),
                 // Tables\Columns\BooleanColumn::make('order'),
