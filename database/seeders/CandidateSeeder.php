@@ -41,7 +41,7 @@ class CandidateSeeder extends Seeder
             $application->user_id = $user->id;
             $application->name = $user->name;
             $application->dob = Carbon::now()->subYear(rand(10,100));
-            $application->email = $name . '@gmail.com';
+            $application->email = str_replace(' ', '', $user->name) . '@gmail.com';
             $application->phone_number = '1234567891';
             $application->office_name = 'Governer';
             $application->state = 'Utah';
