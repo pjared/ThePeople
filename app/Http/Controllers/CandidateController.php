@@ -12,8 +12,7 @@ class CandidateController extends Controller
     /**
      * Find the candidate in the database, and populate candidate page
      */
-    public function getCandidateView($id) {
-        $candidate = Candidate::find(intval($id));
+    public function getCandidateView(Candidate $candidate) {
         return view('candidate.show')
                     ->with('candidate', $candidate);
     }

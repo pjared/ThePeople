@@ -17,9 +17,12 @@ class CreateRunningCandidates extends CreateRecord
 
     protected function afterCreate(): void
     {
+        //Get the candidate model
+        $candidate = Candidate::find($this->data['candidate_id']);
+
         //Email the candidate that they have been assigned to a ballot.
         Log::info('Mailing the candidate that they have a ballot');
-        $candidate = Candidate::find($this->data['candidate_id']);
+
         $ballot = Ballot::find($this->data['ballot_id']);
         if($candidate->user) {
             Mail::to($candidate->user)->send(new CandidateBallotAssigned($ballot->office->name . ', ' . $ballot->location->name));

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 class Candidate extends Model
 {
     use HasFactory;
+    use Sluggable;
 
     public $timestamps = false;
 
@@ -27,6 +29,7 @@ class Candidate extends Model
         "user_id",
         "party_name",
         'site_link',
+        'slug',
     ];
 
     protected $hidden = [
@@ -36,6 +39,20 @@ class Candidate extends Model
         "user_id",
         "party_name",
     ];
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => ['name', 'ballot.name']
+            ]
+        ];
+    }
 
     public function donors() {
         return $this->belongsToMany(Donor::class)->using(CandidateDonors::class);

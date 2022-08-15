@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('party_name')->nullable();
             $table->foreignIdFor(User::class, 'user_id')->nullable();
             $table->string('site_link')->nullable();
+            $table->string('slug')->nullable();
         });
     }
 

@@ -9,12 +9,12 @@
         @foreach ($ballot->candidates as $running_candidate)
             <div class="flex grow flex-row pt-2 w-11/12">
                 {{-- CANDIDATE NAME, PICTURE, AND PAGE LINK --}}
-                <form action="/candidate/profile/{{$running_candidate->candidate_id}}" method="GET" class="w-11/12 md:hover:scale-110">
+                <form action="/candidate/profile/{{$running_candidate->candidate->slug}}" method="GET" class="w-11/12 md:hover:scale-110">
                     <button class="card flex grow lg:card-side bg-white shadow-xl w-full"
                     x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
                         {{-- :class="{ 'h-28 w-28': show }" --}}
                         <figure>
-                            <img src="{{ $running_candidate->candidate->user->profile_photo_url }}" alt="{{ $running_candidate->candidate->name }}" class="h-28 w-28" :class="{ 'rounded-xl': show }">
+                            <img src="{{ $running_candidate->candidate->user->profile_photo_url ?? ''}} " alt="{{ $running_candidate->candidate->name }}" class="h-28 w-28" :class="{ 'rounded-xl': show }">
                             {{-- class="rounded-full object-cover" --}}
                         </figure>
                         <div class="card-body flex flex-row flex-wrap" :class="{ 'p-3': show }">
@@ -23,7 +23,7 @@
                                     <h3 class="card-title font-normal">{{ $running_candidate->candidate->name }}</h3>
                                 </div>
                                 <div class="flex grow justify-end">
-                                    <a class="underline text-sky-600 visited:text-purple-600" href="/candidate/profile/{{$running_candidate->candidate_id}}">More about {{ $running_candidate->candidate->name }}</a>
+                                    <a class="underline text-sky-600 visited:text-purple-600" href="/candidate/profile/{{$running_candidate->candidate->slug}}">More about {{ $running_candidate->candidate->name }}</a>
                                 </div>
                             </div>
                             {{-- Badges --}}
@@ -84,4 +84,8 @@
             }
         </script>
     @endpush
+
+    @section('page-title')
+        {{$ballot->location->name}} {{$ballot->office->name}} Ballot
+    @endsection
 </div>
