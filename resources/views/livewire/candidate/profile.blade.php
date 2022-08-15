@@ -136,8 +136,6 @@
                 Alpine.data('nextFlag', () => ({
                     flag: {
                         ['@click']() {
-                            console.log('clicked');
-                            console.log(this.transparent, this.black, this.green, this.red);
                             if(this.transparent) {
                                 this.transparent = false;
                                 this.black = true;
