@@ -66,6 +66,8 @@ Route::get('/permalink/{permalink}', [PermaLinkController::class, 'directLink'])
 
 /* -----SOCIALITE------ */
 
+/*
+
 //GOOGLE
 Route::get('/auth/google/redirect', function () {
     return Socialite::driver('google')->redirect();
@@ -86,5 +88,7 @@ Route::get('/auth/facebook/redirect', function () {
 });
 
 Route::get('/auth/facebook/callback', [SocialiteController::class, 'handleFacebookCallback']);
+
+*/
 
 Route::get('/newfeatures', NewFeature::class);
