@@ -47,7 +47,7 @@ Route::middleware([
 });
 
 /* -----BALLOT------ */
-Route::get('/ballot/{id}', [BallotController::class, 'getBallotView'])->name('ballot');
+Route::get('/ballot/{ballot:slug}', [BallotController::class, 'getBallotView'])->name('ballot');
 
 /* -----CANDIDATE------ */
 
@@ -55,7 +55,7 @@ Route::get('/ballot/{id}', [BallotController::class, 'getBallotView'])->name('ba
 Route::get('/apply', Application::class)->name('candidate-apply')->middleware(['verified', 'has2FAEnabled']);
 
 //PROFILE VIEW
-Route::get('candidate/profile/{id}', [CandidateController::class, 'getCandidateView']);
+Route::get('candidate/profile/{candidate:slug}', [CandidateController::class, 'getCandidateView']);
 
 
 /* -----ADMIN------ */
