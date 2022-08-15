@@ -14,6 +14,10 @@
     }
 
     [x-cloak] { display: none !important; }
+
+    .divider-horizontal {
+        @apply mx-0;
+    }
     /* .drawer-toggle ~ .drawer-content {
         @apply overflow-y-visible;
     }
