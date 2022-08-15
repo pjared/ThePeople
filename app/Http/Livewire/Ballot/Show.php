@@ -19,7 +19,7 @@ class Show extends Component
             $user_vote = UserVotes::where('ballot_id', $ballot->id)->where('user_id', Auth::id())->first();
             if($user_vote) {
                 $this->candidate_vote = $user_vote->running_candidate_id;
-            }            
+            }
         }
         $this->ballot = $ballot;
     }

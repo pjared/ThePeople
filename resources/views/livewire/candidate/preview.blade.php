@@ -10,7 +10,7 @@
                     </label>
                 </div>
                 @if($show)
-                    <span>You are now showing on the <a class='link' href="/ballot/{{$candidate->ballot->id}}">{{$candidate->ballot->location->name}} {{$candidate->ballot->office->name}}</a> ballot</span>
+                    <span>You are now showing on the <a class='link' href="/ballot/{{$candidate->ballot->slug}}">{{$candidate->ballot->location->name}} {{$candidate->ballot->office->name}}</a> ballot</span>
                 @endif
             @else
             <span>

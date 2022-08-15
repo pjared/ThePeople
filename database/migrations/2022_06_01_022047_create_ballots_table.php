@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignIdFor(Location::class, 'location_id');
             $table->foreignIdFor(PublicOfficePosition::class, 'office_id');
             $table->date('voting_date');
+            $table->string('slug')->nullable();
         });
     }
 

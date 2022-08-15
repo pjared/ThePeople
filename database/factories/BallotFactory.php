@@ -18,6 +18,8 @@ class BallotFactory extends Factory
      */
     public function definition()
     {
+        // $location = Location::factory();
+        // $office = PublicOfficePosition::factory();
         return [
             "location_id" => Location::factory(),
             "office_id" => PublicOfficePosition::factory(),

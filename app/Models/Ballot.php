@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Ballot extends Model
 {
     use HasFactory;
+    use Sluggable;
 
     public $timestamps = false;
 
@@ -19,8 +21,23 @@ class Ballot extends Model
     public $fillable = [
         "location_id",
         "office_id",
-        "voting_date"
+        "voting_date",
+        'slug'
     ];
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => ['location.name', 'office.name']
+            ]
+        ];
+    }
 
     // TODO: Too dumb to figure this out right now.
     // protected $appends = [
@@ -33,9 +50,9 @@ class Ballot extends Model
     //     );
     // }
 
-    // public function getNameAttribute() {
-    //     return $this->office->name + ', ' + $this->location->name;
-    // }
+    public function getNameAttribute() {
+        return $this->location->name . ' ' . $this->office->name;
+    }
 
     public function office() {
         return $this->belongsTo(PublicOfficePosition::class, 'office_id');

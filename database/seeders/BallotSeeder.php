@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\PublicOfficePosition;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -25,15 +26,17 @@ class BallotSeeder extends Seeder
         DB::table('ballots')->insert([
             'location_id' => 1,
             'office_id' => 1,
-            'voting_date' => $today->addWeeks(rand(1, 52))->format('Y-m-d')
-        ]);   
+            'voting_date' => $today->addWeeks(rand(1, 52))->format('Y-m-d'),
+            'slug' => 'Provo-Mayor',
+        ]);
 
         for($i = 2; $i <= 4; $i++) {
             DB::table('ballots')->insert([
                 'location_id' => 2,
                 'office_id' => $i,
-                'voting_date' => $today->addWeeks(rand(1, 52))->format('Y-m-d')
+                'voting_date' => $today->addWeeks(rand(1, 52))->format('Y-m-d'),
+                'slug' => 'Utah-' . PublicOfficePosition::find($i)->name,
             ]);
-        }       
+        }
     }
 }

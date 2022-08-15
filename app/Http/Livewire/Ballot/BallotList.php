@@ -12,6 +12,7 @@ class BallotList extends Component
     public function mount()
     {
         $this->ballots = Ballot::all();
+        // dd($this->ballots);
     }
 
     public function render()
