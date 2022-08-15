@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermaLinkController;
 use App\Http\Controllers\SocialiteController;
 use App\Http\Livewire\Candidate\Application;
+use App\Http\Livewire\NewFeature;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 use Spatie\Sitemap\SitemapGenerator;
@@ -85,3 +86,5 @@ Route::get('/auth/facebook/redirect', function () {
 });
 
 Route::get('/auth/facebook/callback', [SocialiteController::class, 'handleFacebookCallback']);
+
+Route::get('/newfeatures', NewFeature::class);
