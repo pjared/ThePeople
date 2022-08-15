@@ -33,7 +33,7 @@ class CandidateResource extends Resource
                 Forms\Components\DatePicker::make('signup_date')
                     ->required(),
                 Forms\Components\Textarea::make('bio')
-                    ->required()
+                    // ->required()
                     ->maxLength(65535),
                 Forms\Components\TextInput::make('state')
                     ->required()
