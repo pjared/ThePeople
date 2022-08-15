@@ -94,4 +94,8 @@
             {{ __('Save') }}
         </x-jet-button>
     </x-slot>
+
+    @section('page-title')
+        Your Profile
+    @endsection
 </x-jet-form-section>
