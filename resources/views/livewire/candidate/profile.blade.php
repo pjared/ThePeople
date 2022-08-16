@@ -46,7 +46,7 @@
         @include('candidate.component.stances', ['opinions' => $opinions, 'candidate' => $candidate])
 
         {{-- OTHER OPINIONS --}}
-        @if(count($candidate->opinions) != 0)
+        {{-- @if(count($candidate->opinions) != 0)
             <div class="flex grow flex-col w-11/12 items-center">
                 <x-dropdown-card>
                     <x-slot:title>
@@ -70,10 +70,10 @@
                     </x-slot>
                 </x-dropdown-card>
             </div>
-        @endif
+        @endif --}}
 
         {{-- DONORS --}}
-        @if(count($candidate->donors) != 0)
+        {{-- @if(count($candidate->donors) != 0)
             <div class="flex grow flex-col w-11/12 items-center">
                 <x-dropdown-card>
                     <x-slot:title>
@@ -100,10 +100,10 @@
                     </x-slot>
                 </x-dropdown-card>
             </div>
-        @endif
+        @endif --}}
 
         {{-- LAW MAKING INVOLVEMENT  --}}
-        @if(count($candidate->law_involvement) != 0)
+        {{-- @if(count($candidate->law_involvement) != 0)
             <div class="flex flex-col w-11/12 items-center">
                 <x-dropdown-card>
                     <x-slot:title>
@@ -127,36 +127,49 @@
                     </x-slot>
                 </x-dropdown-card>
             </div>
-        @endif
+        @endif --}}
     </div>
 
     @push('scripts')
         <script>
             document.addEventListener('alpine:init', () => {
-                Alpine.data('nextFlag', () => ({
-                    flag: {
-                        ['@click']() {
-                            if(this.transparent) {
-                                this.transparent = false;
-                                this.black = true;
-                                @this.change_flag(this.type, this.type_id, 'nuetral')
-                            } else if (this.black) {
-                                this.black = false;
-                                this.green = true;
-                                @this.change_flag(this.type, this.type_id, 'green')
-                            } else if (this.green) {
-                                this.green = false;
-                                this.red = true;
-                                @this.change_flag(this.type, this.type_id, 'red')
-                            } else {
-                                this.red = false;
-                                this.transparent = true;
-                                @this.delete_flag(this.type, this.type_id)
-                            }
-                        },
+                Alpine.data('flag', () => ({
+                    new_changes: false,
+                    color:0,
+
+                    setColor(color) {
+                        if(color == '1') {
+                            this.color = 1;
+                            this.current_color = 'fill-red-600';
+                        } else if (color == '2') {
+                            this.color = 2;
+                            this.current_color = 'fill-green-600';
+                        } else if (color == '3') {
+                            this.color = 3;
+                            this.current_color = 'fill-gray-600';
+                        } else {
+                            this.color = 0;
+                            this.current_color = 'fill-transparent';
+                        }
+                        this.new_changes = true;
+                    },
+                    left() {
+                        console.log('saved');
+                        if(this.new_changes) {
+                            @this.change_flag(this.type, this.type_id, this.color, this.note);
+                            this.new_changes = false;
+                        }
+                    },
+                    deleteFlag() {
+                        @this.delete_flag(this.type, this.type_id)
+                    },
+                    changedNote() {
+                        console.log('Changed Note');
+                        this.new_changes = true;
                     },
                 }))
             });
+
         </script>
     @endpush
 </div>

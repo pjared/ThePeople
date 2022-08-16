@@ -1,44 +1,78 @@
-<div class='flex items-center' x-data="nextFlag()">
-    {{-- Lord forgive me for this monstrosity I am creating. I know not what I have done. Amen --}}
-    @if ($set_flag == "nuetral")
-        <div x-data="{ 
-            transparent: false, 
-            green: false, 
-            red: false, 
-            black: true, 
-            type: '{{$type}}',
-            type_id: {{$type_id}}
+
+<div
+    class="dropdown dropdown-top"
+    x-data="flag">
+    {{-- Declare some data --}}
+    <div
+        x-data=
+            "{
+                current_color: $wire.current_color,
+                note: $wire.note,
+                color: $wire.set_flag,
             }">
-    @elseif($set_flag == "red")
-        <div x-data="{ 
-            transparent: false, 
-            green: false, 
-            red: true, 
-            black: false, 
-            type: '{{$type}}',
-            type_id: {{$type_id}}
-            }">
-    @elseif($set_flag == "green")
-        <div x-data="{ 
-            transparent: false, 
-            green: true, 
-            red: false, 
-            black: false, 
-            type: '{{$type}}',
-            type_id: {{$type_id}}
-            }">
-    @else 
-        <div x-data="{ 
-            transparent: true, 
-            green: false, 
-            red: false, 
-            black: false, 
-            type: '{{$type}}',
-            type_id: {{$type_id}}
-            }">
-    @endif
-        <div x-cloak x-bind="flag" class="flex justify-center" :class="{ 'fill-transparent': transparent, 'fill-green-600': green,'fill-red-600': red ,'fill-black': black }">
-            @include('icons.flag')
+
+
+        <label
+            tabindex="0"
+            class="m-1 flex justify-center">
+            <div
+                x-cloak
+                class="flex justify-center"
+                :class="current_color"
+                >
+                @include('icons.flag')
+            </div>
+        </label>
+
+        <div
+            tabindex="0"
+            class="card compact dropdown-content shadow bg-base-100 rounded-box w-fit h-fit"
+            x-data="{
+                type: '{{$type}}',
+                type_id: {{$type_id}}}"
+                @mouseleave="left()"
+            >
+            <div class="flex flex-col" x-data="{ open: false }">
+                <div class="card-body flex flex-row">
+                    <button
+                        @click="setColor('1')"
+                        class='btn btn-xs btn-circle bg-red-700 border border-black hover:bg-red-900'>
+                    </button>
+                    <button
+                        @click="setColor('2')"
+                        class='btn btn-xs btn-circle bg-green-700 border border-black hover:bg-green-900'>
+
+                    </button>
+                    <button
+                        @click="setColor('3')"
+                        class='btn btn-xs btn-circle bg-gray-700 border border-black hover:bg-gray-900'>
+
+                    </button>
+                    <div class="divider divider-horizontal"></div>
+                    {{-- TRASH --}}
+                    <x-heroicon-o-trash class='h-6 w-6 cursor-pointer' @click="deleteFlag()"></x-heroicon-o-trash>
+                    <div class="divider divider-horizontal"></div>
+                    {{-- NOTE --}}
+                    <x-heroicon-o-annotation class='h-6 w-6' x-on:click="open = ! open"></x-heroicon-o-annotation>
+
+                    {{-- <div class="divider divider-horizontal"></div> --}}
+                    {{-- SHARE --}}
+                    {{-- <button class='rounded-full btn btn-sm bg-red-700 border border-black'>
+                    </button> --}}
+                </div>
+                <div
+                    class='flex justify-center p-2'
+                    x-show='open'
+                    @mouseleave="left()">
+                    <textarea
+                        class="textarea textarea-info"
+                        placeholder="Notes"
+                        x-model="note"
+                        @keydown.debounce.500ms="changedNote()"
+                        ></textarea>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+

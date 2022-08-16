@@ -1,4 +1,5 @@
 {{-- CONTROVERSIAL OPINIONS --}}
+{{-- TODO: NEED MAJOR OPTIMIZATIONS DONE FOR THIS PAGE --}}
 <div class="flex flex-col background-card w-11/12 items-center gap-2">
     <div class="flex justify-center">
         <span class="text-xl font-medium">Controversial Opinions</span>
@@ -37,9 +38,9 @@
                                     <div class="col-span-1 items-center">
                                         @auth
                                             <livewire:flag
-                                                :type="'controversial-stance'"
+                                                :type="'required-stance'"
                                                 :type_id="$candidate_stance->id"
-                                                :wire:key="'stance-flag-'.$candidate_stance->id">
+                                                :wire:key="'required-flag-'.$candidate_stance->id">
                                         @else
                                             <label class="fill-transparent" for="signup-modal">
                                                 @include('icons.flag')

@@ -26,8 +26,7 @@ class Profile extends Component
         return view('livewire.candidate.profile');
     }
 
-    //Probably shouldn't submit these until the user hovers out of the area
-    public function change_flag($flag_type, $flag_id, $flag_value) {
+    public function change_flag($flag_type, $flag_id, $flag_value, $flag_note) {
         //Update the userFlag variable
         UserFlag::updateOrCreate(
             [
@@ -39,6 +38,7 @@ class Profile extends Component
             ],
             [
                 'flag_type' => $flag_value,
+                'note' => $flag_note,
             ]
         );
     }
