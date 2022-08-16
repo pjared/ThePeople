@@ -10,6 +10,7 @@ class Profile extends Component
 {
     public Candidate $candidate;
     public $opinions;
+    public $is_manual;
 
     public function mount($candidate) {
         $this->candidate = $candidate;
@@ -17,6 +18,10 @@ class Profile extends Component
             $this->opinions = $candidate->ballot->opinions;
         } else {
             $this->opinions = [];
+        }
+
+        if(is_null($candidate->user_id)) {
+            $this->is_manual = true;
         }
     }
 
