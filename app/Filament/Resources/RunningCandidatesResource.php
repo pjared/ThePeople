@@ -40,7 +40,10 @@ class RunningCandidatesResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('candidate_id'),
+                Tables\Columns\TextColumn::make('candidate_id')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('candidate.name')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('ballot_id'),
                 Tables\Columns\TextColumn::make('entered_race_date')
                     ->date(),
