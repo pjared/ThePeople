@@ -3,7 +3,6 @@
 namespace App\Http\Livewire\Candidate;
 
 use App\Models\Candidate;
-use App\Models\ControversialOpinion;
 use App\Models\UserFlag;
 use Livewire\Component;
 
