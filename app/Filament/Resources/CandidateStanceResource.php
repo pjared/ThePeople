@@ -24,7 +24,7 @@ class CandidateStanceResource extends Resource
     {
         $candidate = auth()->user()->candidate;
         // Get the opinions if the candidate has a ballot
-        $opinions = $candidate->ballot ? $candidate->ballot->opinions : [];
+        $opinions = $candidate->ballot ? $candidate->ballot->opinions : collect();
         return $form
             ->schema([
                 Forms\Components\Hidden::make('candidate_id')
