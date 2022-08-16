@@ -43,7 +43,8 @@
     </div>
     {{-- RIGHT COLUMN --}}
     <div class="flex flex-col md:w-11/12 grow gap-6 items-center">
-        @include('candidate.component.stances', ['opinions' => $opinions, 'candidate' => $candidate])
+        {{-- @include('candidate.component.stances', ['opinions' => $opinions, 'candidate' => $candidate]) --}}
+        <livewire:candidate.stances :opinions="$opinions" :candidate="$candidate" />
 
         {{-- OTHER OPINIONS --}}
         {{-- @if(count($candidate->opinions) != 0)
