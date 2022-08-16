@@ -110,6 +110,10 @@ class Candidate extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function manual_candidate() {
+        return $this->hasOne(ManualCandidate::class);
+    }
+
     /**
      * If they are on a ballot, but have filled out multiple opinion stances and have
      * multiple badges, need to only get their badges for that ballot and opinion type
