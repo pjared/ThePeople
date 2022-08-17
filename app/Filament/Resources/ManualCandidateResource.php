@@ -54,8 +54,8 @@ class ManualCandidateResource extends Resource
                         ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-required-stances', $record)),
                     Tables\Actions\Action::make('Add Promise')
                         ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-promises', $record)),
-                    Tables\Actions\Action::make('Add Info')
-                        ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-stances', $record)),
+                    // Tables\Actions\Action::make('Add Info')
+                    //     ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-stances', $record)),
                 ])
 
             ])
