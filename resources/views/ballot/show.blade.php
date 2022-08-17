@@ -6,6 +6,9 @@
         </ul>
     </div>
 
+    {{-- <div>
+        <a class='link' href="/flag-comparison/{{$ballot->slug}}">Flag Comparison</a>
+    </div> --}}
     <div class="flex flex-col-reverse md:flex-row items-center grow py-12">
         <div class="w-1/5 ml-6">
             <livewire:ballot.ballot-list />
