@@ -18,8 +18,6 @@ class CandidateResource extends Resource
     protected static ?string $model = Candidate::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
-    protected static ?string $navigationGroup = 'Candidate';
-    protected static ?string $navigationLabel = 'Candidates';
 
     public static function form(Form $form): Form
     {
@@ -33,7 +31,6 @@ class CandidateResource extends Resource
                 Forms\Components\DatePicker::make('signup_date')
                     ->required(),
                 Forms\Components\Textarea::make('bio')
-                    // ->required()
                     ->maxLength(65535),
                 Forms\Components\TextInput::make('state')
                     ->required()
@@ -56,6 +53,8 @@ class CandidateResource extends Resource
                 Forms\Components\TextInput::make('user_id'),
                 Forms\Components\TextInput::make('site_link')
                     ->maxLength(255),
+                // Forms\Components\TextInput::make('slug')
+                //     ->maxLength(255),
             ]);
     }
 
@@ -63,7 +62,6 @@ class CandidateResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id'),
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('dob')
                     ->date(),
@@ -73,11 +71,12 @@ class CandidateResource extends Resource
                 Tables\Columns\TextColumn::make('state'),
                 Tables\Columns\TextColumn::make('contact_email'),
                 Tables\Columns\TextColumn::make('contact_phone_number'),
-                Tables\Columns\TextColumn::make('email'),
-                Tables\Columns\TextColumn::make('phone_number'),
-                Tables\Columns\TextColumn::make('party_name'),
-                Tables\Columns\TextColumn::make('user_id'),
-                Tables\Columns\TextColumn::make('site_link'),
+                // Tables\Columns\TextColumn::make('email'),
+                // Tables\Columns\TextColumn::make('phone_number'),
+                // Tables\Columns\TextColumn::make('party_name'),
+                // Tables\Columns\TextColumn::make('user_id'),
+                // Tables\Columns\TextColumn::make('site_link'),
+                // Tables\Columns\TextColumn::make('slug'),
             ])
             ->filters([
                 //

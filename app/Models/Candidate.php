@@ -33,9 +33,9 @@ class Candidate extends Model
     ];
 
     protected $hidden = [
-        "contact_email",
+        // "contact_email",
         "contact_phone_number",
-        "signup_date",
+        // "signup_date",
         "user_id",
         "party_name",
     ];
