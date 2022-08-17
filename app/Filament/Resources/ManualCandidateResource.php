@@ -20,7 +20,6 @@ class ManualCandidateResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-collection';
     // protected static ?string $navigationGroup = 'Candidate';
 
-
     public static function form(Form $form): Form
     {
         return $form
@@ -51,11 +50,11 @@ class ManualCandidateResource extends Resource
                 Tables\Actions\ActionGroup::make([
                     Tables\Actions\Action::make('Add Stances')
                         ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-stances', $record)),
-                    Tables\Actions\Action::make('Add Required Stance')->action('openSettingsModal')
-                        ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-stances', $record)),
-                    Tables\Actions\Action::make('Add Promise')->action('openSettingsModal')
-                        ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-stances', $record)),
-                    Tables\Actions\Action::make('Add Info')->action('openSettingsModal')
+                    Tables\Actions\Action::make('Add Required Stance')
+                        ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-required-stances', $record)),
+                    Tables\Actions\Action::make('Add Promise')
+                        ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-promises', $record)),
+                    Tables\Actions\Action::make('Add Info')
                         ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-stances', $record)),
                 ])
 
@@ -69,6 +68,8 @@ class ManualCandidateResource extends Resource
     {
         return [
             'index' => Pages\ManageManualCandidates::route('/'),
+            'add-stances' => Pages\AddCandidateStance::route('/{record}/add-stances'),
+            'add-required-stances' => Pages\AddCandidateRequiredStance::route('/{record}/add-required-stances'),
             'add-stances' => Pages\AddCandidateStance::route('/{record}/add-stances'),
         ];
     }
