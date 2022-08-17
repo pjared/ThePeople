@@ -19,7 +19,6 @@ class AddCandidateRequiredStance extends Page implements Tables\Contracts\HasTab
 
     protected function getTableQuery(): Builder
     {
-        // dd(CandidateRequiredStance::query()->where('candidate_id', $this->candidate_id));
         return CandidateRequiredStance::query()->where('candidate_id', $this->candidate_id);
     }
 
@@ -40,6 +39,7 @@ class AddCandidateRequiredStance extends Page implements Tables\Contracts\HasTab
                 ->mountUsing(fn (Forms\ComponentContainer $form, CandidateRequiredStance $record) => $form->fill([
                     'candidate_id' => $record->candidate_id,
                     'required_stance_id' => $record->required_stance_id,
+                    'candidate_reasoning' => $record->candidate_reasoning,
                 ]))
                 ->action(function (CandidateRequiredStance $record, array $data): void {
                     $record->candidate_reasoning = $data['candidate_reasoning'];
