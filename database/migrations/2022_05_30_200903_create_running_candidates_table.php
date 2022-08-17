@@ -22,6 +22,7 @@ return new class extends Migration
             $table->date('entered_race_date')->nullable();
             $table->date('ended_race_date')->nullable();
             $table->boolean('show')->default(0);
+            $table->softDeletes();
         });
     }
 

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->foreignIdFor(ControversialOpinion::class, 'controversial_opinion_id');
             $table->string('stance_label');
             $table->text('stance_reasoning')->nullable();
+            $table->softDeletes();
         });
     }
 

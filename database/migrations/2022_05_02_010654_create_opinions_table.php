@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('stance');
             $table->string('link')->nullable();
+            $table->softDeletes();
         });
     }
 

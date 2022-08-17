@@ -23,6 +23,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->year('year_start');
             $table->year('year_end');
+            $table->softDeletes();
         });
     }
 

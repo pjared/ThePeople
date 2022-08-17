@@ -5,6 +5,7 @@ namespace App\Models;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * A candidate is someone currently running for office.
@@ -13,6 +14,7 @@ class Candidate extends Model
 {
     use HasFactory;
     use Sluggable;
+    use SoftDeletes;
 
     public $timestamps = false;
 

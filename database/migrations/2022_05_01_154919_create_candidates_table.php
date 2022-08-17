@@ -29,6 +29,7 @@ return new class extends Migration
             $table->foreignIdFor(User::class, 'user_id')->nullable();
             $table->string('site_link')->nullable();
             $table->string('slug')->nullable();
+            $table->softDeletes();
         });
     }
 

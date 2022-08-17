@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('candidate_id');
             $table->string('link');
+            $table->softDeletes();
         });
     }
 

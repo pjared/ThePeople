@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('promise');
             $table->text('plan')->nullable();
             $table->unsignedTinyInteger('order')->nullable();
+            $table->softDeletes();
         });
     }
 

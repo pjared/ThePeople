@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignIdFor(RequiredStance::class, 'required_stance_id');
             $table->foreignIdFor(Candidate::class, 'candidate_id');
             $table->text('candidate_reasoning')->nullable();
+            $table->softDeletes();
         });
     }
 

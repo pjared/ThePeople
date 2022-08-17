@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * This model may seem unnecessary, and you may ask why this is not in the candidate model.
@@ -12,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 class RunningCandidates extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
     public $timestamps = false;
 

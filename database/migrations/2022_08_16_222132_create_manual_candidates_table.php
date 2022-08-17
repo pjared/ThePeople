@@ -18,6 +18,8 @@ return new class extends Migration
             $table->foreignIdFor(Candidate::class, 'candidate_id');
             $table->string('note')->nullable();
             $table->text('sources')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
