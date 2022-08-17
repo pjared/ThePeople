@@ -70,7 +70,7 @@ class ManualCandidateResource extends Resource
             'index' => Pages\ManageManualCandidates::route('/'),
             'add-stances' => Pages\AddCandidateStance::route('/{record}/add-stances'),
             'add-required-stances' => Pages\AddCandidateRequiredStance::route('/{record}/add-required-stances'),
-            'add-stances' => Pages\AddCandidateStance::route('/{record}/add-stances'),
+            'add-promises' => Pages\AddCandidatePromises::route('/{record}/add-promises'),
         ];
     }
 }
