@@ -18,6 +18,7 @@ class CandidateResource extends Resource
     protected static ?string $model = Candidate::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Candidate';
 
     public static function form(Form $form): Form
     {

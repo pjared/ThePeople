@@ -18,7 +18,7 @@ class ManualCandidateResource extends Resource
     protected static ?string $model = ManualCandidate::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
-    // protected static ?string $navigationGroup = 'Candidate';
+    protected static ?string $navigationGroup = 'Candidate';
 
     public static function form(Form $form): Form
     {
