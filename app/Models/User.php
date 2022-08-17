@@ -97,6 +97,10 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser, Has
         return $this->hasOne(Candidate::class, 'user_id', 'id');
     }
 
+    public function flags() {
+        return $this->hasMany(UserFlag::class, 'user_id');
+    }
+
     /**
      * Contract of whether or not the user can access the filament admin panel
      */
