@@ -34,7 +34,7 @@
                             <div class="col-span-1 items-center">
                                 @auth
                                     <livewire:flag
-                                        :type="'required-stance'"
+                                        :type="$required_stance->id .'required-stance'"
                                         :type_id="$required_stance->id"
                                         :wire:key="'required-flag-'.$required_stance->id">
                                 @else
@@ -74,7 +74,7 @@
                         <div class="col-span-1 items-center">
                             @auth
                                 <livewire:flag
-                                    :type="'controversial-stance'"
+                                    :type="$opinion->id .'controversial-stance'"
                                     :type_id="$candidate_stance->id"
                                     :wire:key="'stance-flag-'.$candidate_stance->id">
                             @else
