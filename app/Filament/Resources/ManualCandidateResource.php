@@ -18,7 +18,7 @@ class ManualCandidateResource extends Resource
     protected static ?string $model = ManualCandidate::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
-    protected static ?string $navigationGroup = 'Candidate';
+    // protected static ?string $navigationGroup = 'Candidate';
 
 
     public static function form(Form $form): Form
@@ -48,6 +48,17 @@ class ManualCandidateResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\Action::make('Add Stances')
+                        ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-stances', $record)),
+                    Tables\Actions\Action::make('Add Required Stance')->action('openSettingsModal')
+                        ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-stances', $record)),
+                    Tables\Actions\Action::make('Add Promise')->action('openSettingsModal')
+                        ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-stances', $record)),
+                    Tables\Actions\Action::make('Add Info')->action('openSettingsModal')
+                        ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-stances', $record)),
+                ])
+
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
@@ -58,6 +69,7 @@ class ManualCandidateResource extends Resource
     {
         return [
             'index' => Pages\ManageManualCandidates::route('/'),
+            'add-stances' => Pages\AddCandidateStance::route('/{record}/add-stances'),
         ];
     }
 }
