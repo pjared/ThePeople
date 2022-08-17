@@ -5,6 +5,7 @@ use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermaLinkController;
 use App\Http\Controllers\SocialiteController;
+use App\Http\Livewire\Ballot\FlagComparison;
 use App\Http\Livewire\Candidate\Application;
 use App\Http\Livewire\NewFeature;
 use Illuminate\Support\Facades\Route;
@@ -48,6 +49,8 @@ Route::middleware([
 
 /* -----BALLOT------ */
 Route::get('/ballot/{ballot:slug}', [BallotController::class, 'getBallotView'])->name('ballot');
+
+Route::get('/flag-comparison/{ballot:slug}', FlagComparison::class)->middleware(['auth:sanctum']);
 
 /* -----CANDIDATE------ */
 
