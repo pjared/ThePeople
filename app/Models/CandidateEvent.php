@@ -11,6 +11,7 @@ class CandidateEvent extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'candidate_id',
         'event_name',
         'event_location',
         'event_description',
