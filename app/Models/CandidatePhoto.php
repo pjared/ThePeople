@@ -14,12 +14,8 @@ class CandidatePhoto extends Pivot
 
     protected $fillable = [
         'candidate_id',
-        'photo_url',
+        'attachment',
         'order',
-    ];
-
-    protected $casts = [
-        'attachments' => 'array',
     ];
 
     public function candidate() {
