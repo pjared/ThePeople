@@ -20,6 +20,7 @@ class CreateCommentsTable extends Migration
             $table->foreignIdFor(User::class, 'user_id')->nullable();
             $table->string('deletion_reason')->nullable();
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 

@@ -12,6 +12,8 @@ class Comment extends Model
     use HasComments;
     use SoftDeletes;
 
+    // public $timestamps = false;
+
     protected $fillable = [
         'comment',
         'user_id',
