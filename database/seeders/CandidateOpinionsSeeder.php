@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class OpinionsSeeder extends Seeder
+class CandidateOpinionsSeeder extends Seeder
 {
 
     private $donor_names = [
@@ -42,7 +42,7 @@ class OpinionsSeeder extends Seeder
     {
         //  candidate_id | donor_id
         $num_candidates = 4;
-        /* 
+        /*
             "name" | "candidate_id" | "politician_id" | "link_found" | "is_controversial"
             "candidate_id" | "name" | "stance" | "link"
         */
