@@ -18,8 +18,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Candidate::class, 'candidate_id');
             $table->string('name');
-            $table->string('stance');
-            $table->string('link')->nullable();
+            $table->text('stance')->nullable();
             $table->softDeletes();
         });
     }

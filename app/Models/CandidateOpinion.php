@@ -16,7 +16,6 @@ class CandidateOpinion extends Model
         "candidate_id",
         "name",
         "stance",
-        "link",
     ];
     use HasFactory;
 }

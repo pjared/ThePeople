@@ -48,10 +48,10 @@ class CandidateOpinionsSeeder extends Seeder
         */
         for($i = 0; $i < count($this->opinion_names); ++$i) {
             for($j = 0; $j < $num_candidates; ++$j) {
-                DB::table('opinions')->insert([
+                DB::table('candidate_opinions')->insert([
                     'name' => $this->opinion_names[$i],
                     'candidate_id' => $j,
-                    'link' => "www.google.com",
+                    // 'link' => "www.google.com",
                     'stance' => $this->opinion_stances[$i],
                 ]);
             }
