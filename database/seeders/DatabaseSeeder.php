@@ -47,7 +47,7 @@ class DatabaseSeeder extends Seeder
                 UserSeeder::class, //!PROD
                 LawsSeeder::class, //!PROD
                 PublicOfficeSeeder::class, //!PROD
-                OpinionsSeeder::class, //!PROD
+                CandidateOpinionsSeeder::class, //!PROD
                 BallotOpinionsSeeder::class, //!PROD
 
                 CandidateSeeder::class, //!PROD
