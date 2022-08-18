@@ -146,49 +146,60 @@
                 </div>
             @endif --}}
         </div>
-
-        @push('scripts')
-            <script>
-                document.addEventListener('alpine:init', () => {
-                    Alpine.data('flag', () => ({
-                        new_changes: false,
-                        color:0,
-
-                        setColor(color) {
-                            if(color == '1') {
-                                this.color = 1;
-                                this.current_color = 'fill-red-600';
-                            } else if (color == '2') {
-                                this.color = 2;
-                                this.current_color = 'fill-green-600';
-                            } else if (color == '3') {
-                                this.color = 3;
-                                this.current_color = 'fill-gray-600';
-                            } else {
-                                this.color = 0;
-                                this.current_color = 'fill-transparent';
-                            }
-                            this.new_changes = true;
-                        },
-                        left() {
-                            console.log('saved');
-                            if(this.new_changes) {
-                                @this.change_flag(this.type, this.type_id, this.color, this.note);
-                                this.new_changes = false;
-                            }
-                        },
-                        deleteFlag() {
-                            @this.delete_flag(this.type, this.type_id)
-                        },
-                        changedNote() {
-                            console.log('Changed Note');
-                            this.new_changes = true;
-                        },
-                    }))
-                });
-
-            </script>
-        @endpush
     </div>
+
+    {{-- <div class='divider w-full'></div>
+
+    <div class="flex flex-col md:grid md:grid-cols-2 p-8 gap-2 justify-center w-full">
+        <div class="flex flex-col grow gap-6 items-center">
+            <span>Message the Candidate</span>
+        </div>
+        <div class="flex flex-col md:w-11/12 grow gap-6 items-center">
+            <span>Meet the Candidate</span>
+        </div>
+    </div> --}}
+
+    @push('scripts')
+        <script>
+            document.addEventListener('alpine:init', () => {
+                Alpine.data('flag', () => ({
+                    new_changes: false,
+                    color:0,
+
+                    setColor(color) {
+                        if(color == '1') {
+                            this.color = 1;
+                            this.current_color = 'fill-red-600';
+                        } else if (color == '2') {
+                            this.color = 2;
+                            this.current_color = 'fill-green-600';
+                        } else if (color == '3') {
+                            this.color = 3;
+                            this.current_color = 'fill-gray-600';
+                        } else {
+                            this.color = 0;
+                            this.current_color = 'fill-transparent';
+                        }
+                        this.new_changes = true;
+                    },
+                    left() {
+                        console.log('saved');
+                        if(this.new_changes) {
+                            @this.change_flag(this.type, this.type_id, this.color, this.note);
+                            this.new_changes = false;
+                        }
+                    },
+                    deleteFlag() {
+                        @this.delete_flag(this.type, this.type_id)
+                    },
+                    changedNote() {
+                        console.log('Changed Note');
+                        this.new_changes = true;
+                    },
+                }))
+            });
+
+        </script>
+    @endpush
 </div>
 
