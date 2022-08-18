@@ -18,6 +18,8 @@ class CandidatePhotoResource extends Resource
     protected static ?string $model = CandidatePhoto::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Edit Your Profile';
+    protected static ?string $navigationLabel = 'Add Photos';
 
     public static function form(Form $form): Form
     {
