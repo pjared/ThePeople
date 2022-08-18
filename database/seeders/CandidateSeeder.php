@@ -59,6 +59,7 @@ class CandidateSeeder extends Seeder
                 'user_id' => $user->id,
                 'state' => 'Utah',
                 'contact_email' => "pjared@gmail.com",
+                'slug' => $name,
             ]);
         }
 
@@ -71,6 +72,7 @@ class CandidateSeeder extends Seeder
             'user_id' => 1,
             'state' => 'Utah',
             'contact_email' => "pjared@gmail.com",
+            'slug' => 'Jared-Pacheco',
         ]);
         User::find(1)->assignRole('candidate');
     }
