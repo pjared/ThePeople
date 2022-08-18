@@ -76,7 +76,10 @@ class CandidateOpinionPolicy
      */
     public function create(User $user)
     {
-        return $this->checkAdminAndCandidate($user, $candidateOpinion->candidate_id);
+        if($user->hasRole('admin') || $user->hasRole('candidate')) {
+            return true;
+        }
+        return false;
     }
 
     /**
