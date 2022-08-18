@@ -19,6 +19,8 @@ class CandidatePromiseResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-globe';
     protected static ?string $navigationGroup = 'Edit Your Profile';
+    protected static ?string $navigationLabel = 'Your Promises';
+    protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {

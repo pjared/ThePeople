@@ -19,6 +19,8 @@ class CandidateRequiredStanceResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-s-scale';
     protected static ?string $navigationGroup = 'Edit Your Profile';
+    protected static ?string $navigationLabel = 'Your Ballot\'s Required Stances';
+    protected static ?int $navigationSort = 5;
 
     public static function form(Form $form): Form
     {

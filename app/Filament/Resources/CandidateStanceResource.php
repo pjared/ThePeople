@@ -19,6 +19,8 @@ class CandidateStanceResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-scale';
     protected static ?string $navigationGroup = 'Edit Your Profile';
+    protected static ?string $navigationLabel = 'Your Controversial Stances';
+    protected static ?int $navigationSort = 4;
 
     public static function form(Form $form): Form
     {
