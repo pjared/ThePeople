@@ -19,4 +19,8 @@ class ManualCandidate extends Model
         'note',
         'sources',
     ];
+
+    // protected $casts = [
+    //     'sources' => 'array',
+    // ];
 }
