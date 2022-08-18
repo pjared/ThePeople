@@ -69,4 +69,9 @@ class CandidatePhotoResource extends Resource
             'index' => Pages\ManageCandidatePhotos::route('/'),
         ];
     }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->where('candidate_id', auth()->user()->candidate->id);
+    }
 }
