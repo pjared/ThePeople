@@ -116,6 +116,10 @@ class Candidate extends Model
         return $this->hasOne(ManualCandidate::class);
     }
 
+    public function photos() {
+        return $this->hasMany(CandidatePhoto::class, 'candidate_id');
+    }
+
     /**
      * If they are on a ballot, but have filled out multiple opinion stances and have
      * multiple badges, need to only get their badges for that ballot and opinion type
