@@ -5,9 +5,9 @@ namespace App\Filament\Resources\CandidatePhotoResource\Pages;
 use App\Filament\Resources\CandidatePhotoResource;
 use App\Filament\Resources\CandidatePhotoResource\Widgets\CandidatePhotoOverview;
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\ListRecords;
+use Filament\Resources\Pages\ManageRecords;
 
-class ListCandidatePhotos extends ListRecords
+class ManageCandidatePhotos extends ManageRecords
 {
     protected static string $resource = CandidatePhotoResource::class;
 

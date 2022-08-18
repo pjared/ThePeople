@@ -47,42 +47,24 @@ class CandidatePhotoResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('attachment'),
-                Tables\Columns\BooleanColumn::make('order'),
+                Tables\Columns\TextColumn::make('order'),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 
-    protected function getDefaultTableSortColumn(): ?string
-    {
-        return 'order';
-    }
-
-    protected function getDefaultTableSortDirection(): ?string
-    {
-        return 'asc';
-    }
-
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
-
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCandidatePhotos::route('/'),
-            'create' => Pages\CreateCandidatePhoto::route('/create'),
-            'edit' => Pages\EditCandidatePhoto::route('/{record}/edit'),
+            'index' => Pages\ManageCandidatePhotos::route('/'),
         ];
     }
 }
