@@ -23,7 +23,10 @@
                                     <h3 class="card-title font-normal">{{ $running_candidate->candidate->name }}</h3>
                                 </div>
                                 <div class="flex grow justify-end">
-                                    <a class="underline text-sky-600 visited:text-purple-600" href="/candidate/profile/{{$running_candidate->candidate->slug}}">More about {{ $running_candidate->candidate->name }}</a>
+                                    <a
+                                        rel="next prefetch"
+                                        class="underline text-sky-600 visited:text-purple-600"
+                                        href="/candidate/profile/{{$running_candidate->candidate->slug}}">More about {{ $running_candidate->candidate->name }}</a>
                                 </div>
                             </div>
                             {{-- Badges --}}
