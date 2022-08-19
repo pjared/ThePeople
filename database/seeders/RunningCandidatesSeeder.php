@@ -55,7 +55,7 @@ class RunningCandidatesSeeder extends Seeder
         DB::table('running_candidates')->insert([
             'ballot_id' => 2, // only 1-4, since 4 offices
             'candidate_id' => 5,
-            'show' => false,
+            'show' => true,
         ]);
     }
 }
