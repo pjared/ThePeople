@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Archive;
 
 use App\Models\Ballot;
 use App\Models\Location;
@@ -116,6 +116,6 @@ class FindBallot extends Component
 
     public function render()
     {
-        return view('livewire.find-ballot');
+        return view('livewire.archive.find-ballot');
     }
 }
