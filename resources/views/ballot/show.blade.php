@@ -80,7 +80,6 @@
                     element.checked = false;
                 });
                 document.getElementById('check' + candidate_id).checked = true;
-                //TODO: Properly hook up to backend
             }
         </script>
     @endpush
