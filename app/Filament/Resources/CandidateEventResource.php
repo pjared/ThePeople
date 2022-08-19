@@ -18,7 +18,8 @@ class CandidateEventResource extends Resource
     protected static ?string $model = CandidateEvent::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
-    // protected static ?string $navigationGroup = 'Edit Your Profile';
+    protected static ?string $navigationGroup = 'Manage Your Profile';
+    protected static ?string $navigationLabel = 'Your Upcoming Events';
 
     public static function form(Form $form): Form
     {
