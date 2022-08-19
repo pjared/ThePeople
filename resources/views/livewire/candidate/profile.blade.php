@@ -1,4 +1,4 @@
-<div>
+<div class='p-4 h-fit'>
     @if($this->is_manual)
         <div class='flex w-full justify-center'>
             <div class="alert alert-warning shadow-lg w-1/2">
@@ -151,35 +151,42 @@
     {{-- BOTTOM AREA --}}
     <div class='divider w-full'></div>
 
-    <div class="flex flex-col md:grid md:grid-cols-2 p-8 gap-2 justify-center w-full">
-        <div class="flex flex-col grow gap-6 items-center">
-            <span>Message the Candidate</span>
-            @auth
-                <textarea class="textarea textarea-primary w-1/2" placeholder="Your question/comment"></textarea>
-                <button class="btn btn-primary">Submit</button>
-            @else
-                <label class="fill-transparent" for="signup-modal">
-                    @include('icons.flag')
-                </label>
-            @endauth
-        </div>
-        <div class="flex flex-col md:w-11/12 grow gap-6 items-center">
-            @include('candidate.component.events', ['events' => $candidate->events])
-        </div>
-        <div class="flex flex-row w-11/12 grow gap-6 items-center">
-            @foreach ($candidate->comments()->approved()->get() as $pinned_comment)
-                <div class="flex flex-col gap-4">
-                    <div>
-                        {{$pinned_comment->comment}}
-                    </div>
-                    <div>
-                        {{$pinned_comment->reply}}
-                    </div>
-                </div>
+    <div class="flex flex-col gap-2 justify-center w-full">
+        <div class="flex flex-row p-8 gap-2 justify-center w-full">
+            <div class="flex flex-col grow gap-6 items-center w-1/2">
+                <span>Message the Candidate</span>
+                @auth
+                    <textarea wire:model.defer="user_comment" class="textarea textarea-primary w-1/2" placeholder="Your question/comment"></textarea>
+                    <button wire:click="add_comment" class="btn btn-primary">Submit</button>
+                @else
+                    <label class="fill-transparent w-1/2 text-center" for="signup-modal">
+                        <textarea class="textarea textarea-primary w-full h-full" placeholder="Your question/comment" disabled></textarea>
+                        {{-- TODO: MAKE THIS APPEAR ON HOVER OF TA --}}
+                        <span>Sign up to submit a comment</span>
+                    </label>
+                @endauth
+            </div>
+            <div class="flex flex-col grow gap-6 items-center w-1/2">
+                @include('candidate.component.events', ['events' => $candidate->events])
+            </div>
 
+        </div>
+        <div class="flex flex-row w-full grow gap-6 items-center h-fit">
+            @foreach ($candidate->comments()->approved()->get() as $pinned_comment)
+                <div class='border border-slate-400 bg-white p-4 w-11/12 overflow-visible'>
+                    <p>{{$pinned_comment->comment}}</p>
+                    @if($pinned_comment->reply)
+                        <div class='absolute ml-6 mt-1 w-1/5'>
+                            <div class='border border-slate-400 p-4 bg-white w-fit'>
+                                <p>{{$pinned_comment->reply}}</p>
+                            </div>
+                        </div>
+                    @endif
+                </div>
             @endforeach
         </div>
     </div>
+
 
     @push('scripts')
         <script>

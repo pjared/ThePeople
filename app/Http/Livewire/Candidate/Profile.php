@@ -11,6 +11,7 @@ class Profile extends Component
     public Candidate $candidate;
     public $opinions;
     public $is_manual;
+    public $user_comment;
 
     public function mount($candidate) {
         $this->candidate = $candidate;
@@ -55,5 +56,15 @@ class Profile extends Component
                         ->where('type',$flag_type)
                         ->where('type_id',$flag_id)
                         ->delete();
+    }
+
+    public function add_comment()
+    {
+        if(! auth()) {
+            return;
+        }
+        $this->candidate->commentAsUser(auth()->user(), $this->user_comment);
+        $this->user_comment = "";
+        // dd(\App\Models\Comment::all());
     }
 }
