@@ -11,8 +11,7 @@ class BallotList extends Component
 
     public function mount()
     {
-        $this->ballots = Ballot::all();
-        // dd($this->ballots);
+        $this->ballots = Ballot::with('office', 'location')->withCount('candidates')->get();
     }
 
     public function render()
