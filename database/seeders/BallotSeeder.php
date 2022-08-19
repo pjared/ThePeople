@@ -33,10 +33,19 @@ class BallotSeeder extends Seeder
         for($i = 2; $i <= 4; $i++) {
             DB::table('ballots')->insert([
                 'location_id' => 2,
-                'office_id' => $i,
+                'office_id' => 5,
                 'voting_date' => $today->addWeeks(rand(1, 52))->format('Y-m-d'),
-                'slug' => 'Utah-' . PublicOfficePosition::find($i)->name,
+                'slug' => 'Utah-' . PublicOfficePosition::find(4)->name,
             ]);
         }
+
+        // for($i = 2; $i <= 4; $i++) {
+        //     DB::table('ballots')->insert([
+        //         'location_id' => 2,
+        //         'office_id' => $i,
+        //         'voting_date' => $today->addWeeks(rand(1, 52))->format('Y-m-d'),
+        //         'slug' => 'Utah-' . PublicOfficePosition::find($i)->name,
+        //     ]);
+        // }
     }
 }

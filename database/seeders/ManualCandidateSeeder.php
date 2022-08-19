@@ -21,7 +21,13 @@ class ManualCandidateSeeder extends Seeder
         DB::table('manual_candidates')->insert([
             'candidate_id' => $candidate->id,
             'note' => rand(1,4),
-            // 'sour' => rand(1,4),
+        ]);
+
+        //Add the candidate to other ballot
+        DB::table('running_candidates')->insert([
+            'ballot_id' => 2, // only 1-4, since 4 offices
+            'candidate_id' => $candidate->id,
+            'show' => false,
         ]);
     }
 }

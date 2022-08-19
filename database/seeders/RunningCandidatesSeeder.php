@@ -32,20 +32,28 @@ class RunningCandidatesSeeder extends Seeder
         $random_candidates_num[3] = rand(3,5) - 1;
         $random_candidates_num[4] = rand(0,2) + 2;
 
-        for($i = 1; $i <= 4; $i++) {
-            //Get a random # of candidates to participate in a race
-            $num_candidates = $random_candidates_num[$i];
-            for($j = 0; $j < 4; $j++) {
-                DB::table('running_candidates')->insert([
-                    'ballot_id' => $i, // only 1-4, since 4 offices
-                    'candidate_id' => 1 + $j,
-                    'show' => true,
-                ]);
-            }
+        // for($i = 1; $i <= 4; $i++) {
+        //     //Get a random # of candidates to participate in a race
+        //     $num_candidates = $random_candidates_num[$i];
+        //     for($j = 0; $j < 4; $j++) {
+        //         DB::table('running_candidates')->insert([
+        //             'ballot_id' => $i, // only 1-4, since 4 offices
+        //             'candidate_id' => 1 + $j,
+        //             'show' => true,
+        //         ]);
+        //     }
+        // }
+        for($j = 1; $j <= 4; $j++) {
+            DB::table('running_candidates')->insert([
+                'ballot_id' => 1, // only 1-4, since 4 offices
+                'candidate_id' => $j,
+                'show' => true,
+            ]);
         }
 
+        //Adds myself as a candidate to second ballot
         DB::table('running_candidates')->insert([
-            'ballot_id' => 4, // only 1-4, since 4 offices
+            'ballot_id' => 2, // only 1-4, since 4 offices
             'candidate_id' => 5,
             'show' => false,
         ]);
