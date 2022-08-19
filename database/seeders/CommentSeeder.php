@@ -15,8 +15,7 @@ class CommentSeeder extends Seeder
      */
     public function run()
     {
-        //
         $candidate = Candidate::firstWhere('user_id', 1);
-        $candidate->comment('Fuck you');
+        $candidate->comment('Wow such a cool website');
     }
 }
