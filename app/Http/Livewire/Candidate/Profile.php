@@ -14,7 +14,8 @@ class Profile extends Component
     public $user_comment;
 
     public function mount($candidate) {
-        $this->candidate = $candidate;
+        $this->candidate = $candidate->load('ballot', 'events', 'required_stances', 'stances', 'promises', 'videos', 'previous_positions');
+        //, 'ballot.office:name', 'ballot.location:state,name' - makes null??
         if ($candidate->ballot) {
             $this->opinions = $candidate->ballot->opinions;
         } else {
