@@ -63,7 +63,7 @@
             <livewire:candidate.stances :opinions="$opinions" :candidate="$candidate" />
 
             {{-- OTHER OPINIONS --}}
-            {{-- @if(count($candidate->opinions) != 0)
+            @if(count($candidate->opinions) != 0)
                 <div class="flex grow flex-col w-11/12 items-center">
                     <x-dropdown-card>
                         <x-slot:title>
@@ -87,7 +87,7 @@
                         </x-slot>
                     </x-dropdown-card>
                 </div>
-            @endif --}}
+            @endif
 
             {{-- DONORS --}}
             {{-- @if(count($candidate->donors) != 0)
@@ -148,16 +148,38 @@
         </div>
     </div>
 
-    {{-- <div class='divider w-full'></div>
+    {{-- BOTTOM AREA --}}
+    <div class='divider w-full'></div>
 
     <div class="flex flex-col md:grid md:grid-cols-2 p-8 gap-2 justify-center w-full">
         <div class="flex flex-col grow gap-6 items-center">
             <span>Message the Candidate</span>
+            @auth
+                <textarea class="textarea textarea-primary w-1/2" placeholder="Your question/comment"></textarea>
+                <button class="btn btn-primary">Submit</button>
+            @else
+                <label class="fill-transparent" for="signup-modal">
+                    @include('icons.flag')
+                </label>
+            @endauth
         </div>
         <div class="flex flex-col md:w-11/12 grow gap-6 items-center">
-            <span>Meet the Candidate</span>
+            @include('candidate.component.events', ['events' => $candidate->events])
         </div>
-    </div> --}}
+        <div class="flex flex-row w-11/12 grow gap-6 items-center">
+            @foreach ($candidate->comments()->approved()->get() as $pinned_comment)
+                <div class="flex flex-col gap-4">
+                    <div>
+                        {{$pinned_comment->comment}}
+                    </div>
+                    <div>
+                        {{$pinned_comment->reply}}
+                    </div>
+                </div>
+
+            @endforeach
+        </div>
+    </div>
 
     @push('scripts')
         <script>
