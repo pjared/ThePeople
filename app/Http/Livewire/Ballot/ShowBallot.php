@@ -21,7 +21,7 @@ class ShowBallot extends Component
                 $this->candidate_vote = $user_vote->running_candidate_id;
             }
         }
-        $this->ballot = $ballot;
+        $this->ballot = $ballot->load('location:id,name,state', 'office:id,n-ame', 'candidates');
     }
 
     public function change_user_vote($candidate_id)
