@@ -34,7 +34,7 @@ class BallotSeeder extends Seeder
             'location_id' => 2,
             'office_id' => 4,
             'voting_date' => $today->addWeeks(rand(1, 52))->format('Y-m-d'),
-            'slug' => 'Utah-' . PublicOfficePosition::find(4)->name,
+            'slug' => 'Utah-' . str_replace(' ', '-', PublicOfficePosition::find(4)->name),
         ]);
         // for($i = 2; $i <= 4; $i++) {
         //     DB::table('ballots')->insert([
