@@ -87,7 +87,7 @@ class Candidate extends Model
     }
 
     public function opinions() {
-        return $this->hasMany(Opinion::class);
+        return $this->hasMany(CandidateOpinion::class);
     }
 
     public function law_involvement() {
