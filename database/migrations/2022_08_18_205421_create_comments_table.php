@@ -19,6 +19,7 @@ class CreateCommentsTable extends Migration
             $table->boolean('is_approved')->default(false);
             $table->foreignIdFor(User::class, 'user_id')->nullable();
             $table->text('reply')->nullable();
+            $table->boolean('has_seen')->default(false);
             $table->softDeletes();
             $table->timestamps();
         });

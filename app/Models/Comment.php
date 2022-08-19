@@ -18,6 +18,7 @@ class Comment extends Model
         'user_id',
         'is_approved',
         'reply',
+        'has_seen',
     ];
 
     protected $casts = [
