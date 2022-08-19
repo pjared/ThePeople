@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Candidate;
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -34,6 +35,7 @@ class CandidateEventSeeder extends Seeder
                 'event_name' => $name,
                 'event_location' => 'My House',
                 'event_description' => $event_desc[$i],
+                'event_date' => Carbon::now()->addDays(rand(1, 50))
             ]);
         }
     }

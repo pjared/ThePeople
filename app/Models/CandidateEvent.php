@@ -15,5 +15,10 @@ class CandidateEvent extends Model
         'event_name',
         'event_location',
         'event_description',
+        'event_date',
     ];
+
+    protected $casts = [
+        'event_date' => 'datetime'
+     ];
 }

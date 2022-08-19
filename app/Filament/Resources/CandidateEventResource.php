@@ -33,6 +33,8 @@ class CandidateEventResource extends Resource
                 Forms\Components\TextInput::make('event_location')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\DatePicker::make('event_date')
+                    ->required(),
                 Forms\Components\Textarea::make('event_description')
                     ->maxLength(65535),
             ]);
@@ -45,6 +47,9 @@ class CandidateEventResource extends Resource
                 Tables\Columns\TextColumn::make('event_name'),
                 Tables\Columns\TextColumn::make('event_location'),
                 Tables\Columns\TextColumn::make('event_description'),
+                Tables\Columns\TextColumn::make('event_date')
+                    ->date()
+                    ->sortable(),
             ])
             ->filters([
                 //

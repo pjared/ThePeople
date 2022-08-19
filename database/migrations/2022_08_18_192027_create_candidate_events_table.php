@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('event_name');
             $table->string('event_location');
             $table->text('event_description')->nullable();
+            $table->dateTime('event_date');
         });
     }
 
