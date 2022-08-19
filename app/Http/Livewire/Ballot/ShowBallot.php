@@ -7,13 +7,13 @@ use App\Models\UserVotes;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
-class Show extends Component
+class ShowBallot extends Component
 {
     public Ballot $ballot;
 
     public $candidate_vote;
 
-    public function mount($ballot)
+    public function mount(Ballot $ballot)
     {
         if(Auth::user()) {
             $user_vote = UserVotes::where('ballot_id', $ballot->id)->where('user_id', Auth::id())->first();
@@ -41,6 +41,6 @@ class Show extends Component
 
     public function render()
     {
-        return view('livewire.ballot.show');
+        return view('livewire.ballot.show-ballot');
     }
 }
