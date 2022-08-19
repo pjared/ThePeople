@@ -1,7 +1,7 @@
 <div class="flex grow flex-col w-11/12 items-center">
     @if (count($events) >= 1)
         <div class='text-xl'>
-            Candidate's Upcoming Events
+            Meet the Candidate
         </div>
 
         <div class="flex flex-col gap-4">
