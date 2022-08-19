@@ -12,7 +12,7 @@ class PublicOfficeSeeder extends Seeder
         "Mayor",
         "Governor",
         "House",
-        "Senate",
+        "US Senate",
     ];
 
     /**
