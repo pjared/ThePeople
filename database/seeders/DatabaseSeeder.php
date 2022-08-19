@@ -66,6 +66,7 @@ class DatabaseSeeder extends Seeder
                 UserFlagSeeder::class,
                 ManualCandidateSeeder::class,
                 CommentSeeder::class,
+                CandidateEventSeeder::class,
             ]);
         }
     }
