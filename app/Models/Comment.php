@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Comment extends Model
 {
-    use HasComments;
     use SoftDeletes;
 
     // public $timestamps = false;
@@ -17,7 +16,8 @@ class Comment extends Model
     protected $fillable = [
         'comment',
         'user_id',
-        'is_approved'
+        'is_approved',
+        'reply',
     ];
 
     protected $casts = [

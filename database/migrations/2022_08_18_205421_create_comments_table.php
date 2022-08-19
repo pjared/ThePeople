@@ -18,7 +18,7 @@ class CreateCommentsTable extends Migration
             $table->text('comment');
             $table->boolean('is_approved')->default(false);
             $table->foreignIdFor(User::class, 'user_id')->nullable();
-            $table->string('deletion_reason')->nullable();
+            $table->text('reply')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
