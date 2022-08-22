@@ -2,6 +2,11 @@
     <div
         class='dropdown dropdown-top dropdown-end'
         x-data="flag">
+@elseif($side == 'below')
+<div
+        class='dropdown dropdown-end'
+        x-data="flag">
+
 @else
     <div
         class='dropdown dropdown-top'

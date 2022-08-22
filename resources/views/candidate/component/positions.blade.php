@@ -14,7 +14,7 @@
                                 <span>{{ $position->year_start }} - {{ $position->year_end }}</span>
                             </div>
                             @auth
-                                <livewire:flag :type="'position'" :type_id="$position->id"  :side="'left'" :wire:key="'position-'.$position->id">
+                                <livewire:flag :type="'position'" :type_id="$position->id"  :side="'below'" :wire:key="'position-'.$position->id">
                             @else
                                 <label class="fill-transparent" for="signup-modal">
                                     @include('icons.flag')
