@@ -7,6 +7,7 @@ use App\Http\Controllers\SocialiteController;
 use App\Http\Livewire\Ballot\FlagComparison;
 use App\Http\Livewire\Ballot\ShowBallot;
 use App\Http\Livewire\Candidate\Application;
+use App\Http\Livewire\Groups\ShowGroup;
 use App\Http\Livewire\NewFeature;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
@@ -39,6 +40,8 @@ Route::get('/about-us', [HomeController::class, 'getAboutUsView'])->name('about-
 Route::get('/groups', function()  {
     return view('groups');
 })->name('groups');
+
+Route::get('/groups/{political_group}', ShowGroup::class);
 
 /* -----LOGIN------ */
 Route::middleware([
