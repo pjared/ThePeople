@@ -14,7 +14,12 @@
                     x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
                         {{-- :class="{ 'h-28 w-28': show }" --}}
                         <figure>
-                            <img src="{{ $running_candidate->candidate->user->profile_photo_url ?? ''}} " alt="{{ $running_candidate->candidate->name }}" class="h-28 w-28" :class="{ 'rounded-xl': show }">
+                            <img
+                                src="{{ $running_candidate->candidate->user->profile_photo_url ?? ''}} "
+                                alt="{{ $running_candidate->candidate->name }}"
+                                class="h-28 w-28"
+                                :class="{ 'rounded-xl': show }"
+                                loading='lazy'>
                             {{-- class="rounded-full object-cover" --}}
                         </figure>
                         <div class="card-body flex flex-row flex-wrap" :class="{ 'p-3': show }">
