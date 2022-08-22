@@ -16,3 +16,7 @@ An important file for me is the [Team Policy File](/app/Policies/TeamPolicy.php)
 
 ## Roles
 The roles are defined in the [Service Provider File](app/Providers/JetstreamServiceProvider.php)
+
+## Redirection after logging in
+I pretty much Copy/Pasted a lot of stuff from here, so I still need to make sure that 2FA works on PROD. If it doesn't, just revert the changes that i've done
+https://laracasts.com/discuss/channels/laravel/redirect-to-intended-url-jetstream-fortify
