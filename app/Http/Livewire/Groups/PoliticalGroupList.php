@@ -10,7 +10,7 @@ class PoliticalGroupList extends Component
     public $groups;
 
     public function mount() {
-        $this->groups = PoliticalGroup::all();
+        $this->groups = PoliticalGroup::with('location:id,name,state')->get();
         // dd($this->groups);
     }
 
