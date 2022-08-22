@@ -13,7 +13,7 @@ class GroupBallotQuestions extends Model
 
     protected $fillable = [
         'ballot_id',
-        'candidate_id',
+        'political_group_id',
         'question',
     ];
 }
