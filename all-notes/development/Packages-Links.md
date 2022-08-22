@@ -11,8 +11,8 @@ https://jetstream.laravel.com/2.x/introduction.html
 Sitemap notes:
 The crawl profile is found in [here](../../app/Http/SiteCrawlProfile.php). I didn't really know where else to put this so you copy that file into [here](../../vendor/spatie/laravel-sitemap/src/Crawler/Profile.php)
 
+## Sluggable
+https://github.com/cviebrock/eloquent-sluggable 
 
-## Data tables
-https://github.com/MedicOneSystems/livewire-datatables is the repo that I used.
-
-The data tables are actually very straightforward and easy to work with.
+## Filament
+https://filamentphp.com/docs/2.x/admin/installation 
