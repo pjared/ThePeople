@@ -40,6 +40,7 @@
                                             <livewire:flag
                                                 :type="'required-stance'"
                                                 :type_id="$candidate_stance->id"
+                                                :side="'right'"
                                                 :wire:key="'required-flag-'.$candidate_stance->id">
                                         @else
                                             <label class="fill-transparent" for="signup-modal">
@@ -81,6 +82,7 @@
                                     <livewire:flag
                                         :type="'controversial-stance'"
                                         :type_id="$candidate_stance->id"
+                                        :side="'right'"
                                         :wire:key="'stance-flag-'.$candidate_stance->id">
                                 @else
                                     <label class="fill-transparent" for="signup-modal">

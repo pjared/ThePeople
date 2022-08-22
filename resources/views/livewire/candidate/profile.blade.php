@@ -79,7 +79,11 @@
                                     <div class="flex flex-row justify-center gap-4">
                                         <span>{{$opinion->name}}</span>
                                         @auth
-                                            <livewire:flag :type="'opinion'" :type_id="$opinion->id" :wire:key="'opinion-'.$opinion->id">
+                                            <livewire:flag
+                                                :type="'opinion'"
+                                                :type_id="$opinion->id"
+                                                :side="'right'"
+                                                :wire:key="'opinion-'.$opinion->id">
                                         @else
                                             <label class="fill-transparent" for="signup-modal">
                                                 @include('icons.flag')

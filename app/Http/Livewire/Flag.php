@@ -12,8 +12,10 @@ class Flag extends Component
     public $set_flag;
     public $note;
     public $current_color;
+    public $side;
 
-    public function mount($type, $type_id) {
+    public function mount($type, $type_id, $side) {
+        $this->side = $side;
         $this->type = $type;
         $this->type_id = $type_id;
         $flag = UserFlag::where('user_id', auth()->id())

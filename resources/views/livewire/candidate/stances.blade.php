@@ -36,6 +36,7 @@
                                     <livewire:flag
                                         :type="$required_stance->id .'required-stance'"
                                         :type_id="$required_stance->id"
+                                        :side="'right'"
                                         :wire:key="'required-flag-'.$required_stance->id">
                                 @else
                                     <label class="fill-transparent" for="signup-modal">
@@ -76,6 +77,7 @@
                                 <livewire:flag
                                     :type="$opinion->id .'controversial-stance'"
                                     :type_id="$candidate_stance->id"
+                                    :side="'right'"
                                     :wire:key="'stance-flag-'.$candidate_stance->id">
                             @else
                                 <label class="fill-transparent" for="signup-modal">

@@ -1,7 +1,13 @@
+@if($side == 'right')
+    <div
+        class='dropdown dropdown-top dropdown-end'
+        x-data="flag">
+@else
+    <div
+        class='dropdown dropdown-top'
+        x-data="flag">
+@endif
 
-<div
-    class="dropdown dropdown-top"
-    x-data="flag">
     {{-- Declare some data --}}
     <div
         x-data=
@@ -10,8 +16,6 @@
                 note: $wire.note,
                 color: $wire.set_flag,
             }">
-
-
         <label
             tabindex="0"
             class="m-1 flex justify-center">
@@ -75,4 +79,3 @@
         </div>
     </div>
 </div>
-

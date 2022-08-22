@@ -29,7 +29,7 @@
                                 </p>
                             </div>
                             @auth
-                                <livewire:flag :type="'promise'" :type_id="$promise->id" :wire:key="'promise-flag-' . $promise->id">
+                                <livewire:flag :type="'promise'" :type_id="$promise->id" :side="'left'" :wire:key="'promise-flag-' . $promise->id">
                             @else
                                 <label class="fill-transparent" for="signup-modal">
                                     @include('icons.flag')
