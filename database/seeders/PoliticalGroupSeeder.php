@@ -28,7 +28,7 @@ class PoliticalGroupSeeder extends Seeder
             'location_id' => 2,
             'contact_email' => 'clublib@gmail.com',
             'description' => 'JDSLKFJSDLKFJ',
-            'slug' => 'lib-club',
+            'slug' => 'repub-club',
         ]);
     }
 }
