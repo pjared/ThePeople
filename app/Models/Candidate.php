@@ -7,6 +7,9 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+use Laravel\Jetstream\HasProfilePhoto;
 
 /**
  * A candidate is someone currently running for office.
@@ -17,6 +20,7 @@ class Candidate extends Model
     use Sluggable;
     use SoftDeletes;
     use HasComments;
+    use HasProfilePhoto;
 
     public $timestamps = false;
 
@@ -43,6 +47,38 @@ class Candidate extends Model
         "user_id",
         "party_name",
     ];
+
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'profile_photo_url',
+    ];
+
+    /**
+     * Overrides default implementation. Users are only able to update profile if they are a candidate
+    *
+     * @param  \Illuminate\Http\UploadedFile  $photo
+     * @return void
+     */
+    public function updateProfilePhoto(UploadedFile $photo)
+    {
+        if(auth()->user()->hasRole('candidate')) {
+            tap($this->profile_photo_path, function ($previous) use ($photo) {
+                $this->forceFill([
+                    'profile_photo_path' => $photo->storePublicly(
+                        'profile-photos', ['disk' => $this->profilePhotoDisk()]
+                    ),
+                ])->save();
+
+                if ($previous) {
+                    Storage::disk($this->profilePhotoDisk())->delete($previous);
+                }
+            });
+        }
+    }
 
     /**
      * Return the sluggable configuration array for this model.

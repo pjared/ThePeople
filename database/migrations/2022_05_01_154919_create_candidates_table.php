@@ -17,6 +17,7 @@ return new class extends Migration
         Schema::create('candidates', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('profile_photo_path', 2048)->nullable();
             $table->date('dob');
             $table->date('signup_date');
             $table->text('bio')->nullable();
