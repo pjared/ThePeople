@@ -48,18 +48,13 @@ class CandidateApplicationResource extends Resource
                 Forms\Components\TextInput::make('location')
                     ->required()
                     ->maxLength(255),
-                // Forms\Components\Select::make('status')
-                //     ->options([
-                //         'Accepted' => 'accepted',
-                //         'Submitted' => 'submitted',
-                //         'Rejected' => 'rejected',
-                //     ])
-                //     ->default('draft')
-                //     ->required(),
-                Forms\Components\TextInput::make('status')
-                    ->label('Status - accepted,submitted, or rejected')
-                    ->required()
-                    ->maxLength(15),
+                Forms\Components\Select::make('status')
+                    ->options([
+                        'accepted' => 'Accepted',
+                        'submitted' => 'Submitted',
+                        'rejected' => 'Rejected',
+                    ])
+                    ->required(),
                 Forms\Components\DatePicker::make('entered_race_date'),
                 Forms\Components\TextInput::make('candidate_id'),
             ]);
