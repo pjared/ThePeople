@@ -40,7 +40,10 @@ class CommentResource extends Resource
                     ->label('Show on Profile'),
                 Tables\Columns\TextColumn::make('user.name')
                     ->label('User\'s Name'),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Posted At'),
             ])
+            ->defaultSort('created_at', 'desc')
             ->filters([
                 //
             ])
