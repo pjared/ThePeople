@@ -13,12 +13,23 @@
             <div class='flex flex-col w-11/12 background-card items-center'>
                 {{-- EVENTS --}}
                 @if(count($group->events) >= 1)
-                    <div>
+                    <div class='flex flex-col w-full items-center'>
                         <span>Upcoming Events</span>
+                        <div class='flex w-full justify-center'>
+                            @foreach($group->events as $event)
+                                <div class="flex flex-col gap-4 w-1/2">
+                                    <div class="flex flex-col gap-0">
+                                        <span><b>{{ $event->event_name }}</b></span>
+                                        <span class='text-gray-500'>{{ $event->event_location }}, {{$event->event_date->format('M d y g:i A')}}</span>
+                                    </div>
+                                    <span>{{ $event->event_description }}</span>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 @endif
                 {{-- ABOUT US --}}
-                <div>
+                <div class='flex flex-col text-center'>
                     <span>About Us</span>
                     <span>{{$group->description}}</span>
                 </div>
