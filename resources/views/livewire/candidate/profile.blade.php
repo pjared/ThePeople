@@ -19,7 +19,11 @@
         <div class="flex flex-col grow gap-6 items-center">
             {{-- CANDIDATE PERSONAL INFO --}}
             <div class="flex flex-col md:flex-row gap-6 w-11/12 justify-center">
-                <img src="{{ $is_manual ?? $candidate->user->profile_photo_url }}" alt="{{ $candidate->name }}" class="h-44 w-44">
+                <img
+                    src="{{ $is_manual ?? $candidate->user->profile_photo_url }}"
+                    alt="{{ $candidate->name }}"
+                    class="h-44 w-44"
+                    loading='lazy'>
                 {{-- class="rounded-full object-cover" --}}
                 <div class="flex flex-col">
                     <div>

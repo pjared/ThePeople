@@ -7,7 +7,8 @@
                     <img
                         src="{{ $candidate->user->profile_photo_url ?? ''}} "
                         alt="{{ $candidate->name }}"
-                        class="h-28 w-28 mask mask-circle">
+                        class="h-28 w-28 mask mask-circle"
+                        loading='lazy'>
                 </figure>
                 {{-- NAME --}}
                 <div class="flex grow flex-col md:flex-row font-courier">

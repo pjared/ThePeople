@@ -6,7 +6,10 @@
             style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
                 {{$group->name}}
         </span>
-        <img class="w-full h-80 " src="https://placeimg.com/400/300/arch" />
+        <img
+            class="w-full h-80"
+            src="https://placeimg.com/400/300/arch"
+            loading='lazy'/>
     </div>
     <div class='row-span-4 flex flex-row px-12'>
         <div class='w-4/5'>
