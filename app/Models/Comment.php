@@ -11,8 +11,6 @@ class Comment extends Model
 {
     use SoftDeletes;
 
-    // public $timestamps = false;
-
     protected $fillable = [
         'comment',
         'user_id',
