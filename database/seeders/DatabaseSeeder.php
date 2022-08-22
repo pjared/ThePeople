@@ -67,6 +67,11 @@ class DatabaseSeeder extends Seeder
                 ManualCandidateSeeder::class,
                 CommentSeeder::class,
                 CandidateEventSeeder::class,
+
+                PoliticalGroupSeeder::class,
+                PoliticalGroupEventsSeeder::class,
+                PoliticalGroupCanidatesSeeder::class,
+                GroupBallotQuestionsSeeder::class,
             ]);
         }
     }
