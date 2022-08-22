@@ -5,8 +5,9 @@
                 Find Political Groups Near You!
             </div>
         </div>
+
         <div>
-            <livewire:ballot.ballot-list />
+            <livewire:groups.political-group-list />
         </div>
     </div>
 
