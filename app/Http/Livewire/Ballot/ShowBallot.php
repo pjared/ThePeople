@@ -26,7 +26,9 @@ class ShowBallot extends Component
 
     public function change_user_vote($candidate_id)
     {
-        //TODO: auth check needed or already handled in the view?
+        if(!auth()) {
+            return;
+        }
         UserVotes::updateOrCreate(
             [
                 'user_id' => auth()->id(),

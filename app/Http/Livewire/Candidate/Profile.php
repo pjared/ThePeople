@@ -33,6 +33,9 @@ class Profile extends Component
     }
 
     public function change_flag($flag_type, $flag_id, $flag_value, $flag_note) {
+        if(! auth()) {
+            return;
+        }
         //Update the userFlag variable
         UserFlag::updateOrCreate(
             [
@@ -51,6 +54,9 @@ class Profile extends Component
 
     public function delete_flag($flag_type, $flag_id)
     {
+        if(! auth()) {
+            return;
+        }
         UserFlag::where('user_id', auth()->id())
                         ->where('candidate_id',$this->candidate->id)
                         ->where('ballot_id',$this->candidate->ballot->id)
