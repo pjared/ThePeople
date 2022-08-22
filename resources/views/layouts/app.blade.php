@@ -27,6 +27,16 @@
             @else
                 <div class="flex px-6 py-4 bg-white w-100">
                     <x-jet-application-logo class="block h-12 w-auto" />
+                    <x-jet-nav-link
+                        href="{{ route('groups') }}"
+                        :active="request()->routeIs('groups')"
+                        class='ml-4'>
+                        {{ __('Groups') }}
+                    </x-jet-nav-link>
+                    {{-- <div class="text-left">
+                        <a href="{{ route('groups') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Groups</a>
+                    </div> --}}
+
                     <div class="text-right ml-auto">
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
