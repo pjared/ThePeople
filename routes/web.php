@@ -35,6 +35,11 @@ Route::get('/about-us', [HomeController::class, 'getAboutUsView'])->name('about-
 //         ->writeToFile(public_path('sitemap.xml'));
 // });
 
+/* -----GROUPS------ */
+Route::get('/groups', function()  {
+    return view('groups');
+})->name('groups');
+
 /* -----LOGIN------ */
 Route::middleware([
     'auth:sanctum',
