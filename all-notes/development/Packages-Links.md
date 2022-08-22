@@ -16,3 +16,6 @@ https://github.com/cviebrock/eloquent-sluggable
 
 ## Filament
 https://filamentphp.com/docs/2.x/admin/installation 
+
+## Honey
+Currently using https://github.com/lukeraymonddowning/honey#manually , but can also use https://github.com/spatie/laravel-honeypot if needed
