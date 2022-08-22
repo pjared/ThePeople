@@ -21,7 +21,11 @@
 
                             <!-- Current Profile Photo -->
                             <div class="mt-2" x-show="! photoPreview">
-                                <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" class="rounded-full h-20 w-20 object-cover">
+                                {{-- <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" class="rounded-full h-20 w-20 object-cover"> --}}
+                                <img
+                                    src="{{ $candidate->profile_photo_url }}"
+                                    alt="{{ $candidate->name }}"
+                                    class="rounded-full h-20 w-20 object-cover">
                             </div>
 
                             <!-- New Profile Photo Preview -->

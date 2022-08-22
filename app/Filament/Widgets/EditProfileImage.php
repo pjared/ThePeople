@@ -13,7 +13,11 @@ class EditProfileImage extends Widget
     protected static string $view = 'filament.widgets.edit-profile-image';
 
     public $photo;
+    public $candidate;
 
+    public function mount() {
+        $this->candidate = auth()->user()->candidate;
+    }
 
     public static function canView(): bool
     {
@@ -42,14 +46,14 @@ class EditProfileImage extends Widget
         $this->validate([
             'photo' => 'max:1024'
         ]);
-        // dd('hi 1');
         if (isset($this->photo)) {
-            // dd('hi');
-            auth()->user()->updateProfilePhoto($this->photo);
+            auth()->user()->candidate->updateProfilePhoto($this->photo);
+            // auth()->user()->updateProfilePhoto($this->photo);
         }
     }
 
     public function deleteProfilePhoto() {
-        auth()->user()->deleteProfilePhoto($this->photo);
+        // auth()->user()->deleteProfilePhoto($this->photo);
+        auth()->user()->candidate->updateProfilePhoto($this->photo);
     }
 }

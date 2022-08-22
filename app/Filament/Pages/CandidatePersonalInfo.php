@@ -26,14 +26,12 @@ class CandidatePersonalInfo extends Page
         abort_unless(auth()->user()->hasRole('candidate'), 403);
     }
 
-
     protected function getHeaderWidgets(): array
     {
         return [
             EditBio::class,
             EditPersonalInfo::class,
             EditProfileImage::class,
-
         ];
     }
 
