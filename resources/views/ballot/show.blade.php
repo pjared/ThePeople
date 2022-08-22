@@ -15,7 +15,7 @@
                         {{-- :class="{ 'h-28 w-28': show }" --}}
                         <figure>
                             <img
-                                src="{{ $running_candidate->candidate->user->profile_photo_url ?? ''}} "
+                                src="{{ $running_candidate->candidate->profile_photo_url ?? ''}} "
                                 alt="{{ $running_candidate->candidate->name }}"
                                 class="h-28 w-28"
                                 :class="{ 'rounded-xl': show }"
