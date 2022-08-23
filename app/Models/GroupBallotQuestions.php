@@ -18,4 +18,8 @@ class GroupBallotQuestions extends Model
         'political_group_id',
         'question',
     ];
+
+    public function group() {
+        return $this->belongsTo(PoliticalGroup::class, 'political_group_id');
+    }
 }
