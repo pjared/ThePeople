@@ -31,6 +31,7 @@ return new class extends Migration
             $table->string('site_link')->nullable();
             $table->string('slug')->nullable();
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 

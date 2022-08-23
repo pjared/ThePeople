@@ -22,8 +22,6 @@ class Candidate extends Model
     use HasComments;
     use HasProfilePhoto;
 
-    public $timestamps = false;
-
     protected $fillable = [
         "name",
         "dob",
