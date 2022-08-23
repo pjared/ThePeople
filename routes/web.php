@@ -33,11 +33,6 @@ Route::get('/about-us', [HomeController::class, 'getAboutUsView'])->name('about-
 Route::get('/admin/login', function() {
     return redirect('/login');
 });
-/* -----Site Map------ */
-// Route::get('generate-sitemap', function () {
-//     SitemapGenerator::create('http://localhost')
-//         ->writeToFile(public_path('sitemap.xml'));
-// });
 
 /* -----GROUPS------ */
 Route::get('/groups', function()  {
