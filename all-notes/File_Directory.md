@@ -1,5 +1,11 @@
 # All Pages
 
+## Tags
+[Profile](../resources/views/livewire/candidate/profile.blade.php)
+[Ballot](../resources/views/ballot/show.blade.php)
+[Home Page](../resources/views/livewire/ballot/ballot-list.blade.php)
+
+- SOME OF THIS IS OUT OF DATE
 ## Welcome
 [Welcome](../resources/views/welcome.blade.php)
 |
