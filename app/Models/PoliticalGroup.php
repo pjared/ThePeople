@@ -6,6 +6,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Jetstream\HasProfilePhoto;
 
 class PoliticalGroup extends Model
@@ -13,6 +14,7 @@ class PoliticalGroup extends Model
     use HasFactory;
     use Sluggable, SluggableScopeHelpers;
     use HasProfilePhoto;
+    use SoftDeletes;
 
     public $timestamps = false;
 
