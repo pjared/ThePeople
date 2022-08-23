@@ -31,6 +31,15 @@ class RoleSeeder extends Seeder
         $candidate_role->givePermissionTo('edit candidate profile');
         $candidate_role->givePermissionTo('create candidates');
 
+        Permission::create(['name' => 'edit group profile']);
+        Permission::create(['name' => 'control group profile']);
+
+        $organizer_role = Role::create(['name' => 'organizer']);
+        $organizer_role->givePermissionTo('edit group profile');
+
+        $organizerAdmin_role = Role::create(['name' => 'organizerAdmin']);
+        $organizerAdmin_role->givePermissionTo('control group profile');
+
         $user = User::firstWhere('email', "pjared870@gmail.com");
         $user->assignRole($admin_role);
     }
