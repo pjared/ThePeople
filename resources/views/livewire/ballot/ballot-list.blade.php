@@ -7,7 +7,7 @@
                         <div class="card-body text-center p-0">
                             <h2 class="card-title text-lg justify-center">
                                 <a
-                                    rel="next prefetch"
+                                    rel="next prefetch canonical"
                                     class="underline text-sky-600"
                                     type="text/html"
                                     href="/ballot/{{$ballot->slug}}">{{$ballot->location->state}} {{$ballot->office->name}}, {{$ballot->location->name}}</a>
@@ -21,4 +21,16 @@
             @endif
         @endforeach
     </div>
+
+    @section('description')
+        Welcome to the home page of ThePeople! Here you can navigate to a ballot from the list provided. The current ballots we have are:
+        @foreach ($ballots as $ballot)
+        {{$ballot->name}},
+        @endforeach
+    @endsection
+    @section('keywords')
+        @foreach ($ballots as $ballot)
+            {{$ballot->name}},
+        @endforeach
+    @endsection
 </div>

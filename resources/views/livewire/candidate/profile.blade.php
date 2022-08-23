@@ -238,5 +238,12 @@
 
         </script>
     @endpush
+
+    @section('description')
+        Candidate {{$candidate->name}}'s profile. Here you can view the stances that {{$candidate->name}} takes on controversial opinions. You can also view the additional stances that {{$candidate->name}} has added to his profile. If {{$candidate->name}} has held office, his previous positions will be listed. You can also message {{$candidate->name}} and see his upcoming events.
+    @endsection
+    @section('keywords')
+        {{$candidate->name}} stances controversial opinion
+    @endsection
 </div>
 

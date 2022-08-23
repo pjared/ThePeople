@@ -9,7 +9,6 @@
             <livewire:ballot.ballot-list />
         </div>
     </div>
-
     @section('page-title')
         Home
     @endsection

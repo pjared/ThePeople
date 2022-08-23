@@ -91,4 +91,17 @@
             }
         </script>
     @endpush
+
+    @section('description')
+        The mock-ballot of {{$ballot->name}}. Candidates here have the ability to create their own profiles, however if a candidate has not created a profile it's possible that we have created one for them.
+        This ballot currently has the following candidates:
+        @foreach ($ballot->candidates as $candidate)
+            {{$candidate->name}} - {{$ballot->name}},
+        @endforeach
+    @endsection
+    @section('keywords')
+        @foreach ($ballot->candidates as $candidate)
+            {{$candidate->name}} - {{$ballot->name}},
+        @endforeach
+    @endsection
 </div>
