@@ -13,4 +13,8 @@ class PoliticalGroupCandidates extends Pivot
         'candidate_id',
         'political_group_id',
     ];
+
+    public function candidate() {
+        return $this->belongsTo(Candidate::class, 'candidate_id');
+    }
 }
