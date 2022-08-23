@@ -30,6 +30,9 @@ Route::get('/', function()  {
 
 Route::get('/about-us', [HomeController::class, 'getAboutUsView'])->name('about-us');
 
+Route::get('/admin/login', function() {
+    return redirect('/login');
+});
 /* -----Site Map------ */
 // Route::get('generate-sitemap', function () {
 //     SitemapGenerator::create('http://localhost')
