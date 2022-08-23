@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignIdFor(Ballot::class, 'ballot_id');
             $table->string('question');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
