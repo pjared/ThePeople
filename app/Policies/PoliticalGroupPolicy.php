@@ -64,7 +64,7 @@ class PoliticalGroupPolicy
      */
     public function update(User $user, PoliticalGroup $politicalGroup)
     {
-        return $user->hasRole('admin') || $user->hasRole('organizerAdmin') && $this->is_in_group($user, $politicalGroup);
+        return $user->hasRole('admin') || ($user->hasRole('organizerAdmin') && $this->is_in_group($user, $politicalGroup));
     }
 
     /**
