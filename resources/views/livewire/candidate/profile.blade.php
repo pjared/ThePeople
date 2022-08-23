@@ -180,7 +180,7 @@
 
         </div>
         <div class="flex flex-row w-full grow gap-6 items-center h-fit">
-            @foreach ($candidate->comments()->approved()->get() as $pinned_comment)
+            {{-- @foreach ($candidate->comments()->approved()->get() as $pinned_comment)
                 <div class='border border-slate-400 bg-white p-4 w-11/12 overflow-visible'>
                     <p>{{$pinned_comment->comment}}</p>
                     @if($pinned_comment->reply)
@@ -191,7 +191,7 @@
                         </div>
                     @endif
                 </div>
-            @endforeach
+            @endforeach --}}
         </div>
     </div>
 
