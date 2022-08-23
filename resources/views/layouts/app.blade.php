@@ -4,6 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="description" content="@yield('description')">
+        <meta name="keywords" content="@yield('keywords')"/>
+
+        <meta name="copyright" content="{{ config('app.name') }}">
+        <meta name="author" content="{{ config('app.name') }}"/>
+        <meta name="application-name" content="@yield('title', config('app.name'))">
 
         <head>
             <title>@yield('page-title') - {{ config('app.name') }}</title>
