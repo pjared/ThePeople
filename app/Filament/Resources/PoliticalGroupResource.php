@@ -18,6 +18,7 @@ class PoliticalGroupResource extends Resource
     protected static ?string $model = PoliticalGroup::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Political Groups';
 
     public static function form(Form $form): Form
     {

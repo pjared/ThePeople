@@ -18,6 +18,7 @@ class GroupOrganizerResource extends Resource
     protected static ?string $model = GroupOrganizer::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Political Groups';
 
     public static function form(Form $form): Form
     {
