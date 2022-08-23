@@ -17,13 +17,13 @@ class PoliticalGroupCandidatesSeeder extends Seeder
     public function run()
     {
         for($i = 1; $i <= 2; $i++) {
-            DB::table('political_group_candidates')->insert([
+            DB::table('political_group_candidate')->insert([
                 'political_group_id' => 1,
                 'candidate_id' => $i,
             ]);
         }
         for($i = 3; $i <= 4; $i++) {
-            DB::table('political_group_candidates')->insert([
+            DB::table('political_group_candidate')->insert([
                 'political_group_id' => 2,
                 'candidate_id' => $i,
             ]);
