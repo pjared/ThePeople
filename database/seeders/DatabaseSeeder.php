@@ -72,6 +72,7 @@ class DatabaseSeeder extends Seeder
                 PoliticalGroupEventsSeeder::class,
                 PoliticalGroupCanidatesSeeder::class,
                 GroupBallotQuestionsSeeder::class,
+                GroupOrganizerSeeder::class,
             ]);
         }
     }
