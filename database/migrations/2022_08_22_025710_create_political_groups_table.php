@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('email')->unique()->nullable();
             $table->string('phone')->nullable();
             $table->string('site_link')->nullable();
+            $table->string('badge_url')->nullable();
+            $table->string('profile_photo_path', 2048)->nullable();
             $table->string('slug')->nullable();
         });
     }

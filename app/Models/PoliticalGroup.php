@@ -6,11 +6,13 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Jetstream\HasProfilePhoto;
 
 class PoliticalGroup extends Model
 {
     use HasFactory;
     use Sluggable, SluggableScopeHelpers;
+    use HasProfilePhoto;
 
     public $timestamps = false;
 
@@ -22,6 +24,7 @@ class PoliticalGroup extends Model
         'email',
         'phone',
         'site_link',
+        'badge_url',
         'slug',
     ];
 
