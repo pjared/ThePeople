@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('facebook_id')->nullable();
             $table->string('socialite_token')->nullable();
             $table->string('socialite_refresh_token')->nullable();
+            $table->string('last_visited')->nullable();
             $table->timestamps();
         });
     }
