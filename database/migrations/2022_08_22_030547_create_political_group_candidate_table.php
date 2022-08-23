@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignIdFor(PoliticalGroup::class, 'political_group_id');
             $table->foreignIdFor(Candidate::class, 'candidate_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
