@@ -89,6 +89,10 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser, Has
         }
     }
 
+    public function manages_political_groups() {
+        return $this->hasManyThrough(PoliticalGroup::class, GroupOrganizer::class, 'political_group_id', 'id', 'id', 'user_id');
+    }
+
     public function candidateApplication() {
         return $this->hasOne(CandidateApplication::class, 'user_id', 'id');
     }
