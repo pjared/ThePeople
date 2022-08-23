@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class PoliticalGroupCanidates extends Pivot
+class PoliticalGroupCandidates extends Pivot
 {
     protected $fillable = [
         'candidate_id',

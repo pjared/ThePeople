@@ -7,7 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class PoliticalGroupCanidatesSeeder extends Seeder
+class PoliticalGroupCandidatesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,13 +17,13 @@ class PoliticalGroupCanidatesSeeder extends Seeder
     public function run()
     {
         for($i = 1; $i <= 2; $i++) {
-            DB::table('political_group_canidate')->insert([
+            DB::table('political_group_candidates')->insert([
                 'political_group_id' => 1,
                 'candidate_id' => $i,
             ]);
         }
         for($i = 3; $i <= 4; $i++) {
-            DB::table('political_group_canidate')->insert([
+            DB::table('political_group_candidates')->insert([
                 'political_group_id' => 2,
                 'candidate_id' => $i,
             ]);

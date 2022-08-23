@@ -15,7 +15,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('political_group_canidate', function (Blueprint $table) {
+        Schema::create('political_group_candidates', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(PoliticalGroup::class, 'political_group_id');
             $table->foreignIdFor(Candidate::class, 'candidate_id');

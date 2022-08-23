@@ -70,7 +70,7 @@ class DatabaseSeeder extends Seeder
 
                 PoliticalGroupSeeder::class,
                 PoliticalGroupEventsSeeder::class,
-                PoliticalGroupCanidatesSeeder::class,
+                PoliticalGroupCandidatesSeeder::class,
                 GroupBallotQuestionsSeeder::class,
                 GroupOrganizerSeeder::class,
             ]);
