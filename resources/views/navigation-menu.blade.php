@@ -90,6 +90,11 @@
                         {{ __('Candidate Dashboard') }}
                     </x-jet-nav-link>
                 @endrole
+                @hasanyrole('organizer|organizerAdmin')
+                    <x-jet-nav-link href="/admin" :active="request()->is('admin/*')">
+                        {{ __('Political Group Dashboard') }}
+                    </x-jet-nav-link>
+                @endrole
 
                 <!-- Settings Dropdown -->
                 <div class="ml-3 relative">
