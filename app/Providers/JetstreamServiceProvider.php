@@ -25,6 +25,23 @@ class JetstreamServiceProvider extends ServiceProvider
         //
     }
 
+    public function set_session($url)
+    {
+        if (session('link')) {
+            $myPath = session('link');
+            $loginPath = url($url);
+            $previous = url()->previous();
+
+            if ($previous = $loginPath) {
+                session(['link' => $myPath]);
+            } else {
+                session(['link' => $previous]);
+            }
+        } else {
+            session(['link' => url()->previous()]);
+        }
+    }
+
     /**
      * Bootstrap any application services.
      *
@@ -44,20 +61,13 @@ class JetstreamServiceProvider extends ServiceProvider
 
         // register new LoginResponse
         Fortify::loginView(function () {
-            if (session('link')) {
-                $myPath = session('link');
-                $loginPath = url('/login');
-                $previous = url()->previous();
-
-                if ($previous = $loginPath) {
-                    session(['link' => $myPath]);
-                } else {
-                    session(['link' => $previous]);
-                }
-            } else {
-                session(['link' => url()->previous()]);
-            }
+            $this->set_session('/login');
             return view('auth.login');
+        });
+
+        Fortify::registerView(function () {
+            $this->set_session('/register');
+            return view('auth.register');
         });
 
         $this->app->singleton(
@@ -69,6 +79,11 @@ class JetstreamServiceProvider extends ServiceProvider
         $this->app->singleton(
             \Laravel\Fortify\Contracts\TwoFactorLoginResponse::class,
             \App\Http\Responses\LoginResponse::class
+        );
+
+        $this->app->singleton(
+            \Laravel\Fortify\Contracts\RegisterResponse::class,
+            \App\Http\Responses\RegisterResponse::class
         );
     }
 
