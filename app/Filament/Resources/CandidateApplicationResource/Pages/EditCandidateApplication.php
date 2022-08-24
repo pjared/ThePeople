@@ -21,7 +21,6 @@ class EditCandidateApplication extends EditRecord
         ];
     }
 
-    // TODO: When candidate has been changed to 'accepted', make them a candidate model
     protected function afterSave(): void
     {
         //Check to see if the user has an existing candidate model
