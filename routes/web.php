@@ -7,6 +7,7 @@ use App\Http\Controllers\SocialiteController;
 use App\Http\Livewire\Ballot\FlagComparison;
 use App\Http\Livewire\Ballot\ShowBallot;
 use App\Http\Livewire\Candidate\Application;
+use App\Http\Livewire\Groups\PoliticalGroupApplication;
 use App\Http\Livewire\Groups\ShowGroup;
 use App\Http\Livewire\NewFeature;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,8 @@ Route::get('/groups', function()  {
 })->name('groups');
 
 Route::get('/groups/{political_group}', ShowGroup::class);
+
+Route::get('/group/apply', PoliticalGroupApplication::class)->middleware(['auth:sanctum']);
 
 /* -----LOGIN------ */
 Route::middleware([
