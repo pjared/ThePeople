@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire\Groups;
 
+use App\Mail\GroupApplicationSubmitted;
 use App\Models\GroupApplication;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class PoliticalGroupApplication extends Component
@@ -34,7 +36,7 @@ class PoliticalGroupApplication extends Component
         $this->previous_application = $this->application;
         session()->flash('message', 'You have submitted an application, we will email you updates as we process it.');
 
-        // Mail::to('thepeople@whatsinyourballot.com')->send(new ApplicationSubmitted());
+        Mail::to('thepeople@whatsinyourballot.com')->send(new GroupApplicationSubmitted());
     }
 
     public function mount()
