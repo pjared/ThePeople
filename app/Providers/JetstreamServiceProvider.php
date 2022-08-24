@@ -80,11 +80,6 @@ class JetstreamServiceProvider extends ServiceProvider
             \Laravel\Fortify\Contracts\TwoFactorLoginResponse::class,
             \App\Http\Responses\LoginResponse::class
         );
-
-        $this->app->singleton(
-            \Laravel\Fortify\Contracts\RegisterResponse::class,
-            \App\Http\Responses\RegisterResponse::class
-        );
     }
 
     /**
