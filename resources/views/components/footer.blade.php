@@ -12,7 +12,7 @@
     </div>  --}}
     <div>
         <span class="footer-title">Company</span>
-        <a class="link link-hover" href="{{route('about-us')}}">About us (me)</a>
+        <a class="link link-hover" href="{{route('about-us')}}">About us</a>
         {{-- <a class="link link-hover">Contact</a> --}}
         {{-- <a class="link link-hover">Jobs</a>  --}}
         {{-- <a class="link link-hover">Press kit</a> --}}
