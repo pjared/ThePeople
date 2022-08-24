@@ -9,7 +9,7 @@
                                 rel="next prefetch"
                                 class="underline text-sky-600"
                                 type="text/html"
-                                href="/groups/{{$group->slug}}">{{$group->location->state}} {{$group->name}}, {{$group->location->name}}
+                                href="/groups/{{$group->slug}}">{{$group->name}}
                             </a>
                         </h2>
                     </div>
