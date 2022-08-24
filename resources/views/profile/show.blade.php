@@ -39,6 +39,14 @@
                     @endrole
                 @endif
 
+                @unlessrole('organizer|organizerAdmin')
+                    <div class="flex flex-col items-center justify-center mt-6">
+                        <button class="btn btn-primary">
+                            <a href="{{Route('group-apply')}}">Do you manage a political group? Apply Here</a>
+                        </button>
+                    </div>
+                @endrole
+
 
                 <x-jet-section-border />
             @endif

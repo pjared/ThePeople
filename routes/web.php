@@ -42,7 +42,7 @@ Route::get('/groups', function()  {
 
 Route::get('/groups/{political_group}', ShowGroup::class);
 
-Route::get('/group/apply', PoliticalGroupApplication::class)->middleware(['auth:sanctum']);
+Route::get('/group/apply', PoliticalGroupApplication::class)->name('group-apply')->middleware(['auth:sanctum']);
 
 /* -----LOGIN------ */
 Route::middleware([
