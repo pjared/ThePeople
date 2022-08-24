@@ -3,12 +3,14 @@
 namespace App\Filament\Resources\GroupApplicationResource\Pages;
 
 use App\Filament\Resources\GroupApplicationResource;
+use App\Mail\GroupApplicationAccepted;
 use App\Models\GroupOrganizer;
 use App\Models\PoliticalGroup;
 use App\Models\User;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class EditGroupApplication extends EditRecord
 {
@@ -49,5 +51,8 @@ class EditGroupApplication extends EditRecord
         $organizer->user_id = $this->data['user_id'];
         $organizer->political_group_id = $group->id;
         $organizer->save;
+
+        //Send them an email everything is good
+        Mail::to($this->data['email'])->send(new GroupApplicationAccepted());
     }
 }
