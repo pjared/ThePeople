@@ -18,18 +18,13 @@ class UserFlagSeeder extends Seeder
     public function run()
     {
         for($i = 1; $i <= 3; $i++) {
-
-            // 'promise'
-            //'required-stance'
-            //'controversial-stance'
-            //'position'
             $candidate = Candidate::find($i);
 
             foreach($candidate->promises as $promise) {
                 DB::table('user_flags')->insert([
                     'user_id' => 1,
                     'candidate_id' => $i,
-                    'ballot_id' => 4,
+                    'ballot_id' => 1,
                     'type' => 'promise',
                     'type_id' => $promise->id,
                     'flag_type' => rand(1,3),
@@ -42,7 +37,7 @@ class UserFlagSeeder extends Seeder
                 DB::table('user_flags')->insert([
                     'user_id' => 1,
                     'candidate_id' => $i,
-                    'ballot_id' => 4,
+                    'ballot_id' => 1,
                     'type' => $opinion_id . '-controversial-stance',
                     'type_id' => $stance->id,
                     'flag_type' => rand(1,3),
@@ -55,7 +50,7 @@ class UserFlagSeeder extends Seeder
                 DB::table('user_flags')->insert([
                     'user_id' => 1,
                     'candidate_id' => $i,
-                    'ballot_id' => 4,
+                    'ballot_id' => 1,
                     'type' => $opinion_id . 'required-stance',
                     'type_id' => $stance->id,
                     'flag_type' => rand(1,3),
@@ -67,7 +62,7 @@ class UserFlagSeeder extends Seeder
                 DB::table('user_flags')->insert([
                     'user_id' => 1,
                     'candidate_id' => $i,
-                    'ballot_id' => 4,
+                    'ballot_id' => 1,
                     'type' => 'position',
                     'type_id' => $position->id,
                     'flag_type' => rand(1,3),
