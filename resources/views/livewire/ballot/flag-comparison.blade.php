@@ -15,29 +15,10 @@
                     <h3 class="text-xl">{{ $candidate->name }}</h3>
                 </div>
 
-                @foreach ($flags->where('candidate_id', $candidate->id)->where('type', 'promise') as $flag)
-                    <div>
-                        Promise: {{$flag->note}}
-                    </div>
-                @endforeach
-                @foreach ($opinions as $opinion)
-                    @if(count($flags->where('candidate_id', $candidate->id)->where('type', $opinion->id . '-controversial-stance')) >= 1)
-                        <span>Opinion Name: {{$opinion->name}}</span>
-                        @foreach ($flags->where('candidate_id', $candidate->id)->where('type', $opinion->id . '-controversial-stance') as $flag)
-                            <div>
-                                {{-- TODO: Get candidate Stance label and reasoning --}}
-                                Your Note: {{$flag->note}}
-                            </div>
-                        @endforeach
-                    @endif
-                @endforeach
-
-                @foreach ($flags->where('candidate_id', $candidate->id)->where('type', 'position') as $flag)
-                    <div>
-                        {{-- TODO: Get position --}}
-                        Position: {{$flag->note}}
-                    </div>
-                @endforeach
+                <livewire:candidate.flag-info
+                    :candidate_id="$candidate->id"
+                    :flags="$flags->where('candidate_id', $candidate->id)"
+                    :opinions="$opinions" />
 
                 {{-- CHECKBOX --}}
                 <div class="flex items-center pl-4">
