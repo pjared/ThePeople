@@ -1,10 +1,10 @@
-<div class='background-card w-11/12 h-fit p-2'>
-    <div class="collapse collapse-arrow" x-transition>
-        <input type="checkbox" />
+<div class='background-card w-11/12 h-fit p-2' x-data="{ show_flow : false}">
+    <div class="collapse collapse-arrow" :class="show_flow && 'overflow-visible'" x-transition>
+        <input type="checkbox" x-on:click="show_flow = ! show_flow"/>
         <div class="flex collapse-title text-md font-medium items-center">
             <span>{{$title}}</span>
         </div>
-        <div class="collapse-content">
+        <div class="collapse-content" :class="show_flow && 'overflow-visible'">
             {{$content}}
         </div>
     </div>
