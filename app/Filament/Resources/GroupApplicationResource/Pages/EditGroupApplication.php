@@ -50,7 +50,7 @@ class EditGroupApplication extends EditRecord
         $organizer = new GroupOrganizer();
         $organizer->user_id = $this->data['user_id'];
         $organizer->political_group_id = $group->id;
-        $organizer->save;
+        $organizer->save();
 
         //Send them an email everything is good
         Mail::to($this->data['email'])->send(new GroupApplicationAccepted());
