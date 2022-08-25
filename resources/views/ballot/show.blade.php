@@ -1,10 +1,18 @@
 <div class="flex flex-col w-11/12 h-5/6 items-center background-card">
-    <p class="text-center font-courier text-xl">
-        Plan your choice for the upcoming election
-    </p>
-    <p class="uppercase mt-2 text-sm">
-        {{ $ballot->location->name }} {{ $ballot->office->name }} - VOTING DATE: {{ $ballot->voting_date->format('m/d/Y')}}
-    </p>
+    <div class='flex flex-row gap-12'>
+        <div class='flex flex-col'>
+            <p class="text-center font-courier text-xl">
+                Plan your choice for the upcoming election
+            </p>
+            <p class="uppercase mt-2 text-sm">
+                {{ $ballot->location->name }} {{ $ballot->office->name }} - VOTING DATE: {{ $ballot->voting_date->format('m/d/Y')}}
+            </p>
+        </div>
+        {{-- <div class='flex justify-end'>
+            <a class='link' href="/flag-comparison/{{$ballot->slug}}">Flag Comparison</a>
+        </div> --}}
+    </div>
+
     <div class="flex flex-wrap grow w-11/12 mt-2">
         @foreach ($ballot->candidates as $running_candidate)
             <div class="flex grow flex-row pt-2 w-11/12">
