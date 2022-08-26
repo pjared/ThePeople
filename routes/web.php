@@ -115,4 +115,4 @@ Route::get('/auth/facebook/callback', [SocialiteController::class, 'handleFacebo
 
 */
 
-Route::get('/newfeatures', NewFeature::class);
+// Route::get('/newfeatures', NewFeature::class);
