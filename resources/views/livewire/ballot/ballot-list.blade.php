@@ -4,7 +4,7 @@
             @if($ballot->candidates_count >= 1)
                 <form action="/ballot/{{$ballot->slug}}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true" >
                     <button class="background-card" class="card bg-base-100 shadow-xl">
-                        <div class="card-body text-center p-0">
+                        <div class="text-center p-0">
                             <h2 class="card-title text-lg justify-center">
                                 <a
                                     rel="next prefetch canonical"
@@ -13,7 +13,9 @@
                                     href="/ballot/{{$ballot->slug}}">{{$ballot->location->state}} {{$ballot->office->name}}, {{$ballot->location->name}}</a>
                             </h2>
                             <div x-show="show" class="uppercase mt-2 text-sm justify-center">
-                                VOTING DATE: {{$ballot->voting_date->format('m/d/Y')}}
+                                <p>
+                                    VOTING DATE: {{$ballot->voting_date->format('m/d/Y')}}
+                                </p>
                             </div>
                         </div>
                     </button>

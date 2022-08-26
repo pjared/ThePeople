@@ -1,12 +1,12 @@
 <div class="flex flex-col w-11/12 h-5/6 items-center background-card">
     <div class='flex flex-row gap-12'>
-        <div class='flex flex-col'>
-            <p class="text-center font-courier text-xl">
+        <div class='flex flex-col text-center'>
+            <p class="font-courier text-xl">
                 Plan your choice for the upcoming election
             </p>
-            <p class="uppercase mt-2 text-sm">
+            <h1 class="uppercase mt-2 text-sm">
                 {{ $ballot->location->name }} {{ $ballot->office->name }} - VOTING DATE: {{ $ballot->voting_date->format('m/d/Y')}}
-            </p>
+            </h1>
         </div>
         {{-- <div class='flex justify-end'>
             <a class='link' href="/flag-comparison/{{$ballot->slug}}">Flag Comparison</a>
@@ -33,7 +33,7 @@
                         <div class="card-body flex flex-row flex-wrap" :class="{ 'p-3': show }">
                             <div class="flex grow flex-col md:flex-row font-courier">
                                 <div class="flex">
-                                    <h3 class="card-title font-normal">{{ $running_candidate->candidate->name }}</h3>
+                                    <h2 class="card-title font-normal">{{ $running_candidate->candidate->name }}</h2>
                                 </div>
                                 <div class="flex grow justify-end">
                                     <a
