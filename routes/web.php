@@ -26,6 +26,15 @@ use Spatie\Sitemap\SitemapGenerator;
 |
 */
 
+// Route::get('/view-email', function() {
+//     $list = [
+//         "Provo Mayor" => "Lord Macbeth",
+//         "Utah US Senate" => "Jared Pacheco"
+//     ];
+//     $mail = new App\Mail\EmailBallotToUser($list);
+//     return $mail->render();
+// });
+
 Route::get('/', function()  {
     return view('welcome');
 });
