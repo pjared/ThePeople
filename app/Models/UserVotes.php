@@ -19,4 +19,12 @@ class UserVotes extends Pivot
         "running_candidate_id",
         "is_valid",
     ];
+
+    public function ballot() {
+        return $this->belongsTo(Ballot::class, 'ballot_id');
+    }
+
+    public function candidate() {
+        return $this->hasOneThrough(Candidate::class, RunningCandidates::class, 'candidate_id', 'id', 'running_candidate_id');
+    }
 }
