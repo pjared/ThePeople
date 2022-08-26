@@ -2,7 +2,7 @@
     <div class="collapse collapse-arrow" :class="show_flow && 'overflow-visible'" x-transition>
         <input type="checkbox" x-on:click="show_flow = ! show_flow"/>
         <div class="flex collapse-title text-md font-medium items-center">
-            <span>{{$title}}</span>
+            <h2>{{$title}}</h2>
         </div>
         <div class="collapse-content" :class="show_flow && 'overflow-visible'">
             {{$content}}

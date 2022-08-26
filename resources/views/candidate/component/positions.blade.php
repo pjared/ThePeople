@@ -1,5 +1,5 @@
 {{-- PREVIOUS POSITIONS --}}
-<div class="flex grow flex-col w-11/12 items-center">
+<article class="flex grow flex-col w-11/12 items-center">
     <x-dropdown-card>
         <x-slot:title>
             Previous Political Positions
@@ -9,9 +9,23 @@
                 <div class="flex flex-col gap-4">
                     @foreach($previous_positions as $position)
                         <div class="flex flex-row justify-center gap-4">
-                            <div class="flex flex-col items-center gap-4">
-                                <span><b>{{ $position->position_name }}</b></span>
-                                <span>{{ $position->year_start }} - {{ $position->year_end }}</span>
+                            <div class="flex flex-col items-center gap-2">
+                                <div class="flex flex-col items-center">
+                                    <h3><b>{{ $position->position_name }}</b></h3>
+                                    <p>{{ $position->year_start }} - {{ $position->year_end }}</p>
+                                </div>
+                                <p
+                                    x-data="{ isCollapsed: false, maxLength: 215, originalContent: '', content: '' }"
+                                    x-init="originalContent = $el.firstElementChild.textContent.trim(); content = originalContent.slice(0, maxLength)"
+                                    >
+                                    <span x-text="isCollapsed ? originalContent : content">{{ $position->description }}</span>
+                                    <button
+                                        @click="isCollapsed = !isCollapsed"
+                                        x-show="originalContent.length > maxLength"
+                                        x-text="isCollapsed ? 'Show less' : 'Show more'"
+                                        class="link"
+                                        ></button>
+                                </p>
                             </div>
                             @auth
                                 <livewire:flag :type="'position'" :type_id="$position->id"  :side="'below'" :wire:key="'position-'.$position->id">
@@ -28,4 +42,4 @@
             @endif
         </x-slot>
     </x-dropdown-card>
-</div>
+</article>

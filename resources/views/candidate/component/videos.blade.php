@@ -1,6 +1,6 @@
 {{-- CAMPAIGN VIDEOS COMPONENT --}}
 @if(count($videos) != 0)
-    <div class="flex grow flex-col w-11/12 items-center">
+    <article class="flex grow flex-col w-11/12 items-center">
         <x-dropdown-card>
             <x-slot:title>
                 Campaign Videos
@@ -25,5 +25,5 @@
                 </div>
             </x-slot>
         </x-dropdown-card>
-    </div>
+    </article>
 @endif

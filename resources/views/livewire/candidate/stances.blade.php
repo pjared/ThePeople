@@ -1,11 +1,12 @@
-<div class="flex flex-col background-card w-11/12 items-center gap-2">
+<article class="flex flex-col background-card w-11/12 items-center gap-2">
     <div class="flex justify-center">
-        <span class="text-xl font-medium">Controversial Opinions</span>
+        <h2 class="text-xl font-medium">Controversial Opinions</h2>
     </div>
     <div class="flex flex-col grow gap-2 text-center w-full">
         @foreach($opinions as $opinion)
-            <span class="text-lg font-medium">{{$opinion->name}}</span>
+            <h3 class="text-lg font-medium">{{$opinion->name}}</h3>
             <div class="flex flex-col items-start justify-items-start">
+                {{-- Required Stances --}}
                 @if(count($opinion->required_stances) >= 1)
                     @foreach ($opinion->required_stances as $required_stance)
                         <div class="grid grid-cols-8 gap-2 w-full items-center">
@@ -13,7 +14,7 @@
                                 <div class="collapse collapse-arrow">
                                     <input type="checkbox" />
                                     <div class="collapse-title text-md font-medium text-left">
-                                        <b>{{$required_stance->label}}</b>
+                                        <h4><b>{{$required_stance->label}}</b><span class='text-red-500'>*</span></h4>
                                     </div>
                                     <div class="collapse-content">
                                         <p
@@ -22,11 +23,11 @@
                                         >
                                             <span x-text="isCollapsed ? originalContent : content">{{$candidate_required_stances->firstWhere('required_stance_id')->candidate_reasoning}}</span>
                                             <button
-                                            @click="isCollapsed = !isCollapsed"
-                                            x-show="originalContent.length > maxLength"
-                                            x-text="isCollapsed ? 'Show less' : 'Show more'"
-                                            class="link"
-                                            ></button>
+                                                @click="isCollapsed = !isCollapsed"
+                                                x-show="originalContent.length > maxLength"
+                                                x-text="isCollapsed ? 'Show less' : 'Show more'"
+                                                class="link"
+                                                ></button>
                                         </p>
                                     </div>
                                 </div>
@@ -54,7 +55,7 @@
                             <div class="collapse collapse-arrow">
                                 <input type="checkbox" />
                                 <div class="collapse-title text-md font-medium text-left">
-                                    <b>{{$candidate_stance->stance_label}}</b>
+                                    <h4><b>{{$candidate_stance->stance_label}}</b></h4>
                                 </div>
                                 <div class="collapse-content">
                                     <p
@@ -90,4 +91,4 @@
             </div>
         @endforeach
     </div>
-</div>
+</article>
