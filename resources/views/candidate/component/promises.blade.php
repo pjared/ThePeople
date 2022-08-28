@@ -14,18 +14,7 @@
                         <div class="flex flex-row justify-center items-center gap-4">
                             <div class="flex flex-col items-center">
                                 <h3 class="w-fit"><b>{{ $promise->promise }}</b></h3>
-                                <p
-                                    x-data="{ isCollapsed: false, maxLength: 215, originalContent: '', content: '' }"
-                                    x-init="originalContent = $el.firstElementChild.textContent.trim(); content = originalContent.slice(0, maxLength)"
-                                    >
-                                    <span x-text="isCollapsed ? originalContent : content">{{ $promise->plan }}</span>
-                                    <button
-                                        @click="isCollapsed = !isCollapsed"
-                                        x-show="originalContent.length > maxLength"
-                                        x-text="isCollapsed ? 'Show less' : 'Show more'"
-                                        class="link"
-                                        ></button>
-                                </p>
+                                <x-show-more :content="$promise->plan" />
                             </div>
                             @auth
                                 <livewire:flag :type="'promise'" :type_id="$promise->id" :side="'left'" :wire:key="'promise-flag-' . $promise->id">

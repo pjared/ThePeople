@@ -14,18 +14,7 @@
                                     <h3><b>{{ $position->position_name }}</b></h3>
                                     <p>{{ $position->year_start }} - {{ $position->year_end }}</p>
                                 </div>
-                                <p
-                                    x-data="{ isCollapsed: false, maxLength: 215, originalContent: '', content: '' }"
-                                    x-init="originalContent = $el.firstElementChild.textContent.trim(); content = originalContent.slice(0, maxLength)"
-                                    >
-                                    <span x-text="isCollapsed ? originalContent : content">{{ $position->description }}</span>
-                                    <button
-                                        @click="isCollapsed = !isCollapsed"
-                                        x-show="originalContent.length > maxLength"
-                                        x-text="isCollapsed ? 'Show less' : 'Show more'"
-                                        class="link"
-                                        ></button>
-                                </p>
+                                <x-show-more :content="$position->description" />
                             </div>
                             @auth
                                 <livewire:flag :type="'position'" :type_id="$position->id"  :side="'below'" :wire:key="'position-'.$position->id">
