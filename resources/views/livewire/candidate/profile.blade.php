@@ -24,7 +24,8 @@
                     <img
                         src="{{ $candidate->profile_photo_url }}"
                         alt="{{ $candidate->name }}"
-                        class="h-44 w-44"
+                        class="h-44 w-44 shadow-2xl"
+                        style='border: 6px solid #f8f8f8;'
                         loading='lazy'>
                     {{-- class="rounded-full object-cover" --}}
                     <div class="flex flex-col">
@@ -150,6 +151,7 @@
                 </div>
 
             </div>
+            {{-- CANDIDATE PHOTOS --}}
             {{-- <div class="flex flex-row w-full grow gap-6 items-center h-fit">
                 @foreach ($candidate->comments()->approved()->get() as $pinned_comment)
                     <div class='border border-slate-400 bg-white p-4 w-11/12 overflow-visible'>
