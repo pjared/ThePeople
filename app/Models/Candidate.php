@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Jetstream\HasProfilePhoto;
-
+use Laravel\Scout\Searchable;
 /**
  * A candidate is someone currently running for office.
  */
@@ -21,6 +21,7 @@ class Candidate extends Model
     use SoftDeletes;
     use HasComments;
     use HasProfilePhoto;
+    use Searchable;
 
     protected $fillable = [
         "name",
@@ -54,6 +55,17 @@ class Candidate extends Model
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function shouldBeSearchable()
+    {
+        return $this->running_candidate ? $this->running_candidate->show : false;
+    }
+    public function toSearchableArray()
+    {
+        return [
+            'name' => $this->name,
+        ];
+    }
 
     /**
      * Overrides default implementation. Users are only able to update profile if they are a candidate
