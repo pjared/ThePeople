@@ -41,7 +41,6 @@ class PrintBallot extends Component
                 $new_list[$vote->ballot->name] = $vote->candidate->name;
             }
         }
-        dd($new_list);
         Mail::to(auth()->user())->send(new EmailBallotToUser($new_list));
         $this->ballot_sent = true;
     }
