@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Laravel\Scout\Searchable;
 
 class Ballot extends Model
 {
     use HasFactory;
     use Sluggable;
+    use Searchable;
 
     public $timestamps = false;
 
@@ -24,6 +26,17 @@ class Ballot extends Model
         "voting_date",
         'slug'
     ];
+
+    public function shouldBeSearchable()
+    {
+        return count($this->candidates) >= 1;
+    }
+    public function toSearchableArray()
+    {
+        return [
+            'name' => $this->name,
+        ];
+    }
 
     /**
      * Return the sluggable configuration array for this model.
