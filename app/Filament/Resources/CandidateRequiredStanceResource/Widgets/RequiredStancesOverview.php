@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\CandidateRequiredStanceResource\Widgets;
 
+use Illuminate\Contracts\View\View;
 use Filament\Widgets\Widget;
 
 class RequiredStancesOverview extends Widget
@@ -11,6 +12,16 @@ class RequiredStancesOverview extends Widget
 
     public $candidate;
     public $opinions;
+
+    //Cannot emit from resource, so this will stay as is
+    // protected $listeners = ['itemAdded' => '$refresh'];
+
+    // public function render(): View
+    // {
+    //     $this->candidate = auth()->user()->candidate;
+
+    //     return parent::render();
+    // }
 
     public function mount()
     {

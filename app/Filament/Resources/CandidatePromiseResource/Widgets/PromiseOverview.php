@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\CandidatePromiseResource\Widgets;
 
+use Illuminate\Contracts\View\View;
 use Filament\Widgets\Widget;
 
 class PromiseOverview extends Widget
@@ -11,8 +12,12 @@ class PromiseOverview extends Widget
 
     public $candidate;
 
-    public function mount()
+    protected $listeners = ['itemAdded' => '$refresh'];
+
+    public function render(): View
     {
         $this->candidate = auth()->user()->candidate;
+
+        return parent::render();
     }
 }
