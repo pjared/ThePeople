@@ -12,6 +12,7 @@ class PoliticalGroupCandidates extends Pivot
     protected $fillable = [
         'candidate_id',
         'political_group_id',
+        'ballot_id'
     ];
 
     public function candidate() {
