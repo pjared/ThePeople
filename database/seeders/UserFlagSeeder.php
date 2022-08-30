@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Candidate;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -17,57 +18,24 @@ class UserFlagSeeder extends Seeder
      */
     public function run()
     {
+        $user = User::find(1);
         for($i = 1; $i <= 3; $i++) {
             $candidate = Candidate::find($i);
 
             foreach($candidate->promises as $promise) {
-                DB::table('user_flags')->insert([
-                    'user_id' => 1,
-                    'candidate_id' => $i,
-                    'ballot_id' => 1,
-                    'type' => 'promise',
-                    'type_id' => $promise->id,
-                    'flag_type' => rand(1,3),
-                    'note' => 'This is a note',
-                ]);
+                $promise->flagAsUser($user, 'This is a note', rand(0,3));
             }
 
             foreach($candidate->stances as $stance) {
-                $opinion_id = $stance->controversial_opinion_id;
-                DB::table('user_flags')->insert([
-                    'user_id' => 1,
-                    'candidate_id' => $i,
-                    'ballot_id' => 1,
-                    'type' => $opinion_id . '-controversial-stance',
-                    'type_id' => $stance->id,
-                    'flag_type' => rand(1,3),
-                    'note' => 'This is a note',
-                ]);
+                $stance->flagAsUser($user, 'This is a note', rand(0,3));
             }
 
             foreach($candidate->required_stances as $stance) {
-                $opinion_id = $stance->required_stance_id;
-                DB::table('user_flags')->insert([
-                    'user_id' => 1,
-                    'candidate_id' => $i,
-                    'ballot_id' => 1,
-                    'type' => $opinion_id . 'required-stance',
-                    'type_id' => $stance->id,
-                    'flag_type' => rand(1,3),
-                    'note' => 'This is a note',
-                ]);
+                $stance->flagAsUser($user, 'This is a note', rand(0,3));
             }
 
             foreach($candidate->previous_positions as $position) {
-                DB::table('user_flags')->insert([
-                    'user_id' => 1,
-                    'candidate_id' => $i,
-                    'ballot_id' => 1,
-                    'type' => 'position',
-                    'type_id' => $position->id,
-                    'flag_type' => rand(1,3),
-                    'note' => 'This is a note',
-                ]);
+                $position->flagAsUser($user, 'This is a note', rand(0,3));
             }
 
             // DB::table('user_flags')->insert([
