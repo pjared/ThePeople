@@ -7,6 +7,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Pages\Page;
+use Illuminate\Support\Facades\Storage;
 use Spatie\ImageOptimizer\OptimizerChainFactory;
 
 class PoliticalGroupOverview extends Page implements HasForms
@@ -16,6 +17,8 @@ class PoliticalGroupOverview extends Page implements HasForms
     protected static string $view = 'filament.pages.political-group-overview';
 
     public $group;
+    public $photo;
+    public $badge_photo;
 
     public $party_name;
     public $contact_phone_number;
@@ -42,6 +45,7 @@ class PoliticalGroupOverview extends Page implements HasForms
     public function mount(): void
     {
         $this->group = auth()->user()->manages_political_groups->first();
+        // dd( , $this->group->profile_photo_url);
         abort_unless(auth()->user()->hasRole('organizer') || auth()->user()->hasRole('organizerAdmin'), 403);
 
         $this->form->fill([
@@ -77,6 +81,37 @@ class PoliticalGroupOverview extends Page implements HasForms
         }
     }
 
+    public function update_badge()
+    {
+        // 2 Levels of validation. Make sure that it's an image first
+        $this->validate([
+            'badge_photo' => 'image',
+        ]);
+        //Now lets run it through and optimizer
+        $optimizerChain = OptimizerChainFactory::create();
+        $optimizerChain->optimize($this->badge_photo->getRealPath());
+
+        // Now lets make sure that it's less than a mb
+        $this->validate([
+            'badge_photo' => 'max:1024'
+        ]);
+        if (isset($this->badge_photo)) {
+            // dd('here');
+            $photo = $this->badge_photo;
+            tap($this->group->badge_url, function ($previous) use ($photo) {
+                $this->group->forceFill([
+                    'badge_url' => $photo->storePublicly(
+                        'badge-photos', ['disk' => 'public']
+                    ),
+                ])->save();
+
+                if ($previous) {
+                    Storage::disk('public')->delete($previous);
+                }
+            });
+        }
+    }
+
     public function deleteProfilePhoto() {
         $this->group->deleteProfilePhoto($this->photo);
     }
@@ -94,7 +129,6 @@ class PoliticalGroupOverview extends Page implements HasForms
 
     public function save() :void
     {
-        // dd('hi');
         $this->group->update(
             $this->form->getState(),
         );
