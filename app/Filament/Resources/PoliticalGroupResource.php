@@ -42,6 +42,7 @@ class PoliticalGroupResource extends Resource
                     ->maxLength(255),
                 Forms\Components\TextInput::make('site_link')
                     ->maxLength(255),
+                Forms\Components\Toggle::make('can_back_candidates'),
                 Forms\Components\TextInput::make('badge_url')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('profile_photo_path')
@@ -64,6 +65,7 @@ class PoliticalGroupResource extends Resource
                 Tables\Columns\TextColumn::make('phone'),
                 Tables\Columns\TextColumn::make('site_link'),
                 Tables\Columns\TextColumn::make('badge_url'),
+                Tables\Columns\BooleanColumn::make('can_back_candidates'),
                 Tables\Columns\TextColumn::make('profile_photo_path'),
                 Tables\Columns\TextColumn::make('slug'),
             ])
