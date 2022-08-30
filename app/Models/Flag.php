@@ -9,12 +9,10 @@ class Flag extends Model
 {
     use HasFactory;
 
-    protected $timestamps = false;
+    public $timestamps = false;
 
     protected $fillable = [
         'user_id',
-        'candidate_id',
-        'ballot_id',
         'flag_type', //Red, Green, Nuetral
         'note', //The note the user includes
     ];

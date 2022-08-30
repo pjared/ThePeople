@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\Ballot;
-use App\Models\Candidate;
+// use App\Models\Ballot;
+// use App\Models\Candidate;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -18,8 +18,8 @@ return new class extends Migration
     {
         Schema::create('flags', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreignIdFor(Candidate::class, 'candidate_id');
-            $table->foreignIdFor(Ballot::class, 'ballot_id');
+            // $table->foreignIdFor(Candidate::class, 'candidate_id');
+            // $table->foreignIdFor(Ballot::class, 'ballot_id');
             $table->foreignIdFor(User::class, 'user_id')->nullable();
             $table->morphs('flaggable');
             $table->text('note');
