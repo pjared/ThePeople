@@ -13,7 +13,6 @@
 
         {{-- TODO: Might have to make this it's own scrollable div --}}
         <div class="flex flex-col flex-1 w-4/5 justify-center gap-4">
-            {{-- <livewire:ballot.show :ballot="$ballot"> --}}
             @include('ballot.show')
             @role('organizerAdmin')
                 <livewire:groups.group-ballot :ballot="$ballot"/>
