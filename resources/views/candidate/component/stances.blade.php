@@ -26,11 +26,12 @@
                                     </div>
                                     <div class="col-span-1 items-center">
                                         @auth
-                                            <livewire:flag
+                                            <livewire:flag-content :content="$candidate_stance" :side="'right'" />
+                                            {{-- <livewire:flag
                                                 :type="'required-stance'"
                                                 :type_id="$candidate_stance->id"
                                                 :side="'right'"
-                                                :wire:key="'required-flag-'.$candidate_stance->id">
+                                                :wire:key="'required-flag-'.$candidate_stance->id"> --}}
                                         @else
                                             <label class="fill-transparent" for="signup-modal">
                                                 @include('icons.flag')
@@ -68,11 +69,12 @@
                             </div>
                             <div class="col-span-1 items-center">
                                 @auth
-                                    <livewire:flag
+                                    <livewire:flag-content :content="$candidate_stance" :side="'right'" />
+                                    {{-- <livewire:flag
                                         :type="'controversial-stance'"
                                         :type_id="$candidate_stance->id"
                                         :side="'right'"
-                                        :wire:key="'stance-flag-'.$candidate_stance->id">
+                                        :wire:key="'stance-flag-'.$candidate_stance->id"> --}}
                                 @else
                                     <label class="fill-transparent" for="signup-modal">
                                         @include('icons.flag')

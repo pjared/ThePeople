@@ -17,7 +17,10 @@
                                 <x-show-more :content="$position->description" />
                             </div>
                             @auth
-                                <livewire:flag :type="'position'" :type_id="$position->id"  :side="'below'" :wire:key="'position-'.$position->id">
+                                <livewire:flag-content
+                                    :content="$position"
+                                    :side="'right'"
+                                    :wire:key="'position-'.$position->id" />
                             @else
                                 <label class="fill-transparent" for="signup-modal">
                                     @include('icons.flag')

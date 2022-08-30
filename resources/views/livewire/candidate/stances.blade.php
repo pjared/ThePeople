@@ -101,11 +101,10 @@
                         </div>
                         <div class="col-span-1 items-center">
                             @auth
-                                <livewire:flag
-                                    :type="$required_stance->id .'required-stance'"
-                                    :type_id="$required_stance->id"
+                                <livewire:flag-content
+                                    :content="$candidate_required_stances->firstWhere('required_stance_id', $required_stance->id)"
                                     :side="'right'"
-                                    :wire:key="'required-flag-'.$required_stance->id">
+                                    :wire:key="'required-flag-'.$required_stance->id" />
                             @else
                                 <label class="fill-transparent" for="signup-modal">
                                     @include('icons.flag')
@@ -130,11 +129,10 @@
                         </div>
                         <div class="col-span-1 items-center">
                             @auth
-                                <livewire:flag
-                                    :type="$opinion->id .'controversial-stance'"
-                                    :type_id="$candidate_stance->id"
-                                    :side="'right'"
-                                    :wire:key="'stance-flag-'.$candidate_stance->id">
+                            <livewire:flag-content
+                                :content="$candidate_stance"
+                                :side="'right'"
+                                :wire:key="'stance-flag-'.$candidate_stance->id"/>
                             @else
                                 <label class="fill-transparent" for="signup-modal">
                                     @include('icons.flag')

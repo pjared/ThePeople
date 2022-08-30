@@ -193,14 +193,14 @@
                         this.new_changes = true;
                     },
                     left() {
-                        console.log('saved');
+                        // console.log('saved');
                         if(this.new_changes) {
-                            @this.change_flag(this.type, this.type_id, this.color, this.note);
+                            @this.change_flag(this.color, this.note);
                             this.new_changes = false;
                         }
                     },
                     deleteFlag() {
-                        @this.delete_flag(this.type, this.type_id)
+                        @this.delete_flag()
                     },
                     changedNote() {
                         console.log('Changed Note');
