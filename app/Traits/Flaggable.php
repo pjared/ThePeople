@@ -27,7 +27,7 @@ trait Flaggable
      */
     public function flag(string $note, $flag_type) //, $candidate_id, $ballot_id
     {
-        return $this->commentAsUser(auth()->user(), $note, $flag_type);
+        return $this->flagAsUser(auth()->user(), $note, $flag_type);
     }
 
     /**
