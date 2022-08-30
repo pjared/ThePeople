@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Candidate;
 
 use App\Models\Candidate;
+use App\Models\Flag;
 use App\Models\UserFlag;
 use Livewire\Component;
 
@@ -12,6 +13,11 @@ class Profile extends Component
     public $opinions;
     public $is_manual;
     public $user_comment;
+    public Flag $current_flag;
+
+    protected $listeners = [
+        'flagSelected' => 'updateCurrentFlag'
+    ];
 
     public function mount($candidate) {
         $this->candidate = $candidate->load('ballot', 'ballot.office:id,name', 'ballot.location:id,state,name',
@@ -32,24 +38,24 @@ class Profile extends Component
         return view('livewire.candidate.profile');
     }
 
-    public function change_flag($flag_type, $flag_id, $flag_value, $flag_note) {
+    public function updateCurrentFlag(Flag $flag) {
+        // Update the user's current flag
+        $this->current_flag = $flag;
+    }
+
+    public function change_flag($flag_value, $flag_note) {
+        // Auth Check
         if(! auth()) {
             return;
         }
-        //Update the userFlag variable
-        UserFlag::updateOrCreate(
-            [
-                'user_id' => auth()->id(),
-                'candidate_id' => $this->candidate->id,
-                'ballot_id' => $this->candidate->ballot->id,
-                'type' => $flag_type, // Promise, Donor, etc.
-                'type_id' => $flag_id, // The id of the promise, donor, etc.'
-            ],
+
+        //Update the flag. If it did not exist, it was created before the emit call
+        $this->current_flag->update(
             [
                 'flag_type' => $flag_value,
                 'note' => $flag_note,
             ]
-        );
+            );
     }
 
     public function delete_flag($flag_type, $flag_id)
