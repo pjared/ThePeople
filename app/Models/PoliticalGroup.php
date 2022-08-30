@@ -28,6 +28,7 @@ class PoliticalGroup extends Model
         'site_link',
         'badge_url',
         'slug',
+        'can_back_candidates',
     ];
 
     /**
