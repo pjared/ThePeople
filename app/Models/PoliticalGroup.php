@@ -7,6 +7,7 @@ use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Jetstream\HasProfilePhoto;
 
 class PoliticalGroup extends Model
@@ -43,6 +44,12 @@ class PoliticalGroup extends Model
                 'source' => ['name']
             ]
         ];
+    }
+
+    public function getFullBadgeUrlAttribute()
+    {
+        return $this->badge_url
+                    ? Storage::disk('public')->url($this->badge_url) : null;
     }
 
     /**
