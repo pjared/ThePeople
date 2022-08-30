@@ -12,9 +12,18 @@
         </div>
 
         {{-- TODO: Might have to make this it's own scrollable div --}}
-        <div class="flex flex-1 w-4/5 justify-center">
+        <div class="flex flex-col flex-1 w-4/5 justify-center gap-4">
             {{-- <livewire:ballot.show :ballot="$ballot"> --}}
             @include('ballot.show')
+            @role('organizerAdmin')
+                <div class="flex flex-col grow gap-6 items-center w-full">
+                    <h2>Submit a question to the ballot</h2>
+
+                    <textarea wire:model.defer="group_question" class="textarea textarea-primary w-1/2" placeholder="Your question"></textarea>
+                    <button wire:click="add_question" class="btn btn-primary">Submit</button>
+
+                </div>
+            @endrole
         </div>
     </div>
 

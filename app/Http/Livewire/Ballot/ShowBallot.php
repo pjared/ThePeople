@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Ballot;
 
 use App\Models\Ballot;
+use App\Models\GroupBallotQuestions;
 use App\Models\UserVotes;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -12,6 +13,7 @@ class ShowBallot extends Component
     public Ballot $ballot;
 
     public $candidate_vote;
+    public $group_question;
 
     public function mount(Ballot $ballot)
     {
@@ -39,6 +41,24 @@ class ShowBallot extends Component
                 'is_valid' => 1,
             ]
         );
+    }
+
+    public function add_question() {
+        if(auth()->user() && auth()->user()->hasRole('organizerAdmin')) {
+            //Check the users group
+            $user_group = auth()->user()->manages_political_groups->first();
+            if(!$user_group) {
+                return;
+            }
+            //Create the new model
+            $ballot_question = new GroupBallotQuestions();
+            $ballot_question->ballot_id = $this->ballot->id;
+            $ballot_question->political_group_id = $user_group->id;
+            $ballot_question->question = $this->group_question;
+            $ballot_question->save();
+            //Reset the text
+            $this->group_question = "";
+        }
     }
 
     public function render()
