@@ -22,7 +22,7 @@ return new class extends Migration
             // $table->foreignIdFor(Ballot::class, 'ballot_id');
             $table->foreignIdFor(User::class, 'user_id')->nullable();
             $table->morphs('flaggable');
-            $table->text('note');
+            $table->text('note')->nullable();
             $table->string('flag_type', 10);
         });
     }
