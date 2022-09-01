@@ -15,6 +15,8 @@ class Flag extends Model
         'user_id',
         'flag_type', //Red, Green, Nuetral
         'note', //The note the user includes
+        'flaggable_id',
+        'flaggable_type'
     ];
 
     public function flaggable()
