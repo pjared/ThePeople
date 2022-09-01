@@ -38,24 +38,23 @@ class Profile extends Component
         return view('livewire.candidate.profile');
     }
 
-    public function updateCurrentFlag(Flag $flag) {
-        // Update the user's current flag
-        $this->current_flag = $flag;
-    }
-
-    public function change_flag($flag_value, $flag_note) {
+    public function change_flag($flag_type, $flag_id, $flag_value, $flag_note) {
+        // dd('done editing', $flag_t?ype, $flag_id, $flag_value, $flag_note);
+        //TODO: need to validate the flag variables?
         // Auth Check
         if(! auth()) {
             return;
         }
-
-        //Update the flag. If it did not exist, it was created before the emit call
-        $this->current_flag->update(
+        Flag::updateOrCreate(
             [
-                'flag_type' => $flag_value,
-                'note' => $flag_note,
-            ]
-            );
+                'user_id' => auth()->id(),
+                'flaggable_id' => $flag_id,
+                'flaggable_type' => $flag_type,
+            ],
+            [
+                'flag_type'  => $flag_value,
+                'note'  => $flag_note,
+            ]);
     }
 
     public function delete_flag($flag_type, $flag_id)
@@ -63,11 +62,9 @@ class Profile extends Component
         if(! auth()) {
             return;
         }
-        UserFlag::where('user_id', auth()->id())
-                        ->where('candidate_id',$this->candidate->id)
-                        ->where('ballot_id',$this->candidate->ballot->id)
-                        ->where('type',$flag_type)
-                        ->where('type_id',$flag_id)
+        Flag::where('user_id', auth()->id())
+                        ->where('flaggable_type',$flag_type)
+                        ->where('flaggable_id',$flag_id)
                         ->delete();
     }
 
@@ -78,6 +75,5 @@ class Profile extends Component
         }
         $this->candidate->commentAsUser(auth()->user(), $this->user_comment);
         $this->user_comment = "";
-        // dd(\App\Models\Comment::all());
     }
 }

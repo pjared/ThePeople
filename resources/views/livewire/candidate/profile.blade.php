@@ -174,7 +174,7 @@
             document.addEventListener('alpine:init', () => {
                 Alpine.data('flag', () => ({
                     new_changes: false,
-                    color:0,
+                    color: 0,
 
                     setColor(color) {
                         if(color == '1') {
@@ -193,17 +193,19 @@
                         this.new_changes = true;
                     },
                     left() {
-                        // console.log('saved');
                         if(this.new_changes) {
-                            @this.change_flag(this.color, this.note);
+                            @this.change_flag(this.type, this.type_id, this.color, this.note);
                             this.new_changes = false;
                         }
                     },
                     deleteFlag() {
-                        @this.delete_flag()
+                        @this.delete_flag(this.type, this.type_id)
+                        this.color = 0;
+                        this.current_color = 'fill-transparent';
+                        this.note = '';
+                        this.open = false;
                     },
                     changedNote() {
-                        console.log('Changed Note');
                         this.new_changes = true;
                     },
                 }))

@@ -4,7 +4,6 @@
         dropdown_class: $wire.dropdown_class
         }"
     :class="dropdown_class"
-    wire:click='flagSelected'
     >
     <div x-data="flag">
         {{-- Declare some data --}}
@@ -48,13 +47,13 @@
                             @click="setColor('3')"
                             class='btn btn-xs btn-circle bg-gray-700 border border-black hover:bg-gray-900'>
                         </button>
-                        <div class='flex flex-row w-fit' x-show="color != 0">
-                            <div class="divider divider-horizontal"></div>
-                            {{-- TRASH --}}
-                            <x-heroicon-o-trash class='h-6 w-6 cursor-pointer' @click="deleteFlag()"></x-heroicon-o-trash>
+                        <div class='flex flex-row w-fit' x-show="color && color != 0">
                             <div class="divider divider-horizontal"></div>
                             {{-- NOTE --}}
                             <x-heroicon-o-annotation class='h-6 w-6' x-on:click="open = ! open"></x-heroicon-o-annotation>
+                            <div class="divider divider-horizontal"></div>
+                            {{-- TRASH --}}
+                            <x-heroicon-o-trash class='h-6 w-6 cursor-pointer' @click="deleteFlag()"></x-heroicon-o-trash>
                         </div>
 
 
