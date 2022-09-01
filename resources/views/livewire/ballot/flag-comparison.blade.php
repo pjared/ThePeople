@@ -16,7 +16,7 @@
                 </div>
 
                 <livewire:candidate.flag-info
-                    :candidate_id="$candidate->id"
+                    {{-- :candidate_id="$candidate->id" --}}
                     :flags="$flags->where('candidate_id', $candidate->id)"
                     :opinions="$opinions" />
 
