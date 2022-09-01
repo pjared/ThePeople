@@ -19,7 +19,7 @@
                             @auth
                                 <livewire:flag-content
                                         :content="$promise"
-                                        :side="'left'"
+                                        :side="'below'"
                                         :wire:key="'promise-flag-' . $promise->id" />
                             @else
                                 <label class="fill-transparent" for="signup-modal">

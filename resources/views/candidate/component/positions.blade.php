@@ -19,7 +19,7 @@
                             @auth
                                 <livewire:flag-content
                                     :content="$position"
-                                    :side="'right'"
+                                    :side="'below'"
                                     :wire:key="'position-'.$position->id" />
                             @else
                                 <label class="fill-transparent" for="signup-modal">

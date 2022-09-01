@@ -13,7 +13,7 @@
                             @auth
                                 <livewire:flag-content
                                         :content="$opinion"
-                                        :side="'right'"
+                                        :side="'below'"
                                         :wire:key="'opinion-'.$opinion->id" />
                             @else
                                 <label class="fill-transparent" for="signup-modal">
