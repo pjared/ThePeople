@@ -50,6 +50,8 @@ class Profile extends Component
                 'user_id' => auth()->id(),
                 'flaggable_id' => $flag_id,
                 'flaggable_type' => $flag_type,
+                'candidate_id' => $this->candidate->id,
+                'ballot_id' => $this->candidate->ballot->id,
             ],
             [
                 'flag_type'  => $flag_value,
