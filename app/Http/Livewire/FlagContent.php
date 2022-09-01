@@ -33,8 +33,8 @@ class FlagContent extends Component
             //Set the type of flag
             //Temp flag will get us a type and ID
             $temp_flag = $content->temp_flag();
-            $this->type = $temp_flag->flaggable_type;
-            $this->type_id = $temp_flag->flaggable_id;
+            $this->type = $temp_flag['flaggable_type'];
+            $this->type_id = $temp_flag['flaggable_id'];
         } else {
             //The flag exists, so we can just get type and ID from it
             $this->type = $flag->flaggable_type;

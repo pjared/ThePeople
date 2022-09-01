@@ -19,17 +19,10 @@ trait Flaggable
     }
 
     public function temp_flag() {
-        $user = auth()->user();
-        if(! $user) {
-            return;
-        }
-        return new Flag([
-            'user_id' => $user->getKey(),
-            'note' => '',
+        return [
             'flaggable_id' => $this->getKey(),
-            'flaggable_type' => get_class(),
-            'flag_type' => 0,
-        ]);
+            'flaggable_type' => get_class()
+        ];
     }
 
     /**
@@ -39,9 +32,9 @@ trait Flaggable
      * @param $candidate_id
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function flag(string $note, $flag_type) //, $candidate_id, $ballot_id
+    public function flag(string $note, $flag_type, $candidate_id, $ballot_id) //, $candidate_id, $ballot_id
     {
-        return $this->flagAsUser(auth()->user(), $note, $flag_type);
+        return $this->flagAsUser(auth()->user(), $note, $flag_type, $candidate_id, $ballot_id);
     }
 
     /**
@@ -51,10 +44,12 @@ trait Flaggable
      * @param string $comment
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function flagAsUser(?Model $user, string $note, $flag_type) //, $candidate_id, $ballot_id
+    public function flagAsUser(?Model $user, string $note, $flag_type, $candidate_id, $ballot_id) //, $candidate_id, $ballot_id
     {
         $flag = new Flag([
             'user_id' => is_null($user) ? null : $user->getKey(),
+            'candidate_id' => $candidate_id,
+            'ballot_id' => $ballot_id,
             'note' => $note,
             'flaggable_id' => $this->getKey(),
             'flaggable_type' => get_class(),
