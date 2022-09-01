@@ -1,7 +1,7 @@
 <?php
 
-// use App\Models\Ballot;
-// use App\Models\Candidate;
+use App\Models\Ballot;
+use App\Models\Candidate;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
