@@ -115,7 +115,7 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser, Has
     }
 
     public function flags() {
-        return $this->hasMany(UserFlag::class, 'user_id');
+        return $this->hasMany(Flag::class, 'user_id');
     }
 
     /**
