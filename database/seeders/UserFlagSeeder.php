@@ -24,19 +24,19 @@ class UserFlagSeeder extends Seeder
             $ballot_id = $candidate->ballot->id;
 
             foreach($candidate->promises as $promise) {
-                $promise->flagAsUser($user, 'This is a note', rand(0,3), $candidate->id, $ballot_id);
+                $promise->flagAsUser($user, 'This is a note', rand(1,3), $candidate->id, $ballot_id);
             }
 
             foreach($candidate->stances as $stance) {
-                $stance->flagAsUser($user, 'This is a note', rand(0,3), $candidate->id, $ballot_id);
+                $stance->flagAsUser($user, 'This is a note', rand(1,3), $candidate->id, $ballot_id);
             }
 
             foreach($candidate->required_stances as $stance) {
-                $stance->flagAsUser($user, 'This is a note', rand(0,3), $candidate->id, $ballot_id);
+                $stance->flagAsUser($user, 'This is a note', rand(1,3), $candidate->id, $ballot_id);
             }
 
             foreach($candidate->previous_positions as $position) {
-                $position->flagAsUser($user, 'This is a note', rand(0,3), $candidate->id, $ballot_id);
+                $position->flagAsUser($user, 'This is a note', rand(1,3), $candidate->id, $ballot_id);
             }
 
             // DB::table('user_flags')->insert([
