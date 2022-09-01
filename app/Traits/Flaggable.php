@@ -18,6 +18,20 @@ trait Flaggable
         return $this->morphMany(Flag::class, 'flaggable');
     }
 
+    public function temp_flag() {
+        $user = auth()->user();
+        if(! $user) {
+            return;
+        }
+        return new Flag([
+            'user_id' => $user->getKey(),
+            'note' => '',
+            'flaggable_id' => $this->getKey(),
+            'flaggable_type' => get_class(),
+            'flag_type' => 0,
+        ]);
+    }
+
     /**
      * Attach a comment to this model.
      *
@@ -41,8 +55,6 @@ trait Flaggable
     {
         $flag = new Flag([
             'user_id' => is_null($user) ? null : $user->getKey(),
-            // 'candidate_id' => $candidate_id,
-            // 'ballot_id' => $ballot_id,
             'note' => $note,
             'flaggable_id' => $this->getKey(),
             'flaggable_type' => get_class(),
