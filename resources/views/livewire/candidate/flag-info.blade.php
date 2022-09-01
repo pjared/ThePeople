@@ -26,6 +26,7 @@
                                     >
                                 </button>
                             </div>
+                            @include('components.comparison-flag', ['type' => $flag->flag_type])
                             <div>
                                 Your Note: {{$flag->note}}
                             </div>
