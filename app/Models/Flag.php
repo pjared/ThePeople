@@ -13,10 +13,12 @@ class Flag extends Model
 
     protected $fillable = [
         'user_id',
+        'candidate_id',
+        'ballot_id',
         'flag_type', //Red, Green, Nuetral
         'note', //The note the user includes
         'flaggable_id',
-        'flaggable_type'
+        'flaggable_type',
     ];
 
     public function flaggable()

@@ -18,8 +18,8 @@ return new class extends Migration
     {
         Schema::create('flags', function (Blueprint $table) {
             $table->increments('id');
-            // $table->foreignIdFor(Candidate::class, 'candidate_id');
-            // $table->foreignIdFor(Ballot::class, 'ballot_id');
+            $table->foreignIdFor(Candidate::class, 'candidate_id');
+            $table->foreignIdFor(Ballot::class, 'ballot_id');
             $table->foreignIdFor(User::class, 'user_id')->nullable();
             $table->morphs('flaggable');
             $table->text('note')->nullable();
