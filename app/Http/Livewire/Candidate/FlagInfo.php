@@ -10,6 +10,7 @@ class FlagInfo extends Component
     public $opinion_flags = [];
     public $position_flags;
     public $other_opinion_flags;
+    public $total_flag_count;
 
     public function render()
     {
@@ -18,7 +19,8 @@ class FlagInfo extends Component
 
     public function mount($flags, $opinions)
     {
-        // dd($flags);
+        $this->total_flag_count = count($flags);
+
         //Filter for the flags with promise
         $this->promise_flags = $flags->where('flaggable_type', 'App\Models\CandidatePromise');
         //Filter flags for each opinion in ballot

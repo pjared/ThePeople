@@ -1,4 +1,8 @@
-<div class='flex flex-col'>
+<div class='flex flex-col items-center'>
+    @if ($total_flag_count == 0)
+        <p class='w-3/4 text-center'>You haven't flagged anything from this candidates profile. Click on their name to start.</p>
+    @endif
+
     @if(count($promise_flags) >= 1)
         <div class='w-11/12 h-fit p-2' x-data="{ show_flow : false}">
             <div class="collapse collapse-arrow" :class="show_flow && 'overflow-visible'" x-transition>
