@@ -7,6 +7,7 @@ use Livewire\Component;
 
 class FlagContent extends Component
 {
+    public $content;
     public $set_flag;
     public $note;
     public $side;
@@ -14,6 +15,8 @@ class FlagContent extends Component
     public $dropdown_class;
     public $type;
     public $type_id;
+
+    public $is_loading = true;
 
     public function mount($content, $side) {
         //Set where the dropdown will be
@@ -25,14 +28,19 @@ class FlagContent extends Component
             $this->dropdown_class =  'dropdown dropdown-top';
         }
 
-        $flag = $content->flags()->firstWhere('user_id', auth()->id());
+        $this->content = $content;
+    }
+
+    public function load_flag()
+    {
+        $flag = $this->content->flags()->firstWhere('user_id', auth()->id());
 
         //Default current color is transparent
         $this->current_color = 'fill-transparent';
         if(! $flag) {
             //Set the type of flag
             //Temp flag will get us a type and ID
-            $temp_flag = $content->temp_flag();
+            $temp_flag = $this->content->temp_flag();
             $this->type = $temp_flag['flaggable_type'];
             $this->type_id = $temp_flag['flaggable_id'];
         } else {
@@ -53,6 +61,7 @@ class FlagContent extends Component
             }
 
         }
+        $this->is_loading = false;
     }
 
     public function render()
