@@ -4,7 +4,6 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\RunningCandidatesResource\Pages;
 use App\Filament\Resources\RunningCandidatesResource\RelationManagers;
-use App\Jobs\UpdateBallotCache;
 use App\Models\RunningCandidates;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -56,10 +55,7 @@ class RunningCandidatesResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make()
-                ->after(function (RunningCandidates $record) {
-                    UpdateBallotCache::dispatch($record->candidate->ballot);
-                }),
+                Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),

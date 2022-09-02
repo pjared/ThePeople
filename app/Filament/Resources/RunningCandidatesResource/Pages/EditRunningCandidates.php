@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\RunningCandidatesResource\Pages;
 
 use App\Filament\Resources\RunningCandidatesResource;
+use App\Jobs\UpdateBallotCache;
 use App\Models\Ballot;
 use App\Models\Candidate;
 use App\Models\CandidateRequiredStance;
@@ -45,6 +46,7 @@ class EditRunningCandidates extends EditRecord
         //Get the ballot
         $ballot = Ballot::find($this->data['ballot_id']);
 
+        UpdateBallotCache::dispatch($ballot);
         //Delete all of the old required stances for the candidate
         $required_stances = CandidateRequiredStance::where('candidate_id', $this->data['candidate_id'])->get();
         foreach($required_stances as $required_stance) {
