@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Ballot;
 
 use App\Models\Ballot;
+use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 
 class BallotList extends Component
@@ -16,6 +17,8 @@ class BallotList extends Component
 
     public function load_ballots()
     {
-        $this->ballots = Ballot::with('office', 'location')->withCount('candidates')->get();
+        $this->ballots = Cache::rememberForever('ballots', function () {
+            return Ballot::with('office', 'location')->withCount('candidates')->get();
+        });
     }
 }

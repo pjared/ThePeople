@@ -42,5 +42,9 @@ class UpdateBallotCache implements ShouldQueue
                                             'candidates',
                                             'candidates.candidate:id,slug,profile_photo_path,name');
                 });
+        Cache::forget('ballots');
+        Cache::rememberForever('ballots', function () {
+            return Ballot::with('office', 'location')->withCount('candidates')->get();
+        });
     }
 }
