@@ -5,20 +5,21 @@
                 Plan your choice for the upcoming election
             </p>
             <h1 class="uppercase mt-2 text-sm">
-                {{ $ballot->location->name }} {{ $ballot->office->name }} - VOTING DATE: {{ $ballot->voting_date->format('m/d/Y')}}
+                {{ $this->ballot->location->name }} {{ $this->ballot->office->name }} - VOTING DATE: {{ $this->ballot->voting_date->format('m/d/Y')}}
             </h1>
         </div>
         @auth
             <div class='flex items-center justify-end'>
-                <a class='link' href="/flag-comparison/{{$ballot->slug}}">Compare Candidate Flags</a>
+                <a class='link' href="/flag-comparison/{{$this->ballot->slug}}">Compare Candidate Flags</a>
                 @include('components.comparison-flag', ['type' => '2'])
             </div>
         @endauth
 
     </div>
 
-    <div class="flex flex-wrap grow w-11/12 mt-2" wire:init="load_candidates">
-        @foreach ($candidates as $running_candidate)
+    <div class="flex flex-wrap grow w-11/12 mt-2">
+        {{-- wire:init="load_candidates" --}}
+        @foreach ($this->ballot->candidates as $running_candidate)
             <div class="flex grow flex-row pt-2 w-11/12">
                 {{-- CANDIDATE NAME, PICTURE, AND PAGE LINK --}}
                 <form action="/candidate/profile/{{$running_candidate->candidate->slug}}" method="GET" class="w-11/12 md:hover:scale-110">
@@ -105,15 +106,15 @@
     @endpush
 
     @section('description')
-        The mock-ballot of {{$ballot->name}}. Candidates here have the ability to create their own profiles, however if a candidate has not created a profile it's possible that we have created one for them.
+        The mock-ballot of {{$this->ballot->name}}. Candidates here have the ability to create their own profiles, however if a candidate has not created a profile it's possible that we have created one for them.
         This ballot currently has the following candidates:
-        @foreach ($ballot->candidates as $candidate)
-            {{$candidate->name}} - {{$ballot->name}},
+        @foreach ($this->ballot->candidates as $candidate)
+            {{$candidate->name}} - {{$this->ballot->name}},
         @endforeach
     @endsection
-    @section('keywords')
-        @foreach ($ballot->candidates as $candidate)
-            {{$candidate->name}} - {{$ballot->name}},
+    {{-- @section('keywords')
+        @foreach ($this->ballot->candidates as $candidate)
+            {{$candidate->name}} - {{$this->ballot->name}},
         @endforeach
-    @endsection
+    @endsection --}}
 </div>

@@ -7,34 +7,50 @@ use App\Models\GroupBallotQuestions;
 use App\Models\PoliticalGroupCandidates;
 use App\Models\UserVotes;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
 class ShowBallot extends Component
 {
-    public Ballot $ballot;
+    // public Ballot $ballot;
+    public $ballot_slug;
     public $candidates = [];
-    public $candidates_loaded = false;
     public $candidate_vote;
 
     public function mount(Ballot $ballot)
     {
-        if(Auth::user()) {
-            $user_vote = UserVotes::where('ballot_id', $ballot->id)->where('user_id', Auth::id())->first();
+        $this->ballot_slug = $ballot->slug;
+        if(auth()->check()) {
+            $user_vote = UserVotes::where('ballot_id', $ballot->id)->where('user_id', auth()->id())->first();
             if($user_vote) {
                 $this->candidate_vote = $user_vote->running_candidate_id;
             }
         }
-        $this->ballot = $ballot->load('location:id,name,state',
-                                            'office:id,name',
-                                            'candidates',
-                                            'candidates.candidate:id,slug,profile_photo_path,name');
+
+        // $this->ballot =
+        Cache::rememberForever('ballot-' . $ballot->slug, function () use ($ballot) {
+            return $ballot->load('location:id,name,state',
+                                    'office:id,name',
+                                    'candidates',
+                                    'candidates.candidate:id,slug,profile_photo_path,name');
+        });
+
+        // $this->ballot = Cache::remember('ballot' . $ballot->slug, 2, function () use ($ballot) {
+        //     return $ballot->load('location', 'office','candidates','candidates.candidate');
+
+        //     $this->ballot =
+        // });
     }
 
-    public function load_candidates()
+    public function render()
     {
-        $this->candidates = $this->ballot->candidates;
-        $this->candidates_loaded = true;
+        return view('livewire.ballot.show-ballot');
+    }
+
+    public function getBallotProperty()
+    {
+        return Cache::get('ballot-' . $this->ballot_slug);
     }
 
     public function change_user_vote($candidate_id)
@@ -58,10 +74,5 @@ class ShowBallot extends Component
                 'is_valid' => 1,
             ]
         );
-    }
-
-    public function render()
-    {
-        return view('livewire.ballot.show-ballot');
     }
 }
