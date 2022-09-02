@@ -8,9 +8,13 @@
                 {{ $ballot->location->name }} {{ $ballot->office->name }} - VOTING DATE: {{ $ballot->voting_date->format('m/d/Y')}}
             </h1>
         </div>
-        {{-- <div class='flex justify-end'>
-            <a class='link' href="/flag-comparison/{{$ballot->slug}}">Flag Comparison</a>
-        </div> --}}
+        @auth
+            <div class='flex items-center justify-end'>
+                <a class='link' href="/flag-comparison/{{$ballot->slug}}">Compare Candidate Flags</a>
+                @include('components.comparison-flag', ['type' => '2'])
+            </div>
+        @endauth
+
     </div>
 
     <div class="flex flex-wrap grow w-11/12 mt-2">
