@@ -30,6 +30,7 @@ class ManualCandidateResource extends Resource
                     ->maxLength(255),
                 Forms\Components\Textarea::make('sources')
                     ->maxLength(65535),
+                Forms\Components\Toggle::make('candidate.running_candidate.show'),
             ]);
     }
 
@@ -40,6 +41,8 @@ class ManualCandidateResource extends Resource
                 Tables\Columns\TextColumn::make('candidate_id'),
                 Tables\Columns\TextColumn::make('note'),
                 Tables\Columns\TextColumn::make('sources'),
+                Tables\Columns\BooleanColumn::make('candidate.running_candidate.show')
+                    ->label('Show'),
             ])
             ->filters([
                 //

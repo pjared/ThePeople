@@ -20,6 +20,10 @@ class ManualCandidate extends Model
         'sources',
     ];
 
+    public function candidate() {
+        return $this->belongsTo(Candidate::class, 'candidate_id');
+    }
+
     // protected $casts = [
     //     'sources' => 'array',
     // ];
