@@ -13,11 +13,6 @@ class Profile extends Component
     public $opinions;
     public $is_manual;
     public $user_comment;
-    public Flag $current_flag;
-
-    protected $listeners = [
-        'flagSelected' => 'updateCurrentFlag'
-    ];
 
     public function mount($candidate) {
         $this->candidate = $candidate->load('ballot', 'ballot.office:id,name', 'ballot.location:id,state,name',
