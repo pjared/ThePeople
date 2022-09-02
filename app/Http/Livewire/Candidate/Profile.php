@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Candidate;
 use App\Models\Candidate;
 use App\Models\Flag;
 use App\Models\UserFlag;
+use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
 class Profile extends Component
@@ -34,12 +35,22 @@ class Profile extends Component
     }
 
     public function change_flag($flag_type, $flag_id, $flag_value, $flag_note) {
-        // dd('done editing', $flag_t?ype, $flag_id, $flag_value, $flag_note);
-        //TODO: need to validate the flag variables?
         // Auth Check
         if(! auth()) {
             return;
         }
+        //Validate the incoming data
+        Validator::make(
+            ['flag_type' => $flag_type],
+            ['flag_type' => 'required|string'],
+            ['flag_id' => $flag_id],
+            ['flag_id' => 'required|integer'],
+            ['flag_value' => $flag_value],
+            ['flag_value' => 'required|integer|min:1|max:3'],
+            ['flag_note' => $flag_note],
+            ['flag_note' => 'string|nullable'],
+        )->validate();
+
         Flag::updateOrCreate(
             [
                 'user_id' => auth()->id(),
@@ -56,9 +67,18 @@ class Profile extends Component
 
     public function delete_flag($flag_type, $flag_id)
     {
+        //Auth Check
         if(! auth()) {
             return;
         }
+        //Validate the incoming data
+        Validator::make(
+            ['flag_type' => $flag_type],
+            ['flag_type' => 'required|string'],
+            ['flag_id' => $flag_id],
+            ['flag_id' => 'required|integer'],
+        )->validate();
+
         Flag::where('user_id', auth()->id())
                         ->where('flaggable_type',$flag_type)
                         ->where('flaggable_id',$flag_id)
@@ -67,9 +87,13 @@ class Profile extends Component
 
     public function add_comment()
     {
+        //Auth check
         if(! auth()) {
             return;
         }
+        $this->validate([
+            'user_comment' => 'required|string'
+        ]);
         $this->candidate->commentAsUser(auth()->user(), $this->user_comment);
         $this->user_comment = "";
     }
