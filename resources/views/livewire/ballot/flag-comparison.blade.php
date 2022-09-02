@@ -12,11 +12,10 @@
                 </figure>
                 {{-- NAME --}}
                 <div class="flex grow flex-col md:flex-row font-courier">
-                    <h3 class="text-xl">{{ $candidate->name }}</h3>
+                    <h3 class="text-xl"><a class='link' href="/candidate/profile/{{$candidate->slug}}">{{ $candidate->name }}</a></h3>
                 </div>
 
                 <livewire:candidate.flag-info
-                    {{-- :candidate_id="$candidate->id" --}}
                     :flags="$flags->where('candidate_id', $candidate->id)"
                     :opinions="$opinions" />
 
