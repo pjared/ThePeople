@@ -20,8 +20,8 @@ return [
      */
     'features' => [
         Features::spammerIpTracking(),
-        Features::blockSpammersGlobally(),
-//        Features::neverGonnaGiveYouUp(),
+        // Features::blockSpammersGlobally(),
+        // Features::neverGonnaGiveYouUp(),
     ],
 
     /**
