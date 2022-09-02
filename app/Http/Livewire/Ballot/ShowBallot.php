@@ -12,7 +12,8 @@ use Livewire\Component;
 class ShowBallot extends Component
 {
     public Ballot $ballot;
-
+    public $candidates = [];
+    public $candidates_loaded = false;
     public $candidate_vote;
 
     public function mount(Ballot $ballot)
@@ -24,6 +25,12 @@ class ShowBallot extends Component
             }
         }
         $this->ballot = $ballot->load('location:id,name,state', 'office:id,name', 'candidates', 'candidates.candidate');
+    }
+
+    public function load_candidates()
+    {
+        $this->candidates = $this->ballot->candidates;
+        $this->candidates_loaded = true;
     }
 
     public function change_user_vote($candidate_id)

@@ -8,14 +8,20 @@
 
     <div class="flex flex-col-reverse md:flex-row items-center grow py-12">
         <div class="w-1/5 ml-6">
-            <livewire:ballot.ballot-list />
+            @if($candidates_loaded)
+                <livewire:ballot.ballot-list />
+            @endif
         </div>
 
         {{-- TODO: Might have to make this it's own scrollable div --}}
         <div class="flex flex-col flex-1 w-4/5 justify-center gap-4">
             @include('ballot.show')
+
+
             @role('organizerAdmin')
-                <livewire:groups.group-ballot :ballot="$ballot"/>
+                @if($candidates_loaded)
+                    <livewire:groups.group-ballot :ballot="$ballot"/>
+                @endif
             @endrole
         </div>
     </div>
