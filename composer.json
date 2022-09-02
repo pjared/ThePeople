@@ -28,6 +28,7 @@
         "symfony/mailgun-mailer": "^6.1"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.7",
         "fakerphp/faker": "^1.9.1",
         "laravel/dusk": "^6.25",
         "laravel/pint": "^1.0",
