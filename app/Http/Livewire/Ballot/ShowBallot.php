@@ -28,19 +28,12 @@ class ShowBallot extends Component
             }
         }
 
-        // $this->ballot =
         Cache::rememberForever('ballot-' . $ballot->slug, function () use ($ballot) {
             return $ballot->load('location:id,name,state',
                                     'office:id,name',
                                     'candidates',
                                     'candidates.candidate:id,slug,profile_photo_path,name');
         });
-
-        // $this->ballot = Cache::remember('ballot' . $ballot->slug, 2, function () use ($ballot) {
-        //     return $ballot->load('location', 'office','candidates','candidates.candidate');
-
-        //     $this->ballot =
-        // });
     }
 
     public function render()
