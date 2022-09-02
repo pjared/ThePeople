@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Candidate;
 
+use App\Jobs\UpdateBallotCache;
 use App\Models\Candidate;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -29,5 +30,6 @@ class Preview extends Component
             $this->candidate->running_candidate->show = $this->show;
             $this->candidate->running_candidate->save();
         }
+        UpdateBallotCache::dispatch($this->candidate->ballot);
     }
 }

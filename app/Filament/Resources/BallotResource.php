@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\BallotResource\Pages;
 use App\Filament\Resources\BallotResource\RelationManagers;
+use App\Jobs\UpdateBallotCache;
 use App\Models\Ballot;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -51,7 +52,10 @@ class BallotResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->after(function (Ballot $record) {
+                        UpdateBallotCache::dispatch($record);
+                    }),
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
