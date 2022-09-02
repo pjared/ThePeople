@@ -18,11 +18,11 @@
             @include('ballot.show')
 
 
-            @role('organizerAdmin')
-                @if($candidates_loaded)
+            @if($candidates_loaded)
+                @role('organizerAdmin')
                     <livewire:groups.group-ballot :ballot="$ballot"/>
-                @endif
-            @endrole
+                @endrole
+            @endif
         </div>
     </div>
 
