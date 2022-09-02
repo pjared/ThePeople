@@ -29,7 +29,7 @@ class Profile extends Component
             $this->is_manual = true;
         }
 
-        Cache::rememberForever('candidate-' . $candidate->slug, function () use ($candidate) {
+        Cache::remember('candidate-' . $candidate->slug, 120 ,function () use ($candidate) {
             return $candidate->load('ballot', 'ballot.office:id,name', 'ballot.location:id,state,name',
                                 'events', 'required_stances', 'stances', 'promises', 'videos', 'previous_positions');
         });

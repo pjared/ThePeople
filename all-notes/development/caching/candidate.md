@@ -2,8 +2,7 @@
 
 ## Updating
 - The cache is updated when:
-    - A candidate hits 'show' on their profile
-    - A candidate makes a change to their profile and is showing
+    - A candidate makes a change to their profile
 
 The code that will be called to update the ballot cache is 
 ```
