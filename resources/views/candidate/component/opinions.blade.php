@@ -1,5 +1,5 @@
 {{-- OTHER OPINIONS --}}
-@if(count($candidate->opinions) != 0)
+@if(count($this->candidate->opinions) != 0)
     <article class="flex grow flex-col w-11/12 items-center">
         <x-dropdown-card>
             <x-slot:title>

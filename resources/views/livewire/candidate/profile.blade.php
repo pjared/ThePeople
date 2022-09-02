@@ -1,4 +1,5 @@
 <section class='p-4 h-fit'>
+    {{-- {{dd($this->candidate)}} --}}
     @if($this->is_manual)
         <div class='flex w-full justify-center'>
             <div class="alert alert-warning shadow-lg w-1/2">
@@ -7,7 +8,7 @@
                     <p class='w-full text-center'>
                         This user was created by ComnRep,LLC. The information is not garunteed to be accurate.
                         <br>
-                        Reason: {{$candidate->manual_candidate->note}}
+                        Reason: {{$this->candidate->manual_candidate->note}}
                     </p>
                     <span></span>
                 </div>
@@ -20,27 +21,27 @@
             {{-- CANDIDATE PERSONAL INFO --}}
             <article class="flex flex-col md:flex-row gap-6 w-11/12 justify-center">
                 <img
-                    src="{{ $candidate->profile_photo_url }}"
-                    alt="{{ $candidate->name }}"
+                    src="{{ $this->candidate->profile_photo_url }}"
+                    alt="{{ $this->candidate->name }}"
                     class="h-44 w-44 shadow-2xl"
                     style='border: 6px solid #f8f8f8;'
                     loading='lazy'>
                 {{-- class="rounded-full object-cover" --}}
                 <div class="flex flex-col">
-                    <h1>{{ $candidate->name }}</h1>
+                    <h1>{{ $this->candidate->name }}</h1>
                     {{-- <div>
-                        Party: {{ $candidate->party_name }}
+                        Party: {{ $this->candidate->party_name }}
                     </div> --}}
-                    @if($candidate->ballot)
+                    @if($this->candidate->ballot)
                         <p>
-                            Running For: {{ $candidate->ballot->location->state }}
-                            {{ $candidate->ballot->office->name }},
-                            {{ $candidate->ballot->location->name }}
+                            Running For: {{ $this->candidate->ballot->location->state }}
+                            {{ $this->candidate->ballot->office->name }},
+                            {{ $this->candidate->ballot->location->name }}
                         </p>
                     @endif
-                    @if($candidate->public_email)
+                    @if($this->candidate->public_email)
                         <p>
-                            Email Candiate: {{ $candidate->public_email }}
+                            Email Candiate: {{ $this->candidate->public_email }}
                         </p>
                     @endif
                 </div>
@@ -48,35 +49,35 @@
             {{-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS --}}
             <div class="flex flex-col gap-6 md:w-11/12 items-center">
                 {{-- BIO COMPONENT --}}
-                @include('candidate.component.bio', ['bio' => $candidate->bio])
+                @include('candidate.component.bio', ['bio' => $this->candidate->bio])
 
                 {{-- CAMPAIGN VIDEOS COMPONENT --}}
-                @include('candidate.component.videos', ['videos' => $candidate->videos])
+                @include('candidate.component.videos', ['videos' => $this->candidate->videos])
 
                 {{-- PROMISES COMPONENT --}}
-                @include('candidate.component.promises', ['promises' => $candidate->promises])
+                @include('candidate.component.promises', ['promises' => $this->candidate->promises])
 
                 {{-- PREVIOUS POSITIONS COMPONENT --}}
-                @include('candidate.component.positions', ['previous_positions' => $candidate->previous_positions])
+                @include('candidate.component.positions', ['previous_positions' => $this->candidate->previous_positions])
             </div>
         </div>
         {{-- RIGHT COLUMN --}}
         <div class="flex flex-col md:w-11/12 grow gap-6 items-center">
-            {{-- @include('candidate.component.stances', ['opinions' => $opinions, 'candidate' => $candidate]) --}}
-            <livewire:candidate.stances :opinions="$opinions" :candidate="$candidate" />
+            {{-- @include('candidate.component.stances', ['opinions' => $opinions, 'candidate' => $this->candidate]) --}}
+            <livewire:candidate.stances :opinions="$opinions" :candidate="$this->candidate" />
 
             @include('candidate.component.opinions')
 
             {{-- DONORS --}}
-            {{-- @if(count($candidate->donors) != 0)
+            {{-- @if(count($this->candidate->donors) != 0)
                 <div class="flex grow flex-col w-11/12 items-center">
                     <x-dropdown-card>
                         <x-slot:title>
                             Campaign Donors
                         </x-slot>
                         <x-slot:content>
-                            @if(count($candidate->donors) >= 1)
-                            @foreach ($candidate->donors as $donor)
+                            @if(count($this->candidate->donors) >= 1)
+                            @foreach ($this->candidate->donors as $donor)
                                 <div class="flex flex-row items-center justify-center gap-2">
                                     <span>Name:  {{$donor->name}}</span>
                                     @auth
@@ -98,7 +99,7 @@
             @endif --}}
 
             {{-- LAW MAKING INVOLVEMENT  --}}
-            {{-- @if(count($candidate->law_involvement) != 0)
+            {{-- @if(count($this->candidate->law_involvement) != 0)
                 <div class="flex flex-col w-11/12 items-center">
                     <x-dropdown-card>
                         <x-slot:title>
@@ -106,7 +107,7 @@
                         </x-slot>
                         <x-slot:content>
                             <div class="flex flex-col gap-4">
-                                @foreach ($candidate->law_involvement as $law)
+                                @foreach ($this->candidate->law_involvement as $law)
                                     <div class="flex flex-row justify-center gap-4">
                                         <span>Name : {{ $law->name }}</span>
                                         @auth
@@ -145,13 +146,13 @@
                 @endauth
             </div>
             <div class="flex flex-col grow gap-6 items-center w-1/2">
-                @include('candidate.component.events', ['events' => $candidate->events])
+                @include('candidate.component.events', ['events' => $this->candidate->events])
             </div>
 
         </div>
         {{-- CANDIDATE PHOTOS --}}
         {{-- <div class="flex flex-row w-full grow gap-6 items-center h-fit">
-            @foreach ($candidate->comments()->approved()->get() as $pinned_comment)
+            @foreach ($this->candidate->comments()->approved()->get() as $pinned_comment)
                 <div class='border border-slate-400 bg-white p-4 w-11/12 overflow-visible'>
                     <p>{{$pinned_comment->comment}}</p>
                     @if($pinned_comment->reply)
@@ -215,10 +216,10 @@
     @endpush
 
     @section('description')
-        Candidate {{$candidate->name}}'s profile. Here you can view the stances that {{$candidate->name}} takes on controversial opinions. You can also view the additional stances that {{$candidate->name}} has added to his profile. If {{$candidate->name}} has held office, his previous positions will be listed. You can also message {{$candidate->name}} and see his upcoming events.
+        Candidate {{$this->candidate->name}}'s profile. Here you can view the stances that {{$this->candidate->name}} takes on controversial opinions. You can also view the additional stances that {{$this->candidate->name}} has added to his profile. If {{$this->candidate->name}} has held office, his previous positions will be listed. You can also message {{$this->candidate->name}} and see his upcoming events.
     @endsection
     @section('keywords')
-        {{$candidate->name}} stances controversial opinion
+        {{$this->candidate->name}} stances controversial opinion
     @endsection
 </section>
 

@@ -95,7 +95,7 @@
                                     </h4>
                                 </div>
                                 <div class="collapse-content">
-                                    <x-show-more :content="$candidate_required_stances->firstWhere('required_stance_id', $required_stance->id)->candidate_reasoning" />
+                                    <x-show-more :content="$candidate_required_stances->firstWhere('required_stance_id', $required_stance->id) ? $candidate_required_stances->firstWhere('required_stance_id', $required_stance->id)->candidate_reasoning : '' " />
                                 </div>
                             </div>
                         </div>

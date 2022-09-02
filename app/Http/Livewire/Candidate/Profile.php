@@ -5,19 +5,20 @@ namespace App\Http\Livewire\Candidate;
 use App\Models\Candidate;
 use App\Models\Flag;
 use App\Models\UserFlag;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
 class Profile extends Component
 {
-    public Candidate $candidate;
+    // public Candidate $candidate;
+    public $candiate_slug;
     public $opinions;
     public $is_manual;
     public $user_comment;
 
     public function mount($candidate) {
-        $this->candidate = $candidate->load('ballot', 'ballot.office:id,name', 'ballot.location:id,state,name',
-                                'events', 'required_stances', 'stances', 'promises', 'videos', 'previous_positions');
+        $this->candidate_slug = $candidate->slug;
         if ($candidate->ballot) {
             $this->opinions = $candidate->ballot->opinions;
         } else {
@@ -27,6 +28,16 @@ class Profile extends Component
         if(is_null($candidate->user_id)) {
             $this->is_manual = true;
         }
+
+        Cache::rememberForever('candidate-' . $candidate->slug, function () use ($candidate) {
+            return $candidate->load('ballot', 'ballot.office:id,name', 'ballot.location:id,state,name',
+                                'events', 'required_stances', 'stances', 'promises', 'videos', 'previous_positions');
+        });
+    }
+
+    public function getCandidateProperty()
+    {
+        return Cache::get('candidate-' . $this->candidate_slug);
     }
 
     public function render()
@@ -34,7 +45,8 @@ class Profile extends Component
         return view('livewire.candidate.profile');
     }
 
-    public function change_flag($flag_type, $flag_id, $flag_value, $flag_note) {
+    public function change_flag($flag_type, $flag_id, $flag_value, $flag_note)
+    {
         // Auth Check
         if(! auth()) {
             return;
