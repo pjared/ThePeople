@@ -17,8 +17,8 @@
 
     </div>
 
-    <div class="flex flex-wrap grow w-11/12 mt-2">
-        @foreach ($ballot->candidates as $running_candidate)
+    <div class="flex flex-wrap grow w-11/12 mt-2" wire:init="load_candidates">
+        @foreach ($candidates as $running_candidate)
             <div class="flex grow flex-row pt-2 w-11/12">
                 {{-- CANDIDATE NAME, PICTURE, AND PAGE LINK --}}
                 <form action="/candidate/profile/{{$running_candidate->candidate->slug}}" method="GET" class="w-11/12 md:hover:scale-110">
