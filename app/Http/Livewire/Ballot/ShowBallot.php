@@ -7,6 +7,7 @@ use App\Models\GroupBallotQuestions;
 use App\Models\PoliticalGroupCandidates;
 use App\Models\UserVotes;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
 class ShowBallot extends Component
@@ -24,7 +25,10 @@ class ShowBallot extends Component
                 $this->candidate_vote = $user_vote->running_candidate_id;
             }
         }
-        $this->ballot = $ballot->load('location:id,name,state', 'office:id,name', 'candidates', 'candidates.candidate');
+        $this->ballot = $ballot->load('location:id,name,state',
+                                            'office:id,name',
+                                            'candidates',
+                                            'candidates.candidate:id,slug,profile_photo_path,name');
     }
 
     public function load_candidates()
@@ -38,6 +42,12 @@ class ShowBallot extends Component
         if(!auth()) {
             return;
         }
+        //Validate the incoming data
+        Validator::make(
+            ['candidate_slug' => $candidate_id],
+            ['candidate_slug' => 'required|int'],
+        )->validate();
+
         UserVotes::updateOrCreate(
             [
                 'user_id' => auth()->id(),
