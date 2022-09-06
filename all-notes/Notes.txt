@@ -25,3 +25,8 @@ The sail dusk tests weren't working, the problem was that I had to update my ubu
 
 - Tell smaller candidates that it's in their best interest to use the QR code, since they will have access to what users will flag
     - Also gives researching voters clues about their running mates
+
+https://fedsoc.org/chapters/UT
+
+
+Countries, States, Cities - Can just find a package, then remove/limit the other locations

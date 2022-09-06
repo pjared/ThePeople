@@ -54,3 +54,4 @@ class SendEmailVerificationNotification
         }
     }
 }
+- Make sure to test out the registration emailing
