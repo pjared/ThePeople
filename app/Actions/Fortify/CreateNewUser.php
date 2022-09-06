@@ -24,10 +24,12 @@ class CreateNewUser implements CreatesNewUsers
     public function create(array $input)
     {
         //If true, the user did not pass honey
-        $input['spam_check'] = 'on';
         if(Honey::check(request()->all())) {
+            $input['spam_check'] = 'on';
+        } else {
             $input['spam_check'] = 'off';
         }
+        // dd($input);
         Validator::make($input, [
             'spam_check' => ['accepted', 'required'],
             'name' => ['required', 'string', 'max:255'],
