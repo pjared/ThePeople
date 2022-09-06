@@ -109,7 +109,7 @@
                         @foreach ($position_flags as $flag)
                             <x-show-reasoning
                                 :label="$flag->flaggable->position_name . ', ' . $flag->flaggable->year_start . ' - ' .$flag->flaggable->year_end"
-                                :reasoning="$flag->flaggable->stance"
+                                :reasoning="$flag->flaggable->description"
                                 :type="$flag->flag_type"
                                 :note="$flag->note" />
                         @endforeach
