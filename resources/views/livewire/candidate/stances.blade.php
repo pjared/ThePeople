@@ -102,6 +102,7 @@
                         <div class="col-span-1 items-center">
                             @auth
                                 <livewire:flag-content
+                                    :flag="$flags->where('flaggable_type', 'App\Models\CandidateRequiredStance')->firstWhere('flaggable_id', $required_stance->id)"
                                     :content="$candidate_required_stances->firstWhere('required_stance_id', $required_stance->id)"
                                     :side="'right'"
                                     :wire:key="'required-flag-'.$required_stance->id" />
@@ -130,6 +131,7 @@
                         <div class="col-span-1 items-center">
                             @auth
                             <livewire:flag-content
+                                :flag="$flags->where('flaggable_type', 'App\Models\CandidateStance')->firstWhere('flaggable_id', $candidate_stance->id)"
                                 :content="$candidate_stance"
                                 :side="'right'"
                                 :wire:key="'stance-flag-'.$candidate_stance->id"/>

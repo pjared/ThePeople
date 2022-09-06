@@ -12,7 +12,7 @@ use Livewire\Component;
 class Profile extends Component
 {
     // public Candidate $candidate;
-    public $candiate_slug;
+    public $candidate_slug;
     public $opinions;
     public $is_manual;
     public $user_comment;
@@ -21,6 +21,10 @@ class Profile extends Component
         $this->candidate_slug = $candidate->slug;
         if ($candidate->ballot) {
             $this->opinions = $candidate->ballot->opinions;
+            if(auth()) {
+                $this->flags = auth()->user()->flags->where('ballot_id', $candidate->ballot->id)->where('candidate_id', $candidate->id);
+                // dd($this->flags);
+            }
         } else {
             $this->opinions = [];
         }

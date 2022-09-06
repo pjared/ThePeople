@@ -63,8 +63,7 @@
         </div>
         {{-- RIGHT COLUMN --}}
         <div class="flex flex-col md:w-11/12 grow gap-6 items-center">
-            {{-- @include('candidate.component.stances', ['opinions' => $opinions, 'candidate' => $this->candidate]) --}}
-            <livewire:candidate.stances :opinions="$opinions" :candidate="$this->candidate" />
+            <livewire:candidate.stances :flags="$flags" :opinions="$opinions" :candidate="$this->candidate" />
 
             @include('candidate.component.opinions')
 
@@ -166,10 +165,6 @@
             @endforeach
         </div> --}}
     </div>
-
-    {{-- @if($flags_loaded)
-
-    @endif --}}
 
     @push('scripts')
         <script>
