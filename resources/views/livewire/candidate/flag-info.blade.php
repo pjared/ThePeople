@@ -14,26 +14,11 @@
                 <div class="collapse-content" :class="show_flow && 'overflow-visible'">
                     <div class="flex flex-col gap-4">
                         @foreach ($promise_flags as $flag)
-                            <div class='font-bold text-center'>
-                                <span>Promise: {{$flag->flaggable->stance_label}}</span>
-                            </div>
-                            {{-- Allow the user to dropdown the position overview --}}
-                            <div
-                                x-data="{ show_content: false }" >
-                                <div x-show="show_content">
-                                    <x-show-more :content="$flag->flaggable->stance" />
-                                </div>
-                                <button
-                                    @click="show_content = !show_content"
-                                    x-text="show_content ? 'Hide Promise Plan' : 'Show Promise Plan'"
-                                    class="link"
-                                    >
-                                </button>
-                            </div>
-                            @include('components.comparison-flag', ['type' => $flag->flag_type])
-                            <div>
-                                Your Note: {{$flag->note}}
-                            </div>
+                            <x-show-reasoning
+                                :label="$flag->flaggable->promise"
+                                :reasoning="$flag->flaggable->plan"
+                                :type="$flag->flag_type"
+                                :note="$flag->note" />
                         @endforeach
                     </div>
                 </div>
@@ -42,7 +27,7 @@
     @endif
 
     @if(count($opinion_flags) >= 1)
-        <div class='w-11/12 h-fit p-2' x-data="{ show_flow : false}">
+        <div class='w-full h-fit p-2' x-data="{ show_flow : false}">
             <div class="collapse collapse-arrow" :class="show_flow && 'overflow-visible'" x-transition>
                 <input type="checkbox" x-on:click="show_flow = ! show_flow"/>
                 <div class="divider"></div>
@@ -56,27 +41,13 @@
                                 <span>Opinion Name: {{$name}}</span>
                             </div>
                             @foreach ($opinion_flag as $flag)
-                                <div class='font-bold'>
-                                    {{$flag->flaggable->stance_label}}
-                                </div>
-                                {{-- Allow the user to dropdown the reasoning --}}
-                                <div
-                                    x-data="{ show_content: false }" >
-                                    <div x-show="show_content">
-                                        <x-show-more :content="$flag->flaggable->stance_reasoning" />
-                                    </div>
-                                    <button
-                                        @click="show_content = !show_content"
-                                        x-text="show_content ? 'Hide Reasoning' : 'Show Candidate\'s Reasoning'"
-                                        class="link"
-                                        >
-                                    </button>
-                                </div>
-                                @include('components.comparison-flag', ['type' => $flag->flag_type])
-                                <div>
-                                    Your Note: {{$flag->note}}
-                                </div>
+                                <x-show-reasoning
+                                    :label="$flag->flaggable->stance_label"
+                                    :reasoning="$flag->flaggable->stance_reasoning"
+                                    :type="$flag->flag_type"
+                                    :note="$flag->note" />
                             @endforeach
+                            <div class="divider"></div>
                         @endforeach
                     </div>
                 </div>
@@ -113,27 +84,11 @@
                 <div class="collapse-content" :class="show_flow && 'overflow-visible'">
                     <div class="flex flex-col gap-4">
                         @foreach ($other_opinion_flags as $flag)
-                            <div class='font-bold'>
-                                {{$flag->flaggable->name}}
-
-                            </div>
-                            {{-- Allow the user to dropdown the reasoning --}}
-                            <div
-                                x-data="{ show_content: false }" >
-                                <div x-show="show_content">
-                                    <x-show-more :content="$flag->flaggable->stance" />
-                                </div>
-                                <button
-                                    @click="show_content = !show_content"
-                                    x-text="show_content ? 'Hide Reasoning' : 'Show Candidate\'s Reasoning'"
-                                    class="link"
-                                    >
-                                </button>
-                            </div>
-                            @include('components.comparison-flag', ['type' => $flag->flag_type])
-                            <div>
-                                Your Note: {{$flag->note}}
-                            </div>
+                            <x-show-reasoning
+                                :label="$flag->flaggable->name"
+                                :reasoning="$flag->flaggable->stance"
+                                :type="$flag->flag_type"
+                                :note="$flag->note" />
                         @endforeach
                     </div>
                 </div>
@@ -142,7 +97,7 @@
     @endif
 
     @if(count($position_flags) >= 1)
-        <div class='w-11/12 h-fit p-2' x-data="{ show_flow : false}">
+        <div class='w-full h-fit p-2' x-data="{ show_flow : false}">
             <div class="collapse collapse-arrow" :class="show_flow && 'overflow-visible'" x-transition>
                 <input type="checkbox" x-on:click="show_flow = ! show_flow"/>
                 <div class="divider"></div>
@@ -152,26 +107,11 @@
                 <div class="collapse-content" :class="show_flow && 'overflow-visible'">
                     <div class="flex flex-col gap-4">
                         @foreach ($position_flags as $flag)
-                            <div class='font-bold'>
-                                {{$flag->flaggable->position_name}}, {{$flag->flaggable->year_start}} - {{$flag->flaggable->year_end}}
-                            </div>
-                            {{-- Allow the user to dropdown the position overview --}}
-                            <div
-                                x-data="{ show_content: false }" >
-                                <div x-show="show_content">
-                                    <x-show-more :content="$flag->flaggable->stance" />
-                                </div>
-                                <button
-                                    @click="show_content = !show_content"
-                                    x-text="show_content ? 'Hide Position Overview' : 'Show Candidate\'s Position Overview'"
-                                    class="link"
-                                    >
-                                </button>
-                            </div>
-                            @include('components.comparison-flag', ['type' => $flag->flag_type])
-                            <div>
-                                Your Note: {{$flag->note}}
-                            </div>
+                            <x-show-reasoning
+                                :label="$flag->flaggable->position_name . ', ' . $flag->flaggable->year_start . ' - ' .$flag->flaggable->year_end"
+                                :reasoning="$flag->flaggable->stance"
+                                :type="$flag->flag_type"
+                                :note="$flag->note" />
                         @endforeach
                     </div>
                 </div>
