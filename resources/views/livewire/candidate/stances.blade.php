@@ -78,8 +78,8 @@
                     </div>
                 </div>
             @else
-
             @endif --}}
+
             <h3 class="text-lg font-medium">{{$opinion->name}}</h3>
             <div class="flex flex-col items-start justify-items-start">
                 {{-- Required Stances --}}

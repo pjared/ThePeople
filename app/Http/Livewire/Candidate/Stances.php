@@ -16,7 +16,7 @@ class Stances extends Component
     }
 
     public function mount($opinions, $candidate) {
-        $this->opinions = $opinions;
+        $this->opinions = $opinions->load(['required_stances']);
         $this->candidate_required_stances = $candidate->required_stances;
         $this->candidate_stances = $candidate->stances;
         //TODO: Eager load each opinions required stance
