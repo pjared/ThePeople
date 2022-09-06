@@ -7,7 +7,7 @@
             </x-slot>
             <x-slot:content>
                 <div class="flex flex-col gap-4">
-                    @foreach ($candidate->opinions as $opinion)
+                    @foreach ($this->candidate->opinions as $opinion)
                         <div class="flex flex-row justify-center gap-4">
                             <p>{{$opinion->name}}</p>
                             @auth
