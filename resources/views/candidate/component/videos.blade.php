@@ -1,5 +1,5 @@
 {{-- CAMPAIGN VIDEOS COMPONENT --}}
-@if(count($videos) != 0)
+@if($this->candidate->videos_count >= 1)
     <article class="flex grow flex-col w-11/12 items-center">
         <x-dropdown-card>
             <x-slot:title>

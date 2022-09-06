@@ -1,5 +1,5 @@
 {{-- Promises --}}
-@if(count($promises) != 0)
+@if($this->candidate->promises_count >= 1)
     <article class="flex grow flex-col w-11/12 justify-center items-center" x-data="{open: false}">
         <x-dropdown-card>
             <x-slot:title>

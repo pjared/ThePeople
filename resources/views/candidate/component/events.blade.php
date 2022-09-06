@@ -1,5 +1,5 @@
 <div class="flex grow flex-col w-11/12 items-center gap-2">
-    @if (count($events) >= 1)
+    @if ($this->candidate->events_count >= 1)
         <h2 class='text-xl'>
             Meet the Candidate
         </h2>
@@ -18,7 +18,7 @@
     @else
         {{-- TODO: CHECK FOR MANUAL CANDIDATE --}}
         <p>
-            Candidate does not have any events!
+            Candidate does not have any upcoming event listed!
         </p>
     @endif
 
