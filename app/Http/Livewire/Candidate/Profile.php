@@ -21,9 +21,11 @@ class Profile extends Component
         $this->candidate_slug = $candidate->slug;
         if ($candidate->ballot) {
             $this->opinions = $candidate->ballot->opinions;
-            if(auth()) {
+            if(auth()->check()) {
                 $this->flags = auth()->user()->flags->where('ballot_id', $candidate->ballot->id)->where('candidate_id', $candidate->id);
                 // dd($this->flags);
+            } else {
+                $this->flags = [];
             }
         } else {
             $this->opinions = [];
