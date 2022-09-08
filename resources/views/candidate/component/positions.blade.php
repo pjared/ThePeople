@@ -1,6 +1,6 @@
 {{-- PREVIOUS POSITIONS --}}
 <article class="flex grow flex-col w-11/12 items-center">
-    <x-dropdown-card>
+    <x-dropdown-card :classes="'shadow-md'">
         <x-slot:title>
             Previous Political Positions
         </x-slot>

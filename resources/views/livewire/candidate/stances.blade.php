@@ -1,4 +1,4 @@
-<article class="flex flex-col background-card w-11/12 items-center gap-2">
+<article class="flex flex-col background-card shadow-xl drop-shadow-lg w-11/12 items-center gap-2">
     <div class="flex justify-center">
         <h2 class="text-xl font-medium">Controversial Opinions</h2>
     </div>

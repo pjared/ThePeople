@@ -1,7 +1,7 @@
 {{-- OTHER OPINIONS --}}
 @if($this->candidate->opinions_count >= 1)
-    <article class="flex grow flex-col w-11/12 items-center">
-        <x-dropdown-card>
+    <article class="flex flex-col w-11/12 items-center">
+        <x-dropdown-card  :classes="'shadow-xl'">
             <x-slot:title>
                 Other Opinions
             </x-slot>
@@ -26,5 +26,5 @@
                 </div>
             </x-slot>
         </x-dropdown-card>
-    </div>
+    </article>
 @endif
