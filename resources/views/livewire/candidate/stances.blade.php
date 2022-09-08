@@ -1,6 +1,10 @@
-<article class="flex flex-col background-card shadow-xl drop-shadow-lg w-11/12 items-center gap-2">
+<article
+    class="flex flex-col background-card shadow-xl drop-shadow-lg w-11/12 items-center gap-2"
+    x-data="{ hovering:false }"
+    x-on:mouseover="hovering = true"
+    x-on:mouseleave="hovering = false">
     <div class="flex justify-center">
-        <h2 class="text-xl font-medium">Controversial Opinions</h2>
+        <h2 class="text-xl" :class="{ 'underline': hovering }">Controversial Opinions</h2>
     </div>
     <div class="flex flex-col grow gap-2 text-center w-full">
         @foreach($opinions as $opinion)
@@ -80,7 +84,7 @@
             @else
             @endif --}}
 
-            <h3 class="text-lg font-medium">{{$opinion->name}}</h3>
+            <h3 class="text-lg " :class="{ 'font-bold': hovering }">{{$opinion->name}}</h3>
             <div class="flex flex-col items-start justify-items-start">
                 {{-- Required Stances --}}
                 @foreach ($opinion->required_stances as $required_stance)
@@ -89,9 +93,8 @@
                             <div class="collapse collapse-arrow">
                                 <input type="checkbox" />
                                 <div class="collapse-title text-md font-medium text-left">
-                                    <h4>
-                                        <b>{{$required_stance->label}}</b>
-                                        <span class='text-red-500'>*</span>
+                                    <h4 :class="{ 'font-semibold text-lg': hovering }">{{$required_stance->label}}
+                                        <span x-show='hovering' class='text-red-500'>*</span>
                                     </h4>
                                 </div>
                                 <div class="collapse-content">
@@ -121,9 +124,9 @@
                             <div class="collapse collapse-arrow">
                                 <input type="checkbox" />
                                 <div class="collapse-title text-md font-medium text-left">
-                                    <h4><b>{{$candidate_stance->stance_label}}</b></h4>
+                                    <h4 :class="{ 'font-semibold text-lg': hovering }">{{$candidate_stance->stance_label}}</h4>
                                 </div>
-                                <div class="collapse-content">
+                                <div class="collapse-content text-start">
                                     <x-show-more :content="$candidate_stance->stance_reasoning" />
                                 </div>
                             </div>
