@@ -1,4 +1,4 @@
-<section class='p-4 h-fit'>
+<section class='p-4 flex flex-col gap-12'>
     {{-- {{dd($this->candidate)}} --}}
     @if($this->is_manual)
         <div class='flex w-full justify-center'>
@@ -15,56 +15,51 @@
             </div>
         </div>
     @endif
-    <div class="flex flex-col md:grid md:grid-cols-2 p-8 gap-2 justify-center w-full">
-        {{-- LEFT COLUMN --}}
-        <div class="flex flex-col grow gap-6 items-center">
-            {{-- CANDIDATE PERSONAL INFO --}}
-            <article class="flex flex-col md:flex-row gap-6 w-11/12 justify-center">
-                <img
-                    src="{{ $this->candidate->profile_photo_url }}"
-                    alt="{{ $this->candidate->name }}"
-                    class="h-44 w-44 shadow-2xl"
-                    style='border: 6px solid #f8f8f8;'
-                    loading='lazy'>
-                {{-- class="rounded-full object-cover" --}}
-                <div class="flex flex-col">
-                    <h1>{{ $this->candidate->name }}</h1>
-                    {{-- <div>
-                        Party: {{ $this->candidate->party_name }}
-                    </div> --}}
-                    @if($this->candidate->ballot)
+    <div class='flex flex-col justify-center items-center w-full gap-6'>
+        {{-- PROFILE CARD --}}
+        @include('candidate.component.profile-card')
+        {{-- <div class='grid grid-flow-col grid-cols-2 w-1/2'>
+            <div class="grid-span-1 flex flex-col">
+                @if($this->candidate->ballot)
+                    @if($this->candidate->ballot->state)
                         <p>
-                            Running For: {{ $this->candidate->ballot->location->state }}
+                            Running For {{ $this->candidate->ballot->location->name }}
                             {{ $this->candidate->ballot->office->name }},
+                            {{ $this->candidate->ballot->location->state }}
+                        </p>
+                    @else
+                        <p>
+                            Running For {{ $this->candidate->ballot->office->name }},
                             {{ $this->candidate->ballot->location->name }}
                         </p>
                     @endif
-                    @if($this->candidate->public_email)
-                        <p>
-                            Email Candiate: {{ $this->candidate->public_email }}
-                        </p>
-                    @endif
-                </div>
-            </article>
-            {{-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS --}}
-            <div class="flex flex-col gap-6 md:w-11/12 items-center">
-                {{-- BIO COMPONENT --}}
-                @include('candidate.component.bio', ['bio' => $this->candidate->bio])
-
-                {{-- CAMPAIGN VIDEOS COMPONENT --}}
+                @endif
+                @if($this->candidate->public_email)
+                    <p>
+                        Email Candiate: {{ $this->candidate->public_email }}
+                    </p>
+                @endif
+            </div>
+            <div class="grid-span-1">
                 @include('candidate.component.videos', ['videos' => $this->candidate->videos])
+            </div>
+        </div> --}}
+    </div>
 
-                {{-- PROMISES COMPONENT --}}
-                @include('candidate.component.promises', ['promises' => $this->candidate->promises])
-
-                {{-- PREVIOUS POSITIONS COMPONENT --}}
-                @include('candidate.component.positions', ['previous_positions' => $this->candidate->previous_positions])
+    <div class="flex flex-col md:grid md:grid-cols-2 p-8 gap-2 justify-center w-full">
+        {{-- LEFT COLUMN --}}
+        <div class="flex flex-col grow gap-6 items-center">
+            {{-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS --}}
+           <div class="flex flex-col gap-6 md:w-11/12 items-center">
+                <livewire:candidate.stances :flags="$flags" :opinions="$opinions" :candidate="$this->candidate" />
             </div>
         </div>
         {{-- RIGHT COLUMN --}}
-        <div class="flex flex-col md:w-11/12 grow gap-6 items-center">
-            <livewire:candidate.stances :flags="$flags" :opinions="$opinions" :candidate="$this->candidate" />
+        <div class="flex flex-col md:w-11/12 gap-6">
+            {{-- PROMISES COMPONENT --}}
+            @include('candidate.component.promises', ['promises' => $this->candidate->promises])
 
+            {{-- OPINIONS COMPONENT --}}
             @include('candidate.component.opinions')
 
             {{-- DONORS --}}
@@ -126,45 +121,118 @@
         </div>
     </div>
 
-    {{-- BOTTOM AREA --}}
-    <div class='divider w-full'></div>
+    {{-- DONORS, PREVIOUS POSITIONS, LAWS --}}
+    <div class="flex flex-col md:grid md:grid-cols-2 p-8 gap-2 justify-center w-full">
+        {{-- LEFT COLUMN --}}
+        <div class="flex flex-col grow gap-6 items-center">
+            {{-- DONORS --}}
+            {{-- @if(count($this->candidate->donors) != 0)
+                <div class="flex grow flex-col w-11/12 items-center">
+                    <x-dropdown-card>
+                        <x-slot:title>
+                            Campaign Donors
+                        </x-slot>
+                        <x-slot:content>
+                            @if(count($this->candidate->donors) >= 1)
+                            @foreach ($this->candidate->donors as $donor)
+                                <div class="flex flex-row items-center justify-center gap-2">
+                                    <span>Name:  {{$donor->name}}</span>
+                                    @auth
+                                        <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-flag-'.$donor->id">
+                                    @else
+                                        <label class="fill-transparent" for="signup-modal">
+                                            @include('icons.flag')
+                                        </label>
+                                    @endauth
 
-    <div class="flex flex-col gap-2 justify-center w-full">
-        <div class="flex flex-row p-8 gap-2 justify-center w-full">
-            <div class="flex flex-col grow gap-6 items-center w-1/2">
-                <h2>Message the Candidate</h2>
-                @auth
-                    <textarea wire:model.defer="user_comment" class="textarea textarea-primary w-1/2" placeholder="Your question/comment"></textarea>
-                    <button wire:click="add_comment" class="btn btn-primary">Submit</button>
-                @else
-                    <label class="fill-transparent w-1/2 text-center" for="signup-modal">
-                        <textarea class="textarea textarea-primary w-full h-full" placeholder="Your question/comment" disabled></textarea>
-                        {{-- TODO: MAKE THIS APPEAR ON HOVER OF TA --}}
-                        <span>Sign up to submit a comment</span>
-                    </label>
-                @endauth
-            </div>
-            <div class="flex flex-col grow gap-6 items-center w-1/2">
-                @include('candidate.component.events', ['events' => $this->candidate->events])
-            </div>
-
-        </div>
-        {{-- CANDIDATE PHOTOS --}}
-        {{-- <div class="flex flex-row w-full grow gap-6 items-center h-fit">
-            @foreach ($this->candidate->comments()->approved()->get() as $pinned_comment)
-                <div class='border border-slate-400 bg-white p-4 w-11/12 overflow-visible'>
-                    <p>{{$pinned_comment->comment}}</p>
-                    @if($pinned_comment->reply)
-                        <div class='absolute ml-6 mt-1 w-1/5'>
-                            <div class='border border-slate-400 p-4 bg-white w-fit'>
-                                <p>{{$pinned_comment->reply}}</p>
-                            </div>
-                        </div>
-                    @endif
+                                </div>
+                            @endforeach
+                            @else
+                                No donor data as of yet.
+                            @endif
+                        </x-slot>
+                    </x-dropdown-card>
                 </div>
-            @endforeach
-        </div> --}}
+            @endif --}}
+
+            {{-- PREVIOUS POSITIONS COMPONENT --}}
+            @include('candidate.component.positions', ['previous_positions' => $this->candidate->previous_positions])
+        </div>
+        {{-- RIGHT COLUMN --}}
+        <div class="flex flex-col md:w-11/12 grow gap-6 items-center">
+            {{-- LAW MAKING INVOLVEMENT  --}}
+            {{-- @if(count($this->candidate->law_involvement) != 0)
+                <div class="flex flex-col w-11/12 items-center">
+                    <x-dropdown-card>
+                        <x-slot:title>
+                            Laws Passed in office
+                        </x-slot>
+                        <x-slot:content>
+                            <div class="flex flex-col gap-4">
+                                @foreach ($this->candidate->law_involvement as $law)
+                                    <div class="flex flex-row justify-center gap-4">
+                                        <span>Name : {{ $law->name }}</span>
+                                        @auth
+                                            <livewire:flag :type="'law'" :type_id="$law->id" :wire:key="'law-flag-'.$law->id">
+                                        @else
+                                            <label class="fill-transparent" for="signup-modal">
+                                                @include('icons.flag')
+                                            </label>
+                                        @endauth
+                                    </div>
+                                @endforeach
+                            </div>
+                        </x-slot>
+                    </x-dropdown-card>
+                </div>
+            @endif --}}
+        </div>
     </div>
+
+    @if(! $this->is_manual)
+        {{-- BOTTOM AREA --}}
+        <div class='divider w-full'></div>
+
+        <div class="flex flex-col gap-2 justify-center w-full">
+            <div class="flex flex-row p-8 gap-2 justify-center w-full">
+                <div class="flex flex-col grow gap-6 items-center w-1/2">
+                    <h2>Message the Candidate</h2>
+                    @auth
+                        <textarea wire:model.defer="user_comment" class="textarea textarea-primary w-1/2" placeholder="Your question/comment"></textarea>
+                        <button wire:click="add_comment" class="btn btn-primary">Submit</button>
+                    @else
+                        <label class="fill-transparent w-1/2 text-center" for="signup-modal">
+                            <textarea class="textarea textarea-primary w-full h-full" placeholder="Your question/comment" disabled></textarea>
+                            {{-- TODO: MAKE THIS APPEAR ON HOVER OF TA --}}
+                            <span>Sign up to submit a comment</span>
+                        </label>
+                    @endauth
+                </div>
+                <div class="flex flex-col grow gap-6 items-center w-1/2">
+                    @include('candidate.component.events', ['events' => $this->candidate->events])
+                </div>
+
+            </div>
+            {{-- CANDIDATE PHOTOS --}}
+            {{-- <div class="flex flex-row w-full grow gap-6 items-center h-fit">
+                @foreach ($this->candidate->comments()->approved()->get() as $pinned_comment)
+                    <div class='border border-slate-400 bg-white p-4 w-11/12 overflow-visible'>
+                        <p>{{$pinned_comment->comment}}</p>
+                        @if($pinned_comment->reply)
+                            <div class='absolute ml-6 mt-1 w-1/5'>
+                                <div class='border border-slate-400 p-4 bg-white w-fit'>
+                                    <p>{{$pinned_comment->reply}}</p>
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                @endforeach
+            </div> --}}
+            {{-- CANDIDATE VIDEOS --}}
+            {{-- @include('candidate.component.videos', ['videos' => $this->candidate->videos]) --}}
+        </div>
+    @endif
+
 
     @push('scripts')
         <script>
