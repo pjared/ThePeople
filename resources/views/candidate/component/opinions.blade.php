@@ -8,8 +8,12 @@
             <x-slot:content>
                 <div class="flex flex-col gap-4">
                     @foreach ($this->candidate->opinions as $opinion)
-                        <div class="flex flex-row justify-center gap-4">
-                            <p>{{$opinion->name}}</p>
+                        <div class="flex flex-row items-center gap-4">
+                            <div class="flex flex-col w-full items-start">
+                                <h3 class="w-fit capitalize text-lg font-semibold">{{ $opinion->name }}</h3>
+                                <x-show-more :content="$opinion->stance" />
+                            </div>
+                            {{-- <p>{{$opinion->name}}</p> --}}
                             @auth
                                 <livewire:flag-content
                                         :flag="$flags->where('flaggable_type', 'App\Models\CandidateOpinion')->firstWhere('flaggable_id', $opinion->id)"
