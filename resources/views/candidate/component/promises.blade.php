@@ -11,9 +11,9 @@
                 </p>
                 <div class="flex flex-col w-full gap-6 pt-4">
                     @foreach($promises as $promise)
-                        <div class="flex flex-row justify-center items-start">
-                            <div class="flex flex-col w-full text-start">
-                                <h3 class="w-fit capitalize"><b>{{ $promise->promise }}</b></h3>
+                        <div class="flex flex-row justify-center items-center">
+                            <div class="flex flex-col w-full items-start">
+                                <h3 class="w-fit capitalize text-lg font-semibold">{{ $promise->promise }}</h3>
                                 <x-show-more :content="$promise->plan" />
                             </div>
                             @auth
