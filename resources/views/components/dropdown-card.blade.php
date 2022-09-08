@@ -1,10 +1,13 @@
-<div class='background-card w-11/12 h-fit p-2' x-data="{ show_flow : false}">
-    <div class="collapse collapse-arrow" :class="show_flow && 'overflow-visible'" x-transition>
-        <input type="checkbox" x-on:click="show_flow = ! show_flow"/>
+@props(['classes'])
+
+<div {{ $attributes->merge(['class' => 'background-card w-11/12 h-fit p-2 ' . $classes]) }} x-data="{open : false}">
+    {{-- {{dd($classes)}} --}}
+    <div class="collapse collapse-arrow" x-on:click="open = ! open">
+        <input type="checkbox"/>
         <div class="flex collapse-title text-md font-medium items-center">
-            <h2>{{$title}}</h2>
+            <h2 class='text-lg capitalize' :class="{ 'underline': open }">{{$title}}</h2>
         </div>
-        <div class="collapse-content" :class="show_flow && 'overflow-visible'">
+        <div class="collapse-content">
             {{$content}}
         </div>
     </div>
