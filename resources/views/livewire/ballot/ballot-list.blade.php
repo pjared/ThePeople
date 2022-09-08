@@ -3,7 +3,7 @@
         @foreach ($ballots as $ballot)
             @if($ballot->candidates_count >= 1)
                 <form action="/ballot/{{$ballot->slug}}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true" >
-                    <button class="background-card" class="card bg-base-100 shadow-xl">
+                    <button class="background-card shadow-md" class="card bg-base-100 shadow-xl">
                         <div class="text-center p-0">
                             <h2 class="card-title text-lg justify-center">
                                 <a

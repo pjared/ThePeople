@@ -23,7 +23,7 @@
             <div class="flex grow flex-row pt-2 w-11/12">
                 {{-- CANDIDATE NAME, PICTURE, AND PAGE LINK --}}
                 <form action="/candidate/profile/{{$running_candidate->candidate->slug}}" method="GET" class="w-11/12 md:hover:scale-110">
-                    <button class="card flex grow lg:card-side bg-white shadow-xl w-full"
+                    <button class="card flex grow lg:card-side bg-white drop-shadow-md shadow-md w-full"
                     x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
                         {{-- :class="{ 'h-28 w-28': show }" --}}
                         <figure>
