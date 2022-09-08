@@ -67,7 +67,7 @@ class CandidateSeeder extends Seeder
             'name' => "Jared Pacheco",
             'dob' => Carbon::today()->subYear(rand(25, 55)),
             'signup_date' => Carbon::today()->subDays(rand(0, 365)),
-            'bio' => "",
+            'bio' => "Hello, my name is Jared Pacheco. I am the CEO of ComnRep, LLC. I am currently creating a webiste that will show a direct comparison of candidates on the ballots that will appear when you go to vote. To start my business, I am doing this in Utah County but specifically focusing on the Provo/Orem Area. This includes the elections of U.S. House 3, Utah House 57,58,60-62 and the US Senate seat. I hope that my site will provide useful information for the public to feel informed about their vote. Thanks for taking a read!",
             'party_name' => 'Club Jared',
             'user_id' => 1,
             'state' => 'Utah',
