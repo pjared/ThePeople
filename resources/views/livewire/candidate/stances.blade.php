@@ -6,6 +6,7 @@
     <div class="flex justify-center">
         <h2 class="text-xl" :class="{ 'underline': hovering }">Controversial Opinions</h2>
     </div>
+    <p class='text-gray-400' x-show="hovering">Candidates have the ability to write about specific topics that pertain to the general controversial opinion. A red start indicates the topic is a required stance that the candidate has been asked to fill out.</p>
     <div class="flex flex-col grow gap-2 text-center w-full">
         @foreach($opinions as $opinion)
             {{-- TODO: Too many stances, make it a dropdown (Need to make my own dropdown in CSS) --}}
@@ -93,7 +94,7 @@
                             <div class="collapse collapse-arrow">
                                 <input type="checkbox" />
                                 <div class="collapse-title text-md font-medium text-left">
-                                    <h4 :class="{ 'font-semibold text-lg': hovering }">{{$required_stance->label}}
+                                    <h4 class="text-lg" :class="{ 'font-semibold': hovering }">{{$required_stance->label}}
                                         <span x-show='hovering' class='text-red-500'>*</span>
                                     </h4>
                                 </div>
@@ -107,7 +108,7 @@
                                 <livewire:flag-content
                                     :flag="$flags->where('flaggable_type', 'App\Models\CandidateRequiredStance')->firstWhere('flaggable_id', $required_stance->id)"
                                     :content="$candidate_required_stances->firstWhere('required_stance_id', $required_stance->id)"
-                                    :side="'right'"
+                                    :side="'ri`ght'"
                                     :wire:key="'required-flag-'.$required_stance->id" />
                             @else
                                 <label class="fill-transparent" for="signup-modal">
@@ -124,7 +125,7 @@
                             <div class="collapse collapse-arrow">
                                 <input type="checkbox" />
                                 <div class="collapse-title text-md font-medium text-left">
-                                    <h4 :class="{ 'font-semibold text-lg': hovering }">{{$candidate_stance->stance_label}}</h4>
+                                    <h4 class="text-lg" :class="{ 'font-semibold': hovering }">{{$candidate_stance->stance_label}}</h4>
                                 </div>
                                 <div class="collapse-content text-start">
                                     <x-show-more :content="$candidate_stance->stance_reasoning" />
