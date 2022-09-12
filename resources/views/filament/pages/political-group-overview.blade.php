@@ -1,7 +1,7 @@
 <x-filament::page>
     {{-- TODO: GROUP IMAGE AND NAME --}}
-    <div class='flex flex-row'>
-        <div class='background-card'>
+    <div class='flex flex-row w-full'>
+        <div class='background-card w-1/2'>
             {{ $this->form }}
             <button wire:click='save' class='btn'>
                 Save
