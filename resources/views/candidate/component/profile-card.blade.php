@@ -9,7 +9,7 @@
                     loading='lazy'>
             </div>
             <div class='row-span-1 text-center'>
-                <h1 class='text-xl font-semibold'>{{ $this->candidate->name }}</h1>
+                <h1 class='text-xl tracking-tighter font-roboto_mono'>{{ $this->candidate->name }}</h1>
             </div>
         </div>
 
