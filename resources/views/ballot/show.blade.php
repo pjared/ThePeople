@@ -9,9 +9,11 @@
             </h1>
         </div>
         @auth
-            <div class='flex items-center justify-end'>
+            <div class='flex items-center justify-end gap-1'>
                 <a class='link' href="/flag-comparison/{{$this->ballot->slug}}">Compare Candidate Flags</a>
-                @include('components.comparison-flag', ['type' => '2'])
+                <div class="flex justify-center fill-green-400">
+                    @include('icons.flag')
+                </div>
             </div>
         @endauth
 
