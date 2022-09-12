@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Jobs\UpdateBallotCache;
 use BeyondCode\Comments\Traits\HasComments;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -87,6 +88,10 @@ class Candidate extends Model
                     Storage::disk($this->profilePhotoDisk())->delete($previous);
                 }
             });
+            //Update the ballot cache if the candidate has a ballot
+            if($this->ballot) {
+                UpdateBallotCache::dispatch($this->ballot);
+            }
         }
     }
 
