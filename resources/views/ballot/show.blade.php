@@ -1,4 +1,4 @@
-<div class="flex flex-col w-11/12 h-5/6 items-center background-card">
+<div class="flex flex-col w-11/12 h-5/6 items-center background-card shadow-xl drop-shadow-xl">
     <div class='flex flex-row gap-12'>
         <div class='flex flex-col text-center'>
             <p class="font-courier text-xl">
