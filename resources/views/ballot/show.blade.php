@@ -1,10 +1,10 @@
 <div class="flex flex-col w-11/12 h-5/6 items-center background-card shadow-lg drop-shadow-lg">
     <div class='flex flex-row gap-12'>
         <div class='flex flex-col text-center'>
-            <p class="font-courier text-xl">
+            <p class="font-roboto_mono text-lg tracking-tight">
                 Plan your choice for the upcoming election
             </p>
-            <h1 class="uppercase mt-2 text-sm">
+            <h1 class="uppercase font-roboto_mono mt-2 text-sm text-gray-400">
                 {{ $this->ballot->location->name }} {{ $this->ballot->office->name }} - VOTING DATE: {{ $this->ballot->voting_date->format('m/d/Y')}}
             </h1>
         </div>
@@ -38,12 +38,12 @@
                         <div class="card-body flex flex-row flex-wrap" :class="{ 'p-3': show }">
                             <div class="flex grow flex-col md:flex-row font-courier">
                                 <div class="flex">
-                                    <h2 class="card-title font-normal">{{ $running_candidate->candidate->name }}</h2>
+                                    <h2 class="card-title tracking-tight font-roboto_mono font-light">{{ $running_candidate->candidate->name }}</h2>
                                 </div>
                                 <div class="flex grow justify-end">
                                     <a
                                         rel="next prefetch"
-                                        class="underline text-sky-600 visited:text-purple-600"
+                                        class="underline font-roboto_mono font-light text-sm text-sky-500 visited:text-purple-500"
                                         href="/candidate/profile/{{$running_candidate->candidate->slug}}">More about {{ $running_candidate->candidate->name }}</a>
                                 </div>
                             </div>
