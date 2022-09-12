@@ -12,6 +12,9 @@
                                 href="/groups/{{$group->slug}}">{{$group->name}}
                             </a>
                         </h2>
+                        <p class='text-gray-700' x-show='show'>
+                            {{$group->sentence_overview}}
+                        </p>
                     </div>
                 </button>
             </form>
