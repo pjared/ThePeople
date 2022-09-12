@@ -45,7 +45,6 @@ class PoliticalGroupOverview extends Page implements HasForms
     public function mount(): void
     {
         $this->group = auth()->user()->manages_political_groups->first();
-        // dd( , $this->group->profile_photo_url);
         abort_unless(auth()->user()->hasRole('organizer') || auth()->user()->hasRole('organizerAdmin'), 403);
 
         $this->form->fill([
@@ -54,6 +53,7 @@ class PoliticalGroupOverview extends Page implements HasForms
             'contact_email' => $this->group->contact_email,
             'email' => $this->group->email,
             'site_link' => $this->group->site_link,
+            'sentence_overview' => $this->group->sentence_overview,
         ]);
     }
 
@@ -119,6 +119,7 @@ class PoliticalGroupOverview extends Page implements HasForms
     protected function getFormSchema(): array
     {
         return [
+            Textarea::make('sentence_overview'),
             Textarea::make('description'),
             TextInput::make('phone_number'),
             TextInput::make('contact_email')->email()->required(),
