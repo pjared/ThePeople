@@ -17,6 +17,11 @@
     .divider-horizontal {
         @apply mx-0;
     }
+
+    /* .collapse-open :where(.collapse-content), .collapse:focus:not(.collapse-close) :where(.collapse-content), .collapse:not(.collapse-close) :where(input[type="checkbox"]:checked ~ .collapse-content) {
+        @apply collapse-animation;
+    } */
+
     /* .drawer-toggle ~ .drawer-content {
         @apply overflow-y-visible;
     }

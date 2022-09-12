@@ -6,6 +6,11 @@
 	overflow: hidden;
 }
 
+/* .collapse-animation {
+    max-height: 0;
+    transition: max-height 10s ease-out, padding .2s ease-in-out, background-color .2s ease-in-out;
+} */
+
 @keyframes typing {
 	0% {
 		width: 0
