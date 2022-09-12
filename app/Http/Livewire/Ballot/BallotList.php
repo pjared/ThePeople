@@ -8,17 +8,22 @@ use Livewire\Component;
 
 class BallotList extends Component
 {
-    public $ballots = [];
+    // public $ballots = [];
 
     public function render()
     {
         return view('livewire.ballot.ballot-list');
     }
 
-    public function load_ballots()
+    public function getBallotsProperty()
     {
-        $this->ballots = Cache::rememberForever('ballots', function () {
+        return $this->ballots = Cache::rememberForever('ballots', function () {
             return Ballot::with('office', 'location')->withCount('candidates')->get();
         });
+    }
+
+    public function load_ballots()
+    {
+        $this->ballots = $this->getBallotsProperty();
     }
 }

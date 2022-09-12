@@ -1,6 +1,6 @@
 <div class="flex grow justify-center mt-12 p-6">
     <div class="flex flex-col md:flex-row flex-wrap gap-8 w-3/4 items-center justify-center" wire:init="load_ballots">
-        @foreach ($ballots as $ballot)
+        @foreach ($this->ballots as $ballot)
             @if($ballot->candidates_count >= 1)
                 <form action="/ballot/{{$ballot->slug}}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true" >
                     <button class="background-card shadow-md" class="card bg-base-100 shadow-xl">
@@ -26,13 +26,13 @@
 
     @section('description')
         Welcome to the home page of ThePeople! Here you can navigate to a ballot from the list provided. The current ballots we have are:
-        @foreach ($ballots as $ballot)
+        @foreach ($this->ballots as $ballot)
         {{$ballot->name}},
         @endforeach
     @endsection
-    @section('keywords')
-        @foreach ($ballots as $ballot)
+    {{-- @section('keywords')
+        @foreach ($this->ballots as $ballot)
             {{$ballot->name}},
         @endforeach
-    @endsection
+    @endsection --}}
 </div>
