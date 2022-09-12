@@ -1,8 +1,8 @@
 /*****TYPE OUT *******/
 .type-out {
-	animation: typing 2s steps(22), blink .5s step-end 9 alternate;
+	animation: typing 2.5s steps(22), blink .75s step-end 9 alternate;
 	white-space: nowrap;
-	width: 25ch;
+	width: 24ch;
 	overflow: hidden;
 }
 
@@ -11,7 +11,7 @@
 		width: 0
 	}
 }
-	
+
 @keyframes blink {
 	0% {
 		border-right: 3px solid;
@@ -28,11 +28,11 @@
 .check {
 	position: absolute;
 	opacity: 0;
-	
+
 	&:checked + label svg path {
 		stroke-dashoffset: 0;
 	}
-	
+
 	&:focus + label {
 		transform: scale(1.03);
 	}
@@ -41,12 +41,12 @@
 .check + label {
 	/* display: block; */
 	width: var(--d); height: var(--d);
-	
+
 	&:active {
 		transform: scale(1.05);
 		border-radius: 30px;
 	}
-	
+
 	svg {
 		pointer-events: none;
 		rect {
@@ -57,8 +57,8 @@
 			cursor: pointer;
 			transition: all .2s ease;
 		}
-		path {			
-			fill: none;			
+		path {
+			fill: none;
 			stroke: #333;
 			stroke-width: 5px;
 			stroke-linecap: round;
