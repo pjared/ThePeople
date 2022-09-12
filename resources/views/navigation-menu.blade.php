@@ -16,6 +16,13 @@
                         {{ __('Home') }}
                     </x-jet-nav-link>
 
+                    <x-jet-nav-link
+                        href="{{ route('groups') }}"
+                        :active="request()->routeIs('groups')"
+                        class='ml-4'>
+                        {{ __('Political Groups') }}
+                    </x-jet-nav-link>
+
                     {{-- <x-jet-nav-link href="{{ route('groups') }}" :active="request()->routeIs('groups')">
                         {{ __('Groups') }}
                     </x-jet-nav-link> --}}
