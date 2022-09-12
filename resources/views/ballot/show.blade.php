@@ -10,8 +10,8 @@
         </div>
         @auth
             <div class='flex items-center justify-end gap-1'>
-                <a class='link' href="/flag-comparison/{{$this->ballot->slug}}">Compare Candidate Flags</a>
-                <div class="flex justify-center fill-green-400">
+                <a class='link font-roboto_mono text-gray-700 text-sm' href="/flag-comparison/{{$this->ballot->slug}}">Compare Candidate Flags</a>
+                <div class="flex items-center fill-green-400 h-6 w-6">
                     @include('icons.flag')
                 </div>
             </div>
