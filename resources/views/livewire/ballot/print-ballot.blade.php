@@ -2,19 +2,21 @@
     class='flex flex-row w-full justify-center pt-4 gap-4'
     x-data="ballot">
 
-    <div class='background-card flex flex-col h-fit form-control'>
-        <span>Ballots You've Voted On</span>
-        @foreach ($votes as $i => $vote)
-            <label class="label cursor-pointer">
-                <span class="label-text text-xl">{{$vote->ballot->name}}</span>
-                <input
-                    type="checkbox"
-                    @click="toggle('{{$i}}')"
-                    checked="checked{{$i}}"
-                    class="checkbox checkbox-primary" />
-            </label>
-        @endforeach
-    </div>
+    @if(count($votes) != 0)
+        <div class='background-card flex flex-col h-fit form-control'>
+            <span>Ballots You've Voted On</span>
+            @foreach ($votes as $i => $vote)
+                <label class="label cursor-pointer">
+                    <span class="label-text text-xl">{{$vote->ballot->name}}</span>
+                    <input
+                        type="checkbox"
+                        @click="toggle('{{$i}}')"
+                        checked="checked{{$i}}"
+                        class="checkbox checkbox-primary" />
+                </label>
+            @endforeach
+        </div>
+    @endif
 
     <div class='flex flex-col w-2/5 gap-2 text-center'>
         <div
@@ -32,19 +34,24 @@
                     </div>
                 </div>
             @endforeach
+            @if(count($votes) == 0)
+                <p>You haven't votes on any ballots yet! To get started, click on the home tab in the top bar and choose the candidates you plan to vote for. Come back to this page once you've finished</p>
+            @endif
         </div>
         @if ($this->ballot_sent)
             <p class="mt-2 font-medium text-sm text-green-600">
                 {{ __('Ballot has been sent!') }}
             </p>
         @endif
-        <button
-            type="button"
-            {{-- wire:click="emailUserBallot" --}}
-            @click="email"
-            class="underline text-sm text-gray-600 hover:text-gray-900">
-            {{ __('Email Yourself This Ballot') }}
-        </button>
+        @if(count($votes) != 0)
+            <button
+                type="button"
+                {{-- wire:click="emailUserBallot" --}}
+                @click="email"
+                class="underline text-sm text-gray-600 hover:text-gray-900">
+                {{ __('Email Yourself This Ballot') }}
+            </button>
+        @endif
     </div>
 
     @push('scripts')
