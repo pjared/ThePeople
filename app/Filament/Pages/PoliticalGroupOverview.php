@@ -119,7 +119,7 @@ class PoliticalGroupOverview extends Page implements HasForms
     protected function getFormSchema(): array
     {
         return [
-            Textarea::make('sentence_overview'),
+            TextInput::make('sentence_overview'),
             Textarea::make('description'),
             TextInput::make('phone_number'),
             TextInput::make('contact_email')->email()->required(),
