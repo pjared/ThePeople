@@ -32,6 +32,8 @@ class BallotResource extends Resource
                     ->required(),
                 Forms\Components\DatePicker::make('voting_date')
                     ->required(),
+                Forms\Components\Toggle::make('has_single_runner')
+                    ->required(),
             ]);
     }
 
@@ -46,6 +48,9 @@ class BallotResource extends Resource
                                                     ->searchable(),
                 Tables\Columns\TextColumn::make('voting_date')
                                                     ->date()
+                                                    ->sortable(),
+                Tables\Columns\BooleanColumn::make('has_single_runner')
+                                                    ->label('Single Candidate Race')
                                                     ->sortable(),
             ])
             ->filters([

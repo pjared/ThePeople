@@ -18,13 +18,15 @@ class Ballot extends Model
 
     protected $casts = [
         'voting_date' => 'datetime',
+        'has_single_runner' => 'boolean'
     ];
 
     public $fillable = [
         "location_id",
         "office_id",
         "voting_date",
-        'slug'
+        'slug',
+        'has_single_runner',
     ];
 
     public function shouldBeSearchable()
