@@ -14,6 +14,11 @@
     @section('page-title')
         Political Groups
     @endsection
+
+    {{-- Feedback Modal --}}
+    @push('modals')
+        @include('modals.feedback-modal')
+    @endpush
 </x-app-layout>
 
 @include('components.footer')
