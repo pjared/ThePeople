@@ -17,17 +17,19 @@
                 <li class='list-item border-b-2 border-gray-300'>
                     <form class='p-2' action="/candidate/profile/{{$result->slug}}" method="GET">
                         {{-- grid grid-flow-col grid-cols-4 span-cols-1 --}}
-                        <div class='flex flex-col pl-2'>
-                            <a class='link underline'>{{$result->name}}</a>
+                        <button class='flex flex-col pl-2 w-full h-full text-start'>
+                            <a href='/candidate/profile/{{$result->slug}}' class='link underline'>{{$result->name}}</a>
                             <p class='text-gray-400'>{{$result->state}}</p>
-                        </div>
+                        </button>
                     </form>
                 </li>
             @endforeach
             @foreach ($ballot_searches as $result)
                 <li class='list-item border-b-2 border-gray-300 p-2'>
                     <form class='p-2' action="/ballot/{{$result->slug}}" method="GET">
-                        <a class='link underline'>{{$result->name}}</a>
+                        <button class='w-full h-full text-start'>
+                            <a href='/ballot/{{$result->slug}}' class='link underline'>{{$result->name}}</a>
+                        </button>
                     </form>
                 </li>
             @endforeach
@@ -41,7 +43,7 @@
         @foreach ($this->ballots as $ballot)
             @if($ballot->candidates_count >= 1)
                 <form action="/ballot/{{$ballot->slug}}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true" >
-                    <button class="background-card shadow-md" class="card bg-base-100 shadow-xl">
+                    <button class="background-card shadow-md">
                         <div class="text-center p-0">
                             <h2 class="card-title text-xl justify-center">
                                 <a
