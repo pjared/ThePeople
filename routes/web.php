@@ -45,6 +45,8 @@ Route::get('/admin/login', function() {
     return redirect('/login');
 });
 
+Route::post('/submit-feedback', [HomeController::class, 'submitFeedback']);
+
 /* -----GROUPS------ */
 Route::get('/groups', function()  {
     return view('groups');
