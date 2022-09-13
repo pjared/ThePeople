@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Ballot;
 use App\Models\UserFeedback;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Laravel\Jetstream\Jetstream;
@@ -27,17 +28,25 @@ class HomeController extends Controller
 
     public function submitFeedback(Request $request)
     {
-        $validated = Validator::make($request->all(), [
-            'feedback_type' => 'required|max:255',
-            'feedback' => 'required|string',
-        ]);
+        $user_id = auth()->id();
+        RateLimiter::attempt(
+            'send-message:'. $user_id,
+            $perMinute = 2,
+            function() use ($request) {
+                $validated = Validator::make($request->all(), [
+                    'feedback_type' => 'required|max:255',
+                    'feedback' => 'required|string',
+                ]);
 
-        if ($validated->stopOnFirstFailure()->fails()) {
-            return;
-        }
-        UserFeedback::create([
-            'feedback_type' => $request->feedback_type,
-            'feedback' => $request->feedback,
-        ]);
+                if ($validated->stopOnFirstFailure()->fails()) {
+                    return;
+                }
+                UserFeedback::create([
+                    'feedback_type' => $request->feedback_type,
+                    'feedback' => $request->feedback,
+                ]);
+            }
+        );
+
     }
 }
