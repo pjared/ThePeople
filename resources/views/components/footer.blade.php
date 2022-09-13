@@ -13,6 +13,10 @@
     <div>
         <span class="footer-title">Company</span>
         <a class="link link-hover" href="{{route('about-us')}}">About us</a>
+        {{-- <a class="link link-hover" href="{{route('about-us')}}">Suggestions? Give Us Feedback</a> --}}
+        @auth
+            <label for="my-modal" class="link link-hover">Suggestions? Give Us Feedback</label>
+        @endauth
         {{-- <a class="link link-hover">Contact</a> --}}
         {{-- <a class="link link-hover">Jobs</a>  --}}
         {{-- <a class="link link-hover">Press kit</a> --}}
