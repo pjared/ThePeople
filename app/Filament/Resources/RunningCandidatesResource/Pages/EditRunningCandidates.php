@@ -4,6 +4,7 @@ namespace App\Filament\Resources\RunningCandidatesResource\Pages;
 
 use App\Filament\Resources\RunningCandidatesResource;
 use App\Jobs\UpdateBallotCache;
+use App\Jobs\UpdateCandidateAndBallotSearches;
 use App\Models\Ballot;
 use App\Models\Candidate;
 use App\Models\CandidateRequiredStance;
@@ -28,25 +29,40 @@ class EditRunningCandidates extends EditRecord
         ];
     }
 
-    private $old_ballot_id;
+    public $old_ballot_id;
+    public $old_show;
 
-    protected function beforeSave(): void
+    protected function afterFill(): void
     {
         $this->old_ballot_id = $this->data['ballot_id'];
+        $this->old_show = $this->data['show'];
     }
 
     protected function afterSave(): void
     {
+        //Get the ballot
+        $ballot = Ballot::find($this->data['ballot_id']);
+
+        // Update ballot cache if show has changed
+        if($this->old_show != $this->data['show']) {
+            //Call for the ballot caching update
+            UpdateBallotCache::dispatch($ballot);
+
+            //Call Job to update seaches
+            UpdateCandidateAndBallotSearches::dispatch($this->data['candidate_id'], $this->data['show'])->afterCommit();
+
+            //Update the old show variable
+            $this->old_show = $this->data['show'];
+        }
+
         //Check to see if the ballot has changed on save
         if($this->old_ballot_id == $this->data['ballot_id']) {
             //The ballot has not changed. There is nothing to do here
             return;
         }
+        //Update the old ballot ID
+        $this->old_ballot_id = $this->data['ballot_id'];
 
-        //Get the ballot
-        $ballot = Ballot::find($this->data['ballot_id']);
-
-        UpdateBallotCache::dispatch($ballot);
         //Delete all of the old required stances for the candidate
         $required_stances = CandidateRequiredStance::where('candidate_id', $this->data['candidate_id'])->get();
         foreach($required_stances as $required_stance) {
