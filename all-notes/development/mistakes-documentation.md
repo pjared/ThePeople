@@ -36,3 +36,8 @@ Fix: Needed just change the CSS since it was set to ID's. I added a class and ma
 Occurences:
 1. Patient 0: I was trying to do the checkboxes for the ballot view (ballot.page), SVG kept breaking
 2. 
+
+
+# Searching
+Meilisearch has been a pain in the ass, but I figured out my main problem is that I was not running the correct queue:
+sail php artisan queue:work --queue=scout 
