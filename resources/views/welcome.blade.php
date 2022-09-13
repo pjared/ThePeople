@@ -14,9 +14,12 @@
     @endsection
 
     {{-- Feedback Modal --}}
-    @push('modals')
-        @include('modals.feedback-modal')
-    @endpush
+    @auth
+        @push('modals')
+            @include('modals.feedback-modal')
+        @endpush
+    @endauth
+
 </x-app-layout>
 
 
