@@ -17,7 +17,7 @@ class ProvoOremBallotSeeder extends Seeder
 {
     public $new_offices = [
         [
-            "name" => 'Utah State Congress',
+            "name" => 'State Congress',
             "years_per_term" => 2,
         ],
         [
