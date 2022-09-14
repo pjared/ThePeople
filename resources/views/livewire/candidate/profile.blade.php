@@ -2,16 +2,23 @@
     {{-- {{dd($this->candidate)}} --}}
     @if($this->is_manual)
         <div class='flex w-full justify-center'>
-            <div class="alert alert-warning shadow-lg w-1/2">
-                <div class='w-full'>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+            <div class="alert alert-warning flex flex-row shadow-lg w-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                <div class='w-full flex flex-col' x-data="{show_sources:false}">
+
                     <p class='w-full text-center'>
-                        This user was created by ComnRep,LLC. The information is not garunteed to be accurate.
+                        This user was created by the team behind ThePeople. The information is not garunteed to be accurate.
                         <br>
                         Reason: {{$this->candidate->manual_candidate->note}}
                     </p>
-                    <span></span>
+                    <div class='w-full text-center'>
+                        <span class='underline' x-on:click="show_sources = ! show_sources">Sources: </span>
+                        <p x-show='show_sources'>
+                            {{$this->candidate->manual_candidate->sources}}
+                        </p>
+                    </div>
                 </div>
+
             </div>
         </div>
     @endif
@@ -46,80 +53,95 @@
         </div> --}}
     </div>
 
-    <div class="flex flex-col md:grid md:grid-cols-2 p-8 gap-2 justify-center w-full">
-        {{-- LEFT COLUMN --}}
-        <div class="flex flex-col grow gap-6 items-center">
-            {{-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS --}}
-           <div class="flex flex-col gap-6 md:w-11/12 items-center">
-                <livewire:candidate.stances :flags="$flags" :opinions="$opinions" :candidate="$this->candidate" />
-            </div>
-        </div>
-        {{-- RIGHT COLUMN --}}
-        <div class="flex flex-col md:w-11/12 gap-6">
-            {{-- PROMISES COMPONENT --}}
-            @include('candidate.component.promises', ['promises' => $this->candidate->promises])
 
-            {{-- OPINIONS COMPONENT --}}
-            @include('candidate.component.opinions')
-
-            {{-- DONORS --}}
-            {{-- @if(count($this->candidate->donors) != 0)
-                <div class="flex grow flex-col w-11/12 items-center">
-                    <x-dropdown-card>
-                        <x-slot:title>
-                            Campaign Donors
-                        </x-slot>
-                        <x-slot:content>
-                            @if(count($this->candidate->donors) >= 1)
-                            @foreach ($this->candidate->donors as $donor)
-                                <div class="flex flex-row items-center justify-center gap-2">
-                                    <span>Name:  {{$donor->name}}</span>
-                                    @auth
-                                        <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-flag-'.$donor->id">
-                                    @else
-                                        <label class="fill-transparent" for="signup-modal">
-                                            @include('icons.flag')
-                                        </label>
-                                    @endauth
-
-                                </div>
-                            @endforeach
-                            @else
-                                No donor data as of yet.
-                            @endif
-                        </x-slot>
-                    </x-dropdown-card>
+    @if(count($this->opinions) >= 1)
+        <div class="flex flex-col md:grid md:grid-cols-2 p-8 gap-2 justify-center w-full">
+            {{-- LEFT COLUMN --}}
+            <div class="flex flex-col grow gap-6 items-center">
+                {{-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS --}}
+            <div class="flex flex-col gap-6 md:w-11/12 items-center">
+                    <livewire:candidate.stances :flags="$flags" :opinions="$opinions" :candidate="$this->candidate" />
                 </div>
-            @endif --}}
+            </div>
+            {{-- RIGHT COLUMN --}}
+            <div class="flex flex-col md:w-11/12 gap-6">
+                {{-- PROMISES COMPONENT --}}
+                @include('candidate.component.promises', ['promises' => $this->candidate->promises])
 
-            {{-- LAW MAKING INVOLVEMENT  --}}
-            {{-- @if(count($this->candidate->law_involvement) != 0)
-                <div class="flex flex-col w-11/12 items-center">
-                    <x-dropdown-card>
-                        <x-slot:title>
-                            Laws Passed in office
-                        </x-slot>
-                        <x-slot:content>
-                            <div class="flex flex-col gap-4">
-                                @foreach ($this->candidate->law_involvement as $law)
-                                    <div class="flex flex-row justify-center gap-4">
-                                        <span>Name : {{ $law->name }}</span>
+                {{-- OPINIONS COMPONENT --}}
+                @include('candidate.component.opinions')
+
+                {{-- DONORS --}}
+                {{-- @if(count($this->candidate->donors) != 0)
+                    <div class="flex grow flex-col w-11/12 items-center">
+                        <x-dropdown-card>
+                            <x-slot:title>
+                                Campaign Donors
+                            </x-slot>
+                            <x-slot:content>
+                                @if(count($this->candidate->donors) >= 1)
+                                @foreach ($this->candidate->donors as $donor)
+                                    <div class="flex flex-row items-center justify-center gap-2">
+                                        <span>Name:  {{$donor->name}}</span>
                                         @auth
-                                            <livewire:flag :type="'law'" :type_id="$law->id" :wire:key="'law-flag-'.$law->id">
+                                            <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-flag-'.$donor->id">
                                         @else
                                             <label class="fill-transparent" for="signup-modal">
                                                 @include('icons.flag')
                                             </label>
                                         @endauth
+
                                     </div>
                                 @endforeach
-                            </div>
-                        </x-slot>
-                    </x-dropdown-card>
-                </div>
-            @endif --}}
+                                @else
+                                    No donor data as of yet.
+                                @endif
+                            </x-slot>
+                        </x-dropdown-card>
+                    </div>
+                @endif --}}
+
+                {{-- LAW MAKING INVOLVEMENT  --}}
+                {{-- @if(count($this->candidate->law_involvement) != 0)
+                    <div class="flex flex-col w-11/12 items-center">
+                        <x-dropdown-card>
+                            <x-slot:title>
+                                Laws Passed in office
+                            </x-slot>
+                            <x-slot:content>
+                                <div class="flex flex-col gap-4">
+                                    @foreach ($this->candidate->law_involvement as $law)
+                                        <div class="flex flex-row justify-center gap-4">
+                                            <span>Name : {{ $law->name }}</span>
+                                            @auth
+                                                <livewire:flag :type="'law'" :type_id="$law->id" :wire:key="'law-flag-'.$law->id">
+                                            @else
+                                                <label class="fill-transparent" for="signup-modal">
+                                                    @include('icons.flag')
+                                                </label>
+                                            @endauth
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </x-slot>
+                        </x-dropdown-card>
+                    </div>
+                @endif --}}
+            </div>
         </div>
-    </div>
+    @else
+        <div class="flex flex-col p-8 gap-2 justify-center items-center w-full">
+            {{-- PROMISES COMPONENT --}}
+            @include('candidate.component.promises', ['promises' => $this->candidate->promises])
+
+            <div class='w-4/5 flex justify-center'>
+                @include('candidate.component.opinions', ['no_controversials' => true])
+            </div>
+            {{-- OPINIONS COMPONENT --}}
+        </div>
+    @endif
+
+
 
     {{-- DONORS, PREVIOUS POSITIONS, LAWS --}}
     <div class="flex flex-col md:grid md:grid-cols-2 p-8 gap-2 justify-center w-full">
