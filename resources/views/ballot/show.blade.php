@@ -5,7 +5,7 @@
                 Plan your choice for the upcoming election
             </p>
             <h1 class="uppercase font-roboto_mono mt-2 text-sm text-gray-400">
-                {{ $this->ballot->location->name }} {{ $this->ballot->office->name }} - VOTING DATE: {{ $this->ballot->voting_date->format('m/d/Y')}}
+                {{ $this->ballot->location->state }} {{ $this->ballot->location->name }} {{ $this->ballot->office->name }} - VOTING DATE: {{ $this->ballot->voting_date->format('m/d/Y')}}
             </h1>
         </div>
         @auth
