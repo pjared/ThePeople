@@ -17,7 +17,6 @@
             @foreach ($candidate_searches as $result)
                 <li class='list-item border-b-2 border-gray-300'>
                     <form class='p-2' action="/candidate/profile/{{$result->slug}}" method="GET">
-                        {{-- grid grid-flow-col grid-cols-4 span-cols-1 --}}
                         <button class='flex flex-col pl-2 w-full h-full text-start'>
                             <a href='/candidate/profile/{{$result->slug}}' class='link underline'>{{$result->name}}</a>
                             <p class='text-gray-400'>{{$result->state}}</p>
