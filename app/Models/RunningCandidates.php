@@ -23,6 +23,7 @@ class RunningCandidates extends Model
         "entered_race_date",
         "ended_race_date",
         "show",
+        'order',
     ];
 
     public function candidate() {
