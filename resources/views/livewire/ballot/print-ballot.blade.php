@@ -51,8 +51,14 @@
                 class="underline text-sm text-gray-600 hover:text-gray-900">
                 {{ __('Email Yourself This Ballot') }}
             </button>
+            <p>Did you like the site? Consider <label for="feedback-modal" class="underline">giving us some feedback</label> about how we can improve!</p>
         @endif
     </div>
+
+    {{-- Feedback Modal --}}
+    @push('modals')
+        @include('modals.feedback-modal')
+    @endpush
 
     @push('scripts')
         <script>
