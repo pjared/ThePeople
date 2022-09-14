@@ -124,6 +124,7 @@
     {{-- DONORS, PREVIOUS POSITIONS, LAWS --}}
     <div class="flex flex-col md:grid md:grid-cols-2 p-8 gap-2 justify-center w-full">
         {{-- LEFT COLUMN --}}
+
         <div class="flex flex-col grow gap-6 items-center">
             {{-- DONORS --}}
             {{-- @if(count($this->candidate->donors) != 0)
@@ -156,7 +157,9 @@
             @endif --}}
 
             {{-- PREVIOUS POSITIONS COMPONENT --}}
-            @include('candidate.component.positions', ['previous_positions' => $this->candidate->previous_positions])
+            @if(! $this->is_manual)
+                @include('candidate.component.positions', ['previous_positions' => $this->candidate->previous_positions])
+            @endif
         </div>
         {{-- RIGHT COLUMN --}}
         <div class="flex flex-col md:w-11/12 grow gap-6 items-center">
