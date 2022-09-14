@@ -78,7 +78,7 @@ class Ballot extends Model
     }
 
     public function candidates() {
-        return $this->hasMany(RunningCandidates::class, 'ballot_id')->where('show', true);
+        return $this->hasMany(RunningCandidates::class, 'ballot_id')->where('show', true)->orderBy('order');
     }
 
     public function all_candidates() {
