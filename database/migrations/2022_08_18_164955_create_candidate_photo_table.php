@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Candidate::class, 'candidate_id');
             $table->string('attachment');
-            $table->tinyInteger('order')->unsigned()->nullable();
+            $table->tinyInteger('order')->unsigned()->default(100);
             $table->softDeletes();
         });
     }
