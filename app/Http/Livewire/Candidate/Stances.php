@@ -16,11 +16,12 @@ class Stances extends Component
         return view('livewire.candidate.stances');
     }
 
-    public function mount($opinions, $candidate, $flags) {
+    public function mount($opinions, $candidate, $flags = null) {
         $this->opinions = $opinions->load(['required_stances']);
         $this->candidate_required_stances = $candidate->required_stances;
         $this->candidate_stances = $candidate->stances;
-        $this->flags = $flags;
+
+        $this->flags = $flags ? $flags : collect();
         //TODO: Eager load each opinions required stance
     }
 }
