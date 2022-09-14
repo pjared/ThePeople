@@ -6,6 +6,7 @@ use App\Models\Candidate;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
+use Filament\Notifications\Notification;
 use Filament\Widgets\Widget;
 
 class EditBio extends Widget implements HasForms
@@ -48,5 +49,9 @@ class EditBio extends Widget implements HasForms
         $this->candidate->update(
             $this->form->getState(),
         );
+        Notification::make()
+        ->title('Saved successfully')
+        ->success()
+        ->send();
     }
 }

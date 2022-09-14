@@ -2,6 +2,7 @@
 
 namespace App\Filament\Widgets;
 
+use Filament\Notifications\Notification;
 use Filament\Widgets\Widget;
 use Livewire\WithFileUploads;
 use Spatie\ImageOptimizer\OptimizerChainFactory;
@@ -50,10 +51,18 @@ class EditProfileImage extends Widget
             auth()->user()->candidate->updateProfilePhoto($this->photo);
             // auth()->user()->updateProfilePhoto($this->photo);
         }
+        Notification::make()
+        ->title('Saved successfully')
+        ->success()
+        ->send();
     }
 
     public function deleteProfilePhoto() {
         // auth()->user()->deleteProfilePhoto($this->photo);
         auth()->user()->candidate->updateProfilePhoto($this->photo);
+        Notification::make()
+        ->title('Profile Picture Deleted')
+        ->warning()
+        ->send();
     }
 }
