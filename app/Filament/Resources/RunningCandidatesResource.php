@@ -33,6 +33,7 @@ class RunningCandidatesResource extends Resource
                 Forms\Components\DatePicker::make('ended_race_date'),
                 Forms\Components\Toggle::make('show')
                     ->required(),
+                Forms\Components\TextInput::make('order'),
             ]);
     }
 
@@ -50,6 +51,8 @@ class RunningCandidatesResource extends Resource
                 Tables\Columns\TextColumn::make('ended_race_date')
                     ->date(),
                 Tables\Columns\BooleanColumn::make('show'),
+                Tables\Columns\TextColumn::make('order')
+                    ->sortable(),
             ])
             ->filters([
                 //
