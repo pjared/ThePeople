@@ -30,3 +30,8 @@ https://fedsoc.org/chapters/UT
 
 
 Countries, States, Cities - Can just find a package, then remove/limit the other locations
+https://gis.utah.gov/data/political/voter-precincts/
+&& It's API https://opendata.gis.utah.gov/datasets/utah-vista-ballot-areas/api
+
+Bill Tracker - A feature on ballotpedia
+https://www.billtrack50.com/
