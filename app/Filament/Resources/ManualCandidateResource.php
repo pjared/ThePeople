@@ -39,8 +39,10 @@ class ManualCandidateResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('candidate_id'),
-                Tables\Columns\TextColumn::make('note'),
-                Tables\Columns\TextColumn::make('sources'),
+                Tables\Columns\TextColumn::make('note')
+                    ->limit(15),
+                Tables\Columns\TextColumn::make('sources')
+                    ->limit(15),
                 Tables\Columns\BooleanColumn::make('candidate.running_candidate.show')
                     ->label('Show'),
             ])

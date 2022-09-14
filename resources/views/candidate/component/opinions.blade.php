@@ -2,9 +2,15 @@
 @if($this->candidate->opinions_count >= 1)
     <article class="flex flex-col w-11/12 items-center">
         <x-dropdown-card  :classes="'shadow-xl'">
-            <x-slot:title>
-                Other Opinions
-            </x-slot>
+            @isset($no_controversials)
+                <x-slot:title>
+                    Candidate's General Stances
+                </x-slot>
+            @else
+                <x-slot:title>
+                    Other Stances
+                </x-slot>
+            @endisset
             <x-slot:content>
                 <div class="flex flex-col gap-4">
                     @foreach ($this->candidate->opinions as $opinion)
