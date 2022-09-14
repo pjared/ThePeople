@@ -1,7 +1,7 @@
 <article
-    class='background-card w-fit grid grid-flow-col grid-col-3 justify-center gap-4 pb-3 shadow-md'>
+    class='background-card w-fit grid grid-flow-col grid-col-3 justify-center gap-4 pb-4 shadow-md'>
         <div class='col-span-1 grid grid-rows-6'>
-            <div class='row-span-5'>
+            <div class='row-span-5 flex justify-center'>
                 <img
                     src="{{ $this->candidate->profile_photo_url }}"
                     alt="{{ $this->candidate->name }}"
