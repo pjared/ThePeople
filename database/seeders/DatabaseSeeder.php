@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
             ControversialOpinionsSeeder::class,
             BadgeSeeder::class,
 
-            ProvoOremBallotSeeder::class,
+            // ProvoOremBallotSeeder::class,
         ]);
 
         //Seed for only local
