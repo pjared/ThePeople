@@ -1,7 +1,7 @@
-<input type="checkbox" id="my-modal" class="modal-toggle" />
-<label for="my-modal" class="modal cursor-pointer">
+<input type="checkbox" id="feedback-modal" class="modal-toggle" />
+<label for="feedback-modal" class="modal cursor-pointer">
     <label class="modal-box relative" for="">
-        <label for="my-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+        <label for="feedback-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
         <div class='flex flex-col gap-4'>
             <form class='flex flex-col gap-4' action="/submit-feedback" method="POST">
                 @csrf
