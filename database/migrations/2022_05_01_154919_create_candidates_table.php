@@ -18,11 +18,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('profile_photo_path', 2048)->nullable();
-            $table->date('dob');
-            $table->date('signup_date');
+            $table->date('dob')->nullable();
+            $table->date('signup_date')->nullable();
             $table->text('bio')->nullable();
             $table->string('state', 20);
-            $table->string('contact_email');
+            $table->string('contact_email')->nullable();
             $table->string('contact_phone_number')->nullable();
             $table->string('email')->nullable();
             $table->string('phone_number')->nullable();
