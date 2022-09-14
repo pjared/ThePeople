@@ -44,7 +44,7 @@ class GenerateSitemap extends Command
                 $sitemap->add(Url::create('candidate/profile/' . $candidate->candidate->slug)
                                 ->setPriority(0.9)
                                 ->setChangeFrequency('weekly')
-                                ->setLastModificationDate($candidate->updated_at));
+                                ->setLastModificationDate($candidate->candidate->updated_at));
             }
         }
 
