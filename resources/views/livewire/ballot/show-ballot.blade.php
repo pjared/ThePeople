@@ -8,7 +8,7 @@
     </div>
 
     <div class="flex flex-col-reverse md:flex-row items-center grow py-12">
-        <div class="w-1/5 ml-6">
+        <div class="w-1/5 ml-6 text-gray-400">
             <livewire:ballot.ballot-list />
         </div>
 

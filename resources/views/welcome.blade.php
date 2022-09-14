@@ -5,7 +5,7 @@
                 <h1>See Who's Running For ...</h1>
             </div>
         </div>
-        <div>
+        <div class='text-sky-600'>
             <livewire:ballot.ballot-list />
         </div>
     </div>

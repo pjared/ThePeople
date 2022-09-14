@@ -1,4 +1,5 @@
 <div class="flex flex-col grow justify-center items-center gap-10">
+    {{-- SEARCHING --}}
     <div class="pt-2 relative mx-auto text-gray-600 w-2/5">
         <input class="border-2 border-gray-300 bg-white h-12 px-5 pr-16 w-full rounded-lg text-sm focus:outline-none"
             type="search" wire:model='search'  name="search" placeholder="Search for a Candidate, Public Office, or Location">
@@ -39,16 +40,17 @@
         </ul>
     </div>
 
+    {{-- BALLOT LIST --}}
     <div class="flex flex-col md:flex-row flex-wrap gap-8 w-3/4 items-center justify-center">
         @foreach ($this->ballots as $ballot)
             @if($ballot->candidates_count >= 1)
                 <form action="/ballot/{{$ballot->slug}}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true" >
                     <button class="background-card shadow-md">
                         <div class="text-center p-0">
-                            <h2 class="card-title text-xl justify-center">
+                            <h2 class="card-title justify-center">
                                 <a
                                     rel="next prefetch canonical"
-                                    class="underline text-sky-600 font-mono tracking-tighter font-light"
+                                    class="underline text-inherit font-mono tracking-tighter font-light"
                                     type="text/html"
                                     href="/ballot/{{$ballot->slug}}">{{$ballot->location->state}} {{$ballot->office->name}}, {{$ballot->location->name}}</a>
                             </h2>
@@ -67,7 +69,7 @@
     @section('description')
         Welcome to the home page of ThePeople! Here you can navigate to a ballot from the list provided. The current ballots we have are:
         @foreach ($this->ballots as $ballot)
-        {{$ballot->name}},
+            {{$ballot->name}},
         @endforeach
     @endsection
     {{-- @section('keywords')
