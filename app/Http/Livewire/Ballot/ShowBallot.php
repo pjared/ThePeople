@@ -18,6 +18,8 @@ class ShowBallot extends Component
     public $candidates = [];
     public $candidate_vote;
 
+    public $page_loaded = false;
+
     public function mount(Ballot $ballot)
     {
         $this->ballot_slug = $ballot->slug;
@@ -67,5 +69,10 @@ class ShowBallot extends Component
                 'is_valid' => 1,
             ]
         );
+    }
+
+    public function init()
+    {
+        $this->page_loaded = true;
     }
 }

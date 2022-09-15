@@ -30,8 +30,15 @@
             @include('ballot.show')
 
             @role('organizerAdmin')
-                <livewire:groups.group-ballot :ballot="$this->ballot"/>
+            <div wire:init='init'>
+                @if($page_loaded)
+
+                        <livewire:groups.group-ballot :ballot="$this->ballot"/>
+
+                @endif
+            </div>
             @endrole
+
         </div>
     </div>
 
