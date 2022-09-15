@@ -12,7 +12,9 @@ class CandidateController extends Controller
     /**
      * Find the candidate in the database, and populate candidate page
      */
-    public function getCandidateView(Candidate $candidate) {
+    public function getCandidateView($candidate_slug) {
+        $candidate = Candidate::where('slug', $candidate_slug)->select('id', 'name' , 'slug')->first();
+        $candidate->load('ballot', 'ballot.office:id,name', 'ballot.location:id,state,name');
         return view('candidate.show')
                     ->with('candidate', $candidate);
     }

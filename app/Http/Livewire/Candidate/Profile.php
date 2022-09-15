@@ -14,8 +14,8 @@ class Profile extends Component
     public $candidate_slug;
     public $user_comment;
 
-    public function mount($candidate) {
-        $this->candidate_slug = $candidate->slug;
+    public function mount($candidate_slug) {
+        $this->candidate_slug = $candidate_slug;
     }
 
     public function getFlagsProperty()
