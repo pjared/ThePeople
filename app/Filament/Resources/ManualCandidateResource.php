@@ -25,6 +25,7 @@ class ManualCandidateResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('candidate_id')
+                    ->hidden()
                     ->required(),
                 Forms\Components\TextInput::make('note')
                     ->maxLength(255),
@@ -38,7 +39,8 @@ class ManualCandidateResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('candidate_id'),
+                Tables\Columns\TextColumn::make('candidate.name')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('note')
                     ->limit(15),
                 Tables\Columns\TextColumn::make('sources')
