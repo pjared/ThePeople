@@ -21,6 +21,7 @@ class CandidateOfficePositions extends Model
         "year_start",
         "year_end",
         "description",
+        'order',
     ];
 
     public function office() {
