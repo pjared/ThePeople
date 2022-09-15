@@ -11,8 +11,6 @@ use Livewire\Component;
 
 class Profile extends Component
 {
-    // public Candidate $candidate;
-    // public $is_manual;
     public $candidate_slug;
     public $opinions;
     public $user_comment;
@@ -30,10 +28,6 @@ class Profile extends Component
         } else {
             $this->opinions = [];
         }
-
-        // if(is_null($candidate->user_id)) {
-        //     $this->is_manual = true;
-        // }
 
         Cache::remember('candidate-' . $candidate->slug, 120,function () use ($candidate) {
             return $candidate->load('ballot', 'ballot.office:id,name', 'ballot.location:id,state,name',
