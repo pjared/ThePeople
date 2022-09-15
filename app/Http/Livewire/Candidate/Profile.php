@@ -12,9 +12,9 @@ use Livewire\Component;
 class Profile extends Component
 {
     // public Candidate $candidate;
+    // public $is_manual;
     public $candidate_slug;
     public $opinions;
-    public $is_manual;
     public $user_comment;
 
     public function mount($candidate) {
@@ -31,9 +31,9 @@ class Profile extends Component
             $this->opinions = [];
         }
 
-        if(is_null($candidate->user_id)) {
-            $this->is_manual = true;
-        }
+        // if(is_null($candidate->user_id)) {
+        //     $this->is_manual = true;
+        // }
 
         Cache::remember('candidate-' . $candidate->slug, 120,function () use ($candidate) {
             return $candidate->load('ballot', 'ballot.office:id,name', 'ballot.location:id,state,name',
@@ -47,6 +47,11 @@ class Profile extends Component
     public function getCandidateProperty()
     {
         return Cache::get('candidate-' . $this->candidate_slug);
+    }
+
+    public function getIsManualProperty()
+    {
+        return is_null($this->candidate->user_id);
     }
 
     public function render()
