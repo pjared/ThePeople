@@ -18,7 +18,7 @@
                             </div>
                             @auth
                                 <livewire:flag-content
-                                        :flag="$flags->where('flaggable_type', 'App\Models\CandidatePromise')->firstWhere('flaggable_id', $promise->id)"
+                                        :flag="$this->flags->where('flaggable_type', 'App\Models\CandidatePromise')->firstWhere('flaggable_id', $promise->id)"
                                         :content="$promise"
                                         :side="'below'"
                                         :wire:key="'promise-flag-' . $promise->id" />

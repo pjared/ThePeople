@@ -16,26 +16,27 @@ class Profile extends Component
 
     public function mount($candidate) {
         $this->candidate_slug = $candidate->slug;
-        if ($candidate->ballot) {
-            if(auth()->check()) {
-                $this->flags = auth()->user()->flags->where('ballot_id', $candidate->ballot->id)->where('candidate_id', $candidate->id);
-            } else {
-                $this->flags = [];
-            }
-        }
+    }
 
-        Cache::remember('candidate-' . $candidate->slug, 120,function () use ($candidate) {
+    public function getFlagsProperty()
+    {
+        if(! auth()->check()) {
+            return [];
+        }
+        return auth()->user()->flags->where('ballot_id', $this->candidate->ballot->id)->where('candidate_id', $this->candidate->id);
+    }
+
+    public function getCandidateProperty()
+    {
+        $slug = $this->candidate_slug;
+        return Cache::remember('candidate-' . $slug, 120, function () use ($slug) {
+            $candidate = Candidate::firstWhere('slug', $slug);
             return $candidate->load('ballot', 'ballot.office:id,name', 'ballot.location:id,state,name',
                                 'events', 'required_stances', 'stances', 'promises', 'videos', 'previous_positions',
                                 'opinions')
                                 ->loadCount('events', 'required_stances', 'stances', 'promises', 'videos', 'previous_positions',
                                 'opinions');
         });
-    }
-
-    public function getCandidateProperty()
-    {
-        return Cache::get('candidate-' . $this->candidate_slug);
     }
 
     public function getOpinionsProperty()

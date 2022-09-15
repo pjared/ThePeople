@@ -19,7 +19,7 @@
                             @auth
                                 {{-- {{dd($flags->where('flaggable_type', 'App\Models\CandidateOfficePositions')->where('flaggable_id', 2), $previous_positions)}} --}}
                                 <livewire:flag-content
-                                    :flag="$flags->where('flaggable_type', 'App\Models\CandidateOfficePositions')->firstWhere('flaggable_id', $position->id)"
+                                    :flag="$this->flags->where('flaggable_type', 'App\Models\CandidateOfficePositions')->firstWhere('flaggable_id', $position->id)"
                                     :content="$position"
                                     :side="'below'"
                                     :wire:key="'position-'.$position->id" />
