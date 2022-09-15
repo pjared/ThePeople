@@ -126,7 +126,7 @@ class Candidate extends Model
     }
 
     public function stances() {
-        return $this->hasMany(CandidateStance::class);
+        return $this->hasMany(CandidateStance::class)->orderBy('order');
     }
 
     public function required_stances() {
@@ -134,11 +134,11 @@ class Candidate extends Model
     }
 
     public function opinion_stances($opinion_id) {
-        return $this->hasMany(CandidateStance::class)->where('controversial_opinion_id', $opinion_id)->get();
+        return $this->hasMany(CandidateStance::class)->where('controversial_opinion_id', $opinion_id)->orderBy('order')->get();
     }
 
     public function opinions() {
-        return $this->hasMany(CandidateOpinion::class);
+        return $this->hasMany(CandidateOpinion::class)->orderBy('order');
     }
 
     public function law_involvement() {
