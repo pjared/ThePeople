@@ -39,6 +39,10 @@ class CandidateOfficePositionsResource extends Resource
                 Forms\Components\TextInput::make('year_end')
                     ->required()
                     ->maxLength(65535),
+                Forms\Components\TextInput::make('order')
+                    ->numeric()
+                    ->minValue(1)
+                    ->maxValue(100),
             ]);
     }
 
@@ -51,6 +55,8 @@ class CandidateOfficePositionsResource extends Resource
                     ->limit(80),
                 Tables\Columns\TextColumn::make('year_start'),
                 Tables\Columns\TextColumn::make('year_end'),
+                Tables\Columns\TextColumn::make('order')
+                    ->sortable(),
             ])
             ->filters([
                 //

@@ -34,6 +34,10 @@ class CandidateOpinionResource extends Resource
                 Forms\Components\Textarea::make('stance')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('order')
+                    ->numeric()
+                    ->minValue(1)
+                    ->maxValue(100),
             ]);
     }
 
@@ -44,6 +48,8 @@ class CandidateOpinionResource extends Resource
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('stance')
                     ->limit(80),
+                Tables\Columns\TextColumn::make('order')
+                    ->sortable(),
             ])
             ->filters([
                 //

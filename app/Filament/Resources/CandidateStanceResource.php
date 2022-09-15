@@ -40,6 +40,10 @@ class CandidateStanceResource extends Resource
                     ->maxLength(255),
                 Forms\Components\Textarea::make('stance_reasoning')
                     ->maxLength(65535),
+                Forms\Components\TextInput::make('order')
+                    ->numeric()
+                    ->minValue(1)
+                    ->maxValue(100),
             ]);
     }
 
@@ -51,6 +55,8 @@ class CandidateStanceResource extends Resource
                 Tables\Columns\TextColumn::make('stance_label'),
                 Tables\Columns\TextColumn::make('stance_reasoning')
                     ->limit(80),
+                Tables\Columns\TextColumn::make('order')
+                    ->sortable(),
             ])
             ->filters([
                 //
