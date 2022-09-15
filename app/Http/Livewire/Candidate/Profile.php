@@ -12,7 +12,6 @@ use Livewire\Component;
 class Profile extends Component
 {
     public $candidate_slug;
-    public $opinions;
     public $user_comment;
 
     public function mount($candidate) {
@@ -25,8 +24,6 @@ class Profile extends Component
             } else {
                 $this->flags = [];
             }
-        } else {
-            $this->opinions = [];
         }
 
         Cache::remember('candidate-' . $candidate->slug, 120,function () use ($candidate) {
@@ -41,6 +38,15 @@ class Profile extends Component
     public function getCandidateProperty()
     {
         return Cache::get('candidate-' . $this->candidate_slug);
+    }
+
+    public function getOpinionsProperty()
+    {
+        if ($this->candidate->ballot) {
+            return $this->candidate->ballot->opinions;
+        } else {
+            return [];
+        }
     }
 
     public function getIsManualProperty()

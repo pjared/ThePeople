@@ -60,7 +60,7 @@
             <div class="flex flex-col grow gap-6 items-center">
                 {{-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS --}}
             <div class="flex flex-col gap-6 md:w-11/12 items-center">
-                    <livewire:candidate.stances :flags="$flags" :opinions="$opinions" :candidate="$this->candidate" />
+                    <livewire:candidate.stances :flags="$flags" :opinions="$this->opinions" :candidate="$this->candidate" />
                 </div>
             </div>
             {{-- RIGHT COLUMN --}}
