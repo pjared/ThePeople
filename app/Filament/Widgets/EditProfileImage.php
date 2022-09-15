@@ -2,6 +2,7 @@
 
 namespace App\Filament\Widgets;
 
+use App\Jobs\UpdateBallotCache;
 use Filament\Notifications\Notification;
 use Filament\Widgets\Widget;
 use Livewire\WithFileUploads;
@@ -51,6 +52,8 @@ class EditProfileImage extends Widget
             auth()->user()->candidate->updateProfilePhoto($this->photo);
             // auth()->user()->updateProfilePhoto($this->photo);
         }
+
+        UpdateBallotCache::dispatch($this->candidate->ballot);
         Notification::make()
         ->title('Saved successfully')
         ->success()
