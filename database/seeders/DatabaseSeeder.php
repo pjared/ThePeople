@@ -58,13 +58,13 @@ class DatabaseSeeder extends Seeder
 
                 CandidateBadgeSeeder::class, //!PROD
 
-                RequiredStanceSeeder::class, //!PROD
-                CandidateRequiredStanceSeeder::class,
-
                 UserFlagSeeder::class,
                 ManualCandidateSeeder::class,
                 CommentSeeder::class,
                 CandidateEventSeeder::class,
+
+                RequiredStanceSeeder::class, //!PROD
+                CandidateRequiredStanceSeeder::class,
 
                 PoliticalGroupSeeder::class,
                 PoliticalGroupEventsSeeder::class,
