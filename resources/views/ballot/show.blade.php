@@ -66,12 +66,7 @@
                 <div class="flex grow items-center pl-4">
                     {{-- This Checkbox is wack. Good luck to the future person who has to deal with this --}}
                     @auth
-                        {{-- If the user is logged in, we want to save their vote --}}
-                        @if($candidate_vote == $running_candidate->id)
-                            <input type="checkbox" class="check flex" id="check{{$running_candidate->id}}" onclick="unselectAll({{$running_candidate->id}})" wire:click='change_user_vote({{$running_candidate->candidate_id}})' checked>
-                        @else
-                            <input type="checkbox" class="check flex" id="check{{$running_candidate->id}}" onclick="unselectAll({{$running_candidate->id}})" wire:click='change_user_vote({{$running_candidate->id}})'>
-                        @endif
+                        <input type="radio" class="check flex" id="check{{$running_candidate->id}}" onclick="unselectAll({{$running_candidate->id}})" value="{{$running_candidate->id}}" wire:model.defer='candidate_vote' wire:click='change_user_vote({{$running_candidate->id}})'>
 
                         <label class="flex grow items-center" for="check{{$running_candidate->id}}" style="--d: 60%;">
                             <svg class="h-12 w-12" viewBox="0, 0, 60, 60">
