@@ -108,7 +108,7 @@
                                 <livewire:flag-content
                                     :flag="$flags->where('flaggable_type', 'App\Models\CandidateRequiredStance')->firstWhere('flaggable_id', $required_stance->id)"
                                     :content="$candidate_required_stances->firstWhere('required_stance_id', $required_stance->id)"
-                                    :side="'ri`ght'"
+                                    :side="'right'"
                                     :wire:key="'required-flag-'.$required_stance->id" />
                             @else
                                 <label class="fill-transparent" for="signup-modal">
