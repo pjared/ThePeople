@@ -21,6 +21,6 @@
 
         <div class="divider"></div>
 
-        <livewire:candidate.profile :candidate="$candidate">
+        <livewire:candidate.profile :candidate_slug="$candidate->slug">
     </div>
 </div>
