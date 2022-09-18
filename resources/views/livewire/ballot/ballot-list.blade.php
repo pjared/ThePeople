@@ -43,7 +43,7 @@
     <div class="flex flex-col md:flex-row flex-wrap gap-8 w-3/4 items-center justify-center">
         @foreach ($this->ballots as $ballot)
             @if($ballot->candidates_count >= 1)
-                <form action="/ballot/{{$ballot->slug}}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true" >
+                <form action="/ballot/{{$ballot->slug}}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
                     <button class="background-card shadow-md">
                         <div class="text-center p-0">
                             <h2 class="card-title justify-center">
