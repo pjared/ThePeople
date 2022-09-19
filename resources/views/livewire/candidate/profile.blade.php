@@ -7,7 +7,7 @@
                 <div class='w-full flex flex-col' x-data="{show_sources:false}">
 
                     <p class='w-full text-center'>
-                        This user was created by the team behind ThePeople. The information is not garunteed to be accurate.
+                        This user was created by the team behind ThePeople. The information is not guaranteed to be accurate.
                         <br>
                         Reason: {{$this->candidate->manual_candidate->note}}
                     </p>
