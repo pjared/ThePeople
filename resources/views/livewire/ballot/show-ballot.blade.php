@@ -2,7 +2,7 @@
     {{-- {{dd($this->ballot)}} --}}
     <div class="text-sm breadcrumbs p-4">
         <ul>
-          <li><a href='/'>Home</a></li>
+          <li><a href="{{route('welcome')}}">Home</a></li>
           <li><b>Ballot ({{ $this->ballot->location->name }} {{ $this->ballot->office->name }})</b></li>
         </ul>
     </div>

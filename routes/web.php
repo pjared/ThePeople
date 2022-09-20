@@ -37,7 +37,7 @@ use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('/', function()  {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/about-us', [HomeController::class, 'getAboutUsView'])->name('about-us');
 
@@ -81,7 +81,7 @@ Route::get('/print-ballot', PrintBallot::class)->middleware(['auth:sanctum']);
 Route::get('/apply', Application::class)->name('candidate-apply')->middleware(['verified', 'has2FAEnabled']);
 
 //PROFILE VIEW
-Route::get('candidate/profile/{candidate:slug}', [CandidateController::class, 'getCandidateView']);
+Route::get('candidate/profile/{candidate:slug}', [CandidateController::class, 'getView'])->name('candidate.show');
 
 
 /* -----ADMIN------ */

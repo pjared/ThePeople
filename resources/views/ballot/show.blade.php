@@ -24,7 +24,7 @@
         @foreach ($this->ballot->candidates as $running_candidate)
             <div class="flex grow flex-row pt-2 w-11/12">
                 {{-- CANDIDATE NAME, PICTURE, AND PAGE LINK --}}
-                <form action="/candidate/profile/{{$running_candidate->candidate->slug}}" method="GET" class="w-11/12 md:hover:scale-110">
+                <form action="{{route('candidate.show', ['candidate' => $running_candidate->candidate->slug])}}" method="GET" class="w-11/12 md:hover:scale-110">
                     <button class="card flex grow lg:card-side bg-white drop-shadow-md shadow-md w-full"
                     x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
                         {{-- :class="{ 'h-28 w-28': show }" --}}
@@ -46,7 +46,7 @@
                                     <a
                                         rel="next prefetch"
                                         class="underline font-roboto_mono font-light text-sm text-sky-500 visited:text-purple-500"
-                                        href="/candidate/profile/{{$running_candidate->candidate->slug}}">More about {{ $running_candidate->candidate->name }}</a>
+                                        href="{{route('candidate.show', ['candidate' => $running_candidate->candidate->slug])}}">More about {{ $running_candidate->candidate->name }}</a>
                                 </div>
                             </div>
                             {{-- Badges --}}
