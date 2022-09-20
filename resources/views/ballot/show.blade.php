@@ -63,7 +63,28 @@
                     </button>
                 </form>
                 {{-- CHECKBOX --}}
-                @include('components.checkbox')
+                <div class="flex grow items-center pl-4">
+                    {{-- This Checkbox is wack. Good luck to the future person who has to deal with this --}}
+                    @auth
+                        <input type="radio" class="check flex" id="check{{$running_candidate->id}}" onclick="unselectAll({{$running_candidate->id}})" value="{{$running_candidate->id}}" wire:model.defer='candidate_vote' wire:click='change_user_vote({{$running_candidate->id}})'>
+
+                        <label class="flex grow items-center" for="check{{$running_candidate->id}}" style="--d: 60%;">
+                            <svg class="h-12 w-12" viewBox="0, 0, 60, 60">
+                                <rect x="10%" y="10%"/>
+                                <path d="M5 30 L 20 40 L 55 -15"></path>
+                            </svg>
+                        </label>
+                    @else
+                        {{-- If the user is not logged in, we want to prompt them instead --}}
+                        <input type="checkbox" class="check flex">
+                        <label class="flex grow items-center" for="signup-modal" style="--d: 60%;">
+                            <svg class="h-12 w-12" viewBox="0, 0, 60, 60">
+                                <rect x="10%" y="10%"/>
+                                <path d="M5 30 L 20 40 L 55 -15"></path>
+                            </svg>
+                        </label>
+                    @endauth
+                </div>
             </div>
         @endforeach
     </div>
