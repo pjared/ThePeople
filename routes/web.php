@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BallotController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermaLinkController;
@@ -35,9 +36,7 @@ use Spatie\Sitemap\SitemapGenerator;
 //     return $mail->render();
 // });
 
-Route::get('/', function()  {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', [HomeController::class, 'getWelcomeView'])->name('welcome');
 
 Route::get('/about-us', [HomeController::class, 'getAboutUsView'])->name('about-us');
 
@@ -69,7 +68,8 @@ Route::middleware([
 });
 
 /* -----BALLOT------ */
-Route::get('/ballot/{ballot:slug}', ShowBallot::class)->name('ballot');
+Route::get('/ballot/{ballot:slug}', [BallotController::class, 'getView'])->name('ballot');
+//[BallotController::class, 'getView']
 
 Route::get('/flag-comparison/{ballot:slug}', FlagComparison::class)->middleware(['auth:sanctum']);
 
