@@ -75,6 +75,8 @@
                     </div>
                 @endif
             </div>
+            <div class='w-11/12'>
+            <div class='divider'></div></div>
         @else
             <div class="text-md font-roboto_mono text-gray-700 text-center">
                 Want to know which elections will appear on your ballot? Go to the <a class='underline text-sky-600' href='/user/profile'>profile</a> page to set your voter precinct!
