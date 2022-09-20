@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Ballot;
 
 use App\Models\Ballot;
+use App\Models\BallotPrecinct;
 use App\Models\Candidate;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Cache;
@@ -30,5 +31,23 @@ class BallotList extends Component
         return Cache::rememberForever('ballots', function () {
             return Ballot::with('office', 'location')->withCount('candidates')->get();
         });
+    }
+
+    public function getUserPrecinctProperty()
+    {
+        if(auth()->user()) {
+            return auth()->user()->voter_precinct;
+        } else {
+            return false;
+        }
+    }
+
+    public function getUserBallotsProperty()
+    {
+        $precincts = BallotPrecinct::where('precinct_id', $this->user_precinct)->with(['ballot' => function($query){
+            $query->withCount('candidates');
+            $query->with('office', 'location');
+        }])->take(10)->get();
+        return $precincts;
     }
 }

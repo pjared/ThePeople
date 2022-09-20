@@ -39,6 +39,49 @@
         </ul>
     </div> --}}
 
+    {{-- YOUR LIST --}}
+    @auth
+        @if($this->user_precinct)
+            <div class="text-xl font-roboto_mono text-gray-700 text-center">
+                Ballots for your precinct
+            </div>
+            <div class="flex flex-col md:flex-row flex-wrap gap-8 w-3/4 items-center justify-center" wire:init>
+                @foreach ($this->user_ballots as $precinct)
+                    {{-- {{dd($this->user_ballots)}} --}}
+                    @if($precinct->ballot->candidates_count >= 1)
+                        <form action="/ballot/{{$precinct->ballot->slug}}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
+                            <button class="background-card shadow-md">
+                                <div class="text-center p-0">
+                                    <h2 class="card-title justify-center">
+                                        <a
+                                            rel="next prefetch canonical"
+                                            class="underline text-inherit font-mono tracking-tighter font-light"
+                                            type="text/html"
+                                            href="/ballot/{{$precinct->ballot->slug}}">{{$precinct->ballot->location->state}} {{$precinct->ballot->office->name}}, {{$precinct->ballot->location->name}}</a>
+                                    </h2>
+                                    <div x-show="show" class="uppercase mt-2 text-sm font-mono text-gray-400 justify-center">
+                                        <p>
+                                            VOTING DATE: {{$precinct->ballot->voting_date->format('m/d/Y')}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </button>
+                        </form>
+                    @endif
+                @endforeach
+                @if(count($this->user_ballots) == 0)
+                    <div class="text-lg font-roboto_mono text-gray-400 text-center">
+                        We don't have any ballots for your precinct. Either there are no elections going on in your area, or your precinct is incorrect. If resetting your precinct doesn't work, contact us.
+                    </div>
+                @endif
+            </div>
+        @else
+            <div class="text-md font-roboto_mono text-gray-700 text-center">
+                Want to know which elections will appear on your ballot? Go to the <a class='underline text-sky-600' href='/user/profile'>profile</a> page to set your voter precinct!
+            </div>
+        @endif
+    @endauth
+
     {{-- BALLOT LIST --}}
     <div class="flex flex-col md:flex-row flex-wrap gap-8 w-3/4 items-center justify-center">
         @foreach ($this->ballots as $ballot)
