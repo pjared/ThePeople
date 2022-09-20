@@ -5,7 +5,7 @@
                 {{-- PROFILE PICTURE --}}
                 <figure>
                     <img
-                        src="{{ $candidate->user->profile_photo_url ?? ''}} "
+                        src="{{ $candidate->profile_photo_url ?? ''}} "
                         alt="{{ $candidate->name }}"
                         class="h-28 w-28 mask mask-circle"
                         loading='lazy'>
