@@ -11492,7 +11492,8 @@ class PrecinctBallotSeeder extends Seeder
                             [
                                 'ballot_id' => $ballot->id,
                                 'precinct_id' => $precinct_name,
-                            ]);
+                            ]
+                        );
                     }
                 }
             }
@@ -11506,7 +11507,8 @@ class PrecinctBallotSeeder extends Seeder
                             [
                                 'ballot_id' => $ballot->id,
                                 'precinct_id' => $precinct_name,
-                            ]);
+                            ]
+                        );
                     }
                 }
             }
@@ -11520,7 +11522,8 @@ class PrecinctBallotSeeder extends Seeder
                             [
                                 'ballot_id' => $ballot->id,
                                 'precinct_id' => $precinct_name,
-                            ]);
+                            ]
+                        );
                     }
                 }
             }
