@@ -6,6 +6,7 @@ use App\Models\Ballot;
 use App\Models\UserFeedback;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Laravel\Jetstream\Jetstream;
@@ -13,9 +14,13 @@ use Laravel\Jetstream\Jetstream;
 class HomeController extends Controller
 {
     public function getWelcomeView() {
-        $ballots = Ballot::all();
-        return view('welcome')
-                ->with('ballots', $ballots);
+        if(auth()->check()) {
+            return redirect('/home');
+        }
+        if(Storage::disk('export')->exists('index.html')) {
+            return Storage::disk('export')->get('index.html');
+        }
+        return view('welcome');
     }
 
     public function getAboutUsView() {
