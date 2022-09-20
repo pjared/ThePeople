@@ -37,6 +37,9 @@ class DatabaseSeeder extends Seeder
             BadgeSeeder::class,
 
             // ProvoOremBallotSeeder::class,
+
+            //TODO: this goes under the new ballots to be seeded
+            PrecinctBallotSeeder::class,
         ]);
 
         //Seed for only local
