@@ -8,7 +8,7 @@
     </div>
     <livewire:candidate.profile :candidate_slug="$candidate->slug">
 
-    @include('modals.signup', ['message' => "Please log in or register if you'd like to save information about the candidate. A candiate comparison page will be implemented soon!"])
+    @include('modals.signup', ['message' => "Please log in or register if you'd like to save information about the candidate."])
 
     @section('page-title')
         {{ $candidate->name }}'s Profile

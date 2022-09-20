@@ -1,12 +1,4 @@
 <div>
-    {{-- {{dd($this->ballot)}} --}}
-    <div class="text-sm breadcrumbs p-4">
-        <ul>
-          <li><a href="{{route('welcome')}}">Home</a></li>
-          <li><b>Ballot ({{ $this->ballot->location->name }} {{ $this->ballot->office->name }})</b></li>
-        </ul>
-    </div>
-
     <div class="flex flex-col-reverse md:flex-row items-start grow py-12">
         <div class="w-1/5 ml-6 text-gray-400">
             <livewire:ballot.ballot-list />
@@ -26,23 +18,15 @@
                     </div>
                 </div>
             @endif
-            @include('ballot.show')
+            @include('ballot.ballot')
 
             @role('organizerAdmin')
-            <div wire:init='init'>
-                @if($page_loaded)
-
-                        <livewire:groups.group-ballot :ballot="$this->ballot"/>
-
-                @endif
-            </div>
+                <div wire:init='init'>
+                    @if($page_loaded)
+                            <livewire:groups.group-ballot :ballot="$this->ballot"/>
+                    @endif
+                </div>
             @endrole
-
         </div>
     </div>
-
-    @include('modals.signup', ['message' => "Please log in or register if you'd like to save your vote for the candidate. You can print the list of candidates for your state from your profile."])
-    @section('page-title')
-        {{$this->ballot->location->name}} {{$this->ballot->office->name}} Ballot
-    @endsection
 </div>
