@@ -15,4 +15,8 @@ class BallotPrecinct extends Model
         'precinct_id',
         'ballot_id',
     ];
+
+    public function ballot() {
+        return $this->belongsTo(Ballot::class, 'ballot_id');
+    }
 }
