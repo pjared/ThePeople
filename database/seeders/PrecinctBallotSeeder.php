@@ -8,6 +8,7 @@ use App\Models\Location;
 use App\Models\PublicOfficePosition;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Cache;
 
 class PrecinctBallotSeeder extends Seeder
 {
@@ -11481,27 +11482,35 @@ class PrecinctBallotSeeder extends Seeder
      */
     public function run()
     {
+        $state_senate_office = PublicOfficePosition::firstWhere('name', 'State Senate');
+        $state_congress_office = PublicOfficePosition::firstWhere('name', 'State Congress');
+        $us_senate_office = PublicOfficePosition::firstWhere('name', 'U.S. Congress');
         foreach($this->precincts as $precinct_name => $precinct) {
-            if (isset($precinct['ut_senate_id'])) {
-                $office = PublicOfficePosition::firstWhere('name', 'State Senate');
-                $location = Location::where('type', 'district')->firstWhere('name', 'District ' . $precinct['ut_senate_id']);
-                if($office && $location) {
-                    $ballot = Ballot::where('location_id', $location->id)->firstWhere('office_id', $office->id);
-                    if($ballot) {
-                        BallotPrecinct::create(
-                            [
-                                'ballot_id' => $ballot->id,
-                                'precinct_id' => $precinct_name,
-                            ]
-                        );
-                    }
-                }
-            }
+            //TODO: Fix this when done collecting ballot info
+
+            // if (isset($precinct['ut_senate_id'])) {
+            //     $location = Location::where('type', 'senate_district')->firstWhere('name', 'District ' . $precinct['ut_senate_id']);
+            //     if($location) {
+            //         $ballot = Ballot::where('location_id', $location->id)->firstWhere('office_id', $state_senate_office->id);
+            //         if($ballot) {
+            //             BallotPrecinct::create(
+            //                 [
+            //                     'ballot_id' => $ballot->id,
+            //                     'precinct_id' => $precinct_name,
+            //                 ]
+            //             );
+            //         }
+            //     }
+            // }
             if (isset($precinct['ut_congress_id'])) {
-                $office = PublicOfficePosition::firstWhere('name', 'State Congress');
-                $location =Location::where('type', 'district')->firstWhere('name', 'District ' . $precinct['ut_congress_id']);
-                if($office && $location) {
-                    $ballot = Ballot::where('location_id', $location->id)->firstWhere('office_id', $office->id);
+                $location = Cache::remember('utah-congress_district-' . $precinct['ut_congress_id'], 30, function () use ($precinct) {
+                    return Location::where('type', 'congress_district')->firstWhere('name', 'District ' . $precinct['ut_congress_id']);
+                });
+                if($location) {
+                    $ballot = Cache::remember('ballot-' . $location->id . '-' . $state_congress_office->id, 30,
+                                        function () use ($location, $state_congress_office) {
+                        return Ballot::where('location_id', $location->id)->firstWhere('office_id', $state_congress_office->id);
+                    });
                     if($ballot) {
                         BallotPrecinct::create(
                             [
@@ -11513,10 +11522,14 @@ class PrecinctBallotSeeder extends Seeder
                 }
             }
             if (isset($precinct['us_congress_id'])) {
-                $office = PublicOfficePosition::firstWhere('name', 'U.S. Congress');
-                $location =Location::where('type', 'district')->firstWhere('name', 'District ' . $precinct['us_congress_id']);
-                if($office && $location) {
-                    $ballot = Ballot::where('location_id', $location->id)->firstWhere('office_id', $office->id);
+                $location = Cache::remember('utah-us_congress_district-' . $precinct['us_congress_id'], 30, function () use ($precinct) {
+                    return Location::where('type', 'us_congress_district')->firstWhere('name', 'District ' . $precinct['us_congress_id']);
+                });
+                if($location) {
+                    $ballot = Cache::remember('ballot-' . $location->id . '-' . $us_senate_office->id, 30,
+                                        function () use ($location, $us_senate_office) {
+                        return Ballot::where('location_id', $location->id)->firstWhere('office_id', $us_senate_office->id);
+                    });
                     if($ballot) {
                         BallotPrecinct::create(
                             [

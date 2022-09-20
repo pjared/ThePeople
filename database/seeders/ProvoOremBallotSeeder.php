@@ -29,22 +29,22 @@ class ProvoOremBallotSeeder extends Seeder
     public $locations = [
         [
             'name' => 'District 58',
-            'type' => 'district',
+            'type' => 'congress_district',
             'state' => 'Utah',
         ],
         [
             'name' => 'District 61',
-            'type' => 'district',
+            'type' => 'congress_district',
             'state' => 'Utah',
         ],
         [
             'name' => 'District 62',
-            'type' => 'district',
+            'type' => 'congress_district',
             'state' => 'Utah',
         ],
         [
             'name' => 'District 3',
-            'type' => 'district',
+            'type' => 'us_congress_district',
             'state' => 'Utah',
         ],
     ];
