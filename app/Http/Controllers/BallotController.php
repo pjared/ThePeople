@@ -12,7 +12,6 @@ class BallotController extends Controller
 {
     public function getView(Ballot $ballot)
     {
-
         if(! auth()->check()) {
             if(Storage::disk('export')->exists('ballot/' . $ballot->slug . '/index.html')) {
                 return Storage::disk('export')->get('ballot/' . $ballot->slug . '/index.html');

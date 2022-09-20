@@ -15,7 +15,9 @@ class CandidateController extends Controller
      */
     public function getView($candidate_slug) {
         if(! auth()->check()) {
-            return Storage::disk('export')->get('/candidate/profile/' . $candidate_slug . '/index.html');
+            if(Storage::disk('export')->exists('/candidate/profile/' . $candidate_slug . '/index.html')) {
+                return Storage::disk('export')->get('/candidate/profile/' . $candidate_slug . '/index.html');
+            }
         }
 
         $candidate = Candidate::where('slug', $candidate_slug)->select('id', 'name' , 'slug')->first();
