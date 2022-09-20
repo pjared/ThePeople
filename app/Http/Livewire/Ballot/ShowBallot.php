@@ -29,13 +29,6 @@ class ShowBallot extends Component
                 $this->candidate_vote = $user_vote->running_candidate_id;
             }
         }
-
-        Cache::rememberForever('ballot-' . $ballot->slug, function () use ($ballot) {
-            return $ballot->load('location:id,name,state',
-                                    'office:id,name',
-                                    'candidates',
-                                    'candidates.candidate:id,slug,profile_photo_path,name');
-        });
     }
 
     public function render()
