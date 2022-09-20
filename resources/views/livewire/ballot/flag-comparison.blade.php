@@ -15,26 +15,12 @@
                     <h3 class="text-xl"><a class='link' href="/candidate/profile/{{$candidate->slug}}">{{ $candidate->name }}</a></h3>
                 </div>
 
+                {{-- CHECKBOX --}}
+                @include('components.checkbox')
+
                 <livewire:candidate.flag-info
                     :flags="$flags->where('candidate_id', $candidate->id)"
                     :opinions="$opinions" />
-
-                {{-- CHECKBOX --}}
-                <div class="flex items-center pl-4">
-                    {{-- This Checkbox is wack. Good luck to the future person who has to deal with this --}}
-                    @if($candidate_vote == $candidate->id)
-                        <input type="checkbox" class="check flex" id="check{{$candidate->id}}" onclick="unselectAll({{$candidate->id}})" wire:click='change_user_vote({{$candidate->id}})' checked>
-                    @else
-                        <input type="checkbox" class="check flex" id="check{{$candidate->_id}}" onclick="unselectAll({{$candidate->id}})" wire:click='change_user_vote({{$candidate->id}})'>
-                    @endif
-
-                    <label class="flex grow items-center" for="check{{$candidate->id}}" style="--d: 60%;">
-                        <svg class="h-12 w-12" viewBox="0, 0, 60, 60">
-                            <rect x="10%" y="10%"/>
-                            <path d="M5 30 L 20 40 L 55 -15"></path>
-                        </svg>
-                    </label>
-                </div>
             </div>
 
         </div>
