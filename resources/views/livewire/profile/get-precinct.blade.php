@@ -10,7 +10,7 @@
     <x-slot name="form">
         @if($precinct)
             <p class='text-gray-700 col-span-6'>
-                Your current precinct is: {{$precinct}}
+                Your current precinct is: <span class='font-semibold'>{{$precinct}}</span>
             </p>
         @else
             <p class='text-gray-400 col-span-6'>
