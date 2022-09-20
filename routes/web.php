@@ -4,17 +4,12 @@ use App\Http\Controllers\BallotController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermaLinkController;
-use App\Http\Controllers\SocialiteController;
 use App\Http\Livewire\Ballot\FlagComparison;
 use App\Http\Livewire\Ballot\PrintBallot;
-use App\Http\Livewire\Ballot\ShowBallot;
 use App\Http\Livewire\Candidate\Application;
 use App\Http\Livewire\Groups\PoliticalGroupApplication;
 use App\Http\Livewire\Groups\ShowGroup;
-use App\Http\Livewire\NewFeature;
 use Illuminate\Support\Facades\Route;
-use Laravel\Socialite\Facades\Socialite;
-use Spatie\Sitemap\SitemapGenerator;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,7 +54,6 @@ Route::get('/group/apply', PoliticalGroupApplication::class)->name('group-apply'
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    // 'verified'
 ])->group(function () {
     Route::get('/home', function()  {
         //Keeping this it's own view because with user information we're going to load them a customized page
