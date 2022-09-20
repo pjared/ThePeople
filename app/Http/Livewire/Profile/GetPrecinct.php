@@ -8,7 +8,6 @@ use Livewire\Component;
 class GetPrecinct extends Component
 {
     public $not_found = false;
-    public $user;
     public $precinct;
 
     public $street_addr;
@@ -17,15 +16,23 @@ class GetPrecinct extends Component
     public $manual_precinct;
 
     protected $rules = [
-        'street_addr' => 'required|min:6',
-        'city' => 'required',
+        'street_addr' => 'required_without:manual_precinct',
+        'city' => 'required_without:manual_precinct',
         'zip' => 'nullable|numeric|min:5|max:5',
+        'manual_precinct' => 'nullable|min:1|max:6',
     ];
+
+    public function getUserProperty()
+    {
+        return auth()->user();
+    }
+
+    public function mount() {
+        $this->precinct = $this->user->voter_precinct;
+    }
 
     public function render()
     {
-        $this->user = auth()->user();
-        $this->precinct = $this->user->voter_precinct;
         return view('livewire.profile.get-precinct');
     }
 
@@ -55,19 +62,20 @@ class GetPrecinct extends Component
             ]);
             $precinct = $precent_res->json()['features'][0]['attributes']['PrecinctID'];
             $this->precinct = $precinct;
-            $this->user->update([
-                'voter_precinct' => $precinct,
-            ]);
+            $this->user->voter_precinct = $precinct;
+            $this->user->save();
         } else {
-            $this->not_found = true;
+            if(! $this->manual_precinct) {
+                $this->not_found = true;
+            }
         }
     }
 
     public function save_manual_precinct()
     {
-        $this->validate([
-            'manual_precinct' => 'required|min:1|max:6',
-        ]);
+        $this->validate();
+        $this->precinct = $this->manual_precinct;
+        $this->not_found = false;
         $this->user->update([
             'voter_precinct' => $this->manual_precinct,
         ]);
