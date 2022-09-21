@@ -54,6 +54,13 @@ class CandidateResource extends Resource
                 Forms\Components\TextInput::make('user_id'),
                 Forms\Components\TextInput::make('site_link')
                     ->maxLength(255),
+                Forms\Components\TextInput::make('ballot_id')
+                    ->required(),
+                Forms\Components\Toggle::make('show')
+                    ->required(),
+                Forms\Components\TextInput::make('order')
+                    ->default(100)
+                    ->numeric(),
                 // Forms\Components\TextInput::make('slug')
                 //     ->maxLength(255),
             ]);
@@ -66,12 +73,17 @@ class CandidateResource extends Resource
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('dob')
                     ->date(),
-                Tables\Columns\TextColumn::make('signup_date')
-                    ->date(),
-                Tables\Columns\TextColumn::make('bio'),
+                // Tables\Columns\TextColumn::make('signup_date')
+                //     ->date(),
+                Tables\Columns\TextColumn::make('bio')
+                    ->limit(10),
                 Tables\Columns\TextColumn::make('state'),
                 Tables\Columns\TextColumn::make('contact_email'),
                 Tables\Columns\TextColumn::make('contact_phone_number'),
+                Tables\Columns\TextColumn::make('ballot_id'),
+                Tables\Columns\BooleanColumn::make('show'),
+                Tables\Columns\TextColumn::make('order')
+                    ->sortable(),
                 // Tables\Columns\TextColumn::make('email'),
                 // Tables\Columns\TextColumn::make('phone_number'),
                 // Tables\Columns\TextColumn::make('party_name'),
