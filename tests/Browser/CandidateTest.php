@@ -4,7 +4,7 @@ namespace Tests\Browser;
 
 use App\Models\Ballot;
 use App\Models\Candidate;
-use App\Models\RunningCandidates;
+// use App\Models\RunningCandidates;
 use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
@@ -45,7 +45,7 @@ class CandidateTest extends DuskTestCase
         $this->artisan('db:seed');
 
         //Create a running candidate
-        $running_candidate = RunningCandidates::factory()->create();
+        // $running_candidate = RunningCandidates::factory()->create();
         $candidate = $running_candidate->candidate->user;
         //Give them the correct role
         $candidate->assignRole('candidate');
