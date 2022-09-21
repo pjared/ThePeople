@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
             ControversialOpinionsSeeder::class,
             BadgeSeeder::class,
 
-            // ProvoOremBallotSeeder::class,
+            ProvoOremBallotSeeder::class,
 
             //TODO: this goes under the new ballots to be seeded
             PrecinctBallotSeeder::class,
@@ -56,7 +56,6 @@ class DatabaseSeeder extends Seeder
                 CandidateOfficePositionsSeeder::class, //!PROD
                 CandidateStanceSeeder::class, //!PROD
                 CandidateApplicationSeeder::class, //!PROD
-                RunningCandidatesSeeder::class,  //!PROD
                 BallotSeeder::class, //!PROD
 
                 CandidateBadgeSeeder::class, //!PROD

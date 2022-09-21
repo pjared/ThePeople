@@ -60,6 +60,9 @@ class CandidateSeeder extends Seeder
                 'state' => 'Utah',
                 'contact_email' => "pjared@gmail.com",
                 'slug' => str_replace(' ', '-', $name),
+
+                'ballot_id' => 1,
+                'show' => true,
             ]);
         }
 
@@ -73,6 +76,9 @@ class CandidateSeeder extends Seeder
             'state' => 'Utah',
             'contact_email' => "pjared@gmail.com",
             'slug' => 'Jared-Pacheco',
+
+            'ballot_id' => 2,
+            'show' => true,
         ]);
         User::find(1)->assignRole('candidate');
     }

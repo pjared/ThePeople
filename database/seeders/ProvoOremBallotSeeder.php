@@ -8,7 +8,6 @@ use App\Models\CandidateOpinion;
 use App\Models\Location;
 use App\Models\ManualCandidate;
 use App\Models\PublicOfficePosition;
-use App\Models\RunningCandidates;
 use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -191,51 +190,18 @@ class ProvoOremBallotSeeder extends Seeder
         ],
     ];
 
-    public $running_candidates =[
-        [
-            "candidate_id" => 1,
-            "ballot_id" => 1,
-        ],
-        [
-            "candidate_id" => 2,
-            "ballot_id" => 1,
-        ],
-        [
-            "candidate_id" => 3,
-            "ballot_id" => 2,
-        ],
-        [
-            "candidate_id" => 4,
-            "ballot_id" => 2,
-        ],
-        [
-            "candidate_id" => 5,
-            "ballot_id" => 3,
-        ],
-        [
-            "candidate_id" => 6,
-            "ballot_id" => 3,
-        ],
-        [
-            "candidate_id" => 7,
-            "ballot_id" => 4,
-        ],
-        [
-            "candidate_id" => 8,
-            "ballot_id" => 4,
-        ],
-        [
-            "candidate_id" => 9,
-            "ballot_id" => 4,
-        ],
-        [
-            "candidate_id" => 10,
-            "ballot_id" => 4,
-        ],
-        [
-            "candidate_id" => 11,
-            "ballot_id" => 4,
-        ],
+    public $candidate_ballots =[
+        1 => 1,
+        2 => 1,
+        3 => 2,
+        4 => 2,
+        5 => 3,
+        6 => 3,
+        7 => 4,
+        8 => 4,
+        9 => 4,
+        10 => 4,
+        11 => 4,
     ];
 
     public $manual_candidates = [
@@ -603,7 +569,7 @@ class ProvoOremBallotSeeder extends Seeder
             ]);
         }
 
-        foreach($this->candidates as $candidate) {
+        foreach($this->candidates as $i => $candidate) {
             Candidate::create([
                 "name" => $candidate['name'],
                 "dob" => $candidate['dob'] ? Carbon::createFromFormat('m/d/Y', $candidate['dob']) : null,
@@ -613,17 +579,10 @@ class ProvoOremBallotSeeder extends Seeder
                 'state' =>$candidate['state'],
                 "party_name" => $candidate['party_name'],
                 'site_link' => $candidate['site_link'],
-            ]);
-        }
-
-        foreach($this->running_candidates as $running_candidate) {
-            RunningCandidates::create([
-                "candidate_id" => $running_candidate['candidate_id'],
-                "ballot_id" => $running_candidate['ballot_id'],
+                "ballot_id" => $this->candidate_ballots[$i + 1],
                 'show' => true,
             ]);
         }
-
         foreach($this->manual_candidates as $i => $manual_candidate) {
             ManualCandidate::create([
                 'candidate_id' => $i,
