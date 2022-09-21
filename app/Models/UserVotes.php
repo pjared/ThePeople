@@ -16,7 +16,7 @@ class UserVotes extends Pivot
     protected $fillable = [
         "user_id",
         "ballot_id",
-        "running_candidate_id",
+        "candidate_id",
         "is_valid",
     ];
 
@@ -25,6 +25,6 @@ class UserVotes extends Pivot
     }
 
     public function candidate() {
-        return $this->hasOneThrough(Candidate::class, RunningCandidates::class, 'candidate_id', 'id', 'running_candidate_id');
+        return $this->belongsTo(Candidate::class, 'candidate_id');
     }
 }
