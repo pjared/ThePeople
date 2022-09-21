@@ -27,10 +27,10 @@ class ManualCandidateSeeder extends Seeder
         ]);
 
         //Add the candidate to other ballot
-        DB::table('running_candidates')->insert([
-            'ballot_id' => 2, // only 1-4, since 4 offices
-            'candidate_id' => $candidate->id,
-            'show' => true,
-        ]);
+        // DB::table('running_candidates')->insert([
+        //     'ballot_id' => 2, // only 1-4, since 4 offices
+        //     'candidate_id' => $candidate->id,
+        //     'show' => true,
+        // ]);
     }
 }

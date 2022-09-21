@@ -65,7 +65,7 @@ class Candidate extends Model
 
     public function shouldBeSearchable()
     {
-        return $this->running_candidate ? $this->running_candidate->show : false;
+        return $this->show;
     }
     public function toSearchableArray()
     {

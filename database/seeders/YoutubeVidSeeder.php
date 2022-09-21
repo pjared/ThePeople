@@ -53,10 +53,10 @@ class YoutubeVidSeeder extends Seeder
         User::find(1)->assignRole('candidate');
 
         //Add myself to ballot
-        DB::table('running_candidates')->insert([
-            'ballot_id' => 1, // only 1-4, since 4 offices
-            'candidate_id' => 1,
-            'show' => false,
-        ]);
+        // DB::table('running_candidates')->insert([
+        //     'ballot_id' => 1, // only 1-4, since 4 offices
+        //     'candidate_id' => 1,
+        //     'show' => false,
+        // ]);
     }
 }

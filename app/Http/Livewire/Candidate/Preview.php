@@ -16,9 +16,7 @@ class Preview extends Component
     public function mount() {
         $this->candidate = Candidate::firstWhere('user_id', Auth::id());
 
-        if($this->candidate->running_candidate) {
-            $this->show = $this->candidate->running_candidate->show;
-        }
+        $this->show = $this->candidate->show;
     }
 
     public function render()
@@ -27,10 +25,8 @@ class Preview extends Component
     }
 
     public function update_show_candidate() {
-        if($this->candidate->running_candidate) {
-            $this->candidate->running_candidate->show = $this->show;
-            $this->candidate->running_candidate->save();
-        }
+        $this->candidate->show = $this->show;
+        $this->candidate->save();
         UpdateBallotCache::dispatch($this->candidate->ballot);
 
         //Update the candidate's search

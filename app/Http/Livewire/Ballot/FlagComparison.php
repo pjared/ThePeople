@@ -23,7 +23,7 @@ class FlagComparison extends Component
         // Get the user's vote
         $user_vote = UserVotes::where('ballot_id', $ballot->id)->where('user_id', auth()->id())->first();
         if($user_vote) {
-            $this->candidate_vote = $user_vote->running_candidate_id;
+            $this->candidate_vote = $user_vote->candidate_id;
         }
 
         //Get the user's flags, eager load the flagged item
@@ -35,8 +35,8 @@ class FlagComparison extends Component
             */
 
         //Get the candidate
-        $this->candidates = Candidate::whereRelation('running_candidate', 'ballot_id', $ballot->id)
-                                        ->whereRelation('running_candidate','show', true)
+        $this->candidates = Candidate::where('ballot_id', $ballot->id)
+                                        ->where('show', true)
                                         ->get();
 
         //Call a sort method to order the candidates by most flags

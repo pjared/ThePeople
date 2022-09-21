@@ -8,8 +8,8 @@
     <div class='flex flex-col w-1/2 justify-center items-center gap-4'>
         <select wire:model.defer='backed_candidate' class="select select-bordered w-full max-w-xs">
             <option selected value="">Back a Candidate</option>
-            @foreach ($ballot->candidates as $running_candidate)
-                <option value="{{$running_candidate->candidate->id}}">{{$running_candidate->candidate->name}}</option>
+            @foreach ($ballot->candidates as $candidate)
+                <option value="{{$candidate->id}}">{{$candidate->name}}</option>
             @endforeach
         </select>
         <div class='flex flex-row gap-4'>
