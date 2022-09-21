@@ -78,11 +78,11 @@ class Ballot extends Model
     }
 
     public function candidates() {
-        return $this->hasMany(RunningCandidates::class, 'ballot_id')->where('show', true)->orderBy('order');
+        return $this->hasMany(Candidate::class, 'ballot_id')->where('show', true)->orderBy('order');
     }
 
     public function all_candidates() {
-        return $this->hasMany(RunningCandidates::class, 'ballot_id');
+        return $this->hasMany(Candidate::class, 'ballot_id');
     }
 
     public function opinions() {

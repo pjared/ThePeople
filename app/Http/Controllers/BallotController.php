@@ -20,9 +20,9 @@ class BallotController extends Controller
         $ballot = Cache::rememberForever('ballot-' . $ballot->slug, function () use ($ballot) {
             return $ballot->load('location:id,name,state',
                                     'office:id,name',
-                                    'candidates',
-                                    'candidates.candidate:id,slug,profile_photo_path,name');
+                                    'candidates');
         });
+        // dd($ballot->all_candidates, $ballot->candidates);
         return view('ballot.show')
                 ->with('ballot', $ballot);
     }

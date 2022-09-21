@@ -26,7 +26,7 @@ class ShowBallot extends Component
         if(auth()->check()) {
             $user_vote = UserVotes::where('ballot_id', $ballot->id)->where('user_id', auth()->id())->first();
             if($user_vote) {
-                $this->candidate_vote = $user_vote->running_candidate_id;
+                $this->candidate_vote = $user_vote->candidate_id;
             }
         }
     }
@@ -58,7 +58,7 @@ class ShowBallot extends Component
                 'ballot_id' => $this->ballot->id,
             ],
             [
-                'running_candidate_id' => $candidate_id,
+                'candidate_id' => $candidate_id,
                 'is_valid' => 1,
             ]
         );
