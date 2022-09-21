@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\Ballot;
-use App\Models\RunningCandidates;
+use App\Models\Candidate;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -20,7 +20,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class, 'user_id');
             $table->foreignIdFor(Ballot::class, 'ballot_id');
-            $table->foreignIdFor(RunningCandidates::class, 'running_candidate_id');
+            $table->foreignIdFor(Candidate::class, 'candidate_id');
             $table->boolean('is_valid')->default(0);
         });
     }
