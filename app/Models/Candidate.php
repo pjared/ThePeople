@@ -38,6 +38,12 @@ class Candidate extends Model
         "party_name",
         'site_link',
         'slug',
+
+        'ballot_id',
+        'show',
+        'order',
+
+        'is_current',
     ];
 
     protected $hidden = [
@@ -114,7 +120,7 @@ class Candidate extends Model
     }
 
     public function ballot() {
-        return $this->hasOneThrough(Ballot::class, RunningCandidates::class, 'candidate_id', 'id', 'id', 'ballot_id');
+        return $this->belongsTo(Ballot::class, 'ballot_id');
     }
 
     public function previous_positions() {
@@ -157,10 +163,6 @@ class Candidate extends Model
         return $this->hasMany(CandidatePromise::class);
     }
 
-    public function running_candidate() {
-        return $this->hasOne(RunningCandidates::class);
-    }
-
     public function user() {
         return $this->belongsTo(User::class, 'user_id');
     }
@@ -176,6 +178,8 @@ class Candidate extends Model
     public function events() {
         return $this->hasMany(CandidateEvent::class, 'candidate_id');
     }
+
+
 
     /**
      * If they are on a ballot, but have filled out multiple opinion stances and have
