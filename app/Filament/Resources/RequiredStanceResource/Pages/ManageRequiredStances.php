@@ -4,9 +4,9 @@ namespace App\Filament\Resources\RequiredStanceResource\Pages;
 
 use App\Filament\Resources\RequiredStanceResource;
 use App\Models\BallotOpinions;
+use App\Models\Candidate;
 use App\Models\CandidateRequiredStance;
 use App\Models\ControversialOpinion;
-use App\Models\RunningCandidates;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ManageRecords;
 use Illuminate\Support\Facades\Log;
@@ -33,12 +33,12 @@ class ManageRequiredStances extends ManageRecords
         $ballot_opinions = BallotOpinions::where($opinion->id)->get;
         foreach($ballot_opinions as $ballot_opinion) {
             //Get the running candidates on that ballot
-            $running_candidates = RunningCandidates::where('ballot_id', $ballot_opinion->ballot_id)->get;
+            $candidates = Candidate::where('ballot_id', $ballot_opinion->ballot_id)->get;
             //Add the required stance for each of those running candidatas
-            foreach($running_candidates as $running_candidate) {
+            foreach($candidates as $candidate) {
                 $crs = new CandidateRequiredStance();
                 $crs->required_stance_id = $this->data['id'];
-                $crs->candidate_id = $running_candidate->candidate_id;
+                $crs->candidate_id = $candidate->id;
                 $crs->save();
             }
         }
