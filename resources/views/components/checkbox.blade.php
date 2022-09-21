@@ -2,7 +2,7 @@
     @if($candidate_vote == $candidate->id)
         <input type="checkbox" class="check flex" id="check{{$candidate->id}}" onclick="unselectAll({{$candidate->id}})" wire:click='change_user_vote({{$candidate->id}})' checked>
     @else
-        <input type="checkbox" class="check flex" id="check{{$candidate->_id}}" onclick="unselectAll({{$candidate->id}})" wire:click='change_user_vote({{$candidate->id}})'>
+        <input type="checkbox" class="check flex" id="check{{$candidate->id}}" onclick="unselectAll({{$candidate->id}})" wire:click='change_user_vote({{$candidate->id}})'>
     @endif
 
     <label class="flex grow items-center" for="check{{$candidate->id}}" style="--d: 60%;">

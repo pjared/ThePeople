@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Ballot;
 use App\Models\Ballot;
 use App\Models\Candidate;
 use App\Models\UserVotes;
+use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
 class FlagComparison extends Component
@@ -61,4 +62,27 @@ class FlagComparison extends Component
             return array_search($item->id, array_keys($flag_candidate_count));
         });
     }
+
+    // public function change_user_vote($candidate_id)
+    // {
+    //     if(!auth()) {
+    //         return;
+    //     }
+    //     //Validate the incoming data
+    //     Validator::make(
+    //         ['candidate_slug' => $candidate_id],
+    //         ['candidate_slug' => 'required|int'],
+    //     )->validate();
+
+    //     UserVotes::updateOrCreate(
+    //         [
+    //             'user_id' => auth()->id(),
+    //             'ballot_id' => $this->ballot->id,
+    //         ],
+    //         [
+    //             'candidate_id' => $candidate_id,
+    //             'is_valid' => 1,
+    //         ]
+    //     );
+    // }
 }
