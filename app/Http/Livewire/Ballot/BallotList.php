@@ -29,7 +29,11 @@ class BallotList extends Component
     public function getBallotsProperty()
     {
         return Cache::rememberForever('ballots', function () {
-            return Ballot::with('office', 'location')->withCount('candidates')->get();
+            $ballots  = Ballot::with('office', 'location')->withCount('candidates')->get();
+            $ballots = $ballots->sortBy(function($ballot){
+                return $ballot->name;
+            });
+            return $ballots;//Ballot::with('office', 'location')->withCount('candidates')->get();
         });
     }
 
