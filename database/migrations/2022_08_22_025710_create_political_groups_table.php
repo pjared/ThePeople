@@ -16,7 +16,7 @@ return new class extends Migration
     {
         Schema::create('political_groups', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('contact_email');
             $table->foreignIdFor(Location::class,'location_id')->nullable();
             $table->text('description')->nullable();

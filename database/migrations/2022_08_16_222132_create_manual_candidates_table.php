@@ -15,7 +15,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('manual_candidates', function (Blueprint $table) {
-            $table->foreignIdFor(Candidate::class, 'candidate_id');
+            $table->foreignIdFor(Candidate::class, 'candidate_id')->unique();
             $table->string('note')->nullable();
             $table->text('sources')->nullable();
             $table->timestamps();

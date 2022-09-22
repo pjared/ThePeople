@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('controversial_opinions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('description');
             $table->integer('votes')->unsigned();
         });

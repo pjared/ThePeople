@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('public_office_positions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->tinyInteger('years_per_term')->unsigned();
             $table->tinyInteger('limit_terms')->unsigned()->nullable();
         });

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('political_parties', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->text('other_info')->nullable();
         });
     }
