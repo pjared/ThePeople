@@ -4,10 +4,7 @@ namespace App\Http\Livewire\Ballot;
 
 use App\Models\Ballot;
 use App\Models\BallotPrecinct;
-use App\Models\Candidate;
-use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Http;
 use Livewire\Component;
 use Livewire\WithPagination;
 
