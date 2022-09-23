@@ -7,7 +7,7 @@
         </ul>
     </div>
     @if($candidate->ballot->has_single_runner)
-        <div class='text-center text-xl'>
+        <div class='text-center text-xl text-gray-400'>
             This is the only candidate for this ballot, so we have not fully researched this candidate. If you'd like to read more about the candidate, you can see their site at <a href='{{$candidate->site_link}}' class='underline'>{{$candidate->site_link}}</a>
         </div>
     @endif
