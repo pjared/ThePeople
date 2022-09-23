@@ -12,16 +12,24 @@ class BallotList extends Component
 {
     use WithPagination;
 
-    public $ballots;
+    public $precincts_loaded;
     public $ballot_count = 4;
     public $more_ballots = true;
 
     // public $address_input;
+    public function mount()
+    {
+        if(auth()->check()) {
+            $this->precincts_loaded = false;
+        } else {
+            $this->precincts_loaded = true;
+        }
+    }
 
     public function render()
     {
-        $this->ballots = $this->all_ballots->take($this->ballot_count);
         return view('livewire.ballot.ballot-list', [
+            'ballots' => $this->precincts_loaded ? $this->all_ballots->take($this->ballot_count) : [],
             // 'candidate_searches' => empty($this->search) ? [] : Candidate::search($this->search)->paginate(5),
             // 'ballot_searches' => empty($this->search) ? [] : Ballot::search($this->search)->paginate(5),
         ]);
@@ -51,19 +59,23 @@ class BallotList extends Component
         if(auth()->user()) {
             return auth()->user()->voter_precinct;
         } else {
-            return false;
+            return null;
         }
+    }
+
+    public function getStateBallotsProperty()
+    {
+        return Ballot::whereRelation('location','name','Utah')->withCount('candidates')->with('office', 'location')->get();
     }
 
     public function getUserBallotsProperty()
     {
-        // dd(Ballot::whereRelation('location','name' ,'District 57')->whereRelation('location','type' ,'congress_district')->first(), BallotPrecinct::firstWhere('ballot_id', 75));
-        // dd(BallotPrecinct::where('precinct_id', $this->user_precinct)->get());
         $precincts = BallotPrecinct::where('precinct_id', $this->user_precinct)->with(['ballot' => function($query){
             $query->withCount('candidates');
             $query->with('office', 'location');
         }])->get();
         $this->ballot_count -= count($precincts);
+        $this->precincts_loaded = true;
         return $precincts;
     }
 }
