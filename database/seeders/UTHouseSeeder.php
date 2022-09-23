@@ -243,7 +243,7 @@ class UTHouseSeeder extends Seeder
                     'candidate' => [
                         'name' => 'Katy Hall',
                         'dob' => null,
-                        'bio' => " My name is Katrina Hall, my friends call me Katy. I have worn a lot of hats in my life…wife, mother of 4 boys, registered nurse, Bonneville high tennis coach, Navy wife, Air Force mom, Ironman, soon to be Grandma, and now I have decided to run for State House Representative for District 11. My reasons for running are that I have strong conservative values that I feel need to be better represented for our community.",
+                        'bio' => " My name is Katrina Hall, my friends call me Katy. I have worn a lot of hats in my life...wife, mother of 4 boys, registered nurse, Bonneville high tennis coach, Navy wife, Air Force mom, Ironman, soon to be Grandma, and now I have decided to run for State House Representative for District 11. My reasons for running are that I have strong conservative values that I feel need to be better represented for our community.",
                         'contact_email' => 'katy4utah11@gmail.com',
                         'contact_phone_number' => null,
                         'state' => 'Utah',
@@ -3518,7 +3518,7 @@ class UTHouseSeeder extends Seeder
                         ],
                         [
                             'name' => "Firearms and the 2nd Amendment",
-                            'stance' => "I support a citizen's right to purchase, own, collect and use a firearm for their own purpose. The right to use a firearm for one's own protection should not be infringed. I like a line I've heard before by someone who said, \"God made men and women. Sam Colt made them equal\"… or something like that.",
+                            'stance' => "I support a citizen's right to purchase, own, collect and use a firearm for their own purpose. The right to use a firearm for one's own protection should not be infringed. I like a line I've heard before by someone who said, \"God made men and women. Sam Colt made them equal\"... or something like that.",
                         ],
                         [
                             'name' => "Social and Mental Health Services",
