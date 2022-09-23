@@ -25,4 +25,8 @@
 
         </div>
     @endforeach
+
+    @section('page-title')
+        Candidate Comparison
+    @endsection
 </div>
