@@ -116,15 +116,17 @@
     @endif
 
 
-    @section('description')
-        Welcome to the home page of ThePeople! Here you can navigate to a ballot from the list provided. The current ballots we have are:
+    @if(request()->routeIs('welcome') || request()->routeIs('home'))
+        @section('description')
+            Welcome to the home page of ThePeople! Here you can navigate to a ballot from the list provided. The current ballots we have are:
+            @foreach ($this->ballots as $ballot)
+                {{$ballot->name}},
+            @endforeach
+        @endsection
+    @endif
+    @section('keywords')
         @foreach ($this->ballots as $ballot)
             {{$ballot->name}},
         @endforeach
     @endsection
-    {{-- @section('keywords')
-        @foreach ($this->ballots as $ballot)
-            {{$ballot->name}},
-        @endforeach
-    @endsection --}}
 </div>
