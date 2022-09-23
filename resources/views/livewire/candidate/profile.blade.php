@@ -12,7 +12,7 @@
                         Reason: {{$this->candidate->manual_candidate->note}}
                     </p>
                     <div class='w-full text-center'>
-                        <span class='underline' x-on:click="show_sources = ! show_sources">Sources: </span>
+                        <span class='underline cursor-pointer' x-on:click="show_sources = ! show_sources">Sources: </span>
                         <p x-show='show_sources'>
                             {{$this->candidate->manual_candidate->sources}}
                         </p>
