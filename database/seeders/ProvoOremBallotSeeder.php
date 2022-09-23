@@ -11,6 +11,7 @@ use App\Models\PublicOfficePosition;
 use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class ProvoOremBallotSeeder extends Seeder
 {
@@ -52,7 +53,7 @@ class ProvoOremBallotSeeder extends Seeder
         [
             "location_id" => 3,
             "office_id" => 1,
-            'has_single_runner' => false,
+            'has_single_runner' => true,
         ],
         [
             "location_id" => 4,
@@ -71,7 +72,7 @@ class ProvoOremBallotSeeder extends Seeder
         ],
     ];
 
-    public $candidates = [
+     public $candidates = [
         // UT House 58
         [
             "name" => 'Keven Stratton',
@@ -570,7 +571,23 @@ class ProvoOremBallotSeeder extends Seeder
         }
 
         foreach($this->candidates as $i => $candidate) {
-            Candidate::create([
+            if($i == 1) {
+                $candidate = Candidate::create([
+                    "name" => $candidate['name'],
+                    "dob" => $candidate['dob'] ? Carbon::createFromFormat('m/d/Y', $candidate['dob']) : null,
+                    "bio" => $candidate['bio'],
+                    "contact_email" => $candidate['contact_email'],
+                    "contact_phone_number" => $candidate['contact_phone_number'],
+                    'state' =>$candidate['state'],
+                    "party_name" => $candidate['party_name'],
+                    'site_link' => $candidate['site_link'],
+                    "ballot_id" => $this->candidate_ballots[$i + 1],
+                    'show' => false,
+                ]);
+                $this->add_photo($candidate);
+                continue;
+            }
+            $candidate = Candidate::create([
                 "name" => $candidate['name'],
                 "dob" => $candidate['dob'] ? Carbon::createFromFormat('m/d/Y', $candidate['dob']) : null,
                 "bio" => $candidate['bio'],
@@ -582,6 +599,7 @@ class ProvoOremBallotSeeder extends Seeder
                 "ballot_id" => $this->candidate_ballots[$i + 1],
                 'show' => true,
             ]);
+            $this->add_photo($candidate);
         }
         foreach($this->manual_candidates as $i => $manual_candidate) {
             ManualCandidate::create([
@@ -599,6 +617,30 @@ class ProvoOremBallotSeeder extends Seeder
                     "stance" => $candidate_opinion['stance'],
                 ]);
             }
+        }
+    }
+
+    public function add_photo($candidate)
+    {
+        $photo_path = 'profile-photos/' . $candidate->slug;
+        if(Storage::disk('public')->exists($photo_path . '.jpg')) {
+            $candidate->profile_photo_path = $photo_path . '.jpg';
+            $candidate->save();
+        } else if(Storage::disk('public')->exists($photo_path . '.jpeg')) {
+            $candidate->profile_photo_path = $photo_path . '.jpeg';
+            $candidate->save();
+        } else if(Storage::disk('public')->exists($photo_path . '.JPG')) {
+            $candidate->profile_photo_path = $photo_path . '.JPG';
+            $candidate->save();
+        } else if(Storage::disk('public')->exists($photo_path . '.webp')) {
+            $candidate->profile_photo_path = $photo_path . '.webp';
+            $candidate->save();
+        } else if(Storage::disk('public')->exists($photo_path . '.png')) {
+            $candidate->profile_photo_path = $photo_path . '.png';
+            $candidate->save();
+        } else if(Storage::disk('public')->exists($photo_path . '.PNG')) {
+            $candidate->profile_photo_path = $photo_path . '.PNG';
+            $candidate->save();
         }
     }
 }

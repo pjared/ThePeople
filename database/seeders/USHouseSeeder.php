@@ -11,6 +11,7 @@ use App\Models\PublicOfficePosition;
 use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class USHouseSeeder extends Seeder
 {
@@ -611,6 +612,7 @@ class USHouseSeeder extends Seeder
                     'ballot_id' => $ballot->id,
                     'show' => true,
                 ]);
+                $this->add_photo($candidate);
                 //Add manual candidate for candidate
                 ManualCandidate::create([
                     'candidate_id' => $candidate->id,
@@ -626,6 +628,30 @@ class USHouseSeeder extends Seeder
                     ]);
                 }
             }
+        }
+    }
+
+    public function add_photo($candidate)
+    {
+        $photo_path = 'profile-photos/' . $candidate->slug;
+        if(Storage::disk('public')->exists($photo_path . '.jpg')) {
+            $candidate->profile_photo_path = $photo_path . '.jpg';
+            $candidate->save();
+        } else if(Storage::disk('public')->exists($photo_path . '.jpeg')) {
+            $candidate->profile_photo_path = $photo_path . '.jpeg';
+            $candidate->save();
+        } else if(Storage::disk('public')->exists($photo_path . '.JPG')) {
+            $candidate->profile_photo_path = $photo_path . '.JPG';
+            $candidate->save();
+        } else if(Storage::disk('public')->exists($photo_path . '.webp')) {
+            $candidate->profile_photo_path = $photo_path . '.webp';
+            $candidate->save();
+        } else if(Storage::disk('public')->exists($photo_path . '.png')) {
+            $candidate->profile_photo_path = $photo_path . '.png';
+            $candidate->save();
+        } else if(Storage::disk('public')->exists($photo_path . '.PNG')) {
+            $candidate->profile_photo_path = $photo_path . '.PNG';
+            $candidate->save();
         }
     }
 }
