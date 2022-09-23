@@ -1,6 +1,6 @@
 <div class="flex flex-col grow justify-center items-center gap-10">
     {{-- SEARCHING --}}
-    {{-- <div class="pt-2 relative mx-auto text-gray-600 w-2/5">
+    <div class="pt-2 relative mx-auto text-gray-600 w-2/5">
         <input class="border-2 border-gray-300 bg-white h-12 px-5 pr-16 w-full rounded-lg text-sm focus:outline-none"
             type="search" wire:model='search'  name="search" placeholder="Search for a Candidate, Public Office, or Location">
         <button class="absolute right-0 top-1 mt-5 mr-4">
@@ -37,7 +37,7 @@
                 <p class='p-2'>We couldn't find any results for your search. For the upcoming elections on November 8th, 2022 we are focusing pimarily on the elections for the Provo/Orem area. If you'd like to see your upcoming election appear here, please contact us at thepeople@whatsinyourballot.com and we'll see what we can do!</p>
             @endif
         </ul>
-    </div> --}}
+    </div>
 
     {{-- YOUR LIST --}}
     @auth

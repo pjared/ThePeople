@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Ballot;
 
 use App\Models\Ballot;
 use App\Models\BallotPrecinct;
+use App\Models\Candidate;
 use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -13,16 +14,15 @@ class BallotList extends Component
     use WithPagination;
 
     public $precincts_loaded;
-    public $ballot_count = 4;
+    public $ballot_count = 1;
     public $more_ballots = true;
-    // public $address_input;
+    public $search;
 
     public function mount()
     {
-        if(auth()->check()) {
-            $this->precincts_loaded = false;
-        } else {
+        if(! auth()->check()) {
             $this->precincts_loaded = true;
+            $this->ballot_count = 4;
         }
     }
 
@@ -30,8 +30,8 @@ class BallotList extends Component
     {
         return view('livewire.ballot.ballot-list', [
             'ballots' => $this->precincts_loaded ? $this->all_ballots->take($this->ballot_count) : [],
-            // 'candidate_searches' => empty($this->search) ? [] : Candidate::search($this->search)->paginate(5),
-            // 'ballot_searches' => empty($this->search) ? [] : Ballot::search($this->search)->paginate(5),
+            'candidate_searches' => empty($this->search) ? [] : Candidate::search($this->search)->paginate(3),
+            'ballot_searches' => empty($this->search) ? [] : Ballot::search($this->search)->paginate(3),
         ]);
     }
 
@@ -84,7 +84,7 @@ class BallotList extends Component
             $query->withCount('candidates');
             $query->with('office', 'location');
         }])->get();
-        $this->ballot_count -= count($precincts);
+        // $this->ballot_count -= count($precincts);
         $this->precincts_loaded = true;
         return $precincts;
     }
