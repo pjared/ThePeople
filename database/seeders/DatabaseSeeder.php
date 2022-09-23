@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
             // USSenateSeeder::class,
             // UTSenateSeeder::class,
             // UTHouseSeeder::class,
-            PrecinctBallotSeeder::class,
+            // PrecinctBallotSeeder::class,
         ]);
 
         //Seed for only local
