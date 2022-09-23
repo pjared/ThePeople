@@ -6,6 +6,11 @@
           <li><b>{{ $candidate->name }}</b></li>
         </ul>
     </div>
+    @if($candidate->ballot->has_single_runner)
+        <div class='text-center text-xl'>
+            This is the only candidate for this ballot, so we have not fully researched this candidate. If you'd like to read more about the candidate, you can see their site at <a href='{{$candidate->site_link}}' class='underline'>{{$candidate->site_link}}</a>
+        </div>
+    @endif
     <livewire:candidate.profile :candidate_slug="$candidate->slug">
 
     @include('modals.signup', ['message' => "Please log in or register if you'd like to save information about the candidate."])
