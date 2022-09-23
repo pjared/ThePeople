@@ -135,6 +135,10 @@
         <div class='text-center underline cursor-pointer' wire:click='load_ballots'>
             Load More
         </div>
+    @else
+        <div class='text-center' wire:click='load_ballots'>
+            All Ballots Loaded. Want to add another one? Contact us
+        </div>
     @endif
 
 
