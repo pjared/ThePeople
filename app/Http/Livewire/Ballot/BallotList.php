@@ -15,8 +15,8 @@ class BallotList extends Component
     public $precincts_loaded;
     public $ballot_count = 4;
     public $more_ballots = true;
-
     // public $address_input;
+
     public function mount()
     {
         if(auth()->check()) {
@@ -61,6 +61,16 @@ class BallotList extends Component
         } else {
             return null;
         }
+    }
+
+    public function getBallotListProperty() {
+        return Cache::rememberForever('ballot_names', function () {
+            $ballot_names = '';
+            foreach($this->all_ballots as $ballot) {
+                $ballot_names = $ballot_names . $ballot->name . ', ';
+            }
+            return $ballot_names;
+        });
     }
 
     public function getStateBallotsProperty()

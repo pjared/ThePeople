@@ -141,14 +141,10 @@
     @if(request()->routeIs('welcome') || request()->routeIs('home'))
         @section('description')
             Welcome to the home page of ThePeople! Here you can navigate to a ballot from the list provided. The current ballots we have are:
-            @foreach ($this->all_ballots as $ballot)
-                {{$ballot->name}},
-            @endforeach
+            {{$this->ballot_list}}
         @endsection
     @endif
     @section('keywords')
-        @foreach ($this->all_ballots as $ballot)
-            {{$ballot->name}},
-        @endforeach
+        {{$this->ballot_list}}
     @endsection
 </div>
