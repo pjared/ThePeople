@@ -585,7 +585,7 @@ class USHouseSeeder extends Seeder
             // Create the location
             $location = Location::create([
                 'name' => $house['location'],
-                'type' => 'us_congress_district',
+                'type' => 'us_congress',
                 'state' => 'Utah',
             ]);
             // Create the ballot
