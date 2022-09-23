@@ -17,9 +17,6 @@ class HomeController extends Controller
         if(auth()->check()) {
             return redirect('/home');
         }
-        if(Storage::disk('export')->exists('index.html')) {
-            return Storage::disk('export')->get('index.html');
-        }
         return view('welcome');
     }
 

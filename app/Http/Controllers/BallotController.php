@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Livewire\Ballot\ShowBallot;
 use App\Models\Ballot;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 
