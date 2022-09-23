@@ -36,12 +36,12 @@ class DatabaseSeeder extends Seeder
             PoliticalPartySeeder::class,
             ControversialOpinionsSeeder::class,
 
-            // ProvoOremBallotSeeder::class,
+            ProvoOremBallotSeeder::class,
             // USHouseSeeder::class,
             // USSenateSeeder::class,
             // UTSenateSeeder::class,
             // UTHouseSeeder::class,
-            // PrecinctBallotSeeder::class,
+            PrecinctBallotSeeder::class,
         ]);
 
         //Seed for only local
