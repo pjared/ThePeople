@@ -82,7 +82,7 @@ class Candidate extends Model
      */
     public function updateProfilePhoto(UploadedFile $photo)
     {
-        if(auth()->user()->hasRole('candidate')) {
+        if(auth()->user()->hasRole('candidate') || auth()->user()->hasRole('admin')) {
             tap($this->profile_photo_path, function ($previous) use ($photo) {
                 $this->forceFill([
                     'profile_photo_path' => $photo->storePublicly(

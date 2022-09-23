@@ -21,9 +21,9 @@ class AddManualCandidatePhotos extends Page implements Tables\Contracts\HasTable
     protected static string $resource = ManualCandidateResource::class;
 
     protected static string $view = 'filament.resources.manual-candidate-resource.pages.add-manual-candidate-photos';
+
     public $photo;
     public $candidate;
-
     public function mount(ManualCandidate $record) {
         $this->candidate = Candidate::find($record->candidate_id);
     }
@@ -100,7 +100,6 @@ class AddManualCandidatePhotos extends Page implements Tables\Contracts\HasTable
         ]);
         if (isset($this->photo)) {
             $this->candidate->updateProfilePhoto($this->photo);
-            // auth()->user()->updateProfilePhoto($this->photo);
         }
         Notification::make()
         ->title('Saved successfully')
