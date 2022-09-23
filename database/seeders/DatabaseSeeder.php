@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             'name' => "Jared Pacheco",
             'email' => 'pjared870@gmail.com',
             'password' => Hash::make('password'),
+            'voter_precinct' => 'OR341',
             // Un-comment for local
             // 'email_verified_at' => now(),
             // 'two_factor_confirmed_at' => now(),
@@ -38,6 +39,7 @@ class DatabaseSeeder extends Seeder
             // ProvoOremBallotSeeder::class,
             // USHouseSeeder::class,
             // USSenateSeeder::class,
+            // UTSenateSeeder::class,
             // UTHouseSeeder::class,
             // PrecinctBallotSeeder::class,
         ]);
