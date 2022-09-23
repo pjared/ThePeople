@@ -21,3 +21,5 @@ MEILISEARCH_KEY=masterKey
 - Create other API keys after that
 
 - After importing current models, comment out the queue false and uncomment redis connection
+    - php artisan scout:import "App\Models\Candidate"
+    - php artisan scout:import "App\Models\Ballot"
