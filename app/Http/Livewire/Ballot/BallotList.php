@@ -15,25 +15,37 @@ class BallotList extends Component
 {
     use WithPagination;
 
+    public $ballots;
+    public $ballot_count = 5;
+    public $more_ballots = true;
+
     // public $address_input;
 
     public function render()
     {
-        // usleep(500);
+        $this->ballots = $this->all_ballots->take($this->ballot_count);
         return view('livewire.ballot.ballot-list', [
             // 'candidate_searches' => empty($this->search) ? [] : Candidate::search($this->search)->paginate(5),
             // 'ballot_searches' => empty($this->search) ? [] : Ballot::search($this->search)->paginate(5),
         ]);
     }
 
-    public function getBallotsProperty()
+    public function load_ballots()
+    {
+        $this->ballot_count += 10;
+        if($this->ballot_count >= count($this->all_ballots)) {
+            $this->more_ballots = false;
+        }
+    }
+
+    public function getAllBallotsProperty()
     {
         return Cache::rememberForever('ballots', function () {
             $ballots  = Ballot::with('office', 'location')->withCount('candidates')->get();
             $ballots = $ballots->sortBy(function($ballot){
                 return $ballot->name;
             });
-            return $ballots;//Ballot::with('office', 'location')->withCount('candidates')->get();
+            return $ballots;
         });
     }
 

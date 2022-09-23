@@ -85,7 +85,7 @@
     @endauth
 
     {{-- BALLOT LIST --}}
-    <div class="flex flex-col md:flex-row flex-wrap gap-8 w-3/4 items-center justify-center">
+    <div class="flex flex-col md:flex-row flex-wrap gap-8 w-3/4 items-center justify-center pb-4">
         @foreach ($this->ballots as $ballot)
             @if($ballot->candidates_count >= 1)
                 <form action="{{route('ballot', ['ballot' => $ballot->slug])}}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
@@ -109,6 +109,12 @@
             @endif
         @endforeach
     </div>
+    @if($more_ballots)
+        <div class='text-center underline cursor-pointer' wire:click='load_ballots'>
+            Load More
+        </div>
+    @endif
+
 
     @section('description')
         Welcome to the home page of ThePeople! Here you can navigate to a ballot from the list provided. The current ballots we have are:
