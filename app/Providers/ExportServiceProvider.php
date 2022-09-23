@@ -31,11 +31,11 @@ class ExportServiceProvider extends ServiceProvider
 
         $ballot_paths = [];
         $candidate_paths = [];
-        $ballots = Ballot::with('candidates', 'candidates.candidate')->get();
+        $ballots = Ballot::with('candidates')->get();
         foreach($ballots as $ballot) {
             $ballot_paths[] = 'ballot/' . $ballot->slug;
             foreach($ballot->candidates as $candidate) {
-                $candidate_paths[] = 'candidate/profile/' . $candidate->candidate->slug;
+                $candidate_paths[] = 'candidate/profile/' . $candidate->slug;
             }
         }
         $exporter->paths($ballot_paths);
