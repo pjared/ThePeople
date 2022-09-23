@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Ballot;
 use App\Models\Ballot;
 use App\Models\Candidate;
 use App\Models\UserVotes;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
@@ -14,6 +15,7 @@ class FlagComparison extends Component
     public $candidates;
     public $candidate_vote;
     public $opinions;
+    public $ballot_slug;
 
     public function render()
     {
@@ -21,6 +23,7 @@ class FlagComparison extends Component
     }
 
     public function mount(Ballot $ballot){
+        $this->ballot_slug = $ballot->slug;
         // Get the user's vote
         $user_vote = UserVotes::where('ballot_id', $ballot->id)->where('user_id', auth()->id())->first();
         if($user_vote) {
@@ -30,10 +33,6 @@ class FlagComparison extends Component
         //Get the user's flags, eager load the flagged item
         $this->flags = auth()->user()->flags->where('ballot_id', $ballot->id)
                                                 ->load('flaggable');
-        /*
-        ->withCount('candidate')
-        ->orderBy('candidate_count', 'desc')
-            */
 
         //Get the candidate
         $this->candidates = Candidate::where('ballot_id', $ballot->id)
@@ -63,26 +62,31 @@ class FlagComparison extends Component
         });
     }
 
-    // public function change_user_vote($candidate_id)
-    // {
-    //     if(!auth()) {
-    //         return;
-    //     }
-    //     //Validate the incoming data
-    //     Validator::make(
-    //         ['candidate_slug' => $candidate_id],
-    //         ['candidate_slug' => 'required|int'],
-    //     )->validate();
+    public function getBallotProperty()
+    {
+        return Cache::get('ballot-' . $this->ballot_slug);
+    }
 
-    //     UserVotes::updateOrCreate(
-    //         [
-    //             'user_id' => auth()->id(),
-    //             'ballot_id' => $this->ballot->id,
-    //         ],
-    //         [
-    //             'candidate_id' => $candidate_id,
-    //             'is_valid' => 1,
-    //         ]
-    //     );
-    // }
+    public function change_user_vote($candidate_id)
+    {
+        if(!auth()) {
+            return;
+        }
+        //Validate the incoming data
+        Validator::make(
+            ['candidate_slug' => $candidate_id],
+            ['candidate_slug' => 'required|int'],
+        )->validate();
+
+        UserVotes::updateOrCreate(
+            [
+                'user_id' => auth()->id(),
+                'ballot_id' => $this->ballot->id,
+            ],
+            [
+                'candidate_id' => $candidate_id,
+                'is_valid' => 1,
+            ]
+        );
+    }
 }
