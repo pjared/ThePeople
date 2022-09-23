@@ -307,7 +307,7 @@
         Candidate {{$this->candidate->name}}'s profile. Here you can view the stances that {{$this->candidate->name}} takes on controversial opinions. You can also view the additional stances that {{$this->candidate->name}} has added to his profile. If {{$this->candidate->name}} has held office, his previous positions will be listed. You can also message {{$this->candidate->name}} and see his upcoming events.
     @endsection
     @section('keywords')
-        {{$this->candidate->name}} stances controversial opinion
+        {{$this->candidate->name}} stances controversial opinions
     @endsection
 </section>
 

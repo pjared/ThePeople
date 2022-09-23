@@ -108,12 +108,13 @@
         The mock-ballot of {{$this->ballot->name}}. Candidates here have the ability to create their own profiles, however if a candidate has not created a profile it's possible that we have created one for them.
         This ballot currently has the following candidates:
         @foreach ($this->ballot->candidates as $candidate)
-            {{$candidate->name}} - {{$this->ballot->name}},
+            {{$candidate->name}},
         @endforeach
     @endsection
-    {{-- @section('keywords')
+    @section('keywords')
+        {{$this->ballot->name}}
         @foreach ($this->ballot->candidates as $candidate)
-            {{$candidate->name}} - {{$this->ballot->name}},
+            {{$candidate->name}},
         @endforeach
-    @endsection --}}
+    @endsection
 </div>
