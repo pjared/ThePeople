@@ -13,5 +13,3 @@
         {{$ballot->location->name}} {{$ballot->office->name}} Ballot
     @endsection
 </x-app-layout>
-
-
