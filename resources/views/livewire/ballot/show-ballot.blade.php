@@ -1,7 +1,7 @@
 <div>
     <div class="flex flex-col-reverse md:flex-row items-start grow py-12">
         <div class="sm:w-11/12 md:w-1/5 md:ml-6 text-gray-400">
-            <livewire:ballot.ballot-list />
+            <livewire:ballot.ballot-list :current_ballot_id="$this->ballot->id" />
         </div>
 
         {{-- TODO: Might have to make this it's own scrollable div --}}

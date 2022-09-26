@@ -17,9 +17,16 @@ class BallotList extends Component
     public $ballot_count = 1;
     public $more_ballots = true;
     public $search;
+    public $current_key;
 
-    public function mount()
+    public function mount($current_ballot_id = false)
     {
+        // dd($current_ballot_id);
+        if($current_ballot_id) {
+            $this->current_key = $current_ballot_id;
+        } else {
+            $this->current_key = false;
+        }
         if(! auth()->check()) {
             $this->precincts_loaded = true;
             $this->ballot_count = 4;
@@ -45,13 +52,18 @@ class BallotList extends Component
 
     public function getAllBallotsProperty()
     {
-        return Cache::rememberForever('ballots', function () {
+        $ballots = Cache::rememberForever('ballots', function () {
             $ballots  = Ballot::with('office', 'location')->withCount('candidates')->get();
             $ballots = $ballots->sortBy(function($ballot){
                 return $ballot->name;
             });
             return $ballots;
         });
+        if($this->current_key) {
+            return $ballots->forget($this->current_key);
+        } else {
+            return $ballots;
+        }
     }
 
     public function getUserPrecinctProperty()
