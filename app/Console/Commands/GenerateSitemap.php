@@ -39,12 +39,12 @@ class GenerateSitemap extends Command
         foreach($ballots as $ballot) {
             $sitemap->add(Url::create('ballot/' . $ballot->slug)
                             ->setPriority(0.5)
-                            ->setChangeFrequency('weekly'));
+                            ->setChangeFrequency('yearly'));
             foreach($ballot->candidates as $candidate) {
-                $sitemap->add(Url::create('candidate/profile/' . $candidate->candidate->slug)
+                $sitemap->add(Url::create('candidate/profile/' . $candidate->slug)
                                 ->setPriority(0.9)
                                 ->setChangeFrequency('weekly')
-                                ->setLastModificationDate($candidate->candidate->updated_at));
+                                ->setLastModificationDate($candidate->updated_at));
             }
         }
 
