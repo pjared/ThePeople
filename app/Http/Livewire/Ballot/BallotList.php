@@ -21,7 +21,6 @@ class BallotList extends Component
 
     public function mount($current_ballot_id = false)
     {
-        // dd($current_ballot_id);
         if($current_ballot_id) {
             $this->current_key = $current_ballot_id;
         } else {
