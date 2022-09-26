@@ -44,13 +44,32 @@
                     @endrole
                 @endif
 
-                @unlessrole('organizer|organizerAdmin')
-                    <div class="flex flex-col items-center justify-center mt-6">
-                        <button class="btn btn-primary">
-                            <a href="{{Route('group-apply')}}">Do you manage a political group? Apply Here</a>
-                        </button>
+                @if(auth()->user()->hasVerifiedEmail())
+                    <div class="text-center mt-6">
+                        @unlessrole('organizer|organizerAdmin')
+                            <div class="flex flex-col items-center justify-center mt-6">
+                                <button class="btn btn-primary">
+                                    <a href="{{Route('group-apply')}}">Do you manage a political group? Apply Here</a>
+                                </button>
+                            </div>
+                        @endrole
                     </div>
-                @endrole
+                @else
+                    @unlessrole('candidate')
+                        <div class="flex flex-col items-center justify-center mt-6">
+                            <span>Do you manage a political group? In order to apply, please:</span>
+                            <ul class='list-disc'>
+                                @if(! auth()->user()->hasVerifiedEmail())
+                                    <li>
+                                        <span>Verify your email</span>
+                                    </li>
+                                @endif
+                            </ul>
+                        </div>
+                    @endrole
+                @endif
+
+
                 <x-jet-section-border />
             @endif
 

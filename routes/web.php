@@ -48,7 +48,7 @@ Route::get('/groups', function()  {
 
 Route::get('/groups/{political_group}', ShowGroup::class);
 
-Route::get('/group/apply', PoliticalGroupApplication::class)->name('group-apply')->middleware(['auth:sanctum']);
+Route::get('/group/apply', PoliticalGroupApplication::class)->name('group-apply')->middleware(['auth:sanctum', 'verified']);
 
 /* -----LOGIN------ */
 Route::middleware([
@@ -72,7 +72,7 @@ Route::get('/print-ballot', PrintBallot::class)->middleware(['auth:sanctum']);
 /* -----CANDIDATE------ */
 
 //APPLICATION
-Route::get('/apply', Application::class)->name('candidate-apply')->middleware(['verified', 'has2FAEnabled']);
+Route::get('/apply', Application::class)->name('candidate-apply')->middleware(['auth:sanctum', 'verified', 'has2FAEnabled']);
 
 //PROFILE VIEW
 Route::get('candidate/profile/{candidate:slug}', [CandidateController::class, 'getView'])->name('candidate.show');
