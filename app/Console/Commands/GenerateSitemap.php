@@ -34,7 +34,7 @@ class GenerateSitemap extends Command
     {
         $sitemap = Sitemap::create()
                         ->add(Url::create(config('app.url')));
-        $ballots = Ballot::with(['candidates.candidate'])->get();
+        $ballots = Ballot::with(['candidates'])->get();
 
         foreach($ballots as $ballot) {
             $sitemap->add(Url::create('ballot/' . $ballot->slug)
