@@ -1,6 +1,6 @@
 <article
-    class='background-card w-fit grid grid-flow-col grid-col-3 justify-center gap-4 pb-4 shadow-md'>
-        <div class='col-span-1 grid grid-rows-6'>
+    class='background-card w-fit flex flex-col md:grid md:grid-flow-col md:grid-col-3 justify-center gap-4 pb-4 shadow-md'>
+        <div class='col-span-1 flex flex-col justify-center'>
             <div class='row-span-5 flex justify-center'>
                 <img
                     src="{{ $this->candidate->profile_photo_url }}"
