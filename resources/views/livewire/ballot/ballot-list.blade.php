@@ -1,6 +1,6 @@
 <div class="flex flex-col grow justify-center items-center gap-10">
     {{-- SEARCHING --}}
-    <div class="pt-2 relative mx-auto text-gray-600 w-2/5">
+    <div class="pt-2 relative mx-auto text-gray-600 sm:w-3/4 md:w-2/5">
         <input class="border-2 border-gray-300 bg-white h-12 px-5 pr-16 w-full rounded-lg text-sm focus:outline-none"
             type="search" wire:model='search'  name="search" placeholder="Search for a Candidate, Public Office, or Location">
         <button class="absolute right-0 top-1 mt-5 mr-4">
@@ -107,7 +107,7 @@
     @endauth
 
     {{-- BALLOT LIST --}}
-    <div class="flex flex-col md:flex-row flex-wrap gap-8 w-3/4 items-center justify-center pb-4">
+    <div class="flex flex-col md:flex-row flex-wrap gap-8 w-3/4 items-center justify-center md:pb-4">
         @foreach ($ballots as $ballot)
             @if($ballot->candidates_count >= 1)
                 <form action="{{route('ballot', ['ballot' => $ballot->slug])}}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
