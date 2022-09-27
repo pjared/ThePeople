@@ -16,7 +16,6 @@ class CandidateEducation extends Model
         'school_name',
         'degree_field',
         'degree_type',
-        'year_start',
-        'year_end',
+        'year_received',
     ];
 }

@@ -20,8 +20,7 @@ return new class extends Migration
             $table->string('school_name');
             $table->string('degree_field');
             $table->string('degree_type');
-            $table->year('year_start')->nullable();
-            $table->year('year_end')->nullable();
+            $table->year('year_received')->nullable();
             $table->timestamps();
         });
     }
