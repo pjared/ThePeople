@@ -4544,7 +4544,7 @@ class UTHouseSeeder extends Seeder
                 ManualCandidate::create([
                     'candidate_id' => $candidate->id,
                     'note' => 'Candidate has not been contacted as of 9/21',
-                    'sources' => $candidate['sources'],
+                    'sources' => $candidate_info['candidate']['sources'],
                 ]);
                 //Add opinions
                 foreach ($candidate_info['opinions'] as $opinion) {
