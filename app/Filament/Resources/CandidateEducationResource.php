@@ -21,10 +21,11 @@ class CandidateEducationResource extends Resource
 
     public static function form(Form $form): Form
     {
+        $candidate = auth()->user()->candidate;
         return $form
             ->schema([
-                Forms\Components\TextInput::make('candidate_id')
-                    ->required(),
+                Forms\Components\Hidden::make('candidate_id')
+                    ->default($candidate->id),
                 Forms\Components\TextInput::make('school_name')
                     ->required()
                     ->maxLength(255),
@@ -45,7 +46,6 @@ class CandidateEducationResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('candidate_id'),
                 Tables\Columns\TextColumn::make('school_name'),
                 Tables\Columns\TextColumn::make('degree_field'),
                 Tables\Columns\TextColumn::make('degree_type'),
@@ -69,11 +69,11 @@ class CandidateEducationResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ManageCandidateEducation::route('/'),
         ];
-    }    
+    }
 }

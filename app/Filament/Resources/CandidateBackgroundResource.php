@@ -21,10 +21,11 @@ class CandidateBackgroundResource extends Resource
 
     public static function form(Form $form): Form
     {
+        $candidate = auth()->user()->candidate;
         return $form
             ->schema([
-                Forms\Components\TextInput::make('candidate_id')
-                    ->required(),
+                Forms\Components\Hidden::make('candidate_id')
+                    ->default($candidate->id),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
@@ -42,7 +43,6 @@ class CandidateBackgroundResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('candidate_id'),
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('description'),
                 Tables\Columns\TextColumn::make('year_start')
@@ -65,11 +65,11 @@ class CandidateBackgroundResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ManageCandidateBackgrounds::route('/'),
         ];
-    }    
+    }
 }
