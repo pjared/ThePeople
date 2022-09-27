@@ -1,8 +1,9 @@
 <article
     class="flex flex-col background-card shadow-xl drop-shadow-lg w-11/12 items-center gap-2"
-    x-data="{ hovering:false }"
+    x-data="{
+        hovering: window.innerWidth <= 768, }"
     x-on:mouseover="hovering = true"
-    x-on:mouseleave="hovering = false">
+    x-on:mouseleave="hovering = window.innerWidth <= 768">
     <div class="flex justify-center">
         <h2 class="text-xl" :class="{ 'underline': hovering }">Key Stances</h2>
     </div>
