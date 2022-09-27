@@ -13,7 +13,12 @@
                                 <div class="flex flex-col w-full items-start">
                                     <h3 class="w-fit capitalize text-lg font-semibold">
                                         {{ $education->school_name }}
-                                        <span class='text-sm text-gray-400'>{{ $education->year_start }} - {{ $education->year_end }}</span>
+                                        @if($education->year_received == 1901)
+                                            <span class='text-sm text-gray-400'>Unfinished</span>
+                                        @else
+                                        <span class='text-sm text-gray-400'>{{ $education->year_received }}</span>
+                                        @endif
+
                                     </h3>
                                     <div><b>{{$education->degree_type}}</b> in {{$education->degree_field}}</div>
                                 </div>

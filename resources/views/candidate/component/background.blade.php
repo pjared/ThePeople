@@ -12,7 +12,11 @@
                                 <div class="flex flex-col w-full items-start">
                                     <h3 class="w-fit capitalize text-lg font-semibold">
                                         {{ $background->name }}
-                                        <span class='text-sm text-gray-400'>{{ $background->year_start }} - {{ $background->year_end }}</span>
+                                        @if($background->year_end)
+                                            <span class='text-sm text-gray-400'>{{ $background->year_start }} - {{ $background->year_end }} </span>
+                                        @else
+                                            <span class='text-sm text-gray-400'>{{ $background->year_start }} - present </span>
+                                        @endif
                                     </h3>
                                     <x-show-more :content="$background->description" />
                                 </div>
