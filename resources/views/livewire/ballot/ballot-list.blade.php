@@ -110,7 +110,7 @@
     <div class="flex flex-col md:flex-row flex-wrap gap-8 w-3/4 items-center justify-center md:pb-4">
         @foreach ($ballots as $ballot)
             @if($ballot->candidates_count >= 1)
-                <form action="{{route('ballot', ['ballot' => $ballot->slug])}}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
+                <form action="{{route('ballot', ['ballot' => $ballot->slug])}}" method="GET" class="hover:scale-110" x-data="{ show: window.innerWidth <= 768 }" @mouseleave="show = window.innerWidth <= 768" @mouseover="show = true">
                     <button class="background-card shadow-md">
                         <div class="text-center p-0">
                             <h2 class="card-title justify-center">
