@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="grid grid-flow-row gap-4">
         <div class="mt-16 h-8 md:h-12 flex col-span-1 justify-center">
-            <div class="text-4xl font-roboto_mono type-out">
+            <div class="font-roboto_mono font-light tracking-tight text-xl md:text-4xl type-out">
                 See Who's Running For ...
             </div>
         </div>
