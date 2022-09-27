@@ -132,7 +132,9 @@
     @else
         <div class="flex flex-col md:p-8 gap-2 justify-center items-center w-full">
             {{-- PROMISES COMPONENT --}}
-            @include('candidate.component.promises', ['promises' => $this->candidate->promises])
+            @if(! $this->is_manual)
+                @include('candidate.component.promises', ['promises' => $this->candidate->promises])
+            @endif
 
             <div class='w-full md:w-4/5 flex justify-center'>
                 @include('candidate.component.opinions', ['no_controversials' => true])
@@ -182,6 +184,7 @@
             @if(! $this->is_manual)
                 @include('candidate.component.positions', ['previous_positions' => $this->candidate->previous_positions])
             @endif
+            @include('candidate.component.background')
         </div>
         {{-- RIGHT COLUMN --}}
         <div class="flex flex-col md:w-11/12 grow gap-6 items-center">
@@ -211,6 +214,7 @@
                     </x-dropdown-card>
                 </div>
             @endif --}}
+            @include('candidate.component.education')
         </div>
     </div>
 
