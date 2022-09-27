@@ -21,7 +21,7 @@ class CandidateStanceSeeder extends Seeder
         $num_cont_opins = 5;
 
         for($j = 1; $j <= $num_cont_opins; ++$j) {
-            for($i = 1; $i <= $num_candidates; ++$i) {
+            for($i = 5; $i <= 5 + $num_candidates; ++$i) {
                 DB::table('candidate_stances')->insert([
                     'candidate_id' => $i,
                     'controversial_opinion_id' => $j,

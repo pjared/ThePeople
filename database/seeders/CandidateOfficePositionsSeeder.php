@@ -20,7 +20,7 @@ class CandidateOfficePositionsSeeder extends Seeder
         'President',
         'Senator',
     ];
-    
+
     /**
      * Run the database seeds.
      *
@@ -31,7 +31,7 @@ class CandidateOfficePositionsSeeder extends Seeder
         $num_politicians = 4;
         for($i = 1; $i <= $num_politicians; ++$i) {
             DB::table('candidate_office_positions')->insert([
-                'candidate_id' => rand(1,2),
+                'candidate_id' => rand(5, 9),
                 // 'office_id' => rand(1,4),
                 // 'location_id' => rand(1,2),
                 // 'location_type' => $this->location_names[rand(0,2)],

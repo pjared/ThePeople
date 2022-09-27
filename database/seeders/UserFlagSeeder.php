@@ -19,7 +19,7 @@ class UserFlagSeeder extends Seeder
     public function run()
     {
         $user = User::find(1);
-        for($i = 1; $i <= 3; $i++) {
+        for($i = 5; $i <= 9; $i++) {
             $candidate = Candidate::find($i);
             $ballot_id = $candidate->ballot->id;
 

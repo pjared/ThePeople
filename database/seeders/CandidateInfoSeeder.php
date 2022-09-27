@@ -43,7 +43,7 @@ class CandidateInfoSeeder extends Seeder
         */
         for($i = 1; $i <= $num_candidates; ++$i) {
             DB::table('campaign_videos')->insert([
-                'candidate_id' => rand(1,$num_candidates),
+                'candidate_id' => rand(5, $num_candidates + 5),
                 'link' => $this->video_names[rand(0,1)],
             ]);
         }
@@ -57,13 +57,13 @@ class CandidateInfoSeeder extends Seeder
         foreach ($this->donor_names as $name) {
             for($i = 1; $i <= $num_candidates; ++$i) {
                 DB::table('candidate_donor')->insert([
-                    'candidate_id' => rand(1, $num_candidates),
+                    'candidate_id' => rand(5, $num_candidates + 5),
                     'donor_id' => rand(1, 2)
                 ]);
             }
         }
 
-        for($i = 1; $i <= $num_candidates; ++$i) {
+        for($i = 5; $i <= $num_candidates + 5; ++$i) {
             DB::table('candidate_promises')->insert([
                 'candidate_id' => $i,
                 'promise' => 'Free Money',

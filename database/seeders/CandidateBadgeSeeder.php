@@ -16,7 +16,7 @@ class CandidateBadgeSeeder extends Seeder
     public function run()
     {
         //Loop through seeded candidates
-        for($i = 1; $i <= 4; $i++) {
+        for($i = 5; $i <= 9; $i++) {
             //Loop through each opinion
             $leftLimit = 1;
             $rightLimit = 3;
