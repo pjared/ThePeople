@@ -18,6 +18,8 @@ class CandidateBackgroundResource extends Resource
     protected static ?string $model = CandidateBackground::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Edit Your Profile';
+    protected static ?string $navigationLabel = 'Your Background Experience';
 
     public static function form(Form $form): Form
     {
