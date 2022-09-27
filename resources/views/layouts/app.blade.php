@@ -33,12 +33,12 @@
             @else
                 <div class="flex px-6 py-4 bg-white w-100 shadow-sm items-center">
                     <x-jet-application-logo class="block h-12 w-auto" />
-                    <x-jet-nav-link
+                    {{-- <x-jet-nav-link
                         href="{{ route('groups') }}"
                         :active="request()->routeIs('groups')"
                         class='ml-4'>
                         {{ __('Political Groups') }}
-                    </x-jet-nav-link>
+                    </x-jet-nav-link> --}}
                     {{-- <div class="text-left">
                         <a href="{{ route('groups') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Groups</a>
                     </div> --}}
