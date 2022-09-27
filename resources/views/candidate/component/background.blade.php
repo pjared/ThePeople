@@ -1,6 +1,6 @@
 {{-- PREVIOUS POSITIONS --}}
 @if($this->candidate->backgrounds_count >= 1)
-    <article class="flex grow flex-col w-11/12 items-center">
+    <article class="flex grow flex-col md:w-11/12 items-center">
         <x-dropdown-card :classes="'shadow-md'">
             <x-slot:title>
                 Background Experience

@@ -25,7 +25,7 @@
         @foreach ($this->ballot->candidates as $candidate)
             <div class="flex grow flex-row pt-2 w-11/12">
                 {{-- CANDIDATE NAME, PICTURE, AND PAGE LINK --}}
-                <form action="{{route('candidate.show', ['candidate' => $candidate->slug])}}" method="GET" class="w-11/12 scale-110 md:hover:scale-110 md:scale-100">
+                <form action="{{route('candidate.show', ['candidate' => $candidate->slug])}}" method="GET" class="w-11/12 md:hover:scale-110 md:scale-100">
                     <button class="card flex grow lg:card-side bg-white drop-shadow-md shadow-md w-full"
                     x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
                         <figure>
@@ -33,15 +33,14 @@
                                 src="{{ $candidate->profile_photo_url ?? ''}} "
                                 alt="{{ $candidate->name }}"
                                 class="h-28 w-28"
-                                :class="{ 'rounded-xl': show }"
                                 loading='lazy'>
                         </figure>
                         <div class="card-body flex flex-row flex-wrap p-3 md:p-inherit" :class="{ 'md:p-3': show }">
                             <div class="flex grow flex-col md:flex-row font-courier">
-                                <div class="flex">
+                                <div class="flex justify-center">
                                     <h2 class="card-title tracking-tight font-roboto_mono font-light">{{ $candidate->name }}</h2>
                                 </div>
-                                <div class="flex grow justify-end">
+                                <div class="flex grow justify-center md:justify-end">
                                     <a
                                         rel="next prefetch"
                                         class="underline font-roboto_mono font-light text-sm text-sky-500 visited:text-purple-500"

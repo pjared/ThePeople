@@ -55,11 +55,11 @@
 
 
     @if(count($this->opinions) >= 1)
-        <div class="flex flex-col md:grid md:grid-cols-2 p-8 gap-2 justify-center w-full">
+        <div class="flex flex-col md:grid md:grid-cols-2 md:p-8 gap-2 justify-center w-full">
             {{-- LEFT COLUMN --}}
             <div class="flex flex-col grow gap-6 items-center">
                 {{-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS --}}
-            <div class="flex flex-col gap-6 md:w-11/12 items-center">
+                <div class="flex flex-col gap-6 md:w-11/12 items-center">
                     <livewire:candidate.stances :flags="$this->flags" :opinions="$this->opinions" :candidate="$this->candidate" />
                 </div>
             </div>
@@ -145,8 +145,8 @@
 
 
 
-    {{-- DONORS, PREVIOUS POSITIONS, LAWS --}}
-    <div class="flex flex-col md:grid md:grid-cols-2 p-8 gap-2 justify-center w-full">
+    {{-- EDUCATION, BACKGROUND, DONORS, PREVIOUS POSITIONS, LAWS --}}
+    <div class="flex flex-col md:grid md:grid-cols-2 md:p-8 gap-2 justify-center w-full">
         {{-- LEFT COLUMN --}}
 
         <div class="flex flex-col grow gap-6 items-center">

@@ -1,6 +1,6 @@
 {{-- OTHER OPINIONS --}}
 @if($this->candidate->opinions_count >= 1)
-    <article class="flex flex-col w-11/12 items-center">
+    <article class="flex flex-col md:w-11/12 items-center">
         <x-dropdown-card  :classes="'shadow-xl'">
             @isset($no_controversials)
                 <x-slot:title>

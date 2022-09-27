@@ -31,7 +31,7 @@
             @auth
                 @livewire('navigation-menu')
             @else
-                <div class="flex px-6 py-4 bg-white w-100 shadow-sm">
+                <div class="flex px-6 py-4 bg-white w-100 shadow-sm items-center">
                     <x-jet-application-logo class="block h-12 w-auto" />
                     <x-jet-nav-link
                         href="{{ route('groups') }}"
