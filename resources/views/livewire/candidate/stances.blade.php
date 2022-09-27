@@ -4,9 +4,10 @@
     x-on:mouseover="hovering = true"
     x-on:mouseleave="hovering = false">
     <div class="flex justify-center">
-        <h2 class="text-xl" :class="{ 'underline': hovering }">Controversial Opinions</h2>
+        <h2 class="text-xl" :class="{ 'underline': hovering }">Key Stances</h2>
     </div>
-    <p class='text-gray-400 text-center' x-show="hovering">Candidates have the ability to write about specific topics that pertain to the general controversial opinion. A red star indicates the topic is a required stance that the candidate has been asked to fill out.</p>
+    <p class='text-gray-400 text-center' x-show="hovering">A "key stance" is a common subject candidates within the ballot addressed.</p>
+    {{-- Candidates have the ability to write about specific topics that pertain to the general controversial opinion. A red star indicates the topic is a required stance that the candidate has been asked to fill out. --}}
     <div class="flex flex-col grow gap-2 text-center w-full">
         @foreach($opinions as $opinion)
             {{-- TODO: Too many stances, make it a dropdown (Need to make my own dropdown in CSS) --}}
