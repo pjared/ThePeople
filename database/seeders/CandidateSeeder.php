@@ -61,7 +61,7 @@ class CandidateSeeder extends Seeder
                 'contact_email' => "pjared@gmail.com",
                 'slug' => str_replace(' ', '-', $name),
 
-                'ballot_id' => 1,
+                'ballot_id' => 3,
                 'show' => true,
             ]);
         }
