@@ -115,6 +115,14 @@ class Candidate extends Model
         ];
     }
 
+    public function educations() {
+        return $this->hasMany(CandidateEducation::class);
+    }
+
+    public function backgrounds() {
+        return $this->hasMany(CandidateBackground::class);
+    }
+
     public function donors() {
         return $this->belongsToMany(Donor::class)->using(CandidateDonors::class);
     }
