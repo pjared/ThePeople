@@ -33,7 +33,7 @@ class Profile extends Component
             $candidate = Candidate::firstWhere('slug', $slug);
             return $candidate->load('ballot', 'ballot.office:id,name', 'ballot.location:id,state,name',
                                 'events', 'required_stances', 'stances', 'promises', 'videos', 'previous_positions',
-                                'opinions')
+                                'opinions', 'manual_candidate')
                                 ->loadCount('events', 'required_stances', 'stances', 'promises', 'videos', 'previous_positions',
                                 'opinions');
         });
