@@ -18,9 +18,9 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Candidate::class, 'candidate_id');
             $table->string('name');
-            $table->text('description');
-            $table->year('year_start');
-            $table->year('year_end');
+            $table->text('description')->nullable();
+            $table->year('year_start')->nullable();
+            $table->year('year_end')->nullable();
             $table->timestamps();
         });
     }
