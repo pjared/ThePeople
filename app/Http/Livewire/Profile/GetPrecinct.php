@@ -18,8 +18,8 @@ class GetPrecinct extends Component
     protected $rules = [
         'street_addr' => 'required_without:manual_precinct',
         'city' => 'required_without:manual_precinct',
-        'zip' => 'nullable|numeric|min:5|max:5',
-        'manual_precinct' => 'nullable|min:1|max:6',
+        'zip' => 'nullable|digits:5',
+        'manual_precinct' => 'nullable|string|min:1|max:6',
     ];
 
     public function getUserProperty()
