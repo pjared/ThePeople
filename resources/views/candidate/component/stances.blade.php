@@ -11,10 +11,10 @@
     <p class='text-gray-400 text-center' x-show="hovering">A "key stance" is a common subject addressed by candidates within the ballot.</p>
     {{-- Candidates have the ability to write about specific topics that pertain to the general controversial opinion. A red star indicates the topic is a required stance that the candidate has been asked to fill out. --}}
     <div class="flex flex-col grow gap-2 text-center w-full">
-        @foreach($opinions as $opinion)
+        @foreach($this->opinions as $opinion)
             {{-- TODO: Too many stances, make it a dropdown (Need to make my own dropdown in CSS) --}}
             {{--
-            @if (count($opinion->required_stances) + count($candidate_stances->where('controversial_opinion_id', $opinion->id)) >= 4)
+            @if (count($opinion->required_stances) + count($this->candidate->stances->where('controversial_opinion_id', $opinion->id)) >= 4)
                 <div class="collapse collapse-arrow items-center p-0">
                     <input type="checkbox" />
                     <div class="collapse-title text-md font-medium text-center pl-0 pr-0 pb-0">
@@ -34,7 +34,7 @@
                                                 </h4>
                                             </div>
                                             <div class="collapse-content">
-                                                <x-show-more :content="$candidate_required_stances->firstWhere('required_stance_id', $required_stance->id)->candidate_reasoning" />
+                                                <x-show-more :content="$this->candidate->required_stances->firstWhere('required_stance_id', $required_stance->id)->candidate_reasoning" />
                                             </div>
                                         </div>
                                     </div>
@@ -54,7 +54,7 @@
                                 </div>
                             @endforeach
 
-                            @foreach ($candidate_stances->where('controversial_opinion_id', $opinion->id) as $candidate_stance)
+                            @foreach ($this->candidate->stances->where('controversial_opinion_id', $opinion->id) as $candidate_stance)
                                 <div class="grid grid-cols-8 gap-2 w-full items-center">
                                     <div class="col-span-7">
                                         <div class="collapse collapse-arrow">
@@ -102,7 +102,7 @@
                                     </h4>
                                 </div>
                                 <div class="collapse-content">
-                                    <x-show-more :content="$candidate_required_stances->firstWhere('required_stance_id', $required_stance->id) ? $candidate_required_stances->firstWhere('required_stance_id', $required_stance->id)->candidate_reasoning : '' " />
+                                    <x-show-more :content="$this->candidate->required_stances->firstWhere('required_stance_id', $required_stance->id) ? $this->candidate->required_stances->firstWhere('required_stance_id', $required_stance->id)->candidate_reasoning : '' " />
                                 </div>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                             @auth
                                 <livewire:flag-content
                                     :flag="$this->flags ? $this->flags->where('flaggable_type', 'App\Models\CandidateRequiredStance')->firstWhere('flaggable_id', $required_stance->id) : null"
-                                    :content="$candidate_required_stances->firstWhere('required_stance_id', $required_stance->id)"
+                                    :content="$this->candidate->required_stances->firstWhere('required_stance_id', $required_stance->id)"
                                     :side="'right'"
                                     :wire:key="'required-flag-'.$required_stance->id" />
                             @else
@@ -122,7 +122,7 @@
                     </div>
                 @endforeach
 
-                @foreach ($candidate_stances->where('controversial_opinion_id', $opinion->id) as $candidate_stance)
+                @foreach ($this->candidate->stances->where('controversial_opinion_id', $opinion->id) as $candidate_stance)
                     <div class="grid grid-cols-8 gap-2 w-full items-center">
                         <div class="col-span-7">
                             <div class="collapse collapse-arrow">

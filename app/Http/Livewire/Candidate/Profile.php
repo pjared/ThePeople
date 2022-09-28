@@ -42,7 +42,7 @@ class Profile extends Component
     public function getOpinionsProperty()
     {
         if ($this->candidate->ballot) {
-            return $this->candidate->ballot->opinions;
+            return $this->candidate->ballot->opinions->load(['required_stances']);
         } else {
             return [];
         }
