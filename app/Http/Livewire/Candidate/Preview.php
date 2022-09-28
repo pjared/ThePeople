@@ -14,9 +14,12 @@ class Preview extends Component
     public $show;
 
     public function mount() {
-        $this->candidate = Candidate::firstWhere('user_id', Auth::id());
-
         $this->show = $this->candidate->show;
+    }
+
+    public function getCandidateProperty()
+    {
+        $this->candidate = Candidate::firstWhere('user_id', Auth::id());
     }
 
     public function render()
