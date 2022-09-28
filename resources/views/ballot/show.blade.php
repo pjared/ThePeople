@@ -5,7 +5,7 @@
           <li><b>Ballot ({{ $ballot->location->name }} {{ $ballot->office->name }})</b></li>
         </ul>
     </div>
-    <livewire:ballot.show-ballot :ballot="$ballot">
+    <livewire:ballot.show-ballot :ballot_slug="$ballot->slug">
 
     @include('modals.signup', ['message' => "Please log in or register if you'd like to save information about the candidate"])
 

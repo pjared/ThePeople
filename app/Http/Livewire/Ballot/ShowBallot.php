@@ -20,14 +20,20 @@ class ShowBallot extends Component
 
     public $page_loaded = false;
 
-    public function mount(Ballot $ballot)
+    public function mount($ballot_slug)
     {
-        $this->ballot_slug = $ballot->slug;
+        $this->ballot_slug = $ballot_slug;
+        if($this->user_vote) {
+            $this->candidate_vote = $this->user_vote->candidate_id;
+        }
+    }
+
+    public function getUserVoteProperty()
+    {
         if(auth()->check()) {
-            $user_vote = UserVotes::where('ballot_id', $ballot->id)->where('user_id', auth()->id())->first();
-            if($user_vote) {
-                $this->candidate_vote = $user_vote->candidate_id;
-            }
+            return UserVotes::where('ballot_id', $this->ballot->id)->where('user_id', auth()->id())->first();
+        } else {
+            return false;
         }
     }
 
