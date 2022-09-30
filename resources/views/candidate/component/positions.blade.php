@@ -8,7 +8,7 @@
             @if($this->candidate->previous_positions_count >= 1)
                 <div class="flex flex-col gap-4">
                     @foreach($previous_positions as $position)
-                        <div class="flex flex-row justify-center items-center gap-6">
+                        <div class="flex flex-row justify-center items-center gap-2">
                             <div class="flex flex-col w-full items-start">
                                 <h3 class="w-fit capitalize text-lg font-semibold">
                                     {{ $position->position_name }}
