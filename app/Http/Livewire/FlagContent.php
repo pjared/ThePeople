@@ -3,33 +3,43 @@
 namespace App\Http\Livewire;
 
 use App\Models\Flag;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class FlagContent extends Component
 {
-    public $content;
     public $set_flag;
     public $note;
     public $side;
     public $current_color;
-    public $dropdown_class;
     public $type;
     public $type_id;
-
     public $is_loading = true;
 
-    public function mount($content, $side, $flag) {
-        $this->flag = $flag;
-        //Set where the dropdown will be
-        if($side == 'right') {
+    public function mount($content, $flag_id, $side) {
+        $this->flag_id = $flag_id;
+        $this->side = $side;
+
+        if(! $this->flag) {
+            $this->type = get_class($content);
+            $this->type_id = $content->id;
+        }
+    }
+
+    public function getFlagProperty()
+    {
+        return Flag::find($this->flag_id);
+    }
+
+    public function getDropDownClassProperty()
+    {
+        if($this->side == 'right') {
             $this->dropdown_class = 'dropdown dropdown-top dropdown-end';
-        } else if($side == 'below') {
+        } else if($this->side == 'below') {
             $this->dropdown_class = 'dropdown dropdown-end';
         } else {
             $this->dropdown_class =  'dropdown dropdown-top';
         }
-
-        $this->content = $content;
     }
 
     public function load_flag()
@@ -52,12 +62,6 @@ class FlagContent extends Component
             } else if ($this->set_flag == '3') {
                 $this->current_color = 'fill-gray-600';
             }
-        } else {
-            //Set the type of flag
-            //Temp flag will get us a type and ID
-            $temp_flag = $this->content->temp_flag();
-            $this->type = $temp_flag['flaggable_type'];
-            $this->type_id = $temp_flag['flaggable_id'];
         }
         $this->is_loading = false;
     }

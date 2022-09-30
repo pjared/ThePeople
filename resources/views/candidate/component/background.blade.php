@@ -23,7 +23,7 @@
                                 @auth
                                     {{-- {{dd($flags->where('flaggable_type', 'App\Models\CandidateOfficePositions')->where('flaggable_id', 2), $previous_positions)}} --}}
                                     <livewire:flag-content
-                                        :flag="$this->flags->where('flaggable_type', 'App\Models\CandidateBackground')->firstWhere('flaggable_id', $background->id)"
+                                        :flag_id="$this->flags->where('flaggable_type', 'App\Models\CandidateBackground')->firstWhere('flaggable_id', $background->id) ? $this->flags->where('flaggable_type', 'App\Models\CandidateBackground')->firstWhere('flaggable_id', $background->id)->id : null"
                                         :content="$background"
                                         :side="'below'"
                                         :wire:key="'background-'.$background->id" />

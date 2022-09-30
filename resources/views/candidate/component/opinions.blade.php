@@ -22,7 +22,7 @@
                             {{-- <p>{{$opinion->name}}</p> --}}
                             @auth
                                 <livewire:flag-content
-                                        :flag="$this->flags->where('flaggable_type', 'App\Models\CandidateOpinion')->firstWhere('flaggable_id', $opinion->id)"
+                                        :flag_id="$this->flags->where('flaggable_type', 'App\Models\CandidateOpinion')->firstWhere('flaggable_id', $opinion->id) ? $this->flags->where('flaggable_type', 'App\Models\CandidateOpinion')->firstWhere('flaggable_id', $opinion->id)->id : null"
                                         :content="$opinion"
                                         :side="'below'"
                                         :wire:key="'opinion-'.$opinion->id" />
