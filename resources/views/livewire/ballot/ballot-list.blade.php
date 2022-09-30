@@ -1,8 +1,8 @@
 <div class="flex flex-col grow justify-center items-center gap-10">
     {{-- SEARCHING --}}
-    <div class="pt-2 relative mx-auto text-gray-600 sm:w-3/4 md:w-2/5">
-        <input class="border-2 border-gray-300 bg-white h-12 px-5 pr-16 w-full rounded-lg text-sm focus:outline-none"
-            type="search" wire:model='search'  name="search" placeholder="Search for a Candidate, Public Office, or Location">
+    <div class="pt-2 relative mx-auto text-gray-600 w-4/5 md:w-2/5" x-data="{ show: false }" @mouseleave="show = true" @mouseover="show = true">
+        <input class="border-2 border-gray-300 bg-white h-12 pl-5 pr-10 w-full rounded-lg text-sm md:text-md focus:outline-none"
+            type="search" wire:model='search'  name="search" placeholder="Search for a Candidate, Public Office, or District">
         <button class="absolute right-0 top-1 mt-5 mr-4">
             <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
@@ -13,9 +13,9 @@
             </svg>
         </button>
 
-        <ul class='absolute z-10 w-full bg-white rounded-t-none rounded-md shadow-lg list-group' id="myUL">
+        <ul x-show='show' class='absolute z-10 w-full bg-white rounded-t-none rounded-md shadow-lg list-group'>
             @foreach ($candidate_searches as $result)
-                <li class='list-item border-b-2 border-gray-300'>
+                <li class='list-item border-b-2 border-l-2 border-r-2 border-gray-300'>
                     <form class='p-2' action="/candidate/profile/{{$result->slug}}" method="GET">
                         <button class='flex flex-col pl-2 w-full h-full text-start'>
                             <a href='/candidate/profile/{{$result->slug}}' class='link underline'>{{$result->name}}</a>
@@ -25,7 +25,7 @@
                 </li>
             @endforeach
             @foreach ($ballot_searches as $result)
-                <li class='list-item border-b-2 border-gray-300 p-2'>
+                <li class='list-item border-b-2 border-l-2 border-r-2 border-gray-300 p-2'>
                     <form class='p-2' action="/ballot/{{$result->slug}}" method="GET">
                         <button class='w-full h-full text-start'>
                             <a href='/ballot/{{$result->slug}}' class='link underline'>{{$result->name}}</a>
