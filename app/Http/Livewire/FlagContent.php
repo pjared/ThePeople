@@ -3,7 +3,6 @@
 namespace App\Http\Livewire;
 
 use App\Models\Flag;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class FlagContent extends Component

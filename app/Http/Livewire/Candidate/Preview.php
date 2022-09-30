@@ -13,7 +13,8 @@ class Preview extends Component
     public Candidate $candidate;
     public $show;
 
-    public function mount() {
+    public function mount()
+    {
         $this->show = $this->candidate->show;
     }
 
