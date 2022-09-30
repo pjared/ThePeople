@@ -1,6 +1,10 @@
-<div class="flex flex-col grow justify-center items-center gap-10">
+<div class="flex flex-col grow justify-center items-center gap-4 md:gap-10">
     {{-- SEARCHING --}}
-    <div class="pt-2 relative mx-auto text-gray-600 w-4/5 md:w-2/5" x-data="{ show: false }" @mouseleave="show = true" @mouseover="show = true">
+    <div class="pt-2 relative mx-auto text-gray-600 w-4/5 md:w-2/5"
+        x-data="{ show: false,
+        mobile: window.innerWidth <= 768 }"
+        @mouseleave="show = false"
+        @mouseover="show = true">
         <input class="border-2 border-gray-300 bg-white h-12 pl-5 pr-10 w-full rounded-lg text-sm md:text-md focus:outline-none"
             type="search" wire:model='search'  name="search" placeholder="Search for a Candidate, Public Office, or District">
         <button class="absolute right-0 top-1 mt-5 mr-4">
@@ -13,7 +17,12 @@
             </svg>
         </button>
 
+
+
         <ul x-show='show' class='absolute z-10 w-full bg-white rounded-t-none rounded-md shadow-lg list-group'>
+            <li class='list-item border-b-2 border-l-2 border-r-2 border-gray-300' x-show='show && mobile'>
+                <p>Search for a Candidate, Public Office, or District</p>
+            </li>
             @foreach ($candidate_searches as $result)
                 <li class='list-item border-b-2 border-l-2 border-r-2 border-gray-300'>
                     <form class='p-2' action="/candidate/profile/{{$result->slug}}" method="GET">
@@ -107,32 +116,34 @@
     @endauth
 
     {{-- BALLOT LIST --}}
-    <div class="flex flex-col md:flex-row flex-wrap gap-8 w-3/4 items-center justify-center md:pb-4">
-        @foreach ($ballots as $ballot)
-            @if($ballot->candidates_count >= 1)
-                <form action="{{route('ballot', ['ballot' => $ballot->slug])}}" method="GET" class="hover:scale-110" x-data="{ show: window.innerWidth <= 768 }" @mouseleave="show = window.innerWidth <= 768" @mouseover="show = true">
-                    <button class="background-card shadow-md">
-                        <div class="text-center p-0">
-                            <h2 class="card-title justify-center">
-                                <a
-                                    rel="next prefetch canonical"
-                                    class="underline text-inherit font-mono tracking-tighter font-light"
-                                    type="text/html"
-                                    href="{{route('ballot', ['ballot' => $ballot->slug])}}">{{$ballot->location->state}} {{$ballot->office->name}}, {{$ballot->location->name}}</a>
-                            </h2>
-                            <div x-show="show" class="uppercase mt-2 text-sm font-mono text-gray-400 justify-center">
-                                <p>
-                                    VOTING DATE: {{$ballot->voting_date->format('m/d/Y')}}
-                                </p>
+    @if(count($ballots) >= 1)
+        <div class="flex flex-col md:flex-row flex-wrap gap-8 w-3/4 items-center justify-center md:pb-4">
+            @foreach ($ballots as $ballot)
+                @if($ballot->candidates_count >= 1)
+                    <form action="{{route('ballot', ['ballot' => $ballot->slug])}}" method="GET" class="hover:scale-110" x-data="{ show: window.innerWidth <= 768 }" @mouseleave="show = window.innerWidth <= 768" @mouseover="show = true">
+                        <button class="background-card shadow-md">
+                            <div class="text-center p-0">
+                                <h2 class="card-title justify-center">
+                                    <a
+                                        rel="next prefetch canonical"
+                                        class="underline text-inherit font-mono tracking-tighter font-light"
+                                        type="text/html"
+                                        href="{{route('ballot', ['ballot' => $ballot->slug])}}">{{$ballot->location->state}} {{$ballot->office->name}}, {{$ballot->location->name}}</a>
+                                </h2>
+                                <div x-show="show" class="uppercase mt-2 text-sm font-mono text-gray-400 justify-center">
+                                    <p>
+                                        VOTING DATE: {{$ballot->voting_date->format('m/d/Y')}}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    </button>
-                </form>
-            @endif
-        @endforeach
-    </div>
+                        </button>
+                    </form>
+                @endif
+            @endforeach
+        </div>
+    @endif
     @if($more_ballots)
-        <div class='text-center underline cursor-pointer' wire:click='load_ballots'>
+        <div class='text-center mb-8 underline cursor-pointer' wire:click='load_ballots'>
             Load More
         </div>
     @else

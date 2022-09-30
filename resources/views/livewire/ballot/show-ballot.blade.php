@@ -1,11 +1,11 @@
 <div>
-    <div class="flex flex-col-reverse md:flex-row items-start grow py-12">
+    <div class="flex flex-col-reverse md:flex-row items-start grow gap-6 md:gap-0 md:py-12">
         <div class="sm:w-11/12 md:w-1/5 md:ml-6 text-gray-400">
             <livewire:ballot.ballot-list :current_ballot_id="$this->ballot->id" />
         </div>
 
         {{-- TODO: Might have to make this it's own scrollable div --}}
-        <div class="flex flex-col flex-1 sm:w-full md:w-4/5 justify-center gap-4 items-center">
+        <div class="flex flex-col flex-1 sm:w-full md:mr-6 md:w-4/5 justify-center gap-4 items-center">
             @if($this->ballot->has_single_runner)
                 <div class='flex w-full justify-center'>
                     <div class="alert alert-info shadow-lg w-4/5">
