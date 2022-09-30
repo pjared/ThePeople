@@ -13,8 +13,8 @@ class BallotList extends Component
 {
     use WithPagination;
 
-    public $precincts_loaded;
     public $ballot_count = 1;
+    public $precincts_loaded = false;
     public $more_ballots = true;
     public $search;
     public $current_key;
@@ -95,7 +95,6 @@ class BallotList extends Component
             $query->withCount('candidates');
             $query->with('office', 'location');
         }])->get();
-        // $this->ballot_count -= count($precincts);
         $this->precincts_loaded = true;
         return $precincts;
     }
