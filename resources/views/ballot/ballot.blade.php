@@ -1,5 +1,5 @@
 <div class="flex flex-col w-11/12 h-5/6 items-center background-card shadow-lg drop-shadow-lg">
-    <div class='flex flex-row gap-12'>
+    <div class='flex flex-col md:flex-row gap-2 md:gap-12'>
         <div class='flex flex-col text-center'>
             <p class="font-roboto_mono text-lg tracking-tight">
                 Plan your choice for the upcoming election
@@ -10,7 +10,7 @@
         </div>
         @auth
             @if(! $this->ballot->has_single_runner)
-                <div class='flex items-center justify-end gap-1'>
+            <div class='flex justify-center items-center md:justify-end gap-1'>
                     <a class='link font-roboto_mono text-gray-700 text-sm' href="/flag-comparison/{{$this->ballot->slug}}">Compare Candidate Flags</a>
                     <div class="flex items-center fill-green-400 h-6 w-6">
                         @include('icons.flag')
