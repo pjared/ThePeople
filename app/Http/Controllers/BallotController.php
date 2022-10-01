@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ballot;
+use App\Models\Candidate;
+use App\Models\UserVotes;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,8 +24,35 @@ class BallotController extends Controller
                                     'office:id,name',
                                     'candidates');
         });
+        $vote = null;
+        if(auth()->check()) {
+            $user_vote = UserVotes::where('ballot_id', $ballot->id)->where('user_id', auth()->id())->first();
+            if($user_vote) {
+                $vote = $user_vote->candidate->slug;
+            }
+        }
         // dd($ballot->all_candidates, $ballot->candidates);
+        // dd($vote);
         return view('ballot.show')
-                ->with('ballot', $ballot);
+                ->with('ballot', $ballot)
+                ->with('vote', $vote);
+    }
+
+    public function update_vote(Request $request, $ballot_slug)
+    {
+        $candidate = Candidate::firstWhere('slug', $request->vote);
+        $ballot = Ballot::firstWhere('slug', $ballot_slug);
+        if($candidate) {
+            UserVotes::updateOrCreate(
+                [
+                    'user_id' => auth()->id(),
+                    'ballot_id' => $ballot->id,
+                ],
+                [
+                    'candidate_id' => $candidate->id,
+                    'is_valid' => 1,
+                ]
+            );
+        }
     }
 }

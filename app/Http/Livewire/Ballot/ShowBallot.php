@@ -15,7 +15,6 @@ class ShowBallot extends Component
 {
     // public Ballot $ballot;
     public $ballot_slug;
-    public $candidates = [];
     public $candidate_vote;
 
     public $page_loaded = false;

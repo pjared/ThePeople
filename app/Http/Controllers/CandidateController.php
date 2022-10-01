@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Candidate;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Storage;
 
 class CandidateController extends Controller
