@@ -44,23 +44,26 @@ class BallotController extends Controller
         $request->validate([
             'vote' => 'required|string',
         ]);
-        if (RateLimiter::tooManyAttempts('vote-' . auth()->id(), $perMinute = 5)) {
-            return 'Too many attempts!';
-        }
 
-        $candidate = Candidate::firstWhere('slug', $request->vote);
-        $ballot = Ballot::firstWhere('slug', $ballot_slug);
-        if($candidate && $ballot) {
-            UserVotes::updateOrCreate(
-                [
-                    'user_id' => auth()->id(),
-                    'ballot_id' => $ballot->id,
-                ],
-                [
-                    'candidate_id' => $candidate->id,
-                    'is_valid' => 1,
-                ]
-            );
-        }
+        RateLimiter::attempt(
+            'vote-'.auth()->id(),
+            $perMinute = 10,
+            function() use($ballot_slug, $request) {
+                $candidate = Candidate::firstWhere('slug', $request->vote);
+                $ballot = Ballot::firstWhere('slug', $ballot_slug);
+                if($candidate && $ballot) {
+                    UserVotes::updateOrCreate(
+                    [
+                        'user_id' => auth()->id(),
+                        'ballot_id' => $ballot->id,
+                    ],
+                    [
+                        'candidate_id' => $candidate->id,
+                        'is_valid' => 1,
+                    ]
+                    );
+                }
+            }
+        );
     }
 }
