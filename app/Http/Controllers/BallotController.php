@@ -7,6 +7,7 @@ use App\Models\Candidate;
 use App\Models\UserVotes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Storage;
 
 class BallotController extends Controller
@@ -40,9 +41,16 @@ class BallotController extends Controller
 
     public function update_vote(Request $request, $ballot_slug)
     {
+        $request->validate([
+            'vote' => 'required|string',
+        ]);
+        if (RateLimiter::tooManyAttempts('send-message:' . auth()->id(), 5)) {
+            return 'Too many attempts!';
+        }
+
         $candidate = Candidate::firstWhere('slug', $request->vote);
         $ballot = Ballot::firstWhere('slug', $ballot_slug);
-        if($candidate) {
+        if($candidate && $ballot) {
             UserVotes::updateOrCreate(
                 [
                     'user_id' => auth()->id(),
