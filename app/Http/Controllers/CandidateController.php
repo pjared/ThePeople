@@ -31,21 +31,7 @@ class CandidateController extends Controller
         }
 
         $candidate = $this->getCandidate($candidate_slug);
-        $is_manual = is_null($candidate->user_id);
-        if ($candidate->ballot) {
-            $opinions = $candidate->ballot->opinions->load(['required_stances']);
-        } else {
-            $opinions = [];
-        }
-        if(! auth()->check()) {
-            $flags = [];
-        } else {
-            $flags =  auth()->user()->flags->where('ballot_id', $candidate->ballot->id)->where('candidate_id', $candidate->id);
-        }
         return view('candidate.show')
-                    ->with('candidate', $candidate)
-                    ->with('opinions', $opinions)
-                    ->with('flags', $flags)
-                    ->with('is_manual', $is_manual);
+                    ->with('candidate', $candidate);
     }
 }
