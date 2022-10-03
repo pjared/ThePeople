@@ -44,7 +44,7 @@ class BallotController extends Controller
         $request->validate([
             'vote' => 'required|string',
         ]);
-        if (RateLimiter::tooManyAttempts('send-message:' . auth()->id(), 5)) {
+        if (RateLimiter::tooManyAttempts('vote-' . auth()->id(), $perMinute = 5)) {
             return 'Too many attempts!';
         }
 
