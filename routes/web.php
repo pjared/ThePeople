@@ -65,7 +65,7 @@ Route::middleware([
 Route::get('/ballot/{ballot:slug}', [BallotController::class, 'getView'])->name('ballot');
 //[BallotController::class, 'getView']
 
-Route::post('/ballot/vote/{ballot:slug}', [BallotController::class, 'update_vote'])->name('ballot.vote');
+Route::post('/ballot/vote/{ballot:slug}', [BallotController::class, 'update_vote'])->name('ballot.vote')->middleware(['auth:sanctum']);
 
 Route::get('/flag-comparison/{ballot:slug}', FlagComparison::class)->middleware(['auth:sanctum']);
 
