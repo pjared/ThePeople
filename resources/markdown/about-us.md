@@ -5,7 +5,7 @@ This is a for-profit company. We are on creating services for political candidat
 
 ### Data Collection, the Privacy Policy and the ToS
 The team behind ThePeople have no intentions of selling this data to 3rd party agencies. Please do not contact me if that's what you want. 
-The candidates in your state will be able to view your ballot votes and your flags anonymously to gauge the content on their profile. We hope that this will give candidates the ability to gauge how they are doing in the race.
+The candidates in your state will be able to view your ballot votes and your flags anonymously. We hope that this will give candidates the ability to gauge how they are doing in the race, and shift their views, if needed, to better represent The People.
 
 ### How Does This Company Make Money?
 Political groups and candidates will pay a small fee for their "profile" to be hosted on the site.
