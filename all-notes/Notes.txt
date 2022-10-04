@@ -35,3 +35,13 @@ https://gis.utah.gov/data/political/voter-precincts/
 
 Bill Tracker - A feature on ballotpedia
 https://www.billtrack50.com/
+
+All School board maps
+https://www.utahcounty.gov/dept/clerkaud/elections/maps.html
+District 7 map
+https://www.utahcounty.gov/Dept/ClerkAud/Elections/Precinct_Maps/maps/2022_District_PDFs/AlpineSchoolBoard_Dist7.pdf
+
+SL County
+"https://slco.org/slcogis/rest/services/Administration/MapServer/15/query?where=1%3D1&outFields=District,Name&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outSR=4326&f=json&geometry=";
+
+"https://services1.arcgis.com/9DapJHuwsEakbYuW/arcgis/rest/services/Local_School_Board_Districts/FeatureServer/6/query?f=json&outFields=DISTRICT%2CSCHOOL_BOARD&resultType=tile&spatialRel=esriSpatialRelIntersects&geometryType=esriGeometryEnvelope&defaultSR=4326&geometry=";
