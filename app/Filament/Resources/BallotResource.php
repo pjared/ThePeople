@@ -41,7 +41,8 @@ class BallotResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id'),
+                Tables\Columns\TextColumn::make('id')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('location.name')
                                                     ->searchable(),
                 Tables\Columns\TextColumn::make('office.name')

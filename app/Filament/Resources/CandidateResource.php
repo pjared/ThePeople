@@ -70,11 +70,11 @@ class CandidateResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('dob')
                     ->date(),
-                // Tables\Columns\TextColumn::make('signup_date')
-                //     ->date(),
                 Tables\Columns\TextColumn::make('bio')
                     ->limit(10),
                 Tables\Columns\TextColumn::make('state'),
@@ -84,12 +84,6 @@ class CandidateResource extends Resource
                 Tables\Columns\BooleanColumn::make('show'),
                 Tables\Columns\TextColumn::make('order')
                     ->sortable(),
-                // Tables\Columns\TextColumn::make('email'),
-                // Tables\Columns\TextColumn::make('phone_number'),
-                // Tables\Columns\TextColumn::make('party_name'),
-                // Tables\Columns\TextColumn::make('user_id'),
-                // Tables\Columns\TextColumn::make('site_link'),
-                // Tables\Columns\TextColumn::make('slug'),
             ])
             ->filters([
                 //

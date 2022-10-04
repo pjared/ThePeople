@@ -32,7 +32,7 @@ class LocationResource extends Resource
                     ->maxLength(15),
                 Forms\Components\TextInput::make('type')
                     ->required()
-                    ->maxLength(10),
+                    ->maxLength(25),
                 Forms\Components\TextInput::make('population'),
             ]);
     }
@@ -41,7 +41,8 @@ class LocationResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id'),
+                Tables\Columns\TextColumn::make('id')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('state')
