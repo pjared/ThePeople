@@ -10,9 +10,9 @@ class PublicOfficePosition extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        "name",
-        "years_per_term",
-        "limit_terms",
+        'name',
+        'years_per_term',
+        'limit_terms',
     ];
     use HasFactory;
 }

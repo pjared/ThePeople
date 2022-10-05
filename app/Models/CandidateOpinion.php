@@ -15,9 +15,9 @@ class CandidateOpinion extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        "candidate_id",
-        "name",
-        "stance",
+        'candidate_id',
+        'name',
+        'stance',
         'order',
     ];
     use HasFactory;

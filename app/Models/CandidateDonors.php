@@ -14,7 +14,7 @@ class CandidateDonors extends Pivot
     public $timestamps = false;
 
     protected $guarded = [
-        "candidate_id",
-        "donor_id",
+        'candidate_id',
+        'donor_id',
     ];
 }

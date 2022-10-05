@@ -14,8 +14,8 @@ class CampaignVideo extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        "candidate_id",
-        "link",
+        'candidate_id',
+        'link',
     ];
 
 }

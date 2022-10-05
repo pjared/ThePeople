@@ -14,14 +14,14 @@ class CandidateApplication extends Model
 
     protected $fillable = [
         'user_id',
-        "name",
-        "dob",
-        "email",
+        'name',
+        'dob',
+        'email',
         'phone_number',
-        "office_name",
-        "state",
-        "location",
-        "status",
+        'office_name',
+        'state',
+        'location',
+        'status',
         'candidate_id',
         'entered_race_date'
     ];

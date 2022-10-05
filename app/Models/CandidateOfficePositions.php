@@ -16,11 +16,11 @@ class CandidateOfficePositions extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        "candidate_id",
-        "position_name",
-        "year_start",
-        "year_end",
-        "description",
+        'candidate_id',
+        'position_name',
+        'year_start',
+        'year_end',
+        'description',
         'order',
     ];
 

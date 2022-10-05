@@ -14,10 +14,10 @@ class UserVotes extends Pivot
     public $timestamps = false;
 
     protected $fillable = [
-        "user_id",
-        "ballot_id",
-        "candidate_id",
-        "is_valid",
+        'user_id',
+        'ballot_id',
+        'candidate_id',
+        'is_valid',
     ];
 
     public function ballot() {

@@ -13,7 +13,7 @@ class CandidateLaw extends Pivot
     public $incrementing = false;
 
     protected $guarded = [
-        "law_id",
-        "candidate_id",
+        'law_id',
+        'candidate_id',
     ];
 }

@@ -21,9 +21,9 @@ class Ballot extends Model
     ];
 
     public $fillable = [
-        "location_id",
-        "office_id",
-        "voting_date",
+        'location_id',
+        'office_id',
+        'voting_date',
         'slug',
         'has_single_runner',
     ];

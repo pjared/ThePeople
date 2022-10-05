@@ -15,11 +15,11 @@ class GroupApplication extends Model
     protected $fillable = [
         'user_id',
         'description',
-        "name",
-        "email",
-        "state",
-        "location",
-        "status",
+        'name',
+        'email',
+        'state',
+        'location',
+        'status',
         'group_id',
     ];
 

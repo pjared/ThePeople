@@ -10,9 +10,9 @@ class Donor extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        "name",
-        "website",
-        "amount",
+        'name',
+        'website',
+        'amount',
     ];
     use HasFactory;
 }

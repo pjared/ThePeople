@@ -26,17 +26,17 @@ class Candidate extends Model
     use Searchable;
 
     protected $fillable = [
-        "name",
-        "dob",
-        "bio",
-        "contact_email",
-        "contact_phone_number",
-        "email",
-        "phone_number",
+        'name',
+        'dob',
+        'bio',
+        'contact_email',
+        'contact_phone_number',
+        'email',
+        'phone_number',
         'state',
-        "signup_date",
-        "user_id",
-        "party_name",
+        'signup_date',
+        'user_id',
+        'party_name',
         'site_link',
         'slug',
 
@@ -49,10 +49,10 @@ class Candidate extends Model
 
     protected $hidden = [
         // "contact_email",
-        "contact_phone_number",
+        'contact_phone_number',
         // "signup_date",
-        "user_id",
-        "party_name",
+        'user_id',
+        'party_name',
     ];
 
     /**

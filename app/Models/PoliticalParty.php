@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class PoliticalParty extends Model
 {
     use HasFactory;
-    
+
     public $timestamps = false;
-    
+
     protected $fillable = [
-        "name",
-        "other_info"
+        'name',
+        'other_info',
     ];
 }
