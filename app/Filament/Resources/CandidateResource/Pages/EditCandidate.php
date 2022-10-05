@@ -48,7 +48,7 @@ class EditCandidate extends EditRecord
             UpdateBallotCache::dispatch($ballot);
 
             //Call Job to update seaches
-            UpdateCandidateAndBallotSearches::dispatch($this->data['candidate_id'], $this->data['show'])->afterCommit();
+            UpdateCandidateAndBallotSearches::dispatch($this->data['id'], $this->data['show'])->afterCommit();
 
             //Update the old show variable
             $this->old_show = $this->data['show'];
@@ -63,7 +63,7 @@ class EditCandidate extends EditRecord
         $this->old_ballot_id = $this->data['ballot_id'];
 
         //Delete all of the old required stances for the candidate
-        $required_stances = CandidateRequiredStance::where('candidate_id', $this->data['candidate_id'])->get();
+        $required_stances = CandidateRequiredStance::where('candidate_id', $this->data['id'])->get();
         foreach($required_stances as $required_stance) {
             $required_stance->delete();
         }
@@ -74,7 +74,7 @@ class EditCandidate extends EditRecord
             foreach($opinion->required_stances as $required_stance) {
                 $crs = new CandidateRequiredStance();
                 $crs->required_stance_id = $required_stance->id;
-                $crs->candidate_id = $this->data['candidate_id'];
+                $crs->candidate_id = $this->data['id'];
                 $crs->save();
             }
         }
