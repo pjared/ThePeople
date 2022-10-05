@@ -35,7 +35,7 @@ class AdminTest extends DuskTestCase
      */
     public function testBallotCreation()
     {
-        $this->markTestIncomplete('Need to account for tabs');
+        $this->markTestSkipped('Pre-Filament');
         $this->artisan('db:seed');
         $user = User::factory()->create();
         $user->assignRole('admin');
@@ -89,6 +89,7 @@ class AdminTest extends DuskTestCase
      */
     public function testCreateOpinions()
     {
+        $this->markTestSkipped('Pre-Filament');
         $this->artisan('db:seed'); //Need to seed the admin role
         $user = User::factory()->create();
         $user->assignRole('admin');

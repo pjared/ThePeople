@@ -24,7 +24,7 @@ class CandidateFactory extends Factory
             "contact_email" => $this->faker->unique()->safeEmail(),
             'phone_number' => '1234567890',
             "state" => 'Utah',
-            'bio' => '',
+            'bio' => 'A Bio',
             "signup_date" => now(),
             "party_name" => 'independant',
         ];

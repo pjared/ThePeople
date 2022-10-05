@@ -77,7 +77,7 @@ Route::get('/print-ballot', PrintBallot::class)->middleware(['auth:sanctum']);
 Route::get('/apply', Application::class)->name('candidate-apply')->middleware(['auth:sanctum', 'verified', 'has2FAEnabled']);
 
 //PROFILE VIEW
-Route::get('candidate/profile/{candidate:slug}', [CandidateController::class, 'getView'])->name('candidate.show');
+Route::get('/candidate/profile/{candidate:slug}', [CandidateController::class, 'getView'])->name('candidate.show');
 
 
 /* -----ADMIN------ */

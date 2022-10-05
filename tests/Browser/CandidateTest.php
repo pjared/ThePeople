@@ -17,6 +17,7 @@ class CandidateTest extends DuskTestCase
      */
     public function testCandidateWithoutBallot()
     {
+        $this->markTestSkipped('Pre-Filament');
         //Seed database for roles
         $this->artisan('db:seed');
 
@@ -38,6 +39,7 @@ class CandidateTest extends DuskTestCase
 
     public function testCandidateWithBallot()
     {
+        $this->markTestSkipped('Pre-Filament');
         //Seed database for roles
         $this->artisan('db:seed');
 

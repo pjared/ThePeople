@@ -17,6 +17,7 @@ class AdminApproveCandidateTest extends DuskTestCase
      */
     public function testAcceptAndPlaceCandidate()
     {
+        $this->markTestSkipped('Pre-Filament');
         //Seed for admin privs
         $this->artisan('db:seed');
         $admin = User::factory()->create();

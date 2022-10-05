@@ -26,7 +26,7 @@ class LocationResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('state')
-                    ->maxLength(15),
+                    ->maxLength(20),
                 Forms\Components\TextInput::make('type')
                     ->required()
                     ->maxLength(25),

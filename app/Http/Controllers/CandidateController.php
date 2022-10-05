@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Candidate;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class CandidateController extends Controller
@@ -11,6 +12,9 @@ class CandidateController extends Controller
     public function getCandidate($slug) {
         return Cache::remember('candidate-' . $slug, 120, function () use ($slug) {
             $candidate = Candidate::firstWhere('slug', $slug);
+            if (! $candidate) {
+                return null;
+            }
             return $candidate->load('ballot', 'ballot.office:id,name', 'ballot.location:id,state,name',
                                 'required_stances', 'stances',
                                 'opinions', 'manual_candidate', 'educations', 'backgrounds')
@@ -23,6 +27,7 @@ class CandidateController extends Controller
      * Find the candidate in the database, and populate candidate page
      */
     public function getView($candidate_slug) {
+        Log::info('Attempting to get candidate with slug: ' . $candidate_slug);
         if(! auth()->check()) {
             if(Storage::disk('export')->exists('/candidate/profile/' . $candidate_slug . '/index.html')) {
                 return Storage::disk('export')->get('/candidate/profile/' . $candidate_slug . '/index.html');

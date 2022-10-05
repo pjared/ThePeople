@@ -18,6 +18,7 @@ class CandidateEditTest extends DuskTestCase
      */
     public function testCandidateDrawer()
     {
+        $this->markTestSkipped('Pre-Filament');
         //Seed database for roles
         $this->artisan('db:seed');
 
@@ -68,6 +69,7 @@ class CandidateEditTest extends DuskTestCase
      */
     public function testCandidateEditInfo()
     {
+        $this->markTestSkipped('Pre-Filament');
         $this->artisan('db:seed');
         $candidate = User::factory()->withCandidate()->create();
         $candidate->assignRole('candidate');

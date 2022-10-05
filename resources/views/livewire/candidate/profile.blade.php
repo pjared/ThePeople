@@ -189,7 +189,7 @@
 
             {{-- PREVIOUS POSITIONS COMPONENT --}}
             @if (! $this->is_manual)
-                @include('candidate.component.positions', ['previous_positions' => $this->candidate->previous_positions])
+                @include('candidate.component.positions')
             @endif
             @include('candidate.component.background')
         </div>
