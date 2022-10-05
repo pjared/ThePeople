@@ -116,7 +116,7 @@ class Profile extends Component
             return;
         }
         $this->validate([
-            'user_comment' => 'required|string'
+            'user_comment' => 'required|string',
         ]);
         $this->candidate->commentAsUser(auth()->user(), $this->user_comment);
         $this->user_comment = "";

@@ -15,12 +15,7 @@ class Ballot extends Model
 
     public $timestamps = false;
 
-    protected $casts = [
-        'voting_date' => 'datetime',
-        'has_single_runner' => 'boolean'
-    ];
-
-    public $fillable = [
+    protected $fillable = [
         'location_id',
         'office_id',
         'voting_date',
@@ -28,10 +23,16 @@ class Ballot extends Model
         'has_single_runner',
     ];
 
+    protected $casts = [
+        'voting_date' => 'datetime',
+        'has_single_runner' => 'boolean',
+    ];
+
     public function shouldBeSearchable()
     {
         return count($this->candidates) >= 1;
     }
+
     public function toSearchableArray()
     {
         return [
@@ -48,8 +49,8 @@ class Ballot extends Model
     {
         return [
             'slug' => [
-                'source' => ['location.name', 'office.name']
-            ]
+                'source' => ['location.name', 'office.name'],
+            ],
         ];
     }
 

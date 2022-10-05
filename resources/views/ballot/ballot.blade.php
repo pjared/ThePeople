@@ -5,7 +5,7 @@
                 Plan your choice for the upcoming election
             </p>
             <h1 class="uppercase font-roboto_mono mt-2 text-sm text-gray-400">
-                {{ $ballot->location->state }} {{ $ballot->location->name }} {{ $ballot->office->name }} - VOTING DATE: {{ $ballot->voting_date->format('m/d/Y')}}
+                {{ $ballot->location->state }} {{ $ballot->location->name }} {{ $ballot->office->name }} - VOTING DATE: {{ $ballot->voting_date->format('m/d/Y') }}
             </h1>
         </div>
         @auth
@@ -29,7 +29,7 @@
                     <button class="card flex lg:card-side bg-white drop-shadow-md shadow-md w-full">
                         <figure>
                             <img
-                                src="{{ $candidate->profile_photo_url ?? ''}} "
+                                src="{{ $candidate->profile_photo_url ?? '' }} "
                                 alt="{{ $candidate->name }}"
                                 class="h-28 w-28"
                                 loading='lazy'>
@@ -46,7 +46,7 @@
                             {{-- Badges --}}
                             {{-- <div x-show="show" class="grid grid-cols-3 gap-2">
                                 @foreach ($candidate->badges as $badge)
-                                    <div class="tooltip tooltip-info col-span-1" data-tip="{{ $badge->description}}">
+                                    <div class="tooltip tooltip-info col-span-1" data-tip="{{ $badge->description }}">
                                         <div>
                                             {{ $badge->name }}
                                         </div>
@@ -65,7 +65,7 @@
                             @csrf
                             <input type="radio" class="check" id="check{{ $i }}" value="{{ $candidate->slug }}" name='vote' {{ ($vote==$candidate->slug) ? "checked" : "" }} onchange="this.form.submit()" onclick="unselectAll({{ $i }})">
 
-                            <label class="flex grow items-center" for="check{{ $i}}" style="--d: 60%;">
+                            <label class="flex grow items-center" for="check{{ $i }}" style="--d: 60%;">
                                 <svg class="h-12 w-12" viewBox="0, 0, 60, 60">
                                     <rect x="10%" y="10%"/>
                                     <path d="M5 30 L 20 40 L 55 -15"></path>

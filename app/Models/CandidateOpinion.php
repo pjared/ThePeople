@@ -11,6 +11,7 @@ class CandidateOpinion extends Model
 {
     use SoftDeletes;
     use Flaggable;
+    use HasFactory;
 
     public $timestamps = false;
 
@@ -20,5 +21,5 @@ class CandidateOpinion extends Model
         'stance',
         'order',
     ];
-    use HasFactory;
+
 }

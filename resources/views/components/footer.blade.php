@@ -13,7 +13,7 @@
     <div>
         <span class="footer-title">Company</span>
         <a class="link link-hover" href="{{ route('about-us') }}">About us</a>
-        {{-- <a class="link link-hover" href="{{route('about-us')}}">Suggestions? Give Us Feedback</a> --}}
+        {{-- <a class="link link-hover" href="{{ route('about-us') }}">Suggestions? Give Us Feedback</a> --}}
         @auth
             <label for="feedback-modal" class="link link-hover">Suggestions? Give Us Feedback</label>
         @endauth

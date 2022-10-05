@@ -8,7 +8,7 @@ class BallotOpinions extends Pivot
 {
     public $timestamps = false;
 
-    public $fillable = [
+    protected $fillable = [
         'ballot_id',
         'controversial_opinion_id',
     ];

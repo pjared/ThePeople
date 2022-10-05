@@ -11,6 +11,6 @@ class GroupOrganizer extends Model
 
     protected $fillable = [
         'user_id',
-        'political_group_id'
+        'political_group_id',
     ];
 }

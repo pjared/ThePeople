@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Donor extends Model
 {
+    use HasFactory;
+
     public $timestamps = false;
 
     protected $fillable = [
@@ -14,5 +16,4 @@ class Donor extends Model
         'website',
         'amount',
     ];
-    use HasFactory;
 }

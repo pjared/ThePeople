@@ -111,8 +111,8 @@ class Candidate extends Model
     {
         return [
             'slug' => [
-                'source' => ['name', 'ballot.name']
-            ]
+                'source' => ['name', 'ballot.name'],
+            ],
         ];
     }
 

@@ -19,7 +19,7 @@
                     <div class="text-center mt-6">
                         @unlessrole('candidate')
                             <button class="btn btn-primary">
-                                <a href="{{Route('candidate-apply')}}">Are you a candidate? Click here to apply for a profile.</a>
+                                <a href="{{ Route('candidate-apply') }}">Are you a candidate? Click here to apply for a profile.</a>
                             </button>
                         @endrole
                     </div>
@@ -28,12 +28,12 @@
                         <div class="flex flex-col items-center justify-center mt-6">
                             <span>Are you a candidate? In order to apply, please:</span>
                             <ul class='list-disc'>
-                                @if (!Auth::user()->hasVerifiedEmail())
+                                @if (! Auth::user()->hasVerifiedEmail())
                                     <li>
                                         <span>Verify your email</span>
                                     </li>
                                 @endif
-                                @if (!Auth::user()->hasEnabledTwoFactorAuthentication())
+                                @if (! Auth::user()->hasEnabledTwoFactorAuthentication())
                                     <li>
                                         <span>Enable two factor authentication</span>
                                     </li>
@@ -49,7 +49,7 @@
                         @unlessrole('organizer|organizerAdmin')
                             <div class="flex flex-col items-center justify-center mt-6">
                                 <button class="btn btn-primary">
-                                    <a href="{{Route('group-apply')}}">Do you manage a political group? Apply Here</a>
+                                    <a href="{{ Route('group-apply') }}">Do you manage a political group? Apply Here</a>
                                 </button>
                             </div>
                         @endrole

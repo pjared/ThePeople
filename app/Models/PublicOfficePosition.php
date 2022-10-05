@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PublicOfficePosition extends Model
 {
+    use HasFactory;
+
     public $timestamps = false;
 
     protected $fillable = [
@@ -14,5 +16,4 @@ class PublicOfficePosition extends Model
         'years_per_term',
         'limit_terms',
     ];
-    use HasFactory;
 }

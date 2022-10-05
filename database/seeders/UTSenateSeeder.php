@@ -1207,23 +1207,23 @@ class UTSenateSeeder extends Seeder
     public function add_photo($candidate)
     {
         $photo_path = 'profile-photos/' . $candidate->slug;
-        if(Storage::disk('public')->exists($photo_path . '.jpg')) {
-            $candidate->profile_photo_path = $photo_path . '.jpg';
+        if(Storage::disk('public')->exists($photo_path . ' .jpg')) {
+            $candidate->profile_photo_path = $photo_path . ' .jpg';
             $candidate->save();
-        } else if(Storage::disk('public')->exists($photo_path . '.jpeg')) {
-            $candidate->profile_photo_path = $photo_path . '.jpeg';
+        } else if(Storage::disk('public')->exists($photo_path . ' .jpeg')) {
+            $candidate->profile_photo_path = $photo_path . ' .jpeg';
             $candidate->save();
-        } else if(Storage::disk('public')->exists($photo_path . '.JPG')) {
-            $candidate->profile_photo_path = $photo_path . '.JPG';
+        } else if(Storage::disk('public')->exists($photo_path . ' .JPG')) {
+            $candidate->profile_photo_path = $photo_path . ' .JPG';
             $candidate->save();
-        } else if(Storage::disk('public')->exists($photo_path . '.webp')) {
-            $candidate->profile_photo_path = $photo_path . '.webp';
+        } else if(Storage::disk('public')->exists($photo_path . ' .webp')) {
+            $candidate->profile_photo_path = $photo_path . ' .webp';
             $candidate->save();
-        } else if(Storage::disk('public')->exists($photo_path . '.png')) {
-            $candidate->profile_photo_path = $photo_path . '.png';
+        } else if(Storage::disk('public')->exists($photo_path . ' .png')) {
+            $candidate->profile_photo_path = $photo_path . ' .png';
             $candidate->save();
-        } else if(Storage::disk('public')->exists($photo_path . '.PNG')) {
-            $candidate->profile_photo_path = $photo_path . '.PNG';
+        } else if(Storage::disk('public')->exists($photo_path . ' .PNG')) {
+            $candidate->profile_photo_path = $photo_path . ' .PNG';
             $candidate->save();
         }
     }

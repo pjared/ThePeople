@@ -24,7 +24,7 @@ class EditCandidateApplication extends EditRecord
     protected function afterSave(): void
     {
         //Check to see if the user has an existing candidate model
-        if(!is_null(Candidate::firstWhere('user_id', $this->data['user_id']))) {
+        if(! is_null(Candidate::firstWhere('user_id', $this->data['user_id']))) {
             return;
         }
 

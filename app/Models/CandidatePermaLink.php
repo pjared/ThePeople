@@ -15,10 +15,9 @@ class CandidatePermaLink extends Model
     use HasFactory;
 
     public $timestamps = false;
-
     public $incrementing = false;
-    protected $primaryKey = 'candidate_id';
 
+    protected $primaryKey = 'candidate_id';
     protected $fillable = [
         'candidate_id',
         'perma_link',

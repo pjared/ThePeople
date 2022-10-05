@@ -1,5 +1,5 @@
 <section class='p-4 flex flex-col gap-12'>
-    {{-- {{dd($this->candidate)}} --}}
+    {{-- {{dd($this->candidate) }} --}}
     @if ($this->is_manual)
         <div class='flex w-full justify-center'>
             <div class="alert alert-warning flex flex-row shadow-lg w-full md:w-3/5">
@@ -84,9 +84,9 @@
                                 @if (count($this->candidate->donors) >= 1)
                                 @foreach ($this->candidate->donors as $donor)
                                     <div class="flex flex-row items-center justify-center gap-2">
-                                        <span>Name:  {{ $donor->name}}</span>
+                                        <span>Name:  {{ $donor->name }}</span>
                                         @auth
-                                            <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-flag-'.$donor->id">
+                                            <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-flag-' .$donor->id">
                                         @else
                                             <label class="fill-transparent" for="signup-modal">
                                                 @include('icons.flag')
@@ -118,7 +118,7 @@
                                         <div class="flex flex-row justify-center gap-4">
                                             <span>Name : {{ $law->name }}</span>
                                             @auth
-                                                <livewire:flag :type="'law'" :type_id="$law->id" :wire:key="'law-flag-'.$law->id">
+                                                <livewire:flag :type="'law'" :type_id="$law->id" :wire:key="'law-flag-' .$law->id">
                                             @else
                                                 <label class="fill-transparent" for="signup-modal">
                                                     @include('icons.flag')
@@ -156,7 +156,8 @@
 
         <div class="flex flex-col grow gap-6 items-center">
             {{-- DONORS --}}
-            {{-- @if (count($this->candidate->donors) != 0)
+            {{--
+            @if (count($this->candidate->donors) != 0)
                 <div class="flex grow flex-col w-11/12 items-center">
                     <x-dropdown-card>
                         <x-slot:title>
@@ -166,9 +167,9 @@
                             @if (count($this->candidate->donors) >= 1)
                             @foreach ($this->candidate->donors as $donor)
                                 <div class="flex flex-row items-center justify-center gap-2">
-                                    <span>Name:  {{ $donor->name}}</span>
+                                    <span>Name:  {{ $donor->name }}</span>
                                     @auth
-                                        <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-flag-'.$donor->id">
+                                        <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-flag-' .$donor->id">
                                     @else
                                         <label class="fill-transparent" for="signup-modal">
                                             @include('icons.flag')
@@ -183,7 +184,8 @@
                         </x-slot>
                     </x-dropdown-card>
                 </div>
-            @endif --}}
+            @endif
+            --}}
 
             {{-- PREVIOUS POSITIONS COMPONENT --}}
             @if (! $this->is_manual)
@@ -206,7 +208,7 @@
                                     <div class="flex flex-row justify-center gap-4">
                                         <span>Name : {{ $law->name }}</span>
                                         @auth
-                                            <livewire:flag :type="'law'" :type_id="$law->id" :wire:key="'law-flag-'.$law->id">
+                                            <livewire:flag :type="'law'" :type_id="$law->id" :wire:key="'law-flag-' .$law->id">
                                         @else
                                             <label class="fill-transparent" for="signup-modal">
                                                 @include('icons.flag')
@@ -218,7 +220,8 @@
                         </x-slot>
                     </x-dropdown-card>
                 </div>
-            @endif --}}
+            @endif
+            --}}
             @include('candidate.component.education')
         </div>
     </div>
@@ -251,11 +254,11 @@
             {{-- <div class="flex flex-row w-full grow gap-6 items-center h-fit">
                 @foreach ($this->candidate->comments()->approved()->get() as $pinned_comment)
                     <div class='border border-slate-400 bg-white p-4 w-11/12 overflow-visible'>
-                        <p>{{ $pinned_comment->comment}}</p>
+                        <p>{{ $pinned_comment->comment }}</p>
                         @if ($pinned_comment->reply)
                             <div class='absolute ml-6 mt-1 w-1/5'>
                                 <div class='border border-slate-400 p-4 bg-white w-fit'>
-                                    <p>{{ $pinned_comment->reply}}</p>
+                                    <p>{{ $pinned_comment->reply }}</p>
                                 </div>
                             </div>
                         @endif
@@ -313,10 +316,10 @@
     @endpush
 
     @section('description')
-        Candidate {{ $this->candidate->name}}'s profile. Here you can view the stances that {{ $this->candidate->name}} takes on controversial opinions. You can also view the additional stances that {{ $this->candidate->name}} has added to his profile. If {{ $this->candidate->name}} has held office, his previous positions will be listed. You can also message {{ $this->candidate->name}} and see his upcoming events.
+        Candidate {{ $this->candidate->name }}'s profile. Here you can view the stances that {{ $this->candidate->name }} takes on controversial opinions. You can also view the additional stances that {{ $this->candidate->name }} has added to his profile. If {{ $this->candidate->name }} has held office, his previous positions will be listed. You can also message {{ $this->candidate->name }} and see his upcoming events.
     @endsection
     @section('keywords')
-        {{ $this->candidate->name}} stances controversial opinions
+        {{ $this->candidate->name }} stances controversial opinions
     @endsection
 </section>
 

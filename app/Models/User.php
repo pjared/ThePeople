@@ -24,7 +24,6 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser, Has
     use HasTeams;
     use Notifiable;
     use TwoFactorAuthenticatable;
-
     use HasRoles;
 
     /**
@@ -38,7 +37,7 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser, Has
         'password',
         'state',
         'last_visited',
-        'voter_precinct'
+        'voter_precinct',
     ];
 
     /**

@@ -25,7 +25,7 @@
             @foreach ($votes as $i => $vote)
                 <div
                     class='flex flex-col'
-                    x-show="!is_selected('{{ $i }}')">
+                    x-show="! is_selected('{{ $i }}')">
                     <div class='text-xl underline'>
                         {{ $vote->ballot->name }}
                     </div>

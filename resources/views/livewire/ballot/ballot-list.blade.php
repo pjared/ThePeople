@@ -25,19 +25,19 @@
             </li>
             @foreach ($candidate_searches as $result)
                 <li class='list-item border-b-2 border-l-2 border-r-2 border-gray-300'>
-                    <form class='p-2' action="/candidate/profile/{{ $result->slug}}" method="GET">
+                    <form class='p-2' action="/candidate/profile/{{ $result->slug }}" method="GET">
                         <button class='flex flex-col pl-2 w-full h-full text-start'>
-                            <a href='/candidate/profile/{{ $result->slug}}' class='link underline'>{{ $result->name}}</a>
-                            <p class='text-gray-400'>{{ $result->state}}</p>
+                            <a href='/candidate/profile/{{ $result->slug }}' class='link underline'>{{ $result->name }}</a>
+                            <p class='text-gray-400'>{{ $result->state }}</p>
                         </button>
                     </form>
                 </li>
             @endforeach
             @foreach ($ballot_searches as $result)
                 <li class='list-item border-b-2 border-l-2 border-r-2 border-gray-300 p-2'>
-                    <form class='p-2' action="/ballot/{{ $result->slug}}" method="GET">
+                    <form class='p-2' action="/ballot/{{ $result->slug }}" method="GET">
                         <button class='w-full h-full text-start'>
-                            <a href='/ballot/{{ $result->slug}}' class='link underline'>{{ $result->name}}</a>
+                            <a href='/ballot/{{ $result->slug }}' class='link underline'>{{ $result->name }}</a>
                         </button>
                     </form>
                 </li>
@@ -57,7 +57,7 @@
             <div class="flex flex-col md:flex-row flex-wrap gap-8 w-3/4 items-center justify-center">
                 @foreach ($this->state_ballots as $ballot)
                     @if ($ballot->candidates_count >= 1)
-                        <form action="/ballot/{{ $ballot->slug}}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
+                        <form action="/ballot/{{ $ballot->slug }}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
                             <button class="background-card shadow-md">
                                 <div class="text-center p-0">
                                     <h2 class="card-title justify-center">
@@ -65,11 +65,11 @@
                                             rel="next prefetch canonical"
                                             class="underline text-inherit font-mono tracking-tighter font-light"
                                             type="text/html"
-                                            href="/ballot/{{ $ballot->slug}}">{{ $ballot->location->state}} {{ $ballot->office->name}}, {{ $ballot->location->name}}</a>
+                                            href="/ballot/{{ $ballot->slug }}">{{ $ballot->location->state }} {{ $ballot->office->name }}, {{ $ballot->location->name }}</a>
                                     </h2>
                                     <div x-show="show" class="uppercase mt-2 text-sm font-mono text-gray-400 justify-center">
                                         <p>
-                                            VOTING DATE: {{ $ballot->voting_date->format('m/d/Y')}}
+                                            VOTING DATE: {{ $ballot->voting_date->format('m/d/Y') }}
                                         </p>
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@
                     @endif
                 @endforeach
                 @foreach ($this->user_ballots as $precinct)
-                    {{-- {{dd($this->user_ballots)}} --}}
+                    {{-- {{dd($this->user_ballots) }} --}}
                     @if ($precinct->ballot->candidates_count >= 1)
                         <form action="/ballot/{{ $precinct->ballot->slug }}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
                             <button class="background-card shadow-md">
@@ -88,7 +88,7 @@
                                             rel="next prefetch canonical"
                                             class="underline text-inherit font-mono tracking-tighter font-light"
                                             type="text/html"
-                                            href="/ballot/{{ $precinct->ballot->slug}}">{{ $precinct->ballot->location->state}} {{ $precinct->ballot->office->name}}, {{ $precinct->ballot->location->name}}</a>
+                                            href="/ballot/{{ $precinct->ballot->slug }}">{{ $precinct->ballot->location->state }} {{ $precinct->ballot->office->name }}, {{ $precinct->ballot->location->name }}</a>
                                     </h2>
                                     <div x-show="show" class="uppercase mt-2 text-sm font-mono text-gray-400 justify-center">
                                         <p>
@@ -128,7 +128,7 @@
                                         rel="next prefetch canonical"
                                         class="underline text-inherit font-mono tracking-tighter font-light"
                                         type="text/html"
-                                        href="{{route('ballot', ['ballot' => $ballot->slug])}}">{{ $ballot->location->state}} {{ $ballot->office->name }}, {{ $ballot->location->name }}</a>
+                                        href="{{ route('ballot', ['ballot' => $ballot->slug]) }}">{{ $ballot->location->state }} {{ $ballot->office->name }}, {{ $ballot->location->name }}</a>
                                 </h2>
                                 <div x-show="show" class="uppercase mt-2 text-sm font-mono text-gray-400 justify-center">
                                     <p>

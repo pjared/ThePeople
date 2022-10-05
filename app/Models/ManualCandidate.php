@@ -11,9 +11,9 @@ class ManualCandidate extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $primaryKey = 'candidate_id';
     public $incrementing = false;
 
+    protected $primaryKey = 'candidate_id';
     protected $fillable = [
         'candidate_id',
         'note',

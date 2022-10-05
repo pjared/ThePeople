@@ -15,7 +15,7 @@ class CandidateRequiredStance extends Model
 
     public $timestamps = false;
 
-    public $fillable = [
+    protected $fillable = [
         'required_stance_id',
         'candidate_id',
         'candidate_reasoning',

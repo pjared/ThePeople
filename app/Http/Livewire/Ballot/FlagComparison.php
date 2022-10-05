@@ -69,7 +69,7 @@ class FlagComparison extends Component
 
     public function change_user_vote($candidate_id)
     {
-        if(!auth()) {
+        if(! Auth()) {
             return;
         }
         //Validate the incoming data

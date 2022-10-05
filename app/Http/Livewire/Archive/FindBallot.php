@@ -25,40 +25,6 @@ class FindBallot extends Component
         'updateLocations',
     ];
 
-    private function getLocationType($office_name) {
-        switch ($office_name) {
-            case 'Mayor':
-                return 'city';
-                break;
-            case 'Governor':
-                return 'state';
-                break;
-            case 'House':
-                return 'state';
-                break;
-            case 'Senate':
-                return 'state';
-                break;
-        }
-    }
-
-    private function getLocationId($location_type, $location_name) {
-        $location = Location::where('name', $location_name)->where('type', $location_type)->first();
-        
-        if(!$location) {
-            return null;   
-        }
-        return $location->id;
-    }
-
-    private function getOffice($office_name) {
-        $position = PublicOfficePosition::firstWhere('name', $office_name);
-        if(!$position) {
-            return null;   
-        }
-        return $position->id;
-    }
-
     public function mount() {
         $this->state_input = '';
         $this->city_input = '';
@@ -78,18 +44,18 @@ class FindBallot extends Component
                 $location = $this->state_input;
                 break;
         }
-        if(!$location) {
-            dd("failed");
+        if(! $location) {
+            // dd("failed");
             return;
         }
         $location_id = $this->getLocationId($location_type, $location);
 
-        // if(!$office_id) {
+        // if(! $office_id) {
         //     return back()->withErrors([
         //         'office' => 'Could not find this level of public office',
         //     ]);
         // }
-        // if(!$location_id) {
+        // if(! $location_id) {
         //     return back()->withErrors([
         //         'location' => 'Could not find this location',
         //     ]);
@@ -98,7 +64,7 @@ class FindBallot extends Component
         // dd($office_id, $location_type, $location_id, PublicOfficePosition::all());
 
         $ballot = Ballot::where('location_id', $location_id)->where('office_id', $office_id)->first();
-        
+
         // dd($ballot);
         return redirect()->route('ballot', ['id' => $ballot->id]);
     }
@@ -118,4 +84,39 @@ class FindBallot extends Component
     {
         return view('livewire.archive.find-ballot');
     }
+
+    private function getLocationType($office_name) {
+        switch ($office_name) {
+            case 'Mayor':
+                return 'city';
+                break;
+            case 'Governor':
+                return 'state';
+                break;
+            case 'House':
+                return 'state';
+                break;
+            case 'Senate':
+                return 'state';
+                break;
+        }
+    }
+
+    private function getLocationId($location_type, $location_name) {
+        $location = Location::where('name', $location_name)->where('type', $location_type)->first();
+
+        if(! $location) {
+            return null;
+        }
+        return $location->id;
+    }
+
+    private function getOffice($office_name) {
+        $position = PublicOfficePosition::firstWhere('name', $office_name);
+        if(! $position) {
+            return null;
+        }
+        return $position->id;
+    }
+
 }

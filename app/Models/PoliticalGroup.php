@@ -42,8 +42,8 @@ class PoliticalGroup extends Model
     {
         return [
             'slug' => [
-                'source' => ['name']
-            ]
+                'source' => ['name'],
+            ],
         ];
     }
 

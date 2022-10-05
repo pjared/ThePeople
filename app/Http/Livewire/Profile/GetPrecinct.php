@@ -43,7 +43,7 @@ class GetPrecinct extends Component
         $res = Http::get('https://geocoding.geo.census.gov/geocoder/locations/onelineaddress', [
                     'address' =>  $address,
                     'benchmark' => "2020",
-                    'format' => 'json'
+                    'format' => 'json',
             ]);
         if(! empty($res->json()['result']['addressMatches'])) {
             $this->not_found = false;

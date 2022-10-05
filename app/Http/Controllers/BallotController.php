@@ -34,9 +34,10 @@ class BallotController extends Controller
         }
         // dd($ballot->all_candidates, $ballot->candidates);
         // dd($vote);
-        return view('ballot.show')
-                ->with('ballot', $ballot)
-                ->with('vote', $vote);
+        return view('ballot.show', [
+                'ballot' => $ballot,
+                'vote' => $vote,
+            ]);
     }
 
     public function update_vote(Request $request, $ballot_slug)
@@ -46,7 +47,7 @@ class BallotController extends Controller
         ]);
 
         RateLimiter::attempt(
-            'vote-'.auth()->id(),
+            'vote-' . auth()->id(),
             $perMinute = 10,
             function() use($ballot_slug, $request) {
                 $candidate = Candidate::firstWhere('slug', $request->vote);

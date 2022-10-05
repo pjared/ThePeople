@@ -9,9 +9,9 @@ class CandidateApplication extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'user_id';
     public $incrementing = false;
 
+    protected $primaryKey = 'user_id';
     protected $fillable = [
         'user_id',
         'name',
@@ -23,6 +23,6 @@ class CandidateApplication extends Model
         'location',
         'status',
         'candidate_id',
-        'entered_race_date'
+        'entered_race_date',
     ];
 }

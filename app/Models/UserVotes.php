@@ -9,10 +9,9 @@ class UserVotes extends Pivot
 {
     use HasFactory;
 
-    protected $table = 'user_votes';
-
     public $timestamps = false;
 
+    protected $table = 'user_votes';
     protected $fillable = [
         'user_id',
         'ballot_id',

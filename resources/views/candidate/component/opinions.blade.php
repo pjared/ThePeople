@@ -19,13 +19,13 @@
                                 <h3 class="w-fit capitalize text-lg font-semibold">{{ $opinion->name }}</h3>
                                 <x-show-more :content="$opinion->stance" />
                             </div>
-                            {{-- <p>{{ $opinion->name}}</p> --}}
+                            {{-- <p>{{ $opinion->name }}</p> --}}
                             @auth
                                 <livewire:flag-content
                                         :flag_id="$this->flags->where('flaggable_type', 'App\Models\CandidateOpinion')->firstWhere('flaggable_id', $opinion->id) ? $this->flags->where('flaggable_type', 'App\Models\CandidateOpinion')->firstWhere('flaggable_id', $opinion->id)->id : null"
                                         :content="$opinion"
                                         :side="'below'"
-                                        :wire:key="'opinion-'.$opinion->id" />
+                                        :wire:key="'opinion-' .$opinion->id" />
                             @else
                                 <label class="fill-transparent" for="signup-modal">
                                     @include('icons.flag')

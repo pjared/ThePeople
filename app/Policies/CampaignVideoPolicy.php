@@ -28,11 +28,11 @@ class CampaignVideoPolicy
         }
 
         //Check if the user is a candidate (or admin for manual candidates)
-        if(!$user->hasRole('candidate')) {
+        if(! $user->hasRole('candidate')) {
             return false;
         }
         //If the user is somehow a candidate role but doesn't have a candidate model
-        if(!$user->candidate) {
+        if(! $user->candidate) {
             return false;
         }
         //Finally, lets check if they

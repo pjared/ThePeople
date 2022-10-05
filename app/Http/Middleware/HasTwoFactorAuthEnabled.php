@@ -17,7 +17,7 @@ class HasTwoFactorAuthEnabled
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!Auth::user()->hasEnabledTwoFactorAuthentication()) {
+        if(! Auth::user()->hasEnabledTwoFactorAuthentication()) {
             return redirect(route('profile.show'));
         }
         return $next($request);

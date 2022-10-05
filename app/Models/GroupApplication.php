@@ -9,9 +9,9 @@ class GroupApplication extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'user_id';
     public $incrementing = false;
 
+    protected $primaryKey = 'user_id';
     protected $fillable = [
         'user_id',
         'description',

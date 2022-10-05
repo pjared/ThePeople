@@ -57,13 +57,13 @@ class USSenateSeeder extends Seeder
                 ],
                 [
                     'name' => 'Assistant U.S. Attorney',
-                    'description' => '...then served as an Assistant U.S. Attorney in Salt Lake City arguing cases before the U.S. Court of Appeals for the Tenth Circuit.',
+                    'description' => ' ...then served as an Assistant U.S. Attorney in Salt Lake City arguing cases before the U.S. Court of Appeals for the Tenth Circuit.',
                     'year_start' => 2002,
                     'year_end' => 2005,
                 ],
                 [
                     'name' => 'Clerk',
-                    'description' => '... served as a clerk for Samuel Alito at the Third Circuit Court of the U.S. Court of Appeals in 1998',
+                    'description' => ' ... served as a clerk for Samuel Alito at the Third Circuit Court of the U.S. Court of Appeals in 1998',
                     'year_start' => 2006,
                     'year_end' => 2007,
                 ],
@@ -663,23 +663,23 @@ class USSenateSeeder extends Seeder
     {
         //Could shorten this function with a file name exists, then append the extension
         $photo_path = 'profile-photos/' . $candidate->slug;
-        if(Storage::disk('public')->exists($photo_path . '.jpg')) {
-            $candidate->profile_photo_path = $photo_path . '.jpg';
+        if(Storage::disk('public')->exists($photo_path . ' .jpg')) {
+            $candidate->profile_photo_path = $photo_path . ' .jpg';
             $candidate->save();
-        } else if(Storage::disk('public')->exists($photo_path . '.jpeg')) {
-            $candidate->profile_photo_path = $photo_path . '.jpeg';
+        } else if(Storage::disk('public')->exists($photo_path . ' .jpeg')) {
+            $candidate->profile_photo_path = $photo_path . ' .jpeg';
             $candidate->save();
-        } else if(Storage::disk('public')->exists($photo_path . '.JPG')) {
-            $candidate->profile_photo_path = $photo_path . '.JPG';
+        } else if(Storage::disk('public')->exists($photo_path . ' .JPG')) {
+            $candidate->profile_photo_path = $photo_path . ' .JPG';
             $candidate->save();
-        } else if(Storage::disk('public')->exists($photo_path . '.webp')) {
-            $candidate->profile_photo_path = $photo_path . '.webp';
+        } else if(Storage::disk('public')->exists($photo_path . ' .webp')) {
+            $candidate->profile_photo_path = $photo_path . ' .webp';
             $candidate->save();
-        } else if(Storage::disk('public')->exists($photo_path . '.png')) {
-            $candidate->profile_photo_path = $photo_path . '.png';
+        } else if(Storage::disk('public')->exists($photo_path . ' .png')) {
+            $candidate->profile_photo_path = $photo_path . ' .png';
             $candidate->save();
-        } else if(Storage::disk('public')->exists($photo_path . '.PNG')) {
-            $candidate->profile_photo_path = $photo_path . '.PNG';
+        } else if(Storage::disk('public')->exists($photo_path . ' .PNG')) {
+            $candidate->profile_photo_path = $photo_path . ' .PNG';
             $candidate->save();
         }
     }

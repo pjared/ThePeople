@@ -14,7 +14,7 @@ class UserFlag extends Model
 
     public $timestamps = false;
 
-    public $fillable = [
+    protected $fillable = [
         'user_id',
         'candidate_id',
         'ballot_id',

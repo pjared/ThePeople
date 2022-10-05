@@ -26,7 +26,7 @@ class EditGroupApplication extends EditRecord
     protected function afterSave(): void
     {
         //Check to see if the user has an existing group (This means users cannot have more than one)
-        if(!is_null(GroupOrganizer::firstWhere('user_id', $this->data['user_id']))) {
+        if(! is_null(GroupOrganizer::firstWhere('user_id', $this->data['user_id']))) {
             return;
         }
 

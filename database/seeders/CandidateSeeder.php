@@ -30,7 +30,7 @@ class CandidateSeeder extends Seeder
                 'name' => $name,
                 'email' => $name . '@gmail.com',
                 'password' => Hash::make('password'),
-                'profile_photo_path' => 'profile-photos/' . $i + 1  . '.jpg',
+                'profile_photo_path' => 'profile-photos/' . $i + 1  . ' .jpg',
             ]);
             //Assign them to the candidate role
             $user->assignRole('candidate');

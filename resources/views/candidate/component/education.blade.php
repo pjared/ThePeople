@@ -7,7 +7,7 @@
             </x-slot>
             <x-slot:content>
                     <div class="flex flex-col justify-center items-center gap-4">
-                        @foreach($this->candidate->educations as $education)
+                        @foreach ($this->candidate->educations as $education)
                             <div class="flex flex-col w-full items-start">
                                 <h3 class="w-fit capitalize text-lg font-semibold">
                                     {{ $education->school_name }}
@@ -18,7 +18,7 @@
                                     @endif
 
                                 </h3>
-                                <div><b>{{ $education->degree_type}}</b> in {{ $education->degree_field}}</div>
+                                <div><b>{{ $education->degree_type }}</b> in {{ $education->degree_field }}</div>
                             </div>
                         @endforeach
                     </div>

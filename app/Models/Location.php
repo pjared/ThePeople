@@ -11,10 +11,6 @@ class Location extends Model
 
     public $timestamps = false;
 
-    protected $guarded = [
-
-    ];
-
     protected $fillable = [
         'name',
         'state',

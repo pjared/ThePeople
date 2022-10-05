@@ -11,12 +11,12 @@ class Badge extends Model
 
     public $timestamps = false;
 
-    public $fillable = [
+    protected $fillable = [
         'name',
         'description',
         'opinion_id',
     ];
-    
+
     public function opinion() {
         return $this->belongsTo(ControversialOpinion::class, 'opinion_id');
     }

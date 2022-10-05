@@ -4,10 +4,10 @@
             <div
                 class='flex flex-col'>
                 <div class='text-xl underline'>
-                    {{ $ballot_name}}
+                    {{ $ballot_name }}
                 </div>
                 <div class='text-md'>
-                    {{ $candidate_name}}
+                    {{ $candidate_name }}
                 </div>
             </div>
         @endforeach

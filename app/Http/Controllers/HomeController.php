@@ -30,7 +30,7 @@ class HomeController extends Controller
     {
         $user_id = auth()->id();
         RateLimiter::attempt(
-            'send-message:'. $user_id,
+            'send-message:' . $user_id,
             $perMinute = 2,
             function() use ($request) {
                 $validated = Validator::make($request->all(), [

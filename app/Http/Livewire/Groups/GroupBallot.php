@@ -54,7 +54,7 @@ class GroupBallot extends Component
         if(auth()->user() && auth()->user()->hasRole('organizerAdmin')) {
             //Check the users group
             $user_group = auth()->user()->manages_political_groups->first();
-            if(!$user_group) {
+            if(! $user_group) {
                 return;
             }
             //Create the new model

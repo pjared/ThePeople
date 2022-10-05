@@ -7,7 +7,7 @@
         <x-slot:content>
             @if ($this->candidate->previous_positions_count >= 1)
                 <div class="flex flex-col gap-4">
-                    @foreach($previous_positions as $position)
+                    @foreach ($previous_positions as $position)
                         <div class="flex flex-row justify-center items-center gap-2">
                             <div class="flex flex-col w-full items-start">
                                 <h3 class="w-fit capitalize text-lg font-semibold">
@@ -17,12 +17,12 @@
                                 <x-show-more :content="$position->description" />
                             </div>
                             @auth
-                                {{-- {{dd($flags->where('flaggable_type', 'App\Models\CandidateOfficePositions')->where('flaggable_id', 2), $previous_positions)}} --}}
+                                {{-- {{dd($flags->where('flaggable_type', 'App\Models\CandidateOfficePositions')->where('flaggable_id', 2), $previous_positions) }} --}}
                                 <livewire:flag-content
                                     :flag_id="$this->flags->where('flaggable_type', 'App\Models\CandidateOfficePositions')->firstWhere('flaggable_id', $position->id) ? $this->flags->where('flaggable_type', 'App\Models\CandidateOfficePositions')->firstWhere('flaggable_id', $position->id)->id ? null"
                                     :content="$position"
                                     :side="'below'"
-                                    :wire:key="'position-'.$position->id" />
+                                    :wire:key="'position-' .$position->id" />
                             @else
                                 <label class="fill-transparent" for="signup-modal">
                                     @include('icons.flag')

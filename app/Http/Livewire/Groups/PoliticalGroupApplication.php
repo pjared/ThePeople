@@ -23,7 +23,7 @@ class PoliticalGroupApplication extends Component
     public function apply()
     {
         //Make sure that someone doesn't submit a request if they have an application
-        if(!is_null($this->previous_application)) {
+        if(! is_null($this->previous_application)) {
             return;
         }
 

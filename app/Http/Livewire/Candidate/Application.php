@@ -33,7 +33,7 @@ class Application extends Component
         $this->validate();
 
         //Make sure that someone doesn't submit a request if they have an application
-        if(!is_null($this->previous_application)) {
+        if(! is_null($this->previous_application)) {
             return;
         }
 

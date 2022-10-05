@@ -31,7 +31,7 @@ class PoliticalGroupEventsSeeder extends Seeder
                 'event_name' => $name,
                 'event_location' => 'My House',
                 'event_description' => $event_desc[$i],
-                'event_date' => Carbon::now()->addDays(rand(1, 50))
+                'event_date' => Carbon::now()->addDays(rand(1, 50)),
             ]);
         }
     }

@@ -44,7 +44,7 @@ class BallotList extends Component
     public function load_ballots()
     {
         $this->ballot_count += 10;
-        if($this->ballot_count >= count($this->all_ballots)) {
+        if ($this->ballot_count >= count($this->all_ballots)) {
             $this->more_ballots = false;
         }
     }
@@ -94,7 +94,7 @@ class BallotList extends Component
         $precincts = BallotPrecinct::where('precinct_id', $this->user_precinct)->with(['ballot' => function($query){
             $query->withCount('candidates');
             $query->with('office', 'location');
-        }])->get();
+        }],)->get();
         $this->precincts_loaded = true;
         return $precincts;
     }

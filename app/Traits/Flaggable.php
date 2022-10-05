@@ -20,7 +20,7 @@ trait Flaggable
     public function temp_flag() {
         return [
             'flaggable_id' => $this->getKey(),
-            'flaggable_type' => get_class()
+            'flaggable_type' => get_class(),
         ];
     }
 
@@ -52,7 +52,7 @@ trait Flaggable
             'note' => $note,
             'flaggable_id' => $this->getKey(),
             'flaggable_type' => get_class(),
-            'flag_type' => $flag_type
+            'flag_type' => $flag_type,
         ]);
 
         return $this->flags()->save($flag);

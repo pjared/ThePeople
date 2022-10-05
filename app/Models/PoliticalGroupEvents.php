@@ -20,8 +20,7 @@ class PoliticalGroupEvents extends Model
         'event_description',
         'event_date',
     ];
-
     protected $casts = [
-        'event_date' => 'datetime'
+        'event_date' => 'datetime',
     ];
 }

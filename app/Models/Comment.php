@@ -17,9 +17,8 @@ class Comment extends Model
         'reply',
         'has_seen',
     ];
-
     protected $casts = [
-        'is_approved' => 'boolean'
+        'is_approved' => 'boolean',
     ];
 
     public function scopeApproved($query)
@@ -61,7 +60,7 @@ class Comment extends Model
             return config('comments.user_model');
         }
 
-        if (!is_null(config('auth.providers.users.model'))) {
+        if (! is_null(config('auth.providers.users.model'))) {
             return config('auth.providers.users.model');
         }
 
