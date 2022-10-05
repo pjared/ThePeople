@@ -27,10 +27,8 @@ class CandidateResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\DatePicker::make('dob')
-                    ->required(),
-                Forms\Components\DatePicker::make('signup_date')
-                    ->required(),
+                Forms\Components\DatePicker::make('dob'),
+                Forms\Components\DatePicker::make('signup_date'),
                 Forms\Components\Textarea::make('bio')
                     ->maxLength(65535),
                 Forms\Components\TextInput::make('state')
@@ -54,8 +52,7 @@ class CandidateResource extends Resource
                 Forms\Components\TextInput::make('user_id'),
                 Forms\Components\TextInput::make('site_link')
                     ->maxLength(255),
-                Forms\Components\TextInput::make('ballot_id')
-                    ->required(),
+                Forms\Components\TextInput::make('ballot_id'),
                 Forms\Components\Toggle::make('show')
                     ->required(),
                 Forms\Components\TextInput::make('order')
