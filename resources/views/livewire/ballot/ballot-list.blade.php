@@ -143,7 +143,7 @@
         </div>
     @endif
     @if ($more_ballots)
-        <div class='text-center mb-8 underline cursor-pointer' wire:click='load_ballots'>
+        <div class='text-center mb-8 link' wire:click='load_ballots'>
             Load More
         </div>
     @else
@@ -151,6 +151,12 @@
             All Ballots Loaded. Want to add another one? Contact us
         </div>
     @endif
+
+    @guest
+        <div class='text-center text-gray-400' wire:click='load_ballots'>
+            <p>Don't know which elections will appear on your ballot? <a class='link' href='{{ route('register') }}'>Register</a> to find your voter precinct and upcoming elections</p>
+        </div>
+    @endguest
 
 
     @if (request()->routeIs('welcome') || request()->routeIs('home'))
