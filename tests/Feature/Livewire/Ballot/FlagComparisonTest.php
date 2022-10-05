@@ -3,8 +3,6 @@
 namespace Tests\Feature\Livewire\Ballot;
 
 use App\Http\Livewire\Ballot\FlagComparison;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Livewire\Livewire;
 use Tests\TestCase;
 

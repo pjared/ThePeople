@@ -2,17 +2,17 @@
 
 namespace App\Filament\Resources\ManualCandidateResource\Pages;
 
-use Filament\Tables;
 use App\Filament\Resources\ManualCandidateResource;
 use App\Jobs\UpdateBallotCache;
 use App\Models\Candidate;
 use App\Models\CandidatePhoto;
 use App\Models\ManualCandidate;
-use Filament\Resources\Pages\Page;
-use Filament\Pages\Actions\Action;
-use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms;
 use Filament\Notifications\Notification;
+use Filament\Pages\Actions\Action;
+use Filament\Resources\Pages\Page;
+use Filament\Tables;
+use Illuminate\Database\Eloquent\Builder;
 use Spatie\ImageOptimizer\OptimizerChainFactory;
 
 class AddManualCandidatePhotos extends Page implements Tables\Contracts\HasTable

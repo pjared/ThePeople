@@ -2,12 +2,12 @@
 
 namespace App\Filament\Resources\ManualCandidateResource\Pages;
 
-use Filament\Tables;
 use App\Filament\Resources\ManualCandidateResource;
 use App\Models\CandidateRequiredStance;
 use App\Models\ManualCandidate;
 use Filament\Forms;
 use Filament\Resources\Pages\Page;
+use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 
 class AddCandidateRequiredStance extends Page implements Tables\Contracts\HasTable

@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Exception;
 use Illuminate\Database\Eloquent\Model;
-use BeyondCode\Comments\Traits\HasComments;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Comment extends Model

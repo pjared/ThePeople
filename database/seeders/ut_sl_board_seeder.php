@@ -2,11 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Ballot;
 use App\Models\Location;
 use App\Models\PublicOfficePosition;
-use Carbon\Carbon;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ut_sl_board_seeder extends Seeder

@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CandidateOpinionResource\Pages;
-use App\Filament\Resources\CandidateOpinionResource\RelationManagers;
 use App\Models\CandidateOpinion;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -11,7 +10,6 @@ use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CandidateOpinionResource extends Resource
 {

@@ -1,4 +1,3 @@
-
 <x-app-layout>
     <div class="flex flex-row">
         @include('candidate.aside')

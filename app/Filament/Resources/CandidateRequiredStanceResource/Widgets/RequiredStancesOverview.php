@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources\CandidateRequiredStanceResource\Widgets;
 
-use Illuminate\Contracts\View\View;
 use Filament\Widgets\Widget;
 
 class RequiredStancesOverview extends Widget

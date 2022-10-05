@@ -3,15 +3,12 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ControversialOpinionResource\Pages;
-use App\Filament\Resources\ControversialOpinionResource\RelationManagers;
 use App\Models\ControversialOpinion;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ControversialOpinionResource extends Resource
 {

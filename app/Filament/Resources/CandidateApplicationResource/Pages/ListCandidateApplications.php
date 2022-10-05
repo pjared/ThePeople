@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\CandidateApplicationResource\Pages;
 
 use App\Filament\Resources\CandidateApplicationResource;
-use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
 
 class ListCandidateApplications extends ListRecords

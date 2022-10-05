@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources\CandidateEventResource\Widgets;
 
-use Illuminate\Contracts\View\View;
 use Filament\Widgets\Widget;
+use Illuminate\Contracts\View\View;
 
 class CandidateEventOverview extends Widget
 {

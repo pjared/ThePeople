@@ -2,15 +2,15 @@
 
 namespace App\Filament\Resources\ManualCandidateResource\Pages;
 
-use Filament\Tables;
 use App\Filament\Resources\ManualCandidateResource;
 use App\Models\Candidate;
 use App\Models\CandidateStance;
 use App\Models\ManualCandidate;
-use Filament\Resources\Pages\Page;
-use Filament\Pages\Actions\Action;
-use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms;
+use Filament\Pages\Actions\Action;
+use Filament\Resources\Pages\Page;
+use Filament\Tables;
+use Illuminate\Database\Eloquent\Builder;
 
 class AddCandidateStance extends Page implements Tables\Contracts\HasTable
 {

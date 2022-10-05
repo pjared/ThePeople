@@ -6,7 +6,6 @@ use App\Models\Ballot;
 use App\Models\BallotPrecinct;
 use App\Models\Location;
 use App\Models\PublicOfficePosition;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Cache;
 

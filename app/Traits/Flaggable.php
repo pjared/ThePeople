@@ -4,7 +4,6 @@ namespace App\Traits;
 
 use App\Models\Flag;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait Flaggable
 {

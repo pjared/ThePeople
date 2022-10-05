@@ -2,13 +2,13 @@
 
 namespace App\Filament\Resources\ManualCandidateResource\Pages;
 
-use Filament\Tables;
 use App\Filament\Resources\ManualCandidateResource;
 use App\Models\CandidatePromise;
 use App\Models\ManualCandidate;
 use Filament\Forms;
 use Filament\Pages\Actions\Action;
 use Filament\Resources\Pages\Page;
+use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 
 class AddCandidatePromises extends Page implements Tables\Contracts\HasTable

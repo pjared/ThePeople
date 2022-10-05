@@ -3,15 +3,12 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CandidateApplicationResource\Pages;
-use App\Filament\Resources\CandidateApplicationResource\RelationManagers;
 use App\Models\CandidateApplication;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CandidateApplicationResource extends Resource
 {

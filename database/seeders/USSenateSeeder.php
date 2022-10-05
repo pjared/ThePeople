@@ -14,7 +14,6 @@ use App\Models\Location;
 use App\Models\ManualCandidate;
 use App\Models\PublicOfficePosition;
 use Carbon\Carbon;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
 

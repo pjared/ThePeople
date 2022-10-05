@@ -3,15 +3,12 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CandidatePermaLinkResource\Pages;
-use App\Filament\Resources\CandidatePermaLinkResource\RelationManagers;
 use App\Models\CandidatePermaLink;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CandidatePermaLinkResource extends Resource
 {

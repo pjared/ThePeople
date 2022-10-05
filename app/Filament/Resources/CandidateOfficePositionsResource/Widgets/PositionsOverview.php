@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources\CandidateOfficePositionsResource\Widgets;
 
-use Illuminate\Contracts\View\View;
 use Filament\Widgets\Widget;
+use Illuminate\Contracts\View\View;
 
 class PositionsOverview extends Widget
 {

@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources\CandidatePhotoResource\Widgets;
 
-use Illuminate\Contracts\View\View;
 use Filament\Widgets\Widget;
+use Illuminate\Contracts\View\View;
 
 class CandidatePhotoOverview extends Widget
 {

@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\BallotResource\Pages;
-use App\Filament\Resources\BallotResource\RelationManagers;
 use App\Jobs\UpdateBallotCache;
 use App\Models\Ballot;
 use Filament\Forms;
@@ -11,8 +10,6 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class BallotResource extends Resource
 {

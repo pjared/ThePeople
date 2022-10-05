@@ -7,7 +7,6 @@ use App\Filament\Widgets\EditPersonalInfo;
 use App\Filament\Widgets\EditProfileImage;
 use Filament\Pages\Page;
 
-
 class CandidatePersonalInfo extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-document-text';

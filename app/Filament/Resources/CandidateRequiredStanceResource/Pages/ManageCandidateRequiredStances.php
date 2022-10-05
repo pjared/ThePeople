@@ -4,7 +4,6 @@ namespace App\Filament\Resources\CandidateRequiredStanceResource\Pages;
 
 use App\Filament\Resources\CandidateRequiredStanceResource;
 use App\Filament\Resources\CandidateRequiredStanceResource\Widgets\RequiredStancesOverview;
-use Filament\Pages\Actions;
 use Filament\Resources\Pages\ManageRecords;
 
 class ManageCandidateRequiredStances extends ManageRecords

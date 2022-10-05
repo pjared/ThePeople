@@ -12,6 +12,7 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Scout\Searchable;
+
 /**
  * A candidate is someone currently running for office.
  */
