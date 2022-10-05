@@ -44,7 +44,7 @@
                     @endrole
                 @endif
 
-                @if (auth()->user()->hasVerifiedEmail())
+                {{-- @if (auth()->user()->hasVerifiedEmail())
                     <div class="text-center mt-6">
                         @unlessrole('organizer|organizerAdmin')
                             <div class="flex flex-col items-center justify-center mt-6">
@@ -67,7 +67,7 @@
                             </ul>
                         </div>
                     @endrole
-                @endif
+                @endif --}}
 
 
                 <x-jet-section-border />
