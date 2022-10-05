@@ -25,24 +25,24 @@
             </li>
             @foreach ($candidate_searches as $result)
                 <li class='list-item border-b-2 border-l-2 border-r-2 border-gray-300'>
-                    <form class='p-2' action="/candidate/profile/{{$result->slug}}" method="GET">
+                    <form class='p-2' action="/candidate/profile/{{ $result->slug}}" method="GET">
                         <button class='flex flex-col pl-2 w-full h-full text-start'>
-                            <a href='/candidate/profile/{{$result->slug}}' class='link underline'>{{$result->name}}</a>
-                            <p class='text-gray-400'>{{$result->state}}</p>
+                            <a href='/candidate/profile/{{ $result->slug}}' class='link underline'>{{ $result->name}}</a>
+                            <p class='text-gray-400'>{{ $result->state}}</p>
                         </button>
                     </form>
                 </li>
             @endforeach
             @foreach ($ballot_searches as $result)
                 <li class='list-item border-b-2 border-l-2 border-r-2 border-gray-300 p-2'>
-                    <form class='p-2' action="/ballot/{{$result->slug}}" method="GET">
+                    <form class='p-2' action="/ballot/{{ $result->slug}}" method="GET">
                         <button class='w-full h-full text-start'>
-                            <a href='/ballot/{{$result->slug}}' class='link underline'>{{$result->name}}</a>
+                            <a href='/ballot/{{ $result->slug}}' class='link underline'>{{ $result->name}}</a>
                         </button>
                     </form>
                 </li>
             @endforeach
-            @if(count($candidate_searches) == 0 && count($ballot_searches) == 0 && !empty($search))
+            @if (count($candidate_searches) == 0 && count($ballot_searches) == 0 && !empty($search))
                 <p class='p-2'>We couldn't find any results for your search. For the upcoming elections on November 8th, 2022 we are focusing pimarily on the elections for the Provo/Orem area. If you'd like to see your upcoming election appear here, please contact us at thepeople@whatsinyourballot.com and we'll see what we can do!</p>
             @endif
         </ul>
@@ -50,14 +50,14 @@
 
     {{-- YOUR LIST --}}
     @auth
-        @if($this->user_precinct)
+        @if ($this->user_precinct)
             <div class="text-xl font-roboto_mono text-gray-400 text-center">
                 Ballots for Your Precinct
             </div>
             <div class="flex flex-col md:flex-row flex-wrap gap-8 w-3/4 items-center justify-center">
                 @foreach ($this->state_ballots as $ballot)
-                    @if($ballot->candidates_count >= 1)
-                        <form action="/ballot/{{$ballot->slug}}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
+                    @if ($ballot->candidates_count >= 1)
+                        <form action="/ballot/{{ $ballot->slug}}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
                             <button class="background-card shadow-md">
                                 <div class="text-center p-0">
                                     <h2 class="card-title justify-center">
@@ -65,11 +65,11 @@
                                             rel="next prefetch canonical"
                                             class="underline text-inherit font-mono tracking-tighter font-light"
                                             type="text/html"
-                                            href="/ballot/{{$ballot->slug}}">{{$ballot->location->state}} {{$ballot->office->name}}, {{$ballot->location->name}}</a>
+                                            href="/ballot/{{ $ballot->slug}}">{{ $ballot->location->state}} {{ $ballot->office->name}}, {{ $ballot->location->name}}</a>
                                     </h2>
                                     <div x-show="show" class="uppercase mt-2 text-sm font-mono text-gray-400 justify-center">
                                         <p>
-                                            VOTING DATE: {{$ballot->voting_date->format('m/d/Y')}}
+                                            VOTING DATE: {{ $ballot->voting_date->format('m/d/Y')}}
                                         </p>
                                     </div>
                                 </div>
@@ -79,8 +79,8 @@
                 @endforeach
                 @foreach ($this->user_ballots as $precinct)
                     {{-- {{dd($this->user_ballots)}} --}}
-                    @if($precinct->ballot->candidates_count >= 1)
-                        <form action="/ballot/{{$precinct->ballot->slug}}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
+                    @if ($precinct->ballot->candidates_count >= 1)
+                        <form action="/ballot/{{ $precinct->ballot->slug }}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
                             <button class="background-card shadow-md">
                                 <div class="text-center p-0">
                                     <h2 class="card-title justify-center">
@@ -88,11 +88,11 @@
                                             rel="next prefetch canonical"
                                             class="underline text-inherit font-mono tracking-tighter font-light"
                                             type="text/html"
-                                            href="/ballot/{{$precinct->ballot->slug}}">{{$precinct->ballot->location->state}} {{$precinct->ballot->office->name}}, {{$precinct->ballot->location->name}}</a>
+                                            href="/ballot/{{ $precinct->ballot->slug}}">{{ $precinct->ballot->location->state}} {{ $precinct->ballot->office->name}}, {{ $precinct->ballot->location->name}}</a>
                                     </h2>
                                     <div x-show="show" class="uppercase mt-2 text-sm font-mono text-gray-400 justify-center">
                                         <p>
-                                            VOTING DATE: {{$precinct->ballot->voting_date->format('m/d/Y')}}
+                                            VOTING DATE: {{ $precinct->ballot->voting_date->format('m/d/Y') }}
                                         </p>
                                     </div>
                                 </div>
@@ -100,7 +100,7 @@
                         </form>
                     @endif
                 @endforeach
-                @if(count($this->user_ballots) == 0)
+                @if (count($this->user_ballots) == 0)
                     <div class="text-lg font-roboto_mono text-gray-400 text-center">
                         We don't have any ballots for your precinct. Either there are no elections going on in your area, or your precinct is incorrect. If resetting your precinct doesn't work, contact us.
                     </div>
@@ -116,11 +116,11 @@
     @endauth
 
     {{-- BALLOT LIST --}}
-    @if(count($ballots) >= 1)
+    @if (count($ballots) >= 1)
         <div class="flex flex-col md:flex-row flex-wrap gap-8 w-3/4 items-center justify-center md:pb-4">
             @foreach ($ballots as $ballot)
-                @if($ballot->candidates_count >= 1)
-                    <form action="{{route('ballot', ['ballot' => $ballot->slug])}}" method="GET" class="hover:scale-110" x-data="{ show: window.innerWidth <= 768 }" @mouseleave="show = window.innerWidth <= 768" @mouseover="show = true">
+                @if ($ballot->candidates_count >= 1)
+                    <form action="{{ route('ballot', ['ballot' => $ballot->slug]) }}" method="GET" class="hover:scale-110" x-data="{ show: window.innerWidth <= 768 }" @mouseleave="show = window.innerWidth <= 768" @mouseover="show = true">
                         <button class="background-card shadow-md">
                             <div class="text-center p-0">
                                 <h2 class="card-title justify-center">
@@ -128,11 +128,11 @@
                                         rel="next prefetch canonical"
                                         class="underline text-inherit font-mono tracking-tighter font-light"
                                         type="text/html"
-                                        href="{{route('ballot', ['ballot' => $ballot->slug])}}">{{$ballot->location->state}} {{$ballot->office->name}}, {{$ballot->location->name}}</a>
+                                        href="{{route('ballot', ['ballot' => $ballot->slug])}}">{{ $ballot->location->state}} {{ $ballot->office->name }}, {{ $ballot->location->name }}</a>
                                 </h2>
                                 <div x-show="show" class="uppercase mt-2 text-sm font-mono text-gray-400 justify-center">
                                     <p>
-                                        VOTING DATE: {{$ballot->voting_date->format('m/d/Y')}}
+                                        VOTING DATE: {{ $ballot->voting_date->format('m/d/Y') }}
                                     </p>
                                 </div>
                             </div>
@@ -142,7 +142,7 @@
             @endforeach
         </div>
     @endif
-    @if($more_ballots)
+    @if ($more_ballots)
         <div class='text-center mb-8 underline cursor-pointer' wire:click='load_ballots'>
             Load More
         </div>
@@ -153,13 +153,13 @@
     @endif
 
 
-    @if(request()->routeIs('welcome') || request()->routeIs('home'))
+    @if (request()->routeIs('welcome') || request()->routeIs('home'))
         @section('description')
             Welcome to the home page of ThePeople! Here you can navigate to a ballot from the list provided. The current ballots we have are:
-            {{$this->ballot_list}}
+            {{ $this->ballot_list }}
         @endsection
     @endif
     @section('keywords')
-        {{$this->ballot_list}}
+        {{ $this->ballot_list }}
     @endsection
 </div>

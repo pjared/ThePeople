@@ -2,9 +2,9 @@
     <div class="collapse collapse-arrow w-full" :class="show_reasoning && 'overflow-visible'" x-transition>
         <input type="checkbox" x-on:click="show_reasoning = ! show_reasoning"/>
         <div class="flex collapse-title text-md font-medium items-center underline">
-            {{$label}}
+            {{ $label }}
         </div>
-        @if($reasoning)
+        @if ($reasoning)
             <div class="collapse-content" :class="show_reasoning && 'overflow-visible'">
                 <x-show-more :content="$reasoning"/>
             </div>
@@ -13,6 +13,6 @@
     </div>
     @include('components.comparison-flag')
     <div>
-        Your Note: {{$note}}
+        Your Note: {{ $note }}
     </div>
 </div>

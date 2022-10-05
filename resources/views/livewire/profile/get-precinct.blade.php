@@ -8,9 +8,9 @@
     </x-slot>
 
     <x-slot name="form">
-        @if($precinct)
+        @if ($precinct)
             <p class='text-gray-700 col-span-6'>
-                Your current precinct is: <span class='font-semibold'>{{$precinct}}</span>
+                Your current precinct is: <span class='font-semibold'>{{ $precinct }}</span>
             </p>
         @else
             <p class='text-gray-400 col-span-6'>
@@ -53,7 +53,7 @@
         </div>
 
 
-        @if($not_found)
+        @if ($not_found)
             <p class='text-gray-700 col-span-6'>We couldn't find a precinct for that address. Check the fields and add a zip code.</p>
         @endif
     </x-slot>

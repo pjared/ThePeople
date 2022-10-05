@@ -18,7 +18,7 @@
                 <div class="collapse collapse-arrow items-center p-0">
                     <input type="checkbox" />
                     <div class="collapse-title text-md font-medium text-center pl-0 pr-0 pb-0">
-                        <h3 class="text-lg font-medium">{{$opinion->name}}</h3>
+                        <h3 class="text-lg font-medium">{{ $opinion->name}}</h3>
                     </div>
                     <div class="collapse-content">
                         <div class="flex flex-col items-start justify-items-start">
@@ -29,7 +29,7 @@
                                             <input type="checkbox" />
                                             <div class="collapse-title text-md font-medium text-left">
                                                 <h4>
-                                                    <b>{{$required_stance->label}}</b>
+                                                    <b>{{ $required_stance->label}}</b>
                                                     <span class='text-red-500'>*</span>
                                                 </h4>
                                             </div>
@@ -60,7 +60,7 @@
                                         <div class="collapse collapse-arrow">
                                             <input type="checkbox" />
                                             <div class="collapse-title text-md font-medium text-left">
-                                                <h4><b>{{$candidate_stance->stance_label}}</b></h4>
+                                                <h4><b>{{ $candidate_stance->stance_label}}</b></h4>
                                             </div>
                                             <div class="collapse-content">
                                                 <x-show-more :content="$candidate_stance->stance_reasoning" />
@@ -88,7 +88,7 @@
             @else
             @endif --}}
 
-            <h3 class="text-lg " :class="{ 'font-bold': hovering }">{{$opinion->name}}</h3>
+            <h3 class="text-lg " :class="{ 'font-bold': hovering }">{{ $opinion->name}}</h3>
             <div class="flex flex-col items-start justify-items-start">
                 {{-- Required Stances --}}
                 @foreach ($opinion->required_stances as $required_stance)
@@ -97,7 +97,7 @@
                             <div class="collapse collapse-arrow">
                                 <input type="checkbox" />
                                 <div class="collapse-title text-md font-medium text-left">
-                                    <h4 class="text-lg" :class="{ 'font-semibold': hovering }">{{$required_stance->label}}
+                                    <h4 class="text-lg" :class="{ 'font-semibold': hovering }">{{ $required_stance->label}}
                                         <span x-show='hovering' class='text-red-500'>*</span>
                                     </h4>
                                 </div>
@@ -128,7 +128,7 @@
                             <div class="collapse collapse-arrow">
                                 <input type="checkbox" />
                                 <div class="collapse-title text-md font-medium text-left">
-                                    <h4 class="text-lg" :class="{ 'font-semibold': hovering }">{{$candidate_stance->stance_label}}</h4>
+                                    <h4 class="text-lg" :class="{ 'font-semibold': hovering }">{{ $candidate_stance->stance_label}}</h4>
                                 </div>
                                 <div class="collapse-content text-start">
                                     <x-show-more :content="$candidate_stance->stance_reasoning" />

@@ -4,10 +4,10 @@
             <div
                 class='flex flex-col'>
                 <div class='text-xl underline'>
-                    {{$ballot_name}}
+                    {{ $ballot_name}}
                 </div>
                 <div class='text-md'>
-                    {{$candidate_name}}
+                    {{ $candidate_name}}
                 </div>
             </div>
         @endforeach
@@ -19,7 +19,7 @@
 | Ballot Name | Candidate Name  |
 |:-------------:|:-------------:|
 @foreach ($ballot_list as $ballot_name => $candidate_name)
-| {{$ballot_name}} | {{$candidate_name}} |
+| {{ $ballot_name }} | {{ $candidate_name }} |
 @endforeach
 @endcomponent
 @endcomponent

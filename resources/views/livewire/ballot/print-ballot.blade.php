@@ -2,16 +2,16 @@
     class='flex flex-row w-full justify-center pt-4 gap-4'
     x-data="ballot">
 
-    @if(count($votes) != 0)
+    @if (count($votes) != 0)
         <div class='background-card flex flex-col h-fit form-control'>
             <span>Ballots You've Voted On</span>
             @foreach ($votes as $i => $vote)
                 <label class="label cursor-pointer">
-                    <span class="label-text text-xl">{{$vote->ballot->name}}</span>
+                    <span class="label-text text-xl">{{ $vote->ballot->name }}</span>
                     <input
                         type="checkbox"
-                        @click="toggle('{{$i}}')"
-                        checked="checked{{$i}}"
+                        @click="toggle('{{ $i }}')"
+                        checked="checked{{ $i }}"
                         class="checkbox checkbox-primary" />
                 </label>
             @endforeach
@@ -25,16 +25,16 @@
             @foreach ($votes as $i => $vote)
                 <div
                     class='flex flex-col'
-                    x-show="!is_selected('{{$i}}')">
+                    x-show="!is_selected('{{ $i }}')">
                     <div class='text-xl underline'>
-                        {{$vote->ballot->name}}
+                        {{ $vote->ballot->name }}
                     </div>
                     <div class='text-md'>
-                        {{$vote->candidate->name}}
+                        {{ $vote->candidate->name }}
                     </div>
                 </div>
             @endforeach
-            @if(count($votes) == 0)
+            @if (count($votes) == 0)
                 <p>You haven't votes on any ballots yet! To get started, click on the home tab in the top bar and choose the candidates you plan to vote for. Come back to this page once you've finished</p>
             @endif
         </div>
@@ -43,7 +43,7 @@
                 {{ __('Ballot has been sent!') }}
             </p>
         @endif
-        @if(count($votes) != 0)
+        @if (count($votes) != 0)
             <button
                 type="button"
                 {{-- wire:click="emailUserBallot" --}}

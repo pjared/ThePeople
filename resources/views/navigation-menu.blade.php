@@ -38,7 +38,8 @@
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->
                 {{-- TODO - ONLY SHOW THIS IF CANDIDATE --}}
-                {{-- @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
+                {{--
+                @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ml-3 relative">
                         <x-jet-dropdown align="right" width="60">
                             <x-slot name="trigger">
@@ -85,7 +86,8 @@
                             </x-slot>
                         </x-jet-dropdown>
                     </div>
-                @endif --}}
+                @endif
+                --}}
 
                 @role('admin')
                     <x-jet-nav-link href="/admin" :active="request()->is('admin/*')">
@@ -138,11 +140,13 @@
                                 {{ __('Print Your Voting List') }}
                             </x-jet-dropdown-link>
 
-                            {{-- @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                            {{--
+                                @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
                                     {{ __('API Tokens') }}
                                 </x-jet-dropdown-link>
-                            @endif --}}
+                                @endif
+                            --}}
 
                             <div class="border-t border-gray-100"></div>
 

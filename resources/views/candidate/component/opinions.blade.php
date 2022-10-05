@@ -1,5 +1,5 @@
 {{-- OTHER OPINIONS --}}
-@if($this->candidate->opinions_count >= 1)
+@if ($this->candidate->opinions_count >= 1)
     <article class="flex flex-col md:w-11/12 items-center">
         <x-dropdown-card  :classes="'shadow-xl'">
             @isset($no_controversials)
@@ -19,7 +19,7 @@
                                 <h3 class="w-fit capitalize text-lg font-semibold">{{ $opinion->name }}</h3>
                                 <x-show-more :content="$opinion->stance" />
                             </div>
-                            {{-- <p>{{$opinion->name}}</p> --}}
+                            {{-- <p>{{ $opinion->name}}</p> --}}
                             @auth
                                 <livewire:flag-content
                                         :flag_id="$this->flags->where('flaggable_type', 'App\Models\CandidateOpinion')->firstWhere('flaggable_id', $opinion->id) ? $this->flags->where('flaggable_type', 'App\Models\CandidateOpinion')->firstWhere('flaggable_id', $opinion->id)->id : null"

@@ -4,7 +4,7 @@
 
     >
     <span x-text="isCollapsed ? originalContent : content" class='text-gray-700'>
-        {{$content}}
+        {{ $content }}
     </span>
     <span x-show="originalContent.length > maxLength && !isCollapsed">
         ...

@@ -2,7 +2,7 @@
     {{-- Breadcrumbs --}}
     <div class="text-sm breadcrumbs p-4">
         <ul>
-          <li><a href="{{route('welcome')}}">Home</a></li>
+          <li><a href="{{ route('welcome') }}">Home</a></li>
           <li><b>Ballot ({{ $ballot->location->name }} {{ $ballot->office->name }})</b></li>
         </ul>
     </div>
@@ -15,7 +15,7 @@
 
         {{-- TODO: Might have to make this it's own scrollable div --}}
         <div class="flex flex-col flex-1 sm:w-full md:mr-6 md:w-4/5 justify-center gap-4 items-center">
-            @if($ballot->has_single_runner)
+            @if ($ballot->has_single_runner)
                 <div class='flex w-full justify-center'>
                     <div class="alert alert-info shadow-lg w-4/5">
                         <div class='w-full'>
@@ -31,7 +31,7 @@
 
             @role('organizerAdmin')
                 <div wire:init='init'>
-                    @if($page_loaded)
+                    @if ($page_loaded)
                             <livewire:groups.group-ballot :ballot="$ballot"/>
                     @endif
                 </div>
@@ -45,19 +45,19 @@
     @endguest
 
     @section('page-title')
-        {{$ballot->location->name}} {{$ballot->office->name}} Ballot
+        {{ $ballot->location->name }} {{ $ballot->office->name }} Ballot
     @endsection
     @section('description')
-        The mock-ballot of {{$ballot->name}}. Candidates here have the ability to create their own profiles, however if a candidate has not created a profile it's possible that we have created one for them.
+        The mock-ballot of {{ $ballot->name }}. Candidates here have the ability to create their own profiles, however if a candidate has not created a profile it's possible that we have created one for them.
         This ballot currently has the following candidates:
         @foreach ($ballot->candidates as $candidate)
-            {{$candidate->name}},
+            {{ $candidate->name }},
         @endforeach
     @endsection
     @section('keywords')
-        {{$ballot->name}}
+        {{ $ballot->name }}
         @foreach ($ballot->candidates as $candidate)
-            {{$candidate->name}},
+            {{ $candidate->name }},
         @endforeach
     @endsection
 </x-app-layout>

@@ -4,7 +4,7 @@
             <label for="stateInput" class="locationInput">State: </label>
             <input type="search" wire:model="state_input" class="w-40 mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="location" name="stateInput">
             <ul>
-                @if(count($states) < 10)
+                @if (count($states) < 10)
                     @foreach ($states as $state)
                         <li>{{ $state->name }}</li>
                     @endforeach
@@ -23,7 +23,7 @@
 </div>
 
 @push('scripts')
-    <script>        
+    <script>
         // PASS LOCATION FROM BALLOT
         // @isset($location_type)
         //     var location_type = {!! json_encode($location_type, JSON_HEX_TAG) !!};
@@ -37,7 +37,7 @@
         //         case 'city':
         //             $("#cityInput").val({!! json_encode($location) !!});
         //             break;
-        //     }            
+        //     }
         // @endisset
     </script>
 @endpush

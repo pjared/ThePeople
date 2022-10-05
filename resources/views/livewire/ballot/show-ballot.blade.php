@@ -6,7 +6,7 @@
 
         {{-- TODO: Might have to make this it's own scrollable div --}}
         <div class="flex flex-col flex-1 sm:w-full md:mr-6 md:w-4/5 justify-center gap-4 items-center">
-            @if($this->ballot->has_single_runner)
+            @if ($this->ballot->has_single_runner)
                 <div class='flex w-full justify-center'>
                     <div class="alert alert-info shadow-lg w-4/5">
                         <div class='w-full'>
@@ -22,7 +22,7 @@
 
             @role('organizerAdmin')
                 <div wire:init='init'>
-                    @if($page_loaded)
+                    @if ($page_loaded)
                             <livewire:groups.group-ballot :ballot="$this->ballot"/>
                     @endif
                 </div>

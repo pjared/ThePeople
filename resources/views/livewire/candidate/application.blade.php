@@ -6,13 +6,13 @@
             </div>
         @endif
     </div>
-    @if($previous_application)
+    @if ($previous_application)
         <div class="card flex flex-col w-2/5 gap-12">
             <p>
-                You submitted an application at {{$previous_application->created_at}}.
+                You submitted an application at {{ $previous_application->created_at }}.
             </p>
             <p>
-                The current status is: <b>{{$previous_application->status}}</b>.
+                The current status is: <b>{{ $previous_application->status }}</b>.
                 <br>
                 You will be notified when this is updated.
             </p>

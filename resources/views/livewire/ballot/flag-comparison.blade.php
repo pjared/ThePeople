@@ -5,14 +5,14 @@
                 {{-- PROFILE PICTURE --}}
                 <figure>
                     <img
-                        src="{{ $candidate->profile_photo_url ?? ''}} "
+                        src="{{ $candidate->profile_photo_url ?? '' }} "
                         alt="{{ $candidate->name }}"
                         class="h-28 w-28 mask mask-circle"
                         loading='lazy'>
                 </figure>
                 {{-- NAME --}}
                 <div class="flex grow flex-col md:flex-row font-courier">
-                    <h3 class="text-xl"><a class='link' href="/candidate/profile/{{$candidate->slug}}">{{ $candidate->name }}</a></h3>
+                    <h3 class="text-xl"><a class='link' href="/candidate/profile/{{ $candidate->slug }}">{{ $candidate->name }}</a></h3>
                 </div>
 
                 {{-- CHECKBOX --}}

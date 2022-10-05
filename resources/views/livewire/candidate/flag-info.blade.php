@@ -3,7 +3,7 @@
         <p class='w-3/4 text-center'>You haven't flagged anything from this candidates profile. Click on their name to start.</p>
     @endif
 
-    @if(count($promise_flags) >= 1)
+    @if (count($promise_flags) >= 1)
         <div class='w-11/12 h-fit p-2' x-data="{ show_flow : false}">
             <div class="collapse collapse-arrow" :class="show_flow && 'overflow-visible'" x-transition>
                 <input type="checkbox" x-on:click="show_flow = ! show_flow"/>
@@ -26,7 +26,7 @@
         </div>
     @endif
 
-    @if(count($opinion_flags) >= 1)
+    @if (count($opinion_flags) >= 1)
         <div class='w-full h-fit p-2' x-data="{ show_flow : false}">
             <div class="collapse collapse-arrow" :class="show_flow && 'overflow-visible'" x-transition>
                 <input type="checkbox" x-on:click="show_flow = ! show_flow"/>
@@ -38,7 +38,7 @@
                     <div class="flex flex-col gap-4">
                         @foreach ($opinion_flags as $name => $opinion_flag)
                             <div class='font-bold text-center'>
-                                <span>Opinion Name: {{$name}}</span>
+                                <span>Opinion Name: {{ $name }}</span>
                             </div>
                             @foreach ($opinion_flag as $flag)
                                 <x-show-reasoning
@@ -58,7 +58,7 @@
     {{--
         @foreach ($candidate->opinions as $opinion)
             <div class="flex flex-row justify-center gap-4">
-                <span>{{$opinion->name}}</span>
+                <span>{{ $opinion->name}}</span>
                 @auth
                     <livewire:flag
                         :type="'opinion'"
@@ -73,7 +73,7 @@
             </div>
         @endforeach
     --}}
-    @if(count($other_opinion_flags) >= 1)
+    @if (count($other_opinion_flags) >= 1)
         <div class='w-11/12 h-fit p-2' x-data="{ show_flow : false}">
             <div class="collapse collapse-arrow" :class="show_flow && 'overflow-visible'" x-transition>
                 <input type="checkbox" x-on:click="show_flow = ! show_flow"/>
@@ -96,7 +96,7 @@
         </div>
     @endif
 
-    @if(count($position_flags) >= 1)
+    @if (count($position_flags) >= 1)
         <div class='w-full h-fit p-2' x-data="{ show_flow : false}">
             <div class="collapse collapse-arrow" :class="show_flow && 'overflow-visible'" x-transition>
                 <input type="checkbox" x-on:click="show_flow = ! show_flow"/>

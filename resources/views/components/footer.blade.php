@@ -12,7 +12,7 @@
     </div>  --}}
     <div>
         <span class="footer-title">Company</span>
-        <a class="link link-hover" href="{{route('about-us')}}">About us</a>
+        <a class="link link-hover" href="{{ route('about-us') }}">About us</a>
         {{-- <a class="link link-hover" href="{{route('about-us')}}">Suggestions? Give Us Feedback</a> --}}
         @auth
             <label for="feedback-modal" class="link link-hover">Suggestions? Give Us Feedback</label>
@@ -23,8 +23,8 @@
     </div>
     <div>
         <span class="footer-title">Legal</span>
-        <a class="link link-hover" href="{{route('terms.show')}}">Terms of use</a>
-        <a class="link link-hover" href="{{route('policy.show')}}">Privacy policy</a>
+        <a class="link link-hover" href="{{ route('terms.show') }}">Terms of use</a>
+        <a class="link link-hover" href="{{ route('policy.show') }}">Privacy policy</a>
         {{-- <a class="link link-hover">Cookie policy</a> --}}
     </div>
     <div>

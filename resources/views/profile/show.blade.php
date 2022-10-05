@@ -15,7 +15,7 @@
             @if (Laravel\Fortify\Features::canUpdateProfileInformation())
                 @livewire('profile.update-profile-information-form')
 
-                @if(Auth::user()->hasVerifiedEmail() && Auth::user()->hasEnabledTwoFactorAuthentication())
+                @if (Auth::user()->hasVerifiedEmail() && Auth::user()->hasEnabledTwoFactorAuthentication())
                     <div class="text-center mt-6">
                         @unlessrole('candidate')
                             <button class="btn btn-primary">
@@ -28,12 +28,12 @@
                         <div class="flex flex-col items-center justify-center mt-6">
                             <span>Are you a candidate? In order to apply, please:</span>
                             <ul class='list-disc'>
-                                @if(!Auth::user()->hasVerifiedEmail())
+                                @if (!Auth::user()->hasVerifiedEmail())
                                     <li>
                                         <span>Verify your email</span>
                                     </li>
                                 @endif
-                                @if(!Auth::user()->hasEnabledTwoFactorAuthentication())
+                                @if (!Auth::user()->hasEnabledTwoFactorAuthentication())
                                     <li>
                                         <span>Enable two factor authentication</span>
                                     </li>
@@ -44,7 +44,7 @@
                     @endrole
                 @endif
 
-                @if(auth()->user()->hasVerifiedEmail())
+                @if (auth()->user()->hasVerifiedEmail())
                     <div class="text-center mt-6">
                         @unlessrole('organizer|organizerAdmin')
                             <div class="flex flex-col items-center justify-center mt-6">
@@ -59,7 +59,7 @@
                         <div class="flex flex-col items-center justify-center mt-6">
                             <span>Do you manage a political group? In order to apply, please:</span>
                             <ul class='list-disc'>
-                                @if(! auth()->user()->hasVerifiedEmail())
+                                @if (! auth()->user()->hasVerifiedEmail())
                                     <li>
                                         <span>Verify your email</span>
                                     </li>

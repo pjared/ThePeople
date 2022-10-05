@@ -14,10 +14,10 @@
         </div>
 
         {{-- TODO: Mobile should have a show more --}}
-        @if($this->candidate->bio != "")
+        @if ($this->candidate->bio != "")
             <div class='col-span-2'>
                 <p class='max-w-prose text-base'>
-                    {{$this->candidate->bio}}
+                    {{ $this->candidate->bio}}
                 </p>
             </div>
         @endif

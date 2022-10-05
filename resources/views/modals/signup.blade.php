@@ -4,7 +4,7 @@
     <label class="modal-box relative" for="">
         <label for="signup-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
         <h3 class="font-bold text-lg">This feature is for logged in users only!</h3>
-        <p class="py-4">{{$message}}</p>
+        <p class="py-4">{{ $message }}</p>
         <div class="modal-action">
             <a href="/login"><button for="signup-modal" class="btn btn-primary">Sign in</button></a>
             <a href="/register"><button for="signup-modal" class="btn btn-primary">Register</button></a>

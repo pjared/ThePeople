@@ -1,5 +1,5 @@
 {{-- PREVIOUS POSITIONS --}}
-@if($this->candidate->backgrounds_count >= 1)
+@if ($this->candidate->backgrounds_count >= 1)
     <article class="flex grow flex-col md:w-11/12 items-center">
         <x-dropdown-card :classes="'shadow-md'">
             <x-slot:title>
@@ -12,7 +12,7 @@
                                 <div class="flex flex-col w-full items-start">
                                     <h3 class="w-fit capitalize text-lg font-semibold">
                                         {{ $background->name }}
-                                        @if($background->year_end)
+                                        @if ($background->year_end)
                                             <span class='text-sm text-gray-400'>{{ $background->year_start }} - {{ $background->year_end }} </span>
                                         @else
                                             <span class='text-sm text-gray-400'>{{ $background->year_start }} - present </span>

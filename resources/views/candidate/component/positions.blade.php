@@ -5,7 +5,7 @@
             Previous Political Positions
         </x-slot>
         <x-slot:content>
-            @if($this->candidate->previous_positions_count >= 1)
+            @if ($this->candidate->previous_positions_count >= 1)
                 <div class="flex flex-col gap-4">
                     @foreach($previous_positions as $position)
                         <div class="flex flex-row justify-center items-center gap-2">

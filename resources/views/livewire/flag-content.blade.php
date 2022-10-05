@@ -1,4 +1,4 @@
-<div class="{{$this->dropdown_class}}" wire:init="load_flag">
+<div class="{{ $this->dropdown_class }}" wire:init="load_flag">
     @if ($is_loading)
         {{-- The Flag --}}
         <label

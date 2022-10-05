@@ -16,7 +16,7 @@
             </div>
             <h1
                 class='antialiased bold text-2xl font-bold'>
-                    {{$group->name}}
+                    {{ $group->name }}
             </h1>
         </div>
 
@@ -28,18 +28,18 @@
                 {{-- ABOUT US --}}
                 <div class='flex flex-col text-center'>
                     <h2 class='text-xl font-semibold'>About Us</h2>
-                    <p class='text-gray-700'>{{$group->description}}</p>
+                    <p class='text-gray-700'>{{ $group->description }}</p>
                 </div>
                 {{-- EVENTS --}}
-                @if(count($group->events) >= 1)
+                @if (count($group->events) >= 1)
                     <div class='flex flex-col w-full items-center'>
                         <h2 class='text-lg font-semibold'>Upcoming Events</h2>
                         <div class='flex w-full justify-center'>
-                            @foreach($group->events as $event)
+                            @foreach ($group->events as $event)
                                 <div class="flex flex-col gap-4 w-1/2">
                                     <div class="flex flex-col gap-0">
                                         <span><b>{{ $event->event_name }}</b></span>
-                                        <span class='text-gray-500'>{{ $event->event_location }}, {{$event->event_date->format('M d y g:i A')}}</span>
+                                        <span class='text-gray-500'>{{ $event->event_location }}, {{ $event->event_date->format('M d y g:i A')}}</span>
                                     </div>
                                     <span>{{ $event->event_description }}</span>
                                 </div>
@@ -60,9 +60,9 @@
     </div>
 
     @section('page-title')
-        {{$this->group->name}}
+        {{ $this->group->name }}
     @endsection
     @section('description')
-        The profile for the political group {{$this->group->name}}. On a group's profile you can find information about the group, their upcoming events, along with their recommended voting list.
+        The profile for the political group {{ $this->group->name }}. On a group's profile you can find information about the group, their upcoming events, along with their recommended voting list.
     @endsection
 </div>

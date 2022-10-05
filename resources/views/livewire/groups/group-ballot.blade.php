@@ -9,12 +9,12 @@
         <select wire:model.defer='backed_candidate' class="select select-bordered w-full max-w-xs">
             <option selected value="">Back a Candidate</option>
             @foreach ($ballot->candidates as $candidate)
-                <option value="{{$candidate->id}}">{{$candidate->name}}</option>
+                <option value="{{ $candidate->id }}">{{ $candidate->name }}</option>
             @endforeach
         </select>
         <div class='flex flex-row gap-4'>
             <button wire:click="change_backing" class="btn btn-primary">Submit</button>
-            @if($backed_candidate)
+            @if ($backed_candidate)
                 <button wire:click="remove_backing" class="btn btn-error">Remove Current</button>
             @endif
         </div>

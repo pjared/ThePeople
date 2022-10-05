@@ -1,6 +1,6 @@
 <section class='p-4 flex flex-col gap-12'>
     {{-- {{dd($this->candidate)}} --}}
-    @if($this->is_manual)
+    @if ($this->is_manual)
         <div class='flex w-full justify-center'>
             <div class="alert alert-warning flex flex-row shadow-lg w-full md:w-3/5">
                 <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
@@ -9,12 +9,12 @@
                     <p class='w-full text-center'>
                         This user was created by the team behind ThePeople. The information is not guaranteed to be accurate. The sources below were used to create this profile, likely scraped from the candidate's website.
                         <br>
-                        Reason: {{$this->candidate->manual_candidate->note}}
+                        Reason: {{ $this->candidate->manual_candidate->note }}
                     </p>
                     <div class='w-full text-center'>
                         <span class='underline cursor-pointer' x-on:click="show_sources = ! show_sources">Sources: </span>
                         <p x-show='show_sources'>
-                            {{$this->candidate->manual_candidate->sources}}
+                            {{ $this->candidate->manual_candidate->sources }}
                         </p>
                     </div>
                 </div>
@@ -27,8 +27,8 @@
         @include('candidate.component.profile-card')
         {{-- <div class='grid grid-flow-col grid-cols-2 w-1/2'>
             <div class="grid-span-1 flex flex-col">
-                @if($this->candidate->ballot)
-                    @if($this->candidate->ballot->state)
+                @if ($this->candidate->ballot)
+                    @if ($this->candidate->ballot->state)
                         <p>
                             Running For {{ $this->candidate->ballot->location->name }}
                             {{ $this->candidate->ballot->office->name }},
@@ -41,7 +41,7 @@
                         </p>
                     @endif
                 @endif
-                @if($this->candidate->public_email)
+                @if ($this->candidate->public_email)
                     <p>
                         Email Candiate: {{ $this->candidate->public_email }}
                     </p>
@@ -54,7 +54,7 @@
     </div>
 
 
-    @if(count($this->opinions) >= 1)
+    @if (count($this->opinions) >= 1)
         <div class="flex flex-col md:grid md:grid-cols-2 md:p-8 gap-2 justify-center w-full">
             {{-- LEFT COLUMN --}}
             <div class="flex flex-col grow gap-6 items-center">
@@ -73,17 +73,18 @@
                 @include('candidate.component.opinions')
 
                 {{-- DONORS --}}
-                {{-- @if(count($this->candidate->donors) != 0)
+                {{--
+                @if (count($this->candidate->donors) != 0)
                     <div class="flex grow flex-col w-11/12 items-center">
                         <x-dropdown-card>
                             <x-slot:title>
                                 Campaign Donors
                             </x-slot>
                             <x-slot:content>
-                                @if(count($this->candidate->donors) >= 1)
+                                @if (count($this->candidate->donors) >= 1)
                                 @foreach ($this->candidate->donors as $donor)
                                     <div class="flex flex-row items-center justify-center gap-2">
-                                        <span>Name:  {{$donor->name}}</span>
+                                        <span>Name:  {{ $donor->name}}</span>
                                         @auth
                                             <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-flag-'.$donor->id">
                                         @else
@@ -100,10 +101,12 @@
                             </x-slot>
                         </x-dropdown-card>
                     </div>
-                @endif --}}
+                @endif
+                --}}
 
                 {{-- LAW MAKING INVOLVEMENT  --}}
-                {{-- @if(count($this->candidate->law_involvement) != 0)
+                {{--
+                @if (count($this->candidate->law_involvement) != 0)
                     <div class="flex flex-col w-11/12 items-center">
                         <x-dropdown-card>
                             <x-slot:title>
@@ -127,13 +130,14 @@
                             </x-slot>
                         </x-dropdown-card>
                     </div>
-                @endif --}}
+                @endif
+                --}}
             </div>
         </div>
     @else
         <div class="flex flex-col md:p-8 gap-2 justify-center items-center w-full">
             {{-- PROMISES COMPONENT --}}
-            @if(! $this->is_manual)
+            @if (! $this->is_manual)
                 @include('candidate.component.promises', ['promises' => $this->candidate->promises])
             @endif
 
@@ -152,17 +156,17 @@
 
         <div class="flex flex-col grow gap-6 items-center">
             {{-- DONORS --}}
-            {{-- @if(count($this->candidate->donors) != 0)
+            {{-- @if (count($this->candidate->donors) != 0)
                 <div class="flex grow flex-col w-11/12 items-center">
                     <x-dropdown-card>
                         <x-slot:title>
                             Campaign Donors
                         </x-slot>
                         <x-slot:content>
-                            @if(count($this->candidate->donors) >= 1)
+                            @if (count($this->candidate->donors) >= 1)
                             @foreach ($this->candidate->donors as $donor)
                                 <div class="flex flex-row items-center justify-center gap-2">
-                                    <span>Name:  {{$donor->name}}</span>
+                                    <span>Name:  {{ $donor->name}}</span>
                                     @auth
                                         <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-flag-'.$donor->id">
                                     @else
@@ -182,7 +186,7 @@
             @endif --}}
 
             {{-- PREVIOUS POSITIONS COMPONENT --}}
-            @if(! $this->is_manual)
+            @if (! $this->is_manual)
                 @include('candidate.component.positions', ['previous_positions' => $this->candidate->previous_positions])
             @endif
             @include('candidate.component.background')
@@ -190,7 +194,7 @@
         {{-- RIGHT COLUMN --}}
         <div class="flex flex-col md:w-11/12 grow gap-6 items-center">
             {{-- LAW MAKING INVOLVEMENT  --}}
-            {{-- @if(count($this->candidate->law_involvement) != 0)
+            {{-- @if (count($this->candidate->law_involvement) != 0)
                 <div class="flex flex-col w-11/12 items-center">
                     <x-dropdown-card>
                         <x-slot:title>
@@ -219,7 +223,7 @@
         </div>
     </div>
 
-    @if(! $this->is_manual)
+    @if (! $this->is_manual)
         {{-- BOTTOM AREA --}}
         <div class='divider w-full'></div>
 
@@ -247,11 +251,11 @@
             {{-- <div class="flex flex-row w-full grow gap-6 items-center h-fit">
                 @foreach ($this->candidate->comments()->approved()->get() as $pinned_comment)
                     <div class='border border-slate-400 bg-white p-4 w-11/12 overflow-visible'>
-                        <p>{{$pinned_comment->comment}}</p>
-                        @if($pinned_comment->reply)
+                        <p>{{ $pinned_comment->comment}}</p>
+                        @if ($pinned_comment->reply)
                             <div class='absolute ml-6 mt-1 w-1/5'>
                                 <div class='border border-slate-400 p-4 bg-white w-fit'>
-                                    <p>{{$pinned_comment->reply}}</p>
+                                    <p>{{ $pinned_comment->reply}}</p>
                                 </div>
                             </div>
                         @endif
@@ -309,10 +313,10 @@
     @endpush
 
     @section('description')
-        Candidate {{$this->candidate->name}}'s profile. Here you can view the stances that {{$this->candidate->name}} takes on controversial opinions. You can also view the additional stances that {{$this->candidate->name}} has added to his profile. If {{$this->candidate->name}} has held office, his previous positions will be listed. You can also message {{$this->candidate->name}} and see his upcoming events.
+        Candidate {{ $this->candidate->name}}'s profile. Here you can view the stances that {{ $this->candidate->name}} takes on controversial opinions. You can also view the additional stances that {{ $this->candidate->name}} has added to his profile. If {{ $this->candidate->name}} has held office, his previous positions will be listed. You can also message {{ $this->candidate->name}} and see his upcoming events.
     @endsection
     @section('keywords')
-        {{$this->candidate->name}} stances controversial opinions
+        {{ $this->candidate->name}} stances controversial opinions
     @endsection
 </section>
 
