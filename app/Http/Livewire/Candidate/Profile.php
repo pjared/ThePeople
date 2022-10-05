@@ -4,7 +4,6 @@ namespace App\Http\Livewire\Candidate;
 
 use App\Models\Candidate;
 use App\Models\Flag;
-use App\Models\UserFlag;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;

@@ -2,11 +2,7 @@
 
 namespace App\Http\Livewire\Ballot;
 
-use App\Models\Ballot;
-use App\Models\GroupBallotQuestions;
-use App\Models\PoliticalGroupCandidates;
 use App\Models\UserVotes;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
