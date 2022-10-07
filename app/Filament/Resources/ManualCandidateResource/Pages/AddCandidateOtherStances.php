@@ -40,6 +40,21 @@ class AddCandidateOtherStances extends Page implements Tables\Contracts\HasTable
     protected function getTableActions(): array
     {
         return [
+            Tables\Actions\Action::make('Edit')
+                ->mountUsing(fn (Forms\ComponentContainer $form, CandidateOpinion $record) => $form->fill([
+                    'name' => $record->name,
+                    'stance' => $record->stance,
+                ]))
+                ->action(function (CandidateOpinion $record, array $data): void {
+                    $record->name = $data['name'];
+                    $record->stance = $data['stance'];
+                    $record->save();
+                })
+                ->form([
+                    Forms\Components\TextInput::make('name')
+                        ->required(),
+                    Forms\Components\Textarea::make('stance'),
+                ]),
             Tables\Actions\DeleteAction::make(),
         ];
     }
@@ -54,15 +69,15 @@ class AddCandidateOtherStances extends Page implements Tables\Contracts\HasTable
                     'name' => $data['name'],
                     'stance' => $data['stance'],
                 ]);
-            })
-            ->form([
-                Forms\Components\TextInput::make('name')
-                    ->label('Stance title')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('stance')
-                    ->maxLength(65535),
-            ]),
+                })
+                ->form([
+                    Forms\Components\TextInput::make('name')
+                        ->label('Stance title')
+                        ->required()
+                        ->maxLength(255),
+                    Forms\Components\Textarea::make('stance')
+                        ->maxLength(65535),
+                ]),
         ];
     }
 
