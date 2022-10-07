@@ -47,6 +47,21 @@ class AddCandidateStance extends Page implements Tables\Contracts\HasTable
     protected function getTableActions(): array
     {
         return [
+            Tables\Actions\Action::make('Edit')
+                ->mountUsing(fn (Forms\ComponentContainer $form, CandidateStance $record) => $form->fill([
+                    'stance_label' => $record->stance_label,
+                    'stance_reasoning' => $record->stance_reasoning,
+                ]))
+                ->action(function (CandidateStance $record, array $data): void {
+                    $record->stance_label = $data['stance_label'];
+                    $record->stance_reasoning = $data['stance_reasoning'];
+                    $record->save();
+                })
+                ->form([
+                    Forms\Components\TextInput::make('stance_label')
+                        ->required(),
+                    Forms\Components\Textarea::make('stance_reasoning'),
+                ]),
             Tables\Actions\DeleteAction::make(),
         ];
     }
