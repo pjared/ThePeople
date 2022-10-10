@@ -4,9 +4,9 @@
             <x-jet-authentication-card-logo />
         </x-slot>
 
-        @isset($error)
-            <span class="error">{{ $error }}</span>
-        @endisset
+        @if (session('errors'))
+            <span class="error">{{ $errors->socialite }}</span>
+        @enderror
 
         <x-jet-validation-errors class="mb-4" />
 

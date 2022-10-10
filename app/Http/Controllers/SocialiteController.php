@@ -60,7 +60,7 @@ class SocialiteController extends Controller
             return redirect('/home');
         }
 
-        return redirect('/register')->with('error', $user_exists);
+        return redirect('/register')->withErrors(['socialite' => $user_exists]);
     }
 
     public function handleTwitterCallback()
@@ -82,7 +82,7 @@ class SocialiteController extends Controller
 
             return redirect('/home');
         }
-        return redirect('/register')->with('error', $user_exists);
+        return redirect('/register')->withErrors(['socialite' => $user_exists]);
     }
 
     public function handleGoogleCallback()
@@ -106,6 +106,6 @@ class SocialiteController extends Controller
             return redirect('/home');
         }
 
-        return redirect('/register')->with('error', $user_exists);
+        return redirect('/register')->withErrors(['socialite' => $user_exists]);
     }
 }
