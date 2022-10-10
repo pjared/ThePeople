@@ -38,6 +38,11 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser, Has
         'state',
         'last_visited',
         'voter_precinct',
+        'socialite_token',
+        'socialite_refresh_token',
+        'google_id',
+        'twitter_id',
+        'facebook_id',
     ];
 
     /**
@@ -50,6 +55,9 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser, Has
         'remember_token',
         'two_factor_recovery_codes',
         'two_factor_secret',
+        'google_id',
+        'twitter_id',
+        'facebook_id',
     ];
 
     /**
