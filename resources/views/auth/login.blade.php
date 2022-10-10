@@ -48,7 +48,7 @@
                 </x-jet-button>
             </div>
         </form>
-        {{-- <div class="divider">OR Login With Another Provider</div>
+        <div class="divider">OR Login With Another Provider</div>
         <div class="flex flex-row h-fit gap-6 px-12 items-center justify-center">
             <a href="/auth/facebook/redirect" class="h-1/6 w-1/6">
                 <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="color: #1778F2;" aria-hidden="true">
@@ -68,7 +68,7 @@
                     <path d="M272.1 107.7c38.8-.6 76.3 14 104.4 40.8l77.7-77.7C405 24.6 339.7-.8 272.1 0 169.2 0 75.1 58 28.9 150l90.4 70.1c21.5-64.5 81.8-112.4 152.8-112.4z" fill="#ea4335"/>
                 </svg>
             </a>
-        </div> --}}
+        </div>
 
     </x-jet-authentication-card>
 </x-guest-layout>

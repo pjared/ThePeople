@@ -4,12 +4,14 @@ use App\Http\Controllers\BallotController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermaLinkController;
+use App\Http\Controllers\SocialiteController;
 use App\Http\Livewire\Ballot\FlagComparison;
 use App\Http\Livewire\Ballot\PrintBallot;
 use App\Http\Livewire\Candidate\Application;
 use App\Http\Livewire\Groups\PoliticalGroupApplication;
 use App\Http\Livewire\Groups\ShowGroup;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,7 +90,7 @@ Route::get('/permalink/{permalink}', [PermaLinkController::class, 'directLink'])
 
 /* -----SOCIALITE------ */
 
-/*
+
 
 //GOOGLE
 Route::get('/auth/google/redirect', function () {
@@ -97,13 +99,6 @@ Route::get('/auth/google/redirect', function () {
 
 Route::get('/auth/google/callback',[SocialiteController::class, 'handleGoogleCallback']);
 
-//TWITTER
-Route::get('/auth/twitter/redirect', function () {
-    return Socialite::driver('twitter')->redirect();
-});
-
-Route::get('/auth/twitter/callback', [SocialiteController::class, 'handleTwitterCallback']);
-
 //FACEBOOK
 Route::get('/auth/facebook/redirect', function () {
     return Socialite::driver('facebook')->redirect();
@@ -111,6 +106,13 @@ Route::get('/auth/facebook/redirect', function () {
 
 Route::get('/auth/facebook/callback', [SocialiteController::class, 'handleFacebookCallback']);
 
-*/
+
+//TWITTER
+Route::get('/auth/twitter/redirect', function () {
+    return Socialite::driver('twitter')->redirect();
+});
+
+Route::get('/auth/twitter/callback', [SocialiteController::class, 'handleTwitterCallback']);
+
 
 // Route::get('/newfeatures', NewFeature::class);
