@@ -50,10 +50,10 @@ class SocialiteController extends Controller
     public function handleGoogleCallback()
     {
         $googleUser = Socialite::driver('google')->user();
-        Log::info("Creating google user with ID: " . strval($googleUser->id));
+        Log::info("Creating google user with ID: " . $googleUser->id);
 
         $user = User::updateOrCreate([
-            'google_id' => strval($googleUser->id),
+            'google_id' => $googleUser->id,
         ], [
             'name' => $googleUser->name,
             'email' => $googleUser->email,
