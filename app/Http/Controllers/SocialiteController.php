@@ -60,7 +60,7 @@ class SocialiteController extends Controller
             return redirect('/home');
         }
 
-        return back()->with('error', $user_exists);
+        return redirect('/register')->with('error', $user_exists);
     }
 
     public function handleTwitterCallback()
@@ -82,14 +82,14 @@ class SocialiteController extends Controller
 
             return redirect('/home');
         }
-        return back()->with('error', $user_exists);
+        return redirect('/register')->with('error', $user_exists);
     }
 
     public function handleGoogleCallback()
     {
         $googleUser = Socialite::driver('google')->user();
 
-        $user_exists = $this->checkForExistingUser($googleUser->email, 'twitter');
+        $user_exists = $this->checkForExistingUser($googleUser->email, 'google');
 
         if($user_exists == 1) {
             $user = User::updateOrCreate([
@@ -106,6 +106,6 @@ class SocialiteController extends Controller
             return redirect('/home');
         }
 
-        return back()->with('error', $user_exists);
+        return redirect('/register')->with('error', $user_exists);
     }
 }
