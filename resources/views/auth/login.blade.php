@@ -12,10 +12,6 @@
             </div>
         @endif
 
-        @if (session('errors'))
-            <span class="error">{{ $errors->socialite }}</span>
-        @enderror
-
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
