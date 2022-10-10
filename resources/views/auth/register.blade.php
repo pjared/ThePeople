@@ -4,6 +4,10 @@
             <x-jet-authentication-card-logo />
         </x-slot>
 
+        @if({{$error}})
+            <span class="error">{{ $error }}</span>
+        @endif
+
         <x-jet-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('register') }}">

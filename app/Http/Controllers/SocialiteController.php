@@ -9,29 +9,67 @@ use Laravel\Socialite\Facades\Socialite;
 
 class SocialiteController extends Controller
 {
+
+    public function checkForExistingUser($email, $socialite) {
+        if(! $email) {
+            return "No email given from provider. Please use another provider or manually register";
+        }
+
+        $user = User::firstWhere('email', $email);
+        if($user) {
+            switch($socialite) {
+                case 'facebook':
+                    if($user->facebook_id != null) {
+                        return 1;
+                    }
+                    break;
+                case 'twitter':
+                    if($user->twitter_id != null) {
+                        return 1;
+                    }
+                    break;
+                case 'google':
+                    if($user->google_id != null) {
+                        return 1;
+                    }
+                    break;
+                default:
+                    return false;
+                    break;
+            }
+            return "Email already in use. Have you signed up with a different provider already?";
+        }
+        return 1;
+    }
+
     public function handleFacebookCallback()
     {
         $facebookUser = Socialite::driver('facebook')->user();
-        Log::info("Creating facebook user with ID: " . $facebookUser->id);
-        $user = User::updateOrCreate([
-            'facebook_id' => $facebookUser->id,
-        ], [
-            'name' => $facebookUser->name,
-            'email' => $facebookUser->email,
-            // 'socialite_token' => $facebookUser->token,
-            // 'socialite_refresh_token' => $facebookUser->refreshToken,
-        ]);
 
-        Auth::login($user);
+        $user_exists = $this->checkForExistingUser($facebookUser->email, 'facebook');
 
-        return redirect('/home');
+        if($user_exists == 1) {
+            $user = User::updateOrCreate([
+                'facebook_id' => $facebookUser->id,
+            ], [
+                'name' => $facebookUser->name,
+                'email' => $facebookUser->email,
+            ]);
+            Auth::login($user);
+
+            return redirect('/home');
+        }
+
+        return back()->with('error', $user_exists);
     }
 
     public function handleTwitterCallback()
     {
         $twitterUser = Socialite::driver('twitter')->user();
-        Log::info("Creating twitter user with ID: " . $twitterUser->id);
-        if($twitterUser->email) {
+
+        $user_exists = $this->checkForExistingUser($twitterUser->email, 'twitter');
+
+        if($user_exists == 1) {
             $user = User::updateOrCreate([
                 'twitter_id' => $twitterUser->id,
             ], [
@@ -40,30 +78,34 @@ class SocialiteController extends Controller
                 // 'socialite_token' => $twitterUser->token,
             ]);
 
-
             Auth::login($user);
-        }
 
-        return redirect('/home');
+            return redirect('/home');
+        }
+        return back()->with('error', $user_exists);
     }
 
     public function handleGoogleCallback()
     {
         $googleUser = Socialite::driver('google')->user();
-        Log::info("Creating google user with ID: " . $googleUser->id);
 
-        $user = User::updateOrCreate([
-            'google_id' => $googleUser->id,
-        ], [
-            'name' => $googleUser->name,
-            'email' => $googleUser->email,
-            // 'socialite_token' => $googleUser->token,
-            // 'socialite_refresh_token' => $googleUser->refreshToken,
-        ]);
+        $user_exists = $this->checkForExistingUser($googleUser->email, 'twitter');
 
+        if($user_exists == 1) {
+            $user = User::updateOrCreate([
+                'google_id' => $googleUser->id,
+            ], [
+                'name' => $googleUser->name,
+                'email' => $googleUser->email,
+                // 'socialite_token' => $googleUser->token,
+                // 'socialite_refresh_token' => $googleUser->refreshToken,
+            ]);
 
-        Auth::login($user);
+            Auth::login($user);
 
-        return redirect('/home');
+            return redirect('/home');
+        }
+
+        return back()->with('error', $user_exists);
     }
 }
