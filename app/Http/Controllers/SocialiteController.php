@@ -53,7 +53,7 @@ class SocialiteController extends Controller
         Log::info("Creating google user with ID: " . $googleUser->id);
 
         $user = User::updateOrCreate([
-            'google_id' => $googleUser->id,
+            'google_id' => strval($googleUser->id),
         ], [
             'name' => $googleUser->name,
             'email' => $googleUser->email,
