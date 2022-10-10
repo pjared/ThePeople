@@ -58,7 +58,7 @@
                 </x-jet-button>
             </div>
         </form>
-        <div class="divider">OR Login With Another Provider</div>
+        <div class="divider">OR Register Using Another Provider</div>
         <div class="flex flex-row h-fit gap-6 px-12 items-center justify-center">
             <a href="/auth/facebook/redirect" class="h-1/6 w-1/6">
                 <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="color: #1778F2;" aria-hidden="true">
