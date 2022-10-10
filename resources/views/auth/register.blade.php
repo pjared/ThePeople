@@ -4,7 +4,7 @@
             <x-jet-authentication-card-logo />
         </x-slot>
 
-        @isset({{$error}})
+        @isset($error)
             <span class="error">{{ $error }}</span>
         @endisset
 
