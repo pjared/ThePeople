@@ -4,9 +4,9 @@
             <x-jet-authentication-card-logo />
         </x-slot>
 
-        @if({{$error}})
+        @isset({{$error}})
             <span class="error">{{ $error }}</span>
-        @endif
+        @endisset
 
         <x-jet-validation-errors class="mb-4" />
 
