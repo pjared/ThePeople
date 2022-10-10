@@ -30,17 +30,18 @@ class SocialiteController extends Controller
     {
         $twitterUser = Socialite::driver('twitter')->user();
 
-        $user = User::updateOrCreate([
-            'twitter_id' => $twitterUser->id,
-        ], [
-            'name' => $twitterUser->name,
-            'email' => $twitterUser->email,
-            'socialite_token' => $twitterUser->token,
-            // 'socialite_refresh_token' => $twitterUser->tokenSecret,
-        ]);
+        if($twitterUser->email) {
+            $user = User::updateOrCreate([
+                'twitter_id' => $twitterUser->id,
+            ], [
+                'name' => $twitterUser->name,
+                'email' => $twitterUser->email,
+                'socialite_token' => $twitterUser->token,
+            ]);
 
 
-        Auth::login($user);
+            Auth::login($user);
+        }
 
         return redirect('/home');
     }
