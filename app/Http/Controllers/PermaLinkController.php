@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class PermaLinkController extends Controller
 {
+    /**
+     * Direct the current link to the candidate that we are trying to find. I was implementing this
+     * for giving candidates QR codes for users to scan
+     */
     public function directLink(Request $request, $permalink)
     {
         $permalink = CandidatePermaLink::firstWhere('perma_link', $permalink);

@@ -11,6 +11,9 @@ use Laravel\Jetstream\Jetstream;
 
 class HomeController extends Controller
 {
+    /**
+     * Method for getting the home page of the site. If the user is logged in, make sure to direct them to "home"
+     */
     public function getWelcomeView() {
         if(auth()->check()) {
             return redirect('/home');
@@ -26,6 +29,10 @@ class HomeController extends Controller
         ]);
     }
 
+    /**
+     * A method to catch the POST call to submit feedback. Users may only submit two feedbacks per minute to
+     * reduce spamming
+     */
     public function submitFeedback(Request $request)
     {
         $user_id = auth()->id();

@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Storage;
 
 class CandidateController extends Controller
 {
+    /**
+     * Get the candidate with a slug. We want to cache that candidate for the next two minutes
+     */
     public function getCandidate($slug) {
         return Cache::remember('candidate-' . $slug, 120, function () use ($slug) {
             $candidate = Candidate::firstWhere('slug', $slug);
@@ -23,8 +26,9 @@ class CandidateController extends Controller
         });
         // 'events', 'videos', 'promises', 'previous_positions',
     }
+
     /**
-     * Find the candidate in the database, and populate candidate page
+     * Find the candidate in the database, and pass to candidate page. If the user is not logged in, return them a static page
      */
     public function getView($candidate_slug) {
         Log::info('Attempting to get candidate with slug: ' . $candidate_slug);

@@ -9,6 +9,9 @@ use Laravel\Socialite\Facades\Socialite;
 class SocialiteController extends Controller
 {
 
+    /**
+     * A helper method to check if the user already exists in the database with the provider they are trying to use.
+     */
     public function checkForExistingUser($email, $socialite) {
         if(! $email) {
             return "No email given from provider. Please use another provider or manually register";

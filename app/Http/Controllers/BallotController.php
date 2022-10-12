@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\RateLimiter;
 
 class BallotController extends Controller
 {
+    /**
+     * When we get the controller, we want to cache forever in database. We also want to get the vote
+     * for the user if they are logged in
+     */
     public function getView($ballot_slug)
     {
         // if(! auth()->check()) {
