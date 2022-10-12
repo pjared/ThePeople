@@ -26,8 +26,8 @@
             <div class="flex grow flex-row pt-2 w-11/12 gap-4">
                 {{-- CANDIDATE NAME, PICTURE, AND PAGE LINK --}}
                 <a rel="next prefetch" href="{{ route('candidate.show', ['candidate' => $candidate->slug]) }}" class="w-11/12 md:hover:scale-110 md:scale-100">
-                    <button class="card flex lg:card-side bg-white drop-shadow-md shadow-md w-full">
-                        <figure>
+                    <button class="card flex lg:card-side bg-white drop-shadow-md shadow-md w-full items-center">
+                        <figure class='h-fit w-fit'>
                             <img
                                 src="{{ $candidate->profile_photo_url ?? '' }} "
                                 alt="{{ $candidate->name }}"
