@@ -26,7 +26,7 @@
                                         :flag_id="$this->flags->where('flaggable_type', 'App\Models\CandidateBackground')->firstWhere('flaggable_id', $background->id) ? $this->flags->where('flaggable_type', 'App\Models\CandidateBackground')->firstWhere('flaggable_id', $background->id)->id : null"
                                         :content="$background"
                                         :side="'below'"
-                                        :wire:key="'background-' .$background->id" />
+                                        :wire:key="'background-' . $background->id" />
                                 @else
                                     <label class="fill-transparent" for="signup-modal">
                                         @include('icons.flag')

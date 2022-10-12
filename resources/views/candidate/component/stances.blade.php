@@ -113,7 +113,7 @@
                                     :flag_id="$this->flags ? $this->flags->where('flaggable_type', 'App\Models\CandidateRequiredStance')->firstWhere('flaggable_id', $required_stance->id)->id : null"
                                     :content="$this->candidate->required_stances->firstWhere('required_stance_id', $required_stance->id)"
                                     :side="'right'"
-                                    :wire:key="'required-flag-' .$required_stance->id" />
+                                    :wire:key="'required-flag-' . $required_stance->id" />
                             @else
                                 <label class="fill-transparent" for="signup-modal">
                                     @include('icons.flag')
