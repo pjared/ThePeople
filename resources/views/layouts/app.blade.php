@@ -11,6 +11,8 @@
         <meta name="author" content="{{ config('app.name') }}"/>
         <meta name="application-name" content="@yield('title', config('app.name'))">
 
+        @yield('meta-tags')
+
         <head>
             <title>@yield('page-title') - {{ config('app.name') }}</title>
         </head>

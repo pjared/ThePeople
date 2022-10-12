@@ -13,6 +13,13 @@
         Home
     @endsection
 
+    @section('meta-tags')
+        <meta property="og:title" content="Welcome to ThePeople" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://whatsinyourballot.com" />
+        <meta property="og:image" content="{{ url('storage/images/home-page.png') }}" />
+    @endsection
+
     {{-- Feedback Modal --}}
     @auth
         @push('modals')
