@@ -49,7 +49,7 @@
     @endsection
 
     @section('meta-tags')
-        <meta property="og:title" content="{{ $ballot->location->state }} {{ $ballot->name }} Ballot" />
+        <meta property="og:title" content="{{ $ballot->location->state }} {{ $ballot->office->name }}, {{ $ballot->location->name }} Ballot" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://whatsinyourballot.com/ballot/{{ $ballot->slug }}" />
         <meta property="og:image" content="{{ url('storage/images/ballot.png') }}" />
