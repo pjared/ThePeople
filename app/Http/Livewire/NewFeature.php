@@ -29,7 +29,7 @@ class NewFeature extends Component
             [
                 'flag_type' => $flag_value,
                 'note' => $flag_note,
-            ]
+            ],
         );
     }
 

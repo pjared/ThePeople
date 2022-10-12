@@ -75,8 +75,7 @@ class ManualCandidateResource extends Resource
                         ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-other-stances', $record)),
                     Action::make('Add Photos')
                         ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-photos', $record)),
-                ])
-
+                ]),
             ])
             ->bulkActions([
                 DeleteBulkAction::make(),

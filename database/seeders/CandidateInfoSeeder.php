@@ -9,7 +9,7 @@ class CandidateInfoSeeder extends Seeder
 {
     private $video_names = [
         'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        'https://www.youtube.com/watch?v=gs-11No8JJ0'
+        'https://www.youtube.com/watch?v=gs-11No8JJ0',
     ];
 
     private $donor_names = [
@@ -57,7 +57,7 @@ class CandidateInfoSeeder extends Seeder
             for($i = 1; $i <= $num_candidates; ++$i) {
                 DB::table('candidate_donor')->insert([
                     'candidate_id' => rand(5, $num_candidates + 5),
-                    'donor_id' => rand(1, 2)
+                    'donor_id' => rand(1, 2),
                 ]);
             }
         }

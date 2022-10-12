@@ -6,16 +6,19 @@ use App\Filament\Resources\ManualCandidateResource;
 use App\Models\CandidateOpinion;
 use App\Models\ManualCandidate;
 use Filament\Forms;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Pages\Actions\Action;
 use Filament\Resources\Pages\Page;
-use Filament\Tables;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Concerns\InteractsWithTable;
+use Filament\Tables\Contracts\HasTable;
 use Illuminate\Database\Eloquent\Builder;
 
-class AddCandidateOtherStances extends Page implements Tables\Contracts\HasTable
+class AddCandidateOtherStances extends Page implements HasTable
 {
-    use Tables\Concerns\InteractsWithTable;
+    use InteractsWithTable;
 
     protected static string $resource = ManualCandidateResource::class;
     protected static string $view = 'filament.resources.manual-candidate-resource.pages.add-candidate-other-stances';

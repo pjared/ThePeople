@@ -17,16 +17,16 @@ class EditProfileImage extends Widget
     public $photo;
     public $candidate;
 
-    public function mount() {
-        $this->candidate = auth()->user()->candidate;
-    }
-
     public static function canView(): bool
     {
         if(auth()->user()->candidate) {
             return true;
         }
         return false;
+    }
+
+    public function mount() {
+        $this->candidate = auth()->user()->candidate;
     }
 
     /**
@@ -46,7 +46,7 @@ class EditProfileImage extends Widget
 
         // Now lets make sure that it's less than a mb
         $this->validate([
-            'photo' => 'max:1024'
+            'photo' => 'max:1024',
         ]);
         if (isset($this->photo)) {
             auth()->user()->candidate->updateProfilePhoto($this->photo);
@@ -64,8 +64,8 @@ class EditProfileImage extends Widget
         // auth()->user()->deleteProfilePhoto($this->photo);
         auth()->user()->candidate->updateProfilePhoto($this->photo);
         Notification::make()
-        ->title('Profile Picture Deleted')
-        ->warning()
-        ->send();
+            ->title('Profile Picture Deleted')
+            ->warning()
+            ->send();
     }
 }

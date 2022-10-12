@@ -36,7 +36,7 @@ return [
      */
     'environments' => [
         'production',
-        'local'
+        'local',
     ],
 
     /**
@@ -86,7 +86,7 @@ return [
          * The number of times a request from an ip address can be classed
          * as spam before they are added to the block list.
          */
-        'maximum_attempts' => 5
+        'maximum_attempts' => 5,
     ],
 
     /**
@@ -112,11 +112,11 @@ return [
                     'present_but_empty' => 'honey_present',
                     'time_of_page_load' => 'honey_time',
                     'javascript_input' => 'honey_javascript',
-                    'recaptcha_input' => 'honey_recaptcha_token'
-                ]
+                    'recaptcha_input' => 'honey_recaptcha_token',
+                ],
             ],
 
-        ]
+        ],
     ],
 
     /**
@@ -157,6 +157,6 @@ return [
          * refreshes based on this timeout (in milliseconds).
          */
         'token_refresh_interval' => 60000,
-    ]
+    ],
 
 ];

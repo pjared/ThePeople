@@ -60,7 +60,7 @@ class BallotController extends Controller
                     [
                         'candidate_id' => $candidate->id,
                         'is_valid' => 1,
-                    ]
+                    ],
                     );
                 }
             }

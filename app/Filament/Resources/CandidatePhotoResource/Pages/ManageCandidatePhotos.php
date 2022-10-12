@@ -24,7 +24,7 @@ class ManageCandidatePhotos extends ManageRecords
     protected function getHeaderWidgets(): array
     {
         return [
-            CandidatePhotoOverview::class
+            CandidatePhotoOverview::class,
         ];
     }
 }

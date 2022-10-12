@@ -6,22 +6,24 @@ use App\Filament\Resources\ManualCandidateResource;
 use App\Models\CandidatePromise;
 use App\Models\ManualCandidate;
 use Filament\Forms;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Pages\Actions\Action;
 use Filament\Resources\Pages\Page;
-use Filament\Tables;
 use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Columns\Textarea;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Concerns\InteractsWithTable;
+use Filament\Tables\Contracts\HasTable;
 use Illuminate\Database\Eloquent\Builder;
 
-class AddCandidatePromises extends Page implements Tables\Contracts\HasTable
+class AddCandidatePromises extends Page implements HasTable
 {
-    use Tables\Concerns\InteractsWithTable;
+    use InteractsWithTable;
 
     protected static string $resource = ManualCandidateResource::class;
-
     protected static string $view = 'filament.resources.manual-candidate-resource.pages.add-candidate-promises';
+
+    public $candidate_id;
 
     protected function getTableQuery(): Builder
     {
@@ -33,8 +35,7 @@ class AddCandidatePromises extends Page implements Tables\Contracts\HasTable
     {
         return [
             TextColumn::make('promise'),
-            TextColumn::make('plan')
-                ,
+            TextColumn::make('plan'),
         ];
     }
 
@@ -58,7 +59,7 @@ class AddCandidatePromises extends Page implements Tables\Contracts\HasTable
                         ->label('Promise')
                         ->required()
                         ->maxLength(255),
-                    Textare::make('plan')
+                    Textarea::make('plan')
                         ->maxLength(65535),
                 ]),
         ];
@@ -84,8 +85,6 @@ class AddCandidatePromises extends Page implements Tables\Contracts\HasTable
             ]),
         ];
     }
-
-    public $candidate_id;
 
     public function mount(ManualCandidate $record) {
         $this->candidate_id = $record->candidate_id;

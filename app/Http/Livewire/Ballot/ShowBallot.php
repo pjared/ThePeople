@@ -61,7 +61,7 @@ class ShowBallot extends Component
             [
                 'candidate_id' => $candidate_id,
                 'is_valid' => 1,
-            ]
+            ],
         );
     }
 

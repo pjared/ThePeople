@@ -35,7 +35,7 @@ class GroupBallot extends Component
                 'political_group_id' => auth()->user()->manages_political_groups->first()->id,
                 'ballot_id' => $this->ballot->id,
                 'candidate_id' => $this->backed_candidate,
-            ]
+            ],
             );
 
     }

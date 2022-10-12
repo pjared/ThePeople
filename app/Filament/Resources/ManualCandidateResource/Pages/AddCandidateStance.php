@@ -6,20 +6,23 @@ use App\Filament\Resources\ManualCandidateResource;
 use App\Models\Candidate;
 use App\Models\CandidateStance;
 use App\Models\ManualCandidate;
-use Filament\Forms;
+use Filament\Forms\ComponentContainer;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Pages\Actions\Action;
 use Filament\Resources\Pages\Page;
-use Filament\Tables;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Concerns\InteractsWithTable;
+use Filament\Tables\Contracts\HasTable;
 use Illuminate\Database\Eloquent\Builder;
 
-class AddCandidateStance extends Page implements Tables\Contracts\HasTable
+class AddCandidateStance extends Page implements HasTable
 {
-    use Tables\Concerns\InteractsWithTable;
+    use InteractsWithTable;
 
     protected static string $resource = ManualCandidateResource::class;
-
     protected static string $view = 'filament.resources.manual-candidate-resource.pages.add-candidate-stance';
 
     public $candidate_id;
@@ -50,7 +53,7 @@ class AddCandidateStance extends Page implements Tables\Contracts\HasTable
     {
         return [
             Action::make('Edit')
-                ->mountUsing(fn (Forms\ComponentContainer $form, CandidateStance $record) => $form->fill([
+                ->mountUsing(fn (ComponentContainer $form, CandidateStance $record) => $form->fill([
                     'stance_label' => $record->stance_label,
                     'stance_reasoning' => $record->stance_reasoning,
                 ]))
@@ -81,7 +84,7 @@ class AddCandidateStance extends Page implements Tables\Contracts\HasTable
                 ]);
             })
             ->form([
-                Forms\Components\Select::make('controversial_opinion_id')
+                Select::make('controversial_opinion_id')
                     ->options($this->opinions->pluck('name', 'id'))
                     ->required(),
                 TextInput::make('stance_label')

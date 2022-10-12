@@ -25,7 +25,7 @@ class ManageCandidatePromises extends ManageRecords
     protected function getHeaderWidgets(): array
     {
         return [
-            PromiseOverview::class
+            PromiseOverview::class,
         ];
     }
 }

@@ -12,12 +12,13 @@ use Filament\Widgets\Widget;
 class EditBio extends Widget implements HasForms
 {
     use InteractsWithForms;
+
     protected static string $view = 'filament.widgets.edit-bio';
-    protected int | string | array $columnSpan = 'full';
 
     public Candidate $candidate;
-
     public $bio;
+
+    protected int | string | array $columnSpan = 'full';
 
     public static function canView(): bool
     {
@@ -50,8 +51,8 @@ class EditBio extends Widget implements HasForms
             $this->form->getState(),
         );
         Notification::make()
-        ->title('Saved successfully')
-        ->success()
-        ->send();
+            ->title('Saved successfully')
+            ->success()
+            ->send();
     }
 }

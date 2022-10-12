@@ -12,26 +12,27 @@ use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
 use Filament\Pages\Actions\Action;
 use Filament\Resources\Pages\Page;
-use Filament\Tables;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Concerns\InteractsWithTable;
+use Filament\Tables\Contracts\HasTable;
 use Illuminate\Database\Eloquent\Builder;
 use Spatie\ImageOptimizer\OptimizerChainFactory;
 
-class AddManualCandidatePhotos extends Page implements Tables\Contracts\HasTable
+class AddManualCandidatePhotos extends Page implements HasTable
 {
-    use Tables\Concerns\InteractsWithTable;
-    protected static string $resource = ManualCandidateResource::class;
+    use InteractsWithTable;
 
+    protected static string $resource = ManualCandidateResource::class;
     protected static string $view = 'filament.resources.manual-candidate-resource.pages.add-manual-candidate-photos';
 
     public $photo;
     public $candidate;
+
     public function mount(ManualCandidate $record) {
         $this->candidate = Candidate::find($record->candidate_id);
     }
-
 
     protected function getTableQuery(): Builder
     {
@@ -52,7 +53,6 @@ class AddManualCandidatePhotos extends Page implements Tables\Contracts\HasTable
             DeleteAction::make(),
         ];
     }
-
 
     protected function getActions(): array
     {
@@ -100,15 +100,15 @@ class AddManualCandidatePhotos extends Page implements Tables\Contracts\HasTable
 
         // Now lets make sure that it's less than a mb
         $this->validate([
-            'photo' => 'max:1024'
+            'photo' => 'max:1024',
         ]);
         if (isset($this->photo)) {
             $this->candidate->updateProfilePhoto($this->photo);
         }
         Notification::make()
-        ->title('Saved successfully')
-        ->success()
-        ->send();
+            ->title('Saved successfully')
+            ->success()
+            ->send();
 
         UpdateBallotCache::dispatch($this->candidate->ballot);
     }

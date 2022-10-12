@@ -6898,7 +6898,7 @@ class ut_sl_board_seeder extends Seeder
             "school_board" => "Jordan",
             "PrecinctID" => "WJD021",
             "district" => "6",
-        ]
+        ],
     ];
     /**
      * Run the database seeds.

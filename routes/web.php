@@ -35,84 +35,84 @@ use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', [HomeController::class, 'getWelcomeView'])->name('welcome');
 
-Route::get('/about-us', [HomeController::class, 'getAboutUsView'])->name('about-us');
+Route::get('about-us', [HomeController::class, 'getAboutUsView'])->name('about-us');
 
-Route::get('/admin/login', function() {
+Route::get('admin/login', function() {
     return redirect('/login');
 });
 
-Route::post('/submit-feedback', [HomeController::class, 'submitFeedback'])->middleware(['auth:sanctum']);
+Route::post('submit-feedback', [HomeController::class, 'submitFeedback'])->middleware(['auth:sanctum']);
 
 /* -----GROUPS------ */
-Route::get('/groups', function()  {
+Route::get('groups', function()  {
     return view('groups');
 })->name('groups');
 
-Route::get('/groups/{political_group}', ShowGroup::class);
+Route::get('groups/{political_group}', ShowGroup::class);
 
-Route::get('/group/apply', PoliticalGroupApplication::class)->name('group-apply')->middleware(['auth:sanctum', 'verified']);
+Route::get('group/apply', PoliticalGroupApplication::class)->name('group-apply')->middleware(['auth:sanctum', 'verified']);
 
 /* -----LOGIN------ */
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
 ])->group(function () {
-    Route::get('/home', function()  {
+    Route::get('home', function()  {
         //Keeping this it's own view because with user information we're going to load them a customized page
         return view('welcome');
     })->name('home');
 });
 
 /* -----BALLOT------ */
-Route::get('/ballot/{ballot:slug}', [BallotController::class, 'getView'])->name('ballot');
+Route::get('ballot/{ballot:slug}', [BallotController::class, 'getView'])->name('ballot');
 //[BallotController::class, 'getView']
 
-Route::post('/ballot/vote/{ballot:slug}', [BallotController::class, 'update_vote'])->name('ballot.vote')->middleware(['auth:sanctum']);
+Route::post('ballot/vote/{ballot:slug}', [BallotController::class, 'update_vote'])->name('ballot.vote')->middleware(['auth:sanctum']);
 
-Route::get('/flag-comparison/{ballot:slug}', FlagComparison::class)->middleware(['auth:sanctum']);
+Route::get('flag-comparison/{ballot:slug}', FlagComparison::class)->middleware(['auth:sanctum']);
 
-Route::get('/print-ballot', PrintBallot::class)->middleware(['auth:sanctum']);
+Route::get('print-ballot', PrintBallot::class)->middleware(['auth:sanctum']);
 
 /* -----CANDIDATE------ */
 
 //APPLICATION
-Route::get('/apply', Application::class)->name('candidate-apply')->middleware(['auth:sanctum', 'verified', 'has2FAEnabled']);
+Route::get('apply', Application::class)->name('candidate-apply')->middleware(['auth:sanctum', 'verified', 'has2FAEnabled']);
 
 //PROFILE VIEW
-Route::get('/candidate/profile/{candidate:slug}', [CandidateController::class, 'getView'])->name('candidate.show');
+Route::get('candidate/profile/{candidate:slug}', [CandidateController::class, 'getView'])->name('candidate.show');
 
 
 /* -----ADMIN------ */
 
 
 /* -----PERMALINK REDIRECTING------ */
-Route::get('/permalink/{permalink}', [PermaLinkController::class, 'directLink']);
+Route::get('permalink/{permalink}', [PermaLinkController::class, 'directLink']);
 
 /* -----SOCIALITE------ */
 
 
 
 //GOOGLE
-Route::get('/auth/google/redirect', function () {
+Route::get('auth/google/redirect', function () {
     return Socialite::driver('google')->redirect();
 });
 
-Route::get('/auth/google/callback',[SocialiteController::class, 'handleGoogleCallback']);
+Route::get('auth/google/callback',[SocialiteController::class, 'handleGoogleCallback']);
 
 //FACEBOOK
-Route::get('/auth/facebook/redirect', function () {
+Route::get('auth/facebook/redirect', function () {
     return Socialite::driver('facebook')->redirect();
 });
 
-Route::get('/auth/facebook/callback', [SocialiteController::class, 'handleFacebookCallback']);
+Route::get('auth/facebook/callback', [SocialiteController::class, 'handleFacebookCallback']);
 
 
 //TWITTER
-Route::get('/auth/twitter/redirect', function () {
+Route::get('auth/twitter/redirect', function () {
     return Socialite::driver('twitter')->redirect();
 });
 
-Route::get('/auth/twitter/callback', [SocialiteController::class, 'handleTwitterCallback']);
+Route::get('auth/twitter/callback', [SocialiteController::class, 'handleTwitterCallback']);
 
 
 // Route::get('/newfeatures', NewFeature::class);

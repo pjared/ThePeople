@@ -7,10 +7,11 @@ use Filament\Widgets\Widget;
 class RequiredStancesOverview extends Widget
 {
     protected static string $view = 'filament.resources.candidate-required-stance-resource.widgets.required-stances-overview';
-    protected int | string | array $columnSpan = 'full';
 
     public $candidate;
     public $opinions;
+
+    protected int | string | array $columnSpan = 'full';
 
     //Cannot emit from resource, so this will stay as is
     // protected $listeners = ['itemAdded' => '$refresh'];

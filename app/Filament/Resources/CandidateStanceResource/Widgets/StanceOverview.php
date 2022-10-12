@@ -8,11 +8,11 @@ use Illuminate\Contracts\View\View;
 class StanceOverview extends Widget
 {
     protected static string $view = 'filament.resources.candidate-stance-resource.widgets.stance-overview';
-    protected int | string | array $columnSpan = 'full';
 
     public $candidate;
     public $opinions;
 
+    protected int | string | array $columnSpan = 'full';
     protected $listeners = ['itemAdded' => '$refresh'];
 
     public function render(): View

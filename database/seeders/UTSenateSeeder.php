@@ -37,7 +37,7 @@ class UTSenateSeeder extends Seeder
 
                     'opinions' => [],
                 ],
-            ]
+            ],
         ],
         [
             'location' => 'District 5',
@@ -176,7 +176,7 @@ class UTSenateSeeder extends Seeder
 
                     ],
                 ],
-            ]
+            ],
         ],
         [
             'location' => 'District 7',
@@ -315,7 +315,7 @@ class UTSenateSeeder extends Seeder
                         ],
                     ],
                 ],
-            ]
+            ],
         ],
         [
             'location' => 'District 9',
@@ -340,7 +340,7 @@ class UTSenateSeeder extends Seeder
                     'opinions' => [
                     ],
                 ],
-            ]
+            ],
         ],
         [
             'location' => 'District 11',
@@ -365,7 +365,7 @@ class UTSenateSeeder extends Seeder
                     'opinions' => [
                     ],
                 ],
-            ]
+            ],
         ],
         [
             'location' => 'District 12',
@@ -417,7 +417,7 @@ class UTSenateSeeder extends Seeder
                         ],
                     ],
                 ],
-            ]
+            ],
         ],
         [
             'location' => 'District 13',
@@ -481,7 +481,7 @@ class UTSenateSeeder extends Seeder
                         ],
                     ],
                 ],
-            ]
+            ],
         ],
         [
             'location' => 'District 14',
@@ -617,7 +617,7 @@ class UTSenateSeeder extends Seeder
 
                     ],
                 ],
-            ]
+            ],
         ],
         [
             'location' => 'District 18',
@@ -724,7 +724,7 @@ class UTSenateSeeder extends Seeder
                         ],
                     ],
                 ],
-            ]
+            ],
         ],
         [
             'location' => 'District 19',
@@ -861,7 +861,7 @@ class UTSenateSeeder extends Seeder
 
                     ],
                 ],
-            ]
+            ],
         ],
         [
             'location' => 'District 20',
@@ -942,7 +942,7 @@ class UTSenateSeeder extends Seeder
                         ],
                     ],
                 ],
-            ]
+            ],
         ],
         [
             'location' => 'District 21',
@@ -967,7 +967,7 @@ class UTSenateSeeder extends Seeder
                     'opinions' => [
                     ],
                 ],
-            ]
+            ],
         ],
         [
             'location' => 'District 23',
@@ -992,7 +992,7 @@ class UTSenateSeeder extends Seeder
                     'opinions' => [
                         ],
                 ],
-            ]
+            ],
         ],
         [
             'location' => 'District 28',
@@ -1140,7 +1140,7 @@ class UTSenateSeeder extends Seeder
 
                     ],
                 ],
-            ]
+            ],
         ],
     ];
     /**

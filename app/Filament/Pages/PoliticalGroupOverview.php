@@ -13,13 +13,13 @@ use Spatie\ImageOptimizer\OptimizerChainFactory;
 class PoliticalGroupOverview extends Page implements HasForms
 {
     use InteractsWithForms;
+
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
     protected static string $view = 'filament.pages.political-group-overview';
 
     public $group;
     public $photo;
     public $badge_photo;
-
     public $party_name;
     public $contact_phone_number;
     public $phone_number;
@@ -74,7 +74,7 @@ class PoliticalGroupOverview extends Page implements HasForms
 
         // Now lets make sure that it's less than a mb
         $this->validate([
-            'photo' => 'max:1024'
+            'photo' => 'max:1024',
         ]);
         if (isset($this->photo)) {
             $this->group->updateProfilePhoto($this->photo);
@@ -93,7 +93,7 @@ class PoliticalGroupOverview extends Page implements HasForms
 
         // Now lets make sure that it's less than a mb
         $this->validate([
-            'badge_photo' => 'max:1024'
+            'badge_photo' => 'max:1024',
         ]);
         if (isset($this->badge_photo)) {
             // dd('here');
@@ -101,7 +101,7 @@ class PoliticalGroupOverview extends Page implements HasForms
             tap($this->group->badge_url, function ($previous) use ($photo) {
                 $this->group->forceFill([
                     'badge_url' => $photo->storePublicly(
-                        'badge-photos', ['disk' => 'public']
+                        'badge-photos', ['disk' => 'public'],
                     ),
                 ])->save();
 

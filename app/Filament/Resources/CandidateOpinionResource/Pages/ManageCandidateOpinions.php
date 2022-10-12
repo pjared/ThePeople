@@ -24,7 +24,7 @@ class ManageCandidateOpinions extends ManageRecords
     protected function getHeaderWidgets(): array
     {
         return [
-            CandidateOpinionOverview::class
+            CandidateOpinionOverview::class,
         ];
     }
 }

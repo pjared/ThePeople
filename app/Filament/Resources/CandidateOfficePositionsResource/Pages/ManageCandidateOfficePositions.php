@@ -24,7 +24,7 @@ class ManageCandidateOfficePositions extends ManageRecords
     protected function getHeaderWidgets(): array
     {
         return [
-            PositionsOverview::class
+            PositionsOverview::class,
         ];
     }
 }

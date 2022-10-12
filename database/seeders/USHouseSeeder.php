@@ -117,7 +117,7 @@ class USHouseSeeder extends Seeder
                         ],
                     ],
                 ],
-            ]
+            ],
         ],
         [
             'location' => 'District 2',
@@ -331,7 +331,7 @@ class USHouseSeeder extends Seeder
                         ],
                     ],
                 ],
-            ]
+            ],
         ],
         [
             'location' => 'District 4',
@@ -569,7 +569,7 @@ class USHouseSeeder extends Seeder
                         ],
                     ],
                 ],
-            ]
+            ],
         ],
     ];
     /**

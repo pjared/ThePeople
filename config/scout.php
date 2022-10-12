@@ -43,7 +43,7 @@ return [
     // 'queue' => false,
     'queue' => [
         'connection' => 'redis',
-        'queue' => 'scout'
+        'queue' => 'scout',
     ],
 
     /*

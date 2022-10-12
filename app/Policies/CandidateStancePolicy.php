@@ -11,38 +11,6 @@ class CandidateStancePolicy
     use HandlesAuthorization;
 
     /**
-     * This will first do a check if this is an admin editing a manual candidate.
-     * If that doesn't pass, then we will make sure that it's the actual candidate that's editing the model
-     *
-     *  */
-    private function checkAdminAndCandidate($user, $candidate_id) :bool
-    {
-        //If it's an admin
-        if($user->hasRole('admin')) {
-            //If the candidate is a manual candidate
-            //This is commented out right now since model DNE
-            // if(Candidate::where('id', $campaignVideo->candidate_id)->manual_candidate) {
-                // return true;
-            // }
-            return true;
-        }
-
-        //Check if the user is a candidate (or admin for manual candidates)
-        if(! $user->hasRole('candidate')) {
-            return false;
-        }
-        //If the user is somehow a candidate role but doesn't have a candidate model
-        if(! $user->candidate) {
-            return false;
-        }
-        //Finally, lets check if they
-        if($user->candidate->id != $candidate_id) {
-            return false;
-        }
-        return true;
-    }
-
-    /**
      * Determine whether the user can view any models.
      *
      * @param  \App\Models\User  $user
@@ -128,5 +96,37 @@ class CandidateStancePolicy
     public function forceDelete(User $user, CandidateStance $candidateStance)
     {
         return false;
+    }
+
+    /**
+     * This will first do a check if this is an admin editing a manual candidate.
+     * If that doesn't pass, then we will make sure that it's the actual candidate that's editing the model
+     *
+     *  */
+    private function checkAdminAndCandidate($user, $candidate_id) :bool
+    {
+        //If it's an admin
+        if($user->hasRole('admin')) {
+            //If the candidate is a manual candidate
+            //This is commented out right now since model DNE
+            // if(Candidate::where('id', $campaignVideo->candidate_id)->manual_candidate) {
+                // return true;
+            // }
+            return true;
+        }
+
+        //Check if the user is a candidate (or admin for manual candidates)
+        if(! $user->hasRole('candidate')) {
+            return false;
+        }
+        //If the user is somehow a candidate role but doesn't have a candidate model
+        if(! $user->candidate) {
+            return false;
+        }
+        //Finally, lets check if they
+        if($user->candidate->id != $candidate_id) {
+            return false;
+        }
+        return true;
     }
 }

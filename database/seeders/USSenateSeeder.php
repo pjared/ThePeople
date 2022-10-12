@@ -311,7 +311,7 @@ class USSenateSeeder extends Seeder
                     'description' => 'Physics and AP Physics teacher, XC Assistant Coach, Member of Teacher Leadership Committee ',
                     'year_start' => 2018,
                     'year_end' => null,
-                ]
+                ],
             ],
 
             'education' => [

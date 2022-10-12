@@ -24,7 +24,7 @@ class ManageCampaignVideos extends ManageRecords
     protected function getHeaderWidgets(): array
     {
         return [
-            VideoOverview::class
+            VideoOverview::class,
         ];
     }
 }
