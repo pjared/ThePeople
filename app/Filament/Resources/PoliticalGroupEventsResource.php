@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\PoliticalGroupEventsResource\Pages\ManagePoliticalGroupEvents;
 use App\Models\PoliticalGroupEvents;
 use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Pages\Actions\DeleteAction;
@@ -29,7 +30,7 @@ class PoliticalGroupEventsResource extends Resource
         $group = auth()->user()->manages_political_groups->first();
         return $form
             ->schema([
-                Textarea::make('candidate_id')
+                Hidden::make('political_group_id')
                     ->default($group->id),
                 TextInput::make('event_name')
                     ->required()

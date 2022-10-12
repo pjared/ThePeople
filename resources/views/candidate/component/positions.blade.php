@@ -18,7 +18,7 @@
                             </div>
                             @auth
                                 <livewire:flag-content
-                                    :flag_id="$this->flags->where('flaggable_type', 'App\Models\CandidateOfficePositions')->firstWhere('flaggable_id', $position->id) ? $this->flags->where('flaggable_type', 'App\Models\CandidateOfficePositions')->firstWhere('flaggable_id', $position->id)->id ? null"
+                                    :flag_id="$this->flags->where('flaggable_type', 'App\Models\CandidateOfficePositions')->firstWhere('flaggable_id', $position->id) ? $this->flags->where('flaggable_type', 'App\Models\CandidateOfficePositions')->firstWhere('flaggable_id', $position->id)->id : null"
                                     :content="$position"
                                     :side="'below'"
                                     :wire:key="'position-' . $position->id" />

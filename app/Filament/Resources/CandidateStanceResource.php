@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CandidateStanceResource\Pages\ManageCandidateStances;
 use App\Models\CandidateStance;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -32,7 +33,7 @@ class CandidateStanceResource extends Resource
         $opinions = $candidate->ballot ? $candidate->ballot->opinions : collect();
         return $form
             ->schema([
-                Textarea::make('candidate_id')
+                Hidden::make('candidate_id')
                     ->default($candidate->id),
                 Select::make('controversial_opinion_id')
                     ->options($opinions->pluck('name', 'id'))

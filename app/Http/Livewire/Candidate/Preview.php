@@ -13,7 +13,6 @@ use Livewire\Component;
  */
 class Preview extends Component
 {
-    public Candidate $candidate;
     public $show;
 
     public function mount()
@@ -23,7 +22,7 @@ class Preview extends Component
 
     public function getCandidateProperty()
     {
-        $this->candidate = Candidate::firstWhere('user_id', Auth::id());
+        return Candidate::firstWhere('user_id', Auth::id());
     }
 
     public function render()

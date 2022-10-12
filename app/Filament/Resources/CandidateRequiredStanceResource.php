@@ -37,7 +37,6 @@ class CandidateRequiredStanceResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('required_stance.label'),
-                // TextColumn::make('candidate_id'),
                 TextColumn::make('candidate_reasoning')
                     ->label('Your stance on this topic')
                     ->limit(80),

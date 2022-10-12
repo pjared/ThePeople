@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CandidateOfficePositionsResource\Pages\ManageCandidateOfficePositions;
 use App\Models\CandidateOfficePositions;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
@@ -26,7 +27,7 @@ class CandidateOfficePositionsResource extends Resource
     {
         return $form
             ->schema([
-                Textarea::make('candidate_id')
+                Hidden::make('candidate_id')
                     ->default(auth()->user()->candidate->id),
                 TextInput::make('position_name')
                     ->required()
@@ -58,6 +59,7 @@ class CandidateOfficePositionsResource extends Resource
                 TextColumn::make('year_start'),
                 TextColumn::make('year_end'),
                 TextColumn::make('order')
+                    ->label('Order of appearance')
                     ->sortable(),
             ])
             ->filters([

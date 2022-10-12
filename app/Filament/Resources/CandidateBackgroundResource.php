@@ -4,7 +4,6 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CandidateBackgroundResource\Pages\ManageCandidateBackgrounds;
 use App\Models\CandidateBackground;
-use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -35,12 +34,13 @@ class CandidateBackgroundResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Textarea::make('description')
-                    ->required()
                     ->maxLength(65535),
-                DatePicker::make('year_start')
-                    ->required(),
-                DatePicker::make('year_end')
-                    ->required(),
+                TextInput::make('year_start')
+                    ->minLength(4)
+                    ->maxLength(4),
+                TextInput::make('year_end')
+                    ->minLength(4)
+                    ->maxLength(4),
             ]);
     }
 
@@ -50,14 +50,8 @@ class CandidateBackgroundResource extends Resource
             ->columns([
                 TextColumn::make('name'),
                 TextColumn::make('description'),
-                TextColumn::make('year_start')
-                    ->date(),
-                TextColumn::make('year_end')
-                    ->date(),
-                TextColumn::make('created_at')
-                    ->dateTime(),
-                TextColumn::make('updated_at')
-                    ->dateTime(),
+                TextColumn::make('year_start'),
+                TextColumn::make('year_end'),
             ])
             ->filters([
                 //

@@ -5,12 +5,12 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ControversialOpinionResource\Pages\ManageControversialOpinions;
 use App\Models\ControversialOpinion;
 use Filament\Forms\Components\TextInput;
-use Filament\Pages\Actions\DeleteAction;
-use Filament\Pages\Actions\EditAction;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
+use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 
 class ControversialOpinionResource extends Resource

@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CandidateOpinionResource\Pages\ManageCandidateOpinions;
 use App\Models\CandidateOpinion;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
@@ -28,7 +29,7 @@ class CandidateOpinionResource extends Resource
     {
         return $form
             ->schema([
-                Textarea::make('candidate_id')
+                Hidden::make('candidate_id')
                     ->default(auth()->user()->candidate->id),
                 TextInput::make('name')
                     ->required()

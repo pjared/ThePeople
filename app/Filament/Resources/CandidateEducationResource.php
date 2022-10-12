@@ -4,7 +4,6 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CandidateEducationResource\Pages\ManageCandidateEducation;
 use App\Models\CandidateEducation;
-use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
@@ -39,10 +38,9 @@ class CandidateEducationResource extends Resource
                 TextInput::make('degree_type')
                     ->required()
                     ->maxLength(255),
-                DatePicker::make('year_start')
-                    ->required(),
-                DatePicker::make('year_end')
-                    ->required(),
+                TextInput::make('year_received')
+                    ->minLength(4)
+                    ->maxLength(4),
             ]);
     }
 
@@ -53,14 +51,7 @@ class CandidateEducationResource extends Resource
                 TextColumn::make('school_name'),
                 TextColumn::make('degree_field'),
                 TextColumn::make('degree_type'),
-                TextColumn::make('year_start')
-                    ->date(),
-                TextColumn::make('year_end')
-                    ->date(),
-                TextColumn::make('created_at')
-                    ->dateTime(),
-                TextColumn::make('updated_at')
-                    ->dateTime(),
+                TextColumn::make('year_received'),
             ])
             ->filters([
                 //
