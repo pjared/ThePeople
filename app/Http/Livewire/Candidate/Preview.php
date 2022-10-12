@@ -8,6 +8,9 @@ use App\Models\Candidate;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
+/**
+ * A wire for the candidate's preview in their admin page
+ */
 class Preview extends Component
 {
     public Candidate $candidate;

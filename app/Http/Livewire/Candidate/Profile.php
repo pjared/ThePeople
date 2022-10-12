@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
+/**
+ * The wire for the candidate's profile. I realize that using livewire for the entire page is overkill. In the future,
+ * I would like to make as much of this page just a controller and use livewire for the flags only. However, I could not think
+ * of a better solution for handling the change of a flag without mass code repitition.
+ */
 class Profile extends Component
 {
     public $candidate_slug;
@@ -17,6 +22,9 @@ class Profile extends Component
         $this->candidate_slug = $candidate_slug;
     }
 
+    /**
+     * Computed property for the users flags for the current candidate
+     */
     public function getFlagsProperty()
     {
         if(! auth()->check()) {
@@ -57,6 +65,9 @@ class Profile extends Component
         return view('livewire.candidate.profile');
     }
 
+    /**
+     * A function to handle the change of the flag.
+     */
     public function change_flag($flag_type, $flag_id, $flag_value, $flag_note)
     {
         // Auth Check

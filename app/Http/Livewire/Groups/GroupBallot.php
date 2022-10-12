@@ -29,27 +29,37 @@ class GroupBallot extends Component
         return view('livewire.groups.group-ballot');
     }
 
+    /**
+     * Change a political groups candidate backing
+     */
     public function change_backing() {
         PoliticalGroupCandidates::updateOrCreate(
-            [
-                'political_group_id' => auth()->user()->manages_political_groups->first()->id,
-                'ballot_id' => $this->ballot->id,
-                'candidate_id' => $this->backed_candidate,
-            ],
+                [
+                    'political_group_id' => auth()->user()->manages_political_groups->first()->id,
+                    'ballot_id' => $this->ballot->id,
+                    'candidate_id' => $this->backed_candidate,
+                ],
             );
-
     }
 
+    /**
+     * Removes a political groups candidate backing
+     */
     public function remove_backing()
     {
+        //Get the candidate backing model
         $candidate = PoliticalGroupCandidates::where('political_group_id', auth()->user()->manages_political_groups->first()->id)
                                     ->firstWhere('ballot_id', $this->ballot->id);
+        //Delete if candidate backing exists
         if($candidate) {
             $candidate->delete();
         }
         $this->backed_candidate = '';
     }
 
+    /**
+     * Political groups can add a question to the ballot.
+     */
     public function add_question() {
         if(auth()->user() && auth()->user()->hasRole('organizerAdmin')) {
             //Check the users group

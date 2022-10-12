@@ -5,6 +5,9 @@ namespace App\Http\Livewire;
 use App\Models\UserFlag;
 use Livewire\Component;
 
+/**
+ * A class I made to mess around with new features. Testing only
+ */
 class NewFeature extends Component
 {
 

@@ -28,6 +28,10 @@ class Application extends Component
         'application.entered_race_date' => 'nullable|date',
     ];
 
+    /**
+     * Submits the user's candidate application after the input has been validated. Also checks to make sure
+     * that a user has not already submitted an application
+    */
     public function apply()
     {
         $this->validate();

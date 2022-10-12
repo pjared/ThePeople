@@ -20,6 +20,9 @@ class PoliticalGroupApplication extends Component
         'application.state' => 'required',
     ];
 
+    /**
+     * Submits the group application for the user
+     */
     public function apply()
     {
         //Make sure that someone doesn't submit a request if they have an application
@@ -27,6 +30,7 @@ class PoliticalGroupApplication extends Component
             return;
         }
 
+        //Validate, then save the application
         $this->validate();
 
         $this->application->status = "submitted";
@@ -36,6 +40,7 @@ class PoliticalGroupApplication extends Component
         $this->previous_application = $this->application;
         session()->flash('message', 'You have submitted an application, we will email you updates as we process it.');
 
+        //Mail the user a confirmation
         Mail::to('thepeople@whatsinyourballot.com')->send(new GroupApplicationSubmitted());
     }
 

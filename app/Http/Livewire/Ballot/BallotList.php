@@ -41,6 +41,10 @@ class BallotList extends Component
         ]);
     }
 
+    /**
+     * The function called when "Load More" is pressed. Increases the count for the ballots to be
+     * taken from the list
+     */
     public function load_ballots()
     {
         $this->ballot_count += 10;

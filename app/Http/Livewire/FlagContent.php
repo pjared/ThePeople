@@ -5,6 +5,9 @@ namespace App\Http\Livewire;
 use App\Models\Flag;
 use Livewire\Component;
 
+/**
+ * A class to handle loading a flag for a section of a candidates profile.
+ */
 class FlagContent extends Component
 {
     public $set_flag;
@@ -20,16 +23,23 @@ class FlagContent extends Component
         $this->side = $side;
 
         if(! $this->flag) {
+            //Gets the class of the "content" to set the type
             $this->type = get_class($content);
             $this->type_id = $content->id;
         }
     }
 
+    /**
+     * Computed property for the current flag
+     */
     public function getFlagProperty()
     {
         return Flag::find($this->flag_id);
     }
 
+    /**
+     * Computed property for the dropdown
+     */
     public function getDropDownClassProperty()
     {
         if($this->side == 'right') {
@@ -41,6 +51,9 @@ class FlagContent extends Component
         }
     }
 
+    /**
+     * A method to load the flag. This will set the color, the note, and data for the candidate section
+     */
     public function load_flag()
     {
         //Default current color is transparent
