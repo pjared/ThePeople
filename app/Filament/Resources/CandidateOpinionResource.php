@@ -2,13 +2,17 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CandidateOpinionResource\Pages;
+use App\Filament\Resources\CandidateOpinionResource\Pages\ManageCandidateOpinions;
 use App\Models\CandidateOpinion;
-use Filament\Forms;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 
 class CandidateOpinionResource extends Resource
@@ -24,15 +28,15 @@ class CandidateOpinionResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Hidden::make('candidate_id')
+                Textarea::make('candidate_id')
                     ->default(auth()->user()->candidate->id),
-                Forms\Components\TextInput::make('name')
+                TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('stance')
+                Textarea::make('stance')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('order')
+                TextInput::make('order')
                     ->numeric()
                     ->minValue(1)
                     ->maxValue(100),
@@ -43,28 +47,28 @@ class CandidateOpinionResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('stance')
+                TextColumn::make('name'),
+                TextColumn::make('stance')
                     ->limit(80),
-                Tables\Columns\TextColumn::make('order')
+                TextColumn::make('order')
                     ->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageCandidateOpinions::route('/'),
+            'index' => ManageCandidateOpinions::route('/'),
         ];
     }
 

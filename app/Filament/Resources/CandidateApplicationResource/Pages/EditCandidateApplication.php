@@ -6,7 +6,7 @@ use App\Filament\Resources\CandidateApplicationResource;
 use App\Models\Candidate;
 use App\Models\User;
 use Carbon\Carbon;
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Facades\Log;
 
@@ -17,7 +17,7 @@ class EditCandidateApplication extends EditRecord
     protected function getActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            DeleteAction::make(),
         ];
     }
 

@@ -2,13 +2,19 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CandidatePhotoResource\Pages;
+use App\Filament\Resources\CandidatePhotoResource\Pages\ManageCandidatePhotos;
 use App\Models\CandidatePhoto;
-use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 
 class CandidatePhotoResource extends Resource
@@ -23,9 +29,9 @@ class CandidatePhotoResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Hidden::make('candidate_id')
+                Textarea::make('candidate_id')
                     ->default(auth()->user()->candidate->id),
-                Forms\Components\FileUpload::make('attachment')
+                FileUpload::make('attachment')
                     ->image()
                     ->imagePreviewHeight('250')
                     ->loadingIndicatorPosition('left')
@@ -36,7 +42,7 @@ class CandidatePhotoResource extends Resource
                     ->uploadProgressIndicatorPosition('left')
                     ->maxSize(1024)
                     ->required(),
-                Forms\Components\TextInput::make('order')
+                TextInput::make('order')
                     ->label('Order of the photo')
                     ->numeric(),
             ]);
@@ -46,25 +52,25 @@ class CandidatePhotoResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('attachment'),
-                Tables\Columns\TextColumn::make('order'),
+                ImageColumn::make('attachment'),
+                TextColumn::make('order'),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageCandidatePhotos::route('/'),
+            'index' => ManageCandidatePhotos::route('/'),
         ];
     }
 

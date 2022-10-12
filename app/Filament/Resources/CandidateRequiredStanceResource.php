@@ -2,13 +2,16 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CandidateRequiredStanceResource\Pages;
+use App\Filament\Resources\CandidateRequiredStanceResource\Pages\ManageCandidateRequiredStances;
 use App\Models\CandidateRequiredStance;
-use Filament\Forms;
+use Filament\Forms\Components\Textarea;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 
 class CandidateRequiredStanceResource extends Resource
@@ -24,7 +27,7 @@ class CandidateRequiredStanceResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Textarea::make('candidate_reasoning')
+                Textarea::make('candidate_reasoning')
                     ->maxLength(65535),
             ]);
     }
@@ -33,9 +36,9 @@ class CandidateRequiredStanceResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('required_stance.label'),
-                // Tables\Columns\TextColumn::make('candidate_id'),
-                Tables\Columns\TextColumn::make('candidate_reasoning')
+                TextColumn::make('required_stance.label'),
+                // TextColumn::make('candidate_id'),
+                TextColumn::make('candidate_reasoning')
                     ->label('Your stance on this topic')
                     ->limit(80),
             ])
@@ -43,18 +46,18 @@ class CandidateRequiredStanceResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageCandidateRequiredStances::route('/'),
+            'index' => ManageCandidateRequiredStances::route('/'),
         ];
     }
 

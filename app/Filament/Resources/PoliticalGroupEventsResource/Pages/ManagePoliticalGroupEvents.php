@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\PoliticalGroupEventsResource\Pages;
 
 use App\Filament\Resources\PoliticalGroupEventsResource;
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ManageRecords;
 
 class ManagePoliticalGroupEvents extends ManageRecords
@@ -13,7 +13,7 @@ class ManagePoliticalGroupEvents extends ManageRecords
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\CandidateEducationResource\Pages;
 
 use App\Filament\Resources\CandidateEducationResource;
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ManageRecords;
 
 class ManageCandidateEducation extends ManageRecords
@@ -13,7 +13,7 @@ class ManageCandidateEducation extends ManageRecords
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 }

@@ -35,7 +35,6 @@ class CandidateController extends Controller
         }
 
         $candidate = $this->getCandidate($candidate_slug);
-        return view('candidate.show')
-                    ->with('candidate', $candidate);
+        return view('candidate.show', ['candidate' => $candidate]);
     }
 }

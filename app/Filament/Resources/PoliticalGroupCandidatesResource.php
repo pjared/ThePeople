@@ -2,12 +2,14 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PoliticalGroupCandidatesResource\Pages;
+use App\Filament\Resources\PoliticalGroupCandidatesResource\Pages\ManagePoliticalGroupCandidates;
 use App\Models\PoliticalGroupCandidates;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 
 class PoliticalGroupCandidatesResource extends Resource
@@ -22,9 +24,9 @@ class PoliticalGroupCandidatesResource extends Resource
     {
         return $form
             ->schema([
-                // Forms\Components\TextInput::make('political_group_id')
+                // TextInput::make('political_group_id')
                 //     ->required(),
-                // Forms\Components\TextInput::make('candidate_id')
+                // TextInput::make('candidate_id')
                 //     ->required(),
             ]);
     }
@@ -33,32 +35,32 @@ class PoliticalGroupCandidatesResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('candidate.name'),
-                // Tables\Columns\TextColumn::make('political_group_id'),
-                // Tables\Columns\TextColumn::make('candidate_id'),
-                // Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('candidate.name'),
+                // TextColumn::make('political_group_id'),
+                // TextColumn::make('candidate_id'),
+                // TextColumn::make('created_at')
                 //     ->dateTime(),
-                // Tables\Columns\TextColumn::make('updated_at')
+                // TextColumn::make('updated_at')
                 //     ->dateTime(),
-                // Tables\Columns\TextColumn::make('deleted_at')
+                // TextColumn::make('deleted_at')
                 //     ->dateTime(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                // Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                // EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManagePoliticalGroupCandidates::route('/'),
+            'index' => ManagePoliticalGroupCandidates::route('/'),
         ];
     }
 

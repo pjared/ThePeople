@@ -2,13 +2,16 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PublicOfficePositionResource\Pages;
+use App\Filament\Resources\PublicOfficePositionResource\Pages\ManagePublicOfficePositions;
 use App\Models\PublicOfficePosition;
-use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 
 class PublicOfficePositionResource extends Resource
 {
@@ -22,12 +25,12 @@ class PublicOfficePositionResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('years_per_term')
+                TextInput::make('years_per_term')
                     ->required(),
-                Forms\Components\TextInput::make('limit_terms'),
+                TextInput::make('limit_terms'),
             ]);
     }
 
@@ -35,28 +38,28 @@ class PublicOfficePositionResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('name')
+                TextColumn::make('id'),
+                TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('years_per_term'),
-                Tables\Columns\TextColumn::make('limit_terms'),
+                TextColumn::make('years_per_term'),
+                TextColumn::make('limit_terms'),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManagePublicOfficePositions::route('/'),
+            'index' => ManagePublicOfficePositions::route('/'),
         ];
     }
 }

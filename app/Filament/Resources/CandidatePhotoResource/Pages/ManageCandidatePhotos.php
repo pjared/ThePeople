@@ -4,7 +4,7 @@ namespace App\Filament\Resources\CandidatePhotoResource\Pages;
 
 use App\Filament\Resources\CandidatePhotoResource;
 use App\Filament\Resources\CandidatePhotoResource\Widgets\CandidatePhotoOverview;
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ManageRecords;
 
 class ManageCandidatePhotos extends ManageRecords
@@ -14,7 +14,7 @@ class ManageCandidatePhotos extends ManageRecords
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make()
+            CreateAction::make()
                 ->after(function () {
                     $this->emit('itemAdded');
                 }),

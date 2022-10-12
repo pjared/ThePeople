@@ -57,7 +57,7 @@ class LocationSeeder extends Seeder
         "Washington",
         "West Virginia",
         "Wisconsin",
-        "Wyoming"
+        "Wyoming",
     ]; */
 
     /* private $county_names = [
@@ -78,7 +78,7 @@ class LocationSeeder extends Seeder
     public function run()
     {
         //TODO: Might need to read a file for the county and city names
-        //TODO: Need to make the file with a wikipedia parser 
+        //TODO: Need to make the file with a wikipedia parser
 
         DB::table('locations')->insert([
             'name' => 'Provo',
@@ -94,7 +94,7 @@ class LocationSeeder extends Seeder
             'population' => rand(1, 10000),
             // 'opinion_type_id' => 1,
         ]);
-        /* 
+        /*
         foreach ($this->state_names as $name) {
             DB::table('locations')->insert([
                 'name' => $name,
@@ -112,7 +112,7 @@ class LocationSeeder extends Seeder
                 'opinion_type_id' => 1,
             ]);
         }
-        
+
         foreach ($this->city_names as $name) {
             DB::table('locations')->insert([
                 'name' => $name,
@@ -120,7 +120,7 @@ class LocationSeeder extends Seeder
                 'population' => rand(1, 10000),
                 'opinion_type_id' => 1,
             ]);
-        } 
+        }
         */
     }
 }

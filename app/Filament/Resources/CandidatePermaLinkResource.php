@@ -2,13 +2,16 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CandidatePermaLinkResource\Pages;
+use App\Filament\Resources\CandidatePermaLinkResource\Pages\ManageCandidatePermaLinks;
 use App\Models\CandidatePermaLink;
-use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 
 class CandidatePermaLinkResource extends Resource
 {
@@ -21,12 +24,12 @@ class CandidatePermaLinkResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('candidate_id')
+                TextInput::make('candidate_id')
                     ->required(),
-                Forms\Components\TextInput::make('perma_link')
+                TextInput::make('perma_link')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('candidate_link')
+                TextInput::make('candidate_link')
                     ->required()
                     ->maxLength(255),
             ]);
@@ -36,26 +39,26 @@ class CandidatePermaLinkResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('candidate.name'),
-                Tables\Columns\TextColumn::make('perma_link'),
-                Tables\Columns\TextColumn::make('candidate_link'),
+                TextColumn::make('candidate.name'),
+                TextColumn::make('perma_link'),
+                TextColumn::make('candidate_link'),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageCandidatePermaLinks::route('/'),
+            'index' => ManageCandidatePermaLinks::route('/'),
         ];
     }
 }

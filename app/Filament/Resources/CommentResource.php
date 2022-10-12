@@ -2,13 +2,19 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CommentResource\Pages;
+use App\Filament\Resources\CommentResource\Pages\ManageComments;
 use App\Models\Comment;
-use Filament\Forms;
+use Filament\Forms\ComponentContainer;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\Action;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Columns\BooleanColumn;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 
 class CommentResource extends Resource
@@ -30,15 +36,15 @@ class CommentResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('comment')
+                TextColumn::make('comment')
                     ->limit(60),
-                Tables\Columns\TextColumn::make('reply')
+                TextColumn::make('reply')
                     ->limit(60),
-                Tables\Columns\BooleanColumn::make('is_approved')
+                BooleanColumn::make('is_approved')
                     ->label('Show on Profile'),
-                Tables\Columns\TextColumn::make('user.name')
+                TextColumn::make('user.name')
                     ->label('User\'s Name'),
-                Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('created_at')
                     ->label('Posted At'),
             ])
             ->defaultSort('created_at', 'desc')
@@ -46,9 +52,9 @@ class CommentResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\DeleteAction::make(),
-                Tables\Actions\Action::make('Reply To Comment')
-                    ->mountUsing(fn (Forms\ComponentContainer $form, Comment $record) => $form->fill([
+                DeleteAction::make(),
+                Action::make('Reply To Comment')
+                    ->mountUsing(fn (ComponentContainer $form, Comment $record) => $form->fill([
                         'reply' => $record->reply,
                         'comment' => $record->comment,
                     ]))
@@ -58,25 +64,25 @@ class CommentResource extends Resource
                         $record->save();
                     })
                     ->form([
-                        Forms\Components\Textarea::make('comment')
+                        Textarea::make('comment')
                             ->disabled()
                             ->dehydrated(false),
-                        Forms\Components\Textarea::make('reply')
+                        Textarea::make('reply')
                             ->label('Reply'),
-                        Forms\Components\Toggle::make('is_approved')
+                        Toggle::make('is_approved')
                             ->label('Show on profile')
                             ->required(),
                     ]),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageComments::route('/'),
+            'index' => ManageComments::route('/'),
         ];
     }
 

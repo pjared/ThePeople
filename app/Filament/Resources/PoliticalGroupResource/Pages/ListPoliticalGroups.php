@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\PoliticalGroupResource\Pages;
 
 use App\Filament\Resources\PoliticalGroupResource;
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
 class ListPoliticalGroups extends ListRecords
@@ -13,7 +13,7 @@ class ListPoliticalGroups extends ListRecords
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 }

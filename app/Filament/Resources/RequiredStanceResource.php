@@ -2,13 +2,17 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\RequiredStanceResource\Pages;
+use App\Filament\Resources\RequiredStanceResource\Pages\ManageRequiredStances;
 use App\Models\RequiredStance;
-use Filament\Forms;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 
 class RequiredStanceResource extends Resource
 {
@@ -21,12 +25,12 @@ class RequiredStanceResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('controversial_opinion_id')
+                TextInput::make('controversial_opinion_id')
                     ->required(),
-                Forms\Components\TextInput::make('label')
+                TextInput::make('label')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('description')
+                Textarea::make('description')
                     ->required()
                     ->maxLength(65535),
             ]);
@@ -36,30 +40,30 @@ class RequiredStanceResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('controversial_opinion_id')
+                TextColumn::make('controversial_opinion_id')
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('controversial_opinion.name')
+                TextColumn::make('controversial_opinion.name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('label'),
-                Tables\Columns\TextColumn::make('description'),
+                TextColumn::make('label'),
+                TextColumn::make('description'),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageRequiredStances::route('/'),
+            'index' => ManageRequiredStances::route('/'),
         ];
     }
 }

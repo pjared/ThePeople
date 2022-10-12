@@ -35,47 +35,47 @@ class UTHouseSeeder extends Seeder
 
                         [
                             'name' => "Economy & Taxes",
-                            'stance' => "As our state faces difficult decisions, we must remain principle-based to be successful. Below, you'll find the principles that will guide me as your legislator."
+                            'stance' => "As our state faces difficult decisions, we must remain principle-based to be successful. Below, you'll find the principles that will guide me as your legislator.",
                         ],
                         [
                             'name' => "Property Rights",
-                            'stance' => "The right to own property is fundamental to a free people.  I will work hard to ensure personal property rights are protected."
+                            'stance' => "The right to own property is fundamental to a free people.  I will work hard to ensure personal property rights are protected.",
                         ],
                         [
                             'name' => "Public Lands",
-                            'stance' => "My family enjoys visiting and spending time on federal and state lands.  I will make sure those areas are protected for recreation, as well as wise agriculture and industry uses.  Public land-use policy decisions should be made on a local level."
+                            'stance' => "My family enjoys visiting and spending time on federal and state lands.  I will make sure those areas are protected for recreation, as well as wise agriculture and industry uses.  Public land-use policy decisions should be made on a local level.",
                         ],
                         [
                             'name' => "Education",
-                            'stance' => "Education functions best when decisions are made on a local level.  Funding our public schools at all levels is a top priority.  I will make sure we follow high standards for our teachers and students while allowing parent choice and providing the best help we can to teachers and students."
+                            'stance' => "Education functions best when decisions are made on a local level.  Funding our public schools at all levels is a top priority.  I will make sure we follow high standards for our teachers and students while allowing parent choice and providing the best help we can to teachers and students.",
                         ],
                         [
                             'name' => "Public Safety",
-                            'stance' => "I am a proud supporter of our public safety officials.  We live in a time when we need to be sure our safety is protected and our first responders are respected.   "
+                            'stance' => "I am a proud supporter of our public safety officials.  We live in a time when we need to be sure our safety is protected and our first responders are respected.   ",
                         ],
                         [
                             'name' => "Transportation",
-                            'stance' => "With expected population growth, we need to make sure our transportation needs are met and that our rural areas are not forgotten.  Funding the maintenance and new construction of our transportation systems is critical to the economic development of our community."
+                            'stance' => "With expected population growth, we need to make sure our transportation needs are met and that our rural areas are not forgotten.  Funding the maintenance and new construction of our transportation systems is critical to the economic development of our community.",
                         ],
                         [
                             'name' => "Mental Health",
-                            'stance' => "I acknowledge the many different types of mental disorders and support help and treatment for individuals.  I will work to make sure resources are available for those who need help."
+                            'stance' => "I acknowledge the many different types of mental disorders and support help and treatment for individuals.  I will work to make sure resources are available for those who need help.",
                         ],
                         [
                             'name' => "Health Care",
-                            'stance' => "My family has felt the effects of a worsening health care system.  I support free market solutions to get us back to affordable rates for families and competitive business opportunities."
+                            'stance' => "My family has felt the effects of a worsening health care system.  I support free market solutions to get us back to affordable rates for families and competitive business opportunities.",
                         ],
                         [
                             'name' => "Innovation",
-                            'stance' => "Technology is a wonderful thing.  I am encouraged by all the good I can see in science and how it can benefit agriculture, health, and business. I will support new opportunities for growth in this area."
+                            'stance' => "Technology is a wonderful thing.  I am encouraged by all the good I can see in science and how it can benefit agriculture, health, and business. I will support new opportunities for growth in this area.",
                         ],
                         [
                             'name' => "2nd Amendment",
-                            'stance' => "I am an avid sportsman and enjoy spending time in the field with my children.  As an owner and member of hunting clubs, I strongly support the 2nd Amendment."
+                            'stance' => "I am an avid sportsman and enjoy spending time in the field with my children.  As an owner and member of hunting clubs, I strongly support the 2nd Amendment.",
                         ],
                         [
                             'name' => "Energy",
-                            'stance' => "Developing new forms of energy is crucial to support our growing population. I believe that Utah can lead the way in developing new energy technologies.  I support the development of all forms of power."
+                            'stance' => "Developing new forms of energy is crucial to support our growing population. I believe that Utah can lead the way in developing new energy technologies.  I support the development of all forms of power.",
                         ],
 
                     ],
@@ -770,19 +770,19 @@ class UTHouseSeeder extends Seeder
                     'opinions' => [
                         [
                             'name' => "Save the Great Salt Lake!",
-                            'stance' => "To maintain and improve our quality of life along the Wasatch Front, it is imperative that the overall health of the Great Salt Lake become a priority of the Utah Legislature."
+                            'stance' => "To maintain and improve our quality of life along the Wasatch Front, it is imperative that the overall health of the Great Salt Lake become a priority of the Utah Legislature.",
                         ],
                         [
                             'name' => "Reproductive Freedom = Economic Freedom",
-                            'stance' => "With the overturning of Roe V. Wade in late June 2022, the reproductive freedoms that women have enjoyed for fifty years were stripped away."
+                            'stance' => "With the overturning of Roe V. Wade in late June 2022, the reproductive freedoms that women have enjoyed for fifty years were stripped away.",
                         ],
                         [
                             'name' => "Education",
-                            'stance' => "I believe that investment in our public schools is key to the future success of Utah."
+                            'stance' => "I believe that investment in our public schools is key to the future success of Utah.",
                         ],
                         [
                             'name' => "Public Lands",
-                            'stance' => "I believe it is critical that we protect Utah's wild places for future generations."
+                            'stance' => "I believe it is critical that we protect Utah's wild places for future generations.",
                         ],
                     ],
                 ],
@@ -939,35 +939,35 @@ class UTHouseSeeder extends Seeder
                     'opinions' => [
                         [
                             'name' => "Economy:",
-                            'stance' => "We need to create a social and environmental atmosphere that will attract companies to Utah and promote the development and success of home grown Utah businesses."
+                            'stance' => "We need to create a social and environmental atmosphere that will attract companies to Utah and promote the development and success of home grown Utah businesses.",
                         ],
                         [
                             'name' => "Public Education:",
-                            'stance' => "We must protect and invest into our public education system. This includes more funding allocated to our children, classrooms, and teachers."
+                            'stance' => "We must protect and invest into our public education system. This includes more funding allocated to our children, classrooms, and teachers.",
                         ],
                         [
                             'name' => "Environment:",
-                            'stance' => "Too often the environment takes a back seat to development or other economic interests. Our representatives in the legislature must work to bring greater balance to all environmental issues we in District 23 are concerned about."
+                            'stance' => "Too often the environment takes a back seat to development or other economic interests. Our representatives in the legislature must work to bring greater balance to all environmental issues we in District 23 are concerned about.",
                         ],
                         [
                             'name' => "Healthcare:",
-                            'stance' => "We must work as a state to ensure that every Utahn has health insurance, and is allowed access to quality healthcare while at the same time encouraging the best and safest possible medical practices in our community."
+                            'stance' => "We must work as a state to ensure that every Utahn has health insurance, and is allowed access to quality healthcare while at the same time encouraging the best and safest possible medical practices in our community.",
                         ],
                         [
                             'name' => "Gun Safety:",
-                            'stance' => "The health and safety of our community is of the upmost importance. Sensible gun laws, like universal background checks, will help keep firearms out of the hands of those who should not have one. "
+                            'stance' => "The health and safety of our community is of the upmost importance. Sensible gun laws, like universal background checks, will help keep firearms out of the hands of those who should not have one. ",
                         ],
                         [
                             'name' => "Mental Health",
-                            'stance' => "Every Utah family deserves access to mental health resources. We must end the stigma around mental health and expand mental health resources."
+                            'stance' => "Every Utah family deserves access to mental health resources. We must end the stigma around mental health and expand mental health resources.",
                         ],
                         [
                             'name' => "Public Lands",
-                            'stance' => "​Ensuring access to public lands is vital to the future of our state."
+                            'stance' => "​Ensuring access to public lands is vital to the future of our state.",
                         ],
                         [
                             'name' => "Representative Politics",
-                            'stance' => "I'm running to ensure that the people in District 23 will continue to be represented by an experienced, knowledgeable, and principled advocate."
+                            'stance' => "I'm running to ensure that the people in District 23 will continue to be represented by an experienced, knowledgeable, and principled advocate.",
                         ],
                     ],
                 ],
@@ -1169,23 +1169,23 @@ class UTHouseSeeder extends Seeder
                     'opinions' => [
                         [
                             'name' => "JOB GROWTH",
-                            'stance' => "The west side of Salt Lake County is the economic engine of our local economy. We need to continue to attract competitive paying jobs to our area from all industries."
+                            'stance' => "The west side of Salt Lake County is the economic engine of our local economy. We need to continue to attract competitive paying jobs to our area from all industries.",
                         ],
                         [
                             'name' => "SUPPORTING SMALL BUSINESSES",
-                            'stance' => "Small businesses are the backbone of our local economy and what keeps the economic engine running. I know how hard small business owners work and struggle, especially during this recent pandemic and earthquake. I have worked with small businesses getting them products and services to help their business thrive."
+                            'stance' => "Small businesses are the backbone of our local economy and what keeps the economic engine running. I know how hard small business owners work and struggle, especially during this recent pandemic and earthquake. I have worked with small businesses getting them products and services to help their business thrive.",
                         ],
                         [
                             'name' => "EDUCATION FUNDING",
-                            'stance' => "Improving education and increasing funding are key elements to ensure our children's future. Educators must be fairly compensated for their work, and it is the duty of our state to minimize turnover and improve retention."
+                            'stance' => "Improving education and increasing funding are key elements to ensure our children's future. Educators must be fairly compensated for their work, and it is the duty of our state to minimize turnover and improve retention.",
                         ],
                         [
                             'name' => "HEALTHCARE & MENTAL HEALTH SERVICES ACCESS",
-                            'stance' => "Many people in our community are uninsured creating a myriad of challenges. We need a universal health care program that allows everyone to get the health care they need, when they need it. This also includes being against the Income Tax bill to raise taxes, which would have unfairly burdened working families."
+                            'stance' => "Many people in our community are uninsured creating a myriad of challenges. We need a universal health care program that allows everyone to get the health care they need, when they need it. This also includes being against the Income Tax bill to raise taxes, which would have unfairly burdened working families.",
                         ],
                         [
                             'name' => "SENSIBLE GROWTH, DEVELOPMENT & AFFORDABLE HOUSING",
-                            'stance' => "Managing the growth of our community with sensible planning will create a future for our children and grandchildren. Growth is inevitable, but how we grow is critically important."
+                            'stance' => "Managing the growth of our community with sensible planning will create a future for our children and grandchildren. Growth is inevitable, but how we grow is critically important.",
                         ],
 
                     ],
@@ -1272,27 +1272,27 @@ class UTHouseSeeder extends Seeder
 
                         [
                             'name' => "Water",
-                            'stance' => "Utah is the second driest state in the nation. Much of what we hear is that households need to do a better job of conserving water. This is true, but I know our city, county, and state facilities can also do a much better job of conserving water. This past legislative session, we had many bills pass and a lot of discussions related to water. We are headed in the right direction. I would like to see the state legislature seek more feedback from our farmers and industrial water users. Rural Utah is unique in the way we use and manage our water."
+                            'stance' => "Utah is the second driest state in the nation. Much of what we hear is that households need to do a better job of conserving water. This is true, but I know our city, county, and state facilities can also do a much better job of conserving water. This past legislative session, we had many bills pass and a lot of discussions related to water. We are headed in the right direction. I would like to see the state legislature seek more feedback from our farmers and industrial water users. Rural Utah is unique in the way we use and manage our water.",
                         ],
                         [
                             'name' => "Transportation",
-                            'stance' => "Citizens of the Tooele valley understand that we have a significant issue with traffic and transportation. Our most notable solution is the addition of the Mid-valley highway. I believe we can do more. Currently, the Tooele valley is largely a commuting community. This contributes heavily to our ongoing traffic issues. To combat this, we need to start attracting businesses that create jobs so Tooele valley citizens can work locally and cut down on transportation. As your representative, I will continue to direct more funding for transportation in our area."
+                            'stance' => "Citizens of the Tooele valley understand that we have a significant issue with traffic and transportation. Our most notable solution is the addition of the Mid-valley highway. I believe we can do more. Currently, the Tooele valley is largely a commuting community. This contributes heavily to our ongoing traffic issues. To combat this, we need to start attracting businesses that create jobs so Tooele valley citizens can work locally and cut down on transportation. As your representative, I will continue to direct more funding for transportation in our area.",
                         ],
                         [
                             'name' => "Tax Policy",
-                            'stance' => "I appreciate and support the tax cuts that were passed this past legislative session. I believe our tax code should be as simple as possible, have low rates, and include a broad base. As a fiscal conservative, I will work to ensure a common-sense approach to spending. I will always fight to put more of taxpayers? hard-earned money back into their pockets."
+                            'stance' => "I appreciate and support the tax cuts that were passed this past legislative session. I believe our tax code should be as simple as possible, have low rates, and include a broad base. As a fiscal conservative, I will work to ensure a common-sense approach to spending. I will always fight to put more of taxpayers? hard-earned money back into their pockets.",
                         ],
                         [
                             'name' => "Second Amendment",
-                            'stance' => "Although Utah is a pro-second amendment state, events and policies of outside states have the chance to infringe on that right. I will fight to protect not only the second amendment in Utah but in all states in America."
+                            'stance' => "Although Utah is a pro-second amendment state, events and policies of outside states have the chance to infringe on that right. I will fight to protect not only the second amendment in Utah but in all states in America.",
                         ],
                         [
                             'name' => "Economic Prosperity and Responsible Growth",
-                            'stance' => "The rural counties of our district have experienced tremendous growth over the past 10-15 years. This growth has caused an increase in traffic congestion, strains on our roads and infrastructure, and overcrowded schools. As your representative, I will advocate for increased transportation and infrastructure funds. Working closely with our cities and counties, I will work to attract businesses that will create more revenue for rural Utah and bring about high-paying jobs?also providing more property tax revenue for our schools."
+                            'stance' => "The rural counties of our district have experienced tremendous growth over the past 10-15 years. This growth has caused an increase in traffic congestion, strains on our roads and infrastructure, and overcrowded schools. As your representative, I will advocate for increased transportation and infrastructure funds. Working closely with our cities and counties, I will work to attract businesses that will create more revenue for rural Utah and bring about high-paying jobs?also providing more property tax revenue for our schools.",
                         ],
                         [
                             'name' => "Limited Federal Government. Local Control",
-                            'stance' => "As a state, we must push back against constant federal government overreach. As your representative, I will fight for a limited federal government and work to reassert Utah?s State rights. Far too often, federal and, at times, even state laws are passed to deal with issues that would be much better handled at a more local level. Local government is where our issues are best understood."
+                            'stance' => "As a state, we must push back against constant federal government overreach. As your representative, I will fight for a limited federal government and work to reassert Utah?s State rights. Far too often, federal and, at times, even state laws are passed to deal with issues that would be much better handled at a more local level. Local government is where our issues are best understood.",
                         ],
                     ],
 
@@ -1383,27 +1383,27 @@ class UTHouseSeeder extends Seeder
 
                         [
                             'name' => "Economy and Inflation",
-                            'stance' => "I am concerned about where we are going. We are experiencing record inflation and seem to be entering a recession. This is not a partisan issue. This is a spending issue. In Utah, we understand what it means to live within our means. Our budget is balanced, we have a surplus each year, and we continually rank as the best-managed state in the nation. Washington could learn a lesson from Utah. To fix this issue, we need to look for ways to ease the burden on Utah families. Easing this burden could include lowering gas taxes as prices remain high, keeping taxes low on Utahn's, and ensuring Utah remains an affordable place to raise a family."
+                            'stance' => "I am concerned about where we are going. We are experiencing record inflation and seem to be entering a recession. This is not a partisan issue. This is a spending issue. In Utah, we understand what it means to live within our means. Our budget is balanced, we have a surplus each year, and we continually rank as the best-managed state in the nation. Washington could learn a lesson from Utah. To fix this issue, we need to look for ways to ease the burden on Utah families. Easing this burden could include lowering gas taxes as prices remain high, keeping taxes low on Utahn's, and ensuring Utah remains an affordable place to raise a family.",
                         ],
                         [
                             'name' => "Education",
-                            'stance' => "Education is foundational for success in life, development in Cache Valley, and for economic growth in Utah.  I will work to maintain funding and attention for both the K-12 school system and Utah State University. I have worked in education for my entire professional life. This issue is very important to me. I am proud to say the past few sessions I have fought to achieve record funding for our children's education. I have worked to ensure no child goes to school hungry by providing breakfast for those that need it. And I cosponsored a bill to provide teachers an additional 4 paid days off to ease their workload. In the upcoming session, I will continue to fight for record funding and ensure that our kids have the tools needed to provide them with success, our teachers have the support they need to continue doing what they do best, and our parents are partners in our children's education."
+                            'stance' => "Education is foundational for success in life, development in Cache Valley, and for economic growth in Utah.  I will work to maintain funding and attention for both the K-12 school system and Utah State University. I have worked in education for my entire professional life. This issue is very important to me. I am proud to say the past few sessions I have fought to achieve record funding for our children's education. I have worked to ensure no child goes to school hungry by providing breakfast for those that need it. And I cosponsored a bill to provide teachers an additional 4 paid days off to ease their workload. In the upcoming session, I will continue to fight for record funding and ensure that our kids have the tools needed to provide them with success, our teachers have the support they need to continue doing what they do best, and our parents are partners in our children's education.",
                         ],
                         [
                             'name' => "Infrastructure",
-                            'stance' => "Logan, Richmond, and Cove have infrastructure needs, especially related to transportation, that need to be addressed by the state with innovation and resources. I will look for opportunities to keep our roads, facilities, and services up to date."
+                            'stance' => "Logan, Richmond, and Cove have infrastructure needs, especially related to transportation, that need to be addressed by the state with innovation and resources. I will look for opportunities to keep our roads, facilities, and services up to date.",
                         ],
                         [
                             'name' => "Healthcare & Social Services",
-                            'stance' => "Individuals with healthcare and disability needs far outweigh the funds available to provide those services. I understand these challenges and will work to pursue fairness for all citizens. The health and well-being of our friends and neighbors are one of my top priorities. Utah's youth suicide rate is unacceptable, and I am working hard to change this. In the Legislature, we have worked to pass the SAFEUT app, which provides support to our struggling youth. I am also proud of the work I have done to provide funding and support to CAPSA and the Family Place, which supports at-risk youth and those suffering from domestic abuse. Providing these resources is one step in the right direction. I will continue to find ways to provide support to our friends and neighbors that are struggling with their mental health."
+                            'stance' => "Individuals with healthcare and disability needs far outweigh the funds available to provide those services. I understand these challenges and will work to pursue fairness for all citizens. The health and well-being of our friends and neighbors are one of my top priorities. Utah's youth suicide rate is unacceptable, and I am working hard to change this. In the Legislature, we have worked to pass the SAFEUT app, which provides support to our struggling youth. I am also proud of the work I have done to provide funding and support to CAPSA and the Family Place, which supports at-risk youth and those suffering from domestic abuse. Providing these resources is one step in the right direction. I will continue to find ways to provide support to our friends and neighbors that are struggling with their mental health.",
                         ],
                         [
                             'name' => "Juvenile Justice",
-                            'stance' => "The legislature is currently leading juvenile justice reform focused on cutting costs for rehabilitation and investing in early interventions to prevent youth from ending up in the justice system. These are complicated issues, and I will bring my experience working with youth and those who care for them in finding solutions."
+                            'stance' => "The legislature is currently leading juvenile justice reform focused on cutting costs for rehabilitation and investing in early interventions to prevent youth from ending up in the justice system. These are complicated issues, and I will bring my experience working with youth and those who care for them in finding solutions.",
                         ],
                         [
                             'name' => "Utah Values",
-                            'stance' => "Carol and I have seven children we have raised with core values. I believe in the importance of family and honor those who sacrifice to serve our local community and country. I appreciate and celebrate diversity and believe that we need to look out for the individual.  We have lived in Logan since 1990 and love our community and the people who live here. I look forward to doing what is right for Cache Valley and for Utah."
+                            'stance' => "Carol and I have seven children we have raised with core values. I believe in the importance of family and honor those who sacrifice to serve our local community and country. I appreciate and celebrate diversity and believe that we need to look out for the individual.  We have lived in Logan since 1990 and love our community and the people who live here. I look forward to doing what is right for Cache Valley and for Utah.",
                         ],
 
                     ],
@@ -1472,15 +1472,15 @@ class UTHouseSeeder extends Seeder
                     'opinions' => [
                         [
                             'name' => "Let's Create More Unity in Politics!",
-                            'stance' => "The political atmosphere has grown increasingly divisive and daunting. I have been dissuaded from more personal involvement in the past due to the aggressive, unproductive environment of politics. I hope to bring more unity in Utah politics, focusing less on who is right and more on how each of us can serve our community and our state."
+                            'stance' => "The political atmosphere has grown increasingly divisive and daunting. I have been dissuaded from more personal involvement in the past due to the aggressive, unproductive environment of politics. I hope to bring more unity in Utah politics, focusing less on who is right and more on how each of us can serve our community and our state.",
                         ],
                         [
                             'name' => "Let's Make Mental Health Care Accessible!",
-                            'stance' => "My years working in behavioral health services have allowed me to witness firsthand the failings of Utah's mental health care system. I hope to advocate for accessible, affordable care for all who may need it. Utah is especially vulnerable to issues with substance abuse and suicide. We must take action now to protect our youth especially from the growing mental health epidemic."
+                            'stance' => "My years working in behavioral health services have allowed me to witness firsthand the failings of Utah's mental health care system. I hope to advocate for accessible, affordable care for all who may need it. Utah is especially vulnerable to issues with substance abuse and suicide. We must take action now to protect our youth especially from the growing mental health epidemic.",
                         ],
                         [
                             'name' => "Let's Fund Public Education!",
-                            'stance' => "Education is a valuable tool for life-long success, and every student in Utah deserves the best schooling experience possible. I spent all my years of public education and higher education in this state. I hope to be able to give back to the teachers and schools that have served me. I will do this by encouraging public education funding and supporting teachers during this especially difficult time."
+                            'stance' => "Education is a valuable tool for life-long success, and every student in Utah deserves the best schooling experience possible. I spent all my years of public education and higher education in this state. I hope to be able to give back to the teachers and schools that have served me. I will do this by encouraging public education funding and supporting teachers during this especially difficult time.",
                         ],
 
                     ],
@@ -1710,23 +1710,23 @@ class UTHouseSeeder extends Seeder
                     'opinions' => [
                         [
                             'name' => "Clean Air",
-                            'stance' => "Too many lives are shortened by air quality on the Wasatch Front. Much more can be done to clean the air, as outlined in the Utah Road Map: Positive Solutions on Climate and Air Quality. We need to build consensus as a state and set a goal for reducing emissions, then reach that goal by reducing emissions from the vehicle fleet, from new buildings, and from industrial sources."
+                            'stance' => "Too many lives are shortened by air quality on the Wasatch Front. Much more can be done to clean the air, as outlined in the Utah Road Map: Positive Solutions on Climate and Air Quality. We need to build consensus as a state and set a goal for reducing emissions, then reach that goal by reducing emissions from the vehicle fleet, from new buildings, and from industrial sources.",
                         ],
                         [
                             'name' => "Public Lands",
-                            'stance' => "Utah is the most beautiful of the 50 states. As a native Utahn, I grew up exploring and learning to love our state?s open spaces and I?ve passed that tradition on to my children. I know that Utahns are good stewards of the land, and we know best how to protect it. Utah?s treasured lands are not just beautiful, they?re a powerful engine to grow our economy, which is tied directly to outdoor recreation and tourism. I?ll fight to protect the places we all love, and I?ll work to make sure our children and grandchildren inherit a clean and beautiful Utah."
+                            'stance' => "Utah is the most beautiful of the 50 states. As a native Utahn, I grew up exploring and learning to love our state?s open spaces and I?ve passed that tradition on to my children. I know that Utahns are good stewards of the land, and we know best how to protect it. Utah?s treasured lands are not just beautiful, they?re a powerful engine to grow our economy, which is tied directly to outdoor recreation and tourism. I?ll fight to protect the places we all love, and I?ll work to make sure our children and grandchildren inherit a clean and beautiful Utah.",
                         ],
                         [
                             'name' => "Education",
-                            'stance' => "Nothing is more important than ensuring our children are able to reach their full potential. This means investing in education to prepare Utah students to compete with the rest of the world for high-paying jobs. It means expanding vocational education opportunities so that people who are willing to work hard at a trade have an opportunity to get ahead. And it means making sure students can attend college without a lifetime of debt. I know from personal experience how much of a burden rising college costs put on Utah families, so lowering tuition at community colleges and universities and expanding access to low interest loans is incredibly important to me."
+                            'stance' => "Nothing is more important than ensuring our children are able to reach their full potential. This means investing in education to prepare Utah students to compete with the rest of the world for high-paying jobs. It means expanding vocational education opportunities so that people who are willing to work hard at a trade have an opportunity to get ahead. And it means making sure students can attend college without a lifetime of debt. I know from personal experience how much of a burden rising college costs put on Utah families, so lowering tuition at community colleges and universities and expanding access to low interest loans is incredibly important to me.",
                         ],
                         [
                             'name' => "Affordable Healthcare",
-                            'stance' => "As the husband of a practicing physician, I understand the importance of good health care policy. I believe that all hard-working Utahns should have access to high-quality, affordable health insurance. We need to get to work to protect Medicaid and Obamacare, rather than wasting time playing political games."
+                            'stance' => "As the husband of a practicing physician, I understand the importance of good health care policy. I believe that all hard-working Utahns should have access to high-quality, affordable health insurance. We need to get to work to protect Medicaid and Obamacare, rather than wasting time playing political games.",
                         ],
                         [
                             'name' => "A Strong Middle Class Economy",
-                            'stance' => "Six generations of my family have called Utah home. My wife Cynthia and I are grateful to raise our children here. I believe that Utahns who work hard should be able to support their families.  I will fight to improve the business climate and strengthen the middle class. I?ll reduce unnecessary and burdensome regulations that hurt small businesses. I?ll fight to attract new industries and good-paying jobs to Utah."
+                            'stance' => "Six generations of my family have called Utah home. My wife Cynthia and I are grateful to raise our children here. I believe that Utahns who work hard should be able to support their families.  I will fight to improve the business climate and strengthen the middle class. I?ll reduce unnecessary and burdensome regulations that hurt small businesses. I?ll fight to attract new industries and good-paying jobs to Utah.",
                         ],
                     ],
 
@@ -1824,11 +1824,11 @@ class UTHouseSeeder extends Seeder
                     'opinions' => [
                         [
                             'name' => "STRONG FAMILIES",
-                            'stance' => "I helped pass measures that are protecting our children and keeping drugs and methamphetamine drug houses out of our neighborhoods."
+                            'stance' => "I helped pass measures that are protecting our children and keeping drugs and methamphetamine drug houses out of our neighborhoods.",
                         ],
                         [
                             'name' => "QUALITY OF LIFE",
-                            'stance' => "I voted to protect the water and open spaces that we all enjoy in Utah.  When they are continually threatened by unchecked growth and inefficient use of natural resources, I will always be the reasonable voice for preservation."
+                            'stance' => "I voted to protect the water and open spaces that we all enjoy in Utah.  When they are continually threatened by unchecked growth and inefficient use of natural resources, I will always be the reasonable voice for preservation.",
                         ],
                         [
                             'name' => "QUALITY OF LIFE ",
@@ -1836,7 +1836,7 @@ class UTHouseSeeder extends Seeder
                         ],
                         [
                             'name' => "PROTECTING SENIOR CITIZENS",
-                            'stance' => "I helped pass for greater funding for Salt Lake County Aging Services; for Meals on Wheels & Community Senior Centers."
+                            'stance' => "I helped pass for greater funding for Salt Lake County Aging Services; for Meals on Wheels & Community Senior Centers.",
                         ],
                         [
                             'name' => "EDUCATION FUNDING",
@@ -1887,11 +1887,11 @@ class UTHouseSeeder extends Seeder
                     'opinions' => [
                         [
                             'name' => "Taxes",
-                            'stance' => "I voted against the new food tax, I voted against the new gas tax and against property tax increases. I am focused on the issues that are important to our Community and believe that our citizens can spend their money better than the government can."
+                            'stance' => "I voted against the new food tax, I voted against the new gas tax and against property tax increases. I am focused on the issues that are important to our Community and believe that our citizens can spend their money better than the government can.",
                         ],
                         [
                             'name' => "Economy and Jobs",
-                            'stance' => "As a local business owner in Taylorsville, I understand the struggles of making payroll, keeping overhead low, and balancing a budget; all while dealing with burdensome regulations. That's why he promotes fewer regulations and lower taxes- so business owners can create jobs and the economy can thrive."
+                            'stance' => "As a local business owner in Taylorsville, I understand the struggles of making payroll, keeping overhead low, and balancing a budget; all while dealing with burdensome regulations. That's why he promotes fewer regulations and lower taxes- so business owners can create jobs and the economy can thrive.",
                         ],
 
                         [
@@ -2257,35 +2257,35 @@ class UTHouseSeeder extends Seeder
                     'opinions' => [
                         [
                             'name' => "Public Safety",
-                            'stance' => "I am committed to building a safer community. Having worked as a city prosecutor, I've seen first hand the challenges brought by the rapid development in this part of the valley, including populations experiencing homelessness and an increase in pedestrian accidents. As your legislator, I will commit to using my influence on Capitol Hill to provide resources to House District 40. The citizens of this district have elected to shoulder the burdens of growth and are entitled to the support of the state.Passed Legislation: Disease Testing Amendments; POST Certification Amendments; Prohibited Persons Amendments"
+                            'stance' => "I am committed to building a safer community. Having worked as a city prosecutor, I've seen first hand the challenges brought by the rapid development in this part of the valley, including populations experiencing homelessness and an increase in pedestrian accidents. As your legislator, I will commit to using my influence on Capitol Hill to provide resources to House District 40. The citizens of this district have elected to shoulder the burdens of growth and are entitled to the support of the state.Passed Legislation: Disease Testing Amendments; POST Certification Amendments; Prohibited Persons Amendments",
                         ],
                         [
                             'name' => "Education",
-                            'stance' => "An educated citizenry is the cornerstone of a strong community. I will make fully funding Utah?s schools a priority, and work to free teachers from constraints that keep them from bringing out the best in their students. Education doesn?t stop at high school, and I will take action to empower higher education - not just at four year universities, but also through state support of trade education, community college, and other programs that will create a dynamic, self-sustaining workforce to usher Utah into the tech age."
+                            'stance' => "An educated citizenry is the cornerstone of a strong community. I will make fully funding Utah?s schools a priority, and work to free teachers from constraints that keep them from bringing out the best in their students. Education doesn?t stop at high school, and I will take action to empower higher education - not just at four year universities, but also through state support of trade education, community college, and other programs that will create a dynamic, self-sustaining workforce to usher Utah into the tech age.",
                         ],
                         [
                             'name' => "Housing",
-                            'stance' => "It is easy to see the housing crisis facing Utahns. Home prices and rents continue to rise, pricing hard working citizens out of the American Dream. I am driven to create opportunities for home buyers and renters alike to improve their station including down payment assistance loans, rent assistance, and other programs that will create secure and long lasting places to live for Utah residents."
+                            'stance' => "It is easy to see the housing crisis facing Utahns. Home prices and rents continue to rise, pricing hard working citizens out of the American Dream. I am driven to create opportunities for home buyers and renters alike to improve their station including down payment assistance loans, rent assistance, and other programs that will create secure and long lasting places to live for Utah residents.",
                         ],
                         [
                             'name' => "Criminal Justice",
-                            'stance' => "My work as a prosecutor has shown me where the criminal justice system works, and where it doesn?t. I want to reform the process to make it more clear and accessible. I believe many minor offenders need to receive mental health, drug treatment, and other services to be rehabilitated into productive members of the community. I support comprehensive, evidence-driven criminal justice reform.Passed Legislation: Murder Mitigation Amendments; Expungement Amendments; Intimate Image Distribution Prohibition Revisions; Diversion Fees Amendments; Inheritance Disqualification Amendments"
+                            'stance' => "My work as a prosecutor has shown me where the criminal justice system works, and where it doesn?t. I want to reform the process to make it more clear and accessible. I believe many minor offenders need to receive mental health, drug treatment, and other services to be rehabilitated into productive members of the community. I support comprehensive, evidence-driven criminal justice reform.Passed Legislation: Murder Mitigation Amendments; Expungement Amendments; Intimate Image Distribution Prohibition Revisions; Diversion Fees Amendments; Inheritance Disqualification Amendments",
                         ],
                         [
                             'name' => "Healthcare",
-                            'stance' => "Healthcare is too important to be treated like just any business. I support programs that improve access and affordability for healthcare and insurance and that help patients make informed decisions about what care they want and what it will cost. I am ready to advocate for patients and work to expand access to resources across the state."
+                            'stance' => "Healthcare is too important to be treated like just any business. I support programs that improve access and affordability for healthcare and insurance and that help patients make informed decisions about what care they want and what it will cost. I am ready to advocate for patients and work to expand access to resources across the state.",
                         ],
                         [
                             'name' => "Labor",
-                            'stance' => "Creating a realistic opportunity for self-sufficiency should be a cornerstone of any economy. I support increasing the minimum wage, strengthening protections for workers, including laws that encourage and permit workers to associate, laws that provide paid parental leave, and increasing access to workman?s compensation, unemployment insurance, and new job training for displaced workers.Passed Legislation: Consumer Sales Practices Amendments"
+                            'stance' => "Creating a realistic opportunity for self-sufficiency should be a cornerstone of any economy. I support increasing the minimum wage, strengthening protections for workers, including laws that encourage and permit workers to associate, laws that provide paid parental leave, and increasing access to workman?s compensation, unemployment insurance, and new job training for displaced workers.Passed Legislation: Consumer Sales Practices Amendments",
                         ],
                         [
                             'name' => "Immigration",
-                            'stance' => "I believe that we work best by working together, and that immigration policy must be driven by wisdom, not fear. I always want to be with my own family, and our immigrant communities are entitled to that same opportunity. Utah is defined by our welcoming spirit, and our State government must reflect that value and welcome people from all over the world, serving as a safe haven and wholesome new community for refugees, asylum seekers, and victims of trafficking, crime, and domestic violence.Passed Legislation: Victim Guidelines for Prosecutors"
+                            'stance' => "I believe that we work best by working together, and that immigration policy must be driven by wisdom, not fear. I always want to be with my own family, and our immigrant communities are entitled to that same opportunity. Utah is defined by our welcoming spirit, and our State government must reflect that value and welcome people from all over the world, serving as a safe haven and wholesome new community for refugees, asylum seekers, and victims of trafficking, crime, and domestic violence.Passed Legislation: Victim Guidelines for Prosecutors",
                         ],
                         [
                             'name' => "Air Quality",
-                            'stance' => "Utah?s government has spent too long with their heads in the sand on this crucial issue, and they are letting our communities down. Children, the elderly, and the disabled are not just inconvenienced by the air in the valley- their lives are in danger. I pledge to take concrete steps to preserve air quality that will grow and strengthen Utah?s economy- steps like incentivizing telecommuting on red air days and overhauling Salt Lake?s public transit system.Passed Legislation:Tax Credit for Alternative Fuel Heavy Duty Vehicles"
+                            'stance' => "Utah?s government has spent too long with their heads in the sand on this crucial issue, and they are letting our communities down. Children, the elderly, and the disabled are not just inconvenienced by the air in the valley- their lives are in danger. I pledge to take concrete steps to preserve air quality that will grow and strengthen Utah?s economy- steps like incentivizing telecommuting on red air days and overhauling Salt Lake?s public transit system.Passed Legislation:Tax Credit for Alternative Fuel Heavy Duty Vehicles",
                         ],
 
                     ],
@@ -2686,31 +2686,31 @@ class UTHouseSeeder extends Seeder
                     'opinions' => [
                         [
                             'name' => "A Constitutional Conservative",
-                            'stance' => "I believe our founding documents were divinely inspired?that government exists to protect our lives, liberty, and property. Thus, we must ensure that government does not intrude into the lives of its citizens. I am pro-individual rights, pro-small government, and pro-capitalism. I believe as Jefferson did that the government closest to the people serves the people best. As such, I am a strong proponent of federalism and states rights. I am a fiscal conservative that supports the reduction and simplification of taxation. I am pro-life and I fully support the Second Amendment. I am a strong supporter of legal immigration and oppose any action that normalizes illegal immigration. I support the platform of the Utah Republican Party."
+                            'stance' => "I believe our founding documents were divinely inspired?that government exists to protect our lives, liberty, and property. Thus, we must ensure that government does not intrude into the lives of its citizens. I am pro-individual rights, pro-small government, and pro-capitalism. I believe as Jefferson did that the government closest to the people serves the people best. As such, I am a strong proponent of federalism and states rights. I am a fiscal conservative that supports the reduction and simplification of taxation. I am pro-life and I fully support the Second Amendment. I am a strong supporter of legal immigration and oppose any action that normalizes illegal immigration. I support the platform of the Utah Republican Party.",
                         ],
                         [
                             'name' => "Responsible Growth and Affordable Housing",
-                            'stance' => "Our valley continues to grow at an unprecedented rate, adding roughly 8,000 new residents each year for the past 20 years. The 32,000 acres of undeveloped land  west of Bangerter remains the last significant developable area in the county. The decisions we make today on how that land is developed will have lasting consequences on the vitality and quality of life for our community. It is crucial that the decisions affecting the development of this land is made by those who live in this area and who have to deal with the consequences."
+                            'stance' => "Our valley continues to grow at an unprecedented rate, adding roughly 8,000 new residents each year for the past 20 years. The 32,000 acres of undeveloped land  west of Bangerter remains the last significant developable area in the county. The decisions we make today on how that land is developed will have lasting consequences on the vitality and quality of life for our community. It is crucial that the decisions affecting the development of this land is made by those who live in this area and who have to deal with the consequences.",
                         ],
                         [
                             'name' => "Economy",
-                            'stance' => "We have been blessed to live in a state with booming economic growth. Recently, we ranked first in the nation in job growth, innovation, and entrepreneurship. We just had the largest budget surplus in the history of the state. We have been recognized as the Best Managed State in America. These accolades have come because of Utah?s culture of limited government and fiscal responsibility. Government does not create jobs?its role in the economy is to protect property rights, to make and enforce laws that give citizens the opportunity to freely pursue opportunities, and to create and maintain public infrastructure so that businesses can thrive."
+                            'stance' => "We have been blessed to live in a state with booming economic growth. Recently, we ranked first in the nation in job growth, innovation, and entrepreneurship. We just had the largest budget surplus in the history of the state. We have been recognized as the Best Managed State in America. These accolades have come because of Utah?s culture of limited government and fiscal responsibility. Government does not create jobs?its role in the economy is to protect property rights, to make and enforce laws that give citizens the opportunity to freely pursue opportunities, and to create and maintain public infrastructure so that businesses can thrive.",
                         ],
                         [
                             'name' => "Education",
-                            'stance' => "Coming from a long-line of educators, including a sister who is an English teacher at Herriman High School and a brother who is a teacher at Murray High School, I believe providing quality public education is an important issue facing Utah today. Although ensuring adequate resources is important, we can do a better job administering the educational funding in the state. We must cut down on the high-cost of bureaucratic overhead in education and get the money directly to the local administrators and teachers. Additionally, we must make sure that these local administrators are empowered to direct school funds as their needs demand to increase academic achievement. I support giving more autonomy to local school districts, principals, and administrators. Above all, I will continue to fight to bring more local control, transparency, and empowerment to those who understand the needs of our kids the best?the parents."
+                            'stance' => "Coming from a long-line of educators, including a sister who is an English teacher at Herriman High School and a brother who is a teacher at Murray High School, I believe providing quality public education is an important issue facing Utah today. Although ensuring adequate resources is important, we can do a better job administering the educational funding in the state. We must cut down on the high-cost of bureaucratic overhead in education and get the money directly to the local administrators and teachers. Additionally, we must make sure that these local administrators are empowered to direct school funds as their needs demand to increase academic achievement. I support giving more autonomy to local school districts, principals, and administrators. Above all, I will continue to fight to bring more local control, transparency, and empowerment to those who understand the needs of our kids the best?the parents.",
                         ],
                         [
                             'name' => "Infrastructure and Transportation",
-                            'stance' => "We do not have the infrastructure in place to support the growth our corner of the valley is experiencing. More than 80% of our residents commute out of the area for employment each day, with nearly half of them headed north. We each have felt this as we sit in traffic and congestion every day. We need a plan to connect the west side of the valley to the east side. We need to expedite north-south projects that provide streamlined access from the southwest of Salt Lake County to the freeways."
+                            'stance' => "We do not have the infrastructure in place to support the growth our corner of the valley is experiencing. More than 80% of our residents commute out of the area for employment each day, with nearly half of them headed north. We each have felt this as we sit in traffic and congestion every day. We need a plan to connect the west side of the valley to the east side. We need to expedite north-south projects that provide streamlined access from the southwest of Salt Lake County to the freeways.",
                         ],
                         [
                             'name' => "First Amendment Freedoms",
-                            'stance' => "Our first amendment rights are under attack. There are powerful forces that are working hard to inhibit freedom of speech and religious believers? ability to practice their religion and maintain their deeply-held convictions. I believe strongly in the inalienable right of individuals to freely share their opinions and worship in accordance with the dictates of their conscience. It is the role of government to protect and secure these rights. Unfortunately, there are too many in the legislature who undervalue these freedoms and set them aside in pursuit of other goals. I?m proud of the work I?ve been able to achieve in bringing greater freedom of speech to our college campuses, and pledge to continue the fight."
+                            'stance' => "Our first amendment rights are under attack. There are powerful forces that are working hard to inhibit freedom of speech and religious believers? ability to practice their religion and maintain their deeply-held convictions. I believe strongly in the inalienable right of individuals to freely share their opinions and worship in accordance with the dictates of their conscience. It is the role of government to protect and secure these rights. Unfortunately, there are too many in the legislature who undervalue these freedoms and set them aside in pursuit of other goals. I?m proud of the work I?ve been able to achieve in bringing greater freedom of speech to our college campuses, and pledge to continue the fight.",
                         ],
                         [
                             'name' => "Air Quality",
-                            'stance' => "Another challenge with Utah?s tremendous population growth over the past two decades and its potential growth is the effect that it has on our air quality. These effects are exacerbated by Utah?s high mountain valleys and plateaus. During winter months, the inversion the Salt Lake Valley experiences traps emissions in the valley for weeks, often reaching levels that negatively impact our health and can lead to serious negative health effects, especially for children and the elderly. Poor air quality can also have a negative effect on our economy as workers are less productive and businesses are less likely to make Utah their home. Improving our air quality needs to be a urgent priority to ensure that our quality of life remains high. I will continue to support cost-effective ways to improve air quality. However, in doing so, I will ensure we avoid government intrusion and business-killing regulations. This is a challenge we can overcome if we will tackle it using conservative principles, innovative thinking, and free market ideas."
+                            'stance' => "Another challenge with Utah?s tremendous population growth over the past two decades and its potential growth is the effect that it has on our air quality. These effects are exacerbated by Utah?s high mountain valleys and plateaus. During winter months, the inversion the Salt Lake Valley experiences traps emissions in the valley for weeks, often reaching levels that negatively impact our health and can lead to serious negative health effects, especially for children and the elderly. Poor air quality can also have a negative effect on our economy as workers are less productive and businesses are less likely to make Utah their home. Improving our air quality needs to be a urgent priority to ensure that our quality of life remains high. I will continue to support cost-effective ways to improve air quality. However, in doing so, I will ensure we avoid government intrusion and business-killing regulations. This is a challenge we can overcome if we will tackle it using conservative principles, innovative thinking, and free market ideas.",
                         ],
                     ],
 
@@ -2760,11 +2760,11 @@ class UTHouseSeeder extends Seeder
                     'opinions' => [
                         [
                             'name' => "Economy/Inflation",
-                            'stance' => "We have many small businesses in Draper and Bluffdale.  I am a big supporter of small businesses being able to grow and thrive without governmental red tape. While inflation is an issue best addressed at a national level I will support common sense measures at the State level to help support our small businesses and address skyrocketing housing costs and increases to everyday purchases like groceries."
+                            'stance' => "We have many small businesses in Draper and Bluffdale.  I am a big supporter of small businesses being able to grow and thrive without governmental red tape. While inflation is an issue best addressed at a national level I will support common sense measures at the State level to help support our small businesses and address skyrocketing housing costs and increases to everyday purchases like groceries.",
                         ],
                         [
                             'name' => "Education",
-                            'stance' => "We have wonderful students, schools, teachers and parents in Draper and Bluffdale!  I support our schools and will advocate for additional funding for our schools.  Discussions regarding the education of our children are critically important and the best outcomes are achieved with a collaborative and balanced approach.  I am opposed to policies and decisions regarding education that are driven by a political agenda and not the interests of the children.  I do not want our schools becoming political battlegrounds and will fight to keep politics out of our schools.  I also will advocate for increased funding and opportunities for our kids to attend college or trade school after high school."
+                            'stance' => "We have wonderful students, schools, teachers and parents in Draper and Bluffdale!  I support our schools and will advocate for additional funding for our schools.  Discussions regarding the education of our children are critically important and the best outcomes are achieved with a collaborative and balanced approach.  I am opposed to policies and decisions regarding education that are driven by a political agenda and not the interests of the children.  I do not want our schools becoming political battlegrounds and will fight to keep politics out of our schools.  I also will advocate for increased funding and opportunities for our kids to attend college or trade school after high school.",
                         ],
                         [
                             'name' => "Local Control",
@@ -2928,43 +2928,43 @@ class UTHouseSeeder extends Seeder
                     'opinions' => [
                         [
                             'name' => "Informed Decisions",
-                            'stance' => "I?ve dedicated my career to continuous government improvement. This means that every day I evaluate options from all angles, and I run the numbers. I?m not afraid to ask tough questions?and I don?t take ?That?s the way we?ve always done it? for an answer. I figure out how each activity aligns with our values, whether the costs?time, environmental, fiscal, personnel?are justified, and how the trade-offs might happen. As your state representative, I commit to fully evaluating potential legislation and talking with those of us who would be affected by it. The votes I cast will be backed by data, logic, and the voices of my constituents. In making the best decisions for our region, I will always prioritize data over daydreams."
+                            'stance' => "I?ve dedicated my career to continuous government improvement. This means that every day I evaluate options from all angles, and I run the numbers. I?m not afraid to ask tough questions?and I don?t take ?That?s the way we?ve always done it? for an answer. I figure out how each activity aligns with our values, whether the costs?time, environmental, fiscal, personnel?are justified, and how the trade-offs might happen. As your state representative, I commit to fully evaluating potential legislation and talking with those of us who would be affected by it. The votes I cast will be backed by data, logic, and the voices of my constituents. In making the best decisions for our region, I will always prioritize data over daydreams.",
                         ],
                         [
                             'name' => "Balanced Growth",
-                            'stance' => "Change in Utah is happening. How it happens is up to us! We can strike a balance of growth and stability without sacrificing the things we love about our beautiful state. As your state representative, I will help local governments become more self-sufficient through building their residential and commercial tax bases to fund local infrastructure and services. I will hold developers accountable for paying their fair share. And I will encourage cities to offer a variety of housing types for residents of all income ranges. We can preserve the open space we love and continue to build strong communities through bold, smart planning as we grow."
+                            'stance' => "Change in Utah is happening. How it happens is up to us! We can strike a balance of growth and stability without sacrificing the things we love about our beautiful state. As your state representative, I will help local governments become more self-sufficient through building their residential and commercial tax bases to fund local infrastructure and services. I will hold developers accountable for paying their fair share. And I will encourage cities to offer a variety of housing types for residents of all income ranges. We can preserve the open space we love and continue to build strong communities through bold, smart planning as we grow.",
                         ],
                         [
                             'name' => "Strong Cities",
-                            'stance' => "When you turn on the tap to brush your teeth with clean water, that?s local government at work. The world is complex, but every day there are firefighters, police officers, and public works employees working hard to make sure the basics of your day stay simple. The traffic lights function, the road is plowed, and the trash is taken out. It?s the essential services that can unite us. As your state legislator, I will help ensure that our local governments have the power they need to meet your needs through timely, informed local control. I will advocate for legislation that supports our basic needs to make our cities, counties, and schools a safe and happy home for all of us."
+                            'stance' => "When you turn on the tap to brush your teeth with clean water, that?s local government at work. The world is complex, but every day there are firefighters, police officers, and public works employees working hard to make sure the basics of your day stay simple. The traffic lights function, the road is plowed, and the trash is taken out. It?s the essential services that can unite us. As your state legislator, I will help ensure that our local governments have the power they need to meet your needs through timely, informed local control. I will advocate for legislation that supports our basic needs to make our cities, counties, and schools a safe and happy home for all of us.",
                         ],
                         [
                             'name' => "Education, Education, Education!",
-                            'stance' => "Investing in our children is a must. As your state representative, I will help Utah recognize the role of educators by paying them livable wages and by working with teachers and school boards?rather than against them?to improve our public schools. We can?t afford to skimp on education or to waste time debating statewide arguments about what teachers, school boards, and parents can decide in their own communities. As a state legislator, I will vote for giving every student the community support they need to help them grow physically, intellectually, emotionally, and socially."
+                            'stance' => "Investing in our children is a must. As your state representative, I will help Utah recognize the role of educators by paying them livable wages and by working with teachers and school boards?rather than against them?to improve our public schools. We can?t afford to skimp on education or to waste time debating statewide arguments about what teachers, school boards, and parents can decide in their own communities. As a state legislator, I will vote for giving every student the community support they need to help them grow physically, intellectually, emotionally, and socially.",
                         ],
                         [
                             'name' => "Bold & Balanced Budgets",
-                            'stance' => "I?m obsessed with budgeting. It?s how I?ve helped my own family prosper and thrive on a public servant salary?even in the hardest times. I will bring that same needs-based mentality to the state. Utah has a booming economy, making this the ideal time to invest in the things we value most, including safe infrastructure and strong education. Each expense of hard-earned tax dollars must be justified with a clear outcome. Likewise, tax cuts should be meaningful and targeted, not knee-jerk reactions. I will advocate for legislation with a complete cost analysis that accounts for the full picture, not just the short-term, and can always answer how this aligns with our values and furthers the well-being of Utahns."
+                            'stance' => "I?m obsessed with budgeting. It?s how I?ve helped my own family prosper and thrive on a public servant salary?even in the hardest times. I will bring that same needs-based mentality to the state. Utah has a booming economy, making this the ideal time to invest in the things we value most, including safe infrastructure and strong education. Each expense of hard-earned tax dollars must be justified with a clear outcome. Likewise, tax cuts should be meaningful and targeted, not knee-jerk reactions. I will advocate for legislation with a complete cost analysis that accounts for the full picture, not just the short-term, and can always answer how this aligns with our values and furthers the well-being of Utahns.",
                         ],
                         [
                             'name' => "Solid Stewardship",
-                            'stance' => "Utah?s natural beauty and resources are unparalleled. Stewardship over these state lands is a deeply held belief for me and one I take seriously. As your state representative, I will vote for smart, data-driven solutions to water quantity and quality issues. Similarly, we need to work together to solve one of Utah?s most pressing economic and health concerns: our air quality. Utah needs bold state leadership now to work with industry and our citizens to ensure clearer and cleaner air. To attract and retain businesses and families, we need air that is always safe for our children and our most vulnerable to breathe. I will prioritize legislation that offers evidence-based solutions to this critical and growing problem."
+                            'stance' => "Utah?s natural beauty and resources are unparalleled. Stewardship over these state lands is a deeply held belief for me and one I take seriously. As your state representative, I will vote for smart, data-driven solutions to water quantity and quality issues. Similarly, we need to work together to solve one of Utah?s most pressing economic and health concerns: our air quality. Utah needs bold state leadership now to work with industry and our citizens to ensure clearer and cleaner air. To attract and retain businesses and families, we need air that is always safe for our children and our most vulnerable to breathe. I will prioritize legislation that offers evidence-based solutions to this critical and growing problem.",
                         ],
                         [
                             'name' => "Community Counts",
-                            'stance' => "Nothing is more important to me than my family. It?s also become clear to me that it takes a community to take care of people. From extended family to kind neighbors, my little family is better because of the connections we?ve made. And I know that I share these beliefs with many Utahns. As your state representative, I will vote to protect families and provide them with the support they need to grow and thrive in Utah. It?s critical that we more broadly provide services to strengthen caregivers as they raise the next generation. Research shows that offering robust maternal services, including counseling, financial support, and quality health care, as well as mental health services for parents, is good for children and for communities. We need strong responses to domestic violence threats in our communities and clear, including multi-faceted supports for anyone trying to leave abusive situations.  I want Utah to be filled with safe, supportive neighborhoods where kids play together and there?s a place for parents and those without children to feel loved and connected."
+                            'stance' => "Nothing is more important to me than my family. It?s also become clear to me that it takes a community to take care of people. From extended family to kind neighbors, my little family is better because of the connections we?ve made. And I know that I share these beliefs with many Utahns. As your state representative, I will vote to protect families and provide them with the support they need to grow and thrive in Utah. It?s critical that we more broadly provide services to strengthen caregivers as they raise the next generation. Research shows that offering robust maternal services, including counseling, financial support, and quality health care, as well as mental health services for parents, is good for children and for communities. We need strong responses to domestic violence threats in our communities and clear, including multi-faceted supports for anyone trying to leave abusive situations.  I want Utah to be filled with safe, supportive neighborhoods where kids play together and there?s a place for parents and those without children to feel loved and connected.",
                         ],
                         [
                             'name' => "Reliable Infrastructure",
-                            'stance' => "It?s no secret here in the South Valley: east-west traffic is strained. We can?t widen I-15 forever, but we can recognize our growth and start to plan around population centers. Mountain View Corridor will need to be safer sooner, as we reckon with planned growth to the west. Multi-modal transportation must be part of our plan. We can?t afford to get caught up in shiny sales pitches with a high price tag. Rather, we must stay focused on the simple, straightforward solutions: I?m talking bus rapid transit and strengthening each local area so residents can live, work, and play without needing to drive far."
+                            'stance' => "It?s no secret here in the South Valley: east-west traffic is strained. We can?t widen I-15 forever, but we can recognize our growth and start to plan around population centers. Mountain View Corridor will need to be safer sooner, as we reckon with planned growth to the west. Multi-modal transportation must be part of our plan. We can?t afford to get caught up in shiny sales pitches with a high price tag. Rather, we must stay focused on the simple, straightforward solutions: I?m talking bus rapid transit and strengthening each local area so residents can live, work, and play without needing to drive far.",
                         ],
                         [
                             'name' => "Housing for All",
-                            'stance' => "Utah is in the midst of a housing crisis, and we in the South Valley know too well that the biggest cost of that crisis is being borne by Utah families. Too many Utah families, especially the young and the vulnerable, are underhoused and under stress, forced to choose between having either livable commutes or enough money to meet their families? other needs. As your state representative, I will promote solutions for increasing affordable housing in Utah in rural, suburban, and urban areas. I will work for cost-effective and humane services for the homeless and unhoused, following the best practice of housing-first solutions. And I will vote for policies that will increase the volume of middle housing in Utah, so we can better serve our hard-working families."
+                            'stance' => "Utah is in the midst of a housing crisis, and we in the South Valley know too well that the biggest cost of that crisis is being borne by Utah families. Too many Utah families, especially the young and the vulnerable, are underhoused and under stress, forced to choose between having either livable commutes or enough money to meet their families? other needs. As your state representative, I will promote solutions for increasing affordable housing in Utah in rural, suburban, and urban areas. I will work for cost-effective and humane services for the homeless and unhoused, following the best practice of housing-first solutions. And I will vote for policies that will increase the volume of middle housing in Utah, so we can better serve our hard-working families.",
                         ],
                         [
                             'name' => "Mental Health Matters",
-                            'stance' => "My life has been touched by suicide too many times. The struggles I?ve witnessed in friends, neighbors, and family members due to mental health issues are forever written on my heart. We can do more to support research, access, and affordability for mental health treatments. Utah can become a beacon of hope for tackling these issues with sensitivity, compassion, and true love."
+                            'stance' => "My life has been touched by suicide too many times. The struggles I?ve witnessed in friends, neighbors, and family members due to mental health issues are forever written on my heart. We can do more to support research, access, and affordability for mental health treatments. Utah can become a beacon of hope for tackling these issues with sensitivity, compassion, and true love.",
                         ],
                     ],
 
@@ -2992,43 +2992,43 @@ class UTHouseSeeder extends Seeder
                     'opinions' => [
                         [
                             'name' => "PROPER ROLE OF GOVERNMENT",
-                            'stance' => "I love and support the Constitution. While many people across the country are aware of the separation of powers found in the Constitution, it seems that most people in Washington D.C.  have forgotten that the Constitution provides enumerated powers only. States must push back against constant overreach by the federal government. As your state representative, I fight for a limited federal government and work to reassert Utah's rights as a state."
+                            'stance' => "I love and support the Constitution. While many people across the country are aware of the separation of powers found in the Constitution, it seems that most people in Washington D.C.  have forgotten that the Constitution provides enumerated powers only. States must push back against constant overreach by the federal government. As your state representative, I fight for a limited federal government and work to reassert Utah's rights as a state.",
                         ],
                         [
                             'name' => "2ND AMMENDMENT",
-                            'stance' => "I am a staunch defender of the 2nd Amendment. I do all within my power as a state legislator to protect an individual's constitutional right to bear arms."
+                            'stance' => "I am a staunch defender of the 2nd Amendment. I do all within my power as a state legislator to protect an individual's constitutional right to bear arms.",
                         ],
                         [
                             'name' => "MENTAL HEALTH",
-                            'stance' => "Fewer than half the adults with a mental illness in Utah are getting treatment or counseling, and suicide is the leading cause of death for the state?s youths. On average, about 620 Utahns have died by suicide annually over the past five years, and the state?s age-adjusted suicide rates were the fifth-highest in the nation, according to state data. We have a lot of work to do. As your State Representative, I passionately pursue legislation to improve mental health in Utah."
+                            'stance' => "Fewer than half the adults with a mental illness in Utah are getting treatment or counseling, and suicide is the leading cause of death for the state?s youths. On average, about 620 Utahns have died by suicide annually over the past five years, and the state?s age-adjusted suicide rates were the fifth-highest in the nation, according to state data. We have a lot of work to do. As your State Representative, I passionately pursue legislation to improve mental health in Utah.",
                         ],
                         [
                             'name' => "SUPPORT LAW ENFORCEMENT",
-                            'stance' => "Utah?s law enforcement officers represent the very best of our state, especially the police officers, sheriff?s deputies, and highway patrol troopers who serve in the Southwest corner of Salt Lake County. Over the past few years as your Representative, I have had the privilege to get to know many of the men and women who protect and serve the communities of our district. They are good people, who genuinely care about the people they serve. Despite increasingly challenging times, we remain protected thanks to the selfless sacrifices of these heroes."
+                            'stance' => "Utah?s law enforcement officers represent the very best of our state, especially the police officers, sheriff?s deputies, and highway patrol troopers who serve in the Southwest corner of Salt Lake County. Over the past few years as your Representative, I have had the privilege to get to know many of the men and women who protect and serve the communities of our district. They are good people, who genuinely care about the people they serve. Despite increasingly challenging times, we remain protected thanks to the selfless sacrifices of these heroes.",
                         ],
                         [
                             'name' => "RESPONSIBLE GROWTH",
-                            'stance' => "WATCH VIDEO"
+                            'stance' => "WATCH VIDEO",
                         ],
                         [
                             'name' => "PRO-FAMILY",
-                            'stance' => "I am pro-life and feel strongly that the state has a vested interest in protecting the life of the unborn."
+                            'stance' => "I am pro-life and feel strongly that the state has a vested interest in protecting the life of the unborn.",
                         ],
                         [
                             'name' => "SUPPORTING OUR MILITARY",
-                            'stance' => "We have a sacred responsibility to care for those who have served our country and preserved our freedoms. I have had the opportunity of serving on the board of directors for Utah Honor Flight and volunteering as a flight leader on flights with our WWII, Korean, and Vietnam veterans. Time and time again I was reminded of the true price of freedom and the sacrifices our service members and their families make daily. I have volunteered at the veteran?s nursing home and played bingo with America?s Greatest Generation. While working for Congressman Stewart I worked on casework for veterans, helping them access their benefits with the VA and feel strongly that we can do more to support our service members and their families."
+                            'stance' => "We have a sacred responsibility to care for those who have served our country and preserved our freedoms. I have had the opportunity of serving on the board of directors for Utah Honor Flight and volunteering as a flight leader on flights with our WWII, Korean, and Vietnam veterans. Time and time again I was reminded of the true price of freedom and the sacrifices our service members and their families make daily. I have volunteered at the veteran?s nursing home and played bingo with America?s Greatest Generation. While working for Congressman Stewart I worked on casework for veterans, helping them access their benefits with the VA and feel strongly that we can do more to support our service members and their families.",
                         ],
                         [
                             'name' => "EDUCATION",
-                            'stance' => "The education of the next generation is critical for the continued success of individuals, families, and the state. Parents must be empowered in the decision-making process of their children?s education. We have so many incredible teachers in Utah. We need to allow for more innovation in the classroom and reward success. As a legislator I have supported and will continue to support legislative policies that increase funding for education, facilitate innovation in education, empower parents, and put students? success and learning first."
+                            'stance' => "The education of the next generation is critical for the continued success of individuals, families, and the state. Parents must be empowered in the decision-making process of their children?s education. We have so many incredible teachers in Utah. We need to allow for more innovation in the classroom and reward success. As a legislator I have supported and will continue to support legislative policies that increase funding for education, facilitate innovation in education, empower parents, and put students? success and learning first.",
                         ],
                         [
                             'name' => "TAX POLICY",
-                            'stance' => "I am not in favor of an increase in tax rates and agree with Utah?s current flat tax structure and would not support a progressive tax structure. I believe that tax code should be simple, have low rates, and include a broad base. As a fiscal conservative, I have advocated for a common-sense approach to spending, promoting efficient and effective use of taxpayer dollars."
+                            'stance' => "I am not in favor of an increase in tax rates and agree with Utah?s current flat tax structure and would not support a progressive tax structure. I believe that tax code should be simple, have low rates, and include a broad base. As a fiscal conservative, I have advocated for a common-sense approach to spending, promoting efficient and effective use of taxpayer dollars.",
                         ],
                         [
                             'name' => "DOMESTIC VIOLENCE",
-                            'stance' => "Domestic violence is a serious issue for far too many children and families in Utah. Since 2000, at least 42% of adult homicides in Utah were domestic violence related. Families are at risk and our law enforcement is stretched thin dealing with domestic violence cases. As your legislator, I am committed to tackling this issue head on. I am bringing together community leaders, local law enforcement, and advocacy  organizations to coordinate a community and legislative response heartbreaking reality that is plaguing our communities."
+                            'stance' => "Domestic violence is a serious issue for far too many children and families in Utah. Since 2000, at least 42% of adult homicides in Utah were domestic violence related. Families are at risk and our law enforcement is stretched thin dealing with domestic violence cases. As your legislator, I am committed to tackling this issue head on. I am bringing together community leaders, local law enforcement, and advocacy  organizations to coordinate a community and legislative response heartbreaking reality that is plaguing our communities.",
                         ],
                     ],
 
@@ -3192,23 +3192,23 @@ class UTHouseSeeder extends Seeder
                     'opinions' => [
                         [
                             'name' => "Education",
-                            'stance' => "As a child of two educators, the husband of a teacher, and the parent of four children in the public education system, I feel strongly about the importance of getting a good education. I understand the challenges that Utah faces with having large families and limited resources. I have been a strong advocate for local control and feel that decisions are best made at the level closest to the student and parent. I have aggressively pushed back on efforts by the Federal Government to influence education policy in our state. I believe we have a much better understanding of what our students need to succeed than those in Washington. I also passed a bill that pulled back much of the micromanagement from the state level down to our districts on teacher evaluations. I don?t believe in a one size fits all approach and want to empower those at the local level. I feel that our teachers and principals are innovators, and I passed a bill that establishes the Utah Leading in Effective and Dynamic Education program in the state. This will create a clearinghouse of innovative and effective practices from throughout the state, which will be a very helpful resource for our teachers and principals."
+                            'stance' => "As a child of two educators, the husband of a teacher, and the parent of four children in the public education system, I feel strongly about the importance of getting a good education. I understand the challenges that Utah faces with having large families and limited resources. I have been a strong advocate for local control and feel that decisions are best made at the level closest to the student and parent. I have aggressively pushed back on efforts by the Federal Government to influence education policy in our state. I believe we have a much better understanding of what our students need to succeed than those in Washington. I also passed a bill that pulled back much of the micromanagement from the state level down to our districts on teacher evaluations. I don?t believe in a one size fits all approach and want to empower those at the local level. I feel that our teachers and principals are innovators, and I passed a bill that establishes the Utah Leading in Effective and Dynamic Education program in the state. This will create a clearinghouse of innovative and effective practices from throughout the state, which will be a very helpful resource for our teachers and principals.",
                         ],
                         [
                             'name' => "Job Creation",
-                            'stance' => "Utah has a rich history of entrepreneurship, rooted in our pioneer heritage of self-reliance and hard work. As an entrepreneur, I understand how challenging it is to build a company from the ground up. It is the entrepreneur that takes the risks and puts in the efforts that produces the jobs of tomorrow. We need to continue to support groups that help in entrepreneurs being provided the right tools and then step aside and let them flourish. The best thing that government can do is support these small business owners and not burden them with over regulation."
+                            'stance' => "Utah has a rich history of entrepreneurship, rooted in our pioneer heritage of self-reliance and hard work. As an entrepreneur, I understand how challenging it is to build a company from the ground up. It is the entrepreneur that takes the risks and puts in the efforts that produces the jobs of tomorrow. We need to continue to support groups that help in entrepreneurs being provided the right tools and then step aside and let them flourish. The best thing that government can do is support these small business owners and not burden them with over regulation.",
                         ],
                         [
                             'name' => "Transportation",
-                            'stance' => "As a resident of Saratoga Springs since 2004, I have seen the population in our area explode. While serving on both the City Council and Planning Commission, I was very involved in transportation issues and long term planning for the eventual build out of our area. I believe this experience will be critical as I work with the state on transportation issues statewide, while bringing a much needed perspective from our district."
+                            'stance' => "As a resident of Saratoga Springs since 2004, I have seen the population in our area explode. While serving on both the City Council and Planning Commission, I was very involved in transportation issues and long term planning for the eventual build out of our area. I believe this experience will be critical as I work with the state on transportation issues statewide, while bringing a much needed perspective from our district.",
                         ],
                         [
                             'name' => "Transparency",
-                            'stance' => "In my time serving on the City Council and State Board of Education, I have been a strong advocate for open and transparent government. When going through a severe budget shortfall, I pushed to have a series of open meetings to go over every department and evaluate every expenditure and determine what was a must-have versus a nice to have. In addition, I pushed to solve our fiscal issues by going through a public truth in taxation process, rather than hiding the increase through overtaxing fees. I want the public to know exactly where their tax dollars are going, regardless of the potential political fallout of doing so. I passed a bill that required that every city be completely transparent about how they use these enterprise funds (http://archive.sltrib.com/article.php?id=5458967&itype=CMSID).As a member of the State Board, I realized shortly after being elected that our budget and spending were anything but transparent. Even as a board member, it was very difficult to understand how we were spending the funds that were allocated. After several board members aggressively asked questions, it became apparent that we needed to make serious changes to the oversight and transparency of the finances. I helped to lead the charge on adopting spending plans, a formal budget, and improved accounting processes. I feel strongly that transparency leads to greater accountability and I will continue to fight for that as a member of the legislature."
+                            'stance' => "In my time serving on the City Council and State Board of Education, I have been a strong advocate for open and transparent government. When going through a severe budget shortfall, I pushed to have a series of open meetings to go over every department and evaluate every expenditure and determine what was a must-have versus a nice to have. In addition, I pushed to solve our fiscal issues by going through a public truth in taxation process, rather than hiding the increase through overtaxing fees. I want the public to know exactly where their tax dollars are going, regardless of the potential political fallout of doing so. I passed a bill that required that every city be completely transparent about how they use these enterprise funds (http://archive.sltrib.com/article.php?id=5458967&itype=CMSID).As a member of the State Board, I realized shortly after being elected that our budget and spending were anything but transparent. Even as a board member, it was very difficult to understand how we were spending the funds that were allocated. After several board members aggressively asked questions, it became apparent that we needed to make serious changes to the oversight and transparency of the finances. I helped to lead the charge on adopting spending plans, a formal budget, and improved accounting processes. I feel strongly that transparency leads to greater accountability and I will continue to fight for that as a member of the legislature.",
                         ],
                         [
                             'name' => "Taxes",
-                            'stance' => "I believe strongly in limited government. I have fought for fiscal responsibility and transparency at the city and state levels. I feel that government should provide only those things that the individuals cannot provide by themselves. I will continue to fight against government waste and inefficiencies that lead to higher taxes."
+                            'stance' => "I believe strongly in limited government. I have fought for fiscal responsibility and transparency at the city and state levels. I feel that government should provide only those things that the individuals cannot provide by themselves. I will continue to fight against government waste and inefficiencies that lead to higher taxes.",
                         ],
                     ],
 
@@ -3310,19 +3310,19 @@ class UTHouseSeeder extends Seeder
                     'opinions' => [
                         [
                             'name' => "Taxes, Economy, and Infrastructure",
-                            'stance' => "Responsible use of the taxes we all pay is key, and will help ensure a stronger economy, with more affordable housing, better transportation options, and build and maintain important infrastructure from roads and schools to utility connections and internet for work, learning, and life."
+                            'stance' => "Responsible use of the taxes we all pay is key, and will help ensure a stronger economy, with more affordable housing, better transportation options, and build and maintain important infrastructure from roads and schools to utility connections and internet for work, learning, and life.",
                         ],
                         [
                             'name' => "Water, Air, Land",
-                            'stance' => "Preserving the resources of Utah for generations to enjoy - reducing pollution and safeguarding water and natural land. Our tax dollars and government should also be working for a cleaner environment (in additional to personal responsibility). It's time to include renewable energy in our economy and lives to make sure we are good stewards of this planet."
+                            'stance' => "Preserving the resources of Utah for generations to enjoy - reducing pollution and safeguarding water and natural land. Our tax dollars and government should also be working for a cleaner environment (in additional to personal responsibility). It's time to include renewable energy in our economy and lives to make sure we are good stewards of this planet.",
                         ],
                         [
                             'name' => "Critical Services",
-                            'stance' => "Utah needs to focus on providing services that improve their lives from medical and mental health to education and training to encourage a robust workforce and thriving population.Important services to ensure a physically and mentally healthy person from prenatal to death is critical to the wellbeing of a state and nation. Each person should be able to make decisions about the size and timing of their family as part of their physical, mental and financial responsibilities."
+                            'stance' => "Utah needs to focus on providing services that improve their lives from medical and mental health to education and training to encourage a robust workforce and thriving population.Important services to ensure a physically and mentally healthy person from prenatal to death is critical to the wellbeing of a state and nation. Each person should be able to make decisions about the size and timing of their family as part of their physical, mental and financial responsibilities.",
                         ],
                         [
                             'name' => "Vote Like Your Country Depends On It",
-                            'stance' => "Every adult citizen has not only the right to vote, but the responsibility to vote and have their vote recognized. Our Republic will stand with the checks and balances our Forefathers imagined ensuring all citizens are represented in their government."
+                            'stance' => "Every adult citizen has not only the right to vote, but the responsibility to vote and have their vote recognized. Our Republic will stand with the checks and balances our Forefathers imagined ensuring all citizens are represented in their government.",
                         ],
                     ],
 
@@ -3914,27 +3914,27 @@ class UTHouseSeeder extends Seeder
                     'opinions' => [
                         [
                             'name' => "Economic Opportunity",
-                            'stance' => "The fastest growing economy in the US shouldn't be leaving the rural communities that propel it behind. Workers are the powerhouse of our economy and deserve a living wage. Rural towns need more autonomy and local control over the tax dollars they generate, tourism, and housing policy. I will support and trust working families, local businesses, and local governments to make informed decisions about their community."
+                            'stance' => "The fastest growing economy in the US shouldn't be leaving the rural communities that propel it behind. Workers are the powerhouse of our economy and deserve a living wage. Rural towns need more autonomy and local control over the tax dollars they generate, tourism, and housing policy. I will support and trust working families, local businesses, and local governments to make informed decisions about their community.",
                         ],
                         [
                             'name' => "Education",
-                            'stance' => "My mother was a public school teacher in rural Utah and Arizona for over three decades. She was passionate about taking care of both the children in her family and her classroom through education and nurturance. I've seen first hand how hard teachers work, and how underpaid they are. Our rural schools and teachers deserve to be invested in. Rural communities are suffering most from the fact that Utah ranks last in the country in per pupil spending."
+                            'stance' => "My mother was a public school teacher in rural Utah and Arizona for over three decades. She was passionate about taking care of both the children in her family and her classroom through education and nurturance. I've seen first hand how hard teachers work, and how underpaid they are. Our rural schools and teachers deserve to be invested in. Rural communities are suffering most from the fact that Utah ranks last in the country in per pupil spending.",
                         ],
                         [
                             'name' => "Affordable Housing",
-                            'stance' => "Rural Utahns deserve healthy, stable housing. Rising housing costs all over Utah are displacing families, creating labor shortages, and increasing poverty overall. We can't cater our local housing policy to wealthy, outside interests. We need to protect our communities first."
+                            'stance' => "Rural Utahns deserve healthy, stable housing. Rising housing costs all over Utah are displacing families, creating labor shortages, and increasing poverty overall. We can't cater our local housing policy to wealthy, outside interests. We need to protect our communities first.",
                         ],
                         [
                             'name' => "Water + Environment",
-                            'stance' => "In the Desert, water is our most important resource. In the Navajo language, \"Tó éí iiná\" means \"water is life\". In southeast Utah, we need to come to an understanding that we all share, utilize, and rely on this land. Threats to our shared land are a threat to all of us."
+                            'stance' => "In the Desert, water is our most important resource. In the Navajo language, \"Tó éí iiná\" means \"water is life\". In southeast Utah, we need to come to an understanding that we all share, utilize, and rely on this land. Threats to our shared land are a threat to all of us.",
                         ],
                         [
                             'name' => "Voting Rights",
-                            'stance' => "Rural communities need safe and convenient access to the ballot box. Making it harder for people to vote is fundamentally undemocratic. Voter suppression and gerrymandering efforts silence the voices of underrepresented communities in Utah. I believe in including everyday people in the political process, which is why we must protect voting access and universal vote-by-mail. Rural Utahns often live far from their nearest polling site, making it difficult to vote in person, especially for elders and working families. We need to make it easier to register to vote by implementing automatic voter registration and same-day registration programs. Tribal IDs need to continue to be recognized as legitimate voter IDs in Utah. We need educational resources and classes to help these communities become more involved in the political process."
+                            'stance' => "Rural communities need safe and convenient access to the ballot box. Making it harder for people to vote is fundamentally undemocratic. Voter suppression and gerrymandering efforts silence the voices of underrepresented communities in Utah. I believe in including everyday people in the political process, which is why we must protect voting access and universal vote-by-mail. Rural Utahns often live far from their nearest polling site, making it difficult to vote in person, especially for elders and working families. We need to make it easier to register to vote by implementing automatic voter registration and same-day registration programs. Tribal IDs need to continue to be recognized as legitimate voter IDs in Utah. We need educational resources and classes to help these communities become more involved in the political process.",
                         ],
                         [
                             'name' => "Healthy Families",
-                            'stance' => "Healthy rural communities encompass safe housing, affordable healthcare, domestic violence prevention, and a clean environment. I am passionate about community health from a mental, physical and emotional standpoint. I will fight to make healthcare more affordable,  increase awareness on Murdered and Missing Indigenous Women (MMIW), and advocate for safe and healthy environments for families."
+                            'stance' => "Healthy rural communities encompass safe housing, affordable healthcare, domestic violence prevention, and a clean environment. I am passionate about community health from a mental, physical and emotional standpoint. I will fight to make healthcare more affordable,  increase awareness on Murdered and Missing Indigenous Women (MMIW), and advocate for safe and healthy environments for families.",
                         ],
                     ],
                 ],
@@ -4110,27 +4110,27 @@ class UTHouseSeeder extends Seeder
                     'opinions' => [
                         [
                             'name' => "Education",
-                            'stance' => "Education is an investment, and the Utah Legislature needs to take that investment more seriously. Utah is still toward the very last in the nation in per pupil spending. The Utah Legislature hasn?t done enough to help increase teacher wages and decrease class sizes. With the Legislature's track record of consistently underfunding public education, we need to elect leaders who will give public education funding more than just lip service."
+                            'stance' => "Education is an investment, and the Utah Legislature needs to take that investment more seriously. Utah is still toward the very last in the nation in per pupil spending. The Utah Legislature hasn?t done enough to help increase teacher wages and decrease class sizes. With the Legislature's track record of consistently underfunding public education, we need to elect leaders who will give public education funding more than just lip service.",
                         ],
                         [
                             'name' => "Local Control",
-                            'stance' => "The more local the government control, the better. Individual counties deserve the ability to govern themselves on local issues without interference from the Utah Legislature. Just as Federal Government overreach is wrong, so is State Government overreach. Iron County knows what's best for Iron County."
+                            'stance' => "The more local the government control, the better. Individual counties deserve the ability to govern themselves on local issues without interference from the Utah Legislature. Just as Federal Government overreach is wrong, so is State Government overreach. Iron County knows what's best for Iron County.",
                         ],
                         [
                             'name' => "Roe v. Wade",
-                            'stance' => "I believe in the sanctity of life. I think everyone can agree that reducing the number of abortions is a worthy goal. I also believe that enacting extreme laws punishing women who are already in a difficult situation is not the answer. Instead, the question we should be asking is \"Why would a pregnant woman feel that an abortion is her best, and possibly only, option?\" Let's let women share their real experiences and then do something truly radical: listen. When we do that, we can understand those reasons and get to work in solving those issues. We need better access to healthcare, childcare, and contraception. Fathers need to be held accountable. Adoptions should be more affordable."
+                            'stance' => "I believe in the sanctity of life. I think everyone can agree that reducing the number of abortions is a worthy goal. I also believe that enacting extreme laws punishing women who are already in a difficult situation is not the answer. Instead, the question we should be asking is \"Why would a pregnant woman feel that an abortion is her best, and possibly only, option?\" Let's let women share their real experiences and then do something truly radical: listen. When we do that, we can understand those reasons and get to work in solving those issues. We need better access to healthcare, childcare, and contraception. Fathers need to be held accountable. Adoptions should be more affordable.",
                         ],
                         [
                             'name' => "Environmental Stewardship",
-                            'stance' => "Our air quality is important. Our water resources have become a critical issue. I support policies that recognize our stewardship for our natural resources and the impact we have on those resources. We need to take a long view when it comes to the environment, and balance that with good policy that doesn?t promote extreme environmental ideology."
+                            'stance' => "Our air quality is important. Our water resources have become a critical issue. I support policies that recognize our stewardship for our natural resources and the impact we have on those resources. We need to take a long view when it comes to the environment, and balance that with good policy that doesn?t promote extreme environmental ideology.",
                         ],
                         [
                             'name' => "Government Reform",
-                            'stance' => "I support efforts that increase transparency in government. Transparency shouldn't be suppressed by further restricting members of the press. I support an independent redistricting commission that has actual authority, instead of the watered-down version we have now. We should get to vote for our leaders instead of party leaders choosing that for us through unfair boundary creation. I also support term limits so that leaders focus more on serving people than serving their party."
+                            'stance' => "I support efforts that increase transparency in government. Transparency shouldn't be suppressed by further restricting members of the press. I support an independent redistricting commission that has actual authority, instead of the watered-down version we have now. We should get to vote for our leaders instead of party leaders choosing that for us through unfair boundary creation. I also support term limits so that leaders focus more on serving people than serving their party.",
                         ],
                         [
                             'name' => "Second Amendment",
-                            'stance' => "I support the right to possess firearms. I also support common-sense legislation to keep them out of the hands of those who demonstrate that they can?t use them responsibly."
+                            'stance' => "I support the right to possess firearms. I also support common-sense legislation to keep them out of the hands of those who demonstrate that they can?t use them responsibly.",
                         ],
                     ],
 
@@ -4472,11 +4472,11 @@ class UTHouseSeeder extends Seeder
                     'opinions' => [
                         [
                             'name' => "AFFORDABLE HOUSING",
-                            'stance' => "For the first time in 40 years, there are more Utah families in need of a home than there are homes available. Our state's growth is fantastic in so many ways: our state's economy has boomed, we've added more high paying jobs to our communities, and we've been able to increase education funding every year. But our incomes cannot keep up with the rising costs of homes, even in Northern Utah. If we don't improve our housing market, the typical Utah family will spend nearly 50% of their income on housing. Which means there's less money to save for retirement, college, car repairs, or after school activities for their kids."
+                            'stance' => "For the first time in 40 years, there are more Utah families in need of a home than there are homes available. Our state's growth is fantastic in so many ways: our state's economy has boomed, we've added more high paying jobs to our communities, and we've been able to increase education funding every year. But our incomes cannot keep up with the rising costs of homes, even in Northern Utah. If we don't improve our housing market, the typical Utah family will spend nearly 50% of their income on housing. Which means there's less money to save for retirement, college, car repairs, or after school activities for their kids.",
                         ],
                         [
                             'name' => "EDUCATION",
-                            'stance' => "It is the responsibility of the Legislature to work smarter on public education funding, and I am proud of our recent efforts. We've increase public education funding even in an economic downturn - an accomplishment few other states can boast. Utah's fiscally conservative policies have allowed our current representatives to protect education funding through the rainy-day fund, and we've secured federal funding from the CARES Act to provide support for online learning. These efforts protect teachers' salaries during an uncertain time and better prepare us for rapid economic recovery."
+                            'stance' => "It is the responsibility of the Legislature to work smarter on public education funding, and I am proud of our recent efforts. We've increase public education funding even in an economic downturn - an accomplishment few other states can boast. Utah's fiscally conservative policies have allowed our current representatives to protect education funding through the rainy-day fund, and we've secured federal funding from the CARES Act to provide support for online learning. These efforts protect teachers' salaries during an uncertain time and better prepare us for rapid economic recovery.",
                         ],
 
                         [

@@ -7,7 +7,7 @@ use App\Mail\GroupApplicationAccepted;
 use App\Models\GroupOrganizer;
 use App\Models\PoliticalGroup;
 use App\Models\User;
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
@@ -19,7 +19,7 @@ class EditGroupApplication extends EditRecord
     protected function getActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            DeleteAction::make(),
         ];
     }
 

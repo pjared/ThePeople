@@ -20,7 +20,7 @@ class CandidateOpinionsSeeder extends Seeder
         "Roblox > Minecraft",
         "Programming==Coding",
         "JS is a real language",
-        "Variables should be in HTML"
+        "Variables should be in HTML",
     ];
 
     private $opinion_names = [
@@ -29,7 +29,7 @@ class CandidateOpinionsSeeder extends Seeder
         "Clash of the titans",
         "Developing Software",
         "Thoughts on Javascript",
-        "Should variables be in in HTML"
+        "Should variables be in in HTML",
     ];
 
     /**
@@ -42,8 +42,8 @@ class CandidateOpinionsSeeder extends Seeder
         //  candidate_id | donor_id
         $num_candidates = 4;
         /*
-            "name" | "candidate_id" | "politician_id" | "link_found" | "is_controversial"
-            "candidate_id" | "name" | "stance" | "link"
+            "name" | "candidate_id" | "politician_id" | "link_found" | "is_controversial",
+            "candidate_id" | "name" | "stance" | "link",
         */
         for($i = 0; $i < count($this->opinion_names); ++$i) {
             for($j = 5; $j <= $num_candidates + 5; ++$j) {

@@ -2,13 +2,18 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CandidateStanceResource\Pages;
+use App\Filament\Resources\CandidateStanceResource\Pages\ManageCandidateStances;
 use App\Models\CandidateStance;
-use Filament\Forms;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 
 class CandidateStanceResource extends Resource
@@ -27,18 +32,18 @@ class CandidateStanceResource extends Resource
         $opinions = $candidate->ballot ? $candidate->ballot->opinions : collect();
         return $form
             ->schema([
-                Forms\Components\Hidden::make('candidate_id')
+                Textarea::make('candidate_id')
                     ->default($candidate->id),
-                Forms\Components\Select::make('controversial_opinion_id')
+                Select::make('controversial_opinion_id')
                     ->options($opinions->pluck('name', 'id'))
                     ->required(),
-                Forms\Components\TextInput::make('stance_label')
+                TextInput::make('stance_label')
                     ->label('Stance title')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('stance_reasoning')
+                Textarea::make('stance_reasoning')
                     ->maxLength(65535),
-                Forms\Components\TextInput::make('order')
+                TextInput::make('order')
                     ->numeric()
                     ->minValue(1)
                     ->maxValue(100),
@@ -49,32 +54,32 @@ class CandidateStanceResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('opinion.name'),
-                Tables\Columns\TextColumn::make('stance_label'),
-                Tables\Columns\TextColumn::make('stance_reasoning')
+                TextColumn::make('opinion.name'),
+                TextColumn::make('stance_label'),
+                TextColumn::make('stance_reasoning')
                     ->limit(80),
-                Tables\Columns\TextColumn::make('order')
+                TextColumn::make('order')
                     ->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make()
+                EditAction::make(),
+                DeleteAction::make()
                     ->after(function () {
                         //Note: Not sure if user flags need to be deleted here
                     }),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageCandidateStances::route('/'),
+            'index' => ManageCandidateStances::route('/'),
         ];
     }
 

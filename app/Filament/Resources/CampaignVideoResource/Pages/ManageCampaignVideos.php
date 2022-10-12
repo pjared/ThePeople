@@ -4,7 +4,7 @@ namespace App\Filament\Resources\CampaignVideoResource\Pages;
 
 use App\Filament\Resources\CampaignVideoResource;
 use App\Filament\Resources\CampaignVideoResource\Widgets\VideoOverview;
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ManageRecords;
 
 class ManageCampaignVideos extends ManageRecords
@@ -14,7 +14,7 @@ class ManageCampaignVideos extends ManageRecords
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make()
+            CreateAction::make()
                 ->after(function () {
                     $this->emit('itemAdded');
                 }),

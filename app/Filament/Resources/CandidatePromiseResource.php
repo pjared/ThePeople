@@ -2,13 +2,17 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CandidatePromiseResource\Pages;
+use App\Filament\Resources\CandidatePromiseResource\Pages\ManageCandidatePromises;
 use App\Models\CandidatePromise;
-use Filament\Forms;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 
 class CandidatePromiseResource extends Resource
@@ -24,15 +28,15 @@ class CandidatePromiseResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Hidden::make('candidate_id')
+                Textarea::make('candidate_id')
                     ->default(auth()->user()->candidate->id),
-                Forms\Components\TextInput::make('promise')
+                TextInput::make('promise')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('plan')
+                Textarea::make('plan')
                     // ->required()
                     ->maxLength(65535),
-                // Forms\Components\Toggle::make('order')
+                // Toggle::make('order')
                 //     ->required(),
             ]);
     }
@@ -41,27 +45,27 @@ class CandidatePromiseResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('promise'),
-                Tables\Columns\TextColumn::make('plan')
+                TextColumn::make('promise'),
+                TextColumn::make('plan')
                     ->limit(80),
-                // Tables\Columns\BooleanColumn::make('order'),
+                // BooleanColumn::make('order'),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageCandidatePromises::route('/'),
+            'index' => ManageCandidatePromises::route('/'),
         ];
     }
 

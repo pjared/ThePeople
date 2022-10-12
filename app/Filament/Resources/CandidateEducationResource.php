@@ -2,13 +2,18 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CandidateEducationResource\Pages;
+use App\Filament\Resources\CandidateEducationResource\Pages\ManageCandidateEducation;
 use App\Models\CandidateEducation;
-use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Hidden;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 
 class CandidateEducationResource extends Resource
 {
@@ -23,20 +28,20 @@ class CandidateEducationResource extends Resource
         $candidate = auth()->user()->candidate;
         return $form
             ->schema([
-                Forms\Components\Hidden::make('candidate_id')
+                Hidden::make('candidate_id')
                     ->default($candidate->id),
-                Forms\Components\TextInput::make('school_name')
+                TextInput::make('school_name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('degree_field')
+                TextInput::make('degree_field')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('degree_type')
+                TextInput::make('degree_type')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\DatePicker::make('year_start')
+                DatePicker::make('year_start')
                     ->required(),
-                Forms\Components\DatePicker::make('year_end')
+                DatePicker::make('year_end')
                     ->required(),
             ]);
     }
@@ -45,34 +50,34 @@ class CandidateEducationResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('school_name'),
-                Tables\Columns\TextColumn::make('degree_field'),
-                Tables\Columns\TextColumn::make('degree_type'),
-                Tables\Columns\TextColumn::make('year_start')
+                TextColumn::make('school_name'),
+                TextColumn::make('degree_field'),
+                TextColumn::make('degree_type'),
+                TextColumn::make('year_start')
                     ->date(),
-                Tables\Columns\TextColumn::make('year_end')
+                TextColumn::make('year_end')
                     ->date(),
-                Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('created_at')
                     ->dateTime(),
-                Tables\Columns\TextColumn::make('updated_at')
+                TextColumn::make('updated_at')
                     ->dateTime(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageCandidateEducation::route('/'),
+            'index' => ManageCandidateEducation::route('/'),
         ];
     }
 }

@@ -67,7 +67,8 @@
                             </ul>
                         </div>
                     @endrole
-                @endif --}}
+                @endif
+                --}}
 
 
                 <x-jet-section-border />

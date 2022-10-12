@@ -2,13 +2,16 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\GroupOrganizerResource\Pages;
+use App\Filament\Resources\GroupOrganizerResource\Pages\ManageGroupOrganizers;
 use App\Models\GroupOrganizer;
-use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 
 class GroupOrganizerResource extends Resource
 {
@@ -21,9 +24,9 @@ class GroupOrganizerResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('user_id')
+                TextInput::make('user_id')
                     ->required(),
-                Forms\Components\TextInput::make('political_group_id')
+                TextInput::make('political_group_id')
                     ->required(),
             ]);
     }
@@ -32,29 +35,29 @@ class GroupOrganizerResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user_id'),
-                Tables\Columns\TextColumn::make('political_group_id'),
-                // Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('user_id'),
+                TextColumn::make('political_group_id'),
+                // TextColumn::make('created_at')
                 //     ->dateTime(),
-                // Tables\Columns\TextColumn::make('updated_at')
+                // TextColumn::make('updated_at')
                 //     ->dateTime(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageGroupOrganizers::route('/'),
+            'index' => ManageGroupOrganizers::route('/'),
         ];
     }
 }

@@ -7,7 +7,7 @@ use App\Jobs\UpdateBallotCache;
 use App\Jobs\UpdateCandidateAndBallotSearches;
 use App\Models\Ballot;
 use App\Models\CandidateRequiredStance;
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Facades\Log;
 
@@ -15,21 +15,21 @@ class EditCandidate extends EditRecord
 {
     protected static string $resource = CandidateResource::class;
 
+    public $old_ballot_id;
+    public $old_show;
+
     protected function getActions(): array
     {
         return [
-            Actions\DeleteAction::make()
+            DeleteAction::make()
                 ->before(function () {
                     $required_stances = CandidateRequiredStance::where('candidate_id', $this->record->id)->get();
                     foreach($required_stances as $required_stance) {
                         $required_stance->delete();
                     }
-                })
+                }),
         ];
     }
-
-    public $old_ballot_id;
-    public $old_show;
 
     protected function afterFill(): void
     {

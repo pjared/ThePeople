@@ -15,7 +15,7 @@ class CandidateSeeder extends Seeder
         "Lord Macbeth",
         "Gandalf",
         "Cal Trask",
-        "Cthulhu"
+        "Cthulhu",
     ];
 
     /**

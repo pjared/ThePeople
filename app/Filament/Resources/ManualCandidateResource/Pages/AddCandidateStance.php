@@ -10,6 +10,8 @@ use Filament\Forms;
 use Filament\Pages\Actions\Action;
 use Filament\Resources\Pages\Page;
 use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 
 class AddCandidateStance extends Page implements Tables\Contracts\HasTable
@@ -37,9 +39,9 @@ class AddCandidateStance extends Page implements Tables\Contracts\HasTable
     protected function getTableColumns(): array
     {
         return [
-            Tables\Columns\TextColumn::make('opinion.name'),
-            Tables\Columns\TextColumn::make('stance_label'),
-            Tables\Columns\TextColumn::make('stance_reasoning')
+            TextColumn::make('opinion.name'),
+            TextColumn::make('stance_label'),
+            TextColumn::make('stance_reasoning')
                 ->limit(80),
         ];
     }
@@ -47,7 +49,7 @@ class AddCandidateStance extends Page implements Tables\Contracts\HasTable
     protected function getTableActions(): array
     {
         return [
-            Tables\Actions\Action::make('Edit')
+            Action::make('Edit')
                 ->mountUsing(fn (Forms\ComponentContainer $form, CandidateStance $record) => $form->fill([
                     'stance_label' => $record->stance_label,
                     'stance_reasoning' => $record->stance_reasoning,
@@ -58,11 +60,11 @@ class AddCandidateStance extends Page implements Tables\Contracts\HasTable
                     $record->save();
                 })
                 ->form([
-                    Forms\Components\TextInput::make('stance_label')
+                    TextInput::make('stance_label')
                         ->required(),
-                    Forms\Components\Textarea::make('stance_reasoning'),
+                    Textarea::make('stance_reasoning'),
                 ]),
-            Tables\Actions\DeleteAction::make(),
+            DeleteAction::make(),
         ];
     }
 
@@ -82,11 +84,11 @@ class AddCandidateStance extends Page implements Tables\Contracts\HasTable
                 Forms\Components\Select::make('controversial_opinion_id')
                     ->options($this->opinions->pluck('name', 'id'))
                     ->required(),
-                Forms\Components\TextInput::make('stance_label')
+                TextInput::make('stance_label')
                     ->label('Stance title')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('stance_reasoning')
+                Textarea::make('stance_reasoning')
                     ->maxLength(65535),
             ]),
         ];

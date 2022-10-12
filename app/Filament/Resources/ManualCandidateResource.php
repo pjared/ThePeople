@@ -2,13 +2,26 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ManualCandidateResource\Pages;
+use App\Filament\Resources\ManualCandidateResource\Pages\AddCandidateOtherStances;
+use App\Filament\Resources\ManualCandidateResource\Pages\AddCandidatePromises;
+use App\Filament\Resources\ManualCandidateResource\Pages\AddCandidateRequiredStance;
+use App\Filament\Resources\ManualCandidateResource\Pages\AddCandidateStance;
+use App\Filament\Resources\ManualCandidateResource\Pages\AddManualCandidatePhotos;
+use App\Filament\Resources\ManualCandidateResource\Pages\ManageManualCandidates;
 use App\Models\ManualCandidate;
-use Filament\Forms;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\Action;
+use Filament\Tables\Actions\ActionGroup;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\BooleanColumn;
+use Filament\Tables\Columns\TextColumn;
 
 class ManualCandidateResource extends Resource
 {
@@ -21,14 +34,14 @@ class ManualCandidateResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('candidate_id')
+                TextInput::make('candidate_id')
                     ->hidden()
                     ->required(),
-                Forms\Components\TextInput::make('note')
+                TextInput::make('note')
                     ->maxLength(255),
-                Forms\Components\Textarea::make('sources')
+                Textarea::make('sources')
                     ->maxLength(65535),
-                Forms\Components\Toggle::make('candidate.show'),
+                Toggle::make('candidate.show'),
             ]);
     }
 
@@ -36,49 +49,49 @@ class ManualCandidateResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('candidate.name')
+                TextColumn::make('candidate.name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('note')
+                TextColumn::make('note')
                     ->limit(15),
-                Tables\Columns\TextColumn::make('sources')
+                TextColumn::make('sources')
                     ->limit(15),
-                Tables\Columns\BooleanColumn::make('candidate.show')
+                BooleanColumn::make('candidate.show')
                     ->label('Show'),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
-                Tables\Actions\ActionGroup::make([
-                    Tables\Actions\Action::make('Add Stances')
+                EditAction::make(),
+                DeleteAction::make(),
+                ActionGroup::make([
+                    Action::make('Add Stances')
                         ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-stances', $record)),
-                    Tables\Actions\Action::make('Add Required Stance')
+                    Action::make('Add Required Stance')
                         ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-required-stances', $record)),
-                    Tables\Actions\Action::make('Add Promise')
+                    Action::make('Add Promise')
                         ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-promises', $record)),
-                    Tables\Actions\Action::make('Add Other Stances')
+                    Action::make('Add Other Stances')
                         ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-other-stances', $record)),
-                    Tables\Actions\Action::make('Add Photos')
+                    Action::make('Add Photos')
                         ->url(fn (ManualCandidate $record): string => route('filament.resources.manual-candidates.add-photos', $record)),
                 ])
 
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageManualCandidates::route('/'),
-            'add-stances' => Pages\AddCandidateStance::route('/{record}/add-stances'),
-            'add-required-stances' => Pages\AddCandidateRequiredStance::route('/{record}/add-required-stances'),
-            'add-promises' => Pages\AddCandidatePromises::route('/{record}/add-promises'),
-            'add-other-stances' => Pages\AddCandidateOtherStances::route('/{record}/add-other-stances'),
-            'add-photos' => Pages\AddManualCandidatePhotos::route('/{record}/add-photos'),
+            'index' => ManageManualCandidates::route('/'),
+            'add-stances' => AddCandidateStance::route('/{record}/add-stances'),
+            'add-required-stances' => AddCandidateRequiredStance::route('/{record}/add-required-stances'),
+            'add-promises' => AddCandidatePromises::route('/{record}/add-promises'),
+            'add-other-stances' => AddCandidateOtherStances::route('/{record}/add-other-stances'),
+            'add-photos' => AddManualCandidatePhotos::route('/{record}/add-photos'),
         ];
     }
 }

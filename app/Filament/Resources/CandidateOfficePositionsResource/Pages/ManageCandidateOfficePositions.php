@@ -4,7 +4,7 @@ namespace App\Filament\Resources\CandidateOfficePositionsResource\Pages;
 
 use App\Filament\Resources\CandidateOfficePositionsResource;
 use App\Filament\Resources\CandidateOfficePositionsResource\Widgets\PositionsOverview;
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ManageRecords;
 
 class ManageCandidateOfficePositions extends ManageRecords
@@ -14,7 +14,7 @@ class ManageCandidateOfficePositions extends ManageRecords
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make()
+            CreateAction::make()
                 ->after(function () {
                     $this->emit('itemAdded');
                 }),

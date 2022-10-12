@@ -8,7 +8,6 @@ use App\Models\UserVotes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\RateLimiter;
-use Illuminate\Support\Facades\Storage;
 
 class BallotController extends Controller
 {

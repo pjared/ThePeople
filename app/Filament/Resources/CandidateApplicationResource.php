@@ -2,13 +2,19 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CandidateApplicationResource\Pages;
+use App\Filament\Resources\CandidateApplicationResource\Pages\ListCandidateApplications;
+use App\Filament\Resources\CandidateResource\Pages\CreateCandidate;
+use App\Filament\Resources\CandidateResource\Pages\EditCandidate;
 use App\Models\CandidateApplication;
-use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 
 class CandidateApplicationResource extends Resource
 {
@@ -22,38 +28,38 @@ class CandidateApplicationResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('user_id')
+                TextInput::make('user_id')
                     ->required(),
-                Forms\Components\TextInput::make('name')
+                TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\DatePicker::make('dob')
+                DatePicker::make('dob')
                     ->required(),
-                Forms\Components\TextInput::make('email')
+                TextInput::make('email')
                     ->email()
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('phone_number')
+                TextInput::make('phone_number')
                     ->tel()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('office_name')
+                TextInput::make('office_name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('state')
+                TextInput::make('state')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('location')
+                TextInput::make('location')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Select::make('status')
+                Select::make('status')
                     ->options([
                         'accepted' => 'Accepted',
                         'submitted' => 'Submitted',
                         'rejected' => 'Rejected',
                     ])
                     ->required(),
-                Forms\Components\DatePicker::make('entered_race_date'),
-                Forms\Components\TextInput::make('candidate_id'),
+                DatePicker::make('entered_race_date'),
+                TextInput::make('candidate_id'),
             ]);
     }
 
@@ -61,25 +67,25 @@ class CandidateApplicationResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user_id'),
-                Tables\Columns\TextColumn::make('name')
+                TextColumn::make('user_id'),
+                TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('dob')
+                TextColumn::make('dob')
                     ->date(),
-                Tables\Columns\TextColumn::make('email')
+                TextColumn::make('email')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('phone_number'),
-                Tables\Columns\TextColumn::make('office_name'),
-                Tables\Columns\TextColumn::make('state'),
-                Tables\Columns\TextColumn::make('location'),
-                Tables\Columns\TextColumn::make('status')
+                TextColumn::make('phone_number'),
+                TextColumn::make('office_name'),
+                TextColumn::make('state'),
+                TextColumn::make('location'),
+                TextColumn::make('status')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('entered_race_date')
+                TextColumn::make('entered_race_date')
                     ->date(),
-                Tables\Columns\TextColumn::make('candidate_id'),
-                Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('candidate_id'),
+                TextColumn::make('created_at')
                     ->dateTime(),
-                Tables\Columns\TextColumn::make('updated_at')
+                TextColumn::make('updated_at')
                     ->dateTime(),
             ])
             ->defaultSort('status', 'desc')
@@ -87,10 +93,10 @@ class CandidateApplicationResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
@@ -104,9 +110,9 @@ class CandidateApplicationResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCandidateApplications::route('/'),
-            'create' => Pages\CreateCandidateApplication::route('/create'),
-            'edit' => Pages\EditCandidateApplication::route('/{record}/edit'),
+            'index' => ListCandidateApplications::route('/'),
+            'create' => CreateCandidate::route('/create'),
+            'edit' => EditCandidate::route('/{record}/edit'),
         ];
     }
 

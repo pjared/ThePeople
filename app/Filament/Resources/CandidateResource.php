@@ -2,13 +2,21 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CandidateResource\Pages;
+use App\Filament\Resources\CandidateResource\Pages\CreateCandidate;
+use App\Filament\Resources\CandidateResource\Pages\EditCandidate;
+use App\Filament\Resources\CandidateResource\Pages\ListCandidates;
 use App\Models\Candidate;
-use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\BooleanColumn;
+use Filament\Tables\Columns\TextColumn;
 
 class CandidateResource extends Resource
 {
@@ -21,41 +29,41 @@ class CandidateResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\DatePicker::make('dob'),
-                Forms\Components\DatePicker::make('signup_date'),
-                Forms\Components\Textarea::make('bio')
+                DatePicker::make('dob'),
+                DatePicker::make('signup_date'),
+                Textarea::make('bio')
                     ->maxLength(65535),
-                Forms\Components\TextInput::make('state')
+                TextInput::make('state')
                     ->required()
                     ->maxLength(20),
-                Forms\Components\TextInput::make('contact_email')
+                TextInput::make('contact_email')
                     ->email()
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('contact_phone_number')
+                TextInput::make('contact_phone_number')
                     ->tel()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('email')
+                TextInput::make('email')
                     ->email()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('phone_number')
+                TextInput::make('phone_number')
                     ->tel()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('party_name')
+                TextInput::make('party_name')
                     ->maxLength(255),
-                Forms\Components\TextInput::make('user_id'),
-                Forms\Components\TextInput::make('site_link')
+                TextInput::make('user_id'),
+                TextInput::make('site_link')
                     ->maxLength(255),
-                Forms\Components\TextInput::make('ballot_id'),
-                Forms\Components\Toggle::make('show')
+                TextInput::make('ballot_id'),
+                Toggle::make('show')
                     ->required(),
-                Forms\Components\TextInput::make('order')
+                TextInput::make('order')
                     ->default(100)
                     ->numeric(),
-                // Forms\Components\TextInput::make('slug')
+                // TextInput::make('slug')
                 //     ->maxLength(255),
             ]);
     }
@@ -64,29 +72,29 @@ class CandidateResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id')
+                TextColumn::make('id')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('dob')
+                TextColumn::make('name'),
+                TextColumn::make('dob')
                     ->date(),
-                Tables\Columns\TextColumn::make('bio')
+                TextColumn::make('bio')
                     ->limit(10),
-                Tables\Columns\TextColumn::make('state'),
-                Tables\Columns\TextColumn::make('contact_email'),
-                Tables\Columns\TextColumn::make('contact_phone_number'),
-                Tables\Columns\TextColumn::make('ballot_id'),
-                Tables\Columns\BooleanColumn::make('show'),
-                Tables\Columns\TextColumn::make('order')
+                TextColumn::make('state'),
+                TextColumn::make('contact_email'),
+                TextColumn::make('contact_phone_number'),
+                TextColumn::make('ballot_id'),
+                BooleanColumn::make('show'),
+                TextColumn::make('order')
                     ->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
@@ -100,9 +108,9 @@ class CandidateResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCandidates::route('/'),
-            'create' => Pages\CreateCandidate::route('/create'),
-            'edit' => Pages\EditCandidate::route('/{record}/edit'),
+            'index' => ListCandidates::route('/'),
+            'create' => CreateCandidate::route('/create'),
+            'edit' => EditCandidate::route('/{record}/edit'),
         ];
     }
 }

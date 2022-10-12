@@ -2,13 +2,20 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PoliticalGroupResource\Pages;
+use App\Filament\Resources\PoliticalGroupResource\Pages\CreatePoliticalGroup;
+use App\Filament\Resources\PoliticalGroupResource\Pages\EditPoliticalGroup;
+use App\Filament\Resources\PoliticalGroupResource\Pages\ListPoliticalGroups;
 use App\Models\PoliticalGroup;
-use Filament\Forms;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\BooleanColumn;
+use Filament\Tables\Columns\TextColumn;
 
 class PoliticalGroupResource extends Resource
 {
@@ -21,30 +28,30 @@ class PoliticalGroupResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('contact_email')
+                TextInput::make('contact_email')
                     ->email()
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('location_id'),
-                Forms\Components\Textarea::make('description')
+                TextInput::make('location_id'),
+                Textarea::make('description')
                     ->maxLength(65535),
-                Forms\Components\TextInput::make('email')
+                TextInput::make('email')
                     ->email()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('phone')
+                TextInput::make('phone')
                     ->tel()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('site_link')
+                TextInput::make('site_link')
                     ->maxLength(255),
-                Forms\Components\Toggle::make('can_back_candidates'),
-                Forms\Components\TextInput::make('badge_url')
+                Toggle::make('can_back_candidates'),
+                TextInput::make('badge_url')
                     ->maxLength(255),
-                Forms\Components\TextInput::make('profile_photo_path')
+                TextInput::make('profile_photo_path')
                     ->maxLength(2048),
-                Forms\Components\TextInput::make('slug')
+                TextInput::make('slug')
                     ->maxLength(255),
             ]);
     }
@@ -53,27 +60,27 @@ class PoliticalGroupResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('contact_email'),
-                Tables\Columns\TextColumn::make('location_id'),
-                Tables\Columns\TextColumn::make('description')
+                TextColumn::make('name'),
+                TextColumn::make('contact_email'),
+                TextColumn::make('location_id'),
+                TextColumn::make('description')
                     ->limit(80),
-                Tables\Columns\TextColumn::make('email'),
-                Tables\Columns\TextColumn::make('phone'),
-                Tables\Columns\TextColumn::make('site_link'),
-                Tables\Columns\TextColumn::make('badge_url'),
-                Tables\Columns\BooleanColumn::make('can_back_candidates'),
-                Tables\Columns\TextColumn::make('profile_photo_path'),
-                Tables\Columns\TextColumn::make('slug'),
+                TextColumn::make('email'),
+                TextColumn::make('phone'),
+                TextColumn::make('site_link'),
+                TextColumn::make('badge_url'),
+                BooleanColumn::make('can_back_candidates'),
+                TextColumn::make('profile_photo_path'),
+                TextColumn::make('slug'),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
@@ -87,9 +94,9 @@ class PoliticalGroupResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPoliticalGroups::route('/'),
-            'create' => Pages\CreatePoliticalGroup::route('/create'),
-            'edit' => Pages\EditPoliticalGroup::route('/{record}/edit'),
+            'index' => ListPoliticalGroups::route('/'),
+            'create' => CreatePoliticalGroup::route('/create'),
+            'edit' => EditPoliticalGroup::route('/{record}/edit'),
         ];
     }
 }

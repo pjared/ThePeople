@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\BallotPrecinctResource\Pages;
 
 use App\Filament\Resources\BallotPrecinctResource;
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ManageRecords;
 
 class ManageBallotPrecincts extends ManageRecords
@@ -13,7 +13,7 @@ class ManageBallotPrecincts extends ManageRecords
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 }

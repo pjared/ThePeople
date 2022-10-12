@@ -9,6 +9,8 @@ use Filament\Forms;
 use Filament\Pages\Actions\Action;
 use Filament\Resources\Pages\Page;
 use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 
 class AddCandidateOtherStances extends Page implements Tables\Contracts\HasTable
@@ -31,8 +33,8 @@ class AddCandidateOtherStances extends Page implements Tables\Contracts\HasTable
     protected function getTableColumns(): array
     {
         return [
-            Tables\Columns\TextColumn::make('name'),
-            Tables\Columns\TextColumn::make('stance')
+            TextColumn::make('name'),
+            TextColumn::make('stance')
                 ->limit(80),
         ];
     }
@@ -40,7 +42,7 @@ class AddCandidateOtherStances extends Page implements Tables\Contracts\HasTable
     protected function getTableActions(): array
     {
         return [
-            Tables\Actions\Action::make('Edit')
+            Action::make('Edit')
                 ->mountUsing(fn (Forms\ComponentContainer $form, CandidateOpinion $record) => $form->fill([
                     'name' => $record->name,
                     'stance' => $record->stance,
@@ -51,11 +53,11 @@ class AddCandidateOtherStances extends Page implements Tables\Contracts\HasTable
                     $record->save();
                 })
                 ->form([
-                    Forms\Components\TextInput::make('name')
+                    TextInput::make('name')
                         ->required(),
-                    Forms\Components\Textarea::make('stance'),
+                    Textarea::make('stance'),
                 ]),
-            Tables\Actions\DeleteAction::make(),
+            DeleteAction::make(),
         ];
     }
 
@@ -71,11 +73,11 @@ class AddCandidateOtherStances extends Page implements Tables\Contracts\HasTable
                 ]);
                 })
                 ->form([
-                    Forms\Components\TextInput::make('name')
+                    TextInput::make('name')
                         ->label('Stance title')
                         ->required()
                         ->maxLength(255),
-                    Forms\Components\Textarea::make('stance')
+                    Textarea::make('stance')
                         ->maxLength(65535),
                 ]),
         ];

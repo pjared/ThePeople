@@ -6,9 +6,13 @@ use App\Filament\Resources\ManualCandidateResource;
 use App\Models\CandidatePromise;
 use App\Models\ManualCandidate;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Pages\Actions\Action;
 use Filament\Resources\Pages\Page;
 use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Columns\Textarea;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 
 class AddCandidatePromises extends Page implements Tables\Contracts\HasTable
@@ -28,8 +32,8 @@ class AddCandidatePromises extends Page implements Tables\Contracts\HasTable
     protected function getTableColumns(): array
     {
         return [
-            Tables\Columns\TextColumn::make('promise'),
-            Tables\Columns\TextColumn::make('plan')
+            TextColumn::make('promise'),
+            TextColumn::make('plan')
                 ,
         ];
     }
@@ -37,8 +41,8 @@ class AddCandidatePromises extends Page implements Tables\Contracts\HasTable
     protected function getTableActions(): array
     {
         return [
-            Tables\Actions\DeleteAction::make(),
-            Tables\Actions\Action::make('Edit')
+            DeleteAction::make(),
+            Action::make('Edit')
                 ->mountUsing(fn (Forms\ComponentContainer $form, CandidatePromise $record) => $form->fill([
                     'promise' => $record->promise,
                     'plan' => $record->plan,
@@ -50,11 +54,11 @@ class AddCandidatePromises extends Page implements Tables\Contracts\HasTable
                     $record->save();
                 })
                 ->form([
-                    Forms\Components\TextInput::make('promise')
+                    TextInput::make('promise')
                         ->label('Promise')
                         ->required()
                         ->maxLength(255),
-                    Forms\Components\Textarea::make('plan')
+                    Textare::make('plan')
                         ->maxLength(65535),
                 ]),
         ];
@@ -71,11 +75,11 @@ class AddCandidatePromises extends Page implements Tables\Contracts\HasTable
                 ]);
             })
             ->form([
-                Forms\Components\TextInput::make('promise')
+                TextInput::make('promise')
                     ->label('Promise')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('plan')
+                Textarea::make('plan')
                     ->maxLength(65535),
             ]),
         ];

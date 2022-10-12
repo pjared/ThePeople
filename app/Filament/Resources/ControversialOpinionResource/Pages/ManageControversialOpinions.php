@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\ControversialOpinionResource\Pages;
 
 use App\Filament\Resources\ControversialOpinionResource;
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ManageRecords;
 
 class ManageControversialOpinions extends ManageRecords
@@ -13,7 +13,7 @@ class ManageControversialOpinions extends ManageRecords
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 }

@@ -2,13 +2,16 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\BallotPrecinctResource\Pages;
+use App\Filament\Resources\BallotPrecinctResource\Pages\ManageBallotPrecincts;
 use App\Models\BallotPrecinct;
-use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 
 class BallotPrecinctResource extends Resource
 {
@@ -22,10 +25,10 @@ class BallotPrecinctResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('precinct_id')
+                TextInput::make('precinct_id')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('ballot_id')
+                TextInput::make('ballot_id')
                     ->required(),
             ]);
     }
@@ -34,25 +37,25 @@ class BallotPrecinctResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('precinct_id'),
-                Tables\Columns\TextColumn::make('ballot_id'),
+                TextColumn::make('precinct_id'),
+                TextColumn::make('ballot_id'),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageBallotPrecincts::route('/'),
+            'index' => ManageBallotPrecincts::route('/'),
         ];
     }
 }

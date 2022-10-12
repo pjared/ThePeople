@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\CandidateBackgroundResource\Pages;
 
 use App\Filament\Resources\CandidateBackgroundResource;
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ManageRecords;
 
 class ManageCandidateBackgrounds extends ManageRecords
@@ -13,7 +13,7 @@ class ManageCandidateBackgrounds extends ManageRecords
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\BallotResource\Pages;
 
 use App\Filament\Resources\BallotResource;
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ManageRecords;
 
 class ManageBallots extends ManageRecords
@@ -13,7 +13,7 @@ class ManageBallots extends ManageRecords
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 }

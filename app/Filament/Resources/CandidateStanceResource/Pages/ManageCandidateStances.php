@@ -4,7 +4,7 @@ namespace App\Filament\Resources\CandidateStanceResource\Pages;
 
 use App\Filament\Resources\CandidateStanceResource;
 use App\Filament\Resources\CandidateStanceResource\Widgets\StanceOverview;
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ManageRecords;
 
 class ManageCandidateStances extends ManageRecords
@@ -14,7 +14,7 @@ class ManageCandidateStances extends ManageRecords
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make()
+            CreateAction::make()
                 ->after(function () {
                     $this->emit('itemAdded');
                 }),
@@ -24,7 +24,7 @@ class ManageCandidateStances extends ManageRecords
     protected function getHeaderWidgets(): array
     {
         return [
-            StanceOverview::class
+            StanceOverview::class,
         ];
     }
 }

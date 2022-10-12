@@ -9,10 +9,9 @@ class PositionsOverview extends Widget
 {
     protected static string $view = 'filament.resources.candidate-office-positions-resource.widgets.positions-overview';
     protected int | string | array $columnSpan = 'full';
+    protected $listeners = ['itemAdded' => '$refresh'];
 
     public $candidate;
-
-    protected $listeners = ['itemAdded' => '$refresh'];
 
     public function render(): View
     {

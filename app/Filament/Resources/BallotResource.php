@@ -2,14 +2,20 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\BallotResource\Pages;
+use App\Filament\Resources\BallotResource\Pages\ManageBallots;
 use App\Jobs\UpdateBallotCache;
 use App\Models\Ballot;
-use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\BooleanColumn;
+use Filament\Tables\Columns\TextColumn;
 
 class BallotResource extends Resource
 {
@@ -23,13 +29,13 @@ class BallotResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('location_id')
+                TextInput::make('location_id')
                     ->required(),
-                Forms\Components\TextInput::make('office_id')
+                TextInput::make('office_id')
                     ->required(),
-                Forms\Components\DatePicker::make('voting_date')
+                DatePicker::make('voting_date')
                     ->required(),
-                Forms\Components\Toggle::make('has_single_runner')
+                Toggle::make('has_single_runner')
                     ->required(),
             ]);
     }
@@ -38,38 +44,38 @@ class BallotResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id')
+                TextColumn::make('id')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('location.name')
-                                                    ->searchable(),
-                Tables\Columns\TextColumn::make('office.name')
-                                                    ->searchable(),
-                Tables\Columns\TextColumn::make('voting_date')
-                                                    ->date()
-                                                    ->sortable(),
-                Tables\Columns\BooleanColumn::make('has_single_runner')
-                                                    ->label('Single Candidate Race')
-                                                    ->sortable(),
+                TextColumn::make('location.name')
+                    ->searchable(),
+                TextColumn::make('office.name')
+                    ->searchable(),
+                TextColumn::make('voting_date')
+                    ->date()
+                    ->sortable(),
+                BooleanColumn::make('has_single_runner')
+                    ->label('Single Candidate Race')
+                    ->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make()
+                EditAction::make()
                     ->after(function (Ballot $record) {
                         UpdateBallotCache::dispatch($record);
                     }),
-                Tables\Actions\DeleteAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageBallots::route('/'),
+            'index' => ManageBallots::route('/'),
         ];
     }
 }

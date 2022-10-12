@@ -24,7 +24,7 @@ class CandidateInfoSeeder extends Seeder
      */
     public function run()
     {
-        //  "name" | "website" | "amount"
+        //  "name" | "website" | "amount",
 
         foreach ($this->donor_names as $name) {
             DB::table('donors')->insert([
@@ -36,8 +36,8 @@ class CandidateInfoSeeder extends Seeder
         //  candidate_id | donor_id
         $num_candidates = 4;
         /*
-            "name" | "candidate_id" | "politician_id" | "link_found" | "is_controversial"
-            "candidate_id" | "name" | "stance" | "link"
+            "name" | "candidate_id" | "politician_id" | "link_found" | "is_controversial",
+            "candidate_id" | "name" | "stance" | "link",
 
         */
         for($i = 1; $i <= $num_candidates; ++$i) {

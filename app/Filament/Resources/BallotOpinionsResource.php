@@ -2,13 +2,15 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\BallotOpinionsResource\Pages;
+use App\Filament\Resources\BallotOpinionsResource\Pages\ManageBallotOpinions;
 use App\Models\BallotOpinions;
-use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 
 class BallotOpinionsResource extends Resource
 {
@@ -21,9 +23,9 @@ class BallotOpinionsResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('ballot_id')
+                TextInput::make('ballot_id')
                     ->required(),
-                Forms\Components\TextInput::make('controversial_opinion_id')
+                TextInput::make('controversial_opinion_id')
                     ->required(),
             ]);
     }
@@ -32,12 +34,12 @@ class BallotOpinionsResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('ballot_id')
+                TextColumn::make('ballot_id')
                                                 ->sortable(),
-                Tables\Columns\TextColumn::make('controversial_opinion_id')
+                TextColumn::make('controversial_opinion_id')
                                                 ->searchable()
                                                 ->sortable(),
-                Tables\Columns\TextColumn::make('controversial_opinion.name')
+                TextColumn::make('controversial_opinion.name')
                                                 ->searchable()
                                                 ->sortable(),
             ])
@@ -45,18 +47,18 @@ class BallotOpinionsResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageBallotOpinions::route('/'),
+            'index' => ManageBallotOpinions::route('/'),
         ];
     }
 }

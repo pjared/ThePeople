@@ -4,7 +4,7 @@ namespace App\Filament\Resources\CandidateOpinionResource\Pages;
 
 use App\Filament\Resources\CandidateOpinionResource;
 use App\Filament\Resources\CandidateOpinionResource\Widgets\CandidateOpinionOverview;
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ManageRecords;
 
 class ManageCandidateOpinions extends ManageRecords
@@ -14,7 +14,7 @@ class ManageCandidateOpinions extends ManageRecords
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make()
+            CreateAction::make()
                 ->after(function () {
                     $this->emit('itemAdded');
                 }),

@@ -2,13 +2,17 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CampaignVideoResource\Pages;
+use App\Filament\Resources\CampaignVideoResource\Pages\ManageCampaignVideos;
 use App\Models\CampaignVideo;
-use Filament\Forms;
+use Filament\Forms\Components\Hidden;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 
 class CampaignVideoResource extends Resource
@@ -22,9 +26,9 @@ class CampaignVideoResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Hidden::make('candidate_id')
+                Hidden::make('candidate_id')
                     ->default(auth()->user()->candidate->id),
-                Forms\Components\TextInput::make('link')
+                TextInput::make('link')
                     ->required()
                     ->url()
                     ->maxLength(255),
@@ -35,24 +39,24 @@ class CampaignVideoResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('link'),
+                TextColumn::make('link'),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageCampaignVideos::route('/'),
+            'index' => ManageCampaignVideos::route('/'),
         ];
     }
 

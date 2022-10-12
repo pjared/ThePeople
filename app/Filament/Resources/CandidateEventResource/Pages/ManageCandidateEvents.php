@@ -4,7 +4,7 @@ namespace App\Filament\Resources\CandidateEventResource\Pages;
 
 use App\Filament\Resources\CandidateEventResource;
 use App\Filament\Resources\CandidateEventResource\Widgets\CandidateEventOverview;
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ManageRecords;
 
 class ManageCandidateEvents extends ManageRecords
@@ -14,7 +14,7 @@ class ManageCandidateEvents extends ManageRecords
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make()
+            CreateAction::make()
                 ->after(function () {
                     $this->emit('itemAdded');
                 }),
@@ -24,7 +24,7 @@ class ManageCandidateEvents extends ManageRecords
     protected function getHeaderWidgets(): array
     {
         return [
-            CandidateEventOverview::class
+            CandidateEventOverview::class,
         ];
     }
 }

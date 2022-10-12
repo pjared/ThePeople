@@ -2,13 +2,18 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\GroupApplicationResource\Pages;
+use App\Filament\Resources\GroupApplicationResource\Pages\CreateGroupApplication;
+use App\Filament\Resources\GroupApplicationResource\Pages\EditGroupApplication;
+use App\Filament\Resources\GroupApplicationResource\Pages\ListGroupApplications;
 use App\Models\GroupApplication;
-use Filament\Forms;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 
 class GroupApplicationResource extends Resource
 {
@@ -21,33 +26,33 @@ class GroupApplicationResource extends Resource
     {
         return $form
             ->schema([
-                // Forms\Components\TextInput::make('user_id')
+                // TextInput::make('user_id')
                 //     ->required(),
-                // Forms\Components\TextInput::make('name')
+                // TextInput::make('name')
                 //     ->required()
                 //     ->maxLength(255),
-                Forms\Components\Textarea::make('description')
+                Textarea::make('description')
                     ->required()
                     ->maxLength(65535)
                     ->disabled(),
-                // Forms\Components\TextInput::make('email')
+                // TextInput::make('email')
                 //     ->email()
                 //     ->required()
                 //     ->maxLength(255),
-                // Forms\Components\TextInput::make('state')
+                // TextInput::make('state')
                 //     ->required()
                 //     ->maxLength(255),
-                // Forms\Components\TextInput::make('location')
+                // TextInput::make('location')
                 //     ->required()
                 //     ->maxLength(255),
-                Forms\Components\Select::make('status')
+                Select::make('status')
                     ->options([
                         'accepted' => 'Accepted',
                         'submitted' => 'Submitted',
                         'rejected' => 'Rejected',
                     ])
                     ->required(),
-                // Forms\Components\TextInput::make('group_id'),
+                // TextInput::make('group_id'),
             ]);
     }
 
@@ -55,29 +60,29 @@ class GroupApplicationResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user.name'),
-                Tables\Columns\TextColumn::make('name')
+                TextColumn::make('user.name'),
+                TextColumn::make('name')
                     ->label('Group Name'),
-                Tables\Columns\TextColumn::make('description')
+                TextColumn::make('description')
                     ->limit(20),
-                Tables\Columns\TextColumn::make('email'),
-                Tables\Columns\TextColumn::make('state'),
-                Tables\Columns\TextColumn::make('location'),
-                Tables\Columns\TextColumn::make('status'),
-                Tables\Columns\TextColumn::make('group_id'),
-                // Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('email'),
+                TextColumn::make('state'),
+                TextColumn::make('location'),
+                TextColumn::make('status'),
+                TextColumn::make('group_id'),
+                // TextColumn::make('created_at')
                 //     ->dateTime(),
-                // Tables\Columns\TextColumn::make('updated_at')
+                // TextColumn::make('updated_at')
                 //     ->dateTime(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
@@ -91,9 +96,9 @@ class GroupApplicationResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListGroupApplications::route('/'),
-            'create' => Pages\CreateGroupApplication::route('/create'),
-            'edit' => Pages\EditGroupApplication::route('/{record}/edit'),
+            'index' => ListGroupApplications::route('/'),
+            'create' => CreateGroupApplication::route('/create'),
+            'edit' => EditGroupApplication::route('/{record}/edit'),
         ];
     }
 }

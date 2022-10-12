@@ -2,13 +2,16 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ControversialOpinionResource\Pages;
+use App\Filament\Resources\ControversialOpinionResource\Pages\ManageControversialOpinions;
 use App\Models\ControversialOpinion;
-use Filament\Forms;
+use Filament\Forms\Components\TextInput;
+use Filament\Pages\Actions\DeleteAction;
+use Filament\Pages\Actions\EditAction;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Columns\TextColumn;
 
 class ControversialOpinionResource extends Resource
 {
@@ -21,13 +24,13 @@ class ControversialOpinionResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('description')
+                TextInput::make('description')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('votes')
+                TextInput::make('votes')
                     ->required(),
             ]);
     }
@@ -36,28 +39,28 @@ class ControversialOpinionResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('name')
+                TextColumn::make('id'),
+                TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('description'),
-                Tables\Columns\TextColumn::make('votes'),
+                TextColumn::make('description'),
+                TextColumn::make('votes'),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageControversialOpinions::route('/'),
+            'index' => ManageControversialOpinions::route('/'),
         ];
     }
 }

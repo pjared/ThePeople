@@ -7,11 +7,15 @@ use App\Jobs\UpdateBallotCache;
 use App\Models\Candidate;
 use App\Models\CandidatePhoto;
 use App\Models\ManualCandidate;
-use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
 use Filament\Pages\Actions\Action;
 use Filament\Resources\Pages\Page;
 use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Spatie\ImageOptimizer\OptimizerChainFactory;
 
@@ -37,15 +41,15 @@ class AddManualCandidatePhotos extends Page implements Tables\Contracts\HasTable
     protected function getTableColumns(): array
     {
         return [
-            Tables\Columns\ImageColumn::make('attachment'),
-            Tables\Columns\TextColumn::make('order'),
+            ImageColumn::make('attachment'),
+            TextColumn::make('order'),
         ];
     }
 
     protected function getTableActions(): array
     {
         return [
-            Tables\Actions\DeleteAction::make(),
+            DeleteAction::make(),
         ];
     }
 
@@ -61,7 +65,7 @@ class AddManualCandidatePhotos extends Page implements Tables\Contracts\HasTable
                 ]);
             })
             ->form([
-                Forms\Components\FileUpload::make('attachment')
+                FileUpload::make('attachment')
                     ->image()
                     ->imagePreviewHeight('250')
                     ->loadingIndicatorPosition('left')
@@ -72,7 +76,7 @@ class AddManualCandidatePhotos extends Page implements Tables\Contracts\HasTable
                     ->uploadProgressIndicatorPosition('left')
                     ->maxSize(1024)
                     ->required(),
-                Forms\Components\TextInput::make('order')
+                TextInput::make('order')
                     ->label('Order of the photo')
                     ->numeric(),
             ]),

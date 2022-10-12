@@ -2,13 +2,19 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CandidateEventResource\Pages;
+use App\Filament\Resources\CandidateEventResource\Pages\ManageCandidateEvents;
 use App\Models\CandidateEvent;
-use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Hidden;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 
 class CandidateEventResource extends Resource
@@ -23,17 +29,17 @@ class CandidateEventResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Hidden::make('candidate_id')
+                Hidden::make('candidate_id')
                     ->default(auth()->user()->candidate->id),
-                Forms\Components\TextInput::make('event_name')
+                TextInput::make('event_name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('event_location')
+                TextInput::make('event_location')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\DatePicker::make('event_date')
+                DatePicker::make('event_date')
                     ->required(),
-                Forms\Components\Textarea::make('event_description')
+                Textarea::make('event_description')
                     ->maxLength(65535),
             ]);
     }
@@ -42,10 +48,10 @@ class CandidateEventResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('event_name'),
-                Tables\Columns\TextColumn::make('event_location'),
-                Tables\Columns\TextColumn::make('event_description'),
-                Tables\Columns\TextColumn::make('event_date')
+                TextColumn::make('event_name'),
+                TextColumn::make('event_location'),
+                TextColumn::make('event_description'),
+                TextColumn::make('event_date')
                     ->date()
                     ->sortable(),
             ])
@@ -53,18 +59,18 @@ class CandidateEventResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageCandidateEvents::route('/'),
+            'index' => ManageCandidateEvents::route('/'),
         ];
     }
 

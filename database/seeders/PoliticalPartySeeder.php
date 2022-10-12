@@ -17,7 +17,7 @@ class PoliticalPartySeeder extends Seeder
         $names = [
             "Republican",
             "Democrat",
-            "Independant"
+            "Independant",
         ];
 
         foreach($names as $name) {

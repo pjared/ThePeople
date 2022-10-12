@@ -20,7 +20,7 @@ class ManageCandidateRequiredStances extends ManageRecords
     protected function getHeaderWidgets(): array
     {
         return [
-            RequiredStancesOverview::class
+            RequiredStancesOverview::class,
         ];
     }
 }

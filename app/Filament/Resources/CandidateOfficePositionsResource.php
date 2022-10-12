@@ -2,13 +2,17 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CandidateOfficePositionsResource\Pages;
+use App\Filament\Resources\CandidateOfficePositionsResource\Pages\ManageCandidateOfficePositions;
 use App\Models\CandidateOfficePositions;
-use Filament\Forms;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 
 class CandidateOfficePositionsResource extends Resource
@@ -22,22 +26,22 @@ class CandidateOfficePositionsResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Hidden::make('candidate_id')
+                Textarea::make('candidate_id')
                     ->default(auth()->user()->candidate->id),
-                Forms\Components\TextInput::make('position_name')
+                TextInput::make('position_name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('description')
+                Textarea::make('description')
                     ->label('Your best accomplishments in office')
                     // ->required()
                     ->maxLength(65535),
-                Forms\Components\TextInput::make('year_start')
+                TextInput::make('year_start')
                     ->required()
                     ->maxLength(65535),
-                Forms\Components\TextInput::make('year_end')
+                TextInput::make('year_end')
                     ->required()
                     ->maxLength(65535),
-                Forms\Components\TextInput::make('order')
+                TextInput::make('order')
                     ->numeric()
                     ->minValue(1)
                     ->maxValue(100),
@@ -48,30 +52,30 @@ class CandidateOfficePositionsResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('position_name'),
-                Tables\Columns\TextColumn::make('description')
+                TextColumn::make('position_name'),
+                TextColumn::make('description')
                     ->limit(80),
-                Tables\Columns\TextColumn::make('year_start'),
-                Tables\Columns\TextColumn::make('year_end'),
-                Tables\Columns\TextColumn::make('order')
+                TextColumn::make('year_start'),
+                TextColumn::make('year_end'),
+                TextColumn::make('order')
                     ->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageCandidateOfficePositions::route('/'),
+            'index' => ManageCandidateOfficePositions::route('/'),
         ];
     }
 

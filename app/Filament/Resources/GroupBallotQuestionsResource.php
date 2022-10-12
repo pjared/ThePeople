@@ -2,12 +2,14 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\GroupBallotQuestionsResource\Pages;
+use App\Filament\Resources\GroupBallotQuestionsResource\Pages\ManageGroupBallotQuestions;
 use App\Models\GroupBallotQuestions;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Columns\TextColumn;
 
 class GroupBallotQuestionsResource extends Resource
 {
@@ -20,11 +22,11 @@ class GroupBallotQuestionsResource extends Resource
     {
         return $form
             ->schema([
-                // Forms\Components\TextInput::make('political_group_id')
+                // TextInput::make('political_group_id')
                 //     ->required(),
-                // Forms\Components\TextInput::make('ballot_id')
+                // TextInput::make('ballot_id')
                 //     ->required(),
-                // Forms\Components\TextInput::make('question')
+                // TextInput::make('question')
                 //     ->required()
                 //     ->maxLength(255),
             ]);
@@ -34,30 +36,30 @@ class GroupBallotQuestionsResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('group.name'),
-                Tables\Columns\TextColumn::make('ballot_id'),
-                Tables\Columns\TextColumn::make('question'),
-                Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('group.name'),
+                TextColumn::make('ballot_id'),
+                TextColumn::make('question'),
+                TextColumn::make('created_at')
                     ->dateTime(),
-                Tables\Columns\TextColumn::make('updated_at')
+                TextColumn::make('updated_at')
                     ->dateTime(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                // Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                // EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageGroupBallotQuestions::route('/'),
+            'index' => ManageGroupBallotQuestions::route('/'),
         ];
     }
 }

@@ -7,7 +7,7 @@ use App\Models\BallotOpinions;
 use App\Models\Candidate;
 use App\Models\CandidateRequiredStance;
 use App\Models\ControversialOpinion;
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ManageRecords;
 use Illuminate\Support\Facades\Log;
 
@@ -18,7 +18,7 @@ class ManageRequiredStances extends ManageRecords
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 

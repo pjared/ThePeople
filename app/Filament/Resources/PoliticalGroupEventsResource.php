@@ -2,13 +2,18 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PoliticalGroupEventsResource\Pages;
+use App\Filament\Resources\PoliticalGroupEventsResource\Pages\ManagePoliticalGroupEvents;
 use App\Models\PoliticalGroupEvents;
-use Filament\Forms;
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Pages\Actions\DeleteAction;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
-use Filament\Tables;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 
 class PoliticalGroupEventsResource extends Resource
@@ -24,17 +29,17 @@ class PoliticalGroupEventsResource extends Resource
         $group = auth()->user()->manages_political_groups->first();
         return $form
             ->schema([
-                Forms\Components\Hidden::make('candidate_id')
+                Textarea::make('candidate_id')
                     ->default($group->id),
-                Forms\Components\TextInput::make('event_name')
+                TextInput::make('event_name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('event_location')
+                TextInput::make('event_location')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('event_description')
+                Textarea::make('event_description')
                     ->maxLength(65535),
-                Forms\Components\DateTimePicker::make('event_date')
+                DateTimePicker::make('event_date')
                     ->required(),
             ]);
     }
@@ -44,30 +49,30 @@ class PoliticalGroupEventsResource extends Resource
 
         return $table
             ->columns([
-                // Tables\Columns\TextColumn::make('political_group_id'),
-                Tables\Columns\TextColumn::make('event_name'),
-                Tables\Columns\TextColumn::make('event_location'),
-                Tables\Columns\TextColumn::make('event_description')
+                // TextColumn::make('political_group_id'),
+                TextColumn::make('event_name'),
+                TextColumn::make('event_location'),
+                TextColumn::make('event_description')
                     ->limit(80),
-                Tables\Columns\TextColumn::make('event_date')
+                TextColumn::make('event_date')
                     ->dateTime(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                DeleteBulkAction::make(),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManagePoliticalGroupEvents::route('/'),
+            'index' => ManagePoliticalGroupEvents::route('/'),
         ];
     }
 
