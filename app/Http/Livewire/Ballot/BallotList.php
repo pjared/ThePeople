@@ -95,10 +95,11 @@ class BallotList extends Component
 
     public function getUserBallotsProperty()
     {
-        $precincts = BallotPrecinct::where('precinct_id', $this->user_precinct)->with(['ballot' => function($query){
-            $query->withCount('candidates');
-            $query->with('office', 'location');
-        }],)->get();
+        $precincts = BallotPrecinct::where('precinct_id', $this->user_precinct)->with(['ballot' => function($query) {
+                    $query->withCount('candidates');
+                    $query->with('office', 'location');
+                }],
+            )->get();
         $this->precincts_loaded = true;
         return $precincts;
     }
