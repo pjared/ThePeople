@@ -18,6 +18,11 @@
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://whatsinyourballot.com" />
         <meta property="og:image" content="{{ url('storage/images/home-page.png') }}" />
+        <meta name="twitter:card" content="summary_large_image">
+
+        <meta property="og:description" content="Find elections and compare candidates that will appear on your ballot.">
+        <meta property="og:site_name" content="ThePeople">
+        <meta name="twitter:image:alt" content="ThePeople">
     @endsection
 
     {{-- Feedback Modal --}}

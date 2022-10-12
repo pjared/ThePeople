@@ -47,6 +47,19 @@
     @section('page-title')
         {{ $ballot->location->name }} {{ $ballot->office->name }} Ballot
     @endsection
+
+    @section('meta-tags')
+        <meta property="og:title" content="{{ $ballot->name }} - Mock Ballot" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://whatsinyourballot.com/ballot/{{ $ballot->slug }}" />
+        <meta property="og:image" content="{{ url('storage/images/ballot.png') }}" />
+        <meta name="twitter:card" content="summary_large_image">
+
+        <meta property="og:description" content="The Mock Ballot for {{ $ballot->name }}">
+        <meta property="og:site_name" content="ThePeople">
+        <meta name="twitter:image:alt" content="ThePeople">
+    @endsection
+
     @section('description')
         The mock-ballot of {{ $ballot->name }}. Candidates here have the ability to create their own profiles, however if a candidate has not created a profile it's possible that we have created one for them.
         This ballot currently has the following candidates:
