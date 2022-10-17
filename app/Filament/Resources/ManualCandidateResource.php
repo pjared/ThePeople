@@ -49,6 +49,7 @@ class ManualCandidateResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('candidate_id'),
                 TextColumn::make('candidate.name')
                     ->searchable(),
                 TextColumn::make('note')
