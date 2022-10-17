@@ -1,4 +1,10 @@
 User-agent: *
 Disallow: /admin/
+Disallow: /auth/google/redirect
+Disallow: /auth/google/callback
+Disallow: /auth/facebook/redirect
+Disallow: /auth/facebook/callback
+Disallow: /auth/twitter/redirect
+Disallow: /auth/twitter/callback
 
 Sitemap: https://whatsonyourballot.com/sitemap.xml
