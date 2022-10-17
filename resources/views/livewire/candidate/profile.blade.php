@@ -115,7 +115,21 @@
             <div class='w-full md:w-4/5 flex justify-center'>
                 @include('candidate.component.opinions', ['no_controversials' => true])
             </div>
-            {{-- OPINIONS COMPONENT --}}
+            <div class="flex flex-col md:grid md:grid-cols-2 md:p-8 gap-2 justify-center w-full">
+                {{-- LEFT COLUMN --}}
+                <div class="flex flex-col grow gap-6 items-center">
+                    {{-- DROPDOWNS: DONORS AND PREVIOUS POSITIONS --}}
+                    <div class="flex flex-col gap-6 md:w-11/12 items-center">
+                        {{-- DONORS --}}
+                        @include('candidate.component.donors')
+                    </div>
+                </div>
+                {{-- RIGHT COLUMN --}}
+                <div class="flex flex-col md:w-11/12 gap-6">
+                    {{-- PROMISES COMPONENT --}}
+                    @include('candidate.component.promises', ['promises' => $this->candidate->promises])
+                </div>
+            </div>
         </div>
     @endif
 
