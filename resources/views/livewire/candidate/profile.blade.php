@@ -73,36 +73,7 @@
                 @include('candidate.component.opinions')
 
                 {{-- DONORS --}}
-                {{--
-                @if (count($this->candidate->donors) != 0)
-                    <div class="flex grow flex-col w-11/12 items-center">
-                        <x-dropdown-card>
-                            <x-slot:title>
-                                Campaign Donors
-                            </x-slot>
-                            <x-slot:content>
-                                @if (count($this->candidate->donors) >= 1)
-                                @foreach ($this->candidate->donors as $donor)
-                                    <div class="flex flex-row items-center justify-center gap-2">
-                                        <span>Name:  {{ $donor->name }}</span>
-                                        @auth
-                                            <livewire:flag :type="'donor'" :type_id="$donor->id" :wire:key="'donor-flag-' .$donor->id">
-                                        @else
-                                            <label class="fill-transparent" for="signup-modal">
-                                                @include('icons.flag')
-                                            </label>
-                                        @endauth
-
-                                    </div>
-                                @endforeach
-                                @else
-                                    No donor data as of yet.
-                                @endif
-                            </x-slot>
-                        </x-dropdown-card>
-                    </div>
-                @endif
-                --}}
+                @include('candidate.component.donors')
 
                 {{-- LAW MAKING INVOLVEMENT  --}}
                 {{--
