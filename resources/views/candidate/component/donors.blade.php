@@ -5,7 +5,7 @@
                 Campaign Donors
             </x-slot>
             <x-slot:content>
-                <p class="text-center">{{$this->candidate->name}} has received <span class='font-semibold text-md'>${{ number_format($this->candidate->donors->total) }}</span></p>
+                <p class="text-center">{{$this->candidate->name}} has received <span class='font-semibold text-md'>${{ number_format($this->candidate->donors->total) }}</span> <span class='text-gray-400 text-sm'>(as of {{ $this->candidate->donors->last_fec_updated_at }})</span></p>
                 <h3 class='text-center capitalize text-xl font-bold'>Top 5 Donors</h3>
 
                 @foreach ($this->top_5_donors as $name => $donor)
