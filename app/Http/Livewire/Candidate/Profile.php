@@ -46,6 +46,24 @@ class Profile extends Component
         });
     }
 
+    public function getTop5StateDonorsProperty() {
+        if($this->candidate->donors) {
+            return json_decode($this->candidate->donors->top_5_states, true);
+        }
+    }
+
+    public function getTop5DonorsProperty() {
+        if($this->candidate->donors) {
+            return json_decode($this->candidate->donors->top_5_donors, true);
+        }
+    }
+
+    public function getTop5GroupDonorsProperty() {
+        if($this->candidate->donors) {
+            return json_decode($this->candidate->donors->top_5_groups, true);
+        }
+    }
+
     public function getOpinionsProperty()
     {
         if ($this->candidate->ballot) {
