@@ -20,6 +20,7 @@ class CandidateDonors extends Model
         'top_5_states',
         'top_5_groups',
         'total',
+        'last_fec_updated_at',
     ];
 
     protected $casts = [

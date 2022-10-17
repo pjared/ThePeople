@@ -30,6 +30,7 @@ class CandidateDonorsResource extends Resource
                 Forms\Components\TextInput::make('total')
                     ->numeric()
                     ->required(),
+                Forms\Components\DatePicker::make('last_fec_updated_at'),
                 Forms\Components\Textarea::make('top_5_groups')
                     ->required()
                     ->maxLength(65535),
@@ -48,6 +49,7 @@ class CandidateDonorsResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('candidate.name'),
                 Tables\Columns\TextColumn::make('total'),
+                Tables\Columns\TextColumn::make('last_fec_updated_at'),
             ])
             ->filters([
                 //
