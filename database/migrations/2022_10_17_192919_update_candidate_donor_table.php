@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('candidate_donor', function (Blueprint $table) {
             $table->dropColumn('donor_id');
-            $table->decimal('total');
+            $table->decimal('total', 10, 2);
             $table->text('top_5_groups');
             $table->text('top_5_states');
             $table->text('top_5_donors');
