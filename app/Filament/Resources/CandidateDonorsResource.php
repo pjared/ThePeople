@@ -19,6 +19,7 @@ class CandidateDonorsResource extends Resource
     protected static ?string $model = CandidateDonors::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Candidate';
 
     public static function form(Form $form): Form
     {
@@ -27,6 +28,7 @@ class CandidateDonorsResource extends Resource
                 Forms\Components\TextInput::make('candidate_id')
                     ->required(),
                 Forms\Components\TextInput::make('total')
+                    ->numeric()
                     ->required(),
                 Forms\Components\Textarea::make('top_5_groups')
                     ->required()
