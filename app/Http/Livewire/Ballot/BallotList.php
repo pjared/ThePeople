@@ -57,9 +57,13 @@ class BallotList extends Component
     {
         $ballots = Cache::rememberForever('ballots', function () {
             $ballots  = Ballot::with('office', 'location')->withCount('candidates')->get();
-            $ballots = $ballots->sortBy(function($ballot){
-                return $ballot->name;
-            });
+            // $ballots = $ballots->sortBy(function($ballot){
+            //     return $ballot->office->name;
+            // }, SORT_REGULAR, true);
+            $ballots = $ballots->sortBy([
+                    ['office.name', 'desc'],
+                    ['location.name', 'asc'],
+                ]);
             return $ballots;
         });
         if($this->current_key) {
