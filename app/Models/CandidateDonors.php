@@ -14,7 +14,7 @@ class CandidateDonors extends Model
 
     protected $table = 'candidate_donor';
 
-    protected $guarded = [
+    protected $fillable = [
         'candidate_id',
         'top_5_donors',
         'top_5_states',
