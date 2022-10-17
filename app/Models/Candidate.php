@@ -125,7 +125,8 @@ class Candidate extends Model
     }
 
     public function donors() {
-        return $this->belongsToMany(Donor::class)->using(CandidateDonors::class);
+        return $this->hasOne(CandidateDonors::class, 'candidate_id');
+        // return $this->belongsToMany(Donor::class)->using(CandidateDonors::class);
     }
 
     public function ballot() {
