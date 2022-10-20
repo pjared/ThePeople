@@ -22,8 +22,8 @@ return new class extends Migration
             $table->smallInteger('house_yeas')->nullable();
             $table->smallInteger('house_nays')->nullable();
             $table->smallInteger('house_not_voting')->nullable();
-            $table->string('senate_roll_link');
-            $table->string('house_roll_link');
+            $table->string('senate_roll_link')->nullable();
+            $table->string('house_roll_link')->nullable();
             $table->string('bill_id');
             $table->string('bill_status');
             $table->string('bill_link');
