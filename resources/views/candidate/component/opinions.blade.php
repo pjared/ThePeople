@@ -1,7 +1,7 @@
 {{-- OTHER OPINIONS --}}
 @if ($this->candidate->opinions_count >= 1)
     <article class="flex flex-col md:w-11/12 items-center">
-        <x-dropdown-card  :classes="'shadow-xl'">
+        <x-dropdown-card  :classes="'shadow-xl'" :no_controversials="isset($no_controversials)">
             @isset($no_controversials)
                 <x-slot:title>
                     Candidate's General Stances

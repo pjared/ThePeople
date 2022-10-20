@@ -1,9 +1,14 @@
-@props(['classes'])
+@props(['classes', 'no_controversials'])
 
-<div {{ $attributes->merge(['class' => 'background-card w-11/12 h-fit p-2 ' . $classes]) }} x-data="{open : false}">
-    {{-- {{dd($classes) }} --}}
+<div {{ $attributes->merge(['class' => 'background-card w-11/12 h-fit p-2 ' . $classes]) }}
+    x-data="{open : '{{ isset($no_controversials) && $no_controversials }}' }">
     <div class="collapse collapse-arrow" x-on:click="open = ! open">
-        <input type="checkbox"/>
+        @if(isset($no_controversials) && $no_controversials)
+            <input type="checkbox" checked/>
+        @else
+            <input type="checkbox"/>
+        @endif
+
         <div class="flex collapse-title text-md font-medium items-center">
             <h2 class='text-lg capitalize' :class="{ 'underline': open }">{{ $title }}</h2>
         </div>
