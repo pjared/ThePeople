@@ -12,10 +12,10 @@ class Law extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'senate_no_votes',
+        'senate_not_voting',
         'senate_yeas',
         'senate_nays',
-        'house_no_votes',
+        'house_not_voting',
         'house_yeas',
         'house_nays',
         'senate_roll_link',
