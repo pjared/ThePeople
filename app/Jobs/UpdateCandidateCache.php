@@ -37,7 +37,10 @@ class UpdateCandidateCache implements ShouldQueue
         Cache::forget('candidate-' . $candidate->slug);
         Cache::rememberForever('candidate-' . $candidate->slug, function () use ($candidate) {
                     return $candidate->load('ballot', 'ballot.office:id,name', 'ballot.location:id,state,name',
-                                        'events', 'required_stances', 'stances', 'promises', 'videos', 'previous_positions');
+                        'required_stances', 'stances',
+                        'opinions', 'manual_candidate', 'educations', 'backgrounds')
+                        ->loadCount('events', 'required_stances', 'stances', 'promises', 'videos', 'previous_positions',
+                        'opinions', 'educations', 'backgrounds');
                 });
     }
 }
