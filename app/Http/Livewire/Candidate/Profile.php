@@ -40,9 +40,9 @@ class Profile extends Component
             $candidate = Candidate::firstWhere('slug', $slug);
             return $candidate->load('ballot', 'ballot.office:id,name', 'ballot.location:id,state,name',
                                 'events', 'required_stances', 'stances', 'promises', 'videos', 'previous_positions',
-                                'opinions', 'manual_candidate', 'educations', 'backgrounds')
+                                'opinions', 'manual_candidate', 'educations', 'backgrounds', 'bill_votes')
                                 ->loadCount('events', 'required_stances', 'stances', 'promises', 'videos', 'previous_positions',
-                                'opinions', 'educations', 'backgrounds');
+                                'opinions', 'educations', 'backgrounds', 'bill_votes');
         });
     }
 

@@ -20,9 +20,9 @@ class CandidateController extends Controller
             }
             return $candidate->load('ballot', 'ballot.office:id,name', 'ballot.location:id,state,name',
                                 'required_stances', 'stances',
-                                'opinions', 'manual_candidate', 'educations', 'backgrounds')
+                                'opinions', 'manual_candidate', 'educations', 'backgrounds', 'bill_votes')
                                 ->loadCount('events', 'required_stances', 'stances', 'promises', 'videos', 'previous_positions',
-                                'opinions', 'educations', 'backgrounds');
+                                'opinions', 'educations', 'backgrounds', 'bill_votes');
         });
         // 'events', 'videos', 'promises', 'previous_positions',
     }
