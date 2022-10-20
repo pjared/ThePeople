@@ -116,6 +116,10 @@ class Candidate extends Model
         ];
     }
 
+    public function bill_votes() {
+        return $this->hasMany(CandidateVote::class);
+    }
+
     public function educations() {
         return $this->hasMany(CandidateEducation::class);
     }
