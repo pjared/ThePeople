@@ -474,7 +474,7 @@ class ProvoOremBallotSeeder extends Seeder
             ],
         ],
 
-        10 => [
+        9 => [
             [
                 "name" => "Climate Change and Water",
                 "stance" => "Agriculture and carbon extraction are incompatible. We will not long be able to do both. The drought has caused ranchers throughout Utah to cull their herds. Agriculture has been the big loser in in this trend of dry years.",
@@ -497,7 +497,7 @@ class ProvoOremBallotSeeder extends Seeder
             ],
         ],
 
-        11 => [
+        10 => [
             [
                 "name" => "Economy & Jobs",
                 "stance" => "As a former small businessman, I understand the difficulties Utahns experience and I'm here to help by creating economic opportunity in every district from Provo to Sandy and communities in-between.",
