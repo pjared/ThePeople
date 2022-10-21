@@ -18,6 +18,16 @@
         @apply mx-0;
     }
 
+    .stamp-box
+    {
+        @apply h-fit w-fit;
+        @apply z-10 px-1;
+        @apply text-lg font-semibold text-center;
+        @apply border-2 rounded-md;
+        @apply opacity-75;
+        @apply shadow-md shadow-inherit;
+    }
+
     /* .collapse-open :where(.collapse-content), .collapse:focus:not(.collapse-close) :where(.collapse-content), .collapse:not(.collapse-close) :where(input[type="checkbox"]:checked ~ .collapse-content) {
         @apply collapse-animation;
     } */
