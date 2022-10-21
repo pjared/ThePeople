@@ -16,4 +16,8 @@ class CandidateVote extends Model
         'law_id',
         'candidate_vote',
     ];
+
+    public function law() {
+        return $this->belongsTo(Law::class);
+    }
 }
