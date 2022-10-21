@@ -69,49 +69,18 @@
                 {{-- PROMISES COMPONENT --}}
                 @include('candidate.component.promises', ['promises' => $this->candidate->promises])
 
+                {{-- LAW MAKING INVOLVEMENT  --}}
+                @include('candidate.component.laws-voted')
+
                 {{-- OPINIONS COMPONENT --}}
                 @include('candidate.component.opinions')
 
                 {{-- DONORS --}}
                 @include('candidate.component.donors')
-
-                {{-- LAW MAKING INVOLVEMENT  --}}
-                {{--
-                @if (count($this->candidate->law_involvement) != 0)
-                    <div class="flex flex-col w-11/12 items-center">
-                        <x-dropdown-card>
-                            <x-slot:title>
-                                Laws Passed in office
-                            </x-slot>
-                            <x-slot:content>
-                                <div class="flex flex-col gap-4">
-                                    @foreach ($this->candidate->law_involvement as $law)
-                                        <div class="flex flex-row justify-center gap-4">
-                                            <span>Name : {{ $law->name }}</span>
-                                            @auth
-                                                <livewire:flag :type="'law'" :type_id="$law->id" :wire:key="'law-flag-' .$law->id">
-                                            @else
-                                                <label class="fill-transparent" for="signup-modal">
-                                                    @include('icons.flag')
-                                                </label>
-                                            @endauth
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </x-slot>
-                        </x-dropdown-card>
-                    </div>
-                @endif
-                --}}
             </div>
         </div>
     @else
         <div class="flex flex-col md:p-8 gap-2 justify-center items-center w-full">
-            {{-- PROMISES COMPONENT --}}
-            @if (! $this->is_manual)
-                @include('candidate.component.promises', ['promises' => $this->candidate->promises])
-            @endif
-
             <div class='w-full md:w-4/5 flex justify-center'>
                 @include('candidate.component.opinions', ['no_controversials' => true])
             </div>
@@ -126,6 +95,8 @@
                 </div>
                 {{-- RIGHT COLUMN --}}
                 <div class="flex flex-col md:w-11/12 gap-6">
+                    {{-- LAW MAKING --}}
+                    @include('candidate.component.laws-voted')
                     {{-- PROMISES COMPONENT --}}
                     @include('candidate.component.promises', ['promises' => $this->candidate->promises])
                 </div>
@@ -181,32 +152,7 @@
         {{-- RIGHT COLUMN --}}
         <div class="flex flex-col md:w-11/12 grow gap-6 items-center">
             {{-- LAW MAKING INVOLVEMENT  --}}
-            {{-- @if (count($this->candidate->law_involvement) != 0)
-                <div class="flex flex-col w-11/12 items-center">
-                    <x-dropdown-card>
-                        <x-slot:title>
-                            Laws Passed in office
-                        </x-slot>
-                        <x-slot:content>
-                            <div class="flex flex-col gap-4">
-                                @foreach ($this->candidate->law_involvement as $law)
-                                    <div class="flex flex-row justify-center gap-4">
-                                        <span>Name : {{ $law->name }}</span>
-                                        @auth
-                                            <livewire:flag :type="'law'" :type_id="$law->id" :wire:key="'law-flag-' .$law->id">
-                                        @else
-                                            <label class="fill-transparent" for="signup-modal">
-                                                @include('icons.flag')
-                                            </label>
-                                        @endauth
-                                    </div>
-                                @endforeach
-                            </div>
-                        </x-slot>
-                    </x-dropdown-card>
-                </div>
-            @endif
-            --}}
+
             @include('candidate.component.education')
         </div>
     </div>
