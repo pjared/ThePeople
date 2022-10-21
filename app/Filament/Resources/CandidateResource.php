@@ -41,7 +41,6 @@ class CandidateResource extends Resource
                     ->maxLength(20),
                 TextInput::make('contact_email')
                     ->email()
-                    ->required()
                     ->maxLength(255),
                 TextInput::make('contact_phone_number')
                     ->tel()
