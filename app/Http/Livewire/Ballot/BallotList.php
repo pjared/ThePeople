@@ -57,17 +57,30 @@ class BallotList extends Component
     {
         $ballots = Cache::rememberForever('ballots', function () {
             $ballots  = Ballot::with('office', 'location')->withCount('candidates')->get();
-            // $ballots = $ballots->sortBy(function($ballot){
-            //     return $ballot->office->name;
-            // }, SORT_REGULAR, true);
             $ballots = $ballots->sortBy([
                     ['office.name', 'desc'],
                     ['location.name', 'asc'],
                 ]);
             return $ballots;
         });
+        if(auth()->user()) {
+            foreach($this->user_ballots as $user_ballot) {
+                $ballots = $ballots->filter(function ($value, $key) use($user_ballot){
+                    return $value['id']!=$user_ballot->ballot->id;
+                });
+            }
+            foreach($this->state_ballots as $state_ballot) {
+                $ballots = $ballots->filter(function ($value, $key) use($state_ballot){
+                    return $value['id']!=$state_ballot->id;
+                });
+            }
+        }
         if($this->current_key) {
-            return $ballots->forget($this->current_key);
+            $current_key = $this->current_key;
+            $ballots = $ballots->filter(function ($value, $key) use($current_key){
+                return $value['id']!=$current_key;
+            });
+            return $ballots;
         } else {
             return $ballots;
         }
@@ -94,7 +107,14 @@ class BallotList extends Component
 
     public function getStateBallotsProperty()
     {
-        return Ballot::whereRelation('location','name','Utah')->withCount('candidates')->with('office', 'location')->get();
+        $ballots = Ballot::whereRelation('location','name','Utah')->withCount('candidates')->with('office', 'location')->get();
+        if($this->current_key) {
+            $current_key = $this->current_key;
+            $ballots = $ballots->filter(function ($value, $key) use($current_key){
+                return $value['id'] != $current_key;
+            });
+        }
+        return $ballots;
     }
 
     public function getUserBallotsProperty()
@@ -104,6 +124,12 @@ class BallotList extends Component
                     $query->with('office', 'location');
                 }],
             )->get();
+        if($this->current_key) {
+            $current_key = $this->current_key;
+            $precincts = $precincts->filter(function ($value, $key) use($current_key){
+                return $value['ballot_id']!=$current_key;
+            });
+        }
         $this->precincts_loaded = true;
         return $precincts;
     }
