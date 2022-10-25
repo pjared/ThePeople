@@ -31,7 +31,7 @@ class UTDonorSeeder extends Seeder
             CandidateDonors::create([
                 'candidate_id' => $candidate->id,
                 'top_5_donors' => json_encode($donor['top_donors']),
-                'top_5_states' => array_key_exists('top_states', $donor) ? $donor['top_states'] : "[]",
+                'top_5_states' => array_key_exists('top_states', $donor) ? json_encode($donor['top_states']) : "[]",
                 'top_5_groups' => json_encode($donor['top_groups']),
                 'total' => $donor['total'],
                 'last_fec_updated_at' => Carbon::now()->subDays(5),
