@@ -10,11 +10,11 @@
                     <h3 class='text-center capitalize text-xl font-bold'>Top 5 Donors</h3>
 
                     @foreach ($this->top_5_donors as $name => $donor)
-                        <p><span class='font-semibold text-md'>${{ number_format($donor["Amount"], 2) }}</span> <span class='text-gray-400 text-sm'>({{ $donor["Percent_Total"] }}%)</span> - {{ $name }}</p>
+                        <p><span class='font-semibold text-md'>${{ number_format($donor["Amount"], 2) }}</span> <span class='text-gray-400 text-sm'>({{ $donor["Percent_Total"] }}%)</span> - {{ $donor["Name"] }}</p>
                     @endforeach
                     <h3 class='text-center capitalize text-xl font-bold'>Top 5 States</h3>
                     @foreach ($this->top_5_state_donors as $name => $donor)
-                        <p><span class='font-semibold text-md'>${{ number_format($donor["Amount"], 2) }}</span> <span class='text-gray-400 text-sm'>({{ $donor["Percent_Total"] }}%)</span> - {{ $name }}</p>
+                        <p><span class='font-semibold text-md'>${{ number_format($donor["Amount"], 2) }}</span> <span class='text-gray-400 text-sm'>({{ $donor["Percent_Total"] }}%)</span> - {{ $donor["Name"] }}</p>
                     @endforeach
 
                     <div class='flex flex-row justify-center'>
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     @foreach ($this->top_5_group_donors as $name => $donor)
-                        <p><span class='font-semibold text-md'>${{ number_format($donor["Amount"], 2) }}</span> <span class='text-gray-400 text-sm'>({{ $donor["Percent_Total"] }}%)</span> - {{ $name }}</p>
+                        <p><span class='font-semibold text-md'>${{ number_format($donor["Amount"], 2) }}</span> <span class='text-gray-400 text-sm'>({{ $donor["Percent_Total"] }}%)</span> - {{ $donor["Name"] }}</p>
                     @endforeach
                 @else
                     <p class="text-center">This candidate does not have their donor data listed on the fec.gov website. It's likely that they haven't received enough donations to file.</p>
