@@ -3,8 +3,8 @@
     <div class="pt-2 relative mx-auto text-gray-600 w-4/5 md:w-2/5"
         x-data="{ show: false,
         mobile: window.innerWidth <= 768 }"
-        @mouseleave="show = false"
-        @mouseover="show = true">
+        @click="show = true"
+        @click.outside="show = false">
         <input class="border-2 border-gray-300 bg-white h-12 pl-5 pr-10 w-full rounded-lg text-sm md:text-md focus:outline-none"
             type="search" wire:model='search'  name="search" placeholder="Search for a Candidate, Public Office, or District">
         <button class="absolute right-0 top-1 mt-5 mr-4">
