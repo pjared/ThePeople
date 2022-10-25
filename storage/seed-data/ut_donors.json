@@ -1,0 +1,6850 @@
+{
+    "Evan McMullin": {
+        "total": 2654833.79,
+        "top_groups": [
+            {
+                "Percent_Total": 19.47,
+                "Amount": 516987.55,
+                "Name": "Business Executives"
+            },
+            {
+                "Percent_Total": 2.51,
+                "Amount": 66699.53,
+                "Name": "Real Estate"
+            },
+            {
+                "Percent_Total": 10.78,
+                "Amount": 286171.7,
+                "Name": "Banking"
+            },
+            {
+                "Percent_Total": 3.99,
+                "Amount": 105969.59,
+                "Name": "Consulting"
+            },
+            {
+                "Percent_Total": 6.76,
+                "Amount": 179368.51,
+                "Name": "Lawyers"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 0.42,
+                "Amount": 11200.86,
+                "Name": "PAYCHEX, INC."
+            },
+            {
+                "Percent_Total": 0.23,
+                "Amount": 6099.79,
+                "Name": "BUSINESS, AMERICAN CLEANERS (INDIVIDUAL PERSON)"
+            },
+            {
+                "Percent_Total": 0.23,
+                "Amount": 6099.79,
+                "Name": "ARTISTIC DIRECTOR, SELF-EMPLOYED (INDIVIDUAL PERSON)"
+            },
+            {
+                "Percent_Total": 0.23,
+                "Amount": 6099.78,
+                "Name": "PRIVATE EQUITY INVESTOR, GREYROCK CAPITAL GROUP (INDIVIDUAL PERSON)"
+            },
+            {
+                "Percent_Total": 0.23,
+                "Amount": 6099.78,
+                "Name": "BIOTECHNOLOGY EXECUTIVE, INDEPENDENT (INDIVIDUAL PERSON)"
+            }
+        ],
+        "top_states": [
+            {
+                "Percent_Total": 5.8,
+                "Amount": 153925.16,
+                "Name": "MA"
+            },
+            {
+                "Percent_Total": 3.66,
+                "Amount": 97043.8,
+                "Name": "TX"
+            },
+            {
+                "Percent_Total": 9.85,
+                "Amount": 261600.86,
+                "Name": "NY"
+            },
+            {
+                "Percent_Total": 16.24,
+                "Amount": 431220.09,
+                "Name": "CA"
+            },
+            {
+                "Percent_Total": 36.63,
+                "Amount": 972393.23,
+                "Name": "UT"
+            }
+        ]
+    },
+    "Mike Lee": {
+        "total": 8639574.63,
+        "top_groups": [
+            {
+                "Percent_Total": 50.69,
+                "Amount": 4379480.37,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 11.95,
+                "Amount": 1032441.33,
+                "Name": "Business Executives"
+            },
+            {
+                "Percent_Total": 4.07,
+                "Amount": 351646.03,
+                "Name": "Lawyers"
+            },
+            {
+                "Percent_Total": 3.22,
+                "Amount": 277946.65,
+                "Name": "Banking"
+            },
+            {
+                "Percent_Total": 1.47,
+                "Amount": 127217.05,
+                "Name": "Consulting"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 19.18,
+                "Amount": 1657146.66,
+                "Name": "WINRED"
+            },
+            {
+                "Percent_Total": 4.3,
+                "Amount": 371388.3,
+                "Name": "CORNYN VICTORY COMMITTEE"
+            },
+            {
+                "Percent_Total": 4.01,
+                "Amount": 346791.67,
+                "Name": "MIKE LEE VICTORY FUND"
+            },
+            {
+                "Percent_Total": 1.59,
+                "Amount": 137672.0,
+                "Name": "SENATE CONSERVATIVES FUND"
+            },
+            {
+                "Percent_Total": 1.31,
+                "Amount": 113165.0,
+                "Name": "CLUB FOR GROWTH PAC"
+            }
+        ],
+        "top_states": [
+            {
+                "Percent_Total": 26.15,
+                "Amount": 2259572.76,
+                "Name": "VA"
+            },
+            {
+                "Percent_Total": 13.21,
+                "Amount": 1141434.11,
+                "Name": "TX"
+            },
+            {
+                "Percent_Total": 12.63,
+                "Amount": 1090945.37,
+                "Name": "UT"
+            },
+            {
+                "Percent_Total": 10.25,
+                "Amount": 885799.42,
+                "Name": "DC"
+            },
+            {
+                "Percent_Total": 5.38,
+                "Amount": 464774.46,
+                "Name": "WI"
+            }
+        ]
+    },
+    "Darlene McDonald": {
+        "total": 71392.06,
+        "top_groups": [
+            {
+                "Percent_Total": 45.98,
+                "Amount": 32825.67,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 5.46,
+                "Amount": 3900.0,
+                "Name": "Real Estate"
+            },
+            {
+                "Percent_Total": 3.43,
+                "Amount": 2450.0,
+                "Name": "Business Executives"
+            },
+            {
+                "Percent_Total": 2.45,
+                "Amount": 1750.0,
+                "Name": "Lawyers"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 40.17,
+                "Amount": 28675.67,
+                "Name": "ACTBLUE"
+            },
+            {
+                "Percent_Total": 20.97,
+                "Amount": 14974.39,
+                "Name": "MCDONALD, DARLENE"
+            },
+            {
+                "Percent_Total": 4.06,
+                "Amount": 2900.0,
+                "Name": "HOWARD L. GOTTLIEB LIVING TRUST"
+            },
+            {
+                "Percent_Total": 4.06,
+                "Amount": 2900.0,
+                "Name": "SOFTWARE DEVELOPER, RECURSION PHARMACEUTICALS (INDIVIDUAL PERSON)"
+            },
+            {
+                "Percent_Total": 4.06,
+                "Amount": 2900.0,
+                "Name": "SELF-EMPLOYED, SELF (INDIVIDUAL PERSON)"
+            }
+        ],
+        "top_states": [
+            {
+                "Percent_Total": 45.55,
+                "Amount": 32516.39,
+                "Name": "UT"
+            },
+            {
+                "Percent_Total": 40.17,
+                "Amount": 28675.67,
+                "Name": "MA"
+            },
+            {
+                "Percent_Total": 8.47,
+                "Amount": 6050.0,
+                "Name": "NV"
+            },
+            {
+                "Percent_Total": 4.06,
+                "Amount": 2900.0,
+                "Name": "IL"
+            },
+            {
+                "Percent_Total": 1.75,
+                "Amount": 1250.0,
+                "Name": "CA"
+            }
+        ]
+    },
+    "Burgess Owens": {
+        "total": 3676718.70,
+        "top_groups": [
+            {
+                "Percent_Total": 38.47,
+                "Amount": 1414363.03,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 10.42,
+                "Amount": 383246.47,
+                "Name": "Business Executives"
+            },
+            {
+                "Percent_Total": 1.94,
+                "Amount": 71211.28,
+                "Name": "Banking"
+            },
+            {
+                "Percent_Total": 1.78,
+                "Amount": 65351.25,
+                "Name": "Real Estate"
+            },
+            {
+                "Percent_Total": 1.35,
+                "Amount": 49510.11,
+                "Name": "Lawyers"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 19.72,
+                "Amount": 725228.05,
+                "Name": "WINRED"
+            },
+            {
+                "Percent_Total": 4.67,
+                "Amount": 171765.39,
+                "Name": "TAKE BACK THE HOUSE 2022"
+            },
+            {
+                "Percent_Total": 4.14,
+                "Amount": 152102.95,
+                "Name": "BURGESS OWENS VICTORY COMMITTEE"
+            },
+            {
+                "Percent_Total": 2.35,
+                "Amount": 86254.99,
+                "Name": "JAMESTOWN ASSOCIATES"
+            },
+            {
+                "Percent_Total": 0.56,
+                "Amount": 20414.2,
+                "Name": "OWENS FOR UT-04"
+            }
+        ],
+        "top_states": [
+            {
+                "Percent_Total": 22.65,
+                "Amount": 832716.39,
+                "Name": "VA"
+            },
+            {
+                "Percent_Total": 12.7,
+                "Amount": 466794.88,
+                "Name": "UT"
+            },
+            {
+                "Percent_Total": 9.2,
+                "Amount": 338182.65,
+                "Name": "CA"
+            },
+            {
+                "Percent_Total": 7.99,
+                "Amount": 293908.81,
+                "Name": "FL"
+            },
+            {
+                "Percent_Total": 6.24,
+                "Amount": 229275.86,
+                "Name": "MD"
+            }
+        ]
+    },
+    "January Walker": {
+        "total": 18671.10,
+        "top_groups": [
+            {
+                "Percent_Total": 15.53,
+                "Amount": 2900.0,
+                "Name": "Business Executives"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 1.38,
+                "Amount": 257.94,
+                "Name": "MANAGER, OKEANUS (INDIVIDUAL PERSON)"
+            },
+            {
+                "Percent_Total": 4.37,
+                "Amount": 815.88,
+                "Name": "DEVELOPER, INFRASTRUCTURE ENGINEER (INDIVIDUAL PERSON)"
+            },
+            {
+                "Percent_Total": 15.53,
+                "Amount": 2900.0,
+                "Name": "FOUNDER, CANONIZER (INDIVIDUAL PERSON)"
+            },
+            {
+                "Percent_Total": 78.72,
+                "Amount": 14697.28,
+                "Name": "WALKER, JANUARY"
+            }
+        ],
+        "top_states": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 18671.1,
+                "Name": "UT"
+            }
+        ]
+    },
+    "John Curtis": {
+        "total": 2016974.99,
+        "top_groups": [
+            {
+                "Percent_Total": 67.14,
+                "Amount": 1354224.99,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 9.97,
+                "Amount": 201175.0,
+                "Name": "Business Executives"
+            },
+            {
+                "Percent_Total": 3.04,
+                "Amount": 61350.0,
+                "Name": "Consulting"
+            },
+            {
+                "Percent_Total": 2.58,
+                "Amount": 52125.0,
+                "Name": "Banking"
+            },
+            {
+                "Percent_Total": 1.81,
+                "Amount": 36425.0,
+                "Name": "Lawyers"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 4.47,
+                "Amount": 90104.43,
+                "Name": "TEAM CURTIS JOINT FUNDRAISING COMMITTEE"
+            },
+            {
+                "Percent_Total": 1.63,
+                "Amount": 32900.0,
+                "Name": "REAL ESTATE INVESTMENT\/DEVELOPMENT, COWBOY PARTNERS (INDIVIDUAL PERSON)"
+            },
+            {
+                "Percent_Total": 1.08,
+                "Amount": 21780.0,
+                "Name": "AMERICAN ISRAEL PUBLIC AFFAIRS COMMITTEE POLITICAL ACTION COMMITTEE (AIPAC)"
+            },
+            {
+                "Percent_Total": 0.98,
+                "Amount": 19866.24,
+                "Name": "1-800 CONTACTS PAC"
+            },
+            {
+                "Percent_Total": 0.82,
+                "Amount": 16500.0,
+                "Name": "T-MOBILE USA, INC.  POLITICAL ACTION COMMITTEE (T-PAC)"
+            }
+        ],
+        "top_states": [
+            {
+                "Percent_Total": 30.75,
+                "Amount": 620119.4,
+                "Name": "DC"
+            },
+            {
+                "Percent_Total": 27.33,
+                "Amount": 551189.03,
+                "Name": "UT"
+            },
+            {
+                "Percent_Total": 8.25,
+                "Amount": 166450.0,
+                "Name": "VA"
+            },
+            {
+                "Percent_Total": 6.1,
+                "Amount": 123100.0,
+                "Name": "CA"
+            },
+            {
+                "Percent_Total": 3.79,
+                "Amount": 76500.0,
+                "Name": "TX"
+            }
+        ]
+    },
+    "Glenn Wright": {
+        "total": 4400.00,
+        "top_groups": [
+            {
+                "Percent_Total": 11.36,
+                "Amount": 500.0,
+                "Name": "Lawyers"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 15.91,
+                "Amount": 700.0,
+                "Name": "GLENN WRIGHT FOR UTAH CONGRESSIONAL DISTRICT 3"
+            },
+            {
+                "Percent_Total": 11.36,
+                "Amount": 500.0,
+                "Name": "NOT EMPLOYED, NONE (INDIVIDUAL PERSON)"
+            },
+            {
+                "Percent_Total": 11.36,
+                "Amount": 500.0,
+                "Name": "NOT EMPLOYED (INDIVIDUAL PERSON)"
+            },
+            {
+                "Percent_Total": 11.36,
+                "Amount": 500.0,
+                "Name": "TEACHER, SELF EMPLOYED (INDIVIDUAL PERSON)"
+            },
+            {
+                "Percent_Total": 11.36,
+                "Amount": 500.0,
+                "Name": "LAWYER (INDIVIDUAL PERSON)"
+            }
+        ],
+        "top_states": [
+            {
+                "Percent_Total": 94.32,
+                "Amount": 4150.0,
+                "Name": "UT"
+            },
+            {
+                "Percent_Total": 5.68,
+                "Amount": 250.0,
+                "Name": "NJ"
+            }
+        ]
+    },
+    "Blake Moore": {
+        "total": 2045241.28,
+        "top_groups": [
+            {
+                "Percent_Total": 53.44,
+                "Amount": 1092989.32,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 12.52,
+                "Amount": 256150.0,
+                "Name": "Business Executives"
+            },
+            {
+                "Percent_Total": 2.55,
+                "Amount": 52150.0,
+                "Name": "Real Estate"
+            },
+            {
+                "Percent_Total": 2.42,
+                "Amount": 49525.0,
+                "Name": "Consulting"
+            },
+            {
+                "Percent_Total": 1.98,
+                "Amount": 40550.0,
+                "Name": "Banking"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 16.56,
+                "Amount": 338593.75,
+                "Name": "WINRED"
+            },
+            {
+                "Percent_Total": 3.27,
+                "Amount": 66914.68,
+                "Name": "TEAM MOORE JOINT FUNDRAISING COMMITTEE, BLAKE"
+            },
+            {
+                "Percent_Total": 3.24,
+                "Amount": 66300.0,
+                "Name": "NO LABELS PROBLEM SOLVERS PAC"
+            },
+            {
+                "Percent_Total": 1.33,
+                "Amount": 27300.0,
+                "Name": "AMERICAN ISRAEL PUBLIC AFFAIRS COMMITTEE PAC"
+            },
+            {
+                "Percent_Total": 0.79,
+                "Amount": 16088.0,
+                "Name": "ARISTOTLE INC"
+            }
+        ],
+        "top_states": [
+            {
+                "Percent_Total": 37.83,
+                "Amount": 773740.23,
+                "Name": "UT"
+            },
+            {
+                "Percent_Total": 23.7,
+                "Amount": 484773.05,
+                "Name": "VA"
+            },
+            {
+                "Percent_Total": 15.3,
+                "Amount": 312888.0,
+                "Name": "DC"
+            },
+            {
+                "Percent_Total": 5.46,
+                "Amount": 111650.0,
+                "Name": "CA"
+            },
+            {
+                "Percent_Total": 1.98,
+                "Amount": 40400.0,
+                "Name": "TX"
+            }
+        ]
+    },
+    "Chris Stewart": {
+        "total": 1183650.32,
+        "top_groups": [
+            {
+                "Percent_Total": 46.13,
+                "Amount": 546068.14,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 14.45,
+                "Amount": 170983.83,
+                "Name": "Business Executives"
+            },
+            {
+                "Percent_Total": 6.79,
+                "Amount": 80320.0,
+                "Name": "Lawyers"
+            },
+            {
+                "Percent_Total": 5.43,
+                "Amount": 64304.58,
+                "Name": "Consulting"
+            },
+            {
+                "Percent_Total": 2.27,
+                "Amount": 26900.0,
+                "Name": "Lobbyist"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 9.44,
+                "Amount": 111767.5,
+                "Name": "CHRIS STEWART FREEDOM FUND"
+            },
+            {
+                "Percent_Total": 8.85,
+                "Amount": 104810.99,
+                "Name": "WINRED"
+            },
+            {
+                "Percent_Total": 1.27,
+                "Amount": 15000.0,
+                "Name": "L3HARRIS TECHNOLOGIES, INC. PAC"
+            },
+            {
+                "Percent_Total": 1.27,
+                "Amount": 15000.0,
+                "Name": "ULTRA ELECTRONICS USA GROUP INC. PAC"
+            },
+            {
+                "Percent_Total": 1.27,
+                "Amount": 15000.0,
+                "Name": "EMPLOYEES OF RAYTHEON TECHNOLOGIES CORPORATION PAC"
+            }
+        ],
+        "top_states": [
+            {
+                "Percent_Total": 28.53,
+                "Amount": 337647.82,
+                "Name": "VA"
+            },
+            {
+                "Percent_Total": 27.97,
+                "Amount": 331104.58,
+                "Name": "UT"
+            },
+            {
+                "Percent_Total": 10.99,
+                "Amount": 130036.13,
+                "Name": "DC"
+            },
+            {
+                "Percent_Total": 9.8,
+                "Amount": 115967.5,
+                "Name": "FL"
+            },
+            {
+                "Percent_Total": 6.15,
+                "Amount": 72820.0,
+                "Name": "CA"
+            }
+        ]
+    },
+    "Nick Mitchell": {
+        "total": 9420.00,
+        "top_groups": [
+            {
+                "Percent_Total": 5.31,
+                "Amount": 500.0,
+                "Name": "Business Executives"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 5.31,
+                "Amount": 500.0,
+                "Name": "NOT EMPLOYED (INDIVIDUAL PERSON)"
+            },
+            {
+                "Percent_Total": 10.62,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 5.31,
+                "Amount": 500.0,
+                "Name": "WESTON FOR UTAH"
+            },
+            {
+                "Percent_Total": 53.08,
+                "Amount": 5000.0,
+                "Name": "MITCHELL, NICHOLAS"
+            },
+            {
+                "Percent_Total": 5.31,
+                "Amount": 500.0,
+                "Name": "EXECUTIVE, ALSCO INC. (INDIVIDUAL PERSON)"
+            }
+        ],
+        "top_states": [
+            {
+                "Percent_Total": 96.82,
+                "Amount": 9120.0,
+                "Name": "UT"
+            },
+            {
+                "Percent_Total": 3.18,
+                "Amount": 300.0,
+                "Name": "AR"
+            }
+        ]
+    },
+    "Jefferson Moss": {
+        "total": 48313.34,
+        "top_groups": [
+            {
+                "Percent_Total": 61.29,
+                "Amount": 29613.34,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 35.08,
+                "Amount": 16950.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 2.07,
+                "Amount": 1000.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 1.55,
+                "Amount": 750.0,
+                "Name": "Banking"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 52.3,
+                "Amount": 25268.34,
+                "Name": "Moss Jefferson - 2020 House-2 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 3.1,
+                "Amount": 1500.0,
+                "Name": "Energy Solutions"
+            },
+            {
+                "Percent_Total": 2.07,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 2.07,
+                "Amount": 1000.0,
+                "Name": "PacifiCorp"
+            },
+            {
+                "Percent_Total": 2.07,
+                "Amount": 1000.0,
+                "Name": "Utah Tech Leads"
+            }
+        ]
+    },
+    "Mark Wheatley": {
+        "total": 21323.21,
+        "top_groups": [
+            {
+                "Percent_Total": 67.13,
+                "Amount": 14313.21,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 31.0,
+                "Amount": 6610.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 1.88,
+                "Amount": 400.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 20.63,
+                "Amount": 4398.12,
+                "Name": "Wheatley Mark - 2020 House-35 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 11.72,
+                "Amount": 2500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 11.72,
+                "Amount": 2500.0,
+                "Name": "committee for a Democratic Majority"
+            },
+            {
+                "Percent_Total": 6.57,
+                "Amount": 1400.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 3.52,
+                "Amount": 750.0,
+                "Name": "Local 222 Drive Chapter"
+            }
+        ]
+    },
+    "Daniel Friend": {
+        "total": 24479.74,
+        "top_groups": [
+            {
+                "Percent_Total": 71.76,
+                "Amount": 17565.51,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 22.93,
+                "Amount": 5614.23,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 5.31,
+                "Amount": 1300.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 20.43,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 11.36,
+                "Amount": 2780.51,
+                "Name": "Friend Daniel - 2018 House-64 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 10.21,
+                "Amount": 2500.0,
+                "Name": "Torvonic Studios"
+            },
+            {
+                "Percent_Total": 4.09,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.09,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Chris Dyer": {
+        "total": 96.11,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 96.11,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 96.11,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "David Jack": {
+        "total": 3475.16,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 3475.16,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 28.78,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 28.78,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 20.87,
+                "Amount": 725.16,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 14.39,
+                "Amount": 500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 7.19,
+                "Amount": 250.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Ila Fica": {
+        "total": 1897.06,
+        "top_groups": [
+            {
+                "Percent_Total": 52.71,
+                "Amount": 1000.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 36.74,
+                "Amount": 697.06,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 10.54,
+                "Amount": 200.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 26.36,
+                "Amount": 500.0,
+                "Name": "Washington County Democratic Party"
+            },
+            {
+                "Percent_Total": 20.14,
+                "Amount": 382.06,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 13.18,
+                "Amount": 250.0,
+                "Name": "Utah House Democratic Leadership Council "
+            },
+            {
+                "Percent_Total": 13.18,
+                "Amount": 250.0,
+                "Name": "Weston for Utah"
+            },
+            {
+                "Percent_Total": 10.54,
+                "Amount": 200.0,
+                "Name": "Women's Democratic Club"
+            }
+        ]
+    },
+    "Joel Ferry": {
+        "total": 5850.0,
+        "top_groups": [
+            {
+                "Percent_Total": 74.36,
+                "Amount": 4350.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 25.64,
+                "Amount": 1500.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 34.19,
+                "Amount": 2000.0,
+                "Name": "Energy Solutions"
+            },
+            {
+                "Percent_Total": 17.09,
+                "Amount": 1000.0,
+                "Name": "AGPAC"
+            },
+            {
+                "Percent_Total": 12.82,
+                "Amount": 750.0,
+                "Name": "Ebay Inc."
+            },
+            {
+                "Percent_Total": 10.26,
+                "Amount": 600.0,
+                "Name": "Utah Medical Political Action Committee"
+            },
+            {
+                "Percent_Total": 8.55,
+                "Amount": 500.0,
+                "Name": "Scott Sandall Campaign Fund"
+            }
+        ]
+    },
+    "Judy Weeks-Rohner": {
+        "total": 24822.41,
+        "top_groups": [
+            {
+                "Percent_Total": 52.26,
+                "Amount": 12972.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 36.46,
+                "Amount": 9050.41,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 11.28,
+                "Amount": 2800.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 20.14,
+                "Amount": 5000.0,
+                "Name": "Utah House Republicans"
+            },
+            {
+                "Percent_Total": 18.84,
+                "Amount": 4677.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 8.06,
+                "Amount": 2000.0,
+                "Name": "Karen & Brian Lang"
+            },
+            {
+                "Percent_Total": 8.06,
+                "Amount": 2000.0,
+                "Name": "Wilson Leadership"
+            },
+            {
+                "Percent_Total": 8.06,
+                "Amount": 2000.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Joel Briscoe": {
+        "total": 10336.36,
+        "top_groups": [
+            {
+                "Percent_Total": 92.74,
+                "Amount": 9586.36,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 7.26,
+                "Amount": 750.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 84.71,
+                "Amount": 8756.36,
+                "Name": "Briscoe Joel - 2020 House-25 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 6.77,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.84,
+                "Amount": 500.0,
+                "Name": "Friends of the Beverly Taylor Sorenson Arts Program"
+            },
+            {
+                "Percent_Total": 2.42,
+                "Amount": 250.0,
+                "Name": "Chevron"
+            },
+            {
+                "Percent_Total": 0.97,
+                "Amount": 100.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Michael Blodgett": {
+        "total": 200.0,
+        "top_groups": [
+            {
+                "Percent_Total": 50.0,
+                "Amount": 100.0,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 50.0,
+                "Amount": 100.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 50.0,
+                "Amount": 100.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 50.0,
+                "Amount": 100.0,
+                "Name": "Stone Mountain Press"
+            }
+        ]
+    },
+    "Brian King": {
+        "total": 21155.75,
+        "top_groups": [
+            {
+                "Percent_Total": 90.78,
+                "Amount": 19205.75,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 7.8,
+                "Amount": 1650.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 1.42,
+                "Amount": 300.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 89.84,
+                "Amount": 19005.75,
+                "Name": "King Brian - 2020 House-28 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 2.36,
+                "Amount": 500.0,
+                "Name": "WCF Mutual Ins. Co."
+            },
+            {
+                "Percent_Total": 2.36,
+                "Amount": 500.0,
+                "Name": "Oakwood Consulting"
+            },
+            {
+                "Percent_Total": 1.89,
+                "Amount": 400.0,
+                "Name": "Chevron Policy Govt & Public Affairs"
+            },
+            {
+                "Percent_Total": 1.42,
+                "Amount": 300.0,
+                "Name": "General Motors Company PAC"
+            }
+        ]
+    },
+    "Dallas Guymon": {
+        "total": 2389.49,
+        "top_groups": [
+            {
+                "Percent_Total": 43.74,
+                "Amount": 1045.11,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 32.23,
+                "Amount": 770.03,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 24.04,
+                "Amount": 574.35,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 12.14,
+                "Amount": 290.0,
+                "Name": "Iron County Democratic Committe Fundraiser "
+            },
+            {
+                "Percent_Total": 10.46,
+                "Amount": 250.0,
+                "Name": "Committee for a Democratic Majority Utah House Democratic Leadership Council"
+            },
+            {
+                "Percent_Total": 10.46,
+                "Amount": 250.0,
+                "Name": "Weston for Utah"
+            },
+            {
+                "Percent_Total": 8.37,
+                "Amount": 200.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 8.15,
+                "Amount": 194.8,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Scott Sandall": {
+        "total": 148756.62,
+        "top_groups": [
+            {
+                "Percent_Total": 63.39,
+                "Amount": 94299.42,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 24.71,
+                "Amount": 36757.2,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 11.9,
+                "Amount": 17700.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 56.89,
+                "Amount": 84624.42,
+                "Name": "Sandall Scott - 2018 Senate-17 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 6.72,
+                "Amount": 10000.0,
+                "Name": "Utah Republican Senate Campaign Committee"
+            },
+            {
+                "Percent_Total": 5.71,
+                "Amount": 8500.0,
+                "Name": "Education First"
+            },
+            {
+                "Percent_Total": 2.81,
+                "Amount": 4175.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 2.69,
+                "Amount": 4000.0,
+                "Name": "Northern Utah Legislative PAC"
+            }
+        ]
+    },
+    "Mike Petersen": {
+        "total": 42411.74,
+        "top_groups": [
+            {
+                "Percent_Total": 48.02,
+                "Amount": 20366.74,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 46.44,
+                "Amount": 19695.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 5.54,
+                "Amount": 2350.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 22.4,
+                "Amount": 9500.0,
+                "Name": "Northern Utah Legislative PAC"
+            },
+            {
+                "Percent_Total": 14.15,
+                "Amount": 6000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 10.77,
+                "Amount": 4569.6,
+                "Name": "Petersen Michael - 2020 House-3 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 4.72,
+                "Amount": 2000.0,
+                "Name": "Wilson Leadership PAC"
+            },
+            {
+                "Percent_Total": 3.62,
+                "Amount": 1534.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Phil Lyman": {
+        "total": 20129.6,
+        "top_groups": [
+            {
+                "Percent_Total": 70.04,
+                "Amount": 14099.6,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 17.54,
+                "Amount": 3530.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 12.42,
+                "Amount": 2500.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 43.81,
+                "Amount": 8819.6,
+                "Name": "Lyman Phillip - 2020 House-73 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 9.94,
+                "Amount": 2000.0,
+                "Name": "Utah House Republican Election Committee Pac "
+            },
+            {
+                "Percent_Total": 6.95,
+                "Amount": 1400.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.97,
+                "Amount": 1000.0,
+                "Name": "Wilson Leadership PAC "
+            },
+            {
+                "Percent_Total": 4.97,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Ken Ivory": {
+        "total": 28434.49,
+        "top_groups": [
+            {
+                "Percent_Total": 49.21,
+                "Amount": 13993.39,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 42.21,
+                "Amount": 12001.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 8.58,
+                "Amount": 2440.1,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 17.58,
+                "Amount": 5000.0,
+                "Name": "Utah House Republican Election PAC"
+            },
+            {
+                "Percent_Total": 17.58,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 17.58,
+                "Amount": 5000.0,
+                "Name": "Wilson Leadership PAC"
+            },
+            {
+                "Percent_Total": 5.28,
+                "Amount": 1500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 3.52,
+                "Amount": 1001.0,
+                "Name": "U_Car Pac"
+            }
+        ]
+    },
+    "Paul Cutler": {
+        "total": 48588.56,
+        "top_groups": [
+            {
+                "Percent_Total": 41.48,
+                "Amount": 20153.13,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 41.44,
+                "Amount": 20136.67,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 17.08,
+                "Amount": 8298.76,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 20.58,
+                "Amount": 10000.0,
+                "Name": "Believe in America PAC"
+            },
+            {
+                "Percent_Total": 10.29,
+                "Amount": 5000.0,
+                "Name": "Lynn & Ann Sumerhays"
+            },
+            {
+                "Percent_Total": 10.09,
+                "Amount": 4903.13,
+                "Name": "Education First Utah"
+            },
+            {
+                "Percent_Total": 9.34,
+                "Amount": 4536.67,
+                "Name": "Utah Association of Realtors"
+            },
+            {
+                "Percent_Total": 6.17,
+                "Amount": 3000.0,
+                "Name": "Wilson Leadership PAC"
+            }
+        ]
+    },
+    "Dave Lundgren": {
+        "total": 2847.03,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 2847.03,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 33.97,
+                "Amount": 967.03,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 14.58,
+                "Amount": 415.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 14.05,
+                "Amount": 400.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 8.78,
+                "Amount": 250.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 8.78,
+                "Amount": 250.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Kay Christofferson": {
+        "total": 27580.44,
+        "top_groups": [
+            {
+                "Percent_Total": 86.77,
+                "Amount": 23930.44,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 10.7,
+                "Amount": 2950.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 2.54,
+                "Amount": 700.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 84.23,
+                "Amount": 23230.44,
+                "Name": "Christofferson Kay - 2020 House-56 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 2.54,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 1.81,
+                "Amount": 500.0,
+                "Name": "Allstate Insurance Co."
+            },
+            {
+                "Percent_Total": 1.81,
+                "Amount": 500.0,
+                "Name": "Utah Taxpayers Association"
+            },
+            {
+                "Percent_Total": 1.81,
+                "Amount": 500.0,
+                "Name": "Utah Trucking Association"
+            }
+        ]
+    },
+    "Meaghan Miller": {
+        "total": 1440.04,
+        "top_groups": [
+            {
+                "Percent_Total": 93.05,
+                "Amount": 1340.0,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 6.95,
+                "Amount": 100.04,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 37.5,
+                "Amount": 540.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 20.83,
+                "Amount": 300.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 17.36,
+                "Amount": 250.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 6.94,
+                "Amount": 100.0,
+                "Name": "Meredith Reed"
+            },
+            {
+                "Percent_Total": 6.94,
+                "Amount": 100.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Karen Mayne": {
+        "total": 161803.98,
+        "top_groups": [
+            {
+                "Percent_Total": 70.35,
+                "Amount": 113823.98,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 16.52,
+                "Amount": 26730.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 13.13,
+                "Amount": 21250.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 65.21,
+                "Amount": 105515.98,
+                "Name": "Mayne Karen - 2018 Senate-5 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 3.09,
+                "Amount": 5000.0,
+                "Name": "Sen Dem PAC"
+            },
+            {
+                "Percent_Total": 1.85,
+                "Amount": 3000.0,
+                "Name": "Operating Engineers Local No 3 Statewide PAC"
+            },
+            {
+                "Percent_Total": 1.85,
+                "Amount": 3000.0,
+                "Name": "Utah Beverage PAC"
+            },
+            {
+                "Percent_Total": 1.85,
+                "Amount": 3000.0,
+                "Name": "Utah AFL-CIO "
+            }
+        ]
+    },
+    "Daniel Cottam": {
+        "total": 80.0,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 80.0,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 80.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Thomas Young": {
+        "total": 25422.56,
+        "top_groups": [
+            {
+                "Percent_Total": 55.78,
+                "Amount": 14179.56,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 23.77,
+                "Amount": 6043.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 20.45,
+                "Amount": 5200.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 39.34,
+                "Amount": 10000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 19.67,
+                "Amount": 5000.0,
+                "Name": "Great White North LLC"
+            },
+            {
+                "Percent_Total": 19.67,
+                "Amount": 5000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 8.78,
+                "Amount": 2232.56,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 3.96,
+                "Amount": 1007.0,
+                "Name": "Econometric Studios"
+            }
+        ]
+    },
+    "Clare Collard": {
+        "total": 61509.92,
+        "top_groups": [
+            {
+                "Percent_Total": 35.88,
+                "Amount": 22069.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 34.43,
+                "Amount": 21177.41,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 29.69,
+                "Amount": 18263.51,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 24.39,
+                "Amount": 15000.0,
+                "Name": "Utah Women and Poilitics PAC"
+            },
+            {
+                "Percent_Total": 8.13,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 6.02,
+                "Amount": 3700.0,
+                "Name": "Utah Tech Leads"
+            },
+            {
+                "Percent_Total": 5.56,
+                "Amount": 3420.0,
+                "Name": "Landslide Political"
+            },
+            {
+                "Percent_Total": 4.06,
+                "Amount": 2500.0,
+                "Name": "Committee for a Democratic Majority"
+            }
+        ]
+    },
+    "Miles Pomeroy": {
+        "total": 3174.73,
+        "top_groups": [
+            {
+                "Percent_Total": 87.09,
+                "Amount": 2764.73,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 8.19,
+                "Amount": 260.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 4.72,
+                "Amount": 150.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 21.88,
+                "Amount": 694.73,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 8.66,
+                "Amount": 275.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 7.87,
+                "Amount": 250.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 7.87,
+                "Amount": 250.0,
+                "Name": "Utah House Democratic Leadership Council"
+            },
+            {
+                "Percent_Total": 7.87,
+                "Amount": 250.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Patrick Belmont": {
+        "total": 20671.87,
+        "top_groups": [
+            {
+                "Percent_Total": 79.3,
+                "Amount": 16392.0,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 19.01,
+                "Amount": 3929.87,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 1.69,
+                "Amount": 350.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 4.84,
+                "Amount": 1000.0,
+                "Name": "Committee for a Democratic Majority"
+            },
+            {
+                "Percent_Total": 4.84,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.11,
+                "Amount": 849.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 2.42,
+                "Amount": 500.0,
+                "Name": "Davis County Democrats"
+            },
+            {
+                "Percent_Total": 2.42,
+                "Amount": 500.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Keith Grover": {
+        "total": 199001.48,
+        "top_groups": [
+            {
+                "Percent_Total": 47.97,
+                "Amount": 95451.48,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 41.83,
+                "Amount": 83250.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 10.2,
+                "Amount": 20300.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 33.53,
+                "Amount": 66722.03,
+                "Name": "Grover Keith - 2018 Senate-15 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 12.56,
+                "Amount": 25000.0,
+                "Name": "Utah Republican Senate Campaign Committee"
+            },
+            {
+                "Percent_Total": 5.03,
+                "Amount": 10000.0,
+                "Name": "Utah Republican Senate Campaign Comittee"
+            },
+            {
+                "Percent_Total": 4.02,
+                "Amount": 8000.0,
+                "Name": "CMV PAC"
+            },
+            {
+                "Percent_Total": 3.02,
+                "Amount": 6000.0,
+                "Name": "Utah Association of Realtors"
+            }
+        ]
+    },
+    "Bridger Bolinder": {
+        "total": 55245.0,
+        "top_groups": [
+            {
+                "Percent_Total": 54.75,
+                "Amount": 30245.0,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 39.82,
+                "Amount": 22000.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 5.43,
+                "Amount": 3000.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 47.05,
+                "Amount": 25995.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 18.1,
+                "Amount": 10000.0,
+                "Name": "Garry & Stacey Bolinder"
+            },
+            {
+                "Percent_Total": 9.05,
+                "Amount": 5000.0,
+                "Name": "Goodfellow Corporation"
+            },
+            {
+                "Percent_Total": 3.62,
+                "Amount": 2000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 2.72,
+                "Amount": 1500.0,
+                "Name": "Utah Association of Realtors"
+            }
+        ]
+    },
+    "Patricia Bradford": {
+        "total": 1978.71,
+        "top_groups": [
+            {
+                "Percent_Total": 97.36,
+                "Amount": 1926.54,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 2.63,
+                "Amount": 51.95,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 0.01,
+                "Amount": 0.22,
+                "Name": "Banking"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 32.85,
+                "Amount": 650.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 25.27,
+                "Amount": 499.94,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 12.63,
+                "Amount": 250.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 10.11,
+                "Amount": 200.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 10.11,
+                "Amount": 200.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Jen Dailey-Provost": {
+        "total": 13241.67,
+        "top_groups": [
+            {
+                "Percent_Total": 73.19,
+                "Amount": 9691.67,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 17.37,
+                "Amount": 2300.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 9.44,
+                "Amount": 1250.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 49.7,
+                "Amount": 6581.67,
+                "Name": "Dailey-Provost Jen - 2020 House-24 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 7.55,
+                "Amount": 1000.0,
+                "Name": "Plasterers' & Cement Masons' PAC"
+            },
+            {
+                "Percent_Total": 7.55,
+                "Amount": 1000.0,
+                "Name": "Operating Engineers Local No 3"
+            },
+            {
+                "Percent_Total": 5.29,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 3.78,
+                "Amount": 500.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Mark Strong": {
+        "total": 12324.36,
+        "top_groups": [
+            {
+                "Percent_Total": 74.64,
+                "Amount": 9198.36,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 21.31,
+                "Amount": 2626.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 4.06,
+                "Amount": 500.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 68.83,
+                "Amount": 8483.36,
+                "Name": "Strong Mark - 2020 House-41 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 5.68,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.06,
+                "Amount": 500.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 4.06,
+                "Amount": 500.0,
+                "Name": "Regence"
+            },
+            {
+                "Percent_Total": 2.03,
+                "Amount": 250.0,
+                "Name": "TOSH Inc. Check City"
+            }
+        ]
+    },
+    "Evan Vickers": {
+        "total": 270323.92,
+        "top_groups": [
+            {
+                "Percent_Total": 55.72,
+                "Amount": 150634.18,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 35.78,
+                "Amount": 96734.21,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 8.49,
+                "Amount": 22955.53,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 48.39,
+                "Amount": 130804.18,
+                "Name": "Vickers Evan - 2018 Senate-28 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 12.95,
+                "Amount": 35000.0,
+                "Name": "Utah Republican Senate Campaign Committee"
+            },
+            {
+                "Percent_Total": 2.7,
+                "Amount": 7305.53,
+                "Name": "Education First Utah"
+            },
+            {
+                "Percent_Total": 2.22,
+                "Amount": 5993.18,
+                "Name": "Utah Association of Realtors"
+            },
+            {
+                "Percent_Total": 1.85,
+                "Amount": 5000.0,
+                "Name": "CMV PAC"
+            }
+        ]
+    },
+    "Rosemary Lesser": {
+        "total": 121023.41,
+        "top_groups": [
+            {
+                "Percent_Total": 71.71,
+                "Amount": 86789.88,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 20.91,
+                "Amount": 25300.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 7.38,
+                "Amount": 8933.53,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 12.39,
+                "Amount": 15000.0,
+                "Name": "Utah Women and Politics PAC"
+            },
+            {
+                "Percent_Total": 9.9,
+                "Amount": 11980.88,
+                "Name": "Lesser Rosemary - 2021 House-10 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 8.26,
+                "Amount": 10000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.13,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.13,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Andrew Matishen": {
+        "total": 397.0,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 397.0,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 47.1,
+                "Amount": 187.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 37.78,
+                "Amount": 150.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 6.3,
+                "Amount": 25.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 5.04,
+                "Amount": 20.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 2.52,
+                "Amount": 10.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Piper Manesse": {
+        "total": 1972.56,
+        "top_groups": [
+            {
+                "Percent_Total": 86.59,
+                "Amount": 1708.12,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 13.41,
+                "Amount": 264.44,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 59.98,
+                "Amount": 1183.12,
+                "Name": "Manesse Piper - 2020 House-72 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 22.81,
+                "Amount": 450.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 13.41,
+                "Amount": 264.44,
+                "Name": "Webasics"
+            },
+            {
+                "Percent_Total": 2.53,
+                "Amount": 50.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 1.27,
+                "Amount": 25.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Tim Loftis": {
+        "total": 104.06,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 104.06,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 104.06,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Belinda Johnson": {
+        "total": 11598.95,
+        "top_groups": [
+            {
+                "Percent_Total": 60.35,
+                "Amount": 7000.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 39.65,
+                "Amount": 4598.95,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 43.11,
+                "Amount": 5000.0,
+                "Name": "UT House Republican Election Comm."
+            },
+            {
+                "Percent_Total": 8.62,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 8.62,
+                "Amount": 1000.0,
+                "Name": "J&A Garff"
+            },
+            {
+                "Percent_Total": 8.62,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.31,
+                "Amount": 500.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Kirk Cullimore": {
+        "total": 160346.91,
+        "top_groups": [
+            {
+                "Percent_Total": 60.96,
+                "Amount": 97746.91,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 33.61,
+                "Amount": 53900.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 5.11,
+                "Amount": 8200.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 0.31,
+                "Amount": 500.0,
+                "Name": "Banking"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 54.54,
+                "Amount": 87446.91,
+                "Name": "Cullimore Kirk - 2018 Senate-9 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 6.24,
+                "Amount": 10000.0,
+                "Name": "Utah Republican Senate Campaign Committee"
+            },
+            {
+                "Percent_Total": 2.49,
+                "Amount": 4000.0,
+                "Name": "Energy Solutions"
+            },
+            {
+                "Percent_Total": 1.56,
+                "Amount": 2500.0,
+                "Name": "Friends of Little Cottonwood Canyon"
+            },
+            {
+                "Percent_Total": 1.56,
+                "Amount": 2500.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Adam Feller": {
+        "total": 2233.75,
+        "top_groups": [
+            {
+                "Percent_Total": 97.57,
+                "Amount": 2179.45,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 2.43,
+                "Amount": 54.3,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 51.48,
+                "Amount": 1150.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 21.23,
+                "Amount": 474.12,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 11.19,
+                "Amount": 250.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 6.75,
+                "Amount": 150.83,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 6.72,
+                "Amount": 150.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Jacob Johnson": {
+        "total": 912.91,
+        "top_groups": [
+            {
+                "Percent_Total": 85.98,
+                "Amount": 784.89,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 14.02,
+                "Amount": 128.02,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 32.86,
+                "Amount": 300.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 22.22,
+                "Amount": 202.83,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 21.91,
+                "Amount": 200.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 8.99,
+                "Amount": 82.06,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 7.04,
+                "Amount": 64.27,
+                "Name": "Alisha Teeter"
+            }
+        ]
+    },
+    "Steven Eliason": {
+        "total": 79191.76,
+        "top_groups": [
+            {
+                "Percent_Total": 64.52,
+                "Amount": 51091.76,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 18.44,
+                "Amount": 14600.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 17.05,
+                "Amount": 13500.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 26.44,
+                "Amount": 20941.76,
+                "Name": "Eliason Steven - 2020 House-45 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 6.31,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 6.31,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 6.31,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 6.31,
+                "Amount": 5000.0,
+                "Name": "Utah House Republican Committee PAC"
+            }
+        ]
+    },
+    "Carl Albrecht": {
+        "total": 33856.25,
+        "top_groups": [
+            {
+                "Percent_Total": 69.87,
+                "Amount": 23656.25,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 25.99,
+                "Amount": 8800.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 4.14,
+                "Amount": 1400.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 60.36,
+                "Amount": 20436.25,
+                "Name": "Albrecht Carl - 2020 House-70 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 7.38,
+                "Amount": 2500.0,
+                "Name": "Utah Rural Electric Assoc"
+            },
+            {
+                "Percent_Total": 7.38,
+                "Amount": 2500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 5.17,
+                "Amount": 1750.0,
+                "Name": "Energy Solutions"
+            },
+            {
+                "Percent_Total": 2.95,
+                "Amount": 1000.0,
+                "Name": "PacifiCorp"
+            }
+        ]
+    },
+    "Parker Bond": {
+        "total": 2559.12,
+        "top_groups": [
+            {
+                "Percent_Total": 94.14,
+                "Amount": 2409.12,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 5.86,
+                "Amount": 150.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 55.26,
+                "Amount": 1414.12,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 15.63,
+                "Amount": 400.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 11.72,
+                "Amount": 300.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 7.82,
+                "Amount": 200.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 5.86,
+                "Amount": 150.0,
+                "Name": "Women's Democratic Club of Utah"
+            }
+        ]
+    },
+    "Doug Owens": {
+        "total": 41835.51,
+        "top_groups": [
+            {
+                "Percent_Total": 83.21,
+                "Amount": 34811.5,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 9.98,
+                "Amount": 4174.01,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 6.81,
+                "Amount": 2850.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 11.96,
+                "Amount": 5005.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 11.95,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 11.95,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 9.08,
+                "Amount": 3800.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 5.98,
+                "Amount": 2500.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Jefferson Burton": {
+        "total": 9839.65,
+        "top_groups": [
+            {
+                "Percent_Total": 81.2,
+                "Amount": 7989.65,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 15.24,
+                "Amount": 1500.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 3.56,
+                "Amount": 350.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 69.16,
+                "Amount": 6804.65,
+                "Name": "Burton Jefferson - 2020 House-66 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 7.62,
+                "Amount": 750.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 3.56,
+                "Amount": 350.0,
+                "Name": "Utah HOSPAC"
+            },
+            {
+                "Percent_Total": 2.54,
+                "Amount": 250.0,
+                "Name": "Utah Bankers Association250"
+            },
+            {
+                "Percent_Total": 2.54,
+                "Amount": 250.0,
+                "Name": "Revere Health "
+            }
+        ]
+    },
+    "Carol Moss": {
+        "total": 46490.17,
+        "top_groups": [
+            {
+                "Percent_Total": 81.92,
+                "Amount": 38082.76,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 10.76,
+                "Amount": 5001.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 7.33,
+                "Amount": 3406.41,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 41.02,
+                "Amount": 19069.84,
+                "Name": "Moss Carol - 2020 House-37 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 10.75,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 8.6,
+                "Amount": 4000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.3,
+                "Amount": 2000.0,
+                "Name": "Education First Utah"
+            },
+            {
+                "Percent_Total": 2.15,
+                "Amount": 1000.0,
+                "Name": "Operating Engineers Local No. 3 Satewide Pac Small Contributor Committee"
+            }
+        ]
+    },
+    "Jeff Stenquist": {
+        "total": 51501.45,
+        "top_groups": [
+            {
+                "Percent_Total": 78.25,
+                "Amount": 40300.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 11.07,
+                "Amount": 5700.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 10.68,
+                "Amount": 5501.45,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 19.42,
+                "Amount": 10000.0,
+                "Name": "Believe in America PAC"
+            },
+            {
+                "Percent_Total": 19.42,
+                "Amount": 10000.0,
+                "Name": "Education First Utah"
+            },
+            {
+                "Percent_Total": 17.48,
+                "Amount": 9000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 9.71,
+                "Amount": 5000.0,
+                "Name": "Education First"
+            },
+            {
+                "Percent_Total": 3.88,
+                "Amount": 2000.0,
+                "Name": "Wilson Leadership PAC"
+            }
+        ]
+    },
+    "Val Peterson": {
+        "total": 66853.91,
+        "top_groups": [
+            {
+                "Percent_Total": 96.63,
+                "Amount": 64603.91,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 3.37,
+                "Amount": 2250.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 96.63,
+                "Amount": 64603.91,
+                "Name": "Peterson Val - 2020 House-59 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 1.12,
+                "Amount": 750.0,
+                "Name": "Comcast"
+            },
+            {
+                "Percent_Total": 0.75,
+                "Amount": 500.0,
+                "Name": "United Health"
+            },
+            {
+                "Percent_Total": 0.75,
+                "Amount": 500.0,
+                "Name": "AT&T"
+            },
+            {
+                "Percent_Total": 0.37,
+                "Amount": 250.0,
+                "Name": "Parsons Belle & Latimer"
+            }
+        ]
+    },
+    "Cheryl Acton": {
+        "total": 18533.9,
+        "top_groups": [
+            {
+                "Percent_Total": 51.47,
+                "Amount": 9538.79,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 27.52,
+                "Amount": 5100.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 21.02,
+                "Amount": 3895.11,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 38.79,
+                "Amount": 7188.79,
+                "Name": "Scott & Cheryl Acton "
+            },
+            {
+                "Percent_Total": 15.26,
+                "Amount": 2829.11,
+                "Name": "Acton Cheryl - 2020 House-43 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 10.79,
+                "Amount": 2000.0,
+                "Name": "UT House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 8.09,
+                "Amount": 1500.0,
+                "Name": "Republican Women Lead PAC "
+            },
+            {
+                "Percent_Total": 6.74,
+                "Amount": 1250.0,
+                "Name": "National Conference of State Legislatures"
+            }
+        ]
+    },
+    "Karen Kwan": {
+        "total": 31026.0,
+        "top_groups": [
+            {
+                "Percent_Total": 78.4,
+                "Amount": 24325.0,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 15.96,
+                "Amount": 4951.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 5.64,
+                "Amount": 1750.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 15.73,
+                "Amount": 4878.87,
+                "Name": "Kwan Karen - 2020 House-34 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 9.99,
+                "Amount": 3100.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 8.06,
+                "Amount": 2500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 6.45,
+                "Amount": 2000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.83,
+                "Amount": 1500.0,
+                "Name": "Top Nails & Hair Beauty School"
+            }
+        ]
+    },
+    "Tim Jimenez": {
+        "total": 3609.11,
+        "top_groups": [
+            {
+                "Percent_Total": 49.43,
+                "Amount": 1784.11,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 36.71,
+                "Amount": 1325.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 13.85,
+                "Amount": 500.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 30.04,
+                "Amount": 1084.11,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 19.4,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 15.93,
+                "Amount": 575.0,
+                "Name": "Foundation for Government Accountability"
+            },
+            {
+                "Percent_Total": 13.85,
+                "Amount": 500.0,
+                "Name": "Home Builders Association of Utah "
+            },
+            {
+                "Percent_Total": 13.85,
+                "Amount": 500.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            }
+        ]
+    },
+    "Kera Birkeland": {
+        "total": 54302.67,
+        "top_groups": [
+            {
+                "Percent_Total": 48.75,
+                "Amount": 26472.22,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 33.11,
+                "Amount": 17980.45,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 18.14,
+                "Amount": 9850.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 17.49,
+                "Amount": 9500.0,
+                "Name": "Northern Utah Legislative Pac"
+            },
+            {
+                "Percent_Total": 16.57,
+                "Amount": 9000.0,
+                "Name": "Utah House Republican Election Committee Pac"
+            },
+            {
+                "Percent_Total": 9.21,
+                "Amount": 5000.0,
+                "Name": "Wilson Leadership Pac"
+            },
+            {
+                "Percent_Total": 5.52,
+                "Amount": 3000.0,
+                "Name": "Republican Women Lead Pac"
+            },
+            {
+                "Percent_Total": 5.16,
+                "Amount": 2801.91,
+                "Name": "Birkeland Kera - 2020 House-53 - Balance Transfer"
+            }
+        ]
+    },
+    "Ann Schreck": {
+        "total": 5285.0,
+        "top_groups": [
+            {
+                "Percent_Total": 84.86,
+                "Amount": 4485.0,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 15.14,
+                "Amount": 800.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 28.38,
+                "Amount": 1500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 16.08,
+                "Amount": 850.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 9.46,
+                "Amount": 500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.73,
+                "Amount": 250.0,
+                "Name": "Committee for a Democratic Majority - Utah House Democratic Leadership Council "
+            },
+            {
+                "Percent_Total": 4.73,
+                "Amount": 250.0,
+                "Name": "Weston for Utah"
+            }
+        ]
+    },
+    "Rebecca Ipson": {
+        "total": 2200.9,
+        "top_groups": [
+            {
+                "Percent_Total": 90.87,
+                "Amount": 2000.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 9.13,
+                "Amount": 200.9,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 90.87,
+                "Amount": 2000.0,
+                "Name": "Utah House Republican Election Committee"
+            },
+            {
+                "Percent_Total": 8.22,
+                "Amount": 180.9,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 0.91,
+                "Amount": 20.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Ladd Johnson": {
+        "total": 13253.94,
+        "top_groups": [
+            {
+                "Percent_Total": 90.41,
+                "Amount": 11982.92,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 7.7,
+                "Amount": 1021.02,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 1.89,
+                "Amount": 250.0,
+                "Name": "Banking"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 20.11,
+                "Amount": 2665.32,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 7.54,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 7.54,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 7.17,
+                "Amount": 950.7,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 7.17,
+                "Amount": 950.4,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Gay Bennion": {
+        "total": 23222.79,
+        "top_groups": [
+            {
+                "Percent_Total": 88.03,
+                "Amount": 20442.99,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 7.66,
+                "Amount": 1779.8,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 4.31,
+                "Amount": 1000.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 12.92,
+                "Amount": 3000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 6.52,
+                "Amount": 1515.03,
+                "Name": "Bennion Gay Lynn - 2020 House-46 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 5.17,
+                "Amount": 1200.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.31,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.09,
+                "Amount": 950.7,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Mike Schultz": {
+        "total": 66384.55,
+        "top_groups": [
+            {
+                "Percent_Total": 57.6,
+                "Amount": 38234.55,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 36.76,
+                "Amount": 24400.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 5.65,
+                "Amount": 3750.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 53.05,
+                "Amount": 35214.55,
+                "Name": "Schultz Mike - 2020 House-12 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 6.78,
+                "Amount": 4500.0,
+                "Name": "Energy Solutions"
+            },
+            {
+                "Percent_Total": 3.77,
+                "Amount": 2500.0,
+                "Name": "HMS Development LLC"
+            },
+            {
+                "Percent_Total": 3.01,
+                "Amount": 2000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 3.01,
+                "Amount": 2000.0,
+                "Name": "Altria Client Services LLC"
+            }
+        ]
+    },
+    "Dan Johnson": {
+        "total": 37712.98,
+        "top_groups": [
+            {
+                "Percent_Total": 35.56,
+                "Amount": 13412.28,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 35.27,
+                "Amount": 13300.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 29.17,
+                "Amount": 11000.7,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 13.51,
+                "Amount": 5096.0,
+                "Name": "Cache County Republican Party"
+            },
+            {
+                "Percent_Total": 13.26,
+                "Amount": 5000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 13.26,
+                "Amount": 5000.0,
+                "Name": "Northern Utah Legislative PAC"
+            },
+            {
+                "Percent_Total": 12.52,
+                "Amount": 4720.68,
+                "Name": "Johnson Dan - 2020 House-4 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 12.48,
+                "Amount": 4704.7,
+                "Name": "Wasatch Commercial"
+            }
+        ]
+    },
+    "Casey Snider": {
+        "total": 15640.21,
+        "top_groups": [
+            {
+                "Percent_Total": 83.06,
+                "Amount": 12990.21,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 16.94,
+                "Amount": 2650.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 83.06,
+                "Amount": 12990.21,
+                "Name": "Snider Casey - 2020 House-5 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 4.8,
+                "Amount": 750.0,
+                "Name": "Energy Solutions"
+            },
+            {
+                "Percent_Total": 3.2,
+                "Amount": 500.0,
+                "Name": "Comcast"
+            },
+            {
+                "Percent_Total": 3.2,
+                "Amount": 500.0,
+                "Name": "Regence"
+            },
+            {
+                "Percent_Total": 1.92,
+                "Amount": 300.0,
+                "Name": "Metro Group"
+            }
+        ]
+    },
+    "Robert Spendlove": {
+        "total": 35310.81,
+        "top_groups": [
+            {
+                "Percent_Total": 38.24,
+                "Amount": 13502.79,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 36.13,
+                "Amount": 12758.02,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 25.63,
+                "Amount": 9050.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 35.41,
+                "Amount": 12502.79,
+                "Name": "Spendlove Robert - 2020 House-49 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 14.16,
+                "Amount": 5000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 7.08,
+                "Amount": 2500.0,
+                "Name": "CMV PAC"
+            },
+            {
+                "Percent_Total": 4.25,
+                "Amount": 1500.0,
+                "Name": "Utah Hospac"
+            },
+            {
+                "Percent_Total": 4.25,
+                "Amount": 1500.0,
+                "Name": "Friends of Little Cottonwood Canyon"
+            }
+        ]
+    },
+    "Evan Rodgers": {
+        "total": 600.0,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 600.0,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 600.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Hope Goeckeritz": {
+        "total": 28187.42,
+        "top_groups": [
+            {
+                "Percent_Total": 69.77,
+                "Amount": 19666.42,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 25.62,
+                "Amount": 7221.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 4.61,
+                "Amount": 1300.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 10.64,
+                "Amount": 3000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 10.64,
+                "Amount": 3000.0,
+                "Name": "Committee For A Democratic Majority"
+            },
+            {
+                "Percent_Total": 8.16,
+                "Amount": 2300.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 3.55,
+                "Amount": 1000.0,
+                "Name": "Rural Utah Project Inc."
+            },
+            {
+                "Percent_Total": 3.55,
+                "Amount": 1000.0,
+                "Name": "Operating Engineers Local No. 3"
+            }
+        ]
+    },
+    "W. McCullough": {
+        "total": 571.26,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 571.26,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 16.81,
+                "Amount": 96.02,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 16.81,
+                "Amount": 96.02,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 16.81,
+                "Amount": 96.02,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 16.81,
+                "Amount": 96.02,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 14.36,
+                "Amount": 82.06,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Stewart Barlow": {
+        "total": 53570.92,
+        "top_groups": [
+            {
+                "Percent_Total": 91.04,
+                "Amount": 48770.92,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 6.07,
+                "Amount": 3250.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 2.89,
+                "Amount": 1550.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 89.27,
+                "Amount": 47820.92,
+                "Name": "Barlow Stewart - 2020 House-17 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 2.8,
+                "Amount": 1500.0,
+                "Name": "Davis County Republican Party"
+            },
+            {
+                "Percent_Total": 1.4,
+                "Amount": 750.0,
+                "Name": "Home Builders Association of Utah PAC"
+            },
+            {
+                "Percent_Total": 1.31,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 0.93,
+                "Amount": 500.0,
+                "Name": "Utah House Republican Election Commitee"
+            }
+        ]
+    },
+    "Keven Stratton": {
+        "total": 13259.22,
+        "top_groups": [
+            {
+                "Percent_Total": 55.5,
+                "Amount": 7359.22,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 22.63,
+                "Amount": 3000.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 21.87,
+                "Amount": 2900.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 28.49,
+                "Amount": 3777.16,
+                "Name": "Stratton Keven - 2020 House-48 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 21.74,
+                "Amount": 2882.06,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 18.85,
+                "Amount": 2500.0,
+                "Name": "JW Howard Attorneys LTD"
+            },
+            {
+                "Percent_Total": 15.08,
+                "Amount": 2000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 5.28,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Jordan Teuscher": {
+        "total": 24765.23,
+        "top_groups": [
+            {
+                "Percent_Total": 45.09,
+                "Amount": 11167.23,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 38.55,
+                "Amount": 9548.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 16.35,
+                "Amount": 4050.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 27.73,
+                "Amount": 6867.23,
+                "Name": "Teuscher Jordan - 2020 House-42 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 10.09,
+                "Amount": 2500.0,
+                "Name": "Utah Association of Realtors"
+            },
+            {
+                "Percent_Total": 8.08,
+                "Amount": 2000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 4.04,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.04,
+                "Amount": 1000.0,
+                "Name": "Wilson Leadership PAC"
+            }
+        ]
+    },
+    "Monica Hall": {
+        "total": 8948.18,
+        "top_groups": [
+            {
+                "Percent_Total": 66.75,
+                "Amount": 5973.18,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 33.25,
+                "Amount": 2975.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 21.23,
+                "Amount": 1900.0,
+                "Name": "Chris & Laurie Morgan"
+            },
+            {
+                "Percent_Total": 11.18,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 6.7,
+                "Amount": 599.95,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 5.59,
+                "Amount": 500.0,
+                "Name": "Utah House Dems Leadership Council"
+            },
+            {
+                "Percent_Total": 5.59,
+                "Amount": 500.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Andrew Nieto": {
+        "total": 591.0,
+        "top_groups": [
+            {
+                "Percent_Total": 95.77,
+                "Amount": 566.0,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 4.23,
+                "Amount": 25.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 20.3,
+                "Amount": 120.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 9.31,
+                "Amount": 55.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 9.14,
+                "Amount": 54.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 8.46,
+                "Amount": 50.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 5.08,
+                "Amount": 30.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Zeno Parry": {
+        "total": 1265.98,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 1265.98,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 45.5,
+                "Amount": 575.98,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 23.7,
+                "Amount": 300.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 15.8,
+                "Amount": 200.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 7.9,
+                "Amount": 100.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 3.95,
+                "Amount": 50.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Ronald Winterton": {
+        "total": 78878.71,
+        "top_groups": [
+            {
+                "Percent_Total": 66.09,
+                "Amount": 52128.71,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 25.55,
+                "Amount": 20150.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 8.37,
+                "Amount": 6600.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 63.87,
+                "Amount": 50378.71,
+                "Name": "Winterton Ronald - 2018 Senate-26 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 12.68,
+                "Amount": 10000.0,
+                "Name": "Utah Republican Senate Campaign Committee"
+            },
+            {
+                "Percent_Total": 2.54,
+                "Amount": 2000.0,
+                "Name": "Adams Leadership PAC"
+            },
+            {
+                "Percent_Total": 1.27,
+                "Amount": 1000.0,
+                "Name": "Friends of Ann Miller"
+            },
+            {
+                "Percent_Total": 1.27,
+                "Amount": 1000.0,
+                "Name": "GREEBFIELD Energy LLC"
+            }
+        ]
+    },
+    "Trevor Lee": {
+        "total": 21171.0,
+        "top_groups": [
+            {
+                "Percent_Total": 87.01,
+                "Amount": 18421.0,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 9.45,
+                "Amount": 2000.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 3.54,
+                "Amount": 750.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 25.98,
+                "Amount": 5500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 23.62,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 9.45,
+                "Amount": 2000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.72,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.72,
+                "Amount": 1000.0,
+                "Name": "Northern Utah Legislative PAC"
+            }
+        ]
+    },
+    "Jill Fellow": {
+        "total": 7167.12,
+        "top_groups": [
+            {
+                "Percent_Total": 80.12,
+                "Amount": 5742.12,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 17.44,
+                "Amount": 1250.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 2.44,
+                "Amount": 175.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 27.91,
+                "Amount": 2000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 13.95,
+                "Amount": 1000.0,
+                "Name": "Summit County Dems"
+            },
+            {
+                "Percent_Total": 9.77,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 6.98,
+                "Amount": 500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 3.49,
+                "Amount": 250.0,
+                "Name": "Women's democratic Club of Utah"
+            }
+        ]
+    },
+    "Nelson Abbott": {
+        "total": 12405.71,
+        "top_groups": [
+            {
+                "Percent_Total": 49.22,
+                "Amount": 6105.71,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 41.92,
+                "Amount": 5200.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 8.87,
+                "Amount": 1100.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 32.61,
+                "Amount": 4045.14,
+                "Name": "Abbott Nelson - 2020 House-60 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 8.06,
+                "Amount": 1000.0,
+                "Name": "Lawyers Involved for Utah"
+            },
+            {
+                "Percent_Total": 5.64,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.91,
+                "Amount": 608.57,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.03,
+                "Amount": 500.0,
+                "Name": "Home Builder's Association of Utah PAC Fund"
+            }
+        ]
+    },
+    "Brad Wilson": {
+        "total": 183314.35,
+        "top_groups": [
+            {
+                "Percent_Total": 66.63,
+                "Amount": 122141.07,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 19.67,
+                "Amount": 36050.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 13.71,
+                "Amount": 25123.28,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 66.63,
+                "Amount": 122141.07,
+                "Name": "Wilson Brad - 2020 House-15 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 3.07,
+                "Amount": 5623.28,
+                "Name": "Wilson Leadership PAC"
+            },
+            {
+                "Percent_Total": 2.73,
+                "Amount": 5000.0,
+                "Name": "Education First Utah"
+            },
+            {
+                "Percent_Total": 2.73,
+                "Amount": 5000.0,
+                "Name": "Utah Credit Union PAC"
+            },
+            {
+                "Percent_Total": 2.73,
+                "Amount": 5000.0,
+                "Name": "Pacificorp\/Rocky Mt Power"
+            }
+        ]
+    },
+    "Holly Gunther": {
+        "total": 500.0,
+        "top_groups": [
+            {
+                "Percent_Total": 50.0,
+                "Amount": 250.0,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 50.0,
+                "Amount": 250.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 50.0,
+                "Amount": 250.0,
+                "Name": "Womens Democratic Club of Utah"
+            },
+            {
+                "Percent_Total": 20.0,
+                "Amount": 100.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 20.0,
+                "Amount": 100.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 10.0,
+                "Amount": 50.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Dee Grey": {
+        "total": 6357.28,
+        "top_groups": [
+            {
+                "Percent_Total": 79.46,
+                "Amount": 5051.45,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 12.68,
+                "Amount": 805.83,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 7.86,
+                "Amount": 500.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 47.78,
+                "Amount": 3037.6,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 23.81,
+                "Amount": 1513.85,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 7.86,
+                "Amount": 500.0,
+                "Name": "Equality Utah PAC"
+            },
+            {
+                "Percent_Total": 7.33,
+                "Amount": 465.83,
+                "Name": "ActBlue Technical Services"
+            },
+            {
+                "Percent_Total": 3.93,
+                "Amount": 250.0,
+                "Name": "Committee for a Democratic Majority - Utah House Democratic Leadership Council"
+            }
+        ]
+    },
+    "Marsha Judkins": {
+        "total": 12819.33,
+        "top_groups": [
+            {
+                "Percent_Total": 51.87,
+                "Amount": 6650.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 27.06,
+                "Amount": 3469.33,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 21.06,
+                "Amount": 2700.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 15.6,
+                "Amount": 2000.0,
+                "Name": "Education First Utah"
+            },
+            {
+                "Percent_Total": 15.6,
+                "Amount": 2000.0,
+                "Name": "House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 9.9,
+                "Amount": 1269.33,
+                "Name": "Judkins Marsha - 2020 House-61 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 7.8,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 7.8,
+                "Amount": 1000.0,
+                "Name": "Republican Women Lead PAC"
+            }
+        ]
+    },
+    "Michael Anderson": {
+        "total": 790.02,
+        "top_groups": [
+            {
+                "Percent_Total": 68.35,
+                "Amount": 540.0,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 31.65,
+                "Amount": 250.02,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 63.29,
+                "Amount": 500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 31.64,
+                "Amount": 250.0,
+                "Name": "Committee for a Democratic Majority Utah House Democratic Leadership Council"
+            },
+            {
+                "Percent_Total": 5.06,
+                "Amount": 40.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 0.0,
+                "Amount": 0.02,
+                "Name": "Wells Fargo"
+            }
+        ]
+    },
+    "Jason Kyle": {
+        "total": 31050.29,
+        "top_groups": [
+            {
+                "Percent_Total": 57.27,
+                "Amount": 17783.86,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 25.76,
+                "Amount": 8000.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 16.96,
+                "Amount": 5266.43,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 51.06,
+                "Amount": 15854.86,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 16.1,
+                "Amount": 5000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 13.09,
+                "Amount": 4065.43,
+                "Name": "Utah Association of Realtors"
+            },
+            {
+                "Percent_Total": 6.44,
+                "Amount": 2000.0,
+                "Name": "Wilson Leadership PAC"
+            },
+            {
+                "Percent_Total": 2.25,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Quinn Kotter": {
+        "total": 47232.0,
+        "top_groups": [
+            {
+                "Percent_Total": 63.57,
+                "Amount": 30027.0,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 31.76,
+                "Amount": 15000.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 4.67,
+                "Amount": 2205.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 42.36,
+                "Amount": 20009.4,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 21.17,
+                "Amount": 10000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 10.59,
+                "Amount": 5000.0,
+                "Name": "Wilson Leadership PAC"
+            },
+            {
+                "Percent_Total": 5.29,
+                "Amount": 2500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.31,
+                "Amount": 2035.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Sandra Hollins": {
+        "total": 10642.2,
+        "top_groups": [
+            {
+                "Percent_Total": 92.06,
+                "Amount": 9797.2,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 5.59,
+                "Amount": 595.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 2.35,
+                "Amount": 250.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 73.22,
+                "Amount": 7792.2,
+                "Name": "Hollins Sandra - 2020 House-23 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 7.05,
+                "Amount": 750.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.7,
+                "Amount": 500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.7,
+                "Amount": 500.0,
+                "Name": "Weston for Utah"
+            },
+            {
+                "Percent_Total": 2.35,
+                "Amount": 250.0,
+                "Name": "Women Democratic Club of Utah"
+            }
+        ]
+    },
+    "Mike Kohler": {
+        "total": 28955.03,
+        "top_groups": [
+            {
+                "Percent_Total": 51.3,
+                "Amount": 14854.03,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 37.13,
+                "Amount": 10750.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 11.57,
+                "Amount": 3351.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 47.85,
+                "Amount": 13854.03,
+                "Name": "Kohler Mike - 2020 House-54 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 25.9,
+                "Amount": 7500.0,
+                "Name": "Utah House Republican Election Committee"
+            },
+            {
+                "Percent_Total": 6.91,
+                "Amount": 2000.0,
+                "Name": "Wilson Leadership PAC"
+            },
+            {
+                "Percent_Total": 4.84,
+                "Amount": 1400.0,
+                "Name": "Regan Outdoor Signs"
+            },
+            {
+                "Percent_Total": 1.73,
+                "Amount": 501.0,
+                "Name": "U-Car PAC"
+            }
+        ]
+    },
+    "Melissa Ballard": {
+        "total": 63255.12,
+        "top_groups": [
+            {
+                "Percent_Total": 54.54,
+                "Amount": 34498.21,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 35.51,
+                "Amount": 22463.11,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 9.95,
+                "Amount": 6293.8,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 32.4,
+                "Amount": 20496.16,
+                "Name": "Ballard Melissa - 2020 House-20 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 15.81,
+                "Amount": 10000.0,
+                "Name": "Education First"
+            },
+            {
+                "Percent_Total": 14.23,
+                "Amount": 9000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 4.56,
+                "Amount": 2881.4,
+                "Name": "Wilson Leadership PAC"
+            },
+            {
+                "Percent_Total": 3.95,
+                "Amount": 2501.0,
+                "Name": "U-CAR PAC Ut Automobile Dearlers Assoc"
+            }
+        ]
+    },
+    "Walt Brooks": {
+        "total": 8438.58,
+        "top_groups": [
+            {
+                "Percent_Total": 63.99,
+                "Amount": 5400.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 30.08,
+                "Amount": 2538.58,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 5.93,
+                "Amount": 500.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 17.05,
+                "Amount": 1438.58,
+                "Name": "Brooks Walter - 2020 House-75 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 11.85,
+                "Amount": 1000.0,
+                "Name": "Home Builders Association of Utah Pac"
+            },
+            {
+                "Percent_Total": 8.89,
+                "Amount": 750.0,
+                "Name": "Energy Solutions"
+            },
+            {
+                "Percent_Total": 8.3,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 5.93,
+                "Amount": 500.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            }
+        ]
+    },
+    "Wayne Sandberg": {
+        "total": 32925.98,
+        "top_groups": [
+            {
+                "Percent_Total": 84.81,
+                "Amount": 27925.98,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 15.19,
+                "Amount": 5000.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 84.81,
+                "Amount": 27925.98,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 15.19,
+                "Amount": 5000.0,
+                "Name": "Utah House Republican Election Commitee PAC"
+            }
+        ]
+    },
+    "Andrew Stoddard": {
+        "total": 20470.84,
+        "top_groups": [
+            {
+                "Percent_Total": 73.47,
+                "Amount": 15040.46,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 15.29,
+                "Amount": 3130.38,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 11.24,
+                "Amount": 2300.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 31.85,
+                "Amount": 6520.46,
+                "Name": "Stoddard Andrew - 2020 House-44 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 7.33,
+                "Amount": 1500.0,
+                "Name": "Operating Engineers Local No. 3"
+            },
+            {
+                "Percent_Total": 7.33,
+                "Amount": 1500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.88,
+                "Amount": 1000.0,
+                "Name": "Utah Association for Justice PAC"
+            },
+            {
+                "Percent_Total": 4.88,
+                "Amount": 1000.0,
+                "Name": "Johnson and Johnson PAC"
+            }
+        ]
+    },
+    "Jerry Stevenson": {
+        "total": 173712.1,
+        "top_groups": [
+            {
+                "Percent_Total": 37.72,
+                "Amount": 65526.95,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 34.07,
+                "Amount": 59185.15,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 28.21,
+                "Amount": 49000.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 29.11,
+                "Amount": 50561.11,
+                "Name": "Stevenson Jerry - 2018 Senate-21 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 5.76,
+                "Amount": 10000.0,
+                "Name": "UTAH REPUBLICAN SENATE COMM  #260"
+            },
+            {
+                "Percent_Total": 5.76,
+                "Amount": 10000.0,
+                "Name": "UTAH REPUBLICAN SENATE  #254"
+            },
+            {
+                "Percent_Total": 5.76,
+                "Amount": 10000.0,
+                "Name": "UTAH REPUBLICAN SENATE PAC #1149"
+            },
+            {
+                "Percent_Total": 4.32,
+                "Amount": 7500.0,
+                "Name": "NORTHERN UTAH LEGISLATIVE PAC #207"
+            }
+        ]
+    },
+    "Mike Kennedy": {
+        "total": 43184.97,
+        "top_groups": [
+            {
+                "Percent_Total": 68.74,
+                "Amount": 29684.97,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 24.89,
+                "Amount": 10750.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 6.37,
+                "Amount": 2750.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 64.41,
+                "Amount": 27814.97,
+                "Name": "Kennedy Michael - 2020 Senate-14 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 4.63,
+                "Amount": 2000.0,
+                "Name": "Adams Leadership PAC"
+            },
+            {
+                "Percent_Total": 2.32,
+                "Amount": 1000.0,
+                "Name": "staker parson companies"
+            },
+            {
+                "Percent_Total": 2.32,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 2.32,
+                "Amount": 1000.0,
+                "Name": "regence"
+            }
+        ]
+    },
+    "Kris Campbell": {
+        "total": 9641.36,
+        "top_groups": [
+            {
+                "Percent_Total": 54.97,
+                "Amount": 5300.0,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 29.47,
+                "Amount": 2841.36,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 15.56,
+                "Amount": 1500.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 36.3,
+                "Amount": 3500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 15.56,
+                "Amount": 1500.0,
+                "Name": "Summit County Democratic Party"
+            },
+            {
+                "Percent_Total": 10.37,
+                "Amount": 1000.0,
+                "Name": "Calabro UX LLC"
+            },
+            {
+                "Percent_Total": 7.17,
+                "Amount": 691.36,
+                "Name": "Kris Campbell"
+            },
+            {
+                "Percent_Total": 5.19,
+                "Amount": 500.0,
+                "Name": "Committee For a Democratic Majority Utah House Democratic Leadership Council"
+            }
+        ]
+    },
+    "Jon Hawkins": {
+        "total": 26455.82,
+        "top_groups": [
+            {
+                "Percent_Total": 54.26,
+                "Amount": 14355.82,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 38.18,
+                "Amount": 10100.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 7.56,
+                "Amount": 2000.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 50.67,
+                "Amount": 13405.82,
+                "Name": "Hawkins Jon - 2020 House-57 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 3.78,
+                "Amount": 1000.0,
+                "Name": "Oakwood Consulting LLC"
+            },
+            {
+                "Percent_Total": 2.83,
+                "Amount": 750.0,
+                "Name": "Home Builders Association of Utah"
+            },
+            {
+                "Percent_Total": 2.83,
+                "Amount": 750.0,
+                "Name": "AT&T Services Inc."
+            },
+            {
+                "Percent_Total": 2.65,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Tab Uno": {
+        "total": 6699.01,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 6699.01,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 97.37,
+                "Amount": 6523.01,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 1.49,
+                "Amount": 100.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 0.6,
+                "Amount": 40.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 0.37,
+                "Amount": 25.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 0.15,
+                "Amount": 10.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Karianne Lisonbee": {
+        "total": 34448.23,
+        "top_groups": [
+            {
+                "Percent_Total": 38.08,
+                "Amount": 13117.09,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 35.94,
+                "Amount": 12381.14,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 25.98,
+                "Amount": 8950.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 33.77,
+                "Amount": 11634.53,
+                "Name": "Lisonbee Karianne - 2020 House-14 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 5.81,
+                "Amount": 2000.0,
+                "Name": "Republican Women Lead PAC"
+            },
+            {
+                "Percent_Total": 5.81,
+                "Amount": 2000.0,
+                "Name": "Utah Republican House Election Committee PAC"
+            },
+            {
+                "Percent_Total": 5.81,
+                "Amount": 2000.0,
+                "Name": "Northern Uath Legislative PAC"
+            },
+            {
+                "Percent_Total": 4.35,
+                "Amount": 1500.0,
+                "Name": "Entertainment Software Association"
+            }
+        ]
+    },
+    "Rex Shipp": {
+        "total": 13579.12,
+        "top_groups": [
+            {
+                "Percent_Total": 43.83,
+                "Amount": 5951.22,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 31.3,
+                "Amount": 4250.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 24.88,
+                "Amount": 3377.9,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 38.67,
+                "Amount": 5251.22,
+                "Name": "Shipp Rex - 2020 House-72 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 14.73,
+                "Amount": 2000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 7.36,
+                "Amount": 1000.0,
+                "Name": "Wilson Leadership PAC"
+            },
+            {
+                "Percent_Total": 5.52,
+                "Amount": 750.0,
+                "Name": "Home Builders Association of Utah PAC Fund"
+            },
+            {
+                "Percent_Total": 5.15,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Brent Zimmerman": {
+        "total": 82.06,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 82.06,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 82.06,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Dan Sorensen": {
+        "total": 22988.85,
+        "top_groups": [
+            {
+                "Percent_Total": 62.35,
+                "Amount": 14334.2,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 33.3,
+                "Amount": 7654.65,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 4.35,
+                "Amount": 1000.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 33.3,
+                "Amount": 7654.65,
+                "Name": "Fundhero"
+            },
+            {
+                "Percent_Total": 21.75,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 10.87,
+                "Amount": 2500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 10.87,
+                "Amount": 2500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.35,
+                "Amount": 1000.0,
+                "Name": "The Bart C. Warner"
+            }
+        ]
+    },
+    "Kimberly Wagner": {
+        "total": 7484.48,
+        "top_groups": [
+            {
+                "Percent_Total": 99.67,
+                "Amount": 7459.48,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 0.33,
+                "Amount": 25.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 13.36,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 13.36,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 13.36,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 6.68,
+                "Amount": 500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.68,
+                "Amount": 350.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Stephanie Pitcher": {
+        "total": 66332.45,
+        "top_groups": [
+            {
+                "Percent_Total": 66.91,
+                "Amount": 44385.45,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 30.75,
+                "Amount": 20397.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 2.34,
+                "Amount": 1550.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 28.98,
+                "Amount": 19220.79,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 9.05,
+                "Amount": 6000.0,
+                "Name": "Utah Association of Realtors"
+            },
+            {
+                "Percent_Total": 8.06,
+                "Amount": 5344.66,
+                "Name": "Pitcher Stephanie - 2020 House-40 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 4.52,
+                "Amount": 3000.0,
+                "Name": "Kitchen for Senate"
+            },
+            {
+                "Percent_Total": 3.02,
+                "Amount": 2000.0,
+                "Name": "Better Boundaries Accountability Fund"
+            }
+        ]
+    },
+    "Ann Millner": {
+        "total": 309931.51,
+        "top_groups": [
+            {
+                "Percent_Total": 62.69,
+                "Amount": 194293.89,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 25.85,
+                "Amount": 80107.25,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 11.3,
+                "Amount": 35030.37,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 0.16,
+                "Amount": 500.0,
+                "Name": "Banking"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 52.43,
+                "Amount": 162488.86,
+                "Name": "Millner Ann - 2018 Senate-18 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 11.29,
+                "Amount": 35000.0,
+                "Name": "Utah Republican Senate Campaign Committee"
+            },
+            {
+                "Percent_Total": 5.32,
+                "Amount": 16500.0,
+                "Name": "Northern Utah Legislative PAC"
+            },
+            {
+                "Percent_Total": 1.82,
+                "Amount": 5630.37,
+                "Name": "Education First Utah"
+            },
+            {
+                "Percent_Total": 1.61,
+                "Amount": 5000.0,
+                "Name": "Davis County Repubican Party"
+            }
+        ]
+    },
+    "Brittany Karzen": {
+        "total": 15420.38,
+        "top_groups": [
+            {
+                "Percent_Total": 58.59,
+                "Amount": 9034.38,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 33.07,
+                "Amount": 5100.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 8.34,
+                "Amount": 1286.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 32.42,
+                "Amount": 5000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 16.21,
+                "Amount": 2500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 8.32,
+                "Amount": 1283.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 7.78,
+                "Amount": 1200.0,
+                "Name": "Oakwood Consulting Inc"
+            },
+            {
+                "Percent_Total": 6.72,
+                "Amount": 1036.38,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Fatima Dirie": {
+        "total": 32885.14,
+        "top_groups": [
+            {
+                "Percent_Total": 51.0,
+                "Amount": 16772.25,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 43.68,
+                "Amount": 14362.89,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 5.32,
+                "Amount": 1750.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 15.2,
+                "Amount": 5000.0,
+                "Name": "Utah Women & Political Pac"
+            },
+            {
+                "Percent_Total": 15.2,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 7.6,
+                "Amount": 2500.0,
+                "Name": "Committee for Democratic Majority "
+            },
+            {
+                "Percent_Total": 7.33,
+                "Amount": 2410.0,
+                "Name": "Utah Investment Network "
+            },
+            {
+                "Percent_Total": 4.56,
+                "Amount": 1500.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Carson Barlow": {
+        "total": 1438.81,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 1438.81,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 93.74,
+                "Amount": 1348.81,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 3.48,
+                "Amount": 50.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 1.39,
+                "Amount": 20.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 1.39,
+                "Amount": 20.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Linda Paulson": {
+        "total": 24857.81,
+        "top_groups": [
+            {
+                "Percent_Total": 97.13,
+                "Amount": 24145.09,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 2.87,
+                "Amount": 712.72,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 22.6,
+                "Amount": 5618.09,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 21.33,
+                "Amount": 5301.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 8.05,
+                "Amount": 2000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.02,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 2.09,
+                "Amount": 520.0,
+                "Name": "Connie Ward"
+            }
+        ]
+    },
+    "Ashlee Matthews": {
+        "total": 19481.77,
+        "top_groups": [
+            {
+                "Percent_Total": 54.4,
+                "Amount": 10598.43,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 31.23,
+                "Amount": 6083.34,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 14.37,
+                "Amount": 2800.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 24.93,
+                "Amount": 4856.79,
+                "Name": "Matthews Ashlee - 2020 House-38 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 16.67,
+                "Amount": 3248.43,
+                "Name": "ActBlue"
+            },
+            {
+                "Percent_Total": 7.7,
+                "Amount": 1500.0,
+                "Name": "Utah Association of Realtors"
+            },
+            {
+                "Percent_Total": 5.13,
+                "Amount": 1000.0,
+                "Name": "Operating Engineers Lovato #3 Statewide PAC"
+            },
+            {
+                "Percent_Total": 3.85,
+                "Amount": 750.0,
+                "Name": "Local 222 Drive Chapter"
+            }
+        ]
+    },
+    "Alan Wessman": {
+        "total": 4565.47,
+        "top_groups": [
+            {
+                "Percent_Total": 95.28,
+                "Amount": 4350.0,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 4.72,
+                "Amount": 215.47,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 21.9,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 10.95,
+                "Amount": 500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 6.79,
+                "Amount": 310.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 6.57,
+                "Amount": 300.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 5.48,
+                "Amount": 250.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Karen Peterson": {
+        "total": 31675.66,
+        "top_groups": [
+            {
+                "Percent_Total": 44.75,
+                "Amount": 14175.66,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 43.09,
+                "Amount": 13650.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 12.15,
+                "Amount": 3850.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 26.99,
+                "Amount": 8550.66,
+                "Name": "Peterson Karen - 2021 House-13 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 15.78,
+                "Amount": 5000.0,
+                "Name": "Davis County Republican Party"
+            },
+            {
+                "Percent_Total": 7.89,
+                "Amount": 2500.0,
+                "Name": "Friends of Spencer Cox"
+            },
+            {
+                "Percent_Total": 6.31,
+                "Amount": 2000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 4.74,
+                "Amount": 1500.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Tyler Peterson": {
+        "total": 1958.78,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 1958.78,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 51.05,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 13.21,
+                "Amount": 258.78,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 10.21,
+                "Amount": 200.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 10.21,
+                "Amount": 200.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 5.11,
+                "Amount": 100.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Ryan Wilcox": {
+        "total": 12404.34,
+        "top_groups": [
+            {
+                "Percent_Total": 52.8,
+                "Amount": 6550.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 25.03,
+                "Amount": 3104.34,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 22.17,
+                "Amount": 2750.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 17.37,
+                "Amount": 2154.34,
+                "Name": "Wilcox Ryan - 2020 House-7 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 16.12,
+                "Amount": 2000.0,
+                "Name": "Wilson Leadership PAC"
+            },
+            {
+                "Percent_Total": 8.06,
+                "Amount": 1000.0,
+                "Name": "Utah Rural Telecom Association"
+            },
+            {
+                "Percent_Total": 6.45,
+                "Amount": 800.0,
+                "Name": "AT&T"
+            },
+            {
+                "Percent_Total": 5.64,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Russ Hatch": {
+        "total": 402.0,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 402.0,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 72.64,
+                "Amount": 292.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 24.88,
+                "Amount": 100.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 2.49,
+                "Amount": 10.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Elizabeth Weight": {
+        "total": 26587.47,
+        "top_groups": [
+            {
+                "Percent_Total": 47.95,
+                "Amount": 12749.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 42.65,
+                "Amount": 11338.47,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 9.4,
+                "Amount": 2500.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 22.57,
+                "Amount": 6000.0,
+                "Name": "Utah Women and Politics"
+            },
+            {
+                "Percent_Total": 18.81,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 15.58,
+                "Amount": 4143.27,
+                "Name": "Weight Elizabeth - 2020 House-31 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 9.4,
+                "Amount": 2500.0,
+                "Name": "Utah House Democratic Leadership Council"
+            },
+            {
+                "Percent_Total": 5.64,
+                "Amount": 1500.0,
+                "Name": "U.A. Local 140 COPE"
+            }
+        ]
+    },
+    "Joshua Hardy": {
+        "total": 2940.0,
+        "top_groups": [
+            {
+                "Percent_Total": 52.38,
+                "Amount": 1540.0,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 47.62,
+                "Amount": 1400.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 34.01,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 17.01,
+                "Amount": 500.0,
+                "Name": "Davis County Democrats "
+            },
+            {
+                "Percent_Total": 17.01,
+                "Amount": 500.0,
+                "Name": "Utah Democratic Leadership Council"
+            },
+            {
+                "Percent_Total": 10.2,
+                "Amount": 300.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 8.5,
+                "Amount": 250.0,
+                "Name": "Weston For Senate"
+            }
+        ]
+    },
+    "Gerald Burt": {
+        "total": 6400.0,
+        "top_groups": [
+            {
+                "Percent_Total": 93.75,
+                "Amount": 6000.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 6.25,
+                "Amount": 400.0,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 93.75,
+                "Amount": 6000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 6.25,
+                "Amount": 400.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Neil Hansen": {
+        "total": 1090.0,
+        "top_groups": [
+            {
+                "Percent_Total": 77.06,
+                "Amount": 840.0,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 22.94,
+                "Amount": 250.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 45.87,
+                "Amount": 500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 22.94,
+                "Amount": 250.0,
+                "Name": "Committee for a democratic majority"
+            },
+            {
+                "Percent_Total": 18.35,
+                "Amount": 200.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 9.17,
+                "Amount": 100.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 3.67,
+                "Amount": 40.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Barry Short": {
+        "total": 404.12,
+        "top_groups": [
+            {
+                "Percent_Total": 71.76,
+                "Amount": 290.0,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 28.24,
+                "Amount": 114.12,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 28.24,
+                "Amount": 114.12,
+                "Name": "Utah Libertarian Party"
+            },
+            {
+                "Percent_Total": 24.75,
+                "Amount": 100.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 24.75,
+                "Amount": 100.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 12.37,
+                "Amount": 50.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.95,
+                "Amount": 20.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Raymond Ward": {
+        "total": 101286.68,
+        "top_groups": [
+            {
+                "Percent_Total": 48.11,
+                "Amount": 48728.71,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 43.13,
+                "Amount": 43687.97,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 8.76,
+                "Amount": 8870.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 17.01,
+                "Amount": 17227.97,
+                "Name": "Ward Raymond - 2020 House-19 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 12.42,
+                "Amount": 12578.71,
+                "Name": "Education First Utah"
+            },
+            {
+                "Percent_Total": 9.87,
+                "Amount": 10000.0,
+                "Name": "Believe in America PAC"
+            },
+            {
+                "Percent_Total": 9.38,
+                "Amount": 9500.0,
+                "Name": "Northern Utah Legislative PAC"
+            },
+            {
+                "Percent_Total": 5.92,
+                "Amount": 6000.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Jeremy Baker": {
+        "total": 50.0,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 50.0,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 50.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Cory Maloy": {
+        "total": 25927.74,
+        "top_groups": [
+            {
+                "Percent_Total": 58.1,
+                "Amount": 15064.72,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 29.17,
+                "Amount": 7563.02,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 12.73,
+                "Amount": 3300.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 47.8,
+                "Amount": 12394.72,
+                "Name": "Maloy Cory - 2020 House-6 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 4.56,
+                "Amount": 1183.36,
+                "Name": "State of Utah"
+            },
+            {
+                "Percent_Total": 2.89,
+                "Amount": 750.0,
+                "Name": "Utah Bankers Association State PAC"
+            },
+            {
+                "Percent_Total": 2.89,
+                "Amount": 750.0,
+                "Name": "Home Builders Association of Utah PAC Fund"
+            },
+            {
+                "Percent_Total": 2.7,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Jim Dunnigan": {
+        "total": 125570.41,
+        "top_groups": [
+            {
+                "Percent_Total": 74.09,
+                "Amount": 93030.41,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 14.17,
+                "Amount": 17790.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 11.75,
+                "Amount": 14750.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 68.68,
+                "Amount": 86245.41,
+                "Name": "Dunnigan Jim - 2020 House-39 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 3.98,
+                "Amount": 5000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 3.19,
+                "Amount": 4000.0,
+                "Name": "Utah Dental PAC Hard UDPAC"
+            },
+            {
+                "Percent_Total": 2.39,
+                "Amount": 3000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 1.59,
+                "Amount": 2000.0,
+                "Name": "Selecthealth"
+            }
+        ]
+    },
+    "Daniel Thatcher": {
+        "total": 67742.03,
+        "top_groups": [
+            {
+                "Percent_Total": 55.94,
+                "Amount": 37892.03,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 37.42,
+                "Amount": 25350.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 6.64,
+                "Amount": 4500.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 52.69,
+                "Amount": 35692.03,
+                "Name": "Thatcher Daniel - 2018 Senate-12 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 23.62,
+                "Amount": 16000.0,
+                "Name": "Utah Republican Senate Campaign Committee"
+            },
+            {
+                "Percent_Total": 4.8,
+                "Amount": 3250.0,
+                "Name": "Energy Solutions"
+            },
+            {
+                "Percent_Total": 2.95,
+                "Amount": 2000.0,
+                "Name": "Adams Leadership Pac"
+            },
+            {
+                "Percent_Total": 1.48,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Adam Robertson": {
+        "total": 5541.03,
+        "top_groups": [
+            {
+                "Percent_Total": 68.42,
+                "Amount": 3791.03,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 22.56,
+                "Amount": 1250.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 9.02,
+                "Amount": 500.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 68.42,
+                "Amount": 3791.03,
+                "Name": "Robertson Adam - 2020 House-63 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 9.02,
+                "Amount": 500.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 9.02,
+                "Amount": 500.0,
+                "Name": "Comcast Financial Agency Corporation"
+            },
+            {
+                "Percent_Total": 4.51,
+                "Amount": 250.0,
+                "Name": "AT&T Services Inc"
+            },
+            {
+                "Percent_Total": 4.51,
+                "Amount": 250.0,
+                "Name": "Utah Bankers Association"
+            }
+        ]
+    },
+    "Catherine Voutaz": {
+        "total": 1465.0,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 1465.0,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 59.04,
+                "Amount": 865.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 20.48,
+                "Amount": 300.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 6.83,
+                "Amount": 100.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 3.41,
+                "Amount": 50.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 3.41,
+                "Amount": 50.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Sahara Hayes": {
+        "total": 19005.35,
+        "top_groups": [
+            {
+                "Percent_Total": 73.0,
+                "Amount": 13874.07,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 20.42,
+                "Amount": 3881.28,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 6.58,
+                "Amount": 1250.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 23.63,
+                "Amount": 4490.86,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 9.16,
+                "Amount": 1740.0,
+                "Name": "Ha! Yes! Graphic Design"
+            },
+            {
+                "Percent_Total": 5.26,
+                "Amount": 1000.0,
+                "Name": "Planned Parenthood Action Council PAC"
+            },
+            {
+                "Percent_Total": 3.95,
+                "Amount": 750.0,
+                "Name": "Teamsters Local 222"
+            },
+            {
+                "Percent_Total": 3.68,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Stephen Whyte": {
+        "total": 10251.44,
+        "top_groups": [
+            {
+                "Percent_Total": 51.71,
+                "Amount": 5301.44,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 41.95,
+                "Amount": 4300.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 6.34,
+                "Amount": 650.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 19.51,
+                "Amount": 2000.0,
+                "Name": "Education First Utah"
+            },
+            {
+                "Percent_Total": 17.08,
+                "Amount": 1751.44,
+                "Name": "Whyte Stephen - 2021 House-65 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 14.63,
+                "Amount": 1500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 9.75,
+                "Amount": 1000.0,
+                "Name": "Utah Optometric Association PAC"
+            },
+            {
+                "Percent_Total": 6.83,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Scott Chew": {
+        "total": 16911.17,
+        "top_groups": [
+            {
+                "Percent_Total": 80.49,
+                "Amount": 13611.17,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 12.42,
+                "Amount": 2100.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 7.1,
+                "Amount": 1200.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 76.35,
+                "Amount": 12911.17,
+                "Name": "Chew Scott - 2020 House-55 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 4.14,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 2.96,
+                "Amount": 500.0,
+                "Name": "Utah Rural Telecom Association"
+            },
+            {
+                "Percent_Total": 2.96,
+                "Amount": 500.0,
+                "Name": "PacifiCorp Pacific Power\/Rocky Mtg Power"
+            },
+            {
+                "Percent_Total": 2.96,
+                "Amount": 500.0,
+                "Name": "AgPac"
+            }
+        ]
+    },
+    "Christine Watkins": {
+        "total": 30006.86,
+        "top_groups": [
+            {
+                "Percent_Total": 45.66,
+                "Amount": 13700.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 31.18,
+                "Amount": 9356.86,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 23.16,
+                "Amount": 6950.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 21.52,
+                "Amount": 6456.86,
+                "Name": "Watkins Christine - 2020 House-69 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 15.0,
+                "Amount": 4500.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 6.67,
+                "Amount": 2000.0,
+                "Name": "Education First Utah"
+            },
+            {
+                "Percent_Total": 6.67,
+                "Amount": 2000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 5.0,
+                "Amount": 1500.0,
+                "Name": "Wison Leadership PAC"
+            }
+        ]
+    },
+    "Douglas Welton": {
+        "total": 12788.03,
+        "top_groups": [
+            {
+                "Percent_Total": 55.82,
+                "Amount": 7138.03,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 29.72,
+                "Amount": 3800.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 14.47,
+                "Amount": 1850.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 38.91,
+                "Amount": 4975.94,
+                "Name": "Welton Douglas - 2020 House-67 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 19.55,
+                "Amount": 2500.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 7.82,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 5.47,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.69,
+                "Amount": 600.0,
+                "Name": "AT&T"
+            }
+        ]
+    },
+    "Matthew Gwynn": {
+        "total": 6985.96,
+        "top_groups": [
+            {
+                "Percent_Total": 74.94,
+                "Amount": 5235.25,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 14.31,
+                "Amount": 1000.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 10.75,
+                "Amount": 750.71,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 64.92,
+                "Amount": 4535.25,
+                "Name": "Gwynn Matthew - 2020 House-29 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 10.02,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 7.16,
+                "Amount": 500.0,
+                "Name": "Utah Metal Works Inc."
+            },
+            {
+                "Percent_Total": 7.16,
+                "Amount": 500.0,
+                "Name": "Home Builders Association of Utah PAC Fund"
+            },
+            {
+                "Percent_Total": 7.16,
+                "Amount": 500.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            }
+        ]
+    },
+    "Alan Anderson": {
+        "total": 200.0,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 200.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 200.0,
+                "Name": "Womens Democractic Club"
+            }
+        ]
+    },
+    "Steven Lund": {
+        "total": 8494.96,
+        "top_groups": [
+            {
+                "Percent_Total": 68.22,
+                "Amount": 5794.96,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 20.6,
+                "Amount": 1750.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 11.18,
+                "Amount": 950.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 44.67,
+                "Amount": 3794.96,
+                "Name": "Lund Steven - 2020 House-58 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 11.77,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 11.77,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 8.83,
+                "Amount": 750.0,
+                "Name": "Home Builders Association of Utah PAC Fund"
+            },
+            {
+                "Percent_Total": 5.89,
+                "Amount": 500.0,
+                "Name": "Utah Dental PAC"
+            }
+        ]
+    },
+    "Jay Cobb": {
+        "total": 15335.26,
+        "top_groups": [
+            {
+                "Percent_Total": 81.51,
+                "Amount": 12500.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 11.97,
+                "Amount": 1835.26,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 6.52,
+                "Amount": 1000.0,
+                "Name": "Banking"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 39.13,
+                "Amount": 6000.0,
+                "Name": "Wilson Leadership PAC"
+            },
+            {
+                "Percent_Total": 32.6,
+                "Amount": 5000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 6.52,
+                "Amount": 1000.0,
+                "Name": "Utah Association of Realtors - PAC"
+            },
+            {
+                "Percent_Total": 6.52,
+                "Amount": 1000.0,
+                "Name": "Grand Property Holdings LLC"
+            },
+            {
+                "Percent_Total": 4.56,
+                "Amount": 700.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Katy Hall": {
+        "total": 24096.0,
+        "top_groups": [
+            {
+                "Percent_Total": 60.99,
+                "Amount": 14696.0,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 22.83,
+                "Amount": 5500.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 16.19,
+                "Amount": 3900.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 13.28,
+                "Amount": 3201.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 8.3,
+                "Amount": 2000.0,
+                "Name": "Wilson Leadership PAC"
+            },
+            {
+                "Percent_Total": 6.23,
+                "Amount": 1500.0,
+                "Name": "Davis County Republican Party"
+            },
+            {
+                "Percent_Total": 4.15,
+                "Amount": 1000.0,
+                "Name": "Republican Women Lead"
+            },
+            {
+                "Percent_Total": 4.15,
+                "Amount": 1000.0,
+                "Name": "Northern Utah Legislative PAC"
+            }
+        ]
+    },
+    "Norm Thurston": {
+        "total": 36131.03,
+        "top_groups": [
+            {
+                "Percent_Total": 67.59,
+                "Amount": 24420.03,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 22.73,
+                "Amount": 8211.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 9.69,
+                "Amount": 3500.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 49.44,
+                "Amount": 17863.66,
+                "Name": "Thurston Norman - 2020 House-64 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 7.34,
+                "Amount": 2653.37,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 5.54,
+                "Amount": 2000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 2.77,
+                "Amount": 1000.0,
+                "Name": "David & Carolyn Wright"
+            },
+            {
+                "Percent_Total": 2.77,
+                "Amount": 1000.0,
+                "Name": "Provo Canyon School"
+            }
+        ]
+    },
+    "Stuart Adams": {
+        "total": 192378.83,
+        "top_groups": [
+            {
+                "Percent_Total": 81.55,
+                "Amount": 156878.83,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 13.13,
+                "Amount": 25250.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 5.33,
+                "Amount": 10250.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 75.28,
+                "Amount": 144828.83,
+                "Name": "Adams J - 2018 Senate-22 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 3.64,
+                "Amount": 7000.0,
+                "Name": "Energy Solutions"
+            },
+            {
+                "Percent_Total": 2.6,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 2.6,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 2.6,
+                "Amount": 5000.0,
+                "Name": "Education First Utah"
+            }
+        ]
+    },
+    "Brady Brammer": {
+        "total": 19261.88,
+        "top_groups": [
+            {
+                "Percent_Total": 53.21,
+                "Amount": 10250.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 28.62,
+                "Amount": 5511.88,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 18.17,
+                "Amount": 3500.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 26.02,
+                "Amount": 5011.88,
+                "Name": "Brammer Brady - 2020 House-27 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 12.98,
+                "Amount": 2500.0,
+                "Name": "Utah Association of Realtors"
+            },
+            {
+                "Percent_Total": 10.38,
+                "Amount": 2000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 5.19,
+                "Amount": 1000.0,
+                "Name": "Entertainment Software Association"
+            },
+            {
+                "Percent_Total": 3.89,
+                "Amount": 750.0,
+                "Name": "Home Builder's Association PAC"
+            }
+        ]
+    },
+    "Kirk Pearson": {
+        "total": 30882.06,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 30882.06,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 97.41,
+                "Amount": 30082.06,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 1.62,
+                "Amount": 500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 0.97,
+                "Amount": 300.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Jed Nordfelt": {
+        "total": 415.0,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 415.0,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 415.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Nikki Pino": {
+        "total": 250.0,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 250.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 250.0,
+                "Name": "Committee for a Democratic Majority Utah House Democratic Leadership Council"
+            }
+        ]
+    },
+    "Joseph Elison": {
+        "total": 49066.85,
+        "top_groups": [
+            {
+                "Percent_Total": 55.16,
+                "Amount": 27066.85,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 40.76,
+                "Amount": 20000.0,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 4.08,
+                "Amount": 2000.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 40.76,
+                "Amount": 20000.0,
+                "Name": "Final Design Group "
+            },
+            {
+                "Percent_Total": 36.75,
+                "Amount": 18031.85,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.08,
+                "Amount": 2000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 4.08,
+                "Amount": 2000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 3.06,
+                "Amount": 1500.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Daniel McCay": {
+        "total": 115663.61,
+        "top_groups": [
+            {
+                "Percent_Total": 83.42,
+                "Amount": 96481.97,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 15.29,
+                "Amount": 17681.64,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 1.3,
+                "Amount": 1500.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 78.44,
+                "Amount": 90731.97,
+                "Name": "McCay Daniel - 2018 Senate-11 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 2.16,
+                "Amount": 2500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 1.3,
+                "Amount": 1500.0,
+                "Name": "PacifiCorp\/Rocky Mtn Power"
+            },
+            {
+                "Percent_Total": 1.3,
+                "Amount": 1500.0,
+                "Name": "Altria Client Services LLC"
+            },
+            {
+                "Percent_Total": 0.86,
+                "Amount": 1000.0,
+                "Name": "POM of Utah LLC"
+            }
+        ]
+    },
+    "Adam Bean": {
+        "total": 455.0,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 455.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 455.0,
+                "Name": "Adam Bean - 2020 House-35 Balance Transfer"
+            }
+        ]
+    },
+    "Ruth Ann Abbott": {
+        "total": 300.0,
+        "top_groups": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 300.0,
+                "Name": "Individuals"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 100.0,
+                "Amount": 300.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    },
+    "Susan Pulsipher": {
+        "total": 65282.7,
+        "top_groups": [
+            {
+                "Percent_Total": 44.91,
+                "Amount": 29321.7,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 33.32,
+                "Amount": 21750.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 21.77,
+                "Amount": 14211.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 19.15,
+                "Amount": 12500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 15.32,
+                "Amount": 10000.0,
+                "Name": "Believe in America PAC"
+            },
+            {
+                "Percent_Total": 9.19,
+                "Amount": 6000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 7.66,
+                "Amount": 5000.0,
+                "Name": "UPCCA PAC"
+            },
+            {
+                "Percent_Total": 6.89,
+                "Amount": 4500.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            }
+        ]
+    },
+    "Calvin Musselman": {
+        "total": 44559.55,
+        "top_groups": [
+            {
+                "Percent_Total": 70.04,
+                "Amount": 31209.55,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 21.32,
+                "Amount": 9500.0,
+                "Name": "PAC"
+            },
+            {
+                "Percent_Total": 8.64,
+                "Amount": 3850.0,
+                "Name": "Businesses"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 68.47,
+                "Amount": 30509.55,
+                "Name": "Musselman Calvin - 2020 House-9 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 11.22,
+                "Amount": 5000.0,
+                "Name": "Utah House Republican Election Committee PAC"
+            },
+            {
+                "Percent_Total": 4.49,
+                "Amount": 2000.0,
+                "Name": "Wilson Leadership PAC"
+            },
+            {
+                "Percent_Total": 3.37,
+                "Amount": 1500.0,
+                "Name": "Home Builders Association of Utah PAC"
+            },
+            {
+                "Percent_Total": 1.68,
+                "Amount": 750.0,
+                "Name": "WCF Insurance "
+            }
+        ]
+    },
+    "Angela Romero": {
+        "total": 22847.92,
+        "top_groups": [
+            {
+                "Percent_Total": 68.35,
+                "Amount": 15617.49,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 22.02,
+                "Amount": 5030.43,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 9.63,
+                "Amount": 2200.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 33.46,
+                "Amount": 7645.49,
+                "Name": "Romero Angela - 2020 House-26 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 6.9,
+                "Amount": 1577.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 5.49,
+                "Amount": 1255.43,
+                "Name": "The Council of State Governments "
+            },
+            {
+                "Percent_Total": 4.38,
+                "Amount": 1000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.38,
+                "Amount": 1000.0,
+                "Name": "Operating Engineers Local No. 3 Statewide PAC"
+            }
+        ]
+    },
+    "Lynette Wendel": {
+        "total": 72351.01,
+        "top_groups": [
+            {
+                "Percent_Total": 71.28,
+                "Amount": 51571.56,
+                "Name": "Individuals"
+            },
+            {
+                "Percent_Total": 24.5,
+                "Amount": 17729.45,
+                "Name": "Businesses"
+            },
+            {
+                "Percent_Total": 4.22,
+                "Amount": 3050.0,
+                "Name": "PAC"
+            }
+        ],
+        "top_donors": [
+            {
+                "Percent_Total": 13.82,
+                "Amount": 10000.0,
+                "Name": "Utah Women and Politics"
+            },
+            {
+                "Percent_Total": 13.52,
+                "Amount": 9780.76,
+                "Name": "Wendel Lynette - 2020 House-39 - Balance Transfer"
+            },
+            {
+                "Percent_Total": 6.91,
+                "Amount": 5000.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 6.22,
+                "Amount": 4500.0,
+                "Name": "INDIVIDUAL PERSON"
+            },
+            {
+                "Percent_Total": 4.56,
+                "Amount": 3300.0,
+                "Name": "INDIVIDUAL PERSON"
+            }
+        ]
+    }
+}
