@@ -9,7 +9,7 @@
     .background-card {
       background-color: theme('colors.white');
       border-radius: theme('borderRadius.md');
-      padding: theme('spacing.6');
+      @apply p-4 md:p-5
     }
 
     [x-cloak] { display: none !important; }
