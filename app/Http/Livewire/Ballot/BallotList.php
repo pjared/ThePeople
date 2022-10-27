@@ -28,7 +28,7 @@ class BallotList extends Component
         }
         if(! auth()->check() || ! auth()->user()->user_precinct) {
             $this->precincts_loaded = true;
-            $this->ballot_count = 4;
+            $this->ballot_count = 6;
         }
     }
 
