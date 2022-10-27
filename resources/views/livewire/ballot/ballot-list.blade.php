@@ -78,7 +78,6 @@
                     @endif
                 @endforeach
                 @foreach ($this->user_ballots as $precinct)
-                    {{-- {{dd($this->user_ballots) }} --}}
                     @if ($precinct->ballot->candidates_count >= 1)
                         <form action="/ballot/{{ $precinct->ballot->slug }}" method="GET" class="hover:scale-110" x-data="{ show: false }" @mouseleave="show = false" @mouseover="show = true">
                             <button class="background-card shadow-md">
@@ -117,24 +116,22 @@
 
     {{-- BALLOT LIST --}}
     @if (count($ballots) >= 1)
-        <div class="flex flex-col md:flex-row flex-wrap gap-8 w-3/4 items-center justify-center md:pb-4">
+        <div class="flex flex-col md:flex-row flex-wrap gap-8 items-center justify-center w-4/5 lg:w-3/4 md:pb-4">
             @foreach ($ballots as $ballot)
                 @if ($ballot->candidates_count >= 1)
                     <form action="{{ route('ballot', ['ballot' => $ballot->slug]) }}" method="GET" class="hover:scale-110" x-data="{ show: window.innerWidth <= 768 }" @mouseleave="show = window.innerWidth <= 768" @mouseover="show = true">
-                        <button class="background-card shadow-md">
-                            <div class="text-center p-0">
-                                <h2 class="card-title justify-center">
-                                    <a
-                                        rel="next prefetch"
-                                        class="underline text-inherit font-mono tracking-tighter font-light"
-                                        type="text/html"
-                                        href="{{ route('ballot', ['ballot' => $ballot->slug]) }}">{{ $ballot->location->state }} {{ $ballot->office->name }}, {{ $ballot->location->name }}</a>
-                                </h2>
-                                <div x-show="show" class="uppercase mt-2 text-sm font-mono text-gray-400 justify-center">
-                                    <p>
-                                        VOTING DATE: {{ $ballot->voting_date->format('m/d/Y') }}
-                                    </p>
-                                </div>
+                        <button class="background-card shadow-md ">
+                            <h2 class="card-title justify-center text-center">
+                                <a
+                                    rel="next prefetch"
+                                    class="underline text-inherit font-mono tracking-tighter font-light"
+                                    type="text/html"
+                                    href="{{ route('ballot', ['ballot' => $ballot->slug]) }}">{{ $ballot->location->state }} {{ $ballot->office->name }}, {{ $ballot->location->name }}</a>
+                            </h2>
+                            <div x-show="show" class="uppercase mt-2 text-sm font-mono text-gray-400 justify-center">
+                                <p>
+                                    VOTING DATE: {{ $ballot->voting_date->format('m/d/Y') }}
+                                </p>
                             </div>
                         </button>
                     </form>
