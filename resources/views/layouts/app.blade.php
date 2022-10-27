@@ -57,6 +57,17 @@
             @else
                 <div class="flex px-6 py-4 bg-white w-100 shadow-sm items-center">
                     <x-jet-application-logo class="block h-12 w-auto" />
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        @if(request()->routeIs('about-us'))
+                            <x-jet-nav-link href="{{ route('welcome') }}">
+                                {{ __('Home') }}
+                            </x-jet-nav-link>
+                        @endif
+                        <x-jet-nav-link href="{{ route('about-us') }}" :active="request()->routeIs('about-us')">
+                            {{ __('About us') }}
+                        </x-jet-nav-link>
+                    </div>
+
                     {{-- <x-jet-nav-link
                         href="{{ route('groups') }}"
                         :active="request()->routeIs('groups')"
