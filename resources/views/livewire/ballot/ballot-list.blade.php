@@ -62,7 +62,7 @@
                                 <div class="text-center p-0">
                                     <h2 class="card-title justify-center">
                                         <a
-                                            rel="next prefetch canonical"
+                                            rel="next prefetch"
                                             class="underline text-inherit font-mono tracking-tighter font-light"
                                             type="text/html"
                                             href="/ballot/{{ $ballot->slug }}">{{ $ballot->location->state }} {{ $ballot->office->name }}, {{ $ballot->location->name }}</a>
@@ -85,7 +85,7 @@
                                 <div class="text-center p-0">
                                     <h2 class="card-title justify-center">
                                         <a
-                                            rel="next prefetch canonical"
+                                            rel="next prefetch"
                                             class="underline text-inherit font-mono tracking-tighter font-light"
                                             type="text/html"
                                             href="/ballot/{{ $precinct->ballot->slug }}">{{ $precinct->ballot->location->state }} {{ $precinct->ballot->office->name }}, {{ $precinct->ballot->location->name }}</a>
@@ -125,7 +125,7 @@
                             <div class="text-center p-0">
                                 <h2 class="card-title justify-center">
                                     <a
-                                        rel="next prefetch canonical"
+                                        rel="next prefetch"
                                         class="underline text-inherit font-mono tracking-tighter font-light"
                                         type="text/html"
                                         href="{{ route('ballot', ['ballot' => $ballot->slug]) }}">{{ $ballot->location->state }} {{ $ballot->office->name }}, {{ $ballot->location->name }}</a>
@@ -164,8 +164,8 @@
             Welcome to the home page of ThePeople! Here you can navigate to a ballot from the list provided. The current ballots we have are:
             {{ $this->ballot_list }}
         @endsection
+        @section('keywords')
+            ThePeople, thepeople, utah senate ballots, utah congress ballots, utah senate elections, utah congress elections, utah political candidates
+        @endsection
     @endif
-    @section('keywords')
-        {{ $this->ballot_list }}
-    @endsection
 </div>

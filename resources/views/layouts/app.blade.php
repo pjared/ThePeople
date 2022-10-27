@@ -10,12 +10,18 @@
         <meta name="copyright" content="{{ config('app.name') }}">
         <meta name="author" content="{{ config('app.name') }}"/>
         <meta name="application-name" content="@yield('title', config('app.name'))">
+        <meta name="DC.title" content="@yield('title', config('app.name'))"/>
+        <meta name="geo.region" content="US-UT" />
+        {{--
+        TODO: Look into adding geo tags per ballot
+        <meta name="geo.placename" content="Salt Lake City" />
+        <meta name="geo.position" content="40.777439;-111.888198" />
+        <meta name="ICBM" content="40.777439, -111.888198" /> --}}
+
 
         @yield('meta-tags')
 
-        <head>
-            <title>@yield('page-title') - {{ config('app.name') }}</title>
-        </head>
+        <title>@yield('page-title') - {{ config('app.name') }}</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">

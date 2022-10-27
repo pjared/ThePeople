@@ -1,5 +1,4 @@
 <section class='p-4 flex flex-col gap-12'>
-    {{-- {{dd($this->candidate) }} --}}
     @if ($this->is_manual)
         <div class='flex w-full justify-center'>
             <div class="alert alert-warning flex flex-row bg-orange-200 shadow-lg w-full md:w-3/5">
@@ -247,10 +246,10 @@
     @endpush
 
     @section('description')
-        Candidate {{ $this->candidate->name }}'s profile. Here you can view the stances that {{ $this->candidate->name }} takes on controversial opinions. You can also view the additional stances that {{ $this->candidate->name }} has added to his profile. If {{ $this->candidate->name }} has held office, his previous positions will be listed. You can also message {{ $this->candidate->name }} and see his upcoming events.
+        Candidate {{ $this->candidate->name }}'s profile on ThePeople. Here you can view stances that {{ $this->candidate->name }} has listed on their personal website, their campaign finance data, and legislation they've passed if they're holding office.
     @endsection
     @section('keywords')
-        {{ $this->candidate->name }} stances controversial opinions
+        {{ $this->candidate->name }} thepeople, {{ $this->candidate->name }} ThePeople, {{ $this->candidate->name }} stances, {{ $this->candidate->name }} opinions, {{ $this->candidate->name }} donors, {{ $this->candidate->name }} finance data, {{ $this->candidate->name }} voting record
     @endsection
 </section>
 

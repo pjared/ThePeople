@@ -45,30 +45,31 @@
     @endguest
 
     @section('page-title')
-        {{ $ballot->location->name }} {{ $ballot->office->name }} Ballot
+        {{ $ballot->name }} Ballot - ThePeople
     @endsection
 
     @section('meta-tags')
-        <meta property="og:title" content="{{ $ballot->location->state }} {{ $ballot->office->name }}, {{ $ballot->location->name }} Ballot" />
+        <meta property="og:title" content="{{ $ballot->name }} Ballot - ThePeople" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://whatsinyourballot.com/ballot/{{ $ballot->slug }}" />
         <meta property="og:image" content="{{ url('storage/images/ballot.png') }}" />
         <meta name="twitter:card" content="summary_large_image">
 
-        <meta property="og:description" content="The Mock Ballot for {{ $ballot->name }}">
+        <meta property="og:description" content="Directly compare the candidates that will be showing up on your ballots for the election. You can go to each individual profile of the candidate to see stances, donors, and voting record. Candidates here have the ability to create their own profiles, however if a candidate has not created a profile it's we've created one for them.">
         <meta property="og:site_name" content="ThePeople">
         <meta name="twitter:image:alt" content="ThePeople">
+        {{-- <link rel="canonical" href="https://whatsinyourballot.com/candidate/profile/{{ $candidate->slug }}" /> --}}
     @endsection
 
     @section('description')
-        The mock-ballot of {{ $ballot->name }}. Candidates here have the ability to create their own profiles, however if a candidate has not created a profile it's possible that we have created one for them.
+        The mock-ballot of {{ $ballot->name }}. Directly compare the candidates that will be showing up on your ballots for the election. You can go to each individual profile of the candidate to see stances, donors, and voting record. Candidates here have the ability to create their own profiles, however if a candidate has not created a profile it's we've created one for them.
         This ballot currently has the following candidates:
         @foreach ($ballot->candidates as $candidate)
             {{ $candidate->name }},
         @endforeach
     @endsection
     @section('keywords')
-        {{ $ballot->name }}
+        {{ $ballot->name }}, {{ $ballot->location->name }} election, {{ $ballot->office->name }} election, {{ $ballot->location->name }} ballot, {{ $ballot->office->name }} ballot, {{ $ballot->name }} candidate comparison,
         @foreach ($ballot->candidates as $candidate)
             {{ $candidate->name }},
         @endforeach
