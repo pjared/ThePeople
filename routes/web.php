@@ -35,6 +35,10 @@ use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', [HomeController::class, 'getWelcomeView'])->name('welcome');
 
+Route::get('/wireframe', function() {
+    return view('wireframe');
+})->name('wireframe');
+
 Route::get('about-us', [HomeController::class, 'getAboutUsView'])->name('about-us');
 
 Route::get('admin/login', function() {
