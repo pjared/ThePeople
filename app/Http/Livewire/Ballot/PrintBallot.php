@@ -13,7 +13,7 @@ class PrintBallot extends Component
 
     public function mount()
     {
-        $this->votes = auth()->user()->votes->load('ballot', 'candidate:name');
+        $this->votes = auth()->user()->votes->load('ballot', 'candidate:id,name');
         $this->ballot_sent = false;
     }
 
